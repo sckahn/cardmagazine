@@ -26,6 +26,8 @@ html, body {
 body { min-height: 100vh; }
 a { color: inherit; text-decoration: none; }
 em { font-style: normal; color: var(--brand); font-weight: 800; }
+/* Korean brand accent — keeps Pretendard, just brand color */
+.brand-ko { color: var(--brand); font-weight: 900; font-family: inherit; font-style: normal; }
 
 .site-nav {
   position: sticky; top: 0; z-index: 50;
@@ -50,8 +52,8 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
 /* ====== HOME ====== */
 .hero-home {
   max-width: 1440px; margin: 0 auto; padding: 100px 48px 60px;
-  display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: end;
 }
+.hero-home > div { max-width: 880px; }
 .hero-home .eyebrow {
   font-family: 'JetBrains Mono', monospace; font-size: 12px;
   letter-spacing: 0.3em; color: var(--brand); font-weight: 700; text-transform: uppercase;
@@ -137,48 +139,85 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
 
 /* ====== ISSUE / SERIES DETAIL ====== */
 .issue-head {
-  max-width: 1440px; margin: 0 auto; padding: 80px 48px 56px;
+  max-width: 1440px; margin: 0 auto; padding: 60px 48px 40px;
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: end;
-  border-bottom: 1px solid var(--line);
 }
 .issue-head .meta {
   font-family: 'JetBrains Mono', monospace; font-size: 12px;
   letter-spacing: 0.3em; color: var(--brand); text-transform: uppercase; font-weight: 700;
 }
 .issue-head h1 {
-  margin-top: 18px;
-  font-size: 72px; font-weight: 900; line-height: 1; letter-spacing: -0.035em;
+  margin-top: 14px;
+  font-size: 64px; font-weight: 900; line-height: 1; letter-spacing: -0.035em;
 }
 .issue-head h1 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
-.issue-head .subt { margin-top: 18px; font-size: 20px; color: var(--ink-soft); line-height: 1.55; }
+.issue-head .subt { margin-top: 14px; font-size: 18px; color: var(--ink-soft); line-height: 1.55; }
 .issue-head .desc { font-size: 14px; line-height: 1.7; color: var(--ink-mid); }
-.issue-head .count {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px;
-  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase;
-  padding-top: 14px; margin-top: 16px; border-top: 1px solid var(--line);
+
+/* ======= Flip-book viewer ======= */
+.flipbook {
+  max-width: 1280px; margin: 0 auto; padding: 0 48px 40px;
 }
-.issue-head .count b {
-  display: block; font-family: 'Pretendard Variable', sans-serif;
-  font-size: 36px; font-weight: 900; color: var(--navy); letter-spacing: -0.02em;
-  margin-top: 4px;
+.flipbook .viewport {
+  position: relative; width: 100%; aspect-ratio: 1 / 1;
+  max-width: 720px; margin: 0 auto;
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 80px -40px rgba(15,30,56,0.45), 0 14px 28px -18px rgba(15,30,56,0.2);
+  overflow: hidden;
+}
+.flipbook .slide {
+  position: absolute; inset: 0;
+  opacity: 0; transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.flipbook .slide.active {
+  opacity: 1; pointer-events: auto;
+}
+.flipbook .slide img {
+  width: 100%; height: 100%; object-fit: contain; display: block;
+  background: #f4efe4;
 }
 
-.slides {
-  max-width: 1280px; margin: 0 auto; padding: 60px 48px 80px;
-  display: grid; gap: 48px;
+/* page controls */
+.flipbook .controls {
+  max-width: 720px; margin: 20px auto 0;
+  display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center;
+  font-family: 'JetBrains Mono', monospace;
 }
-.slide-frame {
-  background: #fff; border: 1px solid var(--line);
-  box-shadow: 0 28px 48px -32px rgba(15,30,56,0.25);
+.flipbook button.turn {
+  background: var(--navy); color: #fff; border: none;
+  font-family: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.24em;
+  padding: 13px 22px; cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
-.slide-frame .head {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 14px 24px; border-bottom: 1px solid var(--line);
-  font-family: 'JetBrains Mono', monospace; font-size: 11px;
-  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase; font-weight: 700;
+.flipbook button.turn:hover:not(:disabled) { background: var(--brand); }
+.flipbook button.turn:active:not(:disabled) { transform: translateY(1px); }
+.flipbook button.turn:disabled { opacity: 0.3; cursor: not-allowed; }
+.flipbook .counter {
+  text-align: center; font-size: 13px; letter-spacing: 0.28em; color: var(--ink-mid); font-weight: 700;
 }
-.slide-frame .head b { color: var(--brand); }
-.slide-frame img { width: 100%; display: block; }
+.flipbook .counter b { color: var(--navy); font-size: 22px; letter-spacing: -0.01em; font-family: 'Pretendard Variable', sans-serif; font-weight: 900; }
+
+/* thumbnail strip */
+.flipbook .thumbs {
+  max-width: 1280px; margin: 28px auto 0;
+  display: flex; gap: 10px; overflow-x: auto; padding: 4px 0 10px;
+  scrollbar-width: thin;
+}
+.flipbook .thumbs::-webkit-scrollbar { height: 6px; }
+.flipbook .thumbs::-webkit-scrollbar-track { background: rgba(15,30,56,0.05); }
+.flipbook .thumbs::-webkit-scrollbar-thumb { background: var(--ink-mid); }
+.flipbook .thumb {
+  flex: 0 0 96px; aspect-ratio: 1/1;
+  border: 2px solid transparent;
+  background: #fff;
+  cursor: pointer; overflow: hidden;
+  opacity: 0.6; transition: opacity 0.2s ease, border-color 0.2s ease;
+}
+.flipbook .thumb img { width:100%; height:100%; object-fit: cover; display: block; }
+.flipbook .thumb:hover { opacity: 1; }
+.flipbook .thumb.active { opacity: 1; border-color: var(--brand); }
 
 .nav-strip {
   max-width: 1280px; margin: 0 auto; padding: 32px 48px 100px;
@@ -198,10 +237,12 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
   .hero-home h1 { font-size: 56px; }
   .section-title { padding: 0 24px; }
   .series-grid { grid-template-columns: 1fr; padding: 0 24px 80px; gap: 24px; }
-  .issue-head { grid-template-columns: 1fr; padding: 50px 24px 40px; gap: 28px; }
-  .issue-head h1 { font-size: 48px; }
-  .slides { padding: 40px 24px 60px; gap: 28px; }
-  .nav-strip { padding: 24px; }
+  .issue-head { grid-template-columns: 1fr; padding: 40px 24px 28px; gap: 20px; }
+  .issue-head h1 { font-size: 44px; }
+  .flipbook { padding: 0 24px 32px; }
+  .flipbook .controls { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
+  .flipbook .counter { grid-column: 1 / -1; order: -1; margin-bottom: 6px; }
+  .nav-strip { padding: 24px; flex-direction: column; gap: 14px; align-items: flex-start; }
   .site-nav-inner { padding: 14px 24px; }
   .site-foot { padding: 32px 24px 56px; flex-direction: column; gap: 12px; align-items: flex-start;}
 }

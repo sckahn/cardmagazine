@@ -8,7 +8,7 @@
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a class="logo" href="../">AI × <em>Series</em></a>
-    <div class="nav-right">ISSUE 02 · 6 CARDS</div>
+    <div class="nav-right">Issue 02</div>
   </div>
 </nav>
 
@@ -20,35 +20,33 @@
   </div>
   <div>
     <div class="desc">이어령 &quot;미각은 제일 나중&quot; — 다섯 감각의 합성 · 후각 80% · Stochastic Parrots.</div>
-    <div class="count">Card Count<b>6</b></div>
   </div>
 </header>
 
-<section class="slides">
-    <div class="slide-frame" id="card-01">
-      <div class="head"><span>01 · COVER</span><b>01 / 06</b></div>
-      <img src="../2-outputs-taste/01-cover.png" alt="01 · COVER" loading="lazy" />
-    </div>
-    <div class="slide-frame" id="card-02">
-      <div class="head"><span>02 · OTHER · SENSES</span><b>02 / 06</b></div>
-      <img src="../2-outputs-taste/02-other-senses.png" alt="02 · OTHER · SENSES" loading="lazy" />
-    </div>
-    <div class="slide-frame" id="card-03">
-      <div class="head"><span>03 · FIVE · SENSES · IN · MOUTH</span><b>03 / 06</b></div>
-      <img src="../2-outputs-taste/03-five-senses-in-mouth.png" alt="03 · FIVE · SENSES · IN · MOUTH" loading="lazy" />
-    </div>
-    <div class="slide-frame" id="card-04">
-      <div class="head"><span>04 · SMELL · EIGHTY · PERCENT</span><b>04 / 06</b></div>
-      <img src="../2-outputs-taste/04-smell-eighty-percent.png" alt="04 · SMELL · EIGHTY · PERCENT" loading="lazy" />
-    </div>
-    <div class="slide-frame" id="card-05">
-      <div class="head"><span>05 · PARROT · OF · TASTE</span><b>05 / 06</b></div>
-      <img src="../2-outputs-taste/05-parrot-of-taste.png" alt="05 · PARROT · OF · TASTE" loading="lazy" />
-    </div>
-    <div class="slide-frame" id="card-06">
-      <div class="head"><span>06 · OUTRO</span><b>06 / 06</b></div>
-      <img src="../2-outputs-taste/06-outro.png" alt="06 · OUTRO" loading="lazy" />
-    </div>
+<section class="flipbook" id="flipbook" data-total="6">
+  <div class="viewport" tabindex="0">
+      <div class="slide active" data-idx="1"><img src="../2-outputs-taste/01-cover.png" alt="Card 1" loading="eager" /></div>
+      <div class="slide" data-idx="2"><img src="../2-outputs-taste/02-other-senses.png" alt="Card 2" loading="eager" /></div>
+      <div class="slide" data-idx="3"><img src="../2-outputs-taste/03-five-senses-in-mouth.png" alt="Card 3" loading="lazy" /></div>
+      <div class="slide" data-idx="4"><img src="../2-outputs-taste/04-smell-eighty-percent.png" alt="Card 4" loading="lazy" /></div>
+      <div class="slide" data-idx="5"><img src="../2-outputs-taste/05-parrot-of-taste.png" alt="Card 5" loading="lazy" /></div>
+      <div class="slide" data-idx="6"><img src="../2-outputs-taste/06-outro.png" alt="Card 6" loading="lazy" /></div>
+  </div>
+
+  <div class="controls">
+    <button class="turn prev-btn" aria-label="Previous card">← PREV</button>
+    <div class="counter"><b><span id="cur">1</span></b> <span style="opacity:0.5;">/</span> 06</div>
+    <button class="turn next-btn" aria-label="Next card">NEXT →</button>
+  </div>
+
+  <div class="thumbs" role="tablist" aria-label="Card thumbnails">
+    <button class="thumb active" data-goto="1" aria-label="Go to card 1"><img src="../2-outputs-taste/01-cover.png" loading="lazy" alt="" /></button>
+    <button class="thumb" data-goto="2" aria-label="Go to card 2"><img src="../2-outputs-taste/02-other-senses.png" loading="lazy" alt="" /></button>
+    <button class="thumb" data-goto="3" aria-label="Go to card 3"><img src="../2-outputs-taste/03-five-senses-in-mouth.png" loading="lazy" alt="" /></button>
+    <button class="thumb" data-goto="4" aria-label="Go to card 4"><img src="../2-outputs-taste/04-smell-eighty-percent.png" loading="lazy" alt="" /></button>
+    <button class="thumb" data-goto="5" aria-label="Go to card 5"><img src="../2-outputs-taste/05-parrot-of-taste.png" loading="lazy" alt="" /></button>
+    <button class="thumb" data-goto="6" aria-label="Go to card 6"><img src="../2-outputs-taste/06-outro.png" loading="lazy" alt="" /></button>
+  </div>
 </section>
 
 <nav class="nav-strip">
@@ -59,7 +57,56 @@
 
 <footer class="site-foot">
   <span>AI × Series · Issue 02 · Taste</span>
-  <span>1080 × 1080 · Pretendard typeface</span>
+  <span>Pretendard · Playfair Display</span>
 </footer>
+
+<script>
+(function () {
+  const book = document.getElementById('flipbook');
+  const total = parseInt(book.dataset.total, 10);
+  const slides = book.querySelectorAll('.slide');
+  const thumbs = book.querySelectorAll('.thumb');
+  const cur = document.getElementById('cur');
+  const prevBtn = book.querySelector('.prev-btn');
+  const nextBtn = book.querySelector('.next-btn');
+  let idx = 1;
+  function go(next) {
+    next = Math.max(1, Math.min(total, next));
+    if (next === idx) return;
+    slides.forEach(el => el.classList.toggle('active', parseInt(el.dataset.idx,10) === next));
+    thumbs.forEach(el => el.classList.toggle('active', parseInt(el.dataset.goto,10) === next));
+    cur.textContent = next;
+    prevBtn.disabled = next === 1;
+    nextBtn.disabled = next === total;
+    idx = next;
+    history.replaceState(null, '', '#card-' + String(next).padStart(2,'0'));
+    const active = book.querySelector('.thumb.active');
+    if (active) active.scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'});
+  }
+  prevBtn.addEventListener('click', () => go(idx - 1));
+  nextBtn.addEventListener('click', () => go(idx + 1));
+  thumbs.forEach(t => t.addEventListener('click', () => go(parseInt(t.dataset.goto, 10))));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') go(idx - 1);
+    else if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(idx + 1); }
+    else if (e.key === 'Home') go(1);
+    else if (e.key === 'End') go(total);
+  });
+  // touch swipe
+  let startX = null;
+  book.querySelector('.viewport').addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, {passive:true});
+  book.querySelector('.viewport').addEventListener('touchend', (e) => {
+    if (startX === null) return;
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
+    startX = null;
+  });
+  // URL hash
+  const m = location.hash.match(/#card-(\d+)/);
+  if (m) go(parseInt(m[1], 10));
+  prevBtn.disabled = idx === 1;
+  nextBtn.disabled = idx === total;
+})();
+</script>
 
 </body></html>
