@@ -1,87 +1,81 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8" /><title>03 · AI 음악 생성 타임라인</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../style.css" /></head>
+
+<html lang="ko"><head><meta charset="utf-8"/><title>03 · AI 음악 생성 타임라인</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/></head>
 <body>
-  <div class="topbar"></div>
-  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
-
-  <div class="stage">
-    <div class="header">
-      <div class="brandmark"><span class="tri"></span> AI × RHYTHM</div>
-      <div class="chaptertag">HISTORY &nbsp;·&nbsp; 발전의 역사</div>
-    </div>
-
-    <div class="era">
-      <span class="year">역사.</span>
-      <span class="label"><b>AI는 음악을 어디까지 배웠나</b><span class="sub">MIDI부터 Diffusion까지, 40년의 길</span></span>
-    </div>
-
-    <h1 class="title sm">AI는 <em>작곡</em>을 배웠고,<br /><em>연주</em>를 배웠다.<br />그런데 <span class="underline">그루브</span>는?</h1>
-
-    <div class="tl-chart" style="margin-top:16px; grid-template-columns: repeat(4, 1fr);">
-      <div class="tl-node">
-        <div class="yr">1980s~</div>
-        <div class="nm">MIDI 규칙</div>
-        <div class="ph">음표 조합. <em>리듬 정확</em>, 그러나 기계적.</div>
-      </div>
-      <div class="tl-node">
-        <div class="yr">2016</div>
-        <div class="nm">WaveNet · Magenta</div>
-        <div class="ph">딥러닝으로 파형 생성. <em>화성·멜로디</em> 학습.</div>
-      </div>
-      <div class="tl-node">
-        <div class="yr">2023</div>
-        <div class="nm">MusicLM · Riffusion</div>
-        <div class="ph">텍스트 → 음악. <em>"재즈풍"</em> 30초 만에.</div>
-      </div>
-      <div class="tl-node">
-        <div class="yr">2024~</div>
-        <div class="nm">Suno · Udio</div>
-        <div class="ph">노래·가사·구조. <em>소비용</em> 가능.</div>
-      </div>
-    </div>
-
-    <div class="subhead" style="margin-top:18px;">AI가 잘하게 된 세 영역</div>
-    <div class="row2" style="grid-template-columns: 1fr 1fr 1fr; gap:12px; margin-top:8px;">
-      <div class="recap-card" style="padding:14px 14px;">
-        <div class="rtag">① 화성</div>
-        <div class="rtitle" style="font-size:16px;">코드 진행</div>
-        <div class="rbody" style="font-size:12.5px;">I–IV–V 같은 패턴 <em>완벽</em></div>
-      </div>
-      <div class="recap-card" style="padding:14px 14px;">
-        <div class="rtag">② 구조</div>
-        <div class="rtitle" style="font-size:16px;">Intro–Verse–Chorus</div>
-        <div class="rbody" style="font-size:12.5px;">장르별 <em>형식 학습</em></div>
-      </div>
-      <div class="recap-card" style="padding:14px 14px;">
-        <div class="rtag">③ 리듬</div>
-        <div class="rtitle" style="font-size:16px;">정확한 박자</div>
-        <div class="rbody" style="font-size:12.5px;">BPM 120이면 <em>칼같이</em> 120</div>
-      </div>
-    </div>
-
-    <div class="split" style="grid-template-columns:1.5fr 1fr; gap:18px; margin-top:12px; align-items:start;">
-      <div class="left">
-        <p class="body" style="font-size:14px;">
-          <b>2024년 Suno v3</b> — "펑크 스타일로" 입력하면 30초 만에 완성. 코드·구조·BPM 완벽. 그런데 — <em>춤추고 싶지 않다</em>.
+<div class="topbar"></div>
+<div class="ghost-num" style="right:-40px; top:80px;">03</div>
+<div class="stage">
+<div class="header">
+<div class="brandmark"><span class="tri"></span> AI × RHYTHM</div>
+<div class="chaptertag">HISTORY  ·  발전의 역사</div>
+</div>
+<div class="era">
+<span class="year">역사.</span>
+<span class="label"><b>AI는 음악을 어디까지 배웠나</b><span class="sub">MIDI부터 Diffusion까지, 40년의 길</span></span>
+</div>
+<h1 class="title sm">AI는 <em>작곡</em>을 배웠고,<br/><em>연주</em>를 배웠습니다.<br/>그런데 <span class="underline">그루브</span>는?</h1>
+<div class="tl-chart" style="margin-top:16px; grid-template-columns: repeat(4, 1fr);">
+<div class="tl-node">
+<div class="yr">1980s~</div>
+<div class="nm">MIDI 규칙</div>
+<div class="ph">음표 조합. <em>리듬 정확</em>, 그러나 기계적.</div>
+</div>
+<div class="tl-node">
+<div class="yr">2016</div>
+<div class="nm">WaveNet · Magenta</div>
+<div class="ph">딥러닝으로 파형 생성. <em>화성·멜로디</em> 학습.</div>
+</div>
+<div class="tl-node">
+<div class="yr">2023</div>
+<div class="nm">MusicLM · Riffusion</div>
+<div class="ph">텍스트 → 음악. <em>"재즈풍"</em> 30초 만에.</div>
+</div>
+<div class="tl-node">
+<div class="yr">2024~</div>
+<div class="nm">Suno · Udio</div>
+<div class="ph">노래·가사·구조. <em>소비용</em> 가능.</div>
+</div>
+</div>
+<div class="subhead" style="margin-top:18px;">AI가 잘하게 된 세 영역</div>
+<div class="row2" style="grid-template-columns: 1fr 1fr 1fr; gap:12px; margin-top:8px;">
+<div class="recap-card" style="padding:14px 14px;">
+<div class="rtag">① 화성</div>
+<div class="rtitle" style="font-size:16px;">코드 진행</div>
+<div class="rbody" style="font-size:12.5px;">I–IV–V 같은 패턴 <em>완벽</em></div>
+</div>
+<div class="recap-card" style="padding:14px 14px;">
+<div class="rtag">② 구조</div>
+<div class="rtitle" style="font-size:16px;">Intro–Verse–Chorus</div>
+<div class="rbody" style="font-size:12.5px;">장르별 <em>형식 학습</em></div>
+</div>
+<div class="recap-card" style="padding:14px 14px;">
+<div class="rtag">③ 리듬</div>
+<div class="rtitle" style="font-size:16px;">정확한 박자</div>
+<div class="rbody" style="font-size:12.5px;">BPM 120이면 <em>칼같이</em> 120</div>
+</div>
+</div>
+<div class="split" style="grid-template-columns:1.5fr 1fr; gap:18px; margin-top:12px; align-items:start;">
+<div class="left">
+<p class="body" style="font-size:14px;">
+<b>2024년 Suno v3</b> — "펑크 스타일로" 입력하면 30초 만에 완성. 코드·구조·BPM 완벽. 그런데 — <em>춤추고 싶지 않습니다</em>.
         </p>
-        <p class="body" style="font-size:13.5px; margin-top:7px;">
-          40년 전 <em>TR-808</em>도 정확한 비트는 쳤다. 이젠 AI가 멜로디까지 쓴다. 그래도 — <b>그루브는 아직</b>.
+<p class="body" style="font-size:13.5px; margin-top:7px;">
+          40년 전 <em>TR-808</em>도 정확한 비트는 쳤다. 이젠 AI가 멜로디까지 씁니다. 그래도 — <b>그루브는 아직</b>.
         </p>
-        <div style="margin-top:9px; padding:9px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); border-radius:3px;">
-          <div style="font-size:12.5px; line-height:1.55; color:var(--navy);">화성·구조·박자 완벽해도 <b>몸이 반응 안 함</b> — 다음 장부터 해부할 <b>그루브</b>의 문제.</div>
-        </div>
-      </div>
-      <div class="right">
-        <img src="../images/tr808.jpg" style="width:100%; height:200px; object-fit:cover; border-radius:6px;" alt="Roland TR-808 drum machine" />
-        <p style="font-size:10px; margin-top:5px; opacity:0.6; text-align:center;">Roland TR-808 (1980) · 리듬 머신의 원류</p>
-      </div>
-    </div>
-
-    <div class="foot">
-      <span class="left">타임라인 · AI 음악 생성의 40년</span>
-      <span class="right"><b>03</b> / 08</span>
-    </div>
-  </div>
+<div style="margin-top:9px; padding:9px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); border-radius:3px;">
+<div style="font-size:12.5px; line-height:1.55; color:var(--navy);">화성·구조·박자 완벽해도 <b>몸이 반응 안 함</b> — 다음 장부터 해부할 <b>그루브</b>의 문제.</div>
+</div>
+</div>
+<div class="right">
+<img alt="Roland TR-808 drum machine" src="../images/tr808.jpg" style="width:100%; height:200px; object-fit:cover; border-radius:6px;"/>
+<p style="font-size:10px; margin-top:5px; opacity:0.6; text-align:center;">Roland TR-808 (1980) · 리듬 머신의 원류</p>
+</div>
+</div>
+<div class="foot">
+<span class="left">타임라인 · AI 음악 생성의 40년</span>
+<span class="right"><b>03</b> / 08</span>
+</div>
+</div>
 </body></html>

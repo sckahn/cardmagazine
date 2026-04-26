@@ -1,77 +1,67 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8" /><title>03 · 아우라의 세 조건</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../style.css" /></head>
+
+<html lang="ko"><head><meta charset="utf-8"/><title>03 · 아우라의 세 조건</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/></head>
 <body>
-  <div class="topbar"></div>
-  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
-
-  <div class="stage">
-    <div class="header">
-      <div class="brandmark"><span class="tri"></span> AI × AURA</div>
-      <div class="chaptertag">CONDITIONS &nbsp;·&nbsp; AI가 못 만드는 것</div>
-    </div>
-
-    <div class="era">
-      <span class="year">해부.</span>
-      <span class="label"><b>아우라의 세 조건</b><span class="sub">AI 이미지가 <em>하나도</em> 만족하지 못하는 조건들</span></span>
-    </div>
-
-    <h1 class="title sm">아우라 = <em>일회성</em> × <em>거리감</em> × <span class="underline">지금-여기</span>.</h1>
-
-    <!-- 3 conditions × AI diagnosis -->
-    <div style="margin-top:14px; padding:14px 22px; background: var(--bg-white); border:1px solid var(--line);">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:8px;">THREE CONDITIONS · AI diagnosis</div>
-      <svg viewBox="0 0 900 210" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Header row -->
-        <text x="30" y="22" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="1.5">조건</text>
-        <text x="360" y="22" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="1.5">벤야민이 말한 것</text>
-        <text x="720" y="22" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#E35205" letter-spacing="1.5">AI 이미지에서는?</text>
-
-        <line x1="20" y1="32" x2="880" y2="32" stroke="#0f1e38" opacity="0.15" />
-
-        <!-- Row 1: 일회성 -->
-        <rect x="20" y="42" width="110" height="38" fill="#0f1e38" />
-        <text x="75" y="60" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="800" fill="#fff">일회성</text>
-        <text x="75" y="74" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="9" fill="#FFE4D0">uniqueness</text>
-        <text x="150" y="56" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">세상에 <tspan fill="#E35205" font-weight="700">단 하나</tspan>뿐인 원본.</text>
-        <text x="150" y="72" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">같은 것을 두 번 만들 수 없음.</text>
-        <text x="560" y="56" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">✗ seed 하나 바꾸면</text>
-        <text x="560" y="72" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">무한 변주가 가능</text>
-
-        <!-- Row 2: 거리감 -->
-        <rect x="20" y="90" width="110" height="38" fill="#0f1e38" />
-        <text x="75" y="108" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="800" fill="#fff">거리감</text>
-        <text x="75" y="122" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="9" fill="#FFE4D0">distance</text>
-        <text x="150" y="104" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">"가까이 있어도 <tspan fill="#E35205" font-weight="700">멀다"</tspan>.</text>
-        <text x="150" y="120" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">닿을 수 없는 어떤 아우라.</text>
-        <text x="560" y="104" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">✗ 프롬프트로 즉시 호출.</text>
-        <text x="560" y="120" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">모두가 똑같이 가까이 있다</text>
-
-        <!-- Row 3: 지금-여기 -->
-        <rect x="20" y="138" width="110" height="38" fill="#E35205" />
-        <text x="75" y="156" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="800" fill="#fff">지금·여기</text>
-        <text x="75" y="170" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="9" fill="#fff">here &amp; now</text>
-        <text x="150" y="152" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">특정 <tspan fill="#E35205" font-weight="700">시간·장소</tspan>에 존재함.</text>
-        <text x="150" y="168" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">역사성·맥락·의례를 가짐.</text>
-        <text x="560" y="152" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">✗ 클라우드에서 생성.</text>
-        <text x="560" y="168" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">시공간이 존재하지 않는다</text>
-
-        <line x1="20" y1="192" x2="880" y2="192" stroke="#E35205" opacity="0.3" stroke-dasharray="4,3" />
-      </svg>
-    </div>
-
-    <div class="insight" style="margin-top:14px; padding:13px 20px;">
-      <span class="label">▲ 세 조건 모두 불합격</span>
-      <span class="text" style="font-size:15px;">
-        AI 이미지는 <strong>셋 다 만족하지 못한다</strong>. 그래서 아무리 정교해도 — <em>아우라가 없는</em> 것이다.
-        사람이 느끼는 그 "허전함"의 정체가 여기 있다.
+<div class="topbar"></div>
+<div class="ghost-num" style="right:-40px; top:80px;">03</div>
+<div class="stage">
+<div class="header">
+<div class="brandmark"><span class="tri"></span> AI × AURA</div>
+<div class="chaptertag">CONDITIONS  ·  AI가 못 만드는 것</div>
+</div>
+<div class="era">
+<span class="year">해부.</span>
+<span class="label"><b>아우라의 세 조건</b><span class="sub">AI 이미지가 <em>하나도</em> 만족하지 못하는 조건들</span></span>
+</div>
+<h1 class="title sm">아우라 = <em>일회성</em> × <em>거리감</em> × <span class="underline">지금-여기</span>.</h1>
+<!-- 3 conditions × AI diagnosis -->
+<div style="margin-top:14px; padding:14px 22px; background: var(--bg-white); border:1px solid var(--line);">
+<div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:8px;">THREE CONDITIONS · AI diagnosis</div>
+<svg style="width:100%; height:auto; display:block;" viewbox="0 0 900 210" xmlns="http://www.w3.org/2000/svg">
+<!-- Header row -->
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1.5" x="30" y="22">조건</text>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1.5" x="360" y="22">벤야민이 말한 것</text>
+<text fill="#E35205" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1.5" x="720" y="22">AI 이미지에서는?</text>
+<line opacity="0.15" stroke="#0f1e38" x1="20" x2="880" y1="32" y2="32"></line>
+<!-- Row 1: 일회성 -->
+<rect fill="#0f1e38" height="38" width="110" x="20" y="42"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="75" y="60">일회성</text>
+<text fill="#FFE4D0" font-family="Pretendard Variable, sans-serif" font-size="9" text-anchor="middle" x="75" y="74">uniqueness</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" x="150" y="56">세상에 <tspan fill="#E35205" font-weight="700">단 하나</tspan>뿐인 원본.</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" x="150" y="72">같은 것을 두 번 만들 수 없음.</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="560" y="56">✗ seed 하나 바꾸면</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="560" y="72">무한 변주가 가능</text>
+<!-- Row 2: 거리감 -->
+<rect fill="#0f1e38" height="38" width="110" x="20" y="90"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="75" y="108">거리감</text>
+<text fill="#FFE4D0" font-family="Pretendard Variable, sans-serif" font-size="9" text-anchor="middle" x="75" y="122">distance</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" x="150" y="104">"가까이 있어도 <tspan fill="#E35205" font-weight="700">멀다"</tspan>.</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" x="150" y="120">닿을 수 없는 어떤 아우라.</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="560" y="104">✗ 프롬프트로 즉시 호출.</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="560" y="120">모두가 똑같이 가까이 있습니다</text>
+<!-- Row 3: 지금-여기 -->
+<rect fill="#E35205" height="38" width="110" x="20" y="138"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="800" text-anchor="middle" x="75" y="156">지금·여기</text>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="9" text-anchor="middle" x="75" y="170">here &amp; now</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" x="150" y="152">특정 <tspan fill="#E35205" font-weight="700">시간·장소</tspan>에 존재함.</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" x="150" y="168">역사성·맥락·의례를 가짐.</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="560" y="152">✗ 클라우드에서 생성.</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="560" y="168">시공간이 존재하지 않습니다</text>
+<line opacity="0.3" stroke="#E35205" stroke-dasharray="4,3" x1="20" x2="880" y1="192" y2="192"></line>
+</svg>
+</div>
+<div class="insight" style="margin-top:14px; padding:13px 20px;">
+<span class="label">▲ 세 조건 모두 불합격</span>
+<span class="text" style="font-size:15px;">
+        AI 이미지는 <strong>셋 다 만족하지 못합니다</strong>. 그래서 아무리 정교해도 — <em>아우라가 없는</em> 것입니다.
+        사람이 느끼는 그 "허전함"의 정체가 여기 있습니다.
       </span>
-    </div>
-
-    <div class="foot">
-      <span class="left">아우라의 세 조건 · AI의 진단</span>
-      <span class="right"><b>03</b> / 08</span>
-    </div>
-  </div>
+</div>
+<div class="foot">
+<span class="left">아우라의 세 조건 · AI의 진단</span>
+<span class="right"><b>03</b> / 08</span>
+</div>
+</div>
 </body></html>

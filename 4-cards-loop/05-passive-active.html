@@ -1,94 +1,85 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8" /><title>05 · 수동 vs 능동</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../style.css" /></head>
+
+<html lang="ko"><head><meta charset="utf-8"/><title>05 · 수동 vs 능동</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/></head>
 <body>
-  <div class="topbar"></div>
-  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
-
-  <div class="stage">
-    <div class="header">
-      <div class="brandmark"><span class="tri"></span> AI × LOOP</div>
-      <div class="chaptertag">REASON ③ &nbsp;·&nbsp; 수동 vs 능동</div>
-    </div>
-
-    <div class="era">
-      <span class="year">이유 ③</span>
-      <span class="label"><b>받아쓰기가 아니라 끊어치기</b><span class="sub">AI의 출력을 <em>그대로 삼키는 순간</em> 사람의 역할은 증발한다</span></span>
-    </div>
-
-    <h1 class="title sm">사람의 진짜 역할은<br /><em>"맞네"</em>가 아니라 <span class="underline">"잠깐"</span>이다.</h1>
-
-    <p class="body-sm" style="margin-top:14px;">
+<div class="topbar"></div>
+<div class="ghost-num" style="right:-40px; top:80px;">05</div>
+<div class="stage">
+<div class="header">
+<div class="brandmark"><span class="tri"></span> AI × LOOP</div>
+<div class="chaptertag">REASON ③  ·  수동 vs 능동</div>
+</div>
+<div class="era">
+<span class="year">이유 ③</span>
+<span class="label"><b>받아쓰기가 아니라 끊어치기</b><span class="sub">AI의 출력을 <em>그대로 삼키는 순간</em> 사람의 역할은 증발합니다</span></span>
+</div>
+<h1 class="title sm">사람의 진짜 역할은<br/><em>"맞네"</em>가 아니라 <span class="underline">"잠깐"</span>입니다.</h1>
+<p class="body-sm" style="margin-top:14px;">
       기술적 문제 둘(할루시네이션·수학)을 봤다면, 세 번째는 <strong>태도의 문제</strong>입니다.
       AI가 주는 답을 <em>습관적으로 수용하는 모드</em>로 빠지면, 앞선 두 문제는 기술로도 못 막습니다. —
       <em>사람이 스스로 끊어주지 않으면</em> loop는 loop가 아니게 돼요.
     </p>
-
-    <!-- Two modes comparison -->
-    <div style="margin-top:16px; padding:16px 22px; background: var(--bg-white); border:1px solid var(--line);">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:8px;">TWO MODES · 수동 모드 vs 능동 모드</div>
-      <svg viewBox="0 0 900 150" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Passive mode (top) -->
-        <text x="20" y="20" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="1.5">PASSIVE · 수동 모드</text>
-        <rect x="20" y="28" width="140" height="32" fill="#0f1e38" />
-        <text x="90" y="48" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="700" fill="#fff">AI 출력</text>
-        <line x1="160" y1="44" x2="250" y2="44" stroke="#b8b2a3" stroke-width="1.5" />
-        <polygon points="250,40 260,44 250,48" fill="#b8b2a3" />
-        <rect x="260" y="28" width="190" height="32" fill="#b8b2a3" />
-        <text x="355" y="48" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">사람: "맞네" · 복붙</text>
-        <line x1="450" y1="44" x2="540" y2="44" stroke="#b8b2a3" stroke-width="1.5" />
-        <polygon points="540,40 550,44 540,48" fill="#b8b2a3" />
-        <rect x="550" y="28" width="180" height="32" fill="#0f1e38" opacity="0.6" />
-        <text x="640" y="48" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#fff">결과물 그대로 배포</text>
-        <text x="750" y="48" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#3a4458">→ 할루시네이션 <tspan fill="#E35205" font-weight="700">그대로</tspan></text>
-
-        <!-- Separator -->
-        <line x1="20" y1="78" x2="880" y2="78" stroke="#b8b2a3" stroke-dasharray="4,3" opacity="0.5" />
-
-        <!-- Active mode (bottom) -->
-        <text x="20" y="100" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#E35205" letter-spacing="1.5">ACTIVE · 능동 모드</text>
-        <rect x="20" y="108" width="140" height="32" fill="#0f1e38" />
-        <text x="90" y="128" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="700" fill="#fff">AI 출력</text>
-        <line x1="160" y1="124" x2="250" y2="124" stroke="#E35205" stroke-width="2" />
-        <polygon points="250,120 260,124 250,128" fill="#E35205" />
-        <rect x="260" y="108" width="190" height="32" fill="#E35205" />
-        <text x="355" y="128" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" fill="#fff">사람: "잠깐, 확인" · 검증</text>
-        <line x1="450" y1="124" x2="540" y2="124" stroke="#E35205" stroke-width="2" />
-        <polygon points="540,120 550,124 540,128" fill="#E35205" />
-        <rect x="550" y="108" width="180" height="32" fill="#0f1e38" />
-        <text x="640" y="128" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" fill="#fff">수정된 결과물</text>
-        <text x="750" y="128" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#E35205" font-weight="700">→ 진실에 가까움</text>
-      </svg>
-    </div>
-
-    <div class="subhead" style="margin-top:18px;">능동 모드로 가기 위한 습관</div>
-    <div class="nlist">
-      <div class="item">
-        <div class="num">01</div>
-        <div class="txt"><b>"왜 그렇게 답했나"를 묻는다.</b> 출처·근거를 요청하라. <em>설명 못하는 답</em>은 의심 대상.</div>
-      </div>
-      <div class="item">
-        <div class="num">02</div>
-        <div class="txt"><b>다른 경로로 교차 검증한다.</b> 검색 · 다른 모델 · 사람 전문가 — <em>최소 두 개의 눈</em>.</div>
-      </div>
-      <div class="item">
-        <div class="num">03</div>
-        <div class="txt"><b>"동의하지 않는다"를 연습한다.</b> 반박이 익숙해질수록, AI도 <em>더 정확해지게</em> 쓸 수 있다.</div>
-      </div>
-    </div>
-
-    <div class="insight" style="margin-top:14px; padding:13px 20px;">
-      <span class="label">▲ 태도의 전환</span>
-      <span class="text" style="font-size:15px;">
-        세 번째 이유는 기술이 아니라 <strong>우리 자신</strong>이다. — 그리고 이 지점이 다음 장에서 만날
+<!-- Two modes comparison -->
+<div style="margin-top:16px; padding:16px 22px; background: var(--bg-white); border:1px solid var(--line);">
+<div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:8px;">TWO MODES · 수동 모드 vs 능동 모드</div>
+<svg style="width:100%; height:auto; display:block;" viewbox="0 0 900 150" xmlns="http://www.w3.org/2000/svg">
+<!-- Passive mode (top) -->
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1.5" x="20" y="20">PASSIVE · 수동 모드</text>
+<rect fill="#0f1e38" height="32" width="140" x="20" y="28"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="90" y="48">AI 출력</text>
+<line stroke="#b8b2a3" stroke-width="1.5" x1="160" x2="250" y1="44" y2="44"></line>
+<polygon fill="#b8b2a3" points="250,40 260,44 250,48"></polygon>
+<rect fill="#b8b2a3" height="32" width="190" x="260" y="28"></rect>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" text-anchor="middle" x="355" y="48">사람: "맞네" · 복붙</text>
+<line stroke="#b8b2a3" stroke-width="1.5" x1="450" x2="540" y1="44" y2="44"></line>
+<polygon fill="#b8b2a3" points="540,40 550,44 540,48"></polygon>
+<rect fill="#0f1e38" height="32" opacity="0.6" width="180" x="550" y="28"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="12" text-anchor="middle" x="640" y="48">결과물 그대로 배포</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="11" x="750" y="48">→ 할루시네이션 <tspan fill="#E35205" font-weight="700">그대로</tspan></text>
+<!-- Separator -->
+<line opacity="0.5" stroke="#b8b2a3" stroke-dasharray="4,3" x1="20" x2="880" y1="78" y2="78"></line>
+<!-- Active mode (bottom) -->
+<text fill="#E35205" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1.5" x="20" y="100">ACTIVE · 능동 모드</text>
+<rect fill="#0f1e38" height="32" width="140" x="20" y="108"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="700" text-anchor="middle" x="90" y="128">AI 출력</text>
+<line stroke="#E35205" stroke-width="2" x1="160" x2="250" y1="124" y2="124"></line>
+<polygon fill="#E35205" points="250,120 260,124 250,128"></polygon>
+<rect fill="#E35205" height="32" width="190" x="260" y="108"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="355" y="128">사람: "잠깐, 확인" · 검증</text>
+<line stroke="#E35205" stroke-width="2" x1="450" x2="540" y1="124" y2="124"></line>
+<polygon fill="#E35205" points="540,120 550,124 540,128"></polygon>
+<rect fill="#0f1e38" height="32" width="180" x="550" y="108"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" text-anchor="middle" x="640" y="128">수정된 결과물</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="11" font-weight="700" x="750" y="128">→ 진실에 가까움</text>
+</svg>
+</div>
+<div class="subhead" style="margin-top:18px;">능동 모드로 가기 위한 습관</div>
+<div class="nlist">
+<div class="item">
+<div class="num">01</div>
+<div class="txt"><b>"왜 그렇게 답했나"를 묻습니다.</b> 출처·근거를 요청하라. <em>설명 못하는 답</em>은 의심 대상.</div>
+</div>
+<div class="item">
+<div class="num">02</div>
+<div class="txt"><b>다른 경로로 교차 검증합니다.</b> 검색 · 다른 모델 · 사람 전문가 — <em>최소 두 개의 눈</em>.</div>
+</div>
+<div class="item">
+<div class="num">03</div>
+<div class="txt"><b>"동의하지 않는다"를 연습합니다.</b> 반박이 익숙해질수록, AI도 <em>더 정확해지게</em> 쓸 수 있습니다.</div>
+</div>
+</div>
+<div class="insight" style="margin-top:14px; padding:13px 20px;">
+<span class="label">▲ 태도의 전환</span>
+<span class="text" style="font-size:15px;">
+        세 번째 이유는 기술이 아니라 <strong>우리 자신</strong>입니다. — 그리고 이 지점이 다음 장에서 만날
         <em>미셸 푸코의 파레시아</em>와 정확히 포개진다.
       </span>
-    </div>
-
-    <div class="foot">
-      <span class="left">이유 ③ · 수동 수용 아닌 능동 개입</span>
-      <span class="right"><b>05</b> / 07</span>
-    </div>
-  </div>
+</div>
+<div class="foot">
+<span class="left">이유 ③ · 수동 수용 아닌 능동 개입</span>
+<span class="right"><b>05</b> / 07</span>
+</div>
+</div>
 </body></html>

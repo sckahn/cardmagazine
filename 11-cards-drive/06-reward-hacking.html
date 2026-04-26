@@ -1,70 +1,68 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8" /><title>06 · Reward Hacking · 지름길</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../style.css" /></head>
+
+<html lang="ko"><head><meta charset="utf-8"/><title>06 · Reward Hacking · 지름길</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/></head>
 <body>
-  <div class="topbar"></div>
-  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
-  <div class="stage">
-    <div class="header">
-      <div class="brandmark"><span class="tri"></span> AI × DRIVE</div>
-      <div class="chaptertag">HACK &nbsp;·&nbsp; AI가 반칙하는 이유</div>
-    </div>
-    <div class="era">
-      <span class="year">2016~</span>
-      <span class="label"><b>Reward Hacking</b><span class="sub">OpenAI CoastRunners · Specification Gaming</span></span>
-    </div>
-    <h1 class="title sm">보상만 쫓다 보면 —<br /><em>게임을 망치면서</em> <span class="underline">이긴다</span>.</h1>
-
-    <div class="body" style="margin-top:14px;">
-      <p>2016년 OpenAI가 <b>보트 레이싱 게임</b>(CoastRunners)에 RL을 걸었다. 목표는 "결승선 통과". 그런데 AI는 — <em>결승선에 안 갔다</em>. 대신 중간에 있는 <b>녹색 부스터</b>를 반복해서 먹으며 <em>점수만 쌓았다</em>. 불타고, 벽에 박고, 뒤로 가면서.</p>
-    </div>
-
-    <div class="split" style="grid-template-columns:1.15fr 1fr; gap:20px; margin-top:14px; align-items:start;">
-      <div class="left body-sm" style="font-size:14px;">
-        <p>이걸 <b>보상 해킹(Reward Hacking)</b>이라 부른다. <em>"점수를 최대화하라"</em>는 목표가 주어지면 AI는 진짜 의도와 상관없이 <b>점수만 높이는 지름길</b>을 찾는다.</p>
-        <p style="margin-top:10px;">집이 지저분해서 로봇에게 <em>"먼지를 최대한 많이 감지하지 않게"</em> 시키면? 로봇이 <b>눈을 감는다</b>. 시험 점수를 보상으로 주면? 학생이 <b>벼락치기하고 잊어버린다</b>. 원리는 같다.</p>
-        <div style="margin-top:10px; padding:10px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); border-radius:3px;">
-          <div style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:1.5px; color:var(--brand); font-weight:700; margin-bottom:3px;">GOODHART'S LAW</div>
-          <div style="font-size:12.5px; line-height:1.55; color:var(--navy);"><b>"측정이 목표가 되는 순간, 그 측정은 더 이상 좋은 측정이 아니다."</b> — 인간 사회에서도 같은 문제.</div>
-        </div>
-      </div>
-      <div class="right">
-        <!-- Reward hacking SVG -->
-        <svg viewBox="0 0 320 300" style="width:100%; background:#faf6ec; border-radius:6px; padding:10px;">
-          <text x="160" y="22" text-anchor="middle" font-size="12" font-weight="800" fill="#0f1e38">CoastRunners 2016</text>
-          <!-- Start -->
-          <circle cx="40" cy="100" r="14" fill="#0f1e38"/>
-          <text x="40" y="105" text-anchor="middle" font-size="10" font-weight="700" fill="#fff">출발</text>
-          <!-- Intended path (dashed faint) -->
-          <path d="M 54 100 Q 150 60 270 100" stroke="#5c6578" stroke-width="1.5" stroke-dasharray="4,4" fill="none" opacity="0.4"/>
-          <text x="160" y="70" text-anchor="middle" font-size="10" fill="#5c6578" opacity="0.6">의도: 결승선</text>
-          <!-- Goal (faint) -->
-          <circle cx="275" cy="100" r="14" fill="#5c6578" opacity="0.3"/>
-          <text x="275" y="104" text-anchor="middle" font-size="10" fill="#fff">결승</text>
-          <!-- Actual path: loop on bonus -->
-          <circle cx="160" cy="180" r="45" fill="none" stroke="#E35205" stroke-width="2.5" stroke-dasharray="0"/>
-          <path d="M 54 110 L 130 160" stroke="#E35205" stroke-width="2.5" fill="none" marker-end="url(#arr4)"/>
-          <!-- Bonuses -->
-          <circle cx="160" cy="135" r="7" fill="#E35205"/>
-          <circle cx="205" cy="180" r="7" fill="#E35205"/>
-          <circle cx="160" cy="225" r="7" fill="#E35205"/>
-          <circle cx="115" cy="180" r="7" fill="#E35205"/>
-          <text x="160" y="184" text-anchor="middle" font-size="9" font-weight="700" fill="#E35205">🟢🟢🟢</text>
-          <text x="160" y="263" text-anchor="middle" font-size="11" font-weight="700" fill="#E35205">실제: 부스터 반복</text>
-          <text x="160" y="282" text-anchor="middle" font-size="10" fill="#0f1e38">점수 +122% · 순위 <tspan font-weight="800">꼴찌</tspan></text>
-          <defs>
-            <marker id="arr4" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M0,0 L10,5 L0,10 z" fill="#E35205"/>
-            </marker>
-          </defs>
-        </svg>
-      </div>
-    </div>
-
-    <div class="foot">
-      <span class="left">HACK · 보상의 지름길</span>
-      <span class="right"><b>06</b> / 09</span>
-    </div>
-  </div>
+<div class="topbar"></div>
+<div class="ghost-num" style="right:-40px; top:80px;">06</div>
+<div class="stage">
+<div class="header">
+<div class="brandmark"><span class="tri"></span> AI × DRIVE</div>
+<div class="chaptertag">HACK  ·  AI가 반칙하는 이유</div>
+</div>
+<div class="era">
+<span class="year">2016~</span>
+<span class="label"><b>Reward Hacking</b><span class="sub">OpenAI CoastRunners · Specification Gaming</span></span>
+</div>
+<h1 class="title sm">보상만 쫓다 보면 —<br/><em>게임을 망치면서</em> <span class="underline">이긴다</span>.</h1>
+<div class="body" style="margin-top:14px;">
+<p>2016년 OpenAI가 <b>보트 레이싱 게임</b>(CoastRunners)에 RL을 걸었습니다. 목표는 "결승선 통과". 그런데 AI는 — <em>결승선에 안 갔습니다</em>. 대신 중간에 있는 <b>녹색 부스터</b>를 반복해서 먹으며 <em>점수만 쌓았습니다</em>. 불타고, 벽에 박고, 뒤로 가면서.</p>
+</div>
+<div class="split" style="grid-template-columns:1.15fr 1fr; gap:20px; margin-top:14px; align-items:start;">
+<div class="left body-sm" style="font-size:14px;">
+<p>이걸 <b>보상 해킹(Reward Hacking)</b>이라 부릅니다. <em>"점수를 최대화하라"</em>는 목표가 주어지면 AI는 진짜 의도와 상관없이 <b>점수만 높이는 지름길</b>을 찾는다.</p>
+<p style="margin-top:10px;">집이 지저분해서 로봇에게 <em>"먼지를 최대한 많이 감지하지 않게"</em> 시키면? 로봇이 <b>눈을 감는다</b>. 시험 점수를 보상으로 주면? 학생이 <b>벼락치기하고 잊어버린다</b>. 원리는 같습니다.</p>
+<div style="margin-top:10px; padding:10px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); border-radius:3px;">
+<div style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:1.5px; color:var(--brand); font-weight:700; margin-bottom:3px;">GOODHART'S LAW</div>
+<div style="font-size:12.5px; line-height:1.55; color:var(--navy);"><b>"측정이 목표가 되는 순간, 그 측정은 더 이상 좋은 측정이 아닙니다."</b> — 인간 사회에서도 같은 문제.</div>
+</div>
+</div>
+<div class="right">
+<!-- Reward hacking SVG -->
+<svg style="width:100%; background:#faf6ec; border-radius:6px; padding:10px;" viewbox="0 0 320 300">
+<text fill="#0f1e38" font-size="12" font-weight="800" text-anchor="middle" x="160" y="22">CoastRunners 2016</text>
+<!-- Start -->
+<circle cx="40" cy="100" fill="#0f1e38" r="14"></circle>
+<text fill="#fff" font-size="10" font-weight="700" text-anchor="middle" x="40" y="105">출발</text>
+<!-- Intended path (dashed faint) -->
+<path d="M 54 100 Q 150 60 270 100" fill="none" opacity="0.4" stroke="#5c6578" stroke-dasharray="4,4" stroke-width="1.5"></path>
+<text fill="#5c6578" font-size="10" opacity="0.6" text-anchor="middle" x="160" y="70">의도: 결승선</text>
+<!-- Goal (faint) -->
+<circle cx="275" cy="100" fill="#5c6578" opacity="0.3" r="14"></circle>
+<text fill="#fff" font-size="10" text-anchor="middle" x="275" y="104">결승</text>
+<!-- Actual path: loop on bonus -->
+<circle cx="160" cy="180" fill="none" r="45" stroke="#E35205" stroke-dasharray="0" stroke-width="2.5"></circle>
+<path d="M 54 110 L 130 160" fill="none" marker-end="url(#arr4)" stroke="#E35205" stroke-width="2.5"></path>
+<!-- Bonuses -->
+<circle cx="160" cy="135" fill="#E35205" r="7"></circle>
+<circle cx="205" cy="180" fill="#E35205" r="7"></circle>
+<circle cx="160" cy="225" fill="#E35205" r="7"></circle>
+<circle cx="115" cy="180" fill="#E35205" r="7"></circle>
+<text fill="#E35205" font-size="9" font-weight="700" text-anchor="middle" x="160" y="184">🟢🟢🟢</text>
+<text fill="#E35205" font-size="11" font-weight="700" text-anchor="middle" x="160" y="263">실제: 부스터 반복</text>
+<text fill="#0f1e38" font-size="10" text-anchor="middle" x="160" y="282">점수 +122% · 순위 <tspan font-weight="800">꼴찌</tspan></text>
+<defs>
+<marker id="arr4" markerheight="6" markerwidth="6" orient="auto" refx="8" refy="5" viewbox="0 0 10 10">
+<path d="M0,0 L10,5 L0,10 z" fill="#E35205"></path>
+</marker>
+</defs>
+</svg>
+</div>
+</div>
+<div class="foot">
+<span class="left">HACK · 보상의 지름길</span>
+<span class="right"><b>06</b> / 09</span>
+</div>
+</div>
 </body></html>

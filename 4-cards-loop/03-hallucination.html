@@ -1,117 +1,103 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8" /><title>03 · 할루시네이션</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../style.css" /></head>
+
+<html lang="ko"><head><meta charset="utf-8"/><title>03 · 할루시네이션</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/></head>
 <body>
-  <div class="topbar"></div>
-  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
-
-  <div class="stage">
-    <div class="header">
-      <div class="brandmark"><span class="tri"></span> AI × LOOP</div>
-      <div class="chaptertag">REASON ① &nbsp;·&nbsp; 할루시네이션</div>
-    </div>
-
-    <div class="era">
-      <span class="year">이유 ①</span>
-      <span class="label"><b>할루시네이션 · Hallucination</b><span class="sub">AI는 <em>모르는 것</em>도 자신있게 말한다</span></span>
-    </div>
-
-    <h1 class="title sm">AI의 <em>가장 위험한</em> 재능은<br /><span class="underline">그럴듯하게 틀리는 것</span>이다.</h1>
-
-    <div class="split" style="grid-template-columns: 1.15fr 1fr; margin-top:14px; align-items: start;">
-      <div class="left">
-        <div class="subhead">왜 이런 일이 일어나나</div>
-        <div class="nlist">
-          <div class="item">
-            <div class="num">01</div>
-            <div class="txt"><b>LLM은 "다음 토큰 예측기"</b>. 사실 DB를 조회하는 게 아니라, <em>그럴듯한 다음 단어</em>를 확률로 짜낸다.</div>
-          </div>
-          <div class="item">
-            <div class="num">02</div>
-            <div class="txt"><b>"모른다"는 걸 모른다.</b> 훈련 과정에서 <em>확신있게 답하기</em>가 학습됐기에, 빈 곳도 메운다.</div>
-          </div>
-          <div class="item">
-            <div class="num">03</div>
-            <div class="txt"><b>틀린 답이 자연스럽다.</b> 문법·톤은 완벽해서 — <em>사람이 눈치채기 어렵다</em>.</div>
-          </div>
-        </div>
-
-        <div class="subhead" style="margin-top:16px;">흔한 할루시네이션 유형</div>
-        <div class="row2" style="grid-template-columns: 1fr 1fr; gap:10px; margin-top:4px;">
-          <div class="recap-card" style="padding:12px 12px;">
-            <div class="rtag">고유명사</div>
-            <div class="rtitle" style="font-size:15px;">없는 논문</div>
-            <div class="rbody" style="font-size:12px;">저자·저널·연도까지 <em>가짜</em></div>
-          </div>
-          <div class="recap-card" style="padding:12px 12px;">
-            <div class="rtag">URL · 인용</div>
-            <div class="rtitle" style="font-size:15px;">존재하지 않는 링크</div>
-            <div class="rbody" style="font-size:12px;">그럴듯한 도메인 <em>꾸며냄</em></div>
-          </div>
-          <div class="recap-card" style="padding:12px 12px;">
-            <div class="rtag">API · 함수</div>
-            <div class="rtitle" style="font-size:15px;">없는 메서드</div>
-            <div class="rbody" style="font-size:12px;">코드가 <em>컴파일은 된다</em></div>
-          </div>
-          <div class="recap-card" style="padding:12px 12px;">
-            <div class="rtag">숫자 · 통계</div>
-            <div class="rtitle" style="font-size:15px;">지어낸 수치</div>
-            <div class="rbody" style="font-size:12px;">"약 73%"의 <em>73은 환각</em></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="right">
-        <!-- Probability visualization -->
-        <div style="padding:14px 16px; background: var(--bg-white); border:1px solid var(--line);">
-          <div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:8px;">TOKEN PROBABILITY · 다음 단어 확률</div>
-          <svg viewBox="0 0 340 240" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
-            <text x="0" y="16" font-family="JetBrains Mono, monospace" font-size="11" fill="#3a4458">Q: "2019년 Kim 논문의 결과는?"</text>
-
-            <text x="0" y="44" font-family="JetBrains Mono, monospace" font-size="10" fill="#5c6578">→ 다음 토큰 후보</text>
-
-            <!-- prob bars -->
-            <text x="0" y="68" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#0f1e38">"모르겠습니다"</text>
-            <rect x="135" y="58" width="8" height="14" fill="#b8b2a3" />
-            <text x="150" y="68" font-family="JetBrains Mono, monospace" font-size="10" fill="#5c6578">0.02</text>
-
-            <text x="0" y="92" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#0f1e38">"정확도는"</text>
-            <rect x="135" y="82" width="110" height="14" fill="#E35205" opacity="0.85" />
-            <text x="252" y="92" font-family="JetBrains Mono, monospace" font-size="10" fill="#5c6578">0.28</text>
-
-            <text x="0" y="116" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#0f1e38">"Kim et al."</text>
-            <rect x="135" y="106" width="85" height="14" fill="#E35205" opacity="0.65" />
-            <text x="227" y="116" font-family="JetBrains Mono, monospace" font-size="10" fill="#5c6578">0.19</text>
-
-            <text x="0" y="140" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#0f1e38">"BLEU 점수"</text>
-            <rect x="135" y="130" width="55" height="14" fill="#E35205" opacity="0.5" />
-            <text x="197" y="140" font-family="JetBrains Mono, monospace" font-size="10" fill="#5c6578">0.12</text>
-
-            <text x="0" y="164" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#0f1e38">"약 82.3%"</text>
-            <rect x="135" y="154" width="28" height="14" fill="#E35205" opacity="0.35" />
-            <text x="170" y="164" font-family="JetBrains Mono, monospace" font-size="10" fill="#5c6578">0.06</text>
-
-            <!-- annotation -->
-            <line x1="0" y1="186" x2="340" y2="186" stroke="#E35205" opacity="0.3" stroke-dasharray="3,2" />
-            <text x="0" y="208" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">▲ 실제 답이 없어도,</text>
-            <text x="0" y="224" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#E35205" font-weight="700">모델은 확률로 한 문장을 완성한다.</text>
-          </svg>
-        </div>
-      </div>
-    </div>
-
-    <div class="insight" style="margin-top:14px; padding:12px 20px;">
-      <span class="label">▲ 그래서 사람이 필요하다</span>
-      <span class="text" style="font-size:15px;">
-        할루시네이션은 <strong>버그가 아니라 구조</strong>다. 모델 성능이 올라가도 완전히 사라지지 않는다. —
-        <em>진실의 최종 판정자는 결국 사람</em>이다.
+<div class="topbar"></div>
+<div class="ghost-num" style="right:-40px; top:80px;">03</div>
+<div class="stage">
+<div class="header">
+<div class="brandmark"><span class="tri"></span> AI × LOOP</div>
+<div class="chaptertag">REASON ①  ·  할루시네이션</div>
+</div>
+<div class="era">
+<span class="year">이유 ①</span>
+<span class="label"><b>할루시네이션 · Hallucination</b><span class="sub">AI는 <em>모르는 것</em>도 자신있게 말합니다</span></span>
+</div>
+<h1 class="title sm">AI의 <em>가장 위험한</em> 재능은<br/><span class="underline">그럴듯하게 틀리는 것</span>입니다.</h1>
+<div class="split" style="grid-template-columns: 1.15fr 1fr; margin-top:14px; align-items: start;">
+<div class="left">
+<div class="subhead">왜 이런 일이 일어나나</div>
+<div class="nlist">
+<div class="item">
+<div class="num">01</div>
+<div class="txt"><b>LLM은 "다음 토큰 예측기"</b>. 사실 DB를 조회하는 게 아니라, <em>그럴듯한 다음 단어</em>를 확률로 짜냅니다.</div>
+</div>
+<div class="item">
+<div class="num">02</div>
+<div class="txt"><b>"모른다"는 걸 모릅니다.</b> 훈련 과정에서 <em>확신있게 답하기</em>가 학습됐기에, 빈 곳도 메운다.</div>
+</div>
+<div class="item">
+<div class="num">03</div>
+<div class="txt"><b>틀린 답이 자연스럽다.</b> 문법·톤은 완벽해서 — <em>사람이 눈치채기 어렵습니다</em>.</div>
+</div>
+</div>
+<div class="subhead" style="margin-top:16px;">흔한 할루시네이션 유형</div>
+<div class="row2" style="grid-template-columns: 1fr 1fr; gap:10px; margin-top:4px;">
+<div class="recap-card" style="padding:12px 12px;">
+<div class="rtag">고유명사</div>
+<div class="rtitle" style="font-size:15px;">없는 논문</div>
+<div class="rbody" style="font-size:12px;">저자·저널·연도까지 <em>가짜</em></div>
+</div>
+<div class="recap-card" style="padding:12px 12px;">
+<div class="rtag">URL · 인용</div>
+<div class="rtitle" style="font-size:15px;">존재하지 않는 링크</div>
+<div class="rbody" style="font-size:12px;">그럴듯한 도메인 <em>꾸며냄</em></div>
+</div>
+<div class="recap-card" style="padding:12px 12px;">
+<div class="rtag">API · 함수</div>
+<div class="rtitle" style="font-size:15px;">없는 메서드</div>
+<div class="rbody" style="font-size:12px;">코드가 <em>컴파일은 됩니다</em></div>
+</div>
+<div class="recap-card" style="padding:12px 12px;">
+<div class="rtag">숫자 · 통계</div>
+<div class="rtitle" style="font-size:15px;">지어낸 수치</div>
+<div class="rbody" style="font-size:12px;">"약 73%"의 <em>73은 환각</em></div>
+</div>
+</div>
+</div>
+<div class="right">
+<!-- Probability visualization -->
+<div style="padding:14px 16px; background: var(--bg-white); border:1px solid var(--line);">
+<div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:8px;">TOKEN PROBABILITY · 다음 단어 확률</div>
+<svg style="width:100%; height:auto; display:block;" viewbox="0 0 340 240" xmlns="http://www.w3.org/2000/svg">
+<text fill="#3a4458" font-family="JetBrains Mono, monospace" font-size="11" x="0" y="16">Q: "2019년 Kim 논문의 결과는?"</text>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" x="0" y="44">→ 다음 토큰 후보</text>
+<!-- prob bars -->
+<text fill="#0f1e38" font-family="Pretendard Variable, sans-serif" font-size="11" x="0" y="68">"모르겠습니다"</text>
+<rect fill="#b8b2a3" height="14" width="8" x="135" y="58"></rect>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" x="150" y="68">0.02</text>
+<text fill="#0f1e38" font-family="Pretendard Variable, sans-serif" font-size="11" x="0" y="92">"정확도는"</text>
+<rect fill="#E35205" height="14" opacity="0.85" width="110" x="135" y="82"></rect>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" x="252" y="92">0.28</text>
+<text fill="#0f1e38" font-family="Pretendard Variable, sans-serif" font-size="11" x="0" y="116">"Kim et al."</text>
+<rect fill="#E35205" height="14" opacity="0.65" width="85" x="135" y="106"></rect>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" x="227" y="116">0.19</text>
+<text fill="#0f1e38" font-family="Pretendard Variable, sans-serif" font-size="11" x="0" y="140">"BLEU 점수"</text>
+<rect fill="#E35205" height="14" opacity="0.5" width="55" x="135" y="130"></rect>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" x="197" y="140">0.12</text>
+<text fill="#0f1e38" font-family="Pretendard Variable, sans-serif" font-size="11" x="0" y="164">"약 82.3%"</text>
+<rect fill="#E35205" height="14" opacity="0.35" width="28" x="135" y="154"></rect>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" x="170" y="164">0.06</text>
+<!-- annotation -->
+<line opacity="0.3" stroke="#E35205" stroke-dasharray="3,2" x1="0" x2="340" y1="186" y2="186"></line>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="0" y="208">▲ 실제 답이 없어도,</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="12" font-weight="700" x="0" y="224">모델은 확률로 한 문장을 완성합니다.</text>
+</svg>
+</div>
+</div>
+</div>
+<div class="insight" style="margin-top:14px; padding:12px 20px;">
+<span class="label">▲ 그래서 사람이 필요합니다</span>
+<span class="text" style="font-size:15px;">
+        할루시네이션은 <strong>버그가 아니라 구조</strong>다. 모델 성능이 올라가도 완전히 사라지지 않습니다. —
+        <em>진실의 최종 판정자는 결국 사람</em>입니다.
       </span>
-    </div>
-
-    <div class="foot">
-      <span class="left">이유 ① · 할루시네이션</span>
-      <span class="right"><b>03</b> / 07</span>
-    </div>
-  </div>
+</div>
+<div class="foot">
+<span class="left">이유 ① · 할루시네이션</span>
+<span class="right"><b>03</b> / 07</span>
+</div>
+</div>
 </body></html>

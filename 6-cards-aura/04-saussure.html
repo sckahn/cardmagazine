@@ -1,92 +1,80 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8" /><title>04 · 소쉬르의 렌즈</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../style.css" /></head>
+
+<html lang="ko"><head><meta charset="utf-8"/><title>04 · 소쉬르의 렌즈</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/></head>
 <body>
-  <div class="topbar"></div>
-  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
-
-  <div class="stage">
-    <div class="header">
-      <div class="brandmark"><span class="tri"></span> AI × AURA</div>
-      <div class="chaptertag">LENS ② &nbsp;·&nbsp; 소쉬르의 기호</div>
-    </div>
-
-    <div class="era">
-      <span class="year">1916</span>
-      <span class="label"><b>페르디낭 드 소쉬르 · Saussure</b><span class="sub">『일반언어학 강의』 — AI 시대에 다시 소환되는 <em>기호학의 창시자</em></span></span>
-    </div>
-
-    <h1 class="title sm">모든 기호는 <em>두 개</em>로 나뉜다 —<br />그리고 AI는 <span class="underline">한쪽만</span> 가진다.</h1>
-
-    <div class="split" style="grid-template-columns: 0.85fr 1.5fr; margin-top:14px; align-items: start;">
-      <div class="left">
-        <div class="portrait" style="aspect-ratio: 1/1;">
-          <span class="corner"></span>
-          <span class="corner br"></span>
-          <img src="../images/saussure.jpg" alt="Ferdinand de Saussure" />
-        </div>
-        <div class="portrait-caption">
-          <span class="name">페르디낭 드 소쉬르</span>
-          <span class="years">1857 – 1913</span>
-        </div>
-        <p class="small-note" style="margin-top:10px; font-size:12.5px;">
+<div class="topbar"></div>
+<div class="ghost-num" style="right:-40px; top:80px;">04</div>
+<div class="stage">
+<div class="header">
+<div class="brandmark"><span class="tri"></span> AI × AURA</div>
+<div class="chaptertag">LENS ②  ·  소쉬르의 기호</div>
+</div>
+<div class="era">
+<span class="year">1916</span>
+<span class="label"><b>페르디낭 드 소쉬르 · Saussure</b><span class="sub">『일반언어학 강의』 — AI 시대에 다시 소환되는 <em>기호학의 창시자</em></span></span>
+</div>
+<h1 class="title sm">모든 기호는 <em>두 개</em>로 나뉜다 —<br/>그리고 AI는 <span class="underline">한쪽만</span> 가진다.</h1>
+<div class="split" style="grid-template-columns: 0.85fr 1.5fr; margin-top:14px; align-items: start;">
+<div class="left">
+<div class="portrait" style="aspect-ratio: 1/1;">
+<span class="corner"></span>
+<span class="corner br"></span>
+<img alt="Ferdinand de Saussure" src="../images/saussure.jpg"/>
+</div>
+<div class="portrait-caption">
+<span class="name">페르디낭 드 소쉬르</span>
+<span class="years">1857 – 1913</span>
+</div>
+<p class="small-note" style="margin-top:10px; font-size:12.5px;">
           스위스의 언어학자. 그의 사후 제자들이 펴낸 <em>『일반언어학 강의』(1916)</em>가
-          20세기 <b>기호학·구조주의</b>의 출발점이 됐다.
+          20세기 <b>기호학·구조주의</b>의 출발점이 됐습니다.
         </p>
-      </div>
-
-      <div class="right">
-        <div class="subhead" style="margin-top:0;">기호 = 기표 + 기의</div>
-
-        <!-- Signifier vs Signified diagram -->
-        <div style="padding:14px 18px; background: var(--bg-white); border:1px solid var(--line);">
-          <svg viewBox="0 0 560 180" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
-            <!-- Sign box -->
-            <rect x="10" y="10" width="540" height="160" fill="none" stroke="#0f1e38" stroke-width="1.5" stroke-dasharray="4,3" />
-            <text x="20" y="28" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="1.5">SIGN · 기호</text>
-
-            <!-- Signifier -->
-            <rect x="30" y="48" width="240" height="50" fill="#E35205" />
-            <text x="150" y="73" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="16" font-weight="800" fill="#fff">기표 · Signifier</text>
-            <text x="150" y="90" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#FFE4D0">소리·글자·이미지 — 겉모양</text>
-            <text x="150" y="122" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="14" fill="#3a4458" font-weight="600">"사과"</text>
-            <text x="150" y="142" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#5c6578">문자·소리 자체</text>
-
-            <!-- Signified -->
-            <rect x="290" y="48" width="240" height="50" fill="#0f1e38" />
-            <text x="410" y="73" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="16" font-weight="800" fill="#fff">기의 · Signified</text>
-            <text x="410" y="90" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#FFE4D0">개념·의미·지시 대상</text>
-            <text x="410" y="122" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="14" fill="#3a4458" font-weight="600">🍎 그 과일</text>
-            <text x="410" y="142" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#5c6578">경험·맛·기억</text>
-
-            <text x="280" y="78" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="22" font-weight="900" fill="#E35205">+</text>
-          </svg>
-        </div>
-
-        <p class="body-sm" style="margin-top:10px; font-size:14px;">
-          <strong>기표(signifier)</strong>는 단어의 겉모양, <strong>기의(signified)</strong>는 그것이 가리키는 의미.
+</div>
+<div class="right">
+<div class="subhead" style="margin-top:0;">기호 = 기표 + 기의</div>
+<!-- Signifier vs Signified diagram -->
+<div style="padding:14px 18px; background: var(--bg-white); border:1px solid var(--line);">
+<svg style="width:100%; height:auto; display:block;" viewbox="0 0 560 180" xmlns="http://www.w3.org/2000/svg">
+<!-- Sign box -->
+<rect fill="none" height="160" stroke="#0f1e38" stroke-dasharray="4,3" stroke-width="1.5" width="540" x="10" y="10"></rect>
+<text fill="#5c6578" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700" letter-spacing="1.5" x="20" y="28">SIGN · 기호</text>
+<!-- Signifier -->
+<rect fill="#E35205" height="50" width="240" x="30" y="48"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="16" font-weight="800" text-anchor="middle" x="150" y="73">기표 · Signifier</text>
+<text fill="#FFE4D0" font-family="Pretendard Variable, sans-serif" font-size="11" text-anchor="middle" x="150" y="90">소리·글자·이미지 — 겉모양</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="150" y="122">"사과"</text>
+<text fill="#5c6578" font-family="Pretendard Variable, sans-serif" font-size="11" text-anchor="middle" x="150" y="142">문자·소리 자체</text>
+<!-- Signified -->
+<rect fill="#0f1e38" height="50" width="240" x="290" y="48"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="16" font-weight="800" text-anchor="middle" x="410" y="73">기의 · Signified</text>
+<text fill="#FFE4D0" font-family="Pretendard Variable, sans-serif" font-size="11" text-anchor="middle" x="410" y="90">개념·의미·지시 대상</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="14" font-weight="600" text-anchor="middle" x="410" y="122">🍎 그 과일</text>
+<text fill="#5c6578" font-family="Pretendard Variable, sans-serif" font-size="11" text-anchor="middle" x="410" y="142">경험·맛·기억</text>
+<text fill="#E35205" font-family="Pretendard Variable, sans-serif" font-size="22" font-weight="900" text-anchor="middle" x="280" y="78">+</text>
+</svg>
+</div>
+<p class="body-sm" style="margin-top:10px; font-size:14px;">
+<strong>기표(signifier)</strong>는 단어의 겉모양, <strong>기의(signified)</strong>는 그것이 가리키는 의미.
           소쉬르의 핵심은 — 둘의 연결이 <em>임의적(arbitrary)</em>이라는 것.
-          "사과"라는 소리와 <em>그 과일</em> 사이엔 필연이 없다.
+          "사과"라는 소리와 <em>그 과일</em> 사이엔 필연이 없습니다.
         </p>
-      </div>
-    </div>
-
-    <div class="insight" style="margin-top:14px; padding:13px 20px;">
-      <span class="label">▲ AI가 다루는 것은 무엇인가</span>
-      <span class="text" style="font-size:15px;">
-        질문이 여기서 시작된다. — AI는 <strong>기표(픽셀·토큰)</strong>만 배웠는가, 아니면 <em>기의(의미·경험)</em>까지 배웠는가? — 다음 장이 이 질문을 해부한다.
+</div>
+</div>
+<div class="insight" style="margin-top:14px; padding:13px 20px;">
+<span class="label">▲ AI가 다루는 것은 무엇인가</span>
+<span class="text" style="font-size:15px;">
+        질문이 여기서 시작됩니다. — AI는 <strong>기표(픽셀·토큰)</strong>만 배웠는가, 아니면 <em>기의(의미·경험)</em>까지 배웠는가? — 다음 장이 이 질문을 해부합니다.
       </span>
-    </div>
-
-    <div style="margin-top:8px; padding:6px 12px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); border-radius:3px;">
-      <span style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:1.4px; color:var(--brand); font-weight:700;">↩ 다음</span>
-      <span style="font-size:11.5px; color:var(--navy); margin-left:6px;">소쉬르는 <em>AI × LINGUA 03</em>에서 다시.</span>
-    </div>
-
-    <div class="foot">
-      <span class="left">1916 · Saussure · 기호의 두 면</span>
-      <span class="right"><b>04</b> / 08</span>
-    </div>
-  </div>
+</div>
+<div style="margin-top:8px; padding:6px 12px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); border-radius:3px;">
+<span style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:1.4px; color:var(--brand); font-weight:700;">↩ 다음</span>
+<span style="font-size:11.5px; color:var(--navy); margin-left:6px;">소쉬르는 <em>AI × LINGUA 03</em>에서 다시.</span>
+</div>
+<div class="foot">
+<span class="left">1916 · Saussure · 기호의 두 면</span>
+<span class="right"><b>04</b> / 08</span>
+</div>
+</div>
 </body></html>
