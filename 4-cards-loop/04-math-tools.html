@@ -1,100 +1,91 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8" /><title>04 · 수치·수학의 몰이해</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../style.css" /></head>
+
+<html lang="ko"><head><meta charset="utf-8"/><title>04 · 수치·수학의 몰이해</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="../style.css" rel="stylesheet"/></head>
 <body>
-  <div class="topbar"></div>
-  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
-
-  <div class="stage">
-    <div class="header">
-      <div class="brandmark"><span class="tri"></span> AI × LOOP</div>
-      <div class="chaptertag">REASON ② &nbsp;·&nbsp; 수학의 몰이해</div>
-    </div>
-
-    <div class="era">
-      <span class="year">이유 ②</span>
-      <span class="label"><b>LLM은 계산기가 아니다</b><span class="sub">언어 모델은 <em>단어</em>를 배운 것이지, <em>수</em>를 배운 게 아니다</span></span>
-    </div>
-
-    <h1 class="title sm">AI에게 수학은<br /><em>외국어</em>처럼 낯설다.</h1>
-
-    <p class="body-sm" style="margin-top:12px;">
+<div class="topbar"></div>
+<div class="ghost-num" style="right:-40px; top:80px;">04</div>
+<div class="stage">
+<div class="header">
+<div class="brandmark"><span class="tri"></span> AI × LOOP</div>
+<div class="chaptertag">REASON ②  ·  수학의 몰이해</div>
+</div>
+<div class="era">
+<span class="year">이유 ②</span>
+<span class="label"><b>LLM은 계산기가 아니다</b><span class="sub">언어 모델은 <em>단어</em>를 배운 것이지, <em>수</em>를 배운 게 아니다</span></span>
+</div>
+<h1 class="title sm">AI에게 수학은<br/><em>외국어</em>처럼 낯설다.</h1>
+<p class="body-sm" style="margin-top:12px;">
       "12,347 × 82의 답은?" — LLM에게는 <strong>본질적으로 어려운 문제</strong>다. LLM은
       <em>숫자가 무엇인지</em>가 아니라 <em>숫자가 문장에서 어떻게 생겼는지</em>만 배웠기 때문.
     </p>
-
-    <!-- Comparison: how LLM "sees" 1234 -->
-    <div style="margin-top:12px; padding:12px 20px; background: var(--bg-white); border:1px solid var(--line);">
-      <div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:6px;">HOW THE LLM "SEES" 1234 · 모델이 숫자를 어떻게 보는가</div>
-      <svg viewBox="0 0 900 130" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
-        <!-- Human view -->
-        <text x="30" y="22" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#0f1e38" letter-spacing="1">사람의 시선</text>
-        <rect x="30" y="32" width="380" height="50" fill="#E35205" />
-        <text x="220" y="62" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="28" font-weight="900" fill="#fff">1234</text>
-        <text x="220" y="102" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">= 천 이백 삼십 사 · <tspan fill="#E35205" font-weight="700">크기와 자리수</tspan></text>
-
-        <!-- vs -->
-        <text x="450" y="62" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="26" font-weight="900" fill="#0f1e38" opacity="0.4">vs</text>
-
-        <!-- LLM view: tokens -->
-        <text x="490" y="22" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" fill="#0f1e38" letter-spacing="1">LLM의 시선 · 토큰으로 쪼갬</text>
-        <rect x="490" y="32" width="80" height="50" fill="#0f1e38" />
-        <text x="530" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700" fill="#fff">12</text>
-        <rect x="580" y="32" width="80" height="50" fill="#0f1e38" />
-        <text x="620" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700" fill="#fff">3</text>
-        <rect x="670" y="32" width="80" height="50" fill="#0f1e38" />
-        <text x="710" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700" fill="#fff">4</text>
-        <rect x="760" y="32" width="110" height="50" fill="#0f1e38" opacity="0.4" />
-        <text x="815" y="62" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#fff">token_ids</text>
-        <text x="680" y="102" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="12" fill="#3a4458">= 세 개의 <tspan fill="#E35205" font-weight="700">기호 조각</tspan> · 크기 정보 없음</text>
-      </svg>
-    </div>
-
-    <div class="split" style="grid-template-columns: 1.2fr 1fr; margin-top:14px; gap:20px; align-items: start;">
-      <div class="left">
-        <div class="subhead" style="margin-top:0;">그래서 생기는 문제들</div>
-        <div class="nlist">
-          <div class="item">
-            <div class="num">01</div>
-            <div class="txt"><b>큰 수 곱셈·나눗셈.</b> 자리수가 길어지면 <em>자릿수 덧셈 규칙</em>을 못 따라간다.</div>
-          </div>
-          <div class="item">
-            <div class="num">02</div>
-            <div class="txt"><b>통계·퍼센트.</b> "전체의 몇 %"를 묻는 순간 <em>그럴듯한 숫자</em>를 지어낸다.</div>
-          </div>
-          <div class="item">
-            <div class="num">03</div>
-            <div class="txt"><b>날짜·단위 환산.</b> "3월 첫째 주 화요일?"에 <em>자신있게 틀린 요일</em>을 답한다.</div>
-          </div>
-        </div>
-      </div>
-      <div class="right">
-        <div class="subhead" style="margin-top:0;">해결 · Tool Use</div>
-        <div style="margin-top:6px; display:grid; grid-template-columns:1fr; gap:10px;">
-          <div style="padding:12px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
-            <div style="font-size:12.5px; font-weight:900; color:#FFE4D0; margin-bottom:4px;">LLM 혼자</div>
-            <div style="font-size:11.5px; opacity:0.92; line-height:1.5;">숫자도 말로 때운다. <em>자신있게 틀린다</em><br /><span style="opacity:0.8;">→ hallucination risk</span></div>
-          </div>
-          <div style="padding:12px 15px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
-            <div style="font-size:12.5px; font-weight:900; margin-bottom:4px;">LLM + 도구</div>
-            <div style="font-size:11.5px; opacity:0.95; line-height:1.5;">계산기·SQL·Python을 <em>호출</em>해 정답<br /><span style="opacity:0.9;">→ tool use · function calling</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="insight" style="margin-top:14px; padding:12px 20px;">
-      <span class="label">▲ 그래도 사람이 필요하다</span>
-      <span class="text" style="font-size:15px;">
+<!-- Comparison: how LLM "sees" 1234 -->
+<div style="margin-top:12px; padding:12px 20px; background: var(--bg-white); border:1px solid var(--line);">
+<div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:6px;">HOW THE LLM "SEES" 1234 · 모델이 숫자를 어떻게 보는가</div>
+<svg style="width:100%; height:auto; display:block;" viewbox="0 0 900 130" xmlns="http://www.w3.org/2000/svg">
+<!-- Human view -->
+<text fill="#0f1e38" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" letter-spacing="1" x="30" y="22">사람의 시선</text>
+<rect fill="#E35205" height="50" width="380" x="30" y="32"></rect>
+<text fill="#fff" font-family="Pretendard Variable, sans-serif" font-size="28" font-weight="900" text-anchor="middle" x="220" y="62">1234</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" text-anchor="middle" x="220" y="102">= 천 이백 삼십 사 · <tspan fill="#E35205" font-weight="700">크기와 자리수</tspan></text>
+<!-- vs -->
+<text fill="#0f1e38" font-family="Pretendard Variable, sans-serif" font-size="26" font-weight="900" opacity="0.4" text-anchor="middle" x="450" y="62">vs</text>
+<!-- LLM view: tokens -->
+<text fill="#0f1e38" font-family="JetBrains Mono, monospace" font-size="11" font-weight="700" letter-spacing="1" x="490" y="22">LLM의 시선 · 토큰으로 쪼갬</text>
+<rect fill="#0f1e38" height="50" width="80" x="490" y="32"></rect>
+<text fill="#fff" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700" text-anchor="middle" x="530" y="62">12</text>
+<rect fill="#0f1e38" height="50" width="80" x="580" y="32"></rect>
+<text fill="#fff" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700" text-anchor="middle" x="620" y="62">3</text>
+<rect fill="#0f1e38" height="50" width="80" x="670" y="32"></rect>
+<text fill="#fff" font-family="JetBrains Mono, monospace" font-size="20" font-weight="700" text-anchor="middle" x="710" y="62">4</text>
+<rect fill="#0f1e38" height="50" opacity="0.4" width="110" x="760" y="32"></rect>
+<text fill="#fff" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle" x="815" y="62">token_ids</text>
+<text fill="#3a4458" font-family="Pretendard Variable, sans-serif" font-size="12" text-anchor="middle" x="680" y="102">= 세 개의 <tspan fill="#E35205" font-weight="700">기호 조각</tspan> · 크기 정보 없음</text>
+</svg>
+</div>
+<div class="split" style="grid-template-columns: 1.2fr 1fr; margin-top:14px; gap:20px; align-items: start;">
+<div class="left">
+<div class="subhead" style="margin-top:0;">그래서 생기는 문제들</div>
+<div class="nlist">
+<div class="item">
+<div class="num">01</div>
+<div class="txt"><b>큰 수 곱셈·나눗셈.</b> 자리수가 길어지면 <em>자릿수 덧셈 규칙</em>을 못 따라간다.</div>
+</div>
+<div class="item">
+<div class="num">02</div>
+<div class="txt"><b>통계·퍼센트.</b> "전체의 몇 %"를 묻는 순간 <em>그럴듯한 숫자</em>를 지어낸다.</div>
+</div>
+<div class="item">
+<div class="num">03</div>
+<div class="txt"><b>날짜·단위 환산.</b> "3월 첫째 주 화요일?"에 <em>자신있게 틀린 요일</em>을 답한다.</div>
+</div>
+</div>
+</div>
+<div class="right">
+<div class="subhead" style="margin-top:0;">해결 · Tool Use</div>
+<div style="margin-top:6px; display:grid; grid-template-columns:1fr; gap:10px;">
+<div style="padding:12px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+<div style="font-size:12.5px; font-weight:900; color:#FFE4D0; margin-bottom:4px;">LLM 혼자</div>
+<div style="font-size:11.5px; opacity:0.92; line-height:1.5;">숫자도 말로 때운다. <em>자신있게 틀린다</em><br/><span style="opacity:0.8;">→ hallucination risk</span></div>
+</div>
+<div style="padding:12px 15px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+<div style="font-size:12.5px; font-weight:900; margin-bottom:4px;">LLM + 도구</div>
+<div style="font-size:11.5px; opacity:0.95; line-height:1.5;">계산기·SQL·Python을 <em style="color:#FFE4D0;">호출</em>해 정답<br/><span style="opacity:0.9;">→ tool use · function calling</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="insight" style="margin-top:14px; padding:12px 20px;">
+<span class="label">▲ 그래도 사람이 필요하다</span>
+<span class="text" style="font-size:15px;">
         도구 호출은 <strong>해결의 시작</strong>일 뿐. <em>어떤 도구를 언제 불러야 하는지</em>,
         그 결과가 <em>맞게 해석됐는지</em>는 — 여전히 사람의 판단이다.
       </span>
-    </div>
-
-    <div class="foot">
-      <span class="left">이유 ② · 수치·수학의 몰이해 · Tool Use</span>
-      <span class="right"><b>04</b> / 07</span>
-    </div>
-  </div>
+</div>
+<div class="foot">
+<span class="left">이유 ② · 수치·수학의 몰이해 · Tool Use</span>
+<span class="right"><b>04</b> / 07</span>
+</div>
+</div>
 </body></html>
