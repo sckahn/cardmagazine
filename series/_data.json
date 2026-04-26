@@ -313,5 +313,26 @@
       "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 17,
+    "slug": "time",
+    "name": "Time",
+    "hanja": "時",
+    "subtitle": "엔트로피·상대성·Self-Attention",
+    "desc": "볼츠만 · 삼체와 나비효과 · 아인슈타인 · 베르그손 · LLM Self-Attention · Diffusion 역산 — 시간의 네 얼굴.",
+    "slides": [
+      "01-cover.png",
+      "02-boltzmann.png",
+      "03-chaos.png",
+      "04-arrow.png",
+      "05-einstein.png",
+      "06-bergson.png",
+      "07-attention.png",
+      "08-diffusion.png",
+      "09-ai-time.png",
+      "10-outro.png"
+    ],
+    "count": 10
   }
 ]

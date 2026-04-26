@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Self-Attention</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × TIME</div>
+      <div class="chaptertag">LLM &nbsp;·&nbsp; 과거를 다시 읽는 법</div>
+    </div>
+    <div class="era">
+      <span class="year">2017</span>
+      <span class="label"><b>"Attention Is All You Need" · Vaswani et al.</b><span class="sub">Self-Attention · Transformer</span></span>
+    </div>
+    <h1 class="title sm">AI는 한 문장을 <em>동시에</em><br />모두 봅니다.</h1>
+
+    <div class="body" style="margin-top:12px; font-size:14.5px;">
+      <p>사람이 글을 읽을 때는 <b>왼쪽에서 오른쪽</b>으로 — 시간 순서대로 읽습니다. 2017년 이전의 AI(RNN·LSTM)도 그랬습니다. 그런데 트랜스포머 이후의 LLM은 다릅니다. 문장을 받으면 — <em>모든 단어를 동시에 서로 바라봅니다</em>. 이것을 <b>셀프 어텐션</b>이라 부릅니다.</p>
+    </div>
+
+    <!-- Self-attention diagram SVG -->
+    <svg viewBox="0 0 700 150" style="width:100%; height:150px; margin-top:14px;">
+      <defs>
+        <marker id="arrowh" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L7,3 z" fill="#E35205"/>
+        </marker>
+      </defs>
+      <!-- 5 tokens -->
+      <g font-family="Pretendard Variable" font-size="15" font-weight="700" fill="#0f1e38">
+        <rect x="30" y="60" width="100" height="40" rx="4" fill="rgba(227,82,5,0.12)" stroke="#E35205" stroke-width="1.5"/>
+        <text x="80" y="85" text-anchor="middle">나는</text>
+        <rect x="160" y="60" width="100" height="40" rx="4" fill="rgba(227,82,5,0.08)" stroke="#E35205" stroke-width="1"/>
+        <text x="210" y="85" text-anchor="middle">어제</text>
+        <rect x="290" y="60" width="100" height="40" rx="4" fill="rgba(227,82,5,0.25)" stroke="#E35205" stroke-width="2"/>
+        <text x="340" y="85" text-anchor="middle">책을</text>
+        <rect x="420" y="60" width="100" height="40" rx="4" fill="rgba(227,82,5,0.10)" stroke="#E35205" stroke-width="1"/>
+        <text x="470" y="85" text-anchor="middle">읽었</text>
+        <rect x="550" y="60" width="100" height="40" rx="4" fill="rgba(227,82,5,0.06)" stroke="#E35205" stroke-width="1"/>
+        <text x="600" y="85" text-anchor="middle">습니다</text>
+      </g>
+      <!-- attention arcs from "책을" to every other token -->
+      <g fill="none" stroke="#E35205" stroke-width="1.3" opacity="0.65">
+        <path d="M 340 60 Q 210 15 80 60" marker-end="url(#arrowh)"/>
+        <path d="M 340 60 Q 275 15 210 60" marker-end="url(#arrowh)"/>
+        <path d="M 340 60 Q 405 15 470 60" marker-end="url(#arrowh)"/>
+        <path d="M 340 60 Q 470 15 600 60" marker-end="url(#arrowh)"/>
+      </g>
+      <text x="340" y="130" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">"책을"이 — 모든 단어를 동시에 바라봅니다</text>
+    </svg>
+
+    <!-- Time concepts mapped -->
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:12px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0;">사람의 읽기</div>
+        <div style="font-size:11.5px; opacity:0.92; line-height:1.5; margin-top:4px;">왼쪽 → 오른쪽. 과거가 <em style="color:#FFE4D0;">고정</em>되고, 현재만 읽습니다. 일직선.</div>
+      </div>
+      <div style="padding:12px 16px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0;">LLM의 읽기</div>
+        <div style="font-size:11.5px; opacity:0.95; line-height:1.5; margin-top:4px;">모든 자리에서 <em style="color:#FFE4D0;">뒤를 다시</em> 읽습니다. 과거도 현재도 동시에.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ 의미</span>
+      <span class="text" style="font-size:13.5px;">LLM에게 <em>시간은 축</em>이 아니라 — <b>지도</b>입니다. 어느 단어에서든 모든 과거를 다시 볼 수 있습니다. 시간이 평평해진 기계입니다.</span>
+    </div>
+
+    <!-- What this changes — three consequences -->
+    <div style="margin-top:12px; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.2px; color:var(--brand); font-weight:700;">문맥 이해</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">먼 곳의 단어까지 <b>동시에</b> 참고합니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.2px; color:var(--brand); font-weight:700;">병렬 처리</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">순서 대신 — GPU가 <b>한 번에</b> 계산합니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.2px; color:var(--brand); font-weight:700;">과거의 현재화</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">모든 지점이 <b>다른 지점</b>을 다시 만집니다.</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left">LLM · 2017</span>
+      <span class="right"><b>07</b> / 10</span>
+    </div>
+  </div>
+</body></html>
