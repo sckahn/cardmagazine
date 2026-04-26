@@ -2,8 +2,10 @@
 <html lang="ko"><head><meta charset="UTF-8" />
 <title>AI × Philosophy · Issue 01</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="../styles/site.css" />
-</head><body class="reader">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../styles/site.css?v=12" />
+<link rel="stylesheet" href="../styles/magazine.css?v=12" />
+</head><body>
 
 <nav class="site-nav">
   <div class="site-nav-inner">
@@ -12,205 +14,325 @@
   </div>
 </nav>
 
-<section class="flipbook" id="flipbook" data-total="16" data-last-card="15">
-  <button class="turn prev-btn" aria-label="Previous card">‹</button>
-  <div class="viewport" tabindex="0">
-      <div class="slide active" data-idx="1" data-src="../1-cards-philosophy/01-cover.html"></div>
-      <div class="slide" data-idx="2" data-src="../1-cards-philosophy/02-turing-intro.html"></div>
-      <div class="slide" data-idx="3" data-src="../1-cards-philosophy/03-turing-logic.html"></div>
-      <div class="slide" data-idx="4" data-src="../1-cards-philosophy/04-eliza-birth.html"></div>
-      <div class="slide" data-idx="5" data-src="../1-cards-philosophy/05-eliza-effect.html"></div>
-      <div class="slide" data-idx="6" data-src="../1-cards-philosophy/06-chinese-room-experiment.html"></div>
-      <div class="slide" data-idx="7" data-src="../1-cards-philosophy/07-chinese-room-replies.html"></div>
-      <div class="slide" data-idx="8" data-src="../1-cards-philosophy/08-part1-close.html"></div>
-      <div class="slide" data-idx="9" data-src="../1-cards-philosophy/09-part2-open.html"></div>
-      <div class="slide" data-idx="10" data-src="../1-cards-philosophy/10-parrots-context.html"></div>
-      <div class="slide" data-idx="11" data-src="../1-cards-philosophy/11-parrots-claim.html"></div>
-      <div class="slide" data-idx="12" data-src="../1-cards-philosophy/12-theseus-classic.html"></div>
-      <div class="slide" data-idx="13" data-src="../1-cards-philosophy/13-theseus-ai.html"></div>
-      <div class="slide" data-idx="14" data-src="../1-cards-philosophy/14-koch-physical-ai.html"></div>
-      <div class="slide" data-idx="15" data-src="../1-cards-philosophy/15-outro.html"></div>
-      <div class="slide end-card" data-idx="16">
-        <div class="end-card-inner">
-          <div class="end-kicker">NEXT · ISSUE 02</div>
-          <img class="end-cover" src="../2-outputs-taste/01-cover.png" alt="Taste cover" loading="lazy" />
-          <h2 class="end-title">AI × <em>Taste</em></h2>
-          <p class="end-sub">AI는 왜 맛을 모르는가</p>
-          <a class="end-cta" href="taste.html">다음 이슈 보기 →</a>
-        </div>
+<div class="mag-shell">
+  <aside class="mag-side">
+    <div class="side-kicker">Issue 01</div>
+    <h2>AI × <em>Philosophy</em></h2>
+    <div class="side-sub">AI가 처음 만난 철학자들 — 여섯 개의 사고실험으로 AI를 되묻다.</div>
+
+    <div class="progress-outer"><div class="progress-inner" id="progress"></div></div>
+
+    <nav aria-label="목차">
+      <ol id="toc">
+        <li><a href="#card-01" class="current"><span class="num">01</span>표지</a></li>
+        <li><a href="#card-02"><span class="num">02</span>튜링 · 1950</a></li>
+        <li><a href="#card-03"><span class="num">03</span>튜링 테스트</a></li>
+        <li><a href="#card-04"><span class="num">04</span>ELIZA · 1966</a></li>
+        <li><a href="#card-05"><span class="num">05</span>ELIZA 효과</a></li>
+        <li><a href="#card-06"><span class="num">06</span>중국인 방</a></li>
+        <li><a href="#card-07"><span class="num">07</span>반론들</a></li>
+        <li><a href="#card-08"><span class="num">08</span>1부 마무리</a></li>
+        <li><a href="#card-09"><span class="num">09</span>2부 시작</a></li>
+        <li><a href="#card-10"><span class="num">10</span>앵무새 · 배경</a></li>
+        <li><a href="#card-11"><span class="num">11</span>앵무새의 주장</a></li>
+        <li><a href="#card-12"><span class="num">12</span>테세우스의 배</a></li>
+        <li><a href="#card-13"><span class="num">13</span>테세우스 × AI</a></li>
+        <li><a href="#card-14"><span class="num">14</span>Physical AI</a></li>
+        <li><a href="#card-15"><span class="num">15</span>마무리</a></li>
+      </ol>
+    </nav>
+
+    <div class="side-foot">Card News Magazine</div>
+  </aside>
+
+  <main class="mag-main">
+    <article class="mag-article loading" id="card-01" data-card="../1-cards-philosophy/01-cover.html">
+      <div class="mag-num">ISSUE 01 · <b>01</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-02" data-card="../1-cards-philosophy/02-turing-intro.html">
+      <div class="mag-num">ISSUE 01 · <b>02</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-03" data-card="../1-cards-philosophy/03-turing-logic.html">
+      <div class="mag-num">ISSUE 01 · <b>03</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-04" data-card="../1-cards-philosophy/04-eliza-birth.html">
+      <div class="mag-num">ISSUE 01 · <b>04</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-05" data-card="../1-cards-philosophy/05-eliza-effect.html">
+      <div class="mag-num">ISSUE 01 · <b>05</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-06" data-card="../1-cards-philosophy/06-chinese-room-experiment.html">
+      <div class="mag-num">ISSUE 01 · <b>06</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-07" data-card="../1-cards-philosophy/07-chinese-room-replies.html">
+      <div class="mag-num">ISSUE 01 · <b>07</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-08" data-card="../1-cards-philosophy/08-part1-close.html">
+      <div class="mag-num">ISSUE 01 · <b>08</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-09" data-card="../1-cards-philosophy/09-part2-open.html">
+      <div class="mag-num">ISSUE 01 · <b>09</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-10" data-card="../1-cards-philosophy/10-parrots-context.html">
+      <div class="mag-num">ISSUE 01 · <b>10</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-11" data-card="../1-cards-philosophy/11-parrots-claim.html">
+      <div class="mag-num">ISSUE 01 · <b>11</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-12" data-card="../1-cards-philosophy/12-theseus-classic.html">
+      <div class="mag-num">ISSUE 01 · <b>12</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-13" data-card="../1-cards-philosophy/13-theseus-ai.html">
+      <div class="mag-num">ISSUE 01 · <b>13</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-14" data-card="../1-cards-philosophy/14-koch-physical-ai.html">
+      <div class="mag-num">ISSUE 01 · <b>14</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-15" data-card="../1-cards-philosophy/15-outro.html">
+      <div class="mag-num">ISSUE 01 · <b>15</b> / 15</div>
+      <div class="card-content">Loading…</div>
+    </article>
+
+    <aside class="mag-next">
+      <img class="next-cover" src="../2-outputs-taste/01-cover.png" alt="AI × Taste cover" />
+      <div>
+        <div class="next-kicker">NEXT · ISSUE 02</div>
+        <h3 class="next-title">AI × <em>Taste</em></h3>
+        <p class="next-sub">AI는 왜 맛을 모르는가 — 이어령 &quot;미각은 제일 나중&quot; · 다섯 감각의 합성 · 후각 80%.</p>
+        <a class="next-cta" href="taste.html">다음 이슈 보기 →</a>
       </div>
-  </div>
-  <button class="turn next-btn" aria-label="Next card">›</button>
+    </aside>
+  </main>
+</div>
 
-  <div class="reader-bar">
-    <div class="progress"><div class="fill" style="width: 6.25%"></div></div>
-    <div class="meta-row">
-      <span>AI × Philosophy</span>
-      <span class="counter"><b><span id="cur">1</span></b> <span style="opacity:0.5;">/</span> 15</span>
-      <button class="thumbs-toggle" aria-expanded="false" aria-controls="thumbs">목차</button>
-    </div>
-    <div class="thumbs" id="thumbs" role="tablist" aria-label="Card thumbnails">
-    <button class="thumb active" data-goto="1" aria-label="Go to card 1"><img src="../1-outputs-philosophy/01-cover.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="2" aria-label="Go to card 2"><img src="../1-outputs-philosophy/02-turing-intro.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="3" aria-label="Go to card 3"><img src="../1-outputs-philosophy/03-turing-logic.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="4" aria-label="Go to card 4"><img src="../1-outputs-philosophy/04-eliza-birth.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="5" aria-label="Go to card 5"><img src="../1-outputs-philosophy/05-eliza-effect.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="6" aria-label="Go to card 6"><img src="../1-outputs-philosophy/06-chinese-room-experiment.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="7" aria-label="Go to card 7"><img src="../1-outputs-philosophy/07-chinese-room-replies.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="8" aria-label="Go to card 8"><img src="../1-outputs-philosophy/08-part1-close.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="9" aria-label="Go to card 9"><img src="../1-outputs-philosophy/09-part2-open.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="10" aria-label="Go to card 10"><img src="../1-outputs-philosophy/10-parrots-context.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="11" aria-label="Go to card 11"><img src="../1-outputs-philosophy/11-parrots-claim.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="12" aria-label="Go to card 12"><img src="../1-outputs-philosophy/12-theseus-classic.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="13" aria-label="Go to card 13"><img src="../1-outputs-philosophy/13-theseus-ai.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="14" aria-label="Go to card 14"><img src="../1-outputs-philosophy/14-koch-physical-ai.png" loading="lazy" alt="" /></button>
-    <button class="thumb" data-goto="15" aria-label="Go to card 15"><img src="../1-outputs-philosophy/15-outro.png" loading="lazy" alt="" /></button>
-    </div>
-  </div>
-</section>
+<button class="mag-top" id="magTop" aria-label="맨 위로">↑</button>
 
-<nav class="nav-strip">
-  <span></span>
-  <a href="../">Home</a>
-  <a class="next" href="taste.html">Issue 02 · Taste</a>
-</nav>
+<footer class="site-foot">
+  <span>AI × Series · Card News Magazine</span>
+  <span>Issue 01 · Philosophy</span>
+</footer>
 
 <script>
-(function () {
-  const book = document.getElementById('flipbook');
-  const total = parseInt(book.dataset.total, 10);
-  const lastCard = parseInt(book.dataset.lastCard, 10);
-  const slides = book.querySelectorAll('.slide');
-  const thumbs = book.querySelectorAll('.thumb');
-  const cur = document.getElementById('cur');
-  const prevBtn = book.querySelector('.prev-btn');
-  const nextBtn = book.querySelector('.next-btn');
-  const progressFill = book.querySelector('.progress .fill');
-  const thumbsDrawer = book.querySelector('.thumbs');
-  const thumbsToggle = book.querySelector('.thumbs-toggle');
-  const viewport = book.querySelector('.viewport');
+(async function () {
+  // --- 1) Fetch the card stylesheet once and scope it to .mag-article ---
+  const cardCssUrl = '../style.css?v=12';
+  let cardCss = '';
+  try {
+    cardCss = await fetch(cardCssUrl).then(r => r.text());
+  } catch (e) { console.error('Failed to load card CSS', e); }
 
-  const flipL = document.createElement('div'); flipL.className = 'page-flip left';
-  const flipR = document.createElement('div'); flipR.className = 'page-flip right';
-  viewport.appendChild(flipL); viewport.appendChild(flipR);
+  function scopeCardCss(css) {
+    // Remove the 1080×1080 lockdown on html/body
+    css = css.replace(/html\s*,\s*body\s*\{[^}]*\}/g, '');
+    // Strip overflow:hidden from body rule — it would become .mag-article
+    // and trap touch-scroll on mobile. We'll drop overflow from body block.
+    css = css.replace(/(body\s*\{[^}]*?)overflow\s*:\s*hidden\s*;?/g, '$1');
+    // Scope body-level rules to .mag-article (so card background/typography
+    // applies inside each article without invading the site shell)
+    css = css.replace(/(^|\})\s*body\s*\{/g, '$1.mag-article {');
+    css = css.replace(/body::after\s*\{/g, '.mag-article::after {');
+    // Limit the "kill italic" blast to within articles only, so the site
+    // nav's italic <em> (Playfair) is preserved.
+    css = css.replace(
+      /\*\s*,\s*\*::before\s*,\s*\*::after\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article *, .mag-article *::before, .mag-article *::after { font-style: normal !important; }'
+    );
+    css = css.replace(
+      /em\s*,\s*i\s*,\s*cite\s*,\s*address\s*,\s*dfn\s*,\s*var\s*,\s*blockquote\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article em, .mag-article i, .mag-article cite, .mag-article address, .mag-article dfn, .mag-article var, .mag-article blockquote { font-style: normal !important; }'
+    );
+    // Scope cover/outro modifiers (they were on body)
+    css = css.replace(/\.cover\s+\.stage/g, '.mag-article.cover-like .stage');
+    css = css.replace(/\.cover\s+\.kicker/g, '.mag-article.cover-like .kicker');
+    css = css.replace(/\.cover\s+\.hello/g, '.mag-article.cover-like .hello');
+    css = css.replace(/\.cover\s+h1\.hero/g, '.mag-article.cover-like h1.hero');
+    css = css.replace(/\.cover\s+\.lead/g, '.mag-article.cover-like .lead');
+    css = css.replace(/\.cover\s+\.timeline/g, '.mag-article.cover-like .timeline');
+    css = css.replace(/\.outro\s+\.stage/g, '.mag-article.outro-like .stage');
+    css = css.replace(/\.outro\s+\.flourish/g, '.mag-article.outro-like .flourish');
+    css = css.replace(/\.outro\s+\.ask/g, '.mag-article.outro-like .ask');
+    css = css.replace(/\.outro\s+\.closing/g, '.mag-article.outro-like .closing');
+    css = css.replace(/\.outro\s+\.tags/g, '.mag-article.outro-like .tags');
+    return css;
+  }
 
-  function getSlide(i) { return book.querySelector('.slide[data-idx="' + i + '"]'); }
-  function mount(el) {
-    if (!el || el.querySelector('iframe') || !el.dataset.src) return;
-    const ifr = document.createElement('iframe');
-    ifr.src = el.dataset.src;
-    ifr.loading = 'lazy';
-    ifr.setAttribute('scrolling', 'no');
-    el.appendChild(ifr);
-    applyScale(ifr);
+  if (cardCss) {
+    const style = document.createElement('style');
+    style.id = 'card-css-scoped';
+    style.textContent = scopeCardCss(cardCss);
+    document.head.appendChild(style);
   }
-  function unmount(el) {
-    if (!el) return;
-    const ifr = el.querySelector('iframe'); if (ifr) ifr.remove();
+
+  // --- 2) Fetch each card, extract .stage and inject into its article ---
+  const articles = Array.from(document.querySelectorAll('.mag-article[data-card]'));
+
+  async function loadCard(article) {
+    const url = article.dataset.card;
+    try {
+      const html = await fetch(url).then(r => r.text());
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const body = doc.body;
+      const stage = body.querySelector('.stage');
+      if (!stage) throw new Error('No .stage in ' + url);
+
+      // Fix relative asset paths: card HTML references "../images/..."
+      // but when injected into /series/ path the relative base still resolves
+      // from the series page URL. Since series/ is a sibling of images/,
+      // "../images/..." still works from /series/*.html too.
+      // So leave as-is.
+
+      // Inherit body class (cover / outro) as a modifier on the article
+      if (body.classList.contains('cover')) article.classList.add('cover-like');
+      if (body.classList.contains('outro')) article.classList.add('outro-like');
+
+      const slot = article.querySelector('.card-content');
+      slot.innerHTML = '';
+      // Move the .stage itself (keeps its flex layout rules predictable)
+      const imported = document.importNode(stage, true);
+      slot.appendChild(imported);
+
+      article.classList.remove('loading');
+    } catch (e) {
+      console.error('Card load failed', url, e);
+      article.querySelector('.card-content').textContent = '카드를 불러오지 못했습니다.';
+      article.classList.remove('loading');
+    }
   }
-  function applyScale(ifr) {
-    const r = viewport.getBoundingClientRect();
-    const scale = r.width / 1080;
-    ifr.style.transform = 'scale(' + scale + ')';
+
+  // Load all in parallel — they're just HTML fragments, fast
+  await Promise.all(articles.map(loadCard));
+
+  // --- 3) Scroll spy: highlight current TOC entry + progress bar ---
+  const tocLinks = Array.from(document.querySelectorAll('#toc a'));
+  const progressBar = document.getElementById('progress');
+  const tocMap = new Map();
+  tocLinks.forEach(a => tocMap.set(a.getAttribute('href').slice(1), a));
+
+  const sidebar = document.querySelector('.mag-side');
+  function scrollSidebarTo(link) {
+    // Keep the highlighted TOC link visible inside the sidebar without
+    // touching window scroll. Native scrollIntoView would scroll every
+    // scrollable ancestor, including document — pulling the whole page
+    // back to the top.
+    if (!sidebar || !link) return;
+    const sr = sidebar.getBoundingClientRect();
+    const lr = link.getBoundingClientRect();
+    if (lr.top < sr.top + 20) {
+      sidebar.scrollTop += lr.top - sr.top - 20;
+    } else if (lr.bottom > sr.bottom - 20) {
+      sidebar.scrollTop += lr.bottom - sr.bottom + 20;
+    }
   }
-  function rescaleAll() { viewport.querySelectorAll('iframe').forEach(applyScale); }
-  window.addEventListener('resize', rescaleAll);
-  function manageMount(center) {
-    slides.forEach(el => {
-      const i = parseInt(el.dataset.idx, 10);
-      if (!el.dataset.src) return;
-      if (Math.abs(i - center) <= 1) mount(el); else unmount(el);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        tocLinks.forEach(a => a.classList.toggle('current', a.getAttribute('href') === '#' + id));
+        scrollSidebarTo(tocMap.get(id));
+      }
     });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  articles.forEach(a => io.observe(a));
+
+  function updateProgress() {
+    const doc = document.documentElement;
+    const scrolled = doc.scrollTop || document.body.scrollTop;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (scrolled / max) * 100)) : 0;
+    progressBar.style.width = pct + '%';
   }
-  let idx = 1, animating = false;
-  function updateChrome(next) {
-    if (next <= lastCard) {
-      thumbs.forEach(el => el.classList.toggle('active', parseInt(el.dataset.goto,10) === next));
-      cur.textContent = next;
-    } else { thumbs.forEach(el => el.classList.remove('active')); cur.textContent = '—'; }
-    prevBtn.disabled = next === 1;
-    nextBtn.disabled = next === total;
-    progressFill.style.width = (next / total * 100) + '%';
-    const hash = next <= lastCard ? 'card-' + String(next).padStart(2,'0') : 'end';
-    history.replaceState(null, '', '#' + hash);
-    const active = book.querySelector('.thumb.active');
-    if (active) active.scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'});
-  }
-  function runFlip(forward) {
-    const el = forward ? flipR : flipL;
-    el.classList.remove('flip-fwd', 'flip-back');
-    void el.offsetWidth;
-    el.classList.add(forward ? 'flip-fwd' : 'flip-back');
-    setTimeout(() => el.classList.remove('flip-fwd', 'flip-back'), 620);
-  }
-  function go(next, opts) {
-    next = Math.max(1, Math.min(total, next));
-    if (next === idx || animating) return;
-    opts = opts || {};
-    const forward = next > idx;
-    const out = getSlide(idx);
-    const inEl = getSlide(next);
-    if (!out || !inEl) return;
-    animating = true;
-    manageMount(next);
-    if (opts.jump) {
-      slides.forEach(el => el.classList.remove('active','turning-out','turning-back-out','turning-back-in'));
-      inEl.classList.add('active');
-      idx = next;
-      updateChrome(next);
-      animating = false;
-      return;
-    }
-    if (forward) {
-      out.classList.add('turning-out');
-      out.classList.remove('active');
-      runFlip(true);
-      setTimeout(() => { inEl.classList.add('active'); }, 80);
-      setTimeout(() => { out.classList.remove('turning-out'); animating = false; }, 620);
-    } else {
-      out.classList.add('turning-back-out');
-      out.classList.remove('active');
-      runFlip(false);
-      inEl.classList.add('turning-back-in');
-      void inEl.offsetWidth;
-      setTimeout(() => { inEl.classList.remove('turning-back-in'); inEl.classList.add('active'); }, 40);
-      setTimeout(() => { out.classList.remove('turning-back-out'); animating = false; }, 620);
-    }
-    idx = next;
-    updateChrome(next);
-  }
-  prevBtn.addEventListener('click', () => go(idx - 1));
-  nextBtn.addEventListener('click', () => go(idx + 1));
-  thumbs.forEach(t => t.addEventListener('click', () => {
-    const target = parseInt(t.dataset.goto, 10);
-    go(target, { jump: Math.abs(target - idx) > 1 });
-  }));
-  thumbsToggle.addEventListener('click', () => {
-    const open = thumbsDrawer.classList.toggle('open');
-    thumbsToggle.setAttribute('aria-expanded', open);
+  document.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Smooth scroll for TOC clicks
+  tocLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+    });
   });
+
+  // Honor #card-NN on load
+  if (location.hash && /^#card-\d+$/.test(location.hash)) {
+    const t = document.getElementById(location.hash.slice(1));
+    if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' });
+  }
+
+  // --- 4) Keyboard + wheel paging, with a JS-only currentIdx ---
+  const paged = articles.concat(Array.from(document.querySelectorAll('.mag-next')));
+  const NAV_OFFSET = 68;
+  let currentIdx = 0;
+  let scrollLockUntil = 0;
+
+  // One-time initial sync from scroll (e.g. when loaded with #card-05)
+  (function initFromScroll() {
+    const y = window.scrollY + NAV_OFFSET + 2;
+    for (let i = 0; i < paged.length; i++) {
+      const top = paged[i].getBoundingClientRect().top + window.scrollY;
+      if (top <= y + 4) currentIdx = i; else break;
+    }
+  })();
+
+  function goToIndex(i) {
+    i = Math.max(0, Math.min(paged.length - 1, i));
+    currentIdx = i;
+    const top = paged[i].getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+    scrollLockUntil = Date.now() + 600;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  // If the user free-scrolls (wheel, touch, drag), re-sync currentIdx
+  // AFTER the paged scroll lock expires.
+  let scrollRaf = null;
+  document.addEventListener('scroll', () => {
+    if (Date.now() < scrollLockUntil) return;
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(() => {
+      scrollRaf = null;
+      const y = window.scrollY + NAV_OFFSET + 2;
+      for (let i = 0; i < paged.length; i++) {
+        const top = paged[i].getBoundingClientRect().top + window.scrollY;
+        if (top <= y + 4) currentIdx = i; else break;
+      }
+    });
+  }, { passive: true });
+
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') go(idx - 1);
-    else if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); go(idx + 1); }
-    else if (e.key === 'Home') go(1, { jump: true });
-    else if (e.key === 'End') go(total, { jump: true });
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goToIndex(currentIdx + 1); }
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp')  { e.preventDefault(); goToIndex(currentIdx - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); goToIndex(0); }
+    else if (e.key === 'End')  { e.preventDefault(); goToIndex(paged.length - 1); }
   });
-  let startX = null;
-  viewport.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; }, {passive:true});
-  viewport.addEventListener('touchend', (e) => {
-    if (startX === null) return;
-    const dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
-    startX = null;
-  });
-  manageMount(idx);
-  if (location.hash === '#end') go(total, { jump: true });
-  else {
-    const m = location.hash.match(/#card-(\d+)/);
-    if (m) go(parseInt(m[1], 10), { jump: true });
+
+  // --- 5) Floating "back to top" button ---
+  const topBtn = document.getElementById('magTop');
+  if (topBtn) {
+    function syncTopBtn() { topBtn.classList.toggle('visible', window.scrollY > 500); }
+    document.addEventListener('scroll', syncTopBtn, { passive: true });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#card-01');
+    });
+    syncTopBtn();
   }
-  prevBtn.disabled = idx === 1;
-  nextBtn.disabled = idx === total;
 })();
 </script>
 

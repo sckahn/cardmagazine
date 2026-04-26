@@ -1,0 +1,366 @@
+/* =========================================================
+   Magazine Reader — scroll mode for series pages
+   Cards are injected as <article> sections.
+   Overrides 1080×1080 lockdown from ../style.css.
+   ========================================================= */
+
+/* Ensure body scrolls naturally on mobile.
+   site.css sets body.reader padding-bottom for the flipbook reader-bar; we
+   don't use it here. Make sure nothing pins the viewport. */
+body { overflow-x: hidden; overflow-y: auto; }
+
+/* Natural scroll — no snap (it broke sticky sidebar layout).
+   Keyboard and TOC clicks still jump to card boundaries smoothly. */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 68px;
+}
+
+/* Page shell layout — sidebar + main column */
+.mag-shell {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 40px 48px 120px;
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* --- Sticky sidebar TOC --- */
+.mag-side {
+  position: sticky;
+  top: 88px; /* below site-nav */
+  align-self: start;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 8px;
+  font-family: var(--f-sans, 'Pretendard Variable', sans-serif);
+}
+.mag-side .side-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.28em;
+  color: var(--brand); font-weight: 700; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.mag-side h2 {
+  font-size: 28px; font-weight: 900;
+  letter-spacing: -0.025em; color: var(--navy);
+  line-height: 1.15; margin-bottom: 6px;
+}
+.mag-side h2 em { font-family: 'Playfair Display', serif; font-style: italic; color: var(--brand); font-weight: 700; }
+.mag-side .side-sub {
+  font-size: 13.5px; color: var(--ink-mid);
+  line-height: 1.55; margin-bottom: 20px;
+}
+.mag-side nav {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+}
+.mag-side nav ol {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-direction: column; gap: 2px;
+}
+.mag-side nav a {
+  display: flex; gap: 12px; align-items: baseline;
+  padding: 8px 10px;
+  font-size: 13.5px; line-height: 1.4;
+  color: var(--ink-mid);
+  border-left: 2px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.mag-side nav a:hover { color: var(--navy); background: rgba(15,30,56,0.035); }
+.mag-side nav a.current {
+  color: var(--navy); font-weight: 700;
+  border-left-color: var(--brand);
+  background: rgba(227,82,5,0.06);
+}
+.mag-side nav a .num {
+  flex: 0 0 24px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; color: var(--brand);
+  letter-spacing: 0.1em; font-weight: 700;
+  padding-top: 2px;
+}
+.mag-side .progress-outer {
+  margin-top: 16px; height: 3px; background: rgba(15,30,56,0.08);
+}
+.mag-side .progress-inner {
+  height: 100%; width: 0; background: var(--brand);
+  transition: width 0.2s ease;
+}
+.mag-side .side-foot {
+  margin-top: 18px; padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.2em; color: var(--ink-mid);
+  text-transform: uppercase; font-weight: 700;
+}
+
+/* --- Main magazine column --- */
+.mag-main {
+  min-width: 0; /* prevent grid overflow */
+}
+
+/* --- Article (one card, un-caged) --- */
+/* No page frame — treat as a section of a flowing magazine article.
+   Background/border/shadow removed so boundaries don't cut the reading flow. */
+.mag-article {
+  position: relative;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-bottom: 72px;
+  padding: 0;
+  /* overflow: visible — critical so mobile touch scroll chains up to body.
+     The ghost-num / topbar / hanzi-bg inside are already display:none below. */
+}
+/* Page header removed — it was interrupting the reading flow like a card break. */
+.mag-article .mag-num { display: none !important; }
+
+/* --- Unlock the card from its 1080×1080 cage --- */
+/* The card's body becomes our article inner — allow fluid width */
+.mag-article .stage {
+  /* reset fixed geometry */
+  padding: 0 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  display: block !important;
+  overflow: visible !important;
+}
+/* Hide pure decoration that only makes sense at 1080×1080 */
+.mag-article .topbar,
+.mag-article .ghost-num,
+.mag-article .hanzi-bg,
+.mag-article .corner-tri,
+.mag-article .corner-tri-sm,
+.mag-article .foot { display: none !important; }
+/* Hide per-card headers EXCEPT on the first (cover) article. The cover
+   header acts as the magazine masthead — so give it extra breathing space
+   from the sticky site-nav. */
+.mag-article:not(.cover-like) .header { display: none !important; }
+.mag-article.cover-like .header {
+  margin-bottom: 20px !important;
+  padding-bottom: 14px !important;
+}
+/* Kill paper-grain overlay that card CSS paints on article body */
+.mag-article::after { display: none !important; }
+
+/* Tone down cover/outro center-alignment */
+.mag-article.cover-like .stage,
+.mag-article.outro-like .stage {
+  justify-content: flex-start !important;
+  padding-top: 0 !important;
+}
+
+/* Big headlines feel oversized when content becomes wider — keep them strong but calmer */
+.mag-article h1.hero {
+  font-size: clamp(48px, 6vw, 88px) !important;
+  line-height: 1.02 !important;
+}
+.mag-article h1.title {
+  font-size: clamp(40px, 4.6vw, 70px) !important;
+  line-height: 1.06 !important;
+}
+.mag-article h1.title.md { font-size: clamp(36px, 4.2vw, 62px) !important; }
+.mag-article h1.title.sm { font-size: clamp(32px, 3.8vw, 52px) !important; }
+.mag-article .ask {
+  font-size: clamp(40px, 4.6vw, 68px) !important;
+  line-height: 1.1 !important;
+}
+.mag-article .flourish {
+  font-size: clamp(48px, 5.6vw, 78px) !important;
+}
+.mag-article .era .year {
+  font-size: clamp(38px, 4vw, 54px) !important;
+}
+
+/* Portraits: the card CSS gives them aspect-ratio 4/5 — keep but cap width */
+.mag-article .split {
+  grid-template-columns: 1.3fr 1fr !important;
+  gap: clamp(20px, 3vw, 36px) !important;
+}
+.mag-article .split .right .portrait {
+  max-width: 320px;
+}
+
+/* Images inside articles — keep card rules but cap height on wide viewports */
+.mag-article img {
+  max-width: 100%;
+  height: auto;
+}
+.mag-article img[style*="height:"] { /* keep inline heights as declared in cards */ }
+
+/* Contain anything in the card that was positioned absolutely against the
+   1080×1080 body (e.g. decorative overlays we haven't explicitly hidden).
+   They should not push the article wider than the viewport. */
+.mag-article { max-width: 100%; }
+.mag-article * { max-width: 100%; }
+/* Allow grid/flex children to shrink below content width (Korean long words) */
+.mag-article .stage > *,
+.mag-article .split > *,
+.mag-article .row2 > *,
+.mag-article .recap-grid > * { min-width: 0; }
+
+/* Terminal block stretches nicely */
+.mag-article .terminal { max-width: 100%; }
+
+/* Recap/row grids — more breathing room at magazine width */
+.mag-article .recap-grid { gap: clamp(14px, 2vw, 24px) !important; }
+.mag-article .row2 { gap: clamp(16px, 2vw, 28px) !important; }
+
+/* Section separator between articles — editorial rule line */
+.mag-sep {
+  max-width: 180px; height: 1px; background: var(--line);
+  margin: 0 auto 56px;
+  position: relative;
+}
+.mag-sep::before {
+  content: "◇"; position: absolute; left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--bg); padding: 0 10px;
+  color: var(--brand); font-size: 12px;
+}
+
+/* --- Next-issue card at the end --- */
+.mag-next {
+  margin-top: 80px;
+  background: linear-gradient(135deg, #0f1e38, #1c2e4e);
+  color: #fff;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.mag-next::after {
+  content: ""; position: absolute; right: -40px; bottom: -40px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(227,82,5,0.2), transparent 70%);
+}
+.mag-next .next-cover {
+  width: 180px; aspect-ratio: 1/1;
+  border: 2px solid var(--brand);
+  box-shadow: 0 30px 50px -30px rgba(227,82,5,0.6);
+  object-fit: cover;
+  background: var(--bg);
+}
+.mag-next .next-kicker {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.3em; color: var(--brand-soft);
+  font-weight: 700; text-transform: uppercase;
+}
+.mag-next .next-title {
+  font-size: 40px; font-weight: 900; margin-top: 10px;
+  letter-spacing: -0.03em; line-height: 1.1;
+}
+.mag-next .next-title em {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  color: var(--brand-soft); font-weight: 700;
+}
+.mag-next .next-sub {
+  margin-top: 10px; font-size: 15.5px;
+  color: rgba(255,228,208,0.88); line-height: 1.55;
+  max-width: 520px;
+}
+.mag-next .next-cta {
+  margin-top: 20px; display: inline-block;
+  padding: 13px 26px;
+  background: var(--brand); color: #fff;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  border: 2px solid var(--brand);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.mag-next .next-cta:hover { background: transparent; color: var(--brand-soft); }
+
+/* Center the site footer on magazine pages */
+.mag-shell ~ .site-foot {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+/* --- Floating "back to top" button --- */
+.mag-top {
+  position: fixed;
+  right: 28px; bottom: 28px;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 30px -12px rgba(15,30,56,0.5);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; font-weight: 700;
+  opacity: 0; pointer-events: none; transform: translateY(12px);
+  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  z-index: 60;
+}
+.mag-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.mag-top:hover { background: var(--brand); }
+.mag-top:active { transform: translateY(1px); }
+@media (max-width: 640px) {
+  .mag-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+}
+
+/* --- Loading state --- */
+.mag-article.loading {
+  min-height: 300px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--ink-mid);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.2em; text-transform: uppercase;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1100px) {
+  .mag-shell {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 24px 80px;
+  }
+  .mag-side {
+    position: static;
+    max-height: none;
+    padding-right: 0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mag-side nav ol { flex-direction: row; flex-wrap: wrap; gap: 6px; }
+  .mag-side nav a { padding: 6px 10px; border-left: none; border-bottom: 2px solid transparent; }
+  .mag-side nav a.current { border-left-color: transparent; border-bottom-color: var(--brand); }
+  .mag-article { padding: 36px 28px; margin-bottom: 36px; }
+  .mag-next { grid-template-columns: 1fr; padding: 36px 28px; text-align: center; }
+  .mag-next .next-cover { max-width: 200px; margin: 0 auto; }
+}
+@media (max-width: 760px) {
+  .mag-shell { padding: 16px 16px 60px; }
+  .mag-article { margin-bottom: 56px; }
+  .mag-article h1.hero { font-size: 38px !important; }
+  .mag-article h1.title { font-size: 30px !important; line-height: 1.12 !important; }
+  .mag-article h1.title.md,
+  .mag-article h1.title.sm { font-size: 28px !important; }
+  .mag-article .ask { font-size: 32px !important; }
+  .mag-article .flourish { font-size: 40px !important; }
+  /* Collapse structured 2-column blocks to one column.
+     Using inline !important because card HTML sometimes has inline
+     grid-template-columns that would otherwise win. */
+  .mag-article .split,
+  .mag-article .row2,
+  .mag-article .map,
+  .mag-article .recap-grid,
+  .mag-article .tl-chart {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .mag-article .split .right .portrait { max-width: 280px; }
+  .mag-article .era { flex-direction: column; gap: 8px; align-items: flex-start; }
+  .mag-article .era .year { font-size: 42px !important; }
+}
