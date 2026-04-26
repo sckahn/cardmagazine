@@ -25,11 +25,47 @@
 <div class="section-title">
   <h2>모든 <span class="brand-ko">이슈</span></h2>
   <div class="rule" aria-hidden="true"></div>
-  <div class="count"><b>19</b> Issues · Ongoing</div>
+  <div class="count"><b id="issue-count">19</b> Issues · Ongoing</div>
 </div>
 
-<div class="series-grid">
-    <a class="series-card" href="series/philosophy.html">
+<div class="index-controls">
+  <div class="control-row">
+    <div class="control-group">
+      <span class="control-label">View</span>
+      <div class="seg" role="tablist" aria-label="보기 모드">
+        <button type="button" class="seg-btn active" data-view="grid" aria-label="그리드 보기">▦ Grid</button>
+        <button type="button" class="seg-btn" data-view="list" aria-label="리스트 보기">☰ List</button>
+        <button type="button" class="seg-btn" data-view="single" aria-label="단일 보기">▯ Single</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <span class="control-label">Sort</span>
+      <div class="seg" role="tablist" aria-label="정렬">
+        <button type="button" class="seg-btn active" data-sort="desc" aria-label="최신순">↓ 최신</button>
+        <button type="button" class="seg-btn" data-sort="asc" aria-label="오래된 순">↑ 오래된</button>
+      </div>
+    </div>
+  </div>
+  <div class="control-row tags-row">
+    <span class="control-label">Filter</span>
+    <div class="tag-chips" id="tag-chips">
+      <button type="button" class="chip active" data-tag="all">전체</button>
+      <button type="button" class="chip" data-tag="철학">철학</button>
+      <button type="button" class="chip" data-tag="뇌과학">뇌과학</button>
+      <button type="button" class="chip" data-tag="예술">예술</button>
+      <button type="button" class="chip" data-tag="언어">언어</button>
+      <button type="button" class="chip" data-tag="감각">감각</button>
+      <button type="button" class="chip" data-tag="과학">과학</button>
+      <button type="button" class="chip" data-tag="사회">사회</button>
+      <button type="button" class="chip" data-tag="창작">창작</button>
+      <button type="button" class="chip" data-tag="진화">진화</button>
+      <button type="button" class="chip" data-tag="윤리">윤리</button>
+    </div>
+  </div>
+</div>
+
+<div class="series-grid" id="series-grid">
+    <a class="series-card" href="series/philosophy.html" data-slug="philosophy" data-issue="1" data-tags="철학">
       <div class="thumb">
         <img src="1-outputs-philosophy/01-cover.png" alt="AI × Philosophy cover" loading="lazy" />
         <div class="hanja">哲</div>
@@ -42,7 +78,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/taste.html">
+    <a class="series-card" href="series/taste.html" data-slug="taste" data-issue="2" data-tags="감각,철학">
       <div class="thumb">
         <img src="2-outputs-taste/01-cover.png" alt="AI × Taste cover" loading="lazy" />
         <div class="hanja">味</div>
@@ -55,7 +91,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/vibe.html">
+    <a class="series-card" href="series/vibe.html" data-slug="vibe" data-issue="3" data-tags="창작,철학">
       <div class="thumb">
         <img src="3-outputs-vibe/01-cover.png" alt="AI × Vibe cover" loading="lazy" />
         <div class="hanja">遊</div>
@@ -68,7 +104,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/loop.html">
+    <a class="series-card" href="series/loop.html" data-slug="loop" data-issue="4" data-tags="철학,사회">
       <div class="thumb">
         <img src="4-outputs-loop/01-cover.png" alt="AI × Loop cover" loading="lazy" />
         <div class="hanja">環</div>
@@ -81,7 +117,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/canvas.html">
+    <a class="series-card" href="series/canvas.html" data-slug="canvas" data-issue="5" data-tags="예술">
       <div class="thumb">
         <img src="5-outputs-canvas/01-cover.png" alt="AI × Canvas cover" loading="lazy" />
         <div class="hanja">畵</div>
@@ -94,7 +130,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/aura.html">
+    <a class="series-card" href="series/aura.html" data-slug="aura" data-issue="6" data-tags="예술,철학">
       <div class="thumb">
         <img src="6-outputs-aura/01-cover.png" alt="AI × Aura cover" loading="lazy" />
         <div class="hanja">靈</div>
@@ -107,7 +143,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/rhythm.html">
+    <a class="series-card" href="series/rhythm.html" data-slug="rhythm" data-issue="7" data-tags="예술,감각">
       <div class="thumb">
         <img src="7-outputs-rhythm/01-cover.png" alt="AI × Rhythm cover" loading="lazy" />
         <div class="hanja">律</div>
@@ -120,7 +156,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/dream.html">
+    <a class="series-card" href="series/dream.html" data-slug="dream" data-issue="8" data-tags="뇌과학,철학">
       <div class="thumb">
         <img src="8-outputs-dream/01-cover.png" alt="AI × Dream cover" loading="lazy" />
         <div class="hanja">夢</div>
@@ -133,7 +169,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/lingua.html">
+    <a class="series-card" href="series/lingua.html" data-slug="lingua" data-issue="9" data-tags="언어,철학">
       <div class="thumb">
         <img src="9-outputs-lingua/01-cover.png" alt="AI × Lingua cover" loading="lazy" />
         <div class="hanja">語</div>
@@ -146,7 +182,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/bias.html">
+    <a class="series-card" href="series/bias.html" data-slug="bias" data-issue="10" data-tags="사회,윤리">
       <div class="thumb">
         <img src="10-outputs-bias/01-cover.png" alt="AI × Bias cover" loading="lazy" />
         <div class="hanja">鏡</div>
@@ -159,7 +195,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/drive.html">
+    <a class="series-card" href="series/drive.html" data-slug="drive" data-issue="11" data-tags="뇌과학,진화">
       <div class="thumb">
         <img src="11-outputs-drive/01-cover.png" alt="AI × Drive cover" loading="lazy" />
         <div class="hanja">驅</div>
@@ -172,7 +208,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/earth.html">
+    <a class="series-card" href="series/earth.html" data-slug="earth" data-issue="12" data-tags="과학,사회">
       <div class="thumb">
         <img src="12-outputs-earth/01-cover.png" alt="AI × Earth cover" loading="lazy" />
         <div class="hanja">地</div>
@@ -185,7 +221,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/wisdom.html">
+    <a class="series-card" href="series/wisdom.html" data-slug="wisdom" data-issue="13" data-tags="철학,뇌과학">
       <div class="thumb">
         <img src="13-outputs-wisdom/01-cover.png" alt="AI × Wisdom cover" loading="lazy" />
         <div class="hanja">智</div>
@@ -198,7 +234,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/utopia.html">
+    <a class="series-card" href="series/utopia.html" data-slug="utopia" data-issue="14" data-tags="사회,철학">
       <div class="thumb">
         <img src="14-outputs-utopia/01-cover.png" alt="AI × Utopia cover" loading="lazy" />
         <div class="hanja">烏</div>
@@ -211,7 +247,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/cinema.html">
+    <a class="series-card" href="series/cinema.html" data-slug="cinema" data-issue="15" data-tags="예술,철학">
       <div class="thumb">
         <img src="15-outputs-cinema/01-cover.png" alt="AI × Cinema cover" loading="lazy" />
         <div class="hanja">映</div>
@@ -224,7 +260,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/destiny.html">
+    <a class="series-card" href="series/destiny.html" data-slug="destiny" data-issue="16" data-tags="과학,철학">
       <div class="thumb">
         <img src="16-outputs-destiny/01-cover.png" alt="AI × Destiny cover" loading="lazy" />
         <div class="hanja">運</div>
@@ -237,7 +273,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/time.html">
+    <a class="series-card" href="series/time.html" data-slug="time" data-issue="17" data-tags="과학,뇌과학">
       <div class="thumb">
         <img src="17-outputs-time/01-cover.png" alt="AI × Time cover" loading="lazy" />
         <div class="hanja">時</div>
@@ -250,7 +286,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/naming.html">
+    <a class="series-card" href="series/naming.html" data-slug="naming" data-issue="18" data-tags="언어,철학">
       <div class="thumb">
         <img src="18-outputs-naming/01-cover.png" alt="AI × Naming cover" loading="lazy" />
         <div class="hanja">名</div>
@@ -263,7 +299,7 @@
       <div class="cue">Read Issue</div>
       </div>
     </a>
-    <a class="series-card" href="series/soul.html">
+    <a class="series-card" href="series/soul.html" data-slug="soul" data-issue="19" data-tags="뇌과학,철학">
       <div class="thumb">
         <img src="19-outputs-soul/01-cover.png" alt="AI × Soul cover" loading="lazy" />
         <div class="hanja">魂</div>
@@ -278,9 +314,126 @@
     </a>
 </div>
 
+<div class="single-nav" id="single-nav" hidden>
+  <button type="button" class="single-arrow" data-step="-1" aria-label="이전 이슈">‹</button>
+  <span class="single-counter"><b id="single-pos">1</b><span class="slash"> / </span><span id="single-total">19</span></span>
+  <button type="button" class="single-arrow" data-step="1" aria-label="다음 이슈">›</button>
+</div>
+
 <footer class="site-foot">
   <span>AI × <b>Series</b> · Card News Magazine</span>
   <span>Mirae Asset inspired · Pretendard typeface</span>
 </footer>
+
+<script>
+(function () {
+  const grid = document.getElementById('series-grid');
+  const cards = Array.from(grid.querySelectorAll('.series-card'));
+  const viewButtons = document.querySelectorAll('[data-view]');
+  const sortButtons = document.querySelectorAll('[data-sort]');
+  const chipButtons = document.querySelectorAll('.chip');
+  const singleNav = document.getElementById('single-nav');
+  const singlePos = document.getElementById('single-pos');
+  const singleTotal = document.getElementById('single-total');
+  const countLabel = document.getElementById('issue-count');
+
+  let state = {
+    view: localStorage.getItem('home.view') || 'grid',
+    sort: localStorage.getItem('home.sort') || 'desc',
+    tag:  localStorage.getItem('home.tag')  || 'all',
+    singleIdx: 0,
+  };
+
+  function visibleCards() {
+    return cards.filter(c => !c.classList.contains('hidden-by-filter'));
+  }
+
+  function applyFilter() {
+    const tag = state.tag;
+    cards.forEach(c => {
+      const tags = (c.dataset.tags || '').split(',').filter(Boolean);
+      const match = tag === 'all' || tags.includes(tag);
+      c.classList.toggle('hidden-by-filter', !match);
+    });
+    countLabel.textContent = visibleCards().length;
+    chipButtons.forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+  }
+
+  function applySort() {
+    const dir = state.sort === 'asc' ? 1 : -1;
+    cards.sort((a, b) => (parseInt(a.dataset.issue) - parseInt(b.dataset.issue)) * dir)
+         .forEach(c => grid.appendChild(c));
+    sortButtons.forEach(b => b.classList.toggle('active', b.dataset.sort === state.sort));
+  }
+
+  function applyView() {
+    grid.classList.remove('view-grid', 'view-list', 'view-single');
+    grid.classList.add('view-' + state.view);
+    viewButtons.forEach(b => b.classList.toggle('active', b.dataset.view === state.view));
+    if (state.view === 'single') {
+      singleNav.hidden = false;
+      showSingle();
+    } else {
+      singleNav.hidden = true;
+      cards.forEach(c => c.classList.remove('single-active'));
+    }
+  }
+
+  function showSingle() {
+    const vis = visibleCards();
+    if (!vis.length) {
+      singlePos.textContent = '0';
+      singleTotal.textContent = '0';
+      return;
+    }
+    state.singleIdx = ((state.singleIdx % vis.length) + vis.length) % vis.length;
+    cards.forEach(c => c.classList.remove('single-active'));
+    vis[state.singleIdx].classList.add('single-active');
+    singlePos.textContent = state.singleIdx + 1;
+    singleTotal.textContent = vis.length;
+    vis[state.singleIdx].scrollIntoView({behavior:'smooth', block:'center'});
+  }
+
+  viewButtons.forEach(b => b.addEventListener('click', () => {
+    state.view = b.dataset.view;
+    localStorage.setItem('home.view', state.view);
+    state.singleIdx = 0;
+    applyView();
+  }));
+
+  sortButtons.forEach(b => b.addEventListener('click', () => {
+    state.sort = b.dataset.sort;
+    localStorage.setItem('home.sort', state.sort);
+    applySort();
+    if (state.view === 'single') showSingle();
+  }));
+
+  chipButtons.forEach(b => b.addEventListener('click', () => {
+    state.tag = b.dataset.tag;
+    localStorage.setItem('home.tag', state.tag);
+    state.singleIdx = 0;
+    applyFilter();
+    if (state.view === 'single') showSingle();
+  }));
+
+  document.querySelectorAll('.single-arrow').forEach(b =>
+    b.addEventListener('click', () => {
+      state.singleIdx += parseInt(b.dataset.step);
+      showSingle();
+    })
+  );
+
+  document.addEventListener('keydown', (e) => {
+    if (state.view !== 'single') return;
+    if (e.key === 'ArrowRight') { state.singleIdx++; showSingle(); }
+    else if (e.key === 'ArrowLeft') { state.singleIdx--; showSingle(); }
+  });
+
+  // initial
+  applySort();
+  applyFilter();
+  applyView();
+})();
+</script>
 
 </body></html>

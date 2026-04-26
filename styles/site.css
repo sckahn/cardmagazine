@@ -157,12 +157,154 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
   color: var(--brand); font-weight: 800;
 }
 
+/* ---------- Index controls (view / sort / filter) ---------- */
+.index-controls {
+  max-width: var(--shell-max); margin: 0 auto;
+  padding: 0 var(--shell-pad) 18px;
+  display: flex; flex-direction: column; gap: 12px;
+}
+.control-row {
+  display: flex; gap: 24px; flex-wrap: wrap; align-items: center;
+}
+.control-row.tags-row { gap: 14px; }
+.control-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.28em; color: var(--ink-mid);
+  text-transform: uppercase; font-weight: 700;
+}
+.control-group { display: flex; align-items: center; gap: 10px; }
+
+.seg {
+  display: inline-flex; border: 1px solid var(--line);
+  background: #fff;
+}
+.seg-btn {
+  border: none; background: transparent;
+  padding: 7px 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.14em;
+  color: var(--ink-mid); font-weight: 600;
+  cursor: pointer;
+  border-right: 1px solid var(--line);
+  transition: color 0.15s ease, background 0.15s ease;
+}
+.seg-btn:last-child { border-right: none; }
+.seg-btn:hover { color: var(--navy); }
+.seg-btn.active {
+  background: var(--navy); color: #fff;
+}
+
+.tag-chips {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.chip {
+  border: 1px solid var(--line);
+  background: #fff;
+  padding: 6px 12px;
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 12px; color: var(--ink-mid);
+  cursor: pointer;
+  border-radius: 999px;
+  transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+.chip:hover { color: var(--navy); border-color: var(--line-strong); }
+.chip.active {
+  background: var(--brand); color: #fff; border-color: var(--brand);
+}
+
+/* ---------- Single mode navigation ---------- */
+.single-nav {
+  max-width: var(--shell-max); margin: 0 auto 40px;
+  padding: 0 var(--shell-pad);
+  display: flex; align-items: center; justify-content: center; gap: 28px;
+}
+.single-arrow {
+  width: 48px; height: 48px; border-radius: 50%;
+  border: 1px solid var(--line);
+  background: #fff; color: var(--navy);
+  font-size: 22px; font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.single-arrow:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+.single-counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px; letter-spacing: 0.22em; color: var(--ink-mid);
+  font-weight: 700; text-transform: uppercase;
+}
+.single-counter b {
+  color: var(--brand); font-size: 16px; font-weight: 800;
+  font-family: 'Pretendard Variable', sans-serif; letter-spacing: -0.01em;
+}
+.single-counter .slash { margin: 0 6px; opacity: 0.5; }
+
 .series-grid {
   max-width: var(--shell-max); margin: 0 auto;
   padding: 0 var(--shell-pad) clamp(80px, 10vw, 140px);
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(20px, 2.2vw, 36px);
+}
+
+/* Hidden by tag filter */
+.series-card.hidden-by-filter { display: none !important; }
+
+/* List view — full-width horizontal rows */
+.series-grid.view-list {
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.series-grid.view-list .series-card {
+  flex-direction: row;
+  align-items: stretch;
+}
+.series-grid.view-list .thumb {
+  flex: 0 0 220px;
+  aspect-ratio: auto;
+  height: 220px;
+}
+.series-grid.view-list .thumb .hanja {
+  font-size: 64px;
+  right: 16px; top: 12px;
+}
+.series-grid.view-list .body {
+  flex: 1;
+  border-top: none;
+  border-left: 1px solid var(--line);
+  display: flex; flex-direction: column;
+  padding: 22px 28px;
+}
+.series-grid.view-list .cue { margin-top: auto; padding-top: 14px; }
+
+/* Single view — only show active card, centered and larger */
+.series-grid.view-single {
+  grid-template-columns: 1fr;
+  max-width: 720px;
+}
+.series-grid.view-single .series-card {
+  display: none;
+}
+.series-grid.view-single .series-card.single-active {
+  display: flex;
+  flex-direction: column;
+}
+.series-grid.view-single .series-card.single-active .thumb {
+  aspect-ratio: 1/1;
+}
+.series-grid.view-single .series-card.single-active h3 {
+  font-size: clamp(28px, 3vw, 36px);
+}
+
+@media (max-width: 760px) {
+  .index-controls {
+    padding: 0 20px 14px;
+  }
+  .control-row { gap: 14px; }
+  .seg-btn { padding: 6px 10px; font-size: 10px; letter-spacing: 0.1em; }
+  .chip { font-size: 11.5px; padding: 5px 10px; }
+  .series-grid.view-list .series-card { flex-direction: column; }
+  .series-grid.view-list .thumb { flex: 0 0 auto; height: auto; aspect-ratio: 1/1; }
+  .series-grid.view-list .body { border-left: none; border-top: 1px solid var(--line); padding: 22px 24px; }
 }
 
 /* ---------- Series Card — refined ---------- */
