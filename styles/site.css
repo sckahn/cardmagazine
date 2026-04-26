@@ -185,45 +185,55 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
 }
 .flipbook .slide {
   position: absolute; inset: 0;
-  transform-style: preserve-3d;
-  backface-visibility: hidden;
-  transform-origin: left center;
-  transition: transform 0.7s cubic-bezier(0.7, 0.02, 0.28, 1),
-              opacity 0.5s ease,
-              box-shadow 0.7s ease;
   opacity: 0; pointer-events: none;
-  will-change: transform, opacity;
+  transform: translateX(30px) scale(0.985);
+  transition: opacity 0.45s ease, transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+  will-change: opacity, transform;
 }
 .flipbook .slide.active {
-  opacity: 1; pointer-events: auto;
-  transform: rotateY(0deg);
-  z-index: 2;
+  opacity: 1; pointer-events: auto; z-index: 2;
+  transform: translateX(0) scale(1);
 }
-/* incoming from next (right) — waiting state */
-.flipbook .slide.next-pending {
-  opacity: 0;
-  transform: rotateY(0deg);
-  z-index: 1;
-}
-/* turning page (going forward) */
+/* outgoing forward (current → leaves to left) */
 .flipbook .slide.turning-out {
-  opacity: 1;
-  transform: rotateY(-168deg);
-  box-shadow: 0 40px 70px -30px rgba(15,30,56,0.55),
-              -2px 0 12px rgba(15,30,56,0.18) inset;
-  z-index: 3;
-  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-40px) scale(0.985);
+  z-index: 1; pointer-events: none;
 }
-/* going backward — incoming from left */
-.flipbook .slide.turning-in-back {
-  transform: rotateY(-168deg);
+/* outgoing backward (current → leaves to right) */
+.flipbook .slide.turning-back-out {
+  opacity: 0;
+  transform: translateX(40px) scale(0.985);
+  z-index: 1; pointer-events: none;
+}
+/* incoming backward (prev slides in from left) */
+.flipbook .slide.turning-back-in {
+  opacity: 0;
+  transform: translateX(-30px) scale(0.985);
+}
+/* animated page-curl overlay element */
+.flipbook .page-flip {
+  position: absolute; top: 0; bottom: 0; width: 50%;
+  background: linear-gradient(90deg, rgba(15,30,56,0.06) 0%, rgba(15,30,56,0.0) 100%);
+  pointer-events: none; z-index: 4;
   transform-origin: left center;
-  opacity: 0.95;
-  z-index: 3;
+  transform: perspective(1800px) rotateY(0deg);
+  opacity: 0;
+  transition: transform 0.6s cubic-bezier(0.65, 0.05, 0.35, 1), opacity 0.6s ease;
 }
-.flipbook .slide.turning-in-back.landed {
-  transform: rotateY(0deg);
+.flipbook .page-flip.left  { left: 0; }
+.flipbook .page-flip.right { right: 0; transform-origin: right center; background: linear-gradient(270deg, rgba(15,30,56,0.06) 0%, rgba(15,30,56,0.0) 100%);}
+.flipbook .page-flip.flip-fwd {
   opacity: 1;
+  transform: perspective(1800px) rotateY(-165deg);
+  background: linear-gradient(90deg, rgba(15,30,56,0.14) 0%, rgba(15,30,56,0.0) 100%);
+  box-shadow: 4px 0 18px rgba(15,30,56,0.25);
+}
+.flipbook .page-flip.flip-back {
+  opacity: 1;
+  transform: perspective(1800px) rotateY(165deg);
+  background: linear-gradient(270deg, rgba(15,30,56,0.14) 0%, rgba(15,30,56,0.0) 100%);
+  box-shadow: -4px 0 18px rgba(15,30,56,0.25);
 }
 .flipbook .slide img {
   width: 100%; height: 100%; object-fit: contain; display: block;

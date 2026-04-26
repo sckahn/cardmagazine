@@ -76,6 +76,11 @@
   const thumbsToggle = book.querySelector('.thumbs-toggle');
   const viewport = book.querySelector('.viewport');
 
+  // page-flip overlays
+  const flipL = document.createElement('div'); flipL.className = 'page-flip left';
+  const flipR = document.createElement('div'); flipR.className = 'page-flip right';
+  viewport.appendChild(flipL); viewport.appendChild(flipR);
+
   function getSlide(i) { return book.querySelector('.slide[data-idx="' + i + '"]'); }
 
   function mount(el) {
@@ -129,6 +134,14 @@
     if (active) active.scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'});
   }
 
+  function runFlip(forward) {
+    const el = forward ? flipR : flipL;
+    el.classList.remove('flip-fwd', 'flip-back');
+    void el.offsetWidth;
+    el.classList.add(forward ? 'flip-fwd' : 'flip-back');
+    setTimeout(() => el.classList.remove('flip-fwd', 'flip-back'), 620);
+  }
+
   function go(next, opts) {
     next = Math.max(1, Math.min(total, next));
     if (next === idx || animating) return;
@@ -141,7 +154,7 @@
     manageMount(next);
 
     if (opts.jump) {
-      slides.forEach(el => el.classList.remove('active','turning-out','turning-in-back','landed','next-pending'));
+      slides.forEach(el => el.classList.remove('active','turning-out','turning-back-out','turning-back-in'));
       inEl.classList.add('active');
       idx = next;
       updateChrome(next);
@@ -150,29 +163,31 @@
     }
 
     if (forward) {
-      inEl.classList.add('next-pending');
-      inEl.style.opacity = 0;
-      void inEl.offsetWidth;
       out.classList.add('turning-out');
       out.classList.remove('active');
+      // page curl visual
+      runFlip(true);
       setTimeout(() => {
-        inEl.style.opacity = '';
         inEl.classList.add('active');
-        inEl.classList.remove('next-pending');
-      }, 280);
+      }, 80);
       setTimeout(() => {
         out.classList.remove('turning-out');
         animating = false;
-      }, 720);
+      }, 620);
     } else {
+      out.classList.add('turning-back-out');
       out.classList.remove('active');
-      inEl.classList.add('turning-in-back');
+      runFlip(false);
+      inEl.classList.add('turning-back-in');
       void inEl.offsetWidth;
-      requestAnimationFrame(() => inEl.classList.add('active','landed'));
       setTimeout(() => {
-        inEl.classList.remove('turning-in-back','landed');
+        inEl.classList.remove('turning-back-in');
+        inEl.classList.add('active');
+      }, 40);
+      setTimeout(() => {
+        out.classList.remove('turning-back-out');
         animating = false;
-      }, 720);
+      }, 620);
     }
     idx = next;
     updateChrome(next);
