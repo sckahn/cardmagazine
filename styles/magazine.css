@@ -217,6 +217,50 @@ html {
 /* Page header removed — it was interrupting the reading flow like a card break. */
 .mag-article .mag-num { display: none !important; }
 
+/* Cover header refinement — the only .header we let through. Card CSS
+   styles it as a two-column row that wraps awkwardly in the narrow
+   magazine column. Reset to a clean single-column masthead. */
+.mag-article.cover-like .header {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 8px !important;
+  border-bottom: 1px solid var(--line, rgba(15,30,56,0.1)) !important;
+  margin-bottom: 24px !important;
+  padding-bottom: 14px !important;
+}
+.mag-article.cover-like .brandmark {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+  letter-spacing: 0.28em !important;
+  color: var(--brand, #E35205) !important;
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+}
+.mag-article.cover-like .brandmark .tri {
+  width: 0; height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid var(--brand, #E35205);
+}
+.mag-article.cover-like .chaptertag {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.24em !important;
+  color: var(--ink-mid, #5c6578) !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
+  white-space: normal !important;
+  line-height: 1.5 !important;
+}
+.mag-article.cover-like .chaptertag b {
+  color: var(--brand, #E35205) !important;
+  font-weight: 700 !important;
+}
+
 /* --- Unlock the card from its 1080×1080 cage --- */
 /* The card's body becomes our article inner — allow fluid width */
 .mag-article .stage {
