@@ -292,5 +292,26 @@
       "09-outro.png"
     ],
     "count": 9
+  },
+  {
+    "n": 16,
+    "slug": "destiny",
+    "name": "Destiny",
+    "hanja": "運",
+    "subtitle": "결정된 세계 속 사람의 자리",
+    "desc": "양자역학 · 가우시안 · 하이데거 피투성 · Bostrom 시뮬레이션 — AI 시대 자유의지를 다시 묻다.",
+    "slides": [
+      "01-cover.png",
+      "02-solvay.png",
+      "03-measurement.png",
+      "04-gauss.png",
+      "05-statistics.png",
+      "06-ai-gaussian.png",
+      "07-heidegger.png",
+      "08-free-will.png",
+      "09-simulation.png",
+      "10-outro.png"
+    ],
+    "count": 10
   }
 ]

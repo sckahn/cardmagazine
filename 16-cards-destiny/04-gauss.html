@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · 가우시안 세상</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × DESTINY</div>
+      <div class="chaptertag">GAUSSIAN &nbsp;·&nbsp; 평균으로 수렴하는 세상</div>
+    </div>
+    <div class="era">
+      <span class="year">1812</span>
+      <span class="label"><b>C. F. Gauss · 정규분포</b><span class="sub">종 모양 곡선이 세상을 그립니다</span></span>
+    </div>
+    <h1 class="title sm">흩어지면 결국<br /><em>종 모양</em>이 됩니다.</h1>
+
+    <div class="split" style="grid-template-columns:0.9fr 1.6fr; gap:24px; margin-top:14px;">
+      <div class="left">
+        <img src="../images/gauss.jpg" class="portrait" alt="Carl Friedrich Gauss" />
+        <div class="portrait-caption">
+          <span class="name">C. F. Gauss</span>
+          <span class="years">1777–1855</span>
+        </div>
+      </div>
+      <div class="right body-sm" style="font-size:14px;">
+        <p><b>가우스</b>는 천문 관측의 <em>오차</em>가 항상 종 모양의 분포를 이룬다는 것을 발견했습니다. 키·혈압·시험점수·주가수익률 — 서로 독립적인 원인들이 합쳐지면 결국 <em>평균 주위로 모입니다</em>.</p>
+        <p style="margin-top:10px;">이 규칙은 <b>중심극한정리</b>로 증명됩니다. 독립된 우연이 쌓이면 — <em>세상은 결정적이지 않아도 예측 가능해집니다</em>.</p>
+        <!-- Gaussian curve SVG -->
+        <svg viewBox="0 0 360 100" style="width:100%; height:100px; margin-top:10px;">
+          <defs>
+            <linearGradient id="bellfill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E35205" stop-opacity="0.3" />
+              <stop offset="100%" stop-color="#E35205" stop-opacity="0.02" />
+            </linearGradient>
+          </defs>
+          <path d="M 10 90 Q 100 90 170 20 Q 240 90 350 90" fill="url(#bellfill)" stroke="#E35205" stroke-width="2" />
+          <line x1="170" y1="20" x2="170" y2="92" stroke="#0f1e38" stroke-dasharray="3,3" stroke-width="1" opacity="0.6" />
+          <text x="170" y="10" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#0f1e38" font-weight="700">μ (평균)</text>
+          <text x="50" y="98" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#5c6578">−σ</text>
+          <text x="290" y="98" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#5c6578">+σ</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ 핵심</span>
+      <span class="text" style="font-size:13.5px;">가우시안 곡선은 <em>세상이 얼마나 많이 평균으로 몰리는지</em> 보여주는 그림입니다. <b>극단은 드뭅니다 — 하지만 사라지진 않습니다</b>.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">GAUSSIAN · 1812</span>
+      <span class="right"><b>04</b> / 10</span>
+    </div>
+  </div>
+</body></html>
