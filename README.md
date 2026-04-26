@@ -2,7 +2,7 @@
 
 AI와 철학·예술·언어·음악·꿈·편향·진화를 엮은 카드뉴스 시리즈.
 
-**Live**: https://sckahn.github.io/ai-cardnews/
+**Live**: https://sckahn.github.io/cardmagazine/
 
 ## Issues
 
