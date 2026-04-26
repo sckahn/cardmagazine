@@ -355,5 +355,26 @@
       "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 19,
+    "slug": "soul",
+    "name": "Soul",
+    "hanja": "魂",
+    "subtitle": "좌뇌·우뇌·신 — 인간다움의 뿌리",
+    "desc": "Sperry 좌우뇌 · Jill Bolte Taylor · 경외 · 에크하르트·라마나 · 창세기 · LSD·Beatles — AI에게 없는 반쪽.",
+    "slides": [
+      "01-cover.png",
+      "02-two-brains.png",
+      "03-ai-left.png",
+      "04-right-brain.png",
+      "05-awe.png",
+      "06-god-within.png",
+      "07-imago-dei.png",
+      "08-lsd.png",
+      "09-human-space.png",
+      "10-outro.png"
+    ],
+    "count": 10
   }
 ]
