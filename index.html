@@ -35,7 +35,7 @@
       <div class="seg" role="tablist" aria-label="보기 모드">
         <button type="button" class="seg-btn active" data-view="grid" aria-label="그리드 보기">▦ Grid</button>
         <button type="button" class="seg-btn" data-view="list" aria-label="리스트 보기">☰ List</button>
-        <button type="button" class="seg-btn" data-view="single" aria-label="단일 보기">▯ Single</button>
+        <button type="button" class="seg-btn" data-view="single" aria-label="1열 크게">▯ 1-Col</button>
       </div>
     </div>
     <div class="control-group">
@@ -327,12 +327,6 @@
     </a>
 </div>
 
-<div class="single-nav" id="single-nav" hidden>
-  <button type="button" class="single-arrow" data-step="-1" aria-label="이전 이슈">‹</button>
-  <span class="single-counter"><b id="single-pos">1</b><span class="slash"> / </span><span id="single-total">19</span></span>
-  <button type="button" class="single-arrow" data-step="1" aria-label="다음 이슈">›</button>
-</div>
-
 <footer class="site-foot">
   <span>AI × <b>Series</b> · Card News Magazine</span>
   <span>Mirae Asset inspired · Pretendard typeface</span>
@@ -345,16 +339,12 @@
   const viewButtons = document.querySelectorAll('[data-view]');
   const sortButtons = document.querySelectorAll('[data-sort]');
   const chipButtons = document.querySelectorAll('.chip');
-  const singleNav = document.getElementById('single-nav');
-  const singlePos = document.getElementById('single-pos');
-  const singleTotal = document.getElementById('single-total');
   const countLabel = document.getElementById('issue-count');
 
   let state = {
     view: localStorage.getItem('home.view') || 'grid',
     sort: localStorage.getItem('home.sort') || 'asc',
     tag:  localStorage.getItem('home.tag')  || 'all',
-    singleIdx: 0,
   };
 
   function visibleCards() {
@@ -383,34 +373,11 @@
     grid.classList.remove('view-grid', 'view-list', 'view-single');
     grid.classList.add('view-' + state.view);
     viewButtons.forEach(b => b.classList.toggle('active', b.dataset.view === state.view));
-    if (state.view === 'single') {
-      singleNav.hidden = false;
-      showSingle();
-    } else {
-      singleNav.hidden = true;
-      cards.forEach(c => c.classList.remove('single-active'));
-    }
-  }
-
-  function showSingle() {
-    const vis = visibleCards();
-    if (!vis.length) {
-      singlePos.textContent = '0';
-      singleTotal.textContent = '0';
-      return;
-    }
-    state.singleIdx = ((state.singleIdx % vis.length) + vis.length) % vis.length;
-    cards.forEach(c => c.classList.remove('single-active'));
-    vis[state.singleIdx].classList.add('single-active');
-    singlePos.textContent = state.singleIdx + 1;
-    singleTotal.textContent = vis.length;
-    vis[state.singleIdx].scrollIntoView({behavior:'smooth', block:'center'});
   }
 
   viewButtons.forEach(b => b.addEventListener('click', () => {
     state.view = b.dataset.view;
     localStorage.setItem('home.view', state.view);
-    state.singleIdx = 0;
     applyView();
   }));
 
@@ -418,29 +385,13 @@
     state.sort = b.dataset.sort;
     localStorage.setItem('home.sort', state.sort);
     applySort();
-    if (state.view === 'single') showSingle();
   }));
 
   chipButtons.forEach(b => b.addEventListener('click', () => {
     state.tag = b.dataset.tag;
     localStorage.setItem('home.tag', state.tag);
-    state.singleIdx = 0;
     applyFilter();
-    if (state.view === 'single') showSingle();
   }));
-
-  document.querySelectorAll('.single-arrow').forEach(b =>
-    b.addEventListener('click', () => {
-      state.singleIdx += parseInt(b.dataset.step);
-      showSingle();
-    })
-  );
-
-  document.addEventListener('keydown', (e) => {
-    if (state.view !== 'single') return;
-    if (e.key === 'ArrowRight') { state.singleIdx++; showSingle(); }
-    else if (e.key === 'ArrowLeft') { state.singleIdx--; showSingle(); }
-  });
 
   // initial
   applySort();
