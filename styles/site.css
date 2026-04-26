@@ -174,15 +174,67 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
   box-shadow: 0 60px 120px -60px rgba(15,30,56,0.55),
               0 20px 40px -24px rgba(15,30,56,0.25);
   overflow: hidden;
+  perspective: 2200px;
+  perspective-origin: 50% 50%;
+}
+/* Subtle page seam in the middle — spine illusion */
+.flipbook .viewport::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 1px; background: linear-gradient(180deg, transparent 0%, rgba(15,30,56,0.08) 20%, rgba(15,30,56,0.12) 50%, rgba(15,30,56,0.08) 80%, transparent 100%);
+  z-index: 3; pointer-events: none;
 }
 .flipbook .slide {
   position: absolute; inset: 0;
-  opacity: 0; transition: opacity 0.4s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  transform-origin: left center;
+  transition: transform 0.7s cubic-bezier(0.7, 0.02, 0.28, 1),
+              opacity 0.5s ease,
+              box-shadow 0.7s ease;
+  opacity: 0; pointer-events: none;
+  will-change: transform, opacity;
+}
+.flipbook .slide.active {
+  opacity: 1; pointer-events: auto;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+/* incoming from next (right) — waiting state */
+.flipbook .slide.next-pending {
+  opacity: 0;
+  transform: rotateY(0deg);
+  z-index: 1;
+}
+/* turning page (going forward) */
+.flipbook .slide.turning-out {
+  opacity: 1;
+  transform: rotateY(-168deg);
+  box-shadow: 0 40px 70px -30px rgba(15,30,56,0.55),
+              -2px 0 12px rgba(15,30,56,0.18) inset;
+  z-index: 3;
   pointer-events: none;
 }
-.flipbook .slide.active { opacity: 1; pointer-events: auto; }
+/* going backward — incoming from left */
+.flipbook .slide.turning-in-back {
+  transform: rotateY(-168deg);
+  transform-origin: left center;
+  opacity: 0.95;
+  z-index: 3;
+}
+.flipbook .slide.turning-in-back.landed {
+  transform: rotateY(0deg);
+  opacity: 1;
+}
 .flipbook .slide img {
   width: 100%; height: 100%; object-fit: contain; display: block;
+  background: #f4efe4;
+}
+/* Iframe-based live cards: scale 1080×1080 source to fill the viewport */
+.flipbook .slide iframe {
+  border: 0;
+  width: 1080px; height: 1080px;
+  position: absolute;
+  transform-origin: top left;
   background: #f4efe4;
 }
 
