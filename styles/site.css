@@ -24,6 +24,7 @@ html, body {
   letter-spacing: -0.012em;
 }
 body { min-height: 100vh; }
+body.reader { padding-bottom: 120px; } /* space for fixed reader-bar */
 a { color: inherit; text-decoration: none; }
 em { font-style: normal; color: var(--brand); font-weight: 800; }
 /* Korean brand accent — keeps Pretendard, just brand color */
@@ -153,66 +154,164 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
 .issue-head .subt { margin-top: 14px; font-size: 18px; color: var(--ink-soft); line-height: 1.55; }
 .issue-head .desc { font-size: 14px; line-height: 1.7; color: var(--ink-mid); }
 
-/* ======= Flip-book viewer ======= */
+/* ======= Flip-book / E-book viewer ======= */
 .flipbook {
-  max-width: 1280px; margin: 0 auto; padding: 0 48px 40px;
+  position: relative;
+  width: 100%;
+  /* fill the viewport below the issue head */
+  min-height: calc(100vh - 60px);
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px 72px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%);
 }
 .flipbook .viewport {
-  position: relative; width: 100%; aspect-ratio: 1 / 1;
-  max-width: 720px; margin: 0 auto;
+  position: relative;
+  /* keep 1:1 square, maximize to available space */
+  height: min(calc(100vh - 180px), 900px);
+  aspect-ratio: 1 / 1;
   background: var(--bg-soft);
   border: 1px solid var(--line);
-  box-shadow: 0 40px 80px -40px rgba(15,30,56,0.45), 0 14px 28px -18px rgba(15,30,56,0.2);
+  box-shadow: 0 60px 120px -60px rgba(15,30,56,0.55),
+              0 20px 40px -24px rgba(15,30,56,0.25);
   overflow: hidden;
 }
 .flipbook .slide {
   position: absolute; inset: 0;
-  opacity: 0; transition: opacity 0.35s ease;
+  opacity: 0; transition: opacity 0.4s ease;
   pointer-events: none;
 }
-.flipbook .slide.active {
-  opacity: 1; pointer-events: auto;
-}
+.flipbook .slide.active { opacity: 1; pointer-events: auto; }
 .flipbook .slide img {
   width: 100%; height: 100%; object-fit: contain; display: block;
   background: #f4efe4;
 }
 
-/* page controls */
-.flipbook .controls {
-  max-width: 720px; margin: 20px auto 0;
-  display: grid; grid-template-columns: auto 1fr auto; gap: 20px; align-items: center;
-  font-family: 'JetBrains Mono', monospace;
+/* End-card: next issue promo */
+.flipbook .end-card {
+  background: linear-gradient(135deg, #0f1e38, #1c2e4e);
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
 }
-.flipbook button.turn {
-  background: var(--navy); color: #fff; border: none;
-  font-family: inherit; font-size: 12px; font-weight: 700; letter-spacing: 0.24em;
-  padding: 13px 22px; cursor: pointer;
+.flipbook .end-card-inner {
+  max-width: 78%; text-align: center;
+  padding: 40px;
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+}
+.flipbook .end-kicker {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.3em; color: var(--brand-soft); font-weight: 700; text-transform: uppercase;
+}
+.flipbook .end-cover {
+  width: 45%; max-width: 240px; aspect-ratio: 1/1;
+  border: 2px solid var(--brand);
+  box-shadow: 0 30px 50px -30px rgba(227,82,5,0.6);
+  background: var(--bg); object-fit: cover;
+}
+.flipbook .end-title {
+  font-size: 42px; font-weight: 900; letter-spacing: -0.03em; line-height: 1.1;
+  margin-top: 8px;
+}
+.flipbook .end-title em {
+  font-family: 'Playfair Display', serif; font-style: italic;
+  color: var(--brand-soft); font-weight: 700;
+}
+.flipbook .end-sub {
+  font-size: 16px; color: rgba(255, 228, 208, 0.88); line-height: 1.55;
+  max-width: 520px;
+}
+.flipbook .end-cta {
+  margin-top: 10px;
+  display: inline-block; padding: 14px 28px;
+  background: var(--brand); color: #fff;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
+  border: 2px solid var(--brand);
   transition: background 0.2s ease, transform 0.15s ease;
 }
-.flipbook button.turn:hover:not(:disabled) { background: var(--brand); }
-.flipbook button.turn:active:not(:disabled) { transform: translateY(1px); }
-.flipbook button.turn:disabled { opacity: 0.3; cursor: not-allowed; }
-.flipbook .counter {
-  text-align: center; font-size: 13px; letter-spacing: 0.28em; color: var(--ink-mid); font-weight: 700;
+.flipbook .end-cta:hover {
+  background: transparent; color: var(--brand-soft);
 }
-.flipbook .counter b { color: var(--navy); font-size: 22px; letter-spacing: -0.01em; font-family: 'Pretendard Variable', sans-serif; font-weight: 900; }
+.flipbook .end-cta:active { transform: translateY(1px); }
+@media (max-width: 600px) {
+  .flipbook .end-title { font-size: 30px; }
+  .flipbook .end-cover { width: 55%; }
+}
 
-/* thumbnail strip */
+/* Floating arrow buttons on the sides */
+.flipbook button.turn {
+  position: absolute;
+  top: 50%; transform: translateY(-50%);
+  width: 52px; height: 52px; border-radius: 50%;
+  background: #fff; color: var(--navy); border: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 28px -12px rgba(15,30,56,0.35);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  z-index: 5;
+}
+.flipbook button.turn.prev-btn { left: 16px; }
+.flipbook button.turn.next-btn { right: 16px; }
+.flipbook button.turn:hover:not(:disabled) {
+  background: var(--brand); color: #fff; border-color: var(--brand);
+}
+.flipbook button.turn:active:not(:disabled) { transform: translateY(-48%); }
+.flipbook button.turn:disabled { opacity: 0; pointer-events: none; }
+
+/* Bottom counter + thumbs drawer */
+.flipbook .reader-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+  background: rgba(250, 246, 236, 0.94);
+  backdrop-filter: blur(14px);
+  border-top: 1px solid var(--line);
+  padding: 10px 24px 12px;
+  display: flex; flex-direction: column; align-items: stretch; gap: 8px;
+}
+.flipbook .reader-bar .meta-row {
+  display: flex; align-items: center; justify-content: space-between;
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase;
+}
+.flipbook .reader-bar .meta-row .counter {
+  font-size: 12px; letter-spacing: 0.26em;
+}
+.flipbook .reader-bar .meta-row .counter b {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-size: 18px; color: var(--navy); font-weight: 900; letter-spacing: -0.01em;
+}
+.flipbook .reader-bar .thumbs-toggle {
+  background: none; border: none; cursor: pointer;
+  font-family: inherit; font-size: 11px; letter-spacing: 0.22em; color: var(--ink-mid);
+  font-weight: 700; text-transform: uppercase;
+  padding: 6px 10px;
+}
+.flipbook .reader-bar .thumbs-toggle:hover { color: var(--brand); }
+
+/* Progress bar */
+.flipbook .progress {
+  height: 2px; background: rgba(15,30,56,0.08); position: relative;
+}
+.flipbook .progress .fill {
+  height: 100%; background: var(--brand);
+  transition: width 0.35s ease;
+}
+
+/* Thumbnails drawer (hidden by default) */
 .flipbook .thumbs {
-  max-width: 1280px; margin: 28px auto 0;
-  display: flex; gap: 10px; overflow-x: auto; padding: 4px 0 10px;
+  display: none;
+  gap: 8px; overflow-x: auto; padding: 8px 0 4px;
   scrollbar-width: thin;
 }
+.flipbook .thumbs.open { display: flex; }
 .flipbook .thumbs::-webkit-scrollbar { height: 6px; }
 .flipbook .thumbs::-webkit-scrollbar-track { background: rgba(15,30,56,0.05); }
 .flipbook .thumbs::-webkit-scrollbar-thumb { background: var(--ink-mid); }
 .flipbook .thumb {
-  flex: 0 0 96px; aspect-ratio: 1/1;
+  flex: 0 0 72px; aspect-ratio: 1/1;
   border: 2px solid transparent;
   background: #fff;
   cursor: pointer; overflow: hidden;
-  opacity: 0.6; transition: opacity 0.2s ease, border-color 0.2s ease;
+  opacity: 0.55; transition: opacity 0.2s ease, border-color 0.2s ease;
+  padding: 0;
 }
 .flipbook .thumb img { width:100%; height:100%; object-fit: cover; display: block; }
 .flipbook .thumb:hover { opacity: 1; }
@@ -238,9 +337,11 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
   .series-grid { grid-template-columns: 1fr; padding: 0 24px 80px; gap: 24px; }
   .issue-head { grid-template-columns: 1fr; padding: 40px 24px 28px; gap: 20px; }
   .issue-head h1 { font-size: 44px; }
-  .flipbook { padding: 0 24px 32px; }
-  .flipbook .controls { grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; }
-  .flipbook .counter { grid-column: 1 / -1; order: -1; margin-bottom: 6px; }
+  .flipbook { padding: 16px 16px 80px; min-height: calc(100vh - 60px); }
+  .flipbook .viewport { height: auto; width: 100%; max-width: 100%; }
+  .flipbook button.turn { width: 42px; height: 42px; font-size: 18px; }
+  .flipbook button.turn.prev-btn { left: 6px; }
+  .flipbook button.turn.next-btn { right: 6px; }
   .nav-strip { padding: 24px; flex-direction: column; gap: 14px; align-items: flex-start; }
   .site-nav-inner { padding: 14px 24px; }
   .site-foot { padding: 32px 24px 56px; flex-direction: column; gap: 12px; align-items: flex-start;}
