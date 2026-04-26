@@ -214,5 +214,24 @@
       "09-outro.png"
     ],
     "count": 9
+  },
+  {
+    "n": 12,
+    "slug": "earth",
+    "name": "Earth",
+    "hanja": "地",
+    "subtitle": "AI가 구할까, 지구가 먼저 깨질까",
+    "desc": "데이터센터 전력 · 1.5°C 임계점 · Tokamak RL · AlphaFold·GNoME · Green AI — 시간과의 경주.",
+    "slides": [
+      "01-cover.png",
+      "02-carbon-cost.png",
+      "03-power-crisis.png",
+      "04-tipping-point.png",
+      "05-ai-saves-fusion.png",
+      "06-ai-saves-materials.png",
+      "07-race.png",
+      "08-outro.png"
+    ],
+    "count": 8
   }
 ]

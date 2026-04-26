@@ -74,13 +74,11 @@
   const thumbsToggle = book.querySelector('.thumbs-toggle');
   const viewport = book.querySelector('.viewport');
 
-  // page-flip overlays
   const flipL = document.createElement('div'); flipL.className = 'page-flip left';
   const flipR = document.createElement('div'); flipR.className = 'page-flip right';
   viewport.appendChild(flipL); viewport.appendChild(flipR);
 
   function getSlide(i) { return book.querySelector('.slide[data-idx="' + i + '"]'); }
-
   function mount(el) {
     if (!el || el.querySelector('iframe') || !el.dataset.src) return;
     const ifr = document.createElement('iframe');
@@ -99,11 +97,8 @@
     const scale = r.width / 1080;
     ifr.style.transform = 'scale(' + scale + ')';
   }
-  function rescaleAll() {
-    viewport.querySelectorAll('iframe').forEach(applyScale);
-  }
+  function rescaleAll() { viewport.querySelectorAll('iframe').forEach(applyScale); }
   window.addEventListener('resize', rescaleAll);
-
   function manageMount(center) {
     slides.forEach(el => {
       const i = parseInt(el.dataset.idx, 10);
@@ -111,18 +106,12 @@
       if (Math.abs(i - center) <= 1) mount(el); else unmount(el);
     });
   }
-
-  let idx = 1;
-  let animating = false;
-
+  let idx = 1, animating = false;
   function updateChrome(next) {
     if (next <= lastCard) {
       thumbs.forEach(el => el.classList.toggle('active', parseInt(el.dataset.goto,10) === next));
       cur.textContent = next;
-    } else {
-      thumbs.forEach(el => el.classList.remove('active'));
-      cur.textContent = '—';
-    }
+    } else { thumbs.forEach(el => el.classList.remove('active')); cur.textContent = '—'; }
     prevBtn.disabled = next === 1;
     nextBtn.disabled = next === total;
     progressFill.style.width = (next / total * 100) + '%';
@@ -131,7 +120,6 @@
     const active = book.querySelector('.thumb.active');
     if (active) active.scrollIntoView({block: 'nearest', inline: 'center', behavior: 'smooth'});
   }
-
   function runFlip(forward) {
     const el = forward ? flipR : flipL;
     el.classList.remove('flip-fwd', 'flip-back');
@@ -139,7 +127,6 @@
     el.classList.add(forward ? 'flip-fwd' : 'flip-back');
     setTimeout(() => el.classList.remove('flip-fwd', 'flip-back'), 620);
   }
-
   function go(next, opts) {
     next = Math.max(1, Math.min(total, next));
     if (next === idx || animating) return;
@@ -150,7 +137,6 @@
     if (!out || !inEl) return;
     animating = true;
     manageMount(next);
-
     if (opts.jump) {
       slides.forEach(el => el.classList.remove('active','turning-out','turning-back-out','turning-back-in'));
       inEl.classList.add('active');
@@ -159,38 +145,24 @@
       animating = false;
       return;
     }
-
     if (forward) {
       out.classList.add('turning-out');
       out.classList.remove('active');
-      // page curl visual
       runFlip(true);
-      setTimeout(() => {
-        inEl.classList.add('active');
-      }, 80);
-      setTimeout(() => {
-        out.classList.remove('turning-out');
-        animating = false;
-      }, 620);
+      setTimeout(() => { inEl.classList.add('active'); }, 80);
+      setTimeout(() => { out.classList.remove('turning-out'); animating = false; }, 620);
     } else {
       out.classList.add('turning-back-out');
       out.classList.remove('active');
       runFlip(false);
       inEl.classList.add('turning-back-in');
       void inEl.offsetWidth;
-      setTimeout(() => {
-        inEl.classList.remove('turning-back-in');
-        inEl.classList.add('active');
-      }, 40);
-      setTimeout(() => {
-        out.classList.remove('turning-back-out');
-        animating = false;
-      }, 620);
+      setTimeout(() => { inEl.classList.remove('turning-back-in'); inEl.classList.add('active'); }, 40);
+      setTimeout(() => { out.classList.remove('turning-back-out'); animating = false; }, 620);
     }
     idx = next;
     updateChrome(next);
   }
-
   prevBtn.addEventListener('click', () => go(idx - 1));
   nextBtn.addEventListener('click', () => go(idx + 1));
   thumbs.forEach(t => t.addEventListener('click', () => {
@@ -215,7 +187,6 @@
     if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
     startX = null;
   });
-
   manageMount(idx);
   if (location.hash === '#end') go(total, { jump: true });
   else {
