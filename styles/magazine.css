@@ -4,6 +4,23 @@
    Overrides 1080×1080 lockdown from ../style.css.
    ========================================================= */
 
+/* Motion tokens reused throughout this sheet */
+:root {
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-out-expo:  cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-short: 0.24s;
+  --dur-med:   0.5s;
+  --dur-long:  0.8s;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* Ensure body scrolls naturally on mobile.
    site.css sets body.reader padding-bottom for the flipbook reader-bar; we
    don't use it here. Make sure nothing pins the viewport. */
@@ -36,6 +53,23 @@ html {
   overflow-y: auto;
   padding-right: 8px;
   font-family: var(--f-sans, 'Pretendard Variable', sans-serif);
+  animation: mag-fade-up 0.8s var(--ease-out-expo) both;
+}
+/* Staggered entrance for the sidebar headings — subtle, one-pass */
+.mag-side .side-kicker   { animation: mag-fade-up 0.7s var(--ease-out-expo) 0.05s both; }
+.mag-side h2             { animation: mag-fade-up 0.7s var(--ease-out-expo) 0.12s both; }
+.mag-side .side-sub      { animation: mag-fade-up 0.7s var(--ease-out-expo) 0.20s both; }
+.mag-side .progress-outer{ animation: mag-fade-up 0.7s var(--ease-out-expo) 0.26s both; }
+.mag-side nav            { animation: mag-fade-up 0.7s var(--ease-out-expo) 0.32s both; }
+.mag-side .side-foot     { animation: mag-fade-up 0.7s var(--ease-out-expo) 0.40s both; }
+
+@keyframes mag-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes mag-article-in {
+  from { opacity: 0; transform: translateY(20px); filter: blur(2px); }
+  to   { opacity: 1; transform: translateY(0);    filter: blur(0); }
 }
 .mag-side .side-kicker {
   font-family: 'JetBrains Mono', monospace;
@@ -62,18 +96,47 @@ html {
   display: flex; flex-direction: column; gap: 2px;
 }
 .mag-side nav a {
+  position: relative;
   display: flex; gap: 12px; align-items: baseline;
   padding: 8px 10px;
   font-size: 13.5px; line-height: 1.4;
   color: var(--ink-mid);
-  border-left: 2px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  isolation: isolate;
+  transition:
+    color var(--dur-short) var(--ease-out-quart),
+    padding-left var(--dur-med) var(--ease-out-quart);
 }
-.mag-side nav a:hover { color: var(--navy); background: rgba(15,30,56,0.035); }
+/* Left accent bar — grows from 0 width smoothly */
+.mag-side nav a::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 10%; bottom: 10%;
+  width: 2px;
+  background: var(--brand);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform var(--dur-med) var(--ease-out-expo);
+}
+/* Hover tint as a pseudo-element so we can animate width */
+.mag-side nav a::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(227,82,5,0.08), rgba(227,82,5,0));
+  opacity: 0;
+  transition: opacity var(--dur-short) var(--ease-out-quart);
+  z-index: -1;
+}
+.mag-side nav a:hover { color: var(--navy); }
+.mag-side nav a:hover::after { opacity: 1; }
+.mag-side nav a:hover::before { transform: scaleY(0.4); background: rgba(227,82,5,0.35); }
 .mag-side nav a.current {
   color: var(--navy); font-weight: 700;
-  border-left-color: var(--brand);
-  background: rgba(227,82,5,0.06);
+  padding-left: 14px;
+}
+.mag-side nav a.current::before { transform: scaleY(1); }
+.mag-side nav a.current::after {
+  opacity: 1;
+  background: linear-gradient(90deg, rgba(227,82,5,0.10), rgba(227,82,5,0));
 }
 .mag-side nav a .num {
   flex: 0 0 24px;
@@ -81,13 +144,27 @@ html {
   font-size: 10.5px; color: var(--brand);
   letter-spacing: 0.1em; font-weight: 700;
   padding-top: 2px;
+  transition: color var(--dur-short) ease;
 }
+.mag-side nav a.current .num { color: var(--brand-deep, #B5400B); }
+
 .mag-side .progress-outer {
-  margin-top: 16px; height: 3px; background: rgba(15,30,56,0.08);
+  margin-top: 16px; height: 3px;
+  background: rgba(15,30,56,0.08);
+  overflow: hidden;
+  position: relative;
 }
 .mag-side .progress-inner {
-  height: 100%; width: 0; background: var(--brand);
-  transition: width 0.2s ease;
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--brand) 0%, #F07A3A 60%, var(--brand) 100%);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  transition:
+    width 0.35s var(--ease-out-quart),
+    background-position 2.4s linear;
+}
+.mag-side .progress-inner.is-moving {
+  background-position: -200% 0%;
 }
 .mag-side .side-foot {
   margin-top: 18px; padding-top: 14px;
@@ -112,8 +189,30 @@ html {
   box-shadow: none;
   margin-bottom: 72px;
   padding: 0;
+  /* Entrance state — starts muted, reveals when scrolled into view via
+     IntersectionObserver (adds .in-view). First article bypasses. */
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
   /* overflow: visible — critical so mobile touch scroll chains up to body.
      The ghost-num / topbar / hanzi-bg inside are already display:none below. */
+}
+.mag-article.in-view,
+.mag-article:first-of-type {
+  opacity: 1;
+  transform: translateY(0);
+}
+.mag-article:first-of-type { transition: none; }
+
+/* Images inside articles: gentle scale-in after mount (prevents harsh pop) */
+.mag-article .stage img {
+  animation: mag-img-in 0.9s var(--ease-out-expo) both;
+}
+@keyframes mag-img-in {
+  from { opacity: 0; transform: scale(1.03); filter: blur(6px); }
+  to   { opacity: 1; transform: scale(1);    filter: blur(0); }
 }
 /* Page header removed — it was interrupting the reading flow like a card break. */
 .mag-article .mag-num { display: none !important; }
@@ -225,7 +324,9 @@ html {
 /* --- Next-issue card at the end --- */
 .mag-next {
   margin-top: 80px;
-  background: linear-gradient(135deg, #0f1e38, #1c2e4e);
+  background:
+    radial-gradient(circle at 20% 0%, rgba(227,82,5,0.18), transparent 55%),
+    linear-gradient(135deg, #0f1e38, #1c2e4e);
   color: #fff;
   padding: 56px;
   display: flex;
@@ -235,11 +336,27 @@ html {
   gap: 24px;
   position: relative;
   overflow: hidden;
+  /* Participates in the same scroll-reveal flow as articles */
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
 }
+.mag-next.in-view {
+  opacity: 1; transform: translateY(0);
+}
+/* Slow pulsing accent blob */
 .mag-next::after {
   content: ""; position: absolute; right: -40px; bottom: -40px;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(227,82,5,0.2), transparent 70%);
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(227,82,5,0.28), transparent 70%);
+  animation: mag-next-pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes mag-next-pulse {
+  0%,100% { transform: scale(1) translate(0,0); opacity: 0.8; }
+  50%     { transform: scale(1.15) translate(-14px,-10px); opacity: 1; }
 }
 .mag-next .next-cover {
   width: 180px; aspect-ratio: 1/1;
@@ -247,6 +364,13 @@ html {
   box-shadow: 0 30px 50px -30px rgba(227,82,5,0.6);
   object-fit: cover;
   background: var(--bg);
+  transition:
+    transform 0.7s var(--ease-out-expo),
+    box-shadow 0.6s var(--ease-out-expo);
+}
+.mag-next:hover .next-cover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 40px 70px -30px rgba(227,82,5,0.85);
 }
 .mag-next .next-kicker {
   font-family: 'JetBrains Mono', monospace;
@@ -267,15 +391,30 @@ html {
   max-width: 520px;
 }
 .mag-next .next-cta {
-  margin-top: 20px; display: inline-block;
+  position: relative;
+  margin-top: 20px; display: inline-flex; align-items: center; gap: 10px;
   padding: 13px 26px;
   background: var(--brand); color: #fff;
   font-family: 'JetBrains Mono', monospace; font-size: 12px;
   font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase;
   border: 2px solid var(--brand);
-  transition: background 0.2s ease, color 0.2s ease;
+  overflow: hidden;
+  isolation: isolate;
+  transition: color 0.3s var(--ease-out-quart), letter-spacing 0.3s var(--ease-out-quart);
 }
-.mag-next .next-cta:hover { background: transparent; color: var(--brand-soft); }
+.mag-next .next-cta::before {
+  content: "";
+  position: absolute; inset: 0; z-index: -1;
+  background: var(--brand);
+  transform: translateY(0);
+  transition: transform 0.45s var(--ease-out-expo);
+}
+.mag-next .next-cta:hover::before { transform: translateY(102%); }
+.mag-next .next-cta:hover {
+  color: var(--brand-soft);
+  letter-spacing: 0.26em;
+}
+.mag-next .next-cta:active { transform: translateY(1px); }
 
 /* Center the site footer on magazine pages */
 .mag-shell ~ .site-foot {
@@ -299,13 +438,29 @@ html {
   cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   font-size: 20px; font-weight: 700;
-  opacity: 0; pointer-events: none; transform: translateY(12px);
-  transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease;
+  opacity: 0; pointer-events: none; transform: translateY(14px) scale(0.92);
+  transition:
+    opacity 0.4s var(--ease-out-expo),
+    transform 0.5s var(--ease-out-expo),
+    background 0.3s var(--ease-out-quart),
+    box-shadow 0.3s var(--ease-out-quart);
   z-index: 60;
 }
-.mag-top.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
-.mag-top:hover { background: var(--brand); }
-.mag-top:active { transform: translateY(1px); }
+.mag-top.visible {
+  opacity: 1; pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+.mag-top:hover {
+  background: var(--brand);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 24px 44px -16px rgba(227,82,5,0.6);
+}
+.mag-top:hover span { transform: translateY(-2px); }
+.mag-top span {
+  display: inline-block;
+  transition: transform 0.35s var(--ease-out-expo);
+}
+.mag-top:active { transform: translateY(0) scale(0.96); }
 @media (max-width: 640px) {
   .mag-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
 }

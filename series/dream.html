@@ -3,8 +3,8 @@
 <title>AI × Dream · Issue 08</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../styles/site.css?v=12" />
-<link rel="stylesheet" href="../styles/magazine.css?v=12" />
+<link rel="stylesheet" href="../styles/site.css?v=13" />
+<link rel="stylesheet" href="../styles/magazine.css?v=13" />
 </head><body>
 
 <nav class="site-nav">
@@ -89,7 +89,7 @@
   </main>
 </div>
 
-<button class="mag-top" id="magTop" aria-label="맨 위로">↑</button>
+<button class="mag-top" id="magTop" aria-label="맨 위로"><span>↑</span></button>
 
 <footer class="site-foot">
   <span>AI × Series · Card News Magazine</span>
@@ -99,7 +99,7 @@
 <script>
 (async function () {
   // --- 1) Fetch the card stylesheet once and scope it to .mag-article ---
-  const cardCssUrl = '../style.css?v=12';
+  const cardCssUrl = '../style.css?v=13';
   let cardCss = '';
   try {
     cardCss = await fetch(cardCssUrl).then(r => r.text());
@@ -188,12 +188,26 @@
   }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
   articles.forEach(a => io.observe(a));
 
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        reveal.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -15% 0px', threshold: 0.05 });
+  document.querySelectorAll('.mag-article, .mag-next').forEach(el => reveal.observe(el));
+
+  let progressTimer = null;
   function updateProgress() {
     const doc = document.documentElement;
     const scrolled = doc.scrollTop || document.body.scrollTop;
     const max = doc.scrollHeight - doc.clientHeight;
     const pct = max > 0 ? Math.min(100, Math.max(0, (scrolled / max) * 100)) : 0;
     progressBar.style.width = pct + '%';
+    progressBar.classList.add('is-moving');
+    clearTimeout(progressTimer);
+    progressTimer = setTimeout(() => progressBar.classList.remove('is-moving'), 260);
   }
   document.addEventListener('scroll', updateProgress, { passive: true });
   updateProgress();
