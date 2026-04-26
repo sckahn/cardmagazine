@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · 벽 ① 한 입의 다섯 감각</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × TASTE</div>
+      <div class="chaptertag">WALL ① &nbsp;·&nbsp; 동시 합성의 벽</div>
+    </div>
+
+    <div class="era">
+      <span class="year">벽 ①</span>
+      <span class="label"><b>맛은 혀만의 일이 아니다</b><span class="sub">한 입 안에서 <em>다섯 감각</em>이 동시에 일어난다</span></span>
+    </div>
+
+    <h1 class="title sm">AI가 풀어야 할<br /><em>첫 번째</em> 벽.</h1>
+
+    <p class="body-sm" style="margin-top:14px;">
+      우리는 "혀로 맛본다"고 말하지만, 과학은 다른 이야기를 합니다. <strong>한 입을 먹는 그 순간</strong>
+      혀·코·입 근육·통각·온도 <em>다섯 채널</em>이 전부 1초 안에 동시에 보고를 올려요.
+      뇌는 그걸 <strong>한 덩어리로 뭉쳐</strong> "맛"이라 부릅니다.
+    </p>
+
+    <!-- 5-channel diagram -->
+    <div style="margin-top:16px; padding:18px 20px; background: var(--bg-white); border:1px solid var(--line);">
+      <svg viewBox="0 0 900 200" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <!-- Center -->
+        <circle cx="450" cy="100" r="50" fill="#E35205" />
+        <text x="450" y="96" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="22" font-weight="900" fill="#fff">맛</text>
+        <text x="450" y="118" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#FFE4D0" letter-spacing="2">FLAVOR</text>
+
+        <!-- 5 channels -->
+        <!-- 1. 혀 -->
+        <line x1="130" y1="38" x2="405" y2="82" stroke="#0f1e38" stroke-width="1.3" opacity="0.35" />
+        <rect x="30" y="16" width="200" height="44" fill="#0f1e38" />
+        <text x="130" y="38" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="15" font-weight="800" fill="#fff">혀 · 화학</text>
+        <text x="130" y="54" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10" fill="#FFE4D0">단 · 짠 · 신 · 쓴 · 감칠</text>
+
+        <!-- 2. 코 -->
+        <line x1="770" y1="38" x2="495" y2="82" stroke="#0f1e38" stroke-width="1.3" opacity="0.35" />
+        <rect x="670" y="16" width="200" height="44" fill="#0f1e38" />
+        <text x="770" y="38" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="15" font-weight="800" fill="#fff">코 · 후각</text>
+        <text x="770" y="54" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10" fill="#FFE4D0">향 · 풍미의 <tspan fill="#E35205" font-weight="900">80%</tspan></text>
+
+        <!-- 3. 입 (촉각) -->
+        <line x1="130" y1="168" x2="405" y2="118" stroke="#0f1e38" stroke-width="1.3" opacity="0.35" />
+        <rect x="30" y="146" width="200" height="44" fill="#0f1e38" />
+        <text x="130" y="168" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="15" font-weight="800" fill="#fff">입 · 촉각</text>
+        <text x="130" y="184" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10" fill="#FFE4D0">씹는 질감 · 식감</text>
+
+        <!-- 4. 통각 -->
+        <line x1="770" y1="168" x2="495" y2="118" stroke="#0f1e38" stroke-width="1.3" opacity="0.35" />
+        <rect x="670" y="146" width="200" height="44" fill="#0f1e38" />
+        <text x="770" y="168" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="15" font-weight="800" fill="#fff">통각 · TRP</text>
+        <text x="770" y="184" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10" fill="#FFE4D0">매움 · 얼얼함</text>
+
+        <!-- 5. 온도 (center bottom) -->
+        <line x1="450" y1="168" x2="450" y2="150" stroke="#0f1e38" stroke-width="1.3" opacity="0.35" />
+        <rect x="350" y="165" width="200" height="30" fill="#0f1e38" />
+        <text x="450" y="185" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="13" font-weight="800" fill="#fff">온도 · 뜨겁고 차가움</text>
+      </svg>
+    </div>
+
+    <div class="subhead" style="margin-top:18px;">여기서 AI가 막힌다</div>
+    <div class="nlist">
+      <div class="item">
+        <div class="num">01</div>
+        <div class="txt"><b>AI는 하나씩 잘한다.</b> 시각은 CNN, 청각은 Whisper, 후각은 GNN — <em>각각의 모델</em>은 사람 수준까지 왔다.</div>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <div class="txt"><b>그런데 다섯을 한 타이밍에 묶는 건 다른 문제.</b> 김밥 한 입이 <em>쫀득 · 짜다 · 고소 · 따뜻 · 김의 까끌함</em>을 0.3초 안에 섞어낸다. <em>정렬된 멀티모달 데이터</em>가 없다.</div>
+      </div>
+      <div class="item">
+        <div class="num">03</div>
+        <div class="txt"><b>그리고 "매운맛"은 사실 맛이 아니다.</b> 캡사이신이 통각 수용체 <em>TRP-V1</em>을 자극한 <b>화상 신호</b>일 뿐. — <em>혀가 아니라 피부의 일</em>이다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:14px; padding:14px 20px;">
+      <span class="label">▲ 한 줄 요약</span>
+      <span class="text" style="font-size:15.5px;">
+        맛은 <strong>단일 신호</strong>가 아니라 <em>다섯 채널의 합성</em>. AI가 이걸 풀려면 — <b>센서 하나</b>가 아니라 <em>여러 감각을 동시에 가진 기계</em>가 필요하다.
+      </span>
+    </div>
+
+    <div class="foot">
+      <span class="left">벽 ① · 한 입의 다섯 감각</span>
+      <span class="right"><b>03</b> / 06</span>
+    </div>
+  </div>
+</body></html>

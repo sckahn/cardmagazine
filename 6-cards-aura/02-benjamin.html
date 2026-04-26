@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>02 · 벤야민의 렌즈</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<style>
+  .art-frame { position: relative; width: 100%; overflow: hidden; border: 1px solid var(--line-strong); background: var(--navy); box-shadow: 0 14px 30px -22px rgba(15, 30, 56, 0.6); }
+  .art-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .art-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(15,30,56,0.35) 100%); pointer-events: none; }
+  .art-caption { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ink-soft); text-transform: uppercase; font-weight: 700; margin-top: 6px; display:flex; justify-content: space-between; }
+  .art-caption b { font-family: var(--f-sans); font-size: 13px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; text-transform: none; }
+</style></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">02</div>
+
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × AURA</div>
+      <div class="chaptertag">LENS ① &nbsp;·&nbsp; 벤야민의 아우라</div>
+    </div>
+
+    <div class="era">
+      <span class="year">1936</span>
+      <span class="label"><b>발터 벤야민 · Walter Benjamin</b><span class="sub">『기계복제시대의 예술작품』 — AI보다 <em>89년</em> 먼저 나온 경고</span></span>
+    </div>
+
+    <h1 class="title sm">벤야민이 <em>예견한</em> 것 —<br />AI 이미지엔 <span class="underline">아우라</span>가 없다.</h1>
+
+    <div class="split" style="grid-template-columns: 0.85fr 1.5fr; margin-top:12px; align-items: start;">
+      <div class="left">
+        <div class="portrait" style="aspect-ratio: 1/1;">
+          <span class="corner"></span>
+          <span class="corner br"></span>
+          <img src="../images/benjamin.jpg" alt="Walter Benjamin" />
+        </div>
+        <div class="portrait-caption">
+          <span class="name">발터 벤야민</span>
+          <span class="years">1892 – 1940</span>
+        </div>
+        <p class="small-note" style="margin-top:8px; font-size:12px;">
+          독일 철학자. 기계 복제가 예술의 본질을 바꾼다고 1936년에 이미 썼다 — AI 이미지가 나오기 <em>89년 전</em>의 통찰.
+        </p>
+      </div>
+
+      <div class="right">
+        <blockquote class="quote" style="margin-top:0; font-size:19px;">
+          <span class="mark">"</span>
+          아우라란, 아무리 가까이 있어도 <em>멀게 느껴지는 어떤 일회적 현상</em>.
+          원본이 지금-여기에 있다는 그 <em>유일한 현존</em>이다.
+          <span class="cite">— 벤야민 『기계복제시대의 예술작품』 (1936)</span>
+        </blockquote>
+
+        <div class="subhead" style="margin-top:12px;">그의 예견 — AI가 오기 89년 전에</div>
+        <div class="nlist" style="margin-top:4px;">
+          <div class="item">
+            <div class="num">01</div>
+            <div class="txt" style="font-size:13.5px;"><b>복제 가능한 예술은 아우라를 잃는다.</b> 인쇄·사진·영화가 원본의 <em>유일성</em>을 깨뜨린다.</div>
+          </div>
+          <div class="item">
+            <div class="num">02</div>
+            <div class="txt" style="font-size:13.5px;"><b>그러나 잃는 것만은 아니다.</b> 복제는 <em>대중</em>에게 예술을 가져가고, 새 감각을 연다.</div>
+          </div>
+          <div class="item">
+            <div class="num">03</div>
+            <div class="txt" style="font-size:13.5px;"><b>핵심은 "어디에" 아우라가 있느냐다.</b> 원본에 없다면 <em>어딘가에 다시</em> 생길 수 있다.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 아우라의 실재적 증거: 루브르의 모나리자 -->
+    <div style="margin-top:14px;">
+      <div class="art-frame" style="aspect-ratio: 16/5;">
+        <img src="../images/mona-lisa-crowd.jpg" alt="Crowd in front of Mona Lisa at the Louvre" />
+      </div>
+      <div class="art-caption">
+        <b>루브르의 모나리자 앞 · 매일</b>
+        <span>AURA · IN PERSON</span>
+      </div>
+      <p class="body-sm" style="margin-top:6px; font-size:13px;">
+        사람들은 <em>인터넷에서 이미 수천 번</em> 본 그림 앞에 <strong>다시 줄을 선다</strong>. — <em>"원본이 지금-여기 있다"</em>는 감각, 그것이 벤야민이 말한 <b>아우라</b>다.
+        AI 이미지 앞에서는 이런 일이 일어나지 않는다.
+      </p>
+    </div>
+
+    <div class="foot">
+      <span class="left">1936 · Benjamin · 아우라의 선언</span>
+      <span class="right"><b>02</b> / 08</span>
+    </div>
+  </div>
+</body></html>

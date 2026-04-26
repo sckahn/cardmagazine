@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · AI × 사진</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<style>
+  /* 이미지 카드 스타일 (포트레이트 상단 크롭 방지) */
+  .art-frame { position: relative; width: 100%; overflow: hidden; border: 1px solid var(--line-strong); background: var(--navy); box-shadow: 0 14px 30px -22px rgba(15, 30, 56, 0.6); }
+  .art-frame img { width: 100%; height: 100%; object-fit: cover; display: block; filter: none; mix-blend-mode: normal; }
+  .art-frame::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 60%, rgba(15,30,56,0.25) 100%); pointer-events: none; }
+  .art-caption { font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.16em; color: var(--ink-soft); text-transform: uppercase; font-weight: 700; margin-top: 6px; display:flex; justify-content: space-between; }
+  .art-caption b { font-family: var(--f-sans); font-size: 13px; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; text-transform: none; }
+</style></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × CANVAS</div>
+      <div class="chaptertag">AI × PHOTO &nbsp;·&nbsp; 재현의 위기</div>
+    </div>
+
+    <div class="era">
+      <span class="year">첫 번째.</span>
+      <span class="label"><b>AI × 사진</b><span class="sub">재현을 기계가 가져갈 때 — <em>화가가 했던 생각</em>을 지금 우리가 한다</span></span>
+    </div>
+
+    <h1 class="title sm">1839년의 화가가<br />지금 <em>당신</em>과 같은 고민을 했다.</h1>
+
+    <!-- 실제 이미지 두 장 나란히 -->
+    <div class="split" style="grid-template-columns: 1fr 1fr; gap:20px; margin-top:14px; align-items: start;">
+      <div>
+        <div class="art-frame" style="aspect-ratio: 4/3;">
+          <img src="../images/boulevard.jpg" alt="Boulevard du Temple 1838" />
+        </div>
+        <div class="art-caption">
+          <b>Boulevard du Temple · 1838</b>
+          <span>DAGUERRE</span>
+        </div>
+        <p class="body-sm" style="margin-top:8px; font-size:13px;">
+          최초의 사람이 찍힌 사진. 오른쪽 아래 구두닦이에게 구두를 닦는 사람이 <em>인류 최초의 사진 속 인물</em>이다.
+          이 한 장이 — 수천 년의 <b>재현 회화</b>를 뒤흔들었다.
+        </p>
+      </div>
+      <div>
+        <div class="art-frame" style="aspect-ratio: 4/3;">
+          <img src="../images/kandinsky.jpg" alt="Kandinsky Composition VII" />
+        </div>
+        <div class="art-caption">
+          <b>Composition VII · 1913</b>
+          <span>KANDINSKY</span>
+        </div>
+        <p class="body-sm" style="margin-top:8px; font-size:13px;">
+          사진이 재현을 가져가자, 그림은 <em>색과 형태 그 자체</em>로 이동했다.
+          75년 만에 회화는 <b>완전히 다른 언어</b>를 발명했다 — 추상.
+        </p>
+      </div>
+    </div>
+
+    <div class="subhead" style="margin-top:14px;">같은 리듬, 같은 감정 — AI 앞에서도 반복된다</div>
+    <div class="nlist">
+      <div class="item">
+        <div class="num">01</div>
+        <div class="txt"><b>"죽었다"는 선언이 먼저 온다.</b> 1839년 Paul Delaroche — <em>"오늘부터 회화는 죽었다"</em>. 2023년 일러스트레이터 커뮤니티 — <em>"이제 우리 일은 끝났다"</em>.</div>
+      </div>
+      <div class="item">
+        <div class="num">02</div>
+        <div class="txt"><b>그리고 해방이 온다.</b> 기계가 재현을 가져가자 사람은 <em>재현할 필요가 없는 영역</em>으로 이동했다. — AI 앞에서도 같은 자리 이동이 일어나고 있다.</div>
+      </div>
+      <div class="item">
+        <div class="num">03</div>
+        <div class="txt"><b>새 장르는 예상 밖에서 태어난다.</b> 추상미술을 1839년에 아무도 예측 못했다. — AI 이후의 장르도 지금은 이름이 없다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:12px 20px;">
+      <span class="label">▲ AI가 알려주는 것</span>
+      <span class="text" style="font-size:15px;">
+        AI는 <strong>"재현"을 기계에 맡기는 두 번째 라운드</strong>다. 첫 라운드 이후 무엇이 남았는지 보면 — <em>이번에 남을 것</em>도 짐작이 간다.
+      </span>
+    </div>
+
+    <div class="foot">
+      <span class="left">AI × 사진 · 1838 → 1913 → 2025</span>
+      <span class="right"><b>03</b> / 07</span>
+    </div>
+  </div>
+</body></html>

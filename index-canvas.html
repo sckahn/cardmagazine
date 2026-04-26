@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>AI × CANVAS · 카드뉴스 미리보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif; background: #ece6d8; color: #0f1e38; }
+  body { padding: 60px 60px 120px; }
+  header { max-width: 1400px; margin: 0 auto 56px; }
+  header h1 { font-family: 'Pretendard Variable', sans-serif; font-size: 44px; font-weight: 900; letter-spacing: -0.035em; color: #0f1e38; }
+  header h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: #E35205; font-weight: 700; }
+  header p { font-size: 15px; color: #5c6578; margin-top: 8px; line-height: 1.6; }
+  header .bar { margin-top: 18px; height: 3px; width: 80px; background: #E35205; }
+  .grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .item { background: #fff; box-shadow: 0 20px 40px -20px rgba(15, 30, 56, 0.18); border: 1px solid rgba(15,30,56,0.08); }
+  .item .cap { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid rgba(15,30,56,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .item .cap b { color: #E35205; }
+  .item .frame { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #f4efe4; }
+  .item iframe { width: 1080px; height: 1080px; border: 0; transform: scale(calc(682 / 1080)); transform-origin: top left; position: absolute; left: 0; top: 0; }
+  footer { max-width: 1400px; margin: 80px auto 0; padding-top: 30px; border-top: 1px solid rgba(15,30,56,0.1); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.2em; text-transform: uppercase; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>AI × <em>Canvas</em> · Card News</h1>
+    <p>7장 카드 · 1,080 × 1,080 · AI는 왜 또 예술을 흔드는가 — 사진·상업·TV가 남긴 세 번의 선례</p>
+    <div class="bar"></div>
+  </header>
+
+  <div class="grid">
+    <div class="item"><div class="cap"><span>01 · Cover · AI는 왜 또 예술을 흔드는가</span><b>Open</b></div><div class="frame"><iframe src="5-cards-canvas/01-cover.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>02 · 파괴의 법칙 · 반복되는 패턴</span><b>Law</b></div><div class="frame"><iframe src="5-cards-canvas/02-law-of-disruption.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>03 · AI × 사진 · 재현의 위기</span><b>Case 1</b></div><div class="frame"><iframe src="5-cards-canvas/03-ai-x-photo.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>04 · AI × 상업미술 · 대량복제의 재림</span><b>Case 2</b></div><div class="frame"><iframe src="5-cards-canvas/04-ai-x-commerce.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>05 · AI × TV · 미디어아트의 DNA</span><b>Case 3</b></div><div class="frame"><iframe src="5-cards-canvas/05-ai-x-tv.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>06 · 공진화 · 예술은 이사한다</span><b>Answer</b></div><div class="frame"><iframe src="5-cards-canvas/06-co-evolution.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>07 · 다음 파동 · 이름 없는 장르</span><b>Outro</b></div><div class="frame"><iframe src="5-cards-canvas/07-next-wave.html"></iframe></div></div>
+  </div>
+
+  <footer>
+    <span>AI × Canvas · 7 cards · Pretendard typeface</span>
+    <span>Mirae Asset inspired tone</span>
+  </footer>
+</body></html>

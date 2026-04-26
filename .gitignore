@@ -1,0 +1,15 @@
+# ephemeral
+/tmp/
+.DS_Store
+*.zip
+outputs 2.zip
+
+# legacy capture scripts
+capture-*.sh
+
+# python
+__pycache__/
+*.pyc
+
+# incomplete / work-in-progress test assets
+images/test-*

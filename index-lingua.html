@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>AI × LINGUA · 카드뉴스 미리보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif; background: #ece6d8; color: #0f1e38; }
+  body { padding: 60px 60px 120px; }
+  header { max-width: 1400px; margin: 0 auto 56px; }
+  header h1 { font-family: 'Pretendard Variable', sans-serif; font-size: 44px; font-weight: 900; letter-spacing: -0.035em; color: #0f1e38; }
+  header h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: #E35205; font-weight: 700; }
+  header p { font-size: 15px; color: #5c6578; margin-top: 8px; line-height: 1.6; }
+  header .bar { margin-top: 18px; height: 3px; width: 80px; background: #E35205; }
+  .grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .item { background: #fff; box-shadow: 0 20px 40px -20px rgba(15, 30, 56, 0.18); border: 1px solid rgba(15,30,56,0.08); }
+  .item .cap { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid rgba(15,30,56,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .item .cap b { color: #E35205; }
+  .item .frame { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #f4efe4; }
+  .item iframe { width: 1080px; height: 1080px; border: 0; transform: scale(calc(682 / 1080)); transform-origin: top left; position: absolute; left: 0; top: 0; }
+  footer { max-width: 1400px; margin: 80px auto 0; padding-top: 30px; border-top: 1px solid rgba(15,30,56,0.1); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.2em; text-transform: uppercase; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>AI × <em>Lingua</em> · Card News</h1>
+    <p>9장 카드 · 1,080 × 1,080 · 언어는 의미인가 구조인가 — 의미주의와 변형생성문법, 그리고 LLM</p>
+    <div class="bar"></div>
+  </header>
+
+  <div class="grid">
+    <div class="item"><div class="cap"><span>01 · Cover · 의미인가 구조인가</span><b>Open</b></div><div class="frame"><iframe src="9-cards-lingua/01-cover.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>02 · 비트겐슈타인 · 의미는 쓰임</span><b>Meaning</b></div><div class="frame"><iframe src="9-cards-lingua/02-wittgenstein.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>03 · 소쉬르 · 기호는 차이다</span><b>Semiotics</b></div><div class="frame"><iframe src="9-cards-lingua/03-saussure.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>04 · 촘스키 1957 · 생성문법의 탄생</span><b>Syntax</b></div><div class="frame"><iframe src="9-cards-lingua/04-chomsky-1957.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>05 · 보편문법 · 빈약한 자극의 역설</span><b>Innate</b></div><div class="frame"><iframe src="9-cards-lingua/05-universal-grammar.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>06 · 두 진영의 충돌 · 50년의 대립</span><b>Clash</b></div><div class="frame"><iframe src="9-cards-lingua/06-two-camps.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>07 · 분포 의미론 · LLM의 답</span><b>Distribution</b></div><div class="frame"><iframe src="9-cards-lingua/07-distributional.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>08 · 촘스키 2023 · LLM 비판</span><b>Backlash</b></div><div class="frame"><iframe src="9-cards-lingua/08-chomsky-2023.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>09 · 쓰임이 이겼다</span><b>Outro</b></div><div class="frame"><iframe src="9-cards-lingua/09-outro.html"></iframe></div></div>
+  </div>
+
+  <footer>
+    <span>AI × Lingua · 9 cards · Pretendard typeface</span>
+    <span>Mirae Asset inspired tone</span>
+  </footer>
+</body></html>

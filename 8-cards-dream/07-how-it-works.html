@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · DeepDream 작동 원리</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × DREAM</div>
+      <div class="chaptertag">MECHANISM &nbsp;·&nbsp; 환각의 구조</div>
+    </div>
+    <div class="era">
+      <span class="year">AMPLIFICATION</span>
+      <span class="label"><b>증폭 알고리즘</b><span class="sub">Gradient Ascent</span></span>
+    </div>
+    <h1 class="title sm">신경망은<br /><em>확신</em>을 키운다.</h1>
+
+    <div class="body" style="margin-top:22px;">
+      <p>DeepDream은 일반적인 이미지 분류와 정반대 방향으로 작동한다.</p>
+    </div>
+
+    <div style="margin-top:16px; padding:16px 20px; background:rgba(227,82,5,0.05); border-left:4px solid var(--brand); border-radius:4px;">
+      <p style="font-size:13px; line-height:1.65; color:var(--navy);"><b style="color:var(--brand);">핵심 아이디어:</b> 신경망이 <em>"구름에서 개를 본다"</em>면 — 이미지를 조금씩 바꿔서 <strong>더 개처럼 보이게</strong> 만든다. 이걸 반복하면 구름이 진짜 개가 된다. 이게 바로 AI의 환각.</p>
+    </div>
+
+    <div style="margin-top:18px; display:grid; grid-template-columns:1fr auto 1fr; gap:18px; align-items:center;">
+      <div style="padding:18px 20px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:16px; font-weight:800; margin-bottom:8px; color:#FFE4D0;">정상 분류</div>
+        <div style="font-size:13.5px; line-height:1.5; opacity:0.95;">이미지 → 레이블<br />손실 최소화<br />Gradient Descent<br /><span style="opacity:0.7;">→ 정답 찾기</span></div>
+      </div>
+      <div style="font-size:28px; font-weight:900; color:var(--brand);">≠</div>
+      <div style="padding:18px 20px; background:linear-gradient(135deg, rgba(227,82,5,0.95), rgba(181,64,11,0.95)); border-radius:6px; color:white;">
+        <div style="font-size:16px; font-weight:800; margin-bottom:8px;">DeepDream</div>
+        <div style="font-size:13.5px; line-height:1.5; opacity:0.98;">이미지 ← 활성화 증폭<br />손실 최대화<br />Gradient Ascent<br /><span style="opacity:0.9;">→ 확신 키우기</span></div>
+      </div>
+    </div>
+
+    <div class="nlist" style="margin-top:18px; font-size:14.5px;">
+      <div class="item">
+        <span class="num">01</span>
+        <div class="con">
+          <b>특정 레이어를 선택</b>
+          <p>낮은 레이어 → 단순 패턴(선, 곡선)<br />높은 레이어 → 복잡한 형태(눈, 얼굴, 건물)</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">02</span>
+        <div class="con">
+          <b>활성화를 목표 함수로 설정</b>
+          <p>손실(loss) = - Σ (레이어 활성화 값). 음수를 붙여 <em>최대화</em>가 목표가 된다.</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">03</span>
+        <div class="con">
+          <b>역전파로 이미지 수정</b>
+          <p>가중치가 아닌 <em>입력 이미지 픽셀</em>을 업데이트. "이 레이어가 더 강하게 반응하려면 이미지가 어떻게 바뀌어야 하나?"</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">04</span>
+        <div class="con">
+          <b>다중 스케일 적용</b>
+          <p>이미지를 점진적으로 확대하며 반복(octave). 작은 디테일부터 큰 구조까지 층층이 증폭.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left">Activation Maximization</span>
+      <span class="right"><b>07</b> / 09</span>
+    </div>
+  </div>
+</body></html>

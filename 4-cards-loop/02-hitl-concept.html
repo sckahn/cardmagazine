@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>02 · Human-in-the-loop 개념</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">02</div>
+
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × LOOP</div>
+      <div class="chaptertag">CONCEPT &nbsp;·&nbsp; 고리 속의 사람</div>
+    </div>
+
+    <div class="era">
+      <span class="year">정의.</span>
+      <span class="label"><b>Human-in-the-loop (HITL)</b><span class="sub">AI의 출력을 <em>사람이 끊어</em> 검증·수정하는 구조</span></span>
+    </div>
+
+    <h1 class="title sm">AI의 <em>말</em>과<br />사람의 <span class="underline">판단</span> 사이.</h1>
+
+    <!-- Loop visualization -->
+    <div style="margin-top:16px; padding:18px 24px 12px; background: var(--bg-white); border:1px solid var(--line);">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size:10px; letter-spacing:2px; color:var(--ink-soft); font-weight:700; margin-bottom:6px;">THE LOOP · 사람이 끼어드는 자리</div>
+      <svg viewBox="0 0 900 200" style="width:100%; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <!-- AI node -->
+        <circle cx="170" cy="100" r="48" fill="#0f1e38" />
+        <text x="170" y="96" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="16" font-weight="800" fill="#fff">AI</text>
+        <text x="170" y="114" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10" fill="#FFE4D0">생성·예측</text>
+
+        <!-- Arrow to Human -->
+        <line x1="220" y1="100" x2="400" y2="100" stroke="#E35205" stroke-width="2.5" />
+        <polygon points="400,94 412,100 400,106" fill="#E35205" />
+        <text x="310" y="88" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#3a4458" font-weight="600">출력 · output</text>
+
+        <!-- Human node -->
+        <circle cx="450" cy="100" r="48" fill="#E35205" />
+        <text x="450" y="96" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="16" font-weight="800" fill="#fff">사람</text>
+        <text x="450" y="114" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10" fill="#FFE4D0">검증·수정</text>
+
+        <!-- Arrow to Result -->
+        <line x1="500" y1="100" x2="680" y2="100" stroke="#E35205" stroke-width="2.5" />
+        <polygon points="680,94 692,100 680,106" fill="#E35205" />
+        <text x="590" y="88" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="11" fill="#3a4458" font-weight="600">승인 · approval</text>
+
+        <!-- Result node -->
+        <circle cx="730" cy="100" r="48" fill="#0f1e38" />
+        <text x="730" y="96" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="14" font-weight="800" fill="#fff">결과</text>
+        <text x="730" y="114" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10" fill="#FFE4D0">실행·배포</text>
+
+        <!-- Feedback arrow (bottom loop) -->
+        <path d="M 730 148 Q 730 180, 450 180 Q 170 180, 170 148" stroke="#E35205" stroke-width="2" fill="none" stroke-dasharray="5,3" opacity="0.6" />
+        <polygon points="176,148 170,158 164,148" fill="#E35205" opacity="0.7" />
+        <text x="450" y="196" text-anchor="middle" font-family="Pretendard Variable, sans-serif" font-size="10.5" fill="#5c6578" font-style="normal">피드백 · 다시 학습에 반영</text>
+      </svg>
+    </div>
+
+    <div class="subhead" style="margin-top:18px;">사람이 개입해야 하는 세 가지 이유</div>
+    <div class="row2" style="grid-template-columns: 1fr 1fr 1fr; gap:12px; margin-top:6px;">
+      <div class="recap-card" style="padding:14px 14px;">
+        <div class="rnum">①</div>
+        <div class="rtag">신뢰 문제</div>
+        <div class="rtitle" style="font-size:16px;">할루시네이션</div>
+        <div class="rbody" style="font-size:12.5px;">AI는 <em>모르는 것</em>도 자신있게 말한다</div>
+      </div>
+      <div class="recap-card" style="padding:14px 14px;">
+        <div class="rnum">②</div>
+        <div class="rtag">능력의 한계</div>
+        <div class="rtitle" style="font-size:16px;">수학의 몰이해</div>
+        <div class="rbody" style="font-size:12.5px;">LLM은 계산기가 아니다. <em>도구</em>가 필요하다</div>
+      </div>
+      <div class="recap-card" style="padding:14px 14px; border-top-color: var(--brand);">
+        <div class="rnum" style="color:var(--brand);">③</div>
+        <div class="rtag">태도의 문제</div>
+        <div class="rtitle" style="font-size:16px;">수동 vs 능동</div>
+        <div class="rbody" style="font-size:12.5px;">받아쓰기가 아니라 <em>끊어치기</em></div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:14px; padding:13px 20px;">
+      <span class="label">▲ 이번 시리즈의 약속</span>
+      <span class="text" style="font-size:15px;">
+        세 가지 이유를 하나씩 살펴본 뒤 — <strong>미셸 푸코의 파레시아</strong>
+        <em>(고대 그리스어 παρρησία · 두려움 없이 진실을 말하는 용기)</em>로, 사람이 이 loop에서 어떤 <em>태도</em>를 가져야 하는지 묻습니다.
+      </span>
+    </div>
+
+    <div class="foot">
+      <span class="left">HITL · AI와 사람이 엮인 고리</span>
+      <span class="right"><b>02</b> / 07</span>
+    </div>
+  </div>
+</body></html>

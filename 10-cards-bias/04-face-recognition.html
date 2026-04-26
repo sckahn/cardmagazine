@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · 얼굴인식의 인종 편향</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × BIAS</div>
+      <div class="chaptertag">CASE 02 &nbsp;·&nbsp; 얼굴이 안 보이는 얼굴</div>
+    </div>
+    <div class="era">
+      <span class="year">2018</span>
+      <span class="label"><b>Joy Buolamwini · MIT</b><span class="sub">Gender Shades Study</span></span>
+    </div>
+    <h1 class="title sm">얼굴인식 AI는 <em>백인 남성</em>을<br /><span class="underline">34배 더 잘</span> 알아봤다.</h1>
+
+    <div class="split" style="grid-template-columns:0.85fr 1.5fr; gap:22px; margin-top:14px; align-items:start;">
+      <div class="left">
+        <img src="../images/buolamwini.jpg" style="width:100%; height:290px; object-fit:cover; object-position:center 59%; border-radius:6px;" alt="Joy Buolamwini" />
+        <p style="font-size:10px; margin-top:5px; opacity:0.6; text-align:center;">Joy Buolamwini · MIT Media Lab</p>
+      </div>
+      <div class="right body-sm" style="font-size:14px;">
+        <p>MIT 대학원생 <b>조이 부올람위니</b>는 얼굴인식 AI를 테스트하다 이상한 경험을 했다. 자기 얼굴을 — 흑인 여성 얼굴을 — AI가 <em>인식하지 못했다</em>. <b>하얀 가면을 쓰자</b> 그제야 인식했다.</p>
+        <p style="margin-top:10px;">그녀는 IBM·MS·중국 Face++의 상용 AI를 검증했다. 결과는 충격적이었다.</p>
+      </div>
+    </div>
+
+    <!-- Error rate comparison bar chart -->
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:14px 18px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:13px; font-weight:900; color:#FFE4D0; margin-bottom:6px;">백인 남성 얼굴</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-top:6px;">
+          <div style="flex:1; height:8px; background:rgba(255,255,255,0.2); border-radius:3px; position:relative;">
+            <div style="width:3%; height:100%; background:#FFE4D0; border-radius:3px;"></div>
+          </div>
+          <div style="font-size:16px; font-weight:900; color:#FFE4D0;">0.8%</div>
+        </div>
+        <div style="font-size:11px; margin-top:4px; opacity:0.85;">오인식률 — 거의 완벽</div>
+      </div>
+      <div style="padding:14px 18px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:13px; font-weight:900; margin-bottom:6px;">흑인 여성 얼굴</div>
+        <div style="display:flex; align-items:center; gap:8px; margin-top:6px;">
+          <div style="flex:1; height:8px; background:rgba(255,255,255,0.25); border-radius:3px; position:relative;">
+            <div style="width:85%; height:100%; background:#fff; border-radius:3px;"></div>
+          </div>
+          <div style="font-size:16px; font-weight:900; color:#fff;">34.7%</div>
+        </div>
+        <div style="font-size:11px; margin-top:4px; opacity:0.9;">오인식률 — 3명 중 1명 놓침</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ Gender Shades · Buolamwini & Gebru, 2018</span>
+      <span class="text" style="font-size:13px;">학습 이미지가 <b>대부분 백인 남성</b>이었다. AI는 <em>본 적 없는 얼굴</em>을 알아보지 못했다. 이 논문 이후 IBM은 상업 얼굴인식을 <b>전면 중단</b>했다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">CASE 02 · 얼굴이 안 보이는 얼굴</span>
+      <span class="right"><b>04</b> / 08</span>
+    </div>
+  </div>
+</body></html>

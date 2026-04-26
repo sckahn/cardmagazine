@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>AI × RHYTHM · 카드뉴스 미리보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif; background: #ece6d8; color: #0f1e38; }
+  body { padding: 60px 60px 120px; }
+  header { max-width: 1400px; margin: 0 auto 56px; }
+  header h1 { font-family: 'Pretendard Variable', sans-serif; font-size: 44px; font-weight: 900; letter-spacing: -0.035em; color: #0f1e38; }
+  header h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: #E35205; font-weight: 700; }
+  header p { font-size: 15px; color: #5c6578; margin-top: 8px; line-height: 1.6; }
+  header .bar { margin-top: 18px; height: 3px; width: 80px; background: #E35205; }
+  .grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .item { background: #fff; box-shadow: 0 20px 40px -20px rgba(15, 30, 56, 0.18); border: 1px solid rgba(15,30,56,0.08); }
+  .item .cap { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid rgba(15,30,56,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .item .cap b { color: #E35205; }
+  .item .frame { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #f4efe4; }
+  .item iframe { width: 1080px; height: 1080px; border: 0; transform: scale(calc(682 / 1080)); transform-origin: top left; position: absolute; left: 0; top: 0; }
+  footer { max-width: 1400px; margin: 80px auto 0; padding-top: 30px; border-top: 1px solid rgba(15,30,56,0.1); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.2em; text-transform: uppercase; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>AI × <em>Rhythm</em> · Card News</h1>
+    <p>8장 카드 · 1,080 × 1,080 · AI 음악은 왜 그루브가 없나 — 펑크가 가르쳐준 것</p>
+    <div class="bar"></div>
+  </header>
+
+  <div class="grid">
+    <div class="item"><div class="cap"><span>01 · Cover · AI 음악은 왜 춤추고 싶지 않은가</span><b>Open</b></div><div class="frame"><iframe src="7-cards-rhythm/01-cover.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>02 · 리듬 vs 그루브 · 펑크의 정의</span><b>Concept</b></div><div class="frame"><iframe src="7-cards-rhythm/02-rhythm-vs-groove.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>03 · AI 음악 생성 타임라인</span><b>History</b></div><div class="frame"><iframe src="7-cards-rhythm/03-ai-music-timeline.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>04 · AI가 잘하는 것 · 이론의 왕</span><b>Strength</b></div><div class="frame"><iframe src="7-cards-rhythm/04-what-ai-does.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>05 · 이론 vs 감각 · 측정 불가능한 것</span><b>Theory vs Feel</b></div><div class="frame"><iframe src="7-cards-rhythm/05-theory-vs-feel.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>06 · AI가 못 하는 것 · 펑크의 The One</span><b>Weakness</b></div><div class="frame"><iframe src="7-cards-rhythm/06-what-ai-misses.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>07 · 그루브는 몸의 언어 · 체화된 지식</span><b>Embodied</b></div><div class="frame"><iframe src="7-cards-rhythm/07-body-language.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>08 · 그루브의 판정자</span><b>Outro</b></div><div class="frame"><iframe src="7-cards-rhythm/08-outro.html"></iframe></div></div>
+  </div>
+
+  <footer>
+    <span>AI × Rhythm · 8 cards · Pretendard typeface</span>
+    <span>Mirae Asset inspired tone</span>
+  </footer>
+</body></html>

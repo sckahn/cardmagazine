@@ -1,0 +1,218 @@
+[
+  {
+    "n": 1,
+    "slug": "philosophy",
+    "name": "Philosophy",
+    "hanja": "哲",
+    "subtitle": "AI가 처음 만난 철학자들",
+    "desc": "튜링·ELIZA·중국어 방·앵무새·테세우스의 배·Physical AI — AI를 비추는 여섯 개의 거울.",
+    "slides": [
+      "01-cover.png",
+      "02-turing-intro.png",
+      "03-turing-logic.png",
+      "04-eliza-birth.png",
+      "05-eliza-effect.png",
+      "06-chinese-room-experiment.png",
+      "07-chinese-room-replies.png",
+      "08-part1-close.png",
+      "09-part2-open.png",
+      "10-parrots-context.png",
+      "11-parrots-claim.png",
+      "12-theseus-classic.png",
+      "13-theseus-ai.png",
+      "14-koch-physical-ai.png",
+      "15-outro.png"
+    ],
+    "count": 15
+  },
+  {
+    "n": 2,
+    "slug": "taste",
+    "name": "Taste",
+    "hanja": "味",
+    "subtitle": "AI는 왜 맛을 모르는가",
+    "desc": "이어령 \"미각은 제일 나중\" — 다섯 감각의 합성 · 후각 80% · Stochastic Parrots.",
+    "slides": [
+      "01-cover.png",
+      "02-other-senses.png",
+      "03-five-senses-in-mouth.png",
+      "04-smell-eighty-percent.png",
+      "05-parrot-of-taste.png",
+      "06-outro.png"
+    ],
+    "count": 6
+  },
+  {
+    "n": 3,
+    "slug": "vibe",
+    "name": "Vibe",
+    "hanja": "遊",
+    "subtitle": "호모 루덴스와 바이브 코딩",
+    "desc": "1938 하위징아 · 자동화 파라독스 · Flow · 2025 Karpathy — 왜 바이브 코딩이 핫한가.",
+    "slides": [
+      "01-cover.png",
+      "02-huizinga.png",
+      "03-automation-paradox.png",
+      "04-play-science.png",
+      "05-ai-efficiency.png",
+      "06-karpathy-tweet.png",
+      "07-vibe-structure.png",
+      "08-why-hot.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 4,
+    "slug": "loop",
+    "name": "Loop",
+    "hanja": "環",
+    "subtitle": "사람이 AI의 고리에 들어가는 법",
+    "desc": "Human-in-the-loop · 환각 · 도구 사용 · 푸코의 파레시아 — AI 시대의 감독관.",
+    "slides": [
+      "01-cover.png",
+      "02-hitl-concept.png",
+      "03-hallucination.png",
+      "04-math-tools.png",
+      "05-passive-active.png",
+      "06-foucault-parrhesia.png",
+      "07-outro.png"
+    ],
+    "count": 7
+  },
+  {
+    "n": 5,
+    "slug": "canvas",
+    "name": "Canvas",
+    "hanja": "畵",
+    "subtitle": "사진·상업·TV가 바꾼 예술 — 그 다음은 AI",
+    "desc": "붕괴의 법칙 · AI × 사진 · AI × 상업 · AI × TV · 공진화 · 다음 파도.",
+    "slides": [
+      "01-cover.png",
+      "02-law-of-disruption.png",
+      "03-ai-x-photo.png",
+      "04-ai-x-commerce.png",
+      "05-ai-x-tv.png",
+      "06-co-evolution.png",
+      "07-next-wave.png"
+    ],
+    "count": 7
+  },
+  {
+    "n": 6,
+    "slug": "aura",
+    "name": "Aura",
+    "hanja": "靈",
+    "subtitle": "벤야민 · 소쉬르 · 불쾌한 골짜기로 본 AI 예술",
+    "desc": "아우라의 조건 · 기표의 공장 · 불쾌한 골짜기 — AI 예술의 세 렌즈.",
+    "slides": [
+      "01-cover.png",
+      "02-benjamin.png",
+      "03-aura-conditions.png",
+      "04-saussure.png",
+      "05-ai-signifier-factory.png",
+      "06-uncanny-valley.png",
+      "07-ai-uncanny.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 7,
+    "slug": "rhythm",
+    "name": "Rhythm",
+    "hanja": "律",
+    "subtitle": "AI 음악은 왜 그루브가 없는가",
+    "desc": "리듬 vs 그루브 · TR-808 · Miles Davis · Bonham — 몸이 배운 타이밍.",
+    "slides": [
+      "01-cover.png",
+      "02-rhythm-vs-groove.png",
+      "03-ai-music-timeline.png",
+      "04-what-ai-does.png",
+      "05-theory-vs-feel.png",
+      "06-what-ai-misses.png",
+      "07-body-language.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 8,
+    "slug": "dream",
+    "name": "Dream",
+    "hanja": "夢",
+    "subtitle": "뇌가 꿈을 만드는 원리, AI는 꿀 수 있을까",
+    "desc": "필립 K. 딕 · REM 수면 · 뇌가소성 · DeepDream · Inceptionism — 기계는 꿈꾸는가.",
+    "slides": [
+      "01-cover.png",
+      "02-dick.png",
+      "03-sleep.png",
+      "04-lucid.png",
+      "05-plasticity.png",
+      "06-deepdream.png",
+      "07-how-it-works.png",
+      "08-compare.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 9,
+    "slug": "lingua",
+    "name": "Lingua",
+    "hanja": "語",
+    "subtitle": "의미인가 문법인가 — LLM의 답",
+    "desc": "비트겐슈타인 · 소쉬르 · 촘스키 · 분포 의미론 · 2023 촘스키의 반격.",
+    "slides": [
+      "01-cover.png",
+      "02-wittgenstein.png",
+      "03-saussure.png",
+      "04-chomsky-1957.png",
+      "05-universal-grammar.png",
+      "06-two-camps.png",
+      "07-distributional.png",
+      "08-chomsky-2023.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 10,
+    "slug": "bias",
+    "name": "Bias",
+    "hanja": "鏡",
+    "subtitle": "AI는 우리의 거울이다",
+    "desc": "아마존 채용 · Gender Shades · AlphaGo 37수 · Model Collapse · Scheming — 거울 앞에서.",
+    "slides": [
+      "01-cover.png",
+      "02-how-learning-works.png",
+      "03-amazon-hiring.png",
+      "04-face-recognition.png",
+      "05-alphago-move37.png",
+      "06-model-collapse.png",
+      "07-threat-origin.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 11,
+    "slug": "drive",
+    "name": "Drive",
+    "hanja": "驅",
+    "subtitle": "거짓말은 진화, AI는 따라한다",
+    "desc": "캄브리아 방향 · 도파민 · 거짓말의 진화 · Sutton RL · Reward Hacking · 쇼펜하우어.",
+    "slides": [
+      "01-cover.png",
+      "02-direction-birth.png",
+      "03-dopamine.png",
+      "04-lie-evolution.png",
+      "05-sutton-rl.png",
+      "06-reward-hacking.png",
+      "07-llm-scheming.png",
+      "08-schopenhauer.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  }
+]

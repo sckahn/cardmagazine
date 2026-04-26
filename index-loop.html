@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>AI × LOOP · 카드뉴스 미리보기</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,400;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif; background: #ece6d8; color: #0f1e38; }
+  body { padding: 60px 60px 120px; }
+  header { max-width: 1400px; margin: 0 auto 56px; }
+  header h1 { font-family: 'Pretendard Variable', sans-serif; font-size: 44px; font-weight: 900; letter-spacing: -0.035em; color: #0f1e38; }
+  header h1 em { font-family: 'Playfair Display', serif; font-style: italic; color: #E35205; font-weight: 700; }
+  header p { font-size: 15px; color: #5c6578; margin-top: 8px; line-height: 1.6; }
+  header .bar { margin-top: 18px; height: 3px; width: 80px; background: #E35205; }
+  .grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; }
+  .item { background: #fff; box-shadow: 0 20px 40px -20px rgba(15, 30, 56, 0.18); border: 1px solid rgba(15,30,56,0.08); }
+  .item .cap { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid rgba(15,30,56,0.08); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 700; }
+  .item .cap b { color: #E35205; }
+  .item .frame { width: 100%; aspect-ratio: 1/1; overflow: hidden; position: relative; background: #f4efe4; }
+  .item iframe { width: 1080px; height: 1080px; border: 0; transform: scale(calc(682 / 1080)); transform-origin: top left; position: absolute; left: 0; top: 0; }
+  .section-break { grid-column: 1 / -1; display: flex; align-items: center; gap: 22px; margin: 30px 0 4px; color: #0f1e38; font-family: 'Pretendard Variable', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.025em; }
+  .section-break .l { flex: 1; height: 1px; background: #E35205; opacity: 0.45; }
+  .section-break b { font-family: 'JetBrains Mono', monospace; color: #E35205; font-size: 13px; letter-spacing: 0.24em; }
+  footer { max-width: 1400px; margin: 80px auto 0; padding-top: 30px; border-top: 1px solid rgba(15,30,56,0.1); font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #5c6578; letter-spacing: 0.2em; text-transform: uppercase; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <header>
+    <h1>AI × <em>Loop</em> · Card News</h1>
+    <p>7장 카드 · 1,080 × 1,080 · Human-in-the-loop이 필요한 세 이유와 푸코의 파레시아</p>
+    <div class="bar"></div>
+  </header>
+
+  <div class="grid">
+    <div class="section-break"><b>OPENING</b><span>AI는 말한다, 사람은 진실한가</span><span class="l"></span></div>
+    <div class="item"><div class="cap"><span>01 · Cover</span><b>Open</b></div><div class="frame"><iframe src="4-cards-loop/01-cover.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>02 · Human-in-the-loop 개념</span><b>Concept</b></div><div class="frame"><iframe src="4-cards-loop/02-hitl-concept.html"></iframe></div></div>
+
+    <div class="section-break"><b>REASONS</b><span>세 가지 이유</span><span class="l"></span></div>
+    <div class="item"><div class="cap"><span>03 · 이유 ① 할루시네이션</span><b>Reason 1</b></div><div class="frame"><iframe src="4-cards-loop/03-hallucination.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>04 · 이유 ② 수치·수학의 몰이해</span><b>Reason 2</b></div><div class="frame"><iframe src="4-cards-loop/04-math-tools.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>05 · 이유 ③ 수동 vs 능동 개입</span><b>Reason 3</b></div><div class="frame"><iframe src="4-cards-loop/05-passive-active.html"></iframe></div></div>
+
+    <div class="section-break"><b>FOUCAULT</b><span>파레시아로 본 태도</span><span class="l"></span></div>
+    <div class="item"><div class="cap"><span>06 · 1984 푸코의 파레시아</span><b>Theory</b></div><div class="frame"><iframe src="4-cards-loop/06-foucault-parrhesia.html"></iframe></div></div>
+    <div class="item"><div class="cap"><span>07 · 결론 · AI 시대의 파레시아 수행자</span><b>Outro</b></div><div class="frame"><iframe src="4-cards-loop/07-outro.html"></iframe></div></div>
+  </div>
+
+  <footer>
+    <span>AI × Loop · 7 cards · Pretendard typeface</span>
+    <span>Mirae Asset inspired tone</span>
+  </footer>
+</body></html>

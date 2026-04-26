@@ -1,0 +1,207 @@
+/* AI × Series · Web Magazine */
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@700;900&family=Playfair+Display:ital,wght@0,700;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg: #f4efe4;
+  --bg-soft: #faf6ec;
+  --navy: #0f1e38;
+  --navy-deep: #1c2e4e;
+  --brand: #E35205;
+  --brand-deep: #B5400B;
+  --brand-soft: #FFE4D0;
+  --ink: #0f172a;
+  --ink-soft: #243244;
+  --ink-mid: #5c6578;
+  --line: rgba(15,30,56,0.1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  font-family: 'Pretendard Variable', Pretendard, 'Noto Sans KR', sans-serif;
+  background: var(--bg); color: var(--navy);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.012em;
+}
+body { min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+em { font-style: normal; color: var(--brand); font-weight: 800; }
+
+.site-nav {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(244, 239, 228, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-nav-inner {
+  max-width: 1440px; margin: 0 auto; padding: 18px 48px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.site-nav .logo {
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+  font-size: 22px; color: var(--navy);
+}
+.site-nav .logo em { font-style: italic; color: var(--brand); }
+.site-nav .nav-right {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase; font-weight: 700;
+}
+
+/* ====== HOME ====== */
+.hero-home {
+  max-width: 1440px; margin: 0 auto; padding: 100px 48px 60px;
+  display: grid; grid-template-columns: 1.3fr 1fr; gap: 48px; align-items: end;
+}
+.hero-home .eyebrow {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: 0.3em; color: var(--brand); font-weight: 700; text-transform: uppercase;
+}
+.hero-home h1 {
+  margin-top: 24px;
+  font-size: 96px; font-weight: 900; line-height: 0.98; letter-spacing: -0.04em;
+}
+.hero-home h1 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
+.hero-home .lead {
+  margin-top: 28px; font-size: 19px; line-height: 1.7; color: var(--ink-soft); max-width: 620px;
+}
+.hero-home .meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em;
+  color: var(--ink-mid); text-transform: uppercase; font-weight: 600; line-height: 2;
+  padding: 20px 0 0 0; border-top: 1px solid var(--line);
+}
+.hero-home .meta b { color: var(--navy); font-weight: 800; font-size: 22px; display: block; margin-top: 4px; letter-spacing: 0; font-family: 'Pretendard Variable', sans-serif; text-transform: none; }
+
+.section-title {
+  max-width: 1440px; margin: 80px auto 32px; padding: 0 48px;
+  display: flex; align-items: baseline; justify-content: space-between;
+}
+.section-title h2 {
+  font-size: 32px; font-weight: 900; letter-spacing: -0.025em;
+}
+.section-title h2 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; color: var(--brand); }
+.section-title .note {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase;
+}
+
+.series-grid {
+  max-width: 1440px; margin: 0 auto; padding: 0 48px 120px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px;
+}
+.series-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 48px -28px rgba(15, 30, 56, 0.2);
+  display: block; position: relative; overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.series-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 32px 56px -24px rgba(15, 30, 56, 0.3);
+}
+.series-card .thumb {
+  width: 100%; aspect-ratio: 1/1; background: var(--bg);
+  overflow: hidden; position: relative;
+}
+.series-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.series-card .thumb .hanja {
+  position: absolute; right: 24px; top: 22px;
+  font-family: 'Noto Serif KR', serif; font-weight: 900; font-size: 84px;
+  color: var(--brand); opacity: 0.18; line-height: 1;
+}
+.series-card .body { padding: 22px 24px 24px; border-top: 1px solid var(--line); }
+.series-card .tag {
+  font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.22em;
+  color: var(--brand); font-weight: 700; text-transform: uppercase;
+}
+.series-card .tag b { color: var(--ink-mid); margin-left: 8px; font-weight: 500; letter-spacing: 0.15em;}
+.series-card h3 {
+  margin-top: 8px; font-size: 26px; font-weight: 900; letter-spacing: -0.02em; line-height: 1.15;
+}
+.series-card h3 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
+.series-card .subt {
+  margin-top: 6px; font-size: 14.5px; color: var(--ink-soft); line-height: 1.5;
+}
+.series-card .desc {
+  margin-top: 12px; font-size: 12.5px; color: var(--ink-mid); line-height: 1.65;
+}
+
+/* ====== FOOTER ====== */
+.site-foot {
+  max-width: 1440px; margin: 0 auto; padding: 48px 48px 80px;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 10.5px;
+  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase;
+}
+
+/* ====== ISSUE / SERIES DETAIL ====== */
+.issue-head {
+  max-width: 1440px; margin: 0 auto; padding: 80px 48px 56px;
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: end;
+  border-bottom: 1px solid var(--line);
+}
+.issue-head .meta {
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: 0.3em; color: var(--brand); text-transform: uppercase; font-weight: 700;
+}
+.issue-head h1 {
+  margin-top: 18px;
+  font-size: 72px; font-weight: 900; line-height: 1; letter-spacing: -0.035em;
+}
+.issue-head h1 em { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
+.issue-head .subt { margin-top: 18px; font-size: 20px; color: var(--ink-soft); line-height: 1.55; }
+.issue-head .desc { font-size: 14px; line-height: 1.7; color: var(--ink-mid); }
+.issue-head .count {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase;
+  padding-top: 14px; margin-top: 16px; border-top: 1px solid var(--line);
+}
+.issue-head .count b {
+  display: block; font-family: 'Pretendard Variable', sans-serif;
+  font-size: 36px; font-weight: 900; color: var(--navy); letter-spacing: -0.02em;
+  margin-top: 4px;
+}
+
+.slides {
+  max-width: 1280px; margin: 0 auto; padding: 60px 48px 80px;
+  display: grid; gap: 48px;
+}
+.slide-frame {
+  background: #fff; border: 1px solid var(--line);
+  box-shadow: 0 28px 48px -32px rgba(15,30,56,0.25);
+}
+.slide-frame .head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 24px; border-bottom: 1px solid var(--line);
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  letter-spacing: 0.22em; color: var(--ink-mid); text-transform: uppercase; font-weight: 700;
+}
+.slide-frame .head b { color: var(--brand); }
+.slide-frame img { width: 100%; display: block; }
+
+.nav-strip {
+  max-width: 1280px; margin: 0 auto; padding: 32px 48px 100px;
+  border-top: 1px solid var(--line);
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px;
+  letter-spacing: 0.2em; color: var(--ink-mid); text-transform: uppercase; font-weight: 700;
+  padding-top: 32px;
+}
+.nav-strip a { color: var(--navy); }
+.nav-strip a:hover { color: var(--brand); }
+.nav-strip .prev::before { content: "← "; color: var(--brand); }
+.nav-strip .next::after { content: " →"; color: var(--brand); }
+
+@media (max-width: 960px) {
+  .hero-home { grid-template-columns: 1fr; padding: 60px 24px 40px; gap: 32px; }
+  .hero-home h1 { font-size: 56px; }
+  .section-title { padding: 0 24px; }
+  .series-grid { grid-template-columns: 1fr; padding: 0 24px 80px; gap: 24px; }
+  .issue-head { grid-template-columns: 1fr; padding: 50px 24px 40px; gap: 28px; }
+  .issue-head h1 { font-size: 48px; }
+  .slides { padding: 40px 24px 60px; gap: 28px; }
+  .nav-strip { padding: 24px; }
+  .site-nav-inner { padding: 14px 24px; }
+  .site-foot { padding: 32px 24px 56px; flex-direction: column; gap: 12px; align-items: flex-start;}
+}

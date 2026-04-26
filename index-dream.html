@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI × DREAM — 카드뉴스 미리보기</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 40px 20px;
+}
+.header {
+  max-width: 1400px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.header p {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+.grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px;
+}
+.card-frame {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.card-frame h3 {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  opacity: 0.8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+iframe {
+  width: 100%;
+  height: 540px;
+  border: none;
+  border-radius: 8px;
+  background: white;
+}
+.section-break {
+  grid-column: 1 / -1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(227,82,5,0.3), transparent);
+  margin: 20px 0;
+}
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>AI × DREAM</h1>
+    <p>안드로이드는 전자양의 꿈을 꾸는가? — DeepDream, 메타인지, 뇌가소성</p>
+  </div>
+
+  <div class="grid">
+    <div class="card-frame">
+      <h3>01 · Cover</h3>
+      <iframe src="8-cards-dream/01-cover.html"></iframe>
+    </div>
+    <div class="card-frame">
+      <h3>02 · 1968 필립 K. 딕</h3>
+      <iframe src="8-cards-dream/02-dick.html"></iframe>
+    </div>
+
+    <div class="section-break"></div>
+
+    <div class="card-frame">
+      <h3>03 · 사람은 왜 꿈을 꾸나</h3>
+      <iframe src="8-cards-dream/03-sleep.html"></iframe>
+    </div>
+    <div class="card-frame">
+      <h3>04 · 메타인지와 자각몽</h3>
+      <iframe src="8-cards-dream/04-lucid.html"></iframe>
+    </div>
+    <div class="card-frame">
+      <h3>05 · 뇌가소성</h3>
+      <iframe src="8-cards-dream/05-plasticity.html"></iframe>
+    </div>
+
+    <div class="section-break"></div>
+
+    <div class="card-frame">
+      <h3>06 · DeepDream 등장</h3>
+      <iframe src="8-cards-dream/06-deepdream.html"></iframe>
+    </div>
+    <div class="card-frame">
+      <h3>07 · DeepDream 작동 원리</h3>
+      <iframe src="8-cards-dream/07-how-it-works.html"></iframe>
+    </div>
+    <div class="card-frame">
+      <h3>08 · AI vs 사람의 꿈</h3>
+      <iframe src="8-cards-dream/08-compare.html"></iframe>
+    </div>
+
+    <div class="section-break"></div>
+
+    <div class="card-frame">
+      <h3>09 · Outro</h3>
+      <iframe src="8-cards-dream/09-outro.html"></iframe>
+    </div>
+  </div>
+</body>
+</html>
