@@ -272,5 +272,25 @@
       "09-outro.png"
     ],
     "count": 9
+  },
+  {
+    "n": 15,
+    "slug": "cinema",
+    "name": "Cinema",
+    "hanja": "映",
+    "subtitle": "준비되지 않음의 영상철학",
+    "desc": "누벨바그 · 사르트르 · 68운동 · 블루퍼(NG) · 픽사 · Sora — AI 영상 시대 인간성의 자리.",
+    "slides": [
+      "01-cover.png",
+      "02-nouvelle-vague.png",
+      "03-technique.png",
+      "04-sartre.png",
+      "05-may68.png",
+      "06-bloopers.png",
+      "07-pixar.png",
+      "08-sora.png",
+      "09-outro.png"
+    ],
+    "count": 9
   }
 ]
