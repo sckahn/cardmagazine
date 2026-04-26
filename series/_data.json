@@ -252,5 +252,25 @@
       "08-outro.png"
     ],
     "count": 8
+  },
+  {
+    "n": 14,
+    "slug": "utopia",
+    "name": "Utopia",
+    "hanja": "烏",
+    "subtitle": "자유·비효율 사이의 AI",
+    "desc": "Mill · Marx · Huxley · Orwell · 토머스 모어 — 자본주의와 공산주의가 AI와 만날 때의 두 디스토피아.",
+    "slides": [
+      "01-cover.png",
+      "02-mill.png",
+      "03-capital.png",
+      "04-huxley.png",
+      "05-marx.png",
+      "06-orwell.png",
+      "07-more.png",
+      "08-third-way.png",
+      "09-outro.png"
+    ],
+    "count": 9
   }
 ]

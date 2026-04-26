@@ -3,8 +3,8 @@
 <title>AI × Wisdom · Issue 13</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
-<link rel="stylesheet" href="../styles/site.css?v=14" />
-<link rel="stylesheet" href="../styles/magazine.css?v=14" />
+<link rel="stylesheet" href="../styles/site.css?v=15" />
+<link rel="stylesheet" href="../styles/magazine.css?v=15" />
 </head><body>
 
 <nav class="site-nav">
@@ -73,11 +73,12 @@
     </article>
 
     <aside class="mag-next">
+      <img class="next-cover" src="../14-outputs-utopia/01-cover.png" alt="AI × Utopia cover" />
       <div>
-        <div class="next-kicker">THAT'S A WRAP</div>
-        <h3 class="next-title">AI × <em>Series</em></h3>
-        <p class="next-sub">모든 이슈를 읽어주셔서 감사합니다. 다음 이슈는 곧 이어서 공개됩니다.</p>
-        <a class="next-cta" href="../">전체 이슈로 돌아가기 →</a>
+        <div class="next-kicker">NEXT · ISSUE 14</div>
+        <h3 class="next-title">AI × <em>Utopia</em></h3>
+        <p class="next-sub">자유·비효율 사이의 AI — Mill · Marx · Huxley · Orwell · 토머스 모어 — 자본주의와 공산주의가 AI와 만날 때의 두 디스토피아.</p>
+        <a class="next-cta" href="utopia.html">다음 이슈 보기 →</a>
       </div>
     </aside>
   </main>
@@ -93,7 +94,7 @@
 <script>
 (async function () {
   // --- 1) Fetch the card stylesheet once and scope it to .mag-article ---
-  const cardCssUrl = '../style.css?v=14';
+  const cardCssUrl = '../style.css?v=15';
   let cardCss = '';
   try {
     cardCss = await fetch(cardCssUrl).then(r => r.text());

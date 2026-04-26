@@ -559,7 +559,24 @@ html {
     grid-template-columns: 1fr !important;
     gap: 16px !important;
   }
+  /* Any inline grid inside article gets linearised on mobile.
+     Cards frequently use "grid-template-columns: 1fr auto 1fr" or
+     "repeat(3|4, 1fr)" in inline style — these overflow narrow viewports. */
+  .mag-article .stage [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+  /* The "→" or "≡" arrow column between gradient boxes becomes useless
+     when the grid linearises — hide it. */
+  .mag-article .stage [style*="1fr auto 1fr"] > *:nth-child(2) {
+    display: none !important;
+  }
   .mag-article .split .right .portrait { max-width: 280px; }
   .mag-article .era { flex-direction: column; gap: 8px; align-items: flex-start; }
   .mag-article .era .year { font-size: 42px !important; }
+  /* Cover timeline: let the 5 tokens wrap instead of overflowing */
+  .mag-article.cover-like .timeline {
+    flex-wrap: wrap !important;
+    row-gap: 6px !important;
+  }
 }
