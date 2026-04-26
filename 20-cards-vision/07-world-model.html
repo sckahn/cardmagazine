@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · 월드 모델</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × VISION</div>
+      <div class="chaptertag">WORLD MODEL &nbsp;·&nbsp; 아이의 정보량</div>
+    </div>
+    <div class="era">
+      <span class="year">2022</span>
+      <span class="label"><b>Yann LeCun · A Path Towards AMI</b><span class="sub">아이 4살 = LLM 훈련량의 ~50배 시각 데이터</span></span>
+    </div>
+    <h1 class="title sm">4살 아이가 본 것이 —<br />AI보다 <em>많습니다</em>.</h1>
+
+    <div class="body" style="margin-top:12px; font-size:14.5px;">
+      <p><b>얀 르쿤</b>은 2022년 논문 〈<em>A Path Towards Autonomous Machine Intelligence</em>〉에서 한 가지 비교를 했습니다. 대형 언어모델이 글로 훈련받는 양과 — <em>4살짜리 아이가 깨어 있는 동안 눈으로 받는 정보량</em>을 나란히 놓으면 —</p>
+    </div>
+
+    <!-- Bandwidth comparison -->
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:stretch;">
+      <div style="padding:14px 17px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0; margin-bottom:4px;">LLM · 대형 언어모델</div>
+        <div style="font-size:11.5px; opacity:0.92; line-height:1.55;">텍스트 <em style="color:#FFE4D0;">~10¹³ 토큰</em> (약 10 TB 글). 인류가 쓴 책 · 인터넷 상당수를 흡수한 양.</div>
+      </div>
+      <div style="font-size:18px; font-weight:900; color:var(--brand); align-self:center;">vs</div>
+      <div style="padding:14px 17px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0; margin-bottom:4px;">4살 아이 · 시각</div>
+        <div style="font-size:11.5px; opacity:0.95; line-height:1.55;">깨어 있는 <em style="color:#FFE4D0;">~16,000시간</em>. 망막 → 뇌로 <b>~5×10¹⁴ 비트</b>. LLM의 약 <em>50배</em>.</div>
+      </div>
+    </div>
+
+    <div class="body" style="margin-top:12px; font-size:14px;">
+      <p>르쿤의 주장은 명확합니다. <em>"언어 모델만으로는 사람 같은 지능에 도달할 수 없습니다. 세상의 구조를 배우려면 — 시각과 몸의 데이터가 필요합니다."</em> 이 방향이 바로 <b>World Model(세상 모형)</b>입니다.</p>
+    </div>
+
+    <!-- Three pillars of World Model -->
+    <div style="margin-top:12px; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.2px; color:var(--brand); font-weight:700;">① 관찰</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">영상·감각·몸의 움직임을 <b>함께</b> 받습니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.2px; color:var(--brand); font-weight:700;">② 예측</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">"다음엔 뭐가 일어날까"를 <b>스스로</b> 예측합니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.2px; color:var(--brand); font-weight:700;">③ 수정</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">틀린 예측을 통해 <b>세상의 규칙</b>을 배웁니다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ 함의</span>
+      <span class="text" style="font-size:13.5px;">아이가 컵을 떨어뜨리면 깨진다는 걸 배우는 데 — 글이 필요 없습니다. <em>눈으로 보고 손으로 경험</em>합니다. AI의 다음 단계는 이 길을 가는 것입니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">WORLD MODEL · 2022</span>
+      <span class="right"><b>07</b> / 10</span>
+    </div>
+  </div>
+</body></html>

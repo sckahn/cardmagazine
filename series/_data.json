@@ -376,5 +376,26 @@
       "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 20,
+    "slug": "vision",
+    "name": "Vision",
+    "hanja": "視",
+    "subtitle": "AI는 왜 눈부터 열렸을까",
+    "desc": "Hubel-Wiesel 고양이 실험 · LeCun CNN · AlexNet · GPU 행렬연산 · LeCun World Model — 시각이 지능의 시작.",
+    "slides": [
+      "01-cover.png",
+      "02-visual-weight.png",
+      "03-hubel-wiesel.png",
+      "04-cnn.png",
+      "05-alexnet.png",
+      "06-gpu.png",
+      "07-world-model.png",
+      "08-strengths-gaps.png",
+      "09-lecun-message.png",
+      "10-outro.png"
+    ],
+    "count": 10
   }
 ]

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>05 · AlexNet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × VISION</div>
+      <div class="chaptertag">ALEXNET &nbsp;·&nbsp; 2012 충격</div>
+    </div>
+    <div class="era">
+      <span class="year">2012</span>
+      <span class="label"><b>AlexNet · Krizhevsky · Sutskever · Hinton</b><span class="sub">ImageNet 에러율 26% → 15.3%로 붕괴</span></span>
+    </div>
+    <h1 class="title sm"><em>2012년</em>, AI는<br />눈을 떴습니다.</h1>
+
+    <div class="split" style="grid-template-columns:0.9fr 1.6fr; gap:26px; margin-top:14px;">
+      <div class="left">
+        <img src="../images/feifei.jpg" class="portrait" alt="Fei-Fei Li" />
+        <div class="portrait-caption">
+          <span class="name">Fei-Fei Li</span>
+          <span class="years">ImageNet 창시</span>
+        </div>
+      </div>
+      <div class="right body-sm" style="font-size:14px;">
+        <p>2010년 <b>페이페이 리</b>가 만든 <em>ImageNet</em>은 1,400만 장의 이미지에 2만 개 카테고리 라벨을 붙인 데이터셋이었습니다. 매년 대회가 열렸고 — 에러율은 <em>26%대</em>에서 제자리걸음이었습니다.</p>
+        <p style="margin-top:10px;">2012년, <b>토론토 대학</b>의 대학원생 <em>Krizhevsky</em>와 그의 지도교수 <em>Hinton</em>이 — GPU 2장으로 학습시킨 <b>AlexNet</b>을 출전시켰습니다. 결과는 15.3% — 이전 세대보다 <em>10%p 이상</em> 좋아진 숫자였습니다. 세상이 바뀐 순간입니다.</p>
+      </div>
+    </div>
+
+    <!-- Error rate drop SVG -->
+    <svg viewBox="0 0 700 120" style="width:100%; height:120px; margin-top:12px;">
+      <line x1="40" y1="100" x2="660" y2="100" stroke="#0f1e38" stroke-width="1" opacity="0.4"/>
+      <!-- bars -->
+      <g>
+        <rect x="80" y="30" width="60" height="70" fill="#0f1e38" opacity="0.75"/>
+        <text x="110" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">2010</text>
+        <text x="110" y="22" text-anchor="middle" font-family="Pretendard Variable" font-size="12" fill="#0f1e38" font-weight="700">28.2%</text>
+
+        <rect x="200" y="35" width="60" height="65" fill="#0f1e38" opacity="0.75"/>
+        <text x="230" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">2011</text>
+        <text x="230" y="27" text-anchor="middle" font-family="Pretendard Variable" font-size="12" fill="#0f1e38" font-weight="700">25.8%</text>
+
+        <rect x="320" y="60" width="60" height="40" fill="#E35205"/>
+        <text x="350" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#E35205" font-weight="800">2012 · AlexNet</text>
+        <text x="350" y="52" text-anchor="middle" font-family="Pretendard Variable" font-size="13" fill="#E35205" font-weight="800">15.3%</text>
+
+        <rect x="440" y="75" width="60" height="25" fill="#E35205" opacity="0.7"/>
+        <text x="470" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">2014</text>
+        <text x="470" y="67" text-anchor="middle" font-family="Pretendard Variable" font-size="12" fill="#E35205" font-weight="700">6.7%</text>
+
+        <rect x="560" y="88" width="60" height="12" fill="#E35205" opacity="0.7"/>
+        <text x="590" y="115" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">2017</text>
+        <text x="590" y="80" text-anchor="middle" font-family="Pretendard Variable" font-size="12" fill="#E35205" font-weight="700">2.3%</text>
+      </g>
+      <text x="350" y="14" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="#5c6578" letter-spacing="1.5">IMAGENET · TOP-5 ERROR RATE</text>
+    </svg>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ 뜻</span>
+      <span class="text" style="font-size:13.5px;">AlexNet은 <em>새로운 알고리즘</em>이 아니었습니다. 1989년 CNN + 2012년 GPU의 <b>조합</b>이었습니다. 세 번째 재료 — <em>대량의 라벨 데이터</em>가 이때 준비되었습니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">ALEXNET · 2012</span>
+      <span class="right"><b>05</b> / 10</span>
+    </div>
+  </div>
+</body></html>
