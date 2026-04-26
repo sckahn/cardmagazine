@@ -67,6 +67,17 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
 .hero-home .lead {
   margin-top: 28px; font-size: 19px; line-height: 1.7; color: var(--ink-soft); max-width: 620px;
 }
+.hero-home .byline {
+  margin-top: 26px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px; letter-spacing: 0.28em;
+  color: var(--ink-mid); text-transform: uppercase; font-weight: 600;
+}
+.hero-home .byline b {
+  color: var(--brand); font-weight: 800; letter-spacing: 0.04em;
+  font-family: 'Pretendard Variable', sans-serif; text-transform: none;
+  font-size: 13px; margin-left: 6px;
+}
 .hero-home .meta {
   font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.18em;
   color: var(--ink-mid); text-transform: uppercase; font-weight: 600; line-height: 2;
