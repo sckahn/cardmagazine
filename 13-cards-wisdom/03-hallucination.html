@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · AI는 왜 모르면서 안다고 하는가</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × WISDOM</div>
+      <div class="chaptertag">TRAP 01 &nbsp;·&nbsp; 자신 있게 틀리는 기계</div>
+    </div>
+    <div class="era">
+      <span class="year">2023·2024</span>
+      <span class="label"><b>Calibration 붕괴</b><span class="sub">확신의 크기와 정답률이 어긋납니다</span></span>
+    </div>
+    <h1 class="title sm">AI는 <em>모른다</em>고<br />말하지 못합니다.</h1>
+
+    <div class="body" style="margin-top:12px;">
+      <p>LLM은 다음 단어를 <b>확률 분포</b>로 뽑습니다. 가장 자연스러운 연결을 고를 뿐, <em>“이건 내가 아는 범위 밖이다”</em>라는 신호를 내장하고 있지 않습니다. 결과 — 존재하지 않는 판례, 허구의 논문, 가짜 인용을 <b>같은 톤</b>으로 답합니다. 이를 <em>할루시네이션</em>이라 부릅니다.</p>
+    </div>
+
+    <!-- Confidence vs accuracy split -->
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:stretch;">
+      <div style="padding:14px 17px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0; margin-bottom:6px;">사람 전문가</div>
+        <div style="font-size:12px; opacity:0.92; line-height:1.55;">
+          모르는 분야엔 <em style="color:#FFE4D0;">“잘 모릅니다”</em><br />
+          <span style="opacity:0.85;">→ 확신 ≈ 정답률</span>
+        </div>
+      </div>
+      <div style="font-size:22px; font-weight:900; color:var(--brand); align-self:center;">≠</div>
+      <div style="padding:14px 17px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0; margin-bottom:6px;">LLM</div>
+        <div style="font-size:12px; opacity:0.95; line-height:1.55;">
+          틀려도 <em style="color:#FFE4D0;">같은 확신</em>으로 답변<br />
+          <span style="opacity:0.9;">→ 확신 ≫ 정답률</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="split" style="grid-template-columns:1fr 1fr; gap:18px; margin-top:14px;">
+      <div class="left" style="padding:12px 14px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">CASE · MATA v. AVIANCA 2023</div>
+        <div style="font-size:12px; line-height:1.55; margin-top:4px;">뉴욕 변호사가 ChatGPT가 만든 <b>가짜 판례 6건</b>을 법원에 제출했습니다. 모두 그럴듯한 이름·연도·인용이 붙어있었지만 — <em>전부 존재하지 않는 사건</em>이었습니다.</div>
+      </div>
+      <div class="right" style="padding:12px 14px; background:rgba(15,30,56,0.05); border-left:3px solid var(--navy);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--navy); font-weight:700;">STUDY · CALIBRATION GAP 2024</div>
+        <div style="font-size:12px; line-height:1.55; margin-top:4px;">GPT-4가 <b>“90% 확실합니다”</b>라고 답한 사실 진술 중 실제로 맞은 비율은 <em>약 60%</em>에 그쳤습니다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ 핵심</span>
+      <span class="text" style="font-size:13.5px;">AI에는 <em>‘내가 이건 모른다’</em>는 메타 인식이 없습니다. 소크라테스가 가장 먼저 갖춘 바로 그 능력입니다.</span>
+    </div>
+
+    <!-- Why it matters — three downstream effects -->
+    <div style="margin-top:12px; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+      <div style="padding:10px 12px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">EFFECT 1</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">잘못된 답에 <b>같은 확신</b>이 붙어 걸러내기 어려워집니다.</div>
+      </div>
+      <div style="padding:10px 12px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">EFFECT 2</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">사용자는 AI의 <b>권위</b>에 쉽게 휩쓸립니다.</div>
+      </div>
+      <div style="padding:10px 12px; background:rgba(15,30,56,0.05); border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">EFFECT 3</div>
+        <div style="font-size:11.5px; color:var(--ink-body); line-height:1.5; margin-top:3px;">틀림이 누적되어 <b>집합 기억</b>이 오염됩니다.</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left">TRAP 01 · 할루시네이션</span>
+      <span class="right"><b>03</b> / 08</span>
+    </div>
+  </div>
+</body></html>

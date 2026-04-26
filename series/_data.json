@@ -233,5 +233,24 @@
       "08-outro.png"
     ],
     "count": 8
+  },
+  {
+    "n": 13,
+    "slug": "wisdom",
+    "name": "Wisdom",
+    "hanja": "智",
+    "subtitle": "모른다는 걸 안다 — 지혜의 세 조건",
+    "desc": "소크라테스 · 할루시네이션 · 뇌 vs AI 에너지 · Friston · Hayek · 집단지성 — 지혜의 세 함정.",
+    "slides": [
+      "01-cover.png",
+      "02-socrates.png",
+      "03-hallucination.png",
+      "04-energy-gap.png",
+      "05-friston.png",
+      "06-hayek.png",
+      "07-collective.png",
+      "08-outro.png"
+    ],
+    "count": 8
   }
 ]
