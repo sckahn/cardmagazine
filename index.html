@@ -41,8 +41,8 @@
     <div class="control-group">
       <span class="control-label">Sort</span>
       <div class="seg" role="tablist" aria-label="정렬">
-        <button type="button" class="seg-btn active" data-sort="desc" aria-label="최신순">↓ 최신</button>
-        <button type="button" class="seg-btn" data-sort="asc" aria-label="오래된 순">↑ 오래된</button>
+        <button type="button" class="seg-btn" data-sort="desc" aria-label="최신순">↓ 최신</button>
+        <button type="button" class="seg-btn active" data-sort="asc" aria-label="오래된 순">↑ 오래된</button>
       </div>
     </div>
   </div>
@@ -352,7 +352,7 @@
 
   let state = {
     view: localStorage.getItem('home.view') || 'grid',
-    sort: localStorage.getItem('home.sort') || 'desc',
+    sort: localStorage.getItem('home.sort') || 'asc',
     tag:  localStorage.getItem('home.tag')  || 'all',
     singleIdx: 0,
   };
