@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · LLM의 토큰</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × NAMING</div>
+      <div class="chaptertag">LLM &nbsp;·&nbsp; 왜 지금 AI가 강한가</div>
+    </div>
+    <div class="era">
+      <span class="year">2017→</span>
+      <span class="label"><b>Token · Embedding · Transformer</b><span class="sub">AI는 세상을 "이름"으로 삼켰습니다</span></span>
+    </div>
+    <h1 class="title sm">AI는 사람의 <em>이름짓기</em>를<br />빌려 강해졌습니다.</h1>
+
+    <div class="body" style="margin-top:12px; font-size:14.5px;">
+      <p>LLM(거대 언어 모델)이 갑자기 똑똑해 보이는 이유 — <em>이미 사람이 수천 년간 만들어둔 "이름의 체계"</em>를 그대로 받아 쓰기 때문입니다. 모든 글은 <b>토큰(token)</b>이라는 단위로 잘려, 숫자 목록이 됩니다. 그 숫자들은 서로 <em>이웃 관계</em>가 있습니다 — "사과"와 "과일"이 가깝고, "바다"와 "파도"가 가깝습니다.</p>
+    </div>
+
+    <!-- Token embedding SVG -->
+    <svg viewBox="0 0 700 160" style="width:100%; height:160px; margin-top:12px;">
+      <!-- axes -->
+      <line x1="50" y1="140" x2="670" y2="140" stroke="#0f1e38" stroke-width="1" opacity="0.35"/>
+      <line x1="50" y1="20" x2="50" y2="140" stroke="#0f1e38" stroke-width="1" opacity="0.35"/>
+      <!-- clusters -->
+      <g font-family="Pretendard Variable" font-size="13" font-weight="700">
+        <!-- fruits cluster -->
+        <circle cx="170" cy="60" r="7" fill="#E35205" opacity="0.8"/>
+        <text x="185" y="64" fill="#E35205">사과</text>
+        <circle cx="210" cy="75" r="7" fill="#E35205" opacity="0.8"/>
+        <text x="225" y="79" fill="#E35205">포도</text>
+        <circle cx="195" cy="95" r="7" fill="#E35205" opacity="0.65"/>
+        <text x="210" y="99" fill="#E35205">과일</text>
+        <ellipse cx="195" cy="80" rx="70" ry="35" fill="none" stroke="#E35205" stroke-dasharray="4,3" opacity="0.5"/>
+        <text x="195" y="30" text-anchor="middle" font-size="11" fill="#E35205" font-weight="800">과일 이웃</text>
+
+        <!-- sea cluster -->
+        <circle cx="480" cy="100" r="7" fill="#0f1e38" opacity="0.8"/>
+        <text x="495" y="104" fill="#0f1e38">바다</text>
+        <circle cx="520" cy="85" r="7" fill="#0f1e38" opacity="0.8"/>
+        <text x="535" y="89" fill="#0f1e38">파도</text>
+        <circle cx="505" cy="115" r="7" fill="#0f1e38" opacity="0.65"/>
+        <text x="520" y="119" fill="#0f1e38">물고기</text>
+        <ellipse cx="505" cy="100" rx="80" ry="35" fill="none" stroke="#0f1e38" stroke-dasharray="4,3" opacity="0.5"/>
+        <text x="505" y="50" text-anchor="middle" font-size="11" fill="#0f1e38" font-weight="800">바다 이웃</text>
+      </g>
+      <text x="360" y="155" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">단어의 위치 = 의미의 위치</text>
+    </svg>
+
+    <!-- why this makes LLM strong -->
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:12px;">
+      <div style="padding:12px 14px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">축약</div>
+        <div style="font-size:12px; color:var(--ink-body); line-height:1.5; margin-top:3px;">세상의 복잡함을 <b>수백 차원 숫자</b>로 줄입니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:rgba(15,30,56,0.05); border-left:3px solid var(--navy);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.5px; color:var(--navy); font-weight:700;">관계</div>
+        <div style="font-size:12px; color:var(--ink-body); line-height:1.5; margin-top:3px;">"사과 − 나무 + 사람 = <b>아담</b>" 같은 연산이 가능해집니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">재조합</div>
+        <div style="font-size:12px; color:var(--ink-body); line-height:1.5; margin-top:3px;">기존 이름들을 엮어 <b>새 문장</b>을 만듭니다. 그게 LLM입니다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ 핵심</span>
+      <span class="text" style="font-size:13.5px;">LLM이 갑자기 말을 잘하는 게 아닙니다. <em>사람이 수천 년 쌓은 이름의 지도</em>를 — 통째로 학습했을 뿐입니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">LLM · 2017→</span>
+      <span class="right"><b>08</b> / 10</span>
+    </div>
+  </div>
+</body></html>

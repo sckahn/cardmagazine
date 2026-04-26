@@ -334,5 +334,26 @@
       "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 18,
+    "slug": "naming",
+    "name": "Naming",
+    "hanja": "名",
+    "subtitle": "이름 짓는 힘 — 인간의 가장 강한 무기",
+    "desc": "김춘수 꽃 · 김진섭 명명철학 · 장님과 코끼리 · 캥거루 · 마그리트 · LLM 토큰 — 이름과 실재 사이.",
+    "slides": [
+      "01-cover.png",
+      "02-flower.png",
+      "03-kim-jinseop.png",
+      "04-blind-elephant.png",
+      "05-kangaroo.png",
+      "06-magritte.png",
+      "07-abstraction.png",
+      "08-llm-tokens.png",
+      "09-ai-limit.png",
+      "10-outro.png"
+    ],
+    "count": 10
   }
 ]

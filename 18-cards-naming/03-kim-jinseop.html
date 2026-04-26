@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · 명명철학</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × NAMING</div>
+      <div class="chaptertag">KIM JIN-SEOP &nbsp;·&nbsp; 이름이 만드는 질서</div>
+    </div>
+    <div class="era">
+      <span class="year">1930s</span>
+      <span class="label"><b>김진섭 · 명명철학</b><span class="sub">命名은 생각의 시작입니다</span></span>
+    </div>
+    <h1 class="title sm">이름 짓기는 — <em>혼돈</em>을<br />질서로 바꿉니다.</h1>
+
+    <div class="body" style="margin-top:12px; font-size:14.5px;">
+      <p>수필가 <b>김진섭</b>은 <em>"명명(命名)"</em> 자체를 하나의 철학으로 봤습니다. 우리는 이름을 붙이는 순간 — <b>어지럽게 흘러가던 인상</b>에서 한 조각을 떼어내, <em>다른 것과 구별되는 존재</em>로 고정합니다. 생각은 여기서 시작됩니다.</p>
+    </div>
+
+    <!-- SVG: chaos → naming → concept -->
+    <svg viewBox="0 0 700 160" style="width:100%; height:160px; margin-top:14px;">
+      <defs>
+        <radialGradient id="chaosg" cx="50%" cy="50%">
+          <stop offset="0%" stop-color="#5c6578" stop-opacity="0.5"/>
+          <stop offset="100%" stop-color="#5c6578" stop-opacity="0.05"/>
+        </radialGradient>
+      </defs>
+      <!-- chaotic dots on left -->
+      <g fill="#0f1e38" opacity="0.55">
+        <circle cx="50" cy="40" r="4"/><circle cx="75" cy="70" r="3"/><circle cx="35" cy="90" r="5"/>
+        <circle cx="90" cy="110" r="4"/><circle cx="55" cy="130" r="3"/><circle cx="110" cy="55" r="4"/>
+        <circle cx="130" cy="95" r="3"/><circle cx="25" cy="55" r="3"/>
+      </g>
+      <circle cx="75" cy="80" r="85" fill="url(#chaosg)"/>
+      <text x="75" y="152" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">① 이름 없는 인상</text>
+
+      <text x="235" y="85" text-anchor="middle" font-size="36" fill="#E35205" font-weight="700">→</text>
+
+      <!-- center: name label -->
+      <rect x="305" y="55" width="130" height="50" rx="6" fill="rgba(227,82,5,0.12)" stroke="#E35205" stroke-width="2"/>
+      <text x="370" y="87" text-anchor="middle" font-family="Pretendard Variable" font-size="17" fill="#E35205" font-weight="800">"바다"</text>
+      <text x="370" y="130" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">② 이름 붙이기</text>
+
+      <text x="495" y="85" text-anchor="middle" font-size="36" fill="#E35205" font-weight="700">→</text>
+
+      <!-- right: organized concept -->
+      <g transform="translate(600,80)">
+        <rect x="-55" y="-30" width="110" height="60" rx="4" fill="rgba(15,30,56,0.08)" stroke="#0f1e38"/>
+        <text x="0" y="-5" text-anchor="middle" font-family="Pretendard Variable" font-size="11" fill="#0f1e38" font-weight="700">바다 ≠ 강</text>
+        <text x="0" y="14" text-anchor="middle" font-family="Pretendard Variable" font-size="11" fill="#0f1e38">바다 ≠ 호수</text>
+      </g>
+      <text x="600" y="152" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="10" fill="#5c6578">③ 다른 것과 구별</text>
+    </svg>
+
+    <!-- Naming enables abstraction -->
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:13px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0;">이름이 없을 때</div>
+        <div style="font-size:11.5px; opacity:0.92; line-height:1.5; margin-top:4px;">바람도 물결도 짠맛도 — 그저 <em style="color:#FFE4D0;">각자 따로</em> 흘러갈 뿐입니다.</div>
+      </div>
+      <div style="padding:13px 16px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:12.5px; font-weight:900; color:#FFE4D0;">"바다"라 부른 순간</div>
+        <div style="font-size:11.5px; opacity:0.95; line-height:1.5; margin-top:4px;">바람·물결·짠맛이 <em style="color:#FFE4D0;">한 덩어리</em>로 묶입니다. 기억·비교·상상이 가능해집니다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">▲ 핵심</span>
+      <span class="text" style="font-size:13.5px;">명명은 단순한 라벨 붙이기가 아닙니다. <em>여러 인상을 한 단어로 묶어내는 추상화</em> — 그것이 모든 생각의 시작입니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">NAMING · 1930s</span>
+      <span class="right"><b>03</b> / 10</span>
+    </div>
+  </div>
+</body></html>
