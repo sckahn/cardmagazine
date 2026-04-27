@@ -329,12 +329,30 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
   .control-row { gap: 14px; }
   .seg-btn { padding: 6px 10px; font-size: 10px; letter-spacing: 0.1em; }
   .chip { font-size: 11.5px; padding: 5px 10px; }
-  .series-grid.view-list .body {
-    grid-template-columns: 60px 1fr;
-    gap: 12px;
+  .series-grid.view-list .series-card {
+    padding: 12px 8px;
   }
-  .series-grid.view-list h3 { font-size: 14px; }
-  .series-grid.view-list .subt { font-size: 12px; }
+  .series-grid.view-list .body {
+    grid-template-columns: 54px 1fr;
+    gap: 10px;
+    align-items: center;
+  }
+  .series-grid.view-list .tag {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+  .series-grid.view-list .body > div:nth-child(2) {
+    min-width: 0;
+    overflow: hidden;
+  }
+  .series-grid.view-list h3 {
+    font-size: 13.5px;
+    line-height: 1.25;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .series-grid.view-list .subt { display: none; }
 }
 
 /* ---------- Series Card — refined ---------- */
