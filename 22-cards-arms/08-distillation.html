@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · Distillation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × ARMS</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;·&nbsp; 모델 증류 의혹</div>
+    </div>
+    <div class="era">
+      <span class="year">DISTILLATION</span>
+      <span class="label"><b>큰 모델 → 작은 모델</b><span class="sub">베끼기인가, 학습인가</span></span>
+    </div>
+    <h1 class="title sm">"GPT의 답을 보고<br />— <em>나도 똑똑해졌다</em>."</h1>
+
+    <p class="body-sm" style="font-size:14px; margin-top:12px;">한 학생이 모범답안을 보고 공부하는 것처럼 — 작은 AI도 <b>큰 AI의 답을 보고</b> 학습할 수 있습니다. 이걸 <em>모델 증류</em>(distillation)라고 부릅니다.</p>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:center;">
+      <div style="padding:14px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:11px; font-weight:800; color:#FFE4D0; letter-spacing:0.1em;">스승 모델 · TEACHER</div>
+        <div style="font-size:15px; font-weight:900; color:#FFE4D0; margin-top:4px;">GPT-4 · 큰 모델</div>
+        <div style="font-size:12px; line-height:1.5; margin-top:5px;">수만 시간·수억 달러로 학습. 어려운 문제도 답을 잘 냅니다.</div>
+      </div>
+      <div style="font-size:32px; font-weight:900; color:var(--brand); text-align:center;">→</div>
+      <div style="padding:14px 16px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:11px; font-weight:800; color:#FFE4D0; letter-spacing:0.1em;">학생 모델 · STUDENT</div>
+        <div style="font-size:15px; font-weight:900; color:#FFE4D0; margin-top:4px;">작은 모델</div>
+        <div style="font-size:12px; line-height:1.5; margin-top:5px;">스승의 답 수백만 개를 보며 — <b style="color:#FFE4D0;">짧은 시간에 흉내</b>합니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="padding:11px 14px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">합법인 경우</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body);">자기 회사 큰 모델로 작은 모델을 만드는 것 — <b style="color:var(--navy);">정당한 압축</b>입니다.</div>
+      </div>
+      <div style="padding:11px 14px; background:rgba(15,30,56,0.05); border-left:3px solid var(--navy);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--navy); font-weight:700;">의심받는 경우</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body);"><b>OpenAI 약관</b>은 "GPT 출력으로 경쟁 모델 학습 금지"를 명시. 그래도 — 막을 방법이 없습니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px; padding:10px 13px; background:rgba(15,30,56,0.06); border-radius:6px;">
+      <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">2025 · OPENAI 주장</div>
+      <div style="font-size:12.5px; line-height:1.5; color:var(--ink-body); margin-top:3px;">OpenAI는 <b style="color:var(--navy);">"DeepSeek이 GPT 출력을 대량으로 빼서 증류했다는 정황을 봤다"</b>고 발표. DeepSeek은 <em style="color:var(--brand); font-weight:700;">공식 부인</em>. 증명은 — 사실상 불가능합니다.</div>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="padding:11px 14px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:10.5px; font-weight:800; color:#FFE4D0; letter-spacing:0.1em;">왜 막기 어려운가</div>
+        <div style="font-size:12.5px; line-height:1.5; margin-top:4px;">API 이용자가 <b style="color:#FFE4D0;">계정 수십·수백 개</b>로 분산해 질문하면 — <b style="color:#FFE4D0;">정상 사용</b>과 구분되지 않습니다.</div>
+      </div>
+      <div style="padding:11px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10.5px; font-weight:800; color:#FFE4D0; letter-spacing:0.1em;">아이러니</div>
+        <div style="font-size:12.5px; line-height:1.5; margin-top:4px;">OpenAI도 <b style="color:#FFE4D0;">웹의 글·그림</b>을 동의 없이 학습했다는 소송을 받고 있습니다 (NYT 등). — <b style="color:#FFE4D0;">"누가 누구를 베꼈나"</b>가 흐려지는 시대.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px; padding:9px 12px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+      <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">정리 · ESSENCE</div>
+      <div style="font-size:12px; line-height:1.5; color:var(--ink-body);">증류는 <b style="color:var(--navy);">기술적으로 합법</b>이고 <b style="color:var(--navy);">계약상 불법</b>일 수 있습니다. 그 사이의 회색지대에서 — 후발 주자는 늘 앞선 자의 어깨에 올라탑니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>08</b> / 11</span>
+    </div>
+  </div>
+</body></html>

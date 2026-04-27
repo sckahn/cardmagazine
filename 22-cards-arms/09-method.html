@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>09 · DeepSeek Method</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">09</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × ARMS</div>
+      <div class="chaptertag">CHAPTER 08 &nbsp;·&nbsp; DeepSeek의 비밀 — 일반인 비유</div>
+    </div>
+    <div class="era">
+      <span class="year">HOW</span>
+      <span class="label"><b>적은 GPU로 따라잡은 세 가지 비법</b><span class="sub">전문 용어 빼고 — 비유로</span></span>
+    </div>
+    <h1 class="title sm">병원·노트·시행착오로<br />이해하는 <em>비밀</em>.</h1>
+
+    <div style="margin-top:14px; display:grid; gap:11px;">
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; padding:13px 16px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:4px;">
+        <div style="font-family:var(--f-mono); font-size:18px; font-weight:900; color:var(--brand); min-width:30px;">①</div>
+        <div>
+          <div style="font-size:14.5px; font-weight:800; color:var(--navy); letter-spacing:-0.01em;">MoE — "<em style="color:var(--brand);">전문의 분업</em>"</div>
+          <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:4px;">큰 종합병원 대신 <b>전문의 256명이 대기</b>합니다. 환자가 오면 — 그 증상에 맞는 <b>의사 8명만</b> 깨워서 본다는 식. 모델 전체는 671B(거대)지만, 한 번에 쓰는 건 37B만. <em>비용 1/18</em>.</div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; padding:13px 16px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:4px;">
+        <div style="font-family:var(--f-mono); font-size:18px; font-weight:900; color:var(--brand); min-width:30px;">②</div>
+        <div>
+          <div style="font-size:14.5px; font-weight:800; color:var(--navy); letter-spacing:-0.01em;">FP8 — "<em style="color:var(--brand);">노트를 더 작게 쓰자</em>"</div>
+          <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:4px;">예전엔 한 숫자를 쓸 때 <b>16칸짜리 노트</b>를 썼습니다. DeepSeek은 <b>8칸짜리 노트</b>로 줄였습니다. 정밀도는 살짝 떨어져도 — <b>메모리·전력·시간 절반</b>. 적은 칩으로 큰 모델을 굴리는 핵심.</div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; padding:13px 16px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:4px;">
+        <div style="font-family:var(--f-mono); font-size:18px; font-weight:900; color:var(--brand); min-width:30px;">③</div>
+        <div>
+          <div style="font-size:14.5px; font-weight:800; color:var(--navy); letter-spacing:-0.01em;">GRPO — "<em style="color:var(--brand);">스승 없이, 시행착오로</em>"</div>
+          <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:4px;">예전엔 한 문제를 풀 때마다 <b>스승이 답</b>을 알려줘야 했습니다(보상 모델). DeepSeek R1은 — <b>스스로 풀고 자기들끼리 비교</b>해 나은 답을 강화합니다. 사람의 채점이 거의 필요 없어 — <b>또 비용 절감</b>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:11px; padding:10px 13px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+      <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">정리 · ESSENCE</div>
+      <div style="font-size:12.5px; line-height:1.5; color:var(--ink-body);">힘으로 못 이기면 <b style="color:var(--navy);">머리로 이긴다</b>. DeepSeek은 모델 구조·계산 정밀도·학습 방식 세 군데에서 <em style="color:var(--brand); font-weight:700;">동시에 효율을 짜냈습니다</em>.</div>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:11px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:10px; font-weight:800; color:#FFE4D0; letter-spacing:0.1em;">미국 GPT-4o</div>
+        <div style="font-size:13px; font-weight:900; color:#FFE4D0; margin-top:4px;">$100M+</div>
+        <div style="font-size:11px; line-height:1.45; margin-top:3px;">최고급 H100 수만 장</div>
+      </div>
+      <div style="padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10px; font-weight:800; color:#FFE4D0; letter-spacing:0.1em;">DeepSeek V3</div>
+        <div style="font-size:13px; font-weight:900; color:#FFE4D0; margin-top:4px;">$5.6M</div>
+        <div style="font-size:11px; line-height:1.45; margin-top:3px;">다운그레이드 H800 2,048장</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-top:3px solid var(--brand);">
+        <div style="font-family:var(--f-mono); font-size:10px; font-weight:800; color:var(--brand); letter-spacing:0.1em;">차이</div>
+        <div style="font-size:13px; font-weight:900; color:var(--navy); margin-top:4px;">약 1/18</div>
+        <div style="font-size:11px; line-height:1.45; color:var(--ink-body); margin-top:3px;">결과는 거의 같은 수준</div>
+      </div>
+    </div>
+
+    <div style="margin-top:10px; padding:10px 13px; background:rgba(15,30,56,0.05); border-left:3px solid var(--navy);">
+      <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--navy); font-weight:700;">한 줄 요약 · TAKEAWAY</div>
+      <div style="font-size:12px; line-height:1.5; color:var(--ink-body);">"칩이 없으면 <b style="color:var(--navy);">알고리즘으로 짜낸다</b>" — 봉쇄가 만든 압박이, 기존 미국 모델의 <em style="color:var(--brand); font-weight:700;">무거운 학습 공식</em>을 다시 쓰게 만들었습니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>09</b> / 11</span>
+    </div>
+  </div>
+</body></html>

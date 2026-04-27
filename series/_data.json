@@ -399,5 +399,47 @@
       "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 21,
+    "slug": "liberty",
+    "name": "Liberty",
+    "hanja": "由",
+    "subtitle": "자유냐 방종이냐 — AI 시대의 책임",
+    "desc": "이사야 벌린 두 가지 자유 · 한나 아렌트 악의 평범성 · 아이히만 재판 · 한스 요나스 책임의 원칙 · 딥페이크·AI Act — 생각과 책임을 통과한 자유.",
+    "slides": [
+      "01-cover.png",
+      "02-berlin.png",
+      "03-arendt.png",
+      "04-eichmann.png",
+      "05-jonas.png",
+      "06-moral-hazard.png",
+      "07-regulation.png",
+      "08-synthesis.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 22,
+    "slug": "arms",
+    "name": "Arms",
+    "hanja": "戰",
+    "subtitle": "AI 군비경쟁 — MAD부터 DeepSeek까지",
+    "desc": "폰 노이만 MAD · GPU 수출금지 · 오픈소스 vs 클로즈드 · 중국 데이터 우위 · DeepSeek 우회 · 모델 증류 · 자본이 규제를 이긴 가속.",
+    "slides": [
+      "01-cover.png",
+      "02-mad.png",
+      "03-ai-mad.png",
+      "04-two-paths.png",
+      "05-gpu-ban.png",
+      "06-china-data.png",
+      "07-deepseek.png",
+      "08-distillation.png",
+      "09-method.png",
+      "10-capital.png",
+      "11-outro.png"
+    ],
+    "count": 11
   }
 ]
