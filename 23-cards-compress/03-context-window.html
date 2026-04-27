@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · 작업기억 = Context Window</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × COMPRESS</div>
+      <div class="chaptertag">CHAPTER 02 &nbsp;·&nbsp; AI의 작업기억 — 컨텍스트 윈도우</div>
+    </div>
+
+    <h1 class="title sm">AI도 — <em>책상</em> 위에<br />올릴 수 있는 양이 정해져 있습니다.</h1>
+
+    <p class="body-sm" style="font-size:14.5px; margin-top:10px;">AI에게 <b>컨텍스트 윈도우</b>는 사람의 작업기억과 똑같습니다. 한 번에 보는 창문, 한 번에 펼쳐놓는 메모지의 개수입니다. 길이가 두 배가 되면 — 계산량은 <em>네 배</em>로 늡니다. 그래서 비용 폭증의 첫 원인이 됩니다.</p>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:16px 18px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); color:#FFE4D0; border-radius:2px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; opacity:0.7;">SHORT — 작업기억</div>
+        <div style="font-size:18px; font-weight:800; margin-top:6px; letter-spacing:-0.015em; color:#FFE4D0;">컨텍스트 윈도우</div>
+        <div style="font-size:13px; line-height:1.6; margin-top:6px; color:#f5d8c2;">지금 펼쳐놓은 메모지. 대화·문서·코드를 같이 보는 창. 길이는 보통 <b style="color:#fff;">8K — 200K 토큰</b>.</div>
+      </div>
+      <div style="padding:16px 18px; background:linear-gradient(135deg, #E35205, #B5400B); color:#FFE4D0; border-radius:2px;">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; opacity:0.85;">COST — 비용 곡선</div>
+        <div style="font-size:18px; font-weight:800; margin-top:6px; letter-spacing:-0.015em; color:#FFE4D0;">제곱으로 폭증</div>
+        <div style="font-size:13px; line-height:1.6; margin-top:6px; color:#ffe1cf;">길이가 N이면 — 계산량은 <b style="color:#fff;">N²</b>. 100K 윈도우 한 번에 — 8K의 156배 비용입니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; padding:14px 16px; background:rgba(15,30,56,0.05); border-left:3px solid var(--navy);">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; color:var(--navy); font-weight:800;">왜 압축이 필요한가</div>
+      <div style="font-size:13px; line-height:1.6; color:var(--ink-body); margin-top:5px;">윈도우를 늘리면 <em>비용이 폭발</em>하고, 줄이면 <em>맥락이 사라집니다</em>. 그래서 AI는 — 사람처럼 <b style="color:var(--navy);">중요한 것만 남기고 나머지는 버리는</b> 기술이 필수가 됐습니다. 이것이 KV 캐시 압축, 슬라이딩 윈도우, 그리고 다음 슬라이드의 <b style="color:var(--brand);">RAG</b>입니다.</div>
+    </div>
+
+    <div style="margin-top:12px; padding:9px 12px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+      <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">일상 비유</div>
+      <div style="font-size:12.5px; line-height:1.5; color:var(--ink-body);">여러분이 회의 중 책상 위에 메모지를 <b style="color:var(--navy);">7장</b> 펼쳐놓는 것 — AI는 같은 일을 <b style="color:var(--navy);">8000장</b>까지 합니다. 그러나 똑같이 — 어느 순간 책상이 무너집니다.</div>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(4, 1fr); gap:10px;">
+      <div style="padding:10px 12px; background:#f7f3ee; border-top:2px solid var(--navy);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">GPT-3.5</div>
+        <div style="font-size:13.5px; font-weight:800; color:var(--navy); margin-top:3px;">4K</div>
+        <div style="font-size:10.5px; color:var(--ink-body); margin-top:2px;">메모지 4천장</div>
+      </div>
+      <div style="padding:10px 12px; background:#f7f3ee; border-top:2px solid var(--navy);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">GPT-4</div>
+        <div style="font-size:13.5px; font-weight:800; color:var(--navy); margin-top:3px;">8K — 32K</div>
+        <div style="font-size:10.5px; color:var(--ink-body); margin-top:2px;">짧은 책 한 권</div>
+      </div>
+      <div style="padding:10px 12px; background:#f7f3ee; border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">CLAUDE 3</div>
+        <div style="font-size:13.5px; font-weight:800; color:var(--navy); margin-top:3px;">200K</div>
+        <div style="font-size:10.5px; color:var(--ink-body); margin-top:2px;">소설 한 권</div>
+      </div>
+      <div style="padding:10px 12px; background:#f7f3ee; border-top:2px solid var(--brand);">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:9px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">GEMINI 1.5</div>
+        <div style="font-size:13.5px; font-weight:800; color:var(--navy); margin-top:3px;">1M — 2M</div>
+        <div style="font-size:10.5px; color:var(--ink-body); margin-top:2px;">전집 — 그래도 한계</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>03</b> / 10</span>
+    </div>
+  </div>
+</body></html>

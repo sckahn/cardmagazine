@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>09 · Vector RAG vs Graph RAG</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">09</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × LANGUE</div>
+      <div class="chaptertag">CHAPTER 04 &nbsp;·&nbsp; 23호와 24호의 차이</div>
+    </div>
+    <h1 class="title sm">Vector RAG는 <em>파롤</em>,<br />Graph RAG는 <em>랑그</em>.</h1>
+
+    <p class="body-sm" style="margin-top:10px; font-size:14px;">23호 <b>COMPRESS</b>에서 본 RAG는 <em>벡터 검색</em> — 비슷한 발화를 찾아오는 방식입니다. 24호의 <b>Graph RAG</b>는 한 층 위 — <em>관계의 지도</em>에서 답을 길어 옵니다.</p>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:16px 18px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10px; letter-spacing:0.18em; font-weight:900;">23호 · VECTOR RAG</div>
+        <div style="font-size:18px; font-weight:900; margin-top:6px; color:#FFE4D0;">파롤 검색</div>
+        <div style="font-size:12.5px; line-height:1.6; margin-top:8px; opacity:0.95;">
+          질문을 벡터로 바꾸고 — <b style="color:#FFE4D0;">가장 가까운 발화 조각</b>을 가져옵니다. 짧은 사실 검색에 강합니다.
+        </div>
+        <div style="margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.25); font-size:11.5px; opacity:0.88;">
+          비유 → <em>"비슷한 말 한 토막"</em>을 찾는 검색대
+        </div>
+      </div>
+      <div style="padding:16px 18px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:10px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">24호 · GRAPH RAG</div>
+        <div style="font-size:18px; font-weight:900; margin-top:6px; color:#FFE4D0;">랑그 추적</div>
+        <div style="font-size:12.5px; line-height:1.6; margin-top:8px; opacity:0.92;">
+          단어·인물·사건의 <b style="color:#FFE4D0;">관계 그래프</b>를 따라 — 여러 홉(hop)을 건너뛰며 답을 조립합니다.
+        </div>
+        <div style="margin-top:10px; padding-top:8px; border-top:1px solid rgba(255,255,255,0.18); font-size:11.5px; opacity:0.88;">
+          비유 → <em>"단어 사이의 지하철 노선도"</em>를 따라가는 길찾기
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+      <div style="padding:10px 12px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">짧은 사실</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink-body); margin-top:3px;">Vector가 빠르고 쌉니다</div>
+      </div>
+      <div style="padding:10px 12px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--navy); font-weight:800;">관계 추론</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink-body); margin-top:3px;">Graph가 깊이 갑니다</div>
+      </div>
+      <div style="padding:10px 12px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">미래</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink-body); margin-top:3px;"><b>Hybrid</b> — 둘을 함께 씁니다</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">↩ 자매 시리즈 · AI × COMPRESS (23호)</span>
+      <span class="text" style="font-size:13.5px;">23호가 <b>벡터 압축으로 발화를 줄이는</b> 이야기였다면 — 24호는 그 위에 <em>랑그의 지도</em>를 다시 얹는 이야기입니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">Vector vs Graph · 파롤과 랑그</span>
+      <span class="right"><b>09</b> / 10</span>
+    </div>
+  </div>
+</body></html>

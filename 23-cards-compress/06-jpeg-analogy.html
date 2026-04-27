@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · JPEG 비유</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × COMPRESS</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;·&nbsp; JPEG는 어떻게 사진을 줄이는가</div>
+    </div>
+
+    <h1 class="title sm">사진 압축은 — <em>버리는 기술</em>입니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.2fr 1.4fr; gap:22px; margin-top:12px;">
+      <div class="left">
+        <div class="portrait" style="aspect-ratio:1/1.05;">
+          <img src="../images/c-jpeg-artifact.jpg" alt="JPEG artifact" style="object-fit:cover;" />
+          <div class="corner"></div><div class="corner br"></div>
+        </div>
+        <div class="portrait-caption">
+          <span class="name">JPEG 압축</span>
+          <span class="years">디테일이 사라진 자리</span>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px;">JPEG는 사진의 <b>모든 픽셀</b>을 저장하지 않습니다. 사람 눈이 잘 못 보는 부분 — 미묘한 색 차이, 작은 무늬 — 을 과감하게 <em>버립니다</em>. 그러면 파일은 10분의 1로 줄어듭니다.</p>
+
+        <div style="margin:10px 0; padding:12px 14px; background:linear-gradient(135deg, #E35205, #B5400B); color:#FFE4D0;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.2em; opacity:0.85;">JPEG의 3단계</div>
+          <div style="font-size:13px; line-height:1.7; margin-top:5px; color:#ffe1cf;">
+            ① <b style="color:#fff;">8×8 블록</b>으로 사진을 자릅니다.<br />
+            ② 각 블록을 <em>주파수</em>로 바꿉니다.<br />
+            ③ <b style="color:#fff;">고주파(디테일)</b>를 버립니다.
+          </div>
+        </div>
+
+        <p class="body-sm" style="font-size:14px;">AI의 학습도 똑같습니다. 모든 데이터를 외우지 않고 — <em>패턴과 평균</em>만 남깁니다. 그래서 <b>"비슷한 답"</b>은 잘 하고, <b>"정확한 인용"</b>은 못 합니다. 흐릿한 JPEG처럼 — <em>버린 자리</em>는 돌아오지 않습니다.</p>
+
+        <div style="margin-top:8px; padding:9px 12px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy);">
+          <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--navy); font-weight:800;">↩ 과거 복기 · AI × LINGUA 07 · 분포 의미론</div>
+          <div style="font-size:12px; line-height:1.5; color:var(--ink-body);">"단어의 뜻은 함께 쓰이는 단어들의 평균" — 그 또한 <b>의미의 압축</b>이었습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>06</b> / 10</span>
+    </div>
+  </div>
+</body></html>

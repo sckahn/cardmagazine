@@ -441,5 +441,47 @@
       "11-outro.png"
     ],
     "count": 11
+  },
+  {
+    "n": 23,
+    "slug": "compress",
+    "name": "Compress",
+    "hanja": "縮",
+    "subtitle": "AI는 왜 세상을 흐릿하게 보는가",
+    "desc": "Miller 작업기억 7±2 · 컨텍스트 윈도우 · RAG · Ted Chiang 흐릿한 JPEG · GPU 절약(양자화·KV·MoE) · 유발 하라리 NEXUS — 압축이 만든 인식의 흐릿함.",
+    "slides": [
+      "01-cover.png",
+      "02-brain-memory.png",
+      "03-context-window.png",
+      "04-rag.png",
+      "05-ted-chiang.png",
+      "06-jpeg-analogy.png",
+      "07-gpu-saving.png",
+      "08-harari.png",
+      "09-paradox.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 24,
+    "slug": "langue",
+    "name": "Langue",
+    "hanja": "規",
+    "subtitle": "보이지 않는 규칙과 발화되는 데이터",
+    "desc": "소쉬르 랑그·파롤 · 촘스키와 규칙 기반 AI의 붕괴 · 트랜스포머와 파롤의 통계 · Stochastic Parrots · Microsoft GraphRAG — 23호 Vector RAG vs Graph RAG.",
+    "slides": [
+      "01-cover.png",
+      "02-saussure.png",
+      "03-chess.png",
+      "04-rule-based.png",
+      "05-collapse.png",
+      "06-llm.png",
+      "07-stochastic.png",
+      "08-graph-rag.png",
+      "09-rag-vs.png",
+      "10-outro.png"
+    ],
+    "count": 10
   }
 ]

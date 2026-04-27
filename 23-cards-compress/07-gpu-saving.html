@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · GPU 절약</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × COMPRESS</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;·&nbsp; 압축은 결국 — 돈의 문제입니다</div>
+    </div>
+
+    <h1 class="title sm">압축이 곧 — <em>전기와 돈</em>을 줄입니다.</h1>
+
+    <div class="split" style="grid-template-columns:1fr 1.4fr; gap:22px; margin-top:12px;">
+      <div class="left">
+        <div class="portrait" style="aspect-ratio:1/1.05;">
+          <img src="../images/gpu-server.jpg" alt="GPU server" style="object-fit:cover;" />
+          <div class="corner"></div><div class="corner br"></div>
+        </div>
+        <div class="portrait-caption">
+          <span class="name">GPU · 데이터센터</span>
+          <span class="years">전기를 먹는 짐승</span>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px;">AI 한 번 돌릴 때마다 — <b>수만 장의 GPU</b>가 돌아갑니다. 메모리에 모델을 통째로 올리고, 모든 단어마다 거대한 행렬을 곱합니다. 모델이 커질수록 — 전력비가 회사를 무너뜨립니다.</p>
+
+        <div style="margin:10px 0 6px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); color:#FFE4D0;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:0.2em; opacity:0.75;">QUANTIZATION</div>
+            <div style="font-size:14px; font-weight:800; margin-top:4px; color:#FFE4D0;">양자화 — 4비트</div>
+            <div style="font-size:11.5px; line-height:1.55; margin-top:4px; color:#f5d8c2;">노트의 칸을 <b style="color:#fff;">16칸 → 4칸</b>으로 줄입니다. 메모리 1/4, 속도 4배.</div>
+          </div>
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); color:#FFE4D0;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:0.2em; opacity:0.85;">KV CACHE</div>
+            <div style="font-size:14px; font-weight:800; margin-top:4px; color:#FFE4D0;">기억 공유</div>
+            <div style="font-size:11.5px; line-height:1.55; margin-top:4px; color:#ffe1cf;">방금 읽은 단어의 <b style="color:#fff;">계산 결과</b>를 저장 — 다시 안 풉니다.</div>
+          </div>
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); color:#FFE4D0;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:0.2em; opacity:0.75;">MoE</div>
+            <div style="font-size:14px; font-weight:800; margin-top:4px; color:#FFE4D0;">전문가 일부만</div>
+            <div style="font-size:11.5px; line-height:1.55; margin-top:4px; color:#f5d8c2;">100명 직원 중 <b style="color:#fff;">2명</b>만 깨워서 일하게 합니다.</div>
+          </div>
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); color:#FFE4D0;">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:0.2em; opacity:0.85;">DISTILLATION</div>
+            <div style="font-size:14px; font-weight:800; margin-top:4px; color:#FFE4D0;">증류 모델</div>
+            <div style="font-size:11.5px; line-height:1.55; margin-top:4px; color:#ffe1cf;">큰 모델의 답을 베껴 — <b style="color:#fff;">작은 모델</b>이 비슷하게.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:8px; padding:9px 12px; background:rgba(227,82,5,0.07); border-left:3px solid var(--brand);">
+          <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand); font-weight:700;">DeepSeek 충격 (2025)</div>
+          <div style="font-size:12.5px; line-height:1.5; color:var(--ink-body);">바로 이 압축 기술들로 — 미국의 1/10 비용으로 같은 성능을 냈습니다. 압축은 <b style="color:var(--navy);">전쟁의 무기</b>입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; padding:13px 16px; background:rgba(15,30,56,0.05); border-left:3px solid var(--navy);">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.22em; color:var(--navy); font-weight:800;">왜 압축이 곧 권력인가</div>
+      <div style="font-size:12.5px; line-height:1.6; color:var(--ink-body); margin-top:5px;">GPT-4 한 번 학습에 — <b style="color:var(--navy);">1억 달러</b>가 듭니다. 추론 한 번에도 — 데이터센터 한 동의 전기가 들어갑니다. 그래서 압축은 — <em>똑똑함의 문제</em>가 아니라 <b style="color:var(--brand);">살아남는 자의 문제</b>가 됐습니다. 작게 만드는 자가 — 시장을 가집니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>07</b> / 10</span>
+    </div>
+  </div>
+</body></html>

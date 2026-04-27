@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Stochastic Parrot</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × LANGUE</div>
+      <div class="chaptertag">CHAPTER 03 &nbsp;·&nbsp; LLM은 랑그를 모른다</div>
+    </div>
+    <h1 class="title sm">통계로 <em>흉내</em>는 내지만 —<br />구조는 <em>잡지 못합니다</em>.</h1>
+
+    <div class="split" style="grid-template-columns:1fr 1fr; gap:22px; margin-top:14px;">
+      <div class="left body-sm" style="font-size:14px;">
+        <p>2021년 에밀리 벤더는 LLM을 <b>"확률적 앵무새(Stochastic Parrots)"</b>라고 불렀습니다. 그럴듯한 단어를 이어 붙이지만 — <em>의미의 구조</em>는 모릅니다.</p>
+        <p style="margin-top:9px;">예를 들어 LLM은 "사과는 빨갛다"는 문장을 수만 번 봤습니다. 그러나 — <b>사과·빨강·먹는다</b> 사이의 관계가 어떻게 엮여 있는지, 어디에 위치한 지식인지는 모릅니다. 단지 <em>다음 단어가 무엇일지</em>만 맞힐 뿐입니다.</p>
+
+        <div style="margin-top:11px; padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+          <div style="font-size:11px; letter-spacing:0.16em; font-weight:900;">랑그가 빠졌다는 증거</div>
+          <div style="font-size:12.5px; opacity:0.95; line-height:1.6; margin-top:5px;">
+            <b style="color:#FFE4D0;">①</b> 같은 사실을 다르게 물으면 — 다른 답<br />
+            <b style="color:#FFE4D0;">②</b> 거짓을 천연덕스럽게 — 환각(Hallucination)<br />
+            <b style="color:#FFE4D0;">③</b> 출처를 — 짜내는 일도 흔함
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div style="padding:14px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white; height:100%;">
+          <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0; margin-bottom:8px;">EMILY BENDER · 2021</div>
+          <div style="font-family:'Noto Serif KR', serif; font-size:18px; line-height:1.55; opacity:0.95; font-weight:400; font-style:italic;">
+            "LLM은 <span style="color:#FFE4D0; font-weight:700;">의미를 이해하지</span> 않는다.<br />단지 — <span style="color:#FFE4D0; font-weight:700;">통계적으로 그럴듯한</span><br />문자열을 생성할 뿐이다."
+          </div>
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.15em; margin-top:14px; opacity:0.7;">— On the Dangers of Stochastic Parrots</div>
+
+          <div style="margin-top:18px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.18);">
+            <div style="font-size:10px; letter-spacing:0.16em; color:#FFE4D0; font-weight:800;">↩ TASTE 05 · LINGUA 07 callback</div>
+            <div style="font-size:12px; opacity:0.88; line-height:1.5; margin-top:3px;">2호·9호에서도 같은 인용 — 이번에는 <em>랑그의 부재</em>라는 새 각도로.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="margin-top:12px; font-size:13.5px;">파롤만 본 모델은 — <b>매끄러운 발화</b>는 만들지만, <b>지식의 지도</b>는 못 그립니다. 랑그가 빠진 자리에 — <em>환각</em>이 들어섭니다.</p>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:12px 14px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--navy); font-weight:800;">예시 ①</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">"다윈의 손자가 누구죠?" — <b>없는 인물</b>을 자신 있게 답합니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">예시 ②</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">법률 판례를 묻자 — <em>그럴듯한 가짜 판례</em>를 지어냅니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--navy); font-weight:800;">진단</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">관계의 그물 = <b>랑그</b>가 없으니 — 사실의 무게를 못 잽니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; padding:13px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+      <div style="font-size:11px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">그래서 다음 질문</div>
+      <div style="font-size:13.5px; line-height:1.6; opacity:0.94; margin-top:4px;">
+        파롤의 통계는 — 충분히 거대해졌습니다. 그러나 <b style="color:#FFE4D0;">랑그를 다시 그리려는 시도</b>가 — 2024년 다시 등장합니다. 이름하여 <em style="color:#FFE4D0;">Graph RAG</em>입니다.
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left">확률적 앵무새 · 랑그의 부재</span>
+      <span class="right"><b>07</b> / 10</span>
+    </div>
+  </div>
+</body></html>
