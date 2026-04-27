@@ -469,19 +469,17 @@
     "name": "Langue",
     "hanja": "規",
     "subtitle": "보이지 않는 규칙과 발화되는 데이터",
-    "desc": "소쉬르 랑그·파롤 · 촘스키와 규칙 기반 AI의 붕괴 · 트랜스포머와 파롤의 통계 · Stochastic Parrots · Microsoft GraphRAG — 23호 Vector RAG vs Graph RAG.",
+    "desc": "소쉬르 랑그·파롤 · Rule-Based AI의 붕괴 · LLM과 파롤의 통계 · 온톨로지·지식 그래프 · Microsoft GraphRAG · 팔란티어 Foundry·AIP — 다시 그리는 랑그.",
     "slides": [
       "01-cover.png",
       "02-saussure.png",
-      "03-chess.png",
-      "04-rule-based.png",
-      "05-collapse.png",
-      "06-llm.png",
-      "07-stochastic.png",
-      "08-graph-rag.png",
-      "09-rag-vs.png",
-      "10-outro.png"
+      "03-rule-based.png",
+      "04-llm.png",
+      "05-ontology.png",
+      "06-graph-rag.png",
+      "07-palantir.png",
+      "08-outro.png"
     ],
-    "count": 10
+    "count": 8
   }
 ]

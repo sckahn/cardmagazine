@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Ontology</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × LANGUE</div>
+      <div class="chaptertag">CHAPTER 04 &nbsp;·&nbsp; 온톨로지 — 다시 그리는 랑그</div>
+    </div>
+    <div class="era">
+      <span class="year">ONTOLOGY</span>
+      <span class="label"><b>지식의 뼈대</b><span class="sub">사물·관계·규칙을 명시적으로</span></span>
+    </div>
+    <h1 class="title sm">단어가 아니라 —<br /><em>관계</em>를 그립니다.</h1>
+
+    <p class="body-sm" style="margin-top:12px; font-size:14px;">앞 슬라이드에서 본 <em>환각</em>의 뿌리는 분명합니다 — 발화는 봤지만 <b>관계의 지도</b>가 없습니다. 그래서 다시 떠오른 개념이 <b>온톨로지(Ontology)</b>입니다. 1990년대 의미웹 시대의 단어가 — LLM 시대에 새 옷을 입고 돌아왔습니다.</p>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:14px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">ONTOLOGY · 정의</div>
+        <div style="font-size:13.5px; font-weight:800; color:#FFE4D0; margin-top:5px;">"이 세계에 무엇이 있고, 그것들이 어떻게 묶이는가"</div>
+        <div style="font-size:12px; line-height:1.55; margin-top:6px; opacity:0.92;">사물(Entity)의 종류와 — 그 사이의 관계(Relation)를 <b style="color:#FFE4D0;">명시적으로 적은 지도</b>입니다.</div>
+      </div>
+      <div style="padding:14px 16px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">KNOWLEDGE GRAPH</div>
+        <div style="font-size:13.5px; font-weight:800; color:#FFE4D0; margin-top:5px;">온톨로지를 실제 데이터로 채운 것</div>
+        <div style="font-size:12px; line-height:1.55; margin-top:6px; opacity:0.95;"><em style="color:#FFE4D0;">"이순신 — 1545년 출생", "이순신 — 거북선 발명"</em> — 점과 선이 채워진 도면.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:13px; padding:12px 15px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-left:4px solid var(--brand); border-radius:4px;">
+      <div style="font-size:10px; letter-spacing:0.18em; font-weight:800; color:var(--brand);">왜 다시 필요한가 · 한 줄</div>
+      <div style="font-size:13px; line-height:1.55; color:var(--ink-body); margin-top:5px;">파롤만 본 LLM은 <b>"그럴듯한 거짓"</b>(환각)을 만들기 쉽습니다. 온톨로지는 <em>관계의 사실 여부</em>를 명시적으로 기록해 — AI의 답을 <b style="color:var(--navy);">검증 가능한 지식</b>으로 묶습니다.</div>
+    </div>
+
+    <div style="margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:11px;">
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--navy); font-weight:800;">엔티티 · ENTITY</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">사람·장소·사건·물건 — <b>점</b></div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">관계 · RELATION</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">"~의 부모", "~를 만든" — <b>선</b></div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--navy); font-weight:800;">규칙 · RULE</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">"부모의 부모는 조부모" — <b>추론 길</b></div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; padding:11px 14px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+      <div style="font-size:11px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">랑그 = 온톨로지</div>
+      <div style="font-size:13px; line-height:1.55; opacity:0.94; margin-top:4px;">소쉬르의 <b style="color:#FFE4D0;">랑그</b>가 사회의 보이지 않는 규칙이라면 — <em style="color:#FFE4D0;">온톨로지는 그것을 컴퓨터가 읽을 수 있게 적은 것</em>입니다. 그리고 그 위에서 추론을 합니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>05</b> / 8</span>
+    </div>
+  </div>
+</body></html>
