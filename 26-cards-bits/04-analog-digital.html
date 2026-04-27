@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · Analog to Digital</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; BITS</div>
+      <div class="chaptertag">CHAPTER 03 &nbsp;&middot;&nbsp; 아날로그를 비트로 옮기다</div>
+    </div>
+    <div class="era">
+      <span class="year">1949</span>
+      <span class="label"><b>NYQUIST&ndash;BITS</b><span class="sub">Sampling Theorem</span></span>
+    </div>
+    <h1 class="title sm">물결을 &mdash; <em>점으로</em> 찍습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1fr 1fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <img src="../images/sh-vinyl.jpg" alt="Vinyl LP record" style="width:100%; height:200px; object-fit:cover; object-position:center; border-radius:6px;" />
+        <p style="font-size:10px; margin-top:5px; opacity:0.6; text-align:center;">LP의 홈은 끊김 없는 물결 &mdash; 아날로그</p>
+        <img src="../images/sh-oscilloscope.jpg" alt="Oscilloscope wave" style="width:100%; height:130px; object-fit:cover; object-position:center; border-radius:6px; margin-top:8px;" />
+        <p style="font-size:10px; margin-top:5px; opacity:0.6; text-align:center;">파형을 충분히 자주 찍으면 &mdash; 원본을 되살립니다</p>
+      </div>
+      <div class="right body-sm" style="font-size:14px;">
+        <p>소리는 공기의 떨림입니다. 빛도, 영상도 &mdash; 모두 <b>끊김 없는 물결</b>입니다. 이것을 어떻게 0과 1로 바꿀까요. 답은 의외로 간단합니다 &mdash; <em>점으로 찍는다</em>.</p>
+
+        <div style="margin-top:11px; padding:11px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+          <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">샘플링 정리 &middot; 1949</div>
+          <div style="font-size:12.5px; opacity:0.92; line-height:1.55; margin-top:4px;">
+            <b style="color:#FFE4D0;">"가장 빠른 진동의 두 배 속도로 찍어라."</b> 그러면 점만 가지고도 &mdash; 원래 물결을 완벽히 복원할 수 있다는 정리입니다. 섀넌과 나이퀴스트가 증명했습니다.
+          </div>
+        </div>
+
+        <p style="margin-top:11px;">CD가 1초에 <b>44,100번</b> 소리를 찍는 이유 &mdash; 사람 귀가 듣는 가장 높은 음(20kHz)의 두 배보다 살짝 위입니다. 그래서 LP의 따뜻함을 잃지 않고도 &mdash; CD가 비트 위로 옮겨졌습니다.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">소리 &middot; SOUND</div>
+        <div style="font-size:12.5px; line-height:1.55; margin-top:3px;">LP 홈 &rarr; CD 44.1kHz <b style="color:#FFE4D0;">샘플</b></div>
+      </div>
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:10px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">빛 &middot; LIGHT</div>
+        <div style="font-size:12.5px; line-height:1.55; margin-top:3px;">필름 &rarr; 픽셀 격자, 각 칸은 <b style="color:#FFE4D0;">RGB 숫자</b></div>
+      </div>
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">움직임 &middot; MOTION</div>
+        <div style="font-size:12.5px; line-height:1.55; margin-top:3px;">아날로그 비디오 &rarr; 초당 <b style="color:#FFE4D0;">30프레임</b> 사진</div>
+      </div>
+    </div>
+
+    <div style="margin-top:11px; padding:10px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+      <div style="font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">왜 중요한가</div>
+      <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">샘플링 정리가 없었다면 &mdash; 음악도, 사진도, 영상도 컴퓨터 안으로 들어오지 못했습니다. <b style="color:var(--navy);">이 정리가 모든 미디어의 디지털화를 가능하게 했습니다.</b></div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>04</b> / 10</span>
+    </div>
+  </div>
+</body></html>

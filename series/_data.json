@@ -495,5 +495,19 @@
       "08-geometry.png", "09-paradox.png", "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 26,
+    "slug": "bits",
+    "name": "Bits",
+    "hanja": "信",
+    "subtitle": "모든 AI는 비트 위에 산다",
+    "desc": "1948 클로드 섀넌 정보이론 · 비트 · 아날로그→디지털(나이퀴스트) · 멀티모달 · 임베딩의 기하학 · 2024 큐비트가 흔드는 0/1의 세계.",
+    "slides": [
+      "01-cover.png", "02-shannon.png", "03-bit.png", "04-analog-digital.png",
+      "05-everything-bits.png", "06-multimodal.png", "07-embedding.png",
+      "08-qubit.png", "09-quantum-impact.png", "10-outro.png"
+    ],
+    "count": 10
   }
 ]
