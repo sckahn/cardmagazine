@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Embedding Density</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px; font-family:'Noto Serif KR', serif;">愛</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × SCRIPTS</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;·&nbsp; 한자의 임베딩 밀도</div>
+    </div>
+    <h1 class="title sm">한자 1글자 = <em>의미 1단위</em>.<br />가장 농축된 좌표입니다.</h1>
+
+    <div class="split" style="grid-template-columns:0.85fr 1.6fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <img src="../images/s-chinese-calligraphy.jpg" alt="Chinese calligraphy stele" style="width:100%; height:300px; object-fit:cover; object-position:center; border-radius:6px;" />
+        <p style="font-size:10px; margin-top:5px; opacity:0.6; text-align:center;">한자 비석 — 한 글자가 곧 한 우주</p>
+      </div>
+      <div class="right body-sm" style="font-size:14px;">
+        <p>임베딩(embedding)은 — 글자를 <b>다차원 공간의 좌표</b>로 옮기는 일입니다. 한 토큰이 하나의 점이 됩니다. 그 점 안에 의미가 압축돼 들어갑니다.</p>
+        <p style="margin-top:9px;">그래서 결정적인 질문은 — <em>한 토큰에 얼마나 많은 의미가 실리는가</em>입니다. 한자는 정답에 가깝습니다. 「愛」 한 점에 '사랑'이라는 한 우주가 통째로 실립니다.</p>
+
+        <div style="margin-top:11px; padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+          <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">의미당 토큰 — 같은 뜻 '사랑'</div>
+          <div style="font-size:12.5px; opacity:0.95; line-height:1.65; margin-top:4px;">
+            <b style="color:#FFE4D0;">愛 (한자)</b> · 1 토큰 — 의미 1<br />
+            <b style="color:#FFE4D0;">love (영어)</b> · 1 토큰 — 의미 1<br />
+            <b style="color:#FFE4D0;">사랑 (한글)</b> · 약 2~3 토큰 — 같은 의미 1
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; padding:14px 18px; background:rgba(15,30,56,0.04); border:1px solid rgba(15,30,56,0.12); border-radius:6px;">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800; margin-bottom:6px;">의미 밀도 = 의미 / 토큰 수</div>
+      <svg viewBox="0 0 720 80" style="width:100%; height:auto;">
+        <g font-family="Noto Sans KR" font-size="12" fill="#0f1e38">
+          <text x="0" y="22" font-weight="700">한자</text>
+          <rect x="80" y="10" width="380" height="16" fill="#E35205"/>
+          <text x="470" y="22" font-family="JetBrains Mono" font-weight="700">≈ 1.0 (최대)</text>
+
+          <text x="0" y="52" font-weight="700">영어</text>
+          <rect x="80" y="40" width="280" height="16" fill="#0f1e38"/>
+          <text x="370" y="52" font-family="JetBrains Mono" font-weight="700">≈ 0.7</text>
+
+          <text x="0" y="76" font-weight="700">한글</text>
+          <rect x="80" y="66" width="120" height="10" fill="#B5400B"/>
+          <text x="210" y="76" font-family="JetBrains Mono" font-weight="700">≈ 0.3</text>
+        </g>
+      </svg>
+    </div>
+
+    <div style="margin-top:12px; padding:11px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); font-size:11.5px; line-height:1.55;">
+      <b style="font-size:10.5px; letter-spacing:0.16em; color:var(--brand);">↩ 과거 복기 · AI × COMPRESS 23호</b><br />
+      한자는 — 사람이 만든 가장 오래된 <em>무손실에 가까운 의미 압축</em>입니다. AI 시대에 다시 빛납니다.
+    </div>
+
+    <div class="foot">
+      <span class="left">한자 · 임베딩 밀도</span>
+      <span class="right"><b>07</b> / 10</span>
+    </div>
+  </div>
+</body></html>

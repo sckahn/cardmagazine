@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>05 · Tokenization</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × SCRIPTS</div>
+      <div class="chaptertag">CHAPTER 04 &nbsp;·&nbsp; 토큰화 — AI는 글자를 어떻게 자르나</div>
+    </div>
+    <div class="era">
+      <span class="year">2015~</span>
+      <span class="label"><b>BPE · WordPiece · SentencePiece</b><span class="sub">글자를 토막으로 자르는 기술</span></span>
+    </div>
+    <h1 class="title sm">AI는 글자를 — <em>요리 재료</em>처럼<br />잘게 <em>자릅니다.</em></h1>
+
+    <p class="body-sm" style="margin-top:8px; font-size:14px;">AI는 글자 자체를 못 봅니다. <b>숫자 ID</b>만 봅니다. 그래서 들어온 글을 일정한 토막(token) 단위로 자르고, 각 토막에 번호를 매깁니다. 이 자르는 과정이 <em>토큰화(Tokenization)</em>입니다.</p>
+
+    <div style="margin-top:12px; padding:14px 16px; background:rgba(15,30,56,0.04); border:1px solid rgba(15,30,56,0.12); border-radius:6px;">
+      <svg viewBox="0 0 760 220" style="width:100%; height:auto;">
+        <!-- English -->
+        <text x="0" y="22" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0f1e38" letter-spacing="2">EN · "tokenization"</text>
+        <g transform="translate(0,40)">
+          <rect x="0" y="0" width="80" height="34" rx="4" fill="#E35205"/>
+          <text x="40" y="22" text-anchor="middle" font-family="Noto Sans KR" font-size="14" fill="white" font-weight="700">token</text>
+          <rect x="90" y="0" width="50" height="34" rx="4" fill="#0f1e38"/>
+          <text x="115" y="22" text-anchor="middle" font-family="Noto Sans KR" font-size="14" fill="white" font-weight="700">iz</text>
+          <rect x="150" y="0" width="80" height="34" rx="4" fill="#E35205"/>
+          <text x="190" y="22" text-anchor="middle" font-family="Noto Sans KR" font-size="14" fill="white" font-weight="700">ation</text>
+          <text x="250" y="22" font-family="JetBrains Mono" font-size="13" fill="#0f1e38" font-weight="700">→ 3 토큰</text>
+        </g>
+
+        <!-- Chinese -->
+        <text x="0" y="100" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0f1e38" letter-spacing="2">ZH · "我愛中國"</text>
+        <g transform="translate(0,118)">
+          <rect x="0" y="0" width="50" height="34" rx="4" fill="#E35205"/>
+          <text x="25" y="23" text-anchor="middle" font-family="Noto Serif KR" font-size="16" fill="white" font-weight="700">我</text>
+          <rect x="60" y="0" width="50" height="34" rx="4" fill="#0f1e38"/>
+          <text x="85" y="23" text-anchor="middle" font-family="Noto Serif KR" font-size="16" fill="white" font-weight="700">愛</text>
+          <rect x="120" y="0" width="50" height="34" rx="4" fill="#E35205"/>
+          <text x="145" y="23" text-anchor="middle" font-family="Noto Serif KR" font-size="16" fill="white" font-weight="700">中</text>
+          <rect x="180" y="0" width="50" height="34" rx="4" fill="#0f1e38"/>
+          <text x="205" y="23" text-anchor="middle" font-family="Noto Serif KR" font-size="16" fill="white" font-weight="700">國</text>
+          <text x="250" y="22" font-family="JetBrains Mono" font-size="13" fill="#0f1e38" font-weight="700">→ 4 토큰 · 의미 4</text>
+        </g>
+
+        <!-- Korean -->
+        <text x="0" y="180" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0f1e38" letter-spacing="2">KO · "사랑해"</text>
+        <g transform="translate(0,196)">
+          <rect x="0" y="0" width="34" height="20" rx="3" fill="#E35205"/>
+          <text x="17" y="15" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="white" font-weight="700">사</text>
+          <rect x="38" y="0" width="34" height="20" rx="3" fill="#0f1e38"/>
+          <text x="55" y="15" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="white" font-weight="700">ㄹ</text>
+          <rect x="76" y="0" width="34" height="20" rx="3" fill="#E35205"/>
+          <text x="93" y="15" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="white" font-weight="700">ㅏ</text>
+          <rect x="114" y="0" width="34" height="20" rx="3" fill="#0f1e38"/>
+          <text x="131" y="15" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="white" font-weight="700">ㅇ</text>
+          <rect x="152" y="0" width="34" height="20" rx="3" fill="#E35205"/>
+          <text x="169" y="15" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="white" font-weight="700">해</text>
+          <text x="200" y="15" font-family="JetBrains Mono" font-size="12" fill="#0f1e38" font-weight="700">→ 자모로 풀려 5+ 토큰</text>
+        </g>
+      </svg>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">BPE · 기본 원리</div>
+        <div style="font-size:12.5px; line-height:1.55; opacity:0.92; margin-top:4px;">자주 같이 나오는 글자 짝부터 — <b style="color:#FFE4D0;">묶어서 한 토큰</b>으로 만듭니다. 통계가 사전을 짭니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">왜 중요한가</div>
+        <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">토큰 수만큼 <b style="color:#FFE4D0;">계산비·요금</b>이 늘어납니다. 같은 글이라도 — 언어에 따라 가격이 다릅니다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">↩ 과거 복기 · AI × LANGUE 24호 · 파롤의 분절</span>
+      <span class="text" style="font-size:13.5px;">24호에서 본 <b>파롤</b>이 — AI에 들어오기 전 <em>이렇게 토막</em>이 납니다. 분절은 발화의 첫 관문입니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left">토큰화 · 글자 자르기</span>
+      <span class="right"><b>05</b> / 10</span>
+    </div>
+  </div>
+</body></html>

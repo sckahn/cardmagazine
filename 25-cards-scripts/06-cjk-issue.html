@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · CJK Issue</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × SCRIPTS</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;·&nbsp; CJK 토큰화의 골칫거리</div>
+    </div>
+    <h1 class="title sm">한국어 한 단어가 — <em>영어보다</em><br /><em>3~5배</em> 비쌉니다.</h1>
+
+    <p class="body-sm" style="margin-top:8px; font-size:14px;">같은 의미를 전달해도, 토크나이저가 잘라낸 토막의 수가 다릅니다. 영어는 한 단어가 한 토막인 경우가 많지만, 한국어는 자모까지 풀려 — <b>토큰 수가 폭증</b>합니다. AI에게는 같은 분량의 글이 — 언어마다 다른 비용입니다.</p>
+
+    <div style="margin-top:14px; padding:14px 18px; background:rgba(15,30,56,0.04); border:1px solid rgba(15,30,56,0.12); border-radius:6px;">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800; margin-bottom:8px;">GPT-4 토크나이저 기준 · 같은 의미 · 토큰 수 비교</div>
+      <svg viewBox="0 0 720 220" style="width:100%; height:auto;">
+        <!-- bars -->
+        <g font-family="Noto Sans KR" font-size="12" fill="#0f1e38">
+          <text x="0" y="22" font-weight="700">EN · "Hello world"</text>
+          <rect x="220" y="10" width="60" height="16" fill="#0f1e38"/>
+          <text x="290" y="22" font-family="JetBrains Mono" font-weight="700">2 토큰</text>
+
+          <text x="0" y="62" font-weight="700">ZH · "你好世界"</text>
+          <rect x="220" y="50" width="120" height="16" fill="#E35205"/>
+          <text x="350" y="62" font-family="JetBrains Mono" font-weight="700">4 토큰</text>
+
+          <text x="0" y="102" font-weight="700">KO · "안녕 세계"</text>
+          <rect x="220" y="90" width="240" height="16" fill="#B5400B"/>
+          <text x="470" y="102" font-family="JetBrains Mono" font-weight="700">약 7 토큰</text>
+
+          <text x="0" y="142" font-weight="700">EN · "I love you"</text>
+          <rect x="220" y="130" width="90" height="16" fill="#0f1e38"/>
+          <text x="320" y="142" font-family="JetBrains Mono" font-weight="700">3 토큰</text>
+
+          <text x="0" y="182" font-weight="700">KO · "사랑해요"</text>
+          <rect x="220" y="170" width="180" height="16" fill="#B5400B"/>
+          <text x="410" y="182" font-family="JetBrains Mono" font-weight="700">약 5~6 토큰</text>
+        </g>
+        <!-- axis hint -->
+        <line x1="220" y1="200" x2="500" y2="200" stroke="#0f1e38" stroke-width="1" opacity="0.3"/>
+        <text x="220" y="215" font-family="JetBrains Mono" font-size="9" fill="#0f1e38" opacity="0.6">0</text>
+        <text x="490" y="215" font-family="JetBrains Mono" font-size="9" fill="#0f1e38" opacity="0.6">토큰 길이 →</text>
+      </svg>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">EN · 영어</div>
+        <div style="font-size:12.5px; line-height:1.55; opacity:0.92; margin-top:4px;">1 단어 ≈ <b style="color:#FFE4D0;">1 토큰</b><br />학습 데이터의 <em>주류</em>이기도 합니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">ZH · 중국어</div>
+        <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">1 글자 ≈ <b style="color:#FFE4D0;">1~2 토큰</b><br />한자가 자체로 압축돼 있어 — <em>효율적</em>입니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">KO · 한국어</div>
+        <div style="font-size:12.5px; line-height:1.55; opacity:0.92; margin-top:4px;">1 단어 ≈ <b style="color:#FFE4D0;">3~5 토큰</b><br />자모로 풀리면 — <em>비용이 가장 비쌉니다.</em></div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; padding:11px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+      <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">현실의 영향</div>
+      <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">같은 길이의 문맥창에 — 한국어는 <b>영어의 1/3 분량</b>밖에 못 담습니다. API 요금도, 응답 속도도 — 그만큼 불리합니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left">CJK · 토큰 폭증</span>
+      <span class="right"><b>06</b> / 10</span>
+    </div>
+  </div>
+</body></html>

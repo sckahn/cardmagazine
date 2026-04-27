@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · Geometry of Meaning</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × SCRIPTS</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;·&nbsp; 의미의 기하학</div>
+    </div>
+    <h1 class="title sm">의미는 <em>좌표</em>가 됩니다.<br />가까울수록 — 비슷합니다.</h1>
+
+    <p class="body-sm" style="margin-top:8px; font-size:14px;">AI는 단어를 <b>고차원 공간의 점</b>으로 둡니다. 의미가 비슷하면 점들이 가까이 모입니다. 그리고 — 신기하게도 <em>방향</em>에도 의미가 있습니다. "왕"에서 "남자"를 빼고 "여자"를 더하면 — "여왕" 근처에 도착합니다.</p>
+
+    <div class="split" style="grid-template-columns:1.2fr 1fr; gap:18px; margin-top:14px;">
+      <div class="left" style="padding:14px 16px; background:rgba(15,30,56,0.04); border:1px solid rgba(15,30,56,0.12); border-radius:6px;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800; margin-bottom:6px;">2D EMBEDDING · 의미 좌표 (개념도)</div>
+        <svg viewBox="0 0 380 240" style="width:100%; height:auto;">
+          <!-- axes -->
+          <line x1="20" y1="220" x2="360" y2="220" stroke="#0f1e38" stroke-width="1" opacity="0.25"/>
+          <line x1="20" y1="20" x2="20" y2="220" stroke="#0f1e38" stroke-width="1" opacity="0.25"/>
+
+          <!-- arrow king -> queen -->
+          <line x1="100" y1="170" x2="240" y2="80" stroke="#E35205" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a1)"/>
+          <line x1="100" y1="100" x2="240" y2="40" stroke="#E35205" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#a1)"/>
+          <defs>
+            <marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#E35205"/>
+            </marker>
+          </defs>
+
+          <!-- points -->
+          <circle cx="100" cy="170" r="6" fill="#0f1e38"/>
+          <text x="110" y="174" font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#0f1e38">남자 (man)</text>
+
+          <circle cx="240" cy="80" r="6" fill="#0f1e38"/>
+          <text x="250" y="84" font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#0f1e38">여자 (woman)</text>
+
+          <circle cx="100" cy="100" r="7" fill="#E35205"/>
+          <text x="110" y="104" font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#E35205">왕 (king)</text>
+
+          <circle cx="240" cy="40" r="7" fill="#E35205"/>
+          <text x="250" y="44" font-family="Noto Sans KR" font-size="13" font-weight="700" fill="#E35205">여왕 (queen)</text>
+
+          <!-- hanja cluster -->
+          <circle cx="320" cy="180" r="6" fill="#B5400B"/>
+          <text x="270" y="200" font-family="Noto Serif KR" font-size="14" font-weight="700" fill="#B5400B">愛 · 戀 · 慕</text>
+          <text x="270" y="216" font-family="JetBrains Mono" font-size="9" fill="#B5400B" opacity="0.7">의미가 가까운 한자 묶음</text>
+        </svg>
+      </div>
+
+      <div class="right body-sm" style="font-size:13.5px;">
+        <p>이 공간 안에 — 알파벳·한자·한글이 모두 들어갑니다. 단지 <b>같은 의미를 표현하는 점의 수</b>가 다를 뿐입니다.</p>
+        <p style="margin-top:9px;">한자는 한 점, 영어는 한 점, 한글은 — 자모로 풀려 <em>여러 점에 흩어집니다</em>. AI가 의미를 모으려면, 한국어에서는 그 흩어진 점들을 다시 묶는 일이 추가로 필요합니다.</p>
+
+        <div style="margin-top:10px; padding:10px 12px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+          <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">기하학의 약속</div>
+          <div style="font-size:12px; line-height:1.55; opacity:0.92; margin-top:4px;">
+            의미 ≈ <b style="color:#FFE4D0;">방향과 거리</b><br />
+            왕 − 남자 + 여자 ≈ 여왕
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; padding:11px 18px;">
+      <span class="label" style="font-size:11px;">↩ 과거 복기 · AI × LINGUA 9호 · 분포 의미론</span>
+      <span class="text" style="font-size:13.5px;">9호에서 본 <b>"같은 맥락에 나오는 단어는 의미도 비슷하다"</b>가 — 이번 호의 임베딩 공간으로 그대로 자라났습니다.</span>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:12px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">차원 · DIMENSIONS</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">실제로는 <b>768~4096차원</b> — 사람은 못 보지만 AI는 그 안을 헤엄칩니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--navy); font-weight:800;">방향 · DIRECTION</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">단수→복수, 현재→과거, 남자→여자 — <em>방향이 곧 문법</em>입니다.</div>
+      </div>
+      <div style="padding:12px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">언어초월 · CROSS-LINGUAL</div>
+        <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">愛·love·사랑 — 같은 공간의 <b>거의 같은 점</b>에 모입니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; padding:12px 16px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+      <div style="font-size:11px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">한 줄 요약</div>
+      <div style="font-size:13px; line-height:1.6; opacity:0.95; margin-top:4px;">
+        문자가 다르면 — <b style="color:#FFE4D0;">점의 모양</b>이 다릅니다. 그러나 <em>의미의 지도</em>는, 세 문자 모두 같은 공간 위에 그려집니다.
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left">의미의 기하학</span>
+      <span class="right"><b>08</b> / 10</span>
+    </div>
+  </div>
+</body></html>

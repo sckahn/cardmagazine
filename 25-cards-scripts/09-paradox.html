@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>09 · The Paradox</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">09</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × SCRIPTS</div>
+      <div class="chaptertag">CHAPTER 08 &nbsp;·&nbsp; 한글의 역설</div>
+    </div>
+    <h1 class="title sm">AI에 좋은 문자와 — <em>사람에 좋은 문자</em>는<br />같지 않습니다.</h1>
+
+    <p class="body-sm" style="margin-top:8px; font-size:14px;">한글은 — <b>사람이 배우기에 가장 빠르고 과학적인 문자</b>입니다. 자모의 모양이 발음기관과 닮았고, 받아쓰기·읽기·쓰기에서 직관성이 압도적입니다. 그러나 그 <em>잘게 쪼개진 구조</em>가 — AI에게는 비용으로 돌아옵니다.</p>
+
+    <div style="margin-top:14px; padding:14px 18px; background:rgba(15,30,56,0.04); border:1px solid rgba(15,30,56,0.12); border-radius:6px;">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800; margin-bottom:8px;">세 영역의 교차 — 문자별 강점</div>
+      <svg viewBox="0 0 720 200" style="width:100%; height:auto;">
+        <!-- three circles diagram -->
+        <circle cx="180" cy="100" r="78" fill="#E35205" fill-opacity="0.18" stroke="#E35205" stroke-width="1.5"/>
+        <circle cx="360" cy="100" r="78" fill="#0f1e38" fill-opacity="0.18" stroke="#0f1e38" stroke-width="1.5"/>
+        <circle cx="540" cy="100" r="78" fill="#B5400B" fill-opacity="0.22" stroke="#B5400B" stroke-width="1.5"/>
+
+        <text x="180" y="46" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#E35205" letter-spacing="2">AI 효율</text>
+        <text x="180" y="98" text-anchor="middle" font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#E35205">알파벳</text>
+        <text x="180" y="118" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#E35205">선형·시퀀스 친화</text>
+
+        <text x="360" y="46" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#0f1e38" letter-spacing="2">의미 밀도</text>
+        <text x="360" y="98" text-anchor="middle" font-family="Noto Serif KR" font-size="16" font-weight="700" fill="#0f1e38">한자 · 字</text>
+        <text x="360" y="118" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#0f1e38">1글자 = 1의미</text>
+
+        <text x="540" y="46" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#B5400B" letter-spacing="2">사람 학습</text>
+        <text x="540" y="98" text-anchor="middle" font-family="Noto Sans KR" font-size="14" font-weight="700" fill="#B5400B">한글</text>
+        <text x="540" y="118" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#B5400B">자모 = 입의 지도</text>
+
+        <!-- caption -->
+        <text x="360" y="180" text-anchor="middle" font-family="Noto Sans KR" font-size="12" fill="#0f1e38" font-weight="700">세 원은 — 같은 점에 모이지 않습니다.</text>
+      </svg>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:14px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">AI의 시선</div>
+        <div style="font-size:13px; line-height:1.6; opacity:0.92; margin-top:4px;">한국어는 <b style="color:#FFE4D0;">3~5배 비싼 토큰</b>. 같은 문맥창에 더 적은 글이 들어갑니다. 데이터도 영어보다 적어 — <em>이중의 약점</em>입니다.</div>
+      </div>
+      <div style="padding:14px 16px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:11px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">사람의 시선</div>
+        <div style="font-size:13px; line-height:1.6; opacity:0.95; margin-top:4px; color:white;">하루면 자모를 익히고, 일주일이면 읽고 씁니다. <b style="color:#FFE4D0;">문맹률을 가장 빨리 낮춘</b> 문자 — <b style="color:#FFE4D0; font-style:italic;">가르치기 위한 설계</b>입니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; padding:11px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+      <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">역설의 핵심</div>
+      <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">한글의 약점은 — <em>한글 탓이 아닙니다</em>. 토크나이저가 <b>알파벳을 기준으로</b> 짜여 있을 뿐입니다. 한국어 전용 토크나이저(KoBPE 등)는 — 격차를 절반 이하로 줄입니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left">한글의 역설</span>
+      <span class="right"><b>09</b> / 10</span>
+    </div>
+  </div>
+</body></html>
