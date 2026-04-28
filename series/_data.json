@@ -547,7 +547,7 @@
     "desc": "폰 노이만 미니맥스 · 죄수의 딜레마 · 내쉬 균형 · GAN · AlphaGo Zero · Multi-Agent RL · 휴리스틱 — 게임이론으로 본 AI의 적대적 진화.",
     "slides": [
       "01-cover.png", "02-minimax.png", "03-prisoner.png", "04-nash.png",
-      "05-equilibrium-daily.png", "06-gan.png", "07-alphago.png",
+      "05-equilibrium.png", "06-gan.png", "07-alphago.png",
       "08-multi-agent.png", "09-heuristic.png", "10-outro.png"
     ],
     "count": 10
