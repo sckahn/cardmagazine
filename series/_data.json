@@ -509,5 +509,19 @@
       "08-qubit.png", "09-quantum-impact.png", "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 27,
+    "slug": "renaissance",
+    "name": "Renaissance",
+    "hanja": "復",
+    "subtitle": "데이터 르네상스 — 창작자가 다시 쓰는 세계",
+    "desc": "13조 토큰의 폭식 · Epoch AI 텍스트 고갈 · 합성 데이터와 모델 붕괴 · AI 슬롭의 범람 · 신뢰의 위기 · 1인칭 데이터의 부활 · 큐레이션·출처·창작자가 여는 데이터 르네상스.",
+    "slides": [
+      "01-cover.png", "02-feast.png", "03-end-of-text.png", "04-synthetic.png",
+      "05-slop.png", "06-collapse.png", "07-trust.png", "08-creator.png",
+      "09-renaissance.png", "10-outro.png"
+    ],
+    "count": 10
   }
 ]
