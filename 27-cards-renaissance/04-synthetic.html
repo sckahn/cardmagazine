@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · Synthetic</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; RENAISSANCE</div>
+      <div class="chaptertag">CHAPTER 03 &nbsp;&middot;&nbsp; 합성 데이터 &mdash; AI가 AI를 가르친다</div>
+    </div>
+    <div class="era">
+      <span class="year">SYNTHETIC</span>
+      <span class="label"><b>SELF-INSTRUCT &middot; DISTILLATION</b><span class="sub">학생이 학생을 가르치는 식탁</span></span>
+    </div>
+    <h1 class="title sm">선생님이 떠난 자리에서 &mdash;<br />학생끼리 <em>시험을 베낍니다.</em></h1>
+
+    <p class="body-sm" style="margin-top:12px; font-size:14px;">사람이 쓴 글이 부족하니, 모델은 <b>다른 모델이 쓴 글</b>로 학습합니다. 합성 데이터(synthetic data)는 사실 거의 모든 최신 모델의 식탁입니다. Self-Instruct, Distillation, RLAIF &mdash; 이름은 다르지만 구조는 같습니다.</p>
+
+    <div style="margin-top:14px; padding:18px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+      <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">합성 데이터 학습 루프</div>
+      <svg width="100%" height="200" viewBox="0 0 700 200" style="margin-top:8px;">
+        <g font-family="Noto Sans KR" font-weight="900">
+          <circle cx="120" cy="100" r="60" fill="#E35205" stroke="#FFE4D0" stroke-width="3"/>
+          <text x="120" y="95" text-anchor="middle" font-size="13" fill="#FFE4D0">선생 모델</text>
+          <text x="120" y="115" text-anchor="middle" font-size="10" fill="#FFE4D0" opacity="0.85">대형 LLM</text>
+
+          <path d="M 185 100 L 305 100" stroke="#FFE4D0" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+          <text x="245" y="90" text-anchor="middle" font-size="11" fill="#FFE4D0">합성 텍스트</text>
+          <text x="245" y="118" text-anchor="middle" font-size="9" fill="#FFE4D0" opacity="0.75">Q&amp;A · 추론 · 코드</text>
+
+          <rect x="310" y="65" width="100" height="70" rx="8" fill="#FFE4D0"/>
+          <text x="360" y="92" text-anchor="middle" font-size="13" fill="#0f1e38">데이터셋</text>
+          <text x="360" y="110" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0f1e38" opacity="0.85">N M tokens</text>
+          <text x="360" y="125" text-anchor="middle" font-size="9" fill="#0f1e38" opacity="0.7">필터 통과분</text>
+
+          <path d="M 415 100 L 525 100" stroke="#FFE4D0" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+          <text x="470" y="90" text-anchor="middle" font-size="11" fill="#FFE4D0">학습</text>
+
+          <circle cx="600" cy="100" r="50" fill="#FFE4D0" stroke="#E35205" stroke-width="3"/>
+          <text x="600" y="95" text-anchor="middle" font-size="13" fill="#0f1e38">학생 모델</text>
+          <text x="600" y="113" text-anchor="middle" font-size="10" fill="#0f1e38" opacity="0.75">소형 LLM</text>
+
+          <path d="M 600 50 Q 600 20 400 20 Q 200 20 120 40" stroke="#E35205" stroke-width="2" fill="none" stroke-dasharray="4,3"/>
+          <text x="360" y="14" text-anchor="middle" font-size="10" fill="#FFE4D0" opacity="0.85">다음 세대 학습 데이터로 다시 들어감</text>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#FFE4D0"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+
+    <div style="margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-top:3px solid var(--navy);">
+        <div style="font-family:var(--f-mono); font-size:10px; color:var(--navy); font-weight:800;">SELF-INSTRUCT</div>
+        <div style="font-size:12.5px; line-height:1.5; color:var(--navy); margin-top:3px;">큰 모델이 스스로<br />문제·답을 만든다</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-top:3px solid var(--brand);">
+        <div style="font-family:var(--f-mono); font-size:10px; color:var(--brand); font-weight:800;">DISTILLATION</div>
+        <div style="font-size:12.5px; line-height:1.5; color:var(--navy); margin-top:3px;">선생 출력을<br />학생이 흉내낸다</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border:1px solid var(--line); border-top:3px solid var(--navy);">
+        <div style="font-family:var(--f-mono); font-size:10px; color:var(--navy); font-weight:800;">RLAIF</div>
+        <div style="font-size:12.5px; line-height:1.5; color:var(--navy); margin-top:3px;">사람 대신 AI가<br />좋은 답을 채점</div>
+      </div>
+    </div>
+
+    <div style="margin-top:11px; padding:11px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+      <div style="font-size:11px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">왜 위험한가</div>
+      <div style="font-size:12.5px; line-height:1.55; margin-top:4px;">합성 데이터는 빠르고 싸고 통제하기 좋습니다. 하지만 &mdash; <em style="color:#FFE4D0;">현실의 새 사실은 단 한 줄도 들어 있지 않습니다.</em> 모델 안에 있던 통계의 재배열일 뿐. 이것이 다음 슬라이드의 위기로 이어집니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>04</b> / 10</span>
+    </div>
+  </div>
+</body></html>
