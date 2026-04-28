@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · Model Collapse</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; RENAISSANCE</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;&middot;&nbsp; 모델 붕괴 &mdash; 자기 토사물을 먹은 AI</div>
+    </div>
+    <div class="era">
+      <span class="year">2024</span>
+      <span class="label"><b>MODEL COLLAPSE</b><span class="sub">Shumailov et al. &middot; Nature, July 2024</span></span>
+    </div>
+    <h1 class="title sm">아홉 세대만 지나면 &mdash;<br />모델은 시(詩)를 <em>잊습니다.</em></h1>
+
+    <p class="body-sm" style="margin-top:12px; font-size:14px;">2024년 옥스퍼드/케임브리지 연구팀이 <b>Nature</b>에 발표한 결과는 단순했습니다. <em>모델이 만든 글로 다시 모델을 학습</em>시키면 &mdash; 9세대 만에 출력은 의미를 잃고 잡음으로 미끄러집니다. 별명: <b>Habsburg AI</b> &mdash; 데이터의 근친교배.</p>
+
+    <div style="margin-top:14px; padding:18px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+      <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">세대별 모델 출력 &mdash; 다양성의 붕괴</div>
+      <svg width="100%" height="170" viewBox="0 0 700 170" style="margin-top:8px;">
+        <g font-family="Noto Sans KR">
+          <rect x="20" y="40" width="100" height="80" rx="6" fill="#FFE4D0"/>
+          <text x="70" y="65" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="900" fill="#0f1e38">GEN 0</text>
+          <text x="70" y="85" text-anchor="middle" font-size="10" fill="#0f1e38">사람이 쓴 글</text>
+          <text x="70" y="100" text-anchor="middle" font-size="9" fill="#0f1e38" opacity="0.7">다양 · 깊이</text>
+
+          <text x="135" y="85" font-size="20" fill="#FFE4D0">→</text>
+
+          <rect x="160" y="45" width="95" height="75" rx="6" fill="#FFE4D0" opacity="0.9"/>
+          <text x="207" y="68" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="900" fill="#0f1e38">GEN 1</text>
+          <text x="207" y="86" text-anchor="middle" font-size="10" fill="#0f1e38">조금 평평</text>
+
+          <text x="270" y="85" font-size="20" fill="#FFE4D0">→</text>
+
+          <rect x="295" y="55" width="90" height="65" rx="6" fill="#FFE4D0" opacity="0.7"/>
+          <text x="340" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="900" fill="#0f1e38">GEN 3</text>
+          <text x="340" y="96" text-anchor="middle" font-size="10" fill="#0f1e38">반복 시작</text>
+
+          <text x="400" y="85" font-size="20" fill="#FFE4D0">→</text>
+
+          <rect x="425" y="65" width="85" height="55" rx="6" fill="#FFE4D0" opacity="0.5"/>
+          <text x="467" y="88" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="900" fill="#0f1e38">GEN 6</text>
+          <text x="467" y="106" text-anchor="middle" font-size="10" fill="#0f1e38">의미 흐림</text>
+
+          <text x="525" y="85" font-size="20" fill="#FFE4D0">→</text>
+
+          <rect x="550" y="80" width="80" height="40" rx="6" fill="#E35205"/>
+          <text x="590" y="98" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="900" fill="#FFE4D0">GEN 9</text>
+          <text x="590" y="113" text-anchor="middle" font-size="10" fill="#FFE4D0">잡음 · 붕괴</text>
+
+          <text x="350" y="150" text-anchor="middle" font-size="11" fill="#FFE4D0" opacity="0.85">&ldquo;바람이 부는 들판&rdquo; → &ldquo;들판 들판 토끼 토끼 들판 토끼…&rdquo;</text>
+        </g>
+      </svg>
+    </div>
+
+    <div style="margin-top:13px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="padding:12px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10.5px; letter-spacing:0.16em; font-weight:900; color:#FFE4D0;">왜 무너지나 &mdash; 두 가지 손실</div>
+        <div style="font-size:12.5px; line-height:1.55; margin-top:4px;">
+          <b style="color:#FFE4D0;">꼬리의 손실</b> &mdash; 희귀한 단어·표현 먼저 사라짐<br />
+          <b style="color:#FFE4D0;">중심의 압축</b> &mdash; 평균만 남고 다양성 소멸<br />
+          → 모델은 자기가 만든 <em style="color:#FFE4D0;">평균</em>을 평균하고 또 평균합니다.
+        </div>
+      </div>
+      <div style="padding:12px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); border-radius:4px;">
+        <div style="font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">★ 데이터 근친교배 &middot; HABSBURG AI</div>
+        <div style="font-size:11.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">합스부르크 왕가의 근친혼이 유전자를 좁혔듯, 모델끼리 학습이 거듭되면 <b style="color:var(--navy);">분포가 좁아져</b> 결국 한 점으로 수렴합니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:11px; padding:10px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+      <div style="font-size:11px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">결론</div>
+      <div style="font-size:12.5px; line-height:1.55; opacity:0.93; margin-top:4px;">합성 데이터만으로는 갈 수 없습니다. <em style="color:#FFE4D0;">새 사실은 새 사람만 만듭니다.</em> 그래서 다음 두 슬라이드 &mdash; 신뢰의 위기, 그리고 창작자의 귀환.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>06</b> / 10</span>
+    </div>
+  </div>
+</body></html>
