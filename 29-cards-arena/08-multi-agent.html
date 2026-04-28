@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · Multi-Agent</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × ARENA</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;·&nbsp; 다차원 제약의 최적화</div>
+    </div>
+    <div class="era">
+      <span class="year">MARL</span>
+      <span class="label"><b>MULTI-AGENT REINFORCEMENT LEARNING</b><span class="sub">동시에 협상하는 여러 AI</span></span>
+    </div>
+    <h1 class="title sm">한 명이 아니라 — <em>여럿이</em><br />동시에 결정합니다.</h1>
+
+    <p class="body-sm" style="margin-top:12px; font-size:14.5px;">AlphaGo는 <b>판 위 한 명의 상대</b>와 둡니다. 그러나 현실은 — 신호등·앞차·뒷차·보행자·날씨가 동시에 움직입니다. <em>여러 AI 에이전트</em>가 서로의 행동을 보면서 자기 결정을 굳히는 것 — 이것이 <b>Multi-Agent RL</b>입니다.</p>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1.3fr 1fr; gap:18px;">
+      <div style="padding:16px 18px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+        <div style="font-size:10.5px; letter-spacing:0.2em; font-weight:900; color:#FFE4D0;">자율주행 — 거미줄 위의 결정</div>
+        <svg width="100%" height="200" viewBox="0 0 420 200" style="margin-top:8px;">
+          <rect x="0" y="80" width="420" height="50" fill="rgba(255,228,208,0.08)"/>
+          <line x1="0" y1="105" x2="420" y2="105" stroke="#FFE4D0" stroke-dasharray="8 8" opacity="0.5"/>
+          <rect x="180" y="88" width="34" height="18" rx="3" fill="#E35205"/>
+          <text x="197" y="101" text-anchor="middle" font-family="Noto Sans KR" font-size="9" font-weight="900" fill="#FFE4D0">EGO</text>
+          <rect x="100" y="88" width="30" height="16" rx="3" fill="rgba(255,228,208,0.85)"/>
+          <text x="115" y="100" text-anchor="middle" font-family="Noto Sans KR" font-size="8" fill="#0f1e38" font-weight="800">차</text>
+          <rect x="270" y="88" width="30" height="16" rx="3" fill="rgba(255,228,208,0.85)"/>
+          <text x="285" y="100" text-anchor="middle" font-family="Noto Sans KR" font-size="8" fill="#0f1e38" font-weight="800">차</text>
+          <rect x="350" y="111" width="28" height="15" rx="3" fill="rgba(255,228,208,0.6)"/>
+          <text x="364" y="122" text-anchor="middle" font-family="Noto Sans KR" font-size="8" fill="#0f1e38" font-weight="800">차</text>
+          <circle cx="60" cy="50" r="10" fill="#E35205"/>
+          <text x="60" y="54" text-anchor="middle" font-family="Noto Sans KR" font-size="9" font-weight="900" fill="#FFE4D0">신호</text>
+          <circle cx="240" cy="155" r="6" fill="#FFE4D0"/>
+          <text x="252" y="159" font-family="Noto Sans KR" font-size="9" fill="#FFE4D0">보행자</text>
+          <path d="M 197 88 L 60 50" stroke="#FFE4D0" stroke-dasharray="3 3" opacity="0.55"/>
+          <path d="M 197 88 L 130 96" stroke="#FFE4D0" stroke-dasharray="3 3" opacity="0.55"/>
+          <path d="M 215 96 L 270 96" stroke="#FFE4D0" stroke-dasharray="3 3" opacity="0.55"/>
+          <path d="M 215 106 L 350 118" stroke="#FFE4D0" stroke-dasharray="3 3" opacity="0.55"/>
+          <path d="M 197 106 L 240 155" stroke="#FFE4D0" stroke-dasharray="3 3" opacity="0.55"/>
+          <text x="210" y="180" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#FFE4D0" opacity="0.85">한 번의 결정 = <tspan font-weight="900" fill="#FFE4D0">5개의 제약을 동시에</tspan> 푸는 일</text>
+        </svg>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="padding:13px 15px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:8px; color:white;">
+          <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">시장의 AI</div>
+          <div style="font-size:12.5px; line-height:1.55; margin-top:4px;">AI 매수자와 AI 매도자가 — 1초에 수백 번 호가를 봅니다. <em style="color:#FFE4D0;">서로의 모델</em>을 추정하며 가격을 정합니다.</div>
+        </div>
+        <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+          <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">로봇 군집</div>
+          <div style="font-size:12.5px; line-height:1.55; margin-top:4px; opacity:0.95;">창고의 로봇 수백 대가 — <em style="color:#FFE4D0;">충돌 없이</em> 동시에 움직입니다. 각자가 다른 로봇의 경로를 예측합니다.</div>
+        </div>
+        <div style="padding:11px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); font-size:11.5px; line-height:1.55; color:var(--ink-body);">
+          <b style="color:var(--navy);">11호 DRIVE callback</b> — 서튼의 강화학습은 한 명짜리 게임이었습니다. <em style="color:var(--brand); font-weight:800;">탐색 vs 활용</em>의 딜레마는 — 여럿이 되면 <b style="color:var(--navy);">"나의 활용이 너의 탐색을 흔든다"</b>로 진화합니다.
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:11px; padding:11px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+      <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">한 줄로</div>
+      <div style="font-size:13.5px; line-height:1.55; margin-top:3px;">한 명의 최적화는 <em style="color:#FFE4D0;">계산</em>입니다. 여럿의 최적화는 — <b style="color:#FFE4D0;">협상</b>입니다. AI는 이제, 협상의 책상에 앉아 있습니다.</div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"><b>08</b> / 10</span></div>
+  </div>
+</body></html>

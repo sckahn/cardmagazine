@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · GAN</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × ARENA</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;·&nbsp; 적대적 신경망</div>
+    </div>
+    <div class="era">
+      <span class="year">2014</span>
+      <span class="label"><b>IAN GOODFELLOW · GAN</b><span class="sub">Generative Adversarial Network — 위조범 vs 경찰</span></span>
+    </div>
+    <h1 class="title sm">맞붙어 싸우면서<br />— <em>둘 다</em> 똑똑해집니다.</h1>
+
+    <div class="split" style="grid-template-columns:0.85fr 1.7fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <div class="portrait">
+          <img src="../images/g-goodfellow.jpg" alt="Ian Goodfellow" style="object-position:center 30%;" />
+          <div class="corner"></div><div class="corner br"></div>
+        </div>
+        <div class="portrait-caption">
+          <span class="name">이언 굿펠로</span>
+          <span class="years">b.1985</span>
+        </div>
+        <div style="margin-top:10px; padding:10px 12px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); font-size:11.5px; line-height:1.55; color:var(--ink-body);">
+          몬트리올의 어느 술집, 친구들과 논쟁하다 떠올렸습니다. <b style="color:var(--navy);">"신경망 두 개를 맞붙이면?"</b> — 그날 밤 코드를 짰고, 한 번에 작동했습니다.
+        </div>
+      </div>
+      <div class="right">
+        <div style="padding:14px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+          <div style="font-size:10.5px; letter-spacing:0.2em; font-weight:900; color:#FFE4D0;">G vs D — 끝나지 않는 게임</div>
+          <svg width="100%" height="170" viewBox="0 0 460 170" style="margin-top:8px;">
+            <rect x="20" y="40" width="130" height="90" rx="6" fill="rgba(227,82,5,0.25)" stroke="#FFE4D0" stroke-width="1.5"/>
+            <text x="85" y="68" text-anchor="middle" font-family="Noto Sans KR" font-size="14" font-weight="900" fill="#FFE4D0">위조범 G</text>
+            <text x="85" y="88" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#FFE4D0" opacity="0.9">Generator</text>
+            <text x="85" y="112" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#FFE4D0" opacity="0.85">가짜 그림을</text>
+            <text x="85" y="125" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#FFE4D0" opacity="0.85">계속 만든다</text>
+            <path d="M 155 70 L 195 70" stroke="#FFE4D0" stroke-width="2" marker-end="url(#arr)"/>
+            <path d="M 195 100 L 155 100" stroke="#FFE4D0" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arr)"/>
+            <text x="175" y="62" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#FFE4D0" opacity="0.8">가짜 제출</text>
+            <text x="175" y="118" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#FFE4D0" opacity="0.8">피드백</text>
+            <rect x="200" y="40" width="130" height="90" rx="6" fill="rgba(227,82,5,0.55)" stroke="#FFE4D0" stroke-width="1.5"/>
+            <text x="265" y="68" text-anchor="middle" font-family="Noto Sans KR" font-size="14" font-weight="900" fill="#FFE4D0">경찰 D</text>
+            <text x="265" y="88" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#FFE4D0" opacity="0.9">Discriminator</text>
+            <text x="265" y="112" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#FFE4D0" opacity="0.85">진짜인지 가짜인지</text>
+            <text x="265" y="125" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#FFE4D0" opacity="0.85">판정한다</text>
+            <path d="M 340 85 L 380 85" stroke="#FFE4D0" stroke-width="2" marker-end="url(#arr)"/>
+            <rect x="385" y="55" width="65" height="60" rx="4" fill="rgba(255,228,208,0.15)" stroke="#FFE4D0" stroke-width="1"/>
+            <text x="417" y="80" text-anchor="middle" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#FFE4D0">진짜?</text>
+            <text x="417" y="98" text-anchor="middle" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#FFE4D0">가짜?</text>
+            <text x="230" y="155" text-anchor="middle" font-family="Noto Sans KR" font-size="10.5" fill="#FFE4D0" opacity="0.85">반복 → G는 더 정교하게, D는 더 까다롭게 → 결국 <tspan font-weight="900" fill="#FFE4D0">진짜 같은 가짜</tspan></text>
+            <defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#FFE4D0"/></marker></defs>
+          </svg>
+        </div>
+        <p class="body-sm" style="font-size:14px; margin-top:10px;">한쪽은 <b>위조 그림</b>을 만들고, 다른 한쪽은 <b>진짜인지 판정</b>합니다. 둘은 <em>제로섬</em>으로 맞붙습니다 — 한쪽이 잘하면 다른 쪽이 손해. 그런데 이 싸움이 반복되면 — <b>둘 다 점점 더 똑똑해집니다</b>.</p>
+        <div style="margin-top:9px; padding:10px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white; font-size:12.5px; line-height:1.55;">
+          <b style="color:#FFE4D0;">결과</b> — 딥페이크, 그림 생성, 데이터 증강. <em style="color:#FFE4D0;">생성형 AI의 첫 폭발</em>이 여기서 시작됐습니다. 적대(adversarial)가 — 창조의 엔진이 됐습니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"><b>06</b> / 10</span></div>
+  </div>
+</body></html>

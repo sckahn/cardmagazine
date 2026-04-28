@@ -537,5 +537,33 @@
       "08-ai-creation.png", "09-too-much.png", "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 29,
+    "slug": "arena",
+    "name": "Arena",
+    "hanja": "競",
+    "subtitle": "AI는 자기 자신과 싸우며 큽니다",
+    "desc": "폰 노이만 미니맥스 · 죄수의 딜레마 · 내쉬 균형 · GAN · AlphaGo Zero · Multi-Agent RL · 휴리스틱 — 게임이론으로 본 AI의 적대적 진화.",
+    "slides": [
+      "01-cover.png", "02-minimax.png", "03-prisoner.png", "04-nash.png",
+      "05-equilibrium-daily.png", "06-gan.png", "07-alphago.png",
+      "08-multi-agent.png", "09-heuristic.png", "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 30,
+    "slug": "swarm",
+    "name": "Swarm",
+    "hanja": "群",
+    "subtitle": "AI가 사회를 이루면 어떻게 될까요",
+    "desc": "개미·벌·새떼의 군집 지능 · Boids 1986 · 창발(아리스토텔레스·Hayek) · Axelrod Tit-for-Tat · 2023 Smallville · 드론 군집 — 경쟁(29호)과 협력(30호)의 진화 둘 다.",
+    "slides": [
+      "01-cover.png", "02-single-limit.png", "03-nature-swarm.png", "04-boids.png",
+      "05-emergence.png", "06-cooperation.png", "07-smallville.png",
+      "08-drone-swarm.png", "09-vs-arena.png", "10-outro.png"
+    ],
+    "count": 10
   }
 ]

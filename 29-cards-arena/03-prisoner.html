@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · Prisoner</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × ARENA</div>
+      <div class="chaptertag">CHAPTER 02 &nbsp;·&nbsp; 죄수의 딜레마</div>
+    </div>
+    <div class="era">
+      <span class="year">1950</span>
+      <span class="label"><b>RAND CORPORATION</b><span class="sub">Prisoner's Dilemma — 협력 vs 배신</span></span>
+    </div>
+    <h1 class="title sm">둘 다 <em>배신</em>하면 —<br />둘 다 <em>손해</em>입니다.</h1>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:0.85fr 1.6fr; gap:18px; align-items:center;">
+      <div class="portrait" style="aspect-ratio:5/3;">
+        <img src="../images/g-go-board.jpg" alt="game board" style="object-position:center 50%;" />
+        <div class="corner"></div><div class="corner br"></div>
+      </div>
+      <p class="body-sm" style="font-size:14px;">냉전 한복판, 미국 RAND 연구소의 학자 둘이 만든 사고 실험입니다. 두 공범이 각방에서 심문받습니다. <b>침묵하면 협력, 자백하면 배신</b>. 결과는 — 모두에게 <em>합리적</em>인 선택이 모두에게 <em>최악</em>을 안깁니다.</p>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1.15fr 1fr; gap:18px;">
+      <div style="padding:16px 18px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+        <div style="font-size:10.5px; letter-spacing:0.2em; font-weight:900; color:#FFE4D0;">2 × 2 보상 매트릭스 — 형량(년)</div>
+        <svg width="100%" height="240" viewBox="0 0 400 240" style="margin-top:10px;">
+          <text x="200" y="20" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FFE4D0" opacity="0.7" font-weight="700">B의 선택 →</text>
+          <text x="100" y="56" text-anchor="middle" font-family="Noto Sans KR" font-size="13" fill="#FFE4D0" font-weight="700">협력</text>
+          <text x="270" y="56" text-anchor="middle" font-family="Noto Sans KR" font-size="13" fill="#FFE4D0" font-weight="700">배신</text>
+          <text x="20" y="115" font-family="Noto Sans KR" font-size="13" fill="#FFE4D0" font-weight="700">협력</text>
+          <text x="20" y="195" font-family="Noto Sans KR" font-size="13" fill="#FFE4D0" font-weight="700">배신</text>
+          <rect x="55" y="70" width="120" height="70" fill="rgba(227,82,5,0.18)" stroke="#FFE4D0" stroke-width="1"/>
+          <text x="115" y="100" text-anchor="middle" font-family="JetBrains Mono" font-size="22" fill="#FFE4D0" font-weight="900">1 / 1</text>
+          <text x="115" y="125" text-anchor="middle" font-family="Noto Sans KR" font-size="10" fill="#FFE4D0" opacity="0.85">둘 다 가벼운 형</text>
+          <rect x="185" y="70" width="120" height="70" fill="rgba(227,82,5,0.05)" stroke="#FFE4D0" stroke-width="1"/>
+          <text x="245" y="100" text-anchor="middle" font-family="JetBrains Mono" font-size="22" fill="#FFE4D0" font-weight="900">10 / 0</text>
+          <text x="245" y="125" text-anchor="middle" font-family="Noto Sans KR" font-size="10" fill="#FFE4D0" opacity="0.85">A 손해 / B 풀려남</text>
+          <rect x="55" y="150" width="120" height="70" fill="rgba(227,82,5,0.05)" stroke="#FFE4D0" stroke-width="1"/>
+          <text x="115" y="180" text-anchor="middle" font-family="JetBrains Mono" font-size="22" fill="#FFE4D0" font-weight="900">0 / 10</text>
+          <text x="115" y="205" text-anchor="middle" font-family="Noto Sans KR" font-size="10" fill="#FFE4D0" opacity="0.85">A 풀려남 / B 손해</text>
+          <rect x="185" y="150" width="120" height="70" fill="rgba(227,82,5,0.55)" stroke="#FFE4D0" stroke-width="2"/>
+          <text x="245" y="180" text-anchor="middle" font-family="JetBrains Mono" font-size="22" fill="#FFE4D0" font-weight="900">5 / 5</text>
+          <text x="245" y="205" text-anchor="middle" font-family="Noto Sans KR" font-size="10" fill="#FFE4D0" opacity="0.95" font-weight="700">둘 다 무거운 형</text>
+          <text x="350" y="195" font-family="JetBrains Mono" font-size="9" fill="#FFE4D0" opacity="0.85">← 균형</text>
+          <text x="10" y="115" font-family="JetBrains Mono" font-size="9" fill="#FFE4D0" opacity="0.6" transform="rotate(-90 10 115)">A의 선택</text>
+        </svg>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div style="padding:14px 16px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:8px; color:white;">
+          <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">왜 둘 다 배신을?</div>
+          <div style="font-size:13px; line-height:1.55; margin-top:5px;">상대가 협력해도 <b style="color:#FFE4D0;">내가 배신하면 더 이득</b>, 상대가 배신해도 <b style="color:#FFE4D0;">내가 배신해야 덜 손해</b>. 그래서 — 둘 다 배신을 고릅니다.</div>
+        </div>
+        <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+          <div style="font-size:10.5px; letter-spacing:0.18em; font-weight:900; color:#FFE4D0;">합리성의 함정</div>
+          <div style="font-size:12.5px; line-height:1.55; margin-top:5px; opacity:0.95;">각자에게 <em style="color:#FFE4D0;">합리적인</em> 선택의 합이 — 모두에게 <em style="color:#FFE4D0;">비합리적인</em> 결과를 만듭니다. 신뢰가 없으면, 합리성은 모두를 가둡니다.</div>
+        </div>
+        <div style="padding:11px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); font-size:12px; line-height:1.55; color:var(--ink-body);">
+          이 게임은 <b style="color:var(--navy);">기후·관세·군비·광고비</b> 어디서든 반복됩니다. 한 번이 아니라 <em style="color:var(--brand); font-weight:800;">수없이 반복되는 게임</em>이라면 — 이야기는 달라집니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"><b>03</b> / 10</span></div>
+  </div>
+</body></html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · AlphaGo Zero</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI × ARENA</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;·&nbsp; 자기 자신과 싸우는 AI</div>
+    </div>
+    <div class="era">
+      <span class="year">2017</span>
+      <span class="label"><b>ALPHAGO ZERO · DEEPMIND</b><span class="sub">Self-Play — 사람 데이터 없이 사흘 만에</span></span>
+    </div>
+    <h1 class="title sm">스승 없이 — <em>자기와</em><br />두는 바둑.</h1>
+
+    <div class="split" style="grid-template-columns:0.95fr 1.55fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <div class="portrait">
+          <img src="../images/lee-sedol.jpg" alt="Lee Sedol vs AlphaGo" style="object-position:center 28%;" />
+          <div class="corner"></div><div class="corner br"></div>
+        </div>
+        <div class="portrait-caption">
+          <span class="name">이세돌 vs AlphaGo</span>
+          <span class="years">2016 서울</span>
+        </div>
+        <div style="margin-top:10px; padding:10px 12px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand); font-size:11px; line-height:1.55; color:var(--ink-body);">
+          <b style="color:var(--navy);">20·26호 callback</b> — 이세돌의 <b>4국 78수</b>는 인간이 AI를 이긴 마지막 장면이었습니다. 이듬해 <em style="color:var(--brand); font-weight:800;">AlphaGo Zero</em>는 사람을 — <b style="color:var(--navy);">아예 빼버렸습니다</b>.
+        </div>
+      </div>
+      <div class="right">
+        <div style="padding:14px 16px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:8px; color:white;">
+          <div style="font-size:10.5px; letter-spacing:0.2em; font-weight:900; color:#FFE4D0;">Self-Play — 자기와 두는 게임</div>
+          <svg width="100%" height="120" viewBox="0 0 420 120" style="margin-top:8px;">
+            <circle cx="80" cy="60" r="32" fill="rgba(227,82,5,0.25)" stroke="#FFE4D0" stroke-width="1.5"/>
+            <text x="80" y="55" text-anchor="middle" font-family="Noto Sans KR" font-size="11" font-weight="900" fill="#FFE4D0">AlphaGo</text>
+            <text x="80" y="72" text-anchor="middle" font-family="Noto Sans KR" font-size="11" font-weight="900" fill="#FFE4D0">A (흑)</text>
+            <path d="M 115 50 Q 175 30 235 50" stroke="#FFE4D0" stroke-width="2" fill="none" marker-end="url(#a2)"/>
+            <path d="M 235 70 Q 175 90 115 70" stroke="#FFE4D0" stroke-width="2" fill="none" marker-end="url(#a2)"/>
+            <circle cx="270" cy="60" r="32" fill="rgba(227,82,5,0.55)" stroke="#FFE4D0" stroke-width="1.5"/>
+            <text x="270" y="55" text-anchor="middle" font-family="Noto Sans KR" font-size="11" font-weight="900" fill="#FFE4D0">AlphaGo</text>
+            <text x="270" y="72" text-anchor="middle" font-family="Noto Sans KR" font-size="11" font-weight="900" fill="#FFE4D0">B (백)</text>
+            <text x="350" y="50" font-family="JetBrains Mono" font-size="11" fill="#FFE4D0" font-weight="700">→ 학습</text>
+            <text x="350" y="68" font-family="JetBrains Mono" font-size="11" fill="#FFE4D0" font-weight="700">→ 갱신</text>
+            <text x="350" y="86" font-family="JetBrains Mono" font-size="11" fill="#FFE4D0" font-weight="700">→ 다시</text>
+            <defs><marker id="a2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#FFE4D0"/></marker></defs>
+          </svg>
+        </div>
+        <p class="body-sm" style="font-size:14px; margin-top:10px;">AlphaGo Zero는 사람의 기보를 <b>한 판도</b> 보지 않았습니다. 처음엔 무작위로 두고, 자기 자신과 수십만 판을 두면서 — 진 쪽이 이긴 쪽을 모방하며 진화했습니다. 이것이 <em>Self-Play</em>.</p>
+        <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+            <div style="font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">3 DAYS</div>
+            <div style="font-size:13px; line-height:1.5; margin-top:3px;">사흘 만에 — <b style="color:#FFE4D0;">기존 AlphaGo</b>(이세돌을 이긴 그것)를 <em style="color:#FFE4D0;">100:0</em>으로 압도</div>
+          </div>
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+            <div style="font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">FREE OF HUMAN</div>
+            <div style="font-size:12.5px; line-height:1.5; margin-top:3px;">스승이 사라진 자리 — <em style="color:#FFE4D0;">게임 자체</em>가 스승이 됐습니다</div>
+          </div>
+        </div>
+        <div style="margin-top:9px; padding:9px 12px; background:rgba(15,30,56,0.06); border-left:3px solid var(--navy); font-size:11.5px; line-height:1.55; color:var(--ink-body);">
+          GAN과 닮았습니다. 다만 <b style="color:var(--navy);">두 모델</b>이 아니라 <em style="color:var(--brand); font-weight:800;">자기 자신의 두 자아</em>가 맞붙는 점이 다릅니다.
+        </div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"><b>07</b> / 10</span></div>
+  </div>
+</body></html>
