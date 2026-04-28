@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · AI 창작의 비밀</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; NOISE</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;&middot;&nbsp; AI 창작의 비밀 &middot; Sampling</div>
+    </div>
+    <div class="era">
+      <span class="year">2023&mdash;</span>
+      <span class="label"><b>MIDJOURNEY &middot; DALL&middot;E &middot; SUNO</b><span class="sub">매번 다른 그림 &middot; 다른 노래</span></span>
+    </div>
+    <h1 class="title sm">같은 프롬프트, 매번 다른 답 —<br /><em>주사위를 던지듯</em> 뽑습니다.</h1>
+
+    <div style="margin-top:14px; padding:18px 22px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:10px; color:white;">
+      <div style="font-size:11px; letter-spacing:0.2em; color:#FFE4D0; font-weight:900;">PROBABILITY DISTRIBUTION &middot; 다음 단어의 확률</div>
+      <svg viewBox="0 0 760 150" style="width:100%; height:130px; margin-top:8px;" xmlns="http://www.w3.org/2000/svg">
+        <line x1="40" y1="130" x2="730" y2="130" stroke="#FFE4D0" stroke-width="1"/>
+        <!-- bars -->
+        <g font-family="JetBrains Mono" font-size="11" text-anchor="middle">
+          <rect x="80" y="40" width="60" height="90" fill="#E35205"/><text x="110" y="148" fill="#FFE4D0">파랗다</text><text x="110" y="35" fill="#FFE4D0">0.42</text>
+          <rect x="180" y="65" width="60" height="65" fill="#E35205" opacity="0.85"/><text x="210" y="148" fill="#FFE4D0">맑다</text><text x="210" y="60" fill="#FFE4D0">0.21</text>
+          <rect x="280" y="80" width="60" height="50" fill="#E35205" opacity="0.7"/><text x="310" y="148" fill="#FFE4D0">흐리다</text><text x="310" y="75" fill="#FFE4D0">0.14</text>
+          <rect x="380" y="95" width="60" height="35" fill="#E35205" opacity="0.55"/><text x="410" y="148" fill="#FFE4D0">젖었다</text><text x="410" y="90" fill="#FFE4D0">0.08</text>
+          <rect x="480" y="105" width="60" height="25" fill="#E35205" opacity="0.4"/><text x="510" y="148" fill="#FFE4D0">슬프다</text><text x="510" y="100" fill="#FFE4D0">0.05</text>
+          <rect x="580" y="115" width="60" height="15" fill="#E35205" opacity="0.3"/><text x="610" y="148" fill="#FFE4D0">불탄다</text><text x="610" y="110" fill="#FFE4D0">0.03</text>
+        </g>
+        <!-- top-p band -->
+        <rect x="60" y="20" width="370" height="120" fill="none" stroke="#FFE4D0" stroke-width="1.5" stroke-dasharray="5 4"/>
+        <text x="245" y="15" fill="#FFE4D0" font-size="11" font-family="JetBrains Mono" text-anchor="middle">top-p &middot; 누적 확률 0.77 까지만 후보</text>
+      </svg>
+    </div>
+
+    <div class="split" style="grid-template-columns:1fr 1fr; gap:18px; margin-top:14px;">
+      <div>
+        <p class="body-sm" style="font-size:14px; line-height:1.7;">"하늘은 ___" 다음에 올 단어 &mdash; AI는 단어들의 <b>확률 분포</b>를 만듭니다. 그리고 그 분포에서 <em>주사위를 굴리듯</em> 한 단어를 뽑습니다. 이걸 <b>샘플링(sampling)</b>이라 부릅니다.</p>
+        <div style="margin-top:10px; padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+          <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">TOP-P &middot; 핵심 샘플링</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">상위 단어 누적 확률 p%까지만 후보로 둠. 너무 이상한 단어는 자르고 &mdash; <em style="color:#FFE4D0;">그 안에서 무작위 선택</em>.</div>
+        </div>
+      </div>
+      <div>
+        <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+          <div style="font-size:11px; font-weight:900; color:#FFE4D0; letter-spacing:0.16em;">TOP-K / STOCHASTIC DECODING</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.92; margin-top:5px;">상위 k개만 두고 무작위로 뽑음. Midjourney가 같은 프롬프트로 매번 다른 그림을 내는 이유 &mdash; 잠재 공간(latent space)에서 매번 다른 좌표를 샘플링하기 때문입니다.</div>
+        </div>
+        <div style="margin-top:10px; padding:11px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+          <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">↩ 26호 BITS 콜백</div>
+          <div style="font-size:12px; line-height:1.5; color:var(--ink-body); margin-top:3px;">샘플링이 일어나는 무대는 <b style="color:var(--navy);">임베딩 공간</b>입니다 &mdash; 의미를 좌표로 옮긴 그 자리에서, 잡음이 새 좌표를 찾습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:12px; padding:11px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+      <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">★ 그래서 사람과 닮았다</div>
+      <div style="font-size:13px; line-height:1.6; opacity:0.97; margin-top:4px;">시인도 단어 후보들 사이에서 한 단어를 <em style="color:#FFE4D0;">"고릅니다"</em>. 가장 흔한 단어 대신 두 번째 &middot; 세 번째 후보를 잡을 때 시가 됩니다 &mdash; AI의 sampling은 그 직관을 수학으로 옮긴 것입니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>08</b> / 10</span>
+    </div>
+  </div>
+</body></html>

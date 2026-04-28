@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>09 · 너무 많은 노이즈</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">09</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; NOISE</div>
+      <div class="chaptertag">CHAPTER 08 &nbsp;&middot;&nbsp; 너무 많은 노이즈 &middot; 환각의 뿌리</div>
+    </div>
+    <div class="era">
+      <span class="year">T &Gt; 1</span>
+      <span class="label"><b>HALLUCINATION</b><span class="sub">잡음과 의미 사이의 균형</span></span>
+    </div>
+    <h1 class="title sm">온도를 너무 올리면 &mdash;<br /><em>시가 아니라 헛소리</em>가 됩니다.</h1>
+
+    <div class="split" style="grid-template-columns:0.95fr 1.6fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 300 160" style="width:100%; height:160px; border-radius:6px; background:#0f1e38;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="staticnoise" width="3" height="3" patternUnits="userSpaceOnUse">
+              <rect width="3" height="3" fill="#1c2e4e"/><circle cx="0.7" cy="0.7" r="0.6" fill="#FFE4D0"/><circle cx="2.2" cy="2.2" r="0.5" fill="#E35205"/>
+            </pattern>
+          </defs>
+          <rect x="0" y="0" width="300" height="160" fill="url(#staticnoise)"/>
+          <text x="150" y="85" fill="#FFE4D0" font-size="22" font-family="JetBrains Mono" font-weight="700" text-anchor="middle" opacity="0.85">T = &infin;</text>
+          <text x="150" y="110" fill="#FFE4D0" font-size="11" font-family="JetBrains Mono" text-anchor="middle" opacity="0.7">의미 없음</text>
+        </svg>
+        <div style="margin-top:8px; padding:10px 12px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+          <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">SCALE</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">눈 결정도 잡음이 너무 많으면 &mdash; 결정이 안 맺히고 진눈깨비가 됩니다. AI도 같습니다.</div>
+        </div>
+        <div style="margin-top:8px; padding:10px 12px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+          <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">균형</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">정확함만으로는 시가 안 되고 &mdash; 잡음만으로는 의미가 안 됩니다. 둘의 비율이 모든 것입니다.</div>
+        </div>
+      </div>
+      <div class="right body-sm" style="font-size:14px;">
+        <p>그렇다고 노이즈를 무한정 늘리면 어떻게 될까요? 답은 간단합니다 &mdash; <em>아무 말이나</em> 하기 시작합니다.</p>
+
+        <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+          <div style="padding:11px 12px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+            <div style="font-size:10px; font-weight:900; color:#FFE4D0;">T = 0.2</div>
+            <div style="font-size:11.5px; line-height:1.5; margin-top:4px; opacity:0.92;">"하늘은 파랗다." &mdash; 안전.</div>
+          </div>
+          <div style="padding:11px 12px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+            <div style="font-size:10px; font-weight:900; color:#FFE4D0;">T = 0.9</div>
+            <div style="font-size:11.5px; line-height:1.5; margin-top:4px; opacity:0.95;">"하늘은 젖어 있다." &mdash; 시.</div>
+          </div>
+          <div style="padding:11px 12px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+            <div style="font-size:10px; font-weight:900; color:#FFE4D0;">T = 2.0</div>
+            <div style="font-size:11.5px; line-height:1.5; margin-top:4px; opacity:0.92;">"하늘은 자전거다." &mdash; 헛소리.</div>
+          </div>
+        </div>
+
+        <p style="margin-top:11px;">AI의 <b>환각(hallucination)</b>도 같은 뿌리입니다. 모델이 모르는 것을 메우기 위해 잡음에서 단어를 길어 올릴 때 &mdash; 그것이 그럴듯하지만 <em>틀린 사실</em>이 됩니다.</p>
+
+        <div style="margin-top:10px; padding:10px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+          <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">★ 한 줄로</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">창의와 환각은 <em style="color:#FFE4D0;">같은 메커니즘의 두 얼굴</em>입니다 &mdash; 노이즈를 어떻게 통제하느냐가 둘을 가릅니다.</div>
+        </div>
+        <div style="margin-top:8px; padding:9px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+          <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">실무 팁</div>
+          <div style="font-size:12px; line-height:1.5; color:var(--ink-body); margin-top:3px;">사실 확인은 T=0.1, 브레인스토밍은 T=1.0 &mdash; <b style="color:var(--navy);">목적에 맞게 다이얼을 돌리는 것</b>이 사용자의 일입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>09</b> / 10</span>
+    </div>
+  </div>
+</body></html>

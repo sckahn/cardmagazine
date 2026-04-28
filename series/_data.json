@@ -523,5 +523,19 @@
       "09-renaissance.png", "10-outro.png"
     ],
     "count": 10
+  },
+  {
+    "n": 28,
+    "slug": "noise",
+    "name": "Noise",
+    "hanja": "雜",
+    "subtitle": "흔들려본 사람만 시를 씁니다",
+    "desc": "Temperature · Diffusion · 돌연변이 · Local Minima 탈출 · Simulated Annealing · 세렌디피티 · 환각의 경계 — 의도적 잡음이 만든 창의의 비밀.",
+    "slides": [
+      "01-cover.png", "02-temperature.png", "03-diffusion.png", "04-mutation.png",
+      "05-local-minima.png", "06-annealing.png", "07-serendipity.png",
+      "08-ai-creation.png", "09-too-much.png", "10-outro.png"
+    ],
+    "count": 10
   }
 ]

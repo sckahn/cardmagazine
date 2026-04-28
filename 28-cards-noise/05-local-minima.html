@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>05 · Local Minima</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; NOISE</div>
+      <div class="chaptertag">CHAPTER 04 &nbsp;&middot;&nbsp; Local Minima &middot; 산 너머 산을 보려면</div>
+    </div>
+    <div class="era">
+      <span class="year">학습</span>
+      <span class="label"><b>LOSS LANDSCAPE</b><span class="sub">AI는 골짜기를 향해 굴러갑니다</span></span>
+    </div>
+    <h1 class="title sm">얕은 골짜기에 갇히면 &mdash;<br /><em>흔들어야</em> 빠져나옵니다.</h1>
+
+    <div class="split" style="grid-template-columns:0.95fr 1.6fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <img src="../images/n-mountain-landscape.jpg" alt="mountain landscape" style="width:100%; height:160px; object-fit:cover; border-radius:6px;" />
+        <div style="margin-top:8px; padding:10px 12px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+          <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">비유</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">산 골짜기에 떨어진 공 &mdash; 더 깊은 골짜기가 산 너머에 있어도, 가만 두면 영영 못 갑니다.</div>
+        </div>
+        <div style="margin-top:8px; padding:10px 12px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+          <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">처방</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.95; margin-top:4px;">땅을 흔든다 = 노이즈 주입. 공이 튀어 올라 다른 골짜기로 굴러갑니다.</div>
+        </div>
+      </div>
+      <div class="right body-sm" style="font-size:14px;">
+        <p>AI 학습은 <b>"오차의 산맥"</b>을 굴러다니는 일입니다. 가장 낮은 골짜기를 찾아야 가장 좋은 모델이 됩니다. 그런데 &mdash; 산은 한 개가 아닙니다.</p>
+
+        <svg viewBox="0 0 460 130" style="width:100%; height:120px; margin-top:8px;" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 0 90 Q 70 30, 130 70 Q 180 100, 230 50 Q 280 10, 330 80 Q 380 120, 460 70" stroke="#0f1e38" stroke-width="2" fill="none"/>
+          <circle cx="130" cy="70" r="6" fill="#E35205"/>
+          <text x="130" y="100" fill="#3a4458" font-size="10" text-anchor="middle" font-family="JetBrains Mono">LOCAL MIN</text>
+          <circle cx="330" cy="80" r="6" fill="#0f1e38"/>
+          <text x="330" y="110" fill="#0f1e38" font-size="10" text-anchor="middle" font-family="JetBrains Mono" font-weight="700">GLOBAL MIN</text>
+          <path d="M 140 65 Q 200 20, 260 50" stroke="#E35205" stroke-width="1.5" fill="none" stroke-dasharray="3 3"/>
+          <text x="200" y="20" fill="#E35205" font-size="10" text-anchor="middle" font-weight="700">+ NOISE &rarr;</text>
+        </svg>
+
+        <p style="margin-top:8px;">고전 경사하강(Gradient Descent)은 <em>가장 가까운 골짜기</em>로만 갑니다. 그래서 더 좋은 답이 있어도 못 찾습니다 &mdash; 이걸 <b>로컬 미니마(local minima)</b>라 부릅니다.</p>
+
+        <div style="margin-top:10px; padding:10px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+          <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">SGD &middot; STOCHASTIC GRADIENT DESCENT</div>
+          <div style="font-size:12.5px; line-height:1.55; opacity:0.94; margin-top:4px;">매 스텝마다 데이터를 무작위로 섞어 미니배치를 씁니다. 그래서 경로에 자연 잡음이 섞여 &mdash; <em style="color:#FFE4D0;">얕은 골짜기를 빠져나갑니다</em>.</div>
+        </div>
+        <div style="margin-top:8px; padding:9px 13px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+          <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">↩ 11호 DRIVE 콜백</div>
+          <div style="font-size:12px; line-height:1.5; color:var(--ink-body); margin-top:3px;">서튼의 <b style="color:var(--navy);">탐험(Exploration)</b>이 바로 이것입니다 &mdash; 잠깐 손해를 보더라도 모르는 길을 가야 더 깊은 골짜기를 찾습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>05</b> / 10</span>
+    </div>
+  </div>
+</body></html>

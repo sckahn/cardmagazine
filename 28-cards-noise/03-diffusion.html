@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · Diffusion</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; NOISE</div>
+      <div class="chaptertag">CHAPTER 02 &nbsp;&middot;&nbsp; Diffusion &middot; 그림은 노이즈에서 태어납니다</div>
+    </div>
+    <div class="era">
+      <span class="year">2020&mdash;</span>
+      <span class="label"><b>DALL&middot;E &middot; STABLE DIFFUSION &middot; SORA</b><span class="sub">노이즈를 거꾸로 걷어 그림이 됩니다</span></span>
+    </div>
+    <h1 class="title sm">백색 잡음에서 시작해 &mdash;<br /><em>한 번에 한 겹씩</em> 형태가 떠오릅니다.</h1>
+
+    <div style="margin-top:14px; padding:18px 22px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:10px; color:white;">
+      <div style="font-size:11px; letter-spacing:0.2em; color:#FFE4D0; font-weight:900;">FORWARD &rarr; REVERSE &middot; 디퓨전의 두 방향</div>
+      <svg viewBox="0 0 760 150" style="width:100%; height:130px; margin-top:10px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="noise" width="4" height="4" patternUnits="userSpaceOnUse">
+            <rect width="4" height="4" fill="#7a8aa8"/><circle cx="1" cy="1" r="0.7" fill="#dde3ee"/><circle cx="3" cy="3" r="0.6" fill="#3a4458"/>
+          </pattern>
+          <radialGradient id="face" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#FFE4D0"/><stop offset="1" stop-color="#E35205"/></radialGradient>
+        </defs>
+        <!-- step boxes -->
+        <g>
+          <rect x="10" y="20" width="100" height="100" rx="6" fill="url(#face)"/>
+          <text x="60" y="140" fill="#FFE4D0" font-size="11" text-anchor="middle" font-family="JetBrains Mono">CLEAN</text>
+          <rect x="140" y="20" width="100" height="100" rx="6" fill="url(#face)" opacity="0.55"/><rect x="140" y="20" width="100" height="100" rx="6" fill="url(#noise)" opacity="0.4"/>
+          <text x="190" y="140" fill="#FFE4D0" font-size="11" text-anchor="middle" font-family="JetBrains Mono">+ NOISE</text>
+          <rect x="270" y="20" width="100" height="100" rx="6" fill="url(#face)" opacity="0.25"/><rect x="270" y="20" width="100" height="100" rx="6" fill="url(#noise)" opacity="0.7"/>
+          <text x="320" y="140" fill="#FFE4D0" font-size="11" text-anchor="middle" font-family="JetBrains Mono">+ NOISE</text>
+          <rect x="400" y="20" width="100" height="100" rx="6" fill="url(#noise)"/>
+          <text x="450" y="140" fill="#FFE4D0" font-size="11" text-anchor="middle" font-family="JetBrains Mono">PURE NOISE</text>
+          <rect x="530" y="20" width="100" height="100" rx="6" fill="url(#face)" opacity="0.45"/><rect x="530" y="20" width="100" height="100" rx="6" fill="url(#noise)" opacity="0.45"/>
+          <text x="580" y="140" fill="#FFE4D0" font-size="11" text-anchor="middle" font-family="JetBrains Mono">DENOISE</text>
+          <rect x="650" y="20" width="100" height="100" rx="6" fill="url(#face)"/>
+          <text x="700" y="140" fill="#FFE4D0" font-size="11" text-anchor="middle" font-family="JetBrains Mono">IMAGE</text>
+        </g>
+        <!-- arrows -->
+        <path d="M 115 70 L 135 70" stroke="#FFE4D0" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+        <path d="M 245 70 L 265 70" stroke="#FFE4D0" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+        <path d="M 375 70 L 395 70" stroke="#FFE4D0" stroke-width="1.5" fill="none" marker-end="url(#ar)"/>
+        <path d="M 505 70 L 525 70" stroke="#E35205" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+        <path d="M 635 70 L 645 70" stroke="#E35205" stroke-width="2" fill="none" marker-end="url(#ar2)"/>
+        <defs>
+          <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#FFE4D0"/></marker>
+          <marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#E35205"/></marker>
+        </defs>
+      </svg>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:11px; font-weight:900; color:#FFE4D0; letter-spacing:0.16em;">FORWARD &middot; 망가뜨리기</div>
+        <div style="font-size:13px; line-height:1.55; margin-top:5px; opacity:0.95;">고양이 사진에 잡음을 조금씩 더해 갑니다. 끝에는 &mdash; 완전한 백색 잡음만 남습니다. 학습은 이 과정을 수만 번 본 결과입니다.</div>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:6px; color:white;">
+        <div style="font-size:11px; font-weight:900; color:#FFE4D0; letter-spacing:0.16em;">REVERSE &middot; 되돌리기</div>
+        <div style="font-size:13px; line-height:1.55; margin-top:5px; opacity:0.95;">생성할 땐 정반대로 &mdash; 백색 잡음에서 시작해 한 겹씩 노이즈를 걷어냅니다. 그러면 그림이 떠오릅니다.</div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="margin-top:12px; font-size:13.5px; line-height:1.7;">DALL&middot;E, Stable Diffusion, Sora의 작동 원리가 모두 이 한 장입니다. <b>잡음이 출발점</b>이고, AI는 잡음을 거꾸로 걷어내며 그림 &middot; 영상을 만듭니다 &mdash; 마치 안갯속에서 형체가 떠오르듯이.</p>
+
+    <div style="margin-top:10px; padding:9px 12px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+      <div style="font-size:9.5px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">↩ 과거 복기 · AI × TIME 08호 · 시간의 화살을 거꾸로</div>
+      <div style="font-size:11.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">17호 TIME에서 본 <b style="color:var(--navy);">엔트로피의 시간의 화살</b>을 — Diffusion은 거꾸로 돌립니다. 우주에서 잡음(엔트로피)은 늘어나기만 하는데, AI는 그것을 <em style="color:var(--brand); font-weight:700;">되감아 그림을 만듭니다</em>. 잠깐, 시간의 방향을 한 번 뒤집는 셈입니다.</div>
+    </div>
+
+    <div style="margin-top:10px; display:grid; grid-template-columns:1.4fr 1fr; gap:12px;">
+      <div style="padding:11px 14px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:6px; color:white;">
+        <div style="font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:900;">왜 잡음에서 시작하는가</div>
+        <div style="font-size:12.5px; line-height:1.55; opacity:0.97; margin-top:4px;">백색 잡음은 <em style="color:#FFE4D0;">"아무것도 정해지지 않은 상태"</em>입니다. 출발점이 매번 달라지므로 &mdash; 같은 프롬프트에서도 매번 다른 그림이 떠오릅니다. 무한한 가능성의 캔버스입니다.</div>
+      </div>
+      <div style="padding:11px 14px; background:rgba(227,82,5,0.08); border-left:3px solid var(--brand);">
+        <div style="font-size:10px; letter-spacing:0.16em; color:var(--brand); font-weight:800;">↩ 8호 DREAM 콜백</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink-body); margin-top:3px;">DeepDream은 정반대로 <b style="color:var(--navy);">노이즈를 증폭</b>해 환각을 만들었습니다. Diffusion은 그 흐름을 통제 가능한 창의로 길들였습니다.</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>03</b> / 10</span>
+    </div>
+  </div>
+</body></html>
