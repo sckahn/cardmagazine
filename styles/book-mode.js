@@ -231,53 +231,35 @@
   user-select: none;
 }
 
-/* LEFT page — TOC list (전체 30호, 1번부터) */
+/* LEFT page — quote / preface */
 .book-spread.cover-spread .book-page.left {
   background: linear-gradient(170deg, #0e1a32 0%, #060c1e 100%);
-  padding: 9% 8% 8%;
-  justify-content: flex-start;
+  padding: 14% 10%;
+  justify-content: center;
 }
-.cover-toc-eyebrow {
+.cover-quote-eyebrow {
   font-family: var(--f-mono, monospace);
   font-size: 10.5px; letter-spacing: 0.34em; text-transform: uppercase;
-  color: rgba(255,228,208,0.5);
+  color: rgba(255,228,208,0.45);
+  margin-bottom: 36px;
 }
-.cover-toc-title {
+.cover-quote {
   font-family: 'Noto Serif KR', serif;
-  font-size: clamp(22px, 2.6vw, 28px);
-  font-weight: 800;
-  margin-top: 10px;
+  font-size: clamp(28px, 3.4vw, 44px);
+  font-weight: 700;
+  line-height: 1.45;
   color: #FFE4D0;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
+  margin: 0;
 }
-.cover-toc-rule {
-  width: 40px; height: 2px;
-  background: #E35205;
-  margin: 14px 0 22px;
+.cover-quote em {
+  font-style: italic; color: #E35205; font-weight: 800;
 }
-.cover-toc {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 22px;
-  row-gap: 7px;
-}
-.cover-toc-row {
-  display: flex; align-items: baseline; gap: 9px;
-  padding: 4px 0;
-  border-bottom: 1px dashed rgba(255,228,208,0.07);
-}
-.cover-toc-row .num {
+.cover-quote-cite {
+  margin-top: 32px;
   font-family: var(--f-mono, monospace);
-  font-size: 10px; color: #E35205;
-  font-weight: 700; min-width: 22px;
-  letter-spacing: 0.06em;
-}
-.cover-toc-row .name {
-  font-family: 'Noto Serif KR', serif;
-  font-size: clamp(11.5px, 1.15vw, 13.5px);
-  font-weight: 600;
-  color: #FFE4D0;
-  letter-spacing: -0.005em;
+  font-size: 11px; letter-spacing: 0.18em;
+  color: rgba(255,228,208,0.5);
 }
 
 /* single-page (mobile) cover */
@@ -287,12 +269,116 @@
   background: linear-gradient(170deg, #15213a 0%, #0c1428 100%);
 }
 .book-spread.cover-spread.single .cover-masthead { font-size: clamp(44px, 13vw, 80px); }
-.book-spread.cover-spread.single .cover-toc {
-  grid-template-columns: 1fr;
-  row-gap: 4px;
-  margin-top: 10px;
+
+/* dedicated TOC spread */
+.book-spread.toc-spread .book-page {
+  background: linear-gradient(165deg, #fbf6ee 0%, #f1e7d2 100%);
+  color: #1a2440;
+  display: flex; flex-direction: column;
+  padding: 6% 6.5% 5%;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
 }
-.book-spread.cover-spread.single .cover-toc-row .name { font-size: 12.5px; }
+.book-spread.toc-spread .book-page iframe { display: none; }
+.book-spread.toc-spread .book-page::before { display: none; }
+.book-spread.toc-spread .book-page::after  { display: none; }
+.toc-eyebrow {
+  font-family: var(--f-mono, monospace);
+  font-size: 10.5px; letter-spacing: 0.34em; text-transform: uppercase;
+  color: #b14406;
+  font-weight: 700;
+}
+.toc-eyebrow-right { color: rgba(26,36,64,0.4); }
+.toc-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(28px, 3.6vw, 42px);
+  font-weight: 900;
+  margin: 8px 0 0;
+  color: #1a2440;
+  letter-spacing: -0.018em;
+}
+.toc-title-sub {
+  font-size: 0.45em;
+  color: rgba(26,36,64,0.45);
+  font-weight: 500;
+  font-family: var(--f-mono, monospace);
+  letter-spacing: 0.18em;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.toc-rule {
+  width: 56px; height: 2px;
+  background: #E35205;
+  margin: 14px 0 18px;
+}
+.toc-list {
+  display: flex; flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  overflow-y: auto;
+}
+.toc-row {
+  all: unset;
+  display: grid;
+  grid-template-columns: 38px 1fr auto;
+  align-items: baseline;
+  gap: 12px;
+  padding: 8px 6px 8px 0;
+  border-bottom: 1px dashed rgba(26,36,64,0.13);
+  cursor: pointer;
+  transition: background 0.12s, padding 0.12s;
+  font-family: 'Noto Serif KR', serif;
+}
+.toc-row:hover {
+  background: rgba(227,82,5,0.06);
+  padding-left: 6px;
+}
+.toc-row:focus-visible {
+  outline: 2px solid #E35205;
+  outline-offset: -2px;
+  border-radius: 3px;
+}
+.toc-num {
+  font-family: var(--f-mono, monospace);
+  font-size: 11.5px; font-weight: 800;
+  color: #E35205;
+  letter-spacing: 0.06em;
+}
+.toc-body {
+  display: flex; flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+.toc-name {
+  font-size: clamp(13px, 1.35vw, 16px);
+  font-weight: 800;
+  color: #1a2440;
+  letter-spacing: -0.005em;
+}
+.toc-sub {
+  font-size: clamp(10.5px, 1.05vw, 12.5px);
+  color: rgba(26,36,64,0.55);
+  font-weight: 500;
+  line-height: 1.4;
+  font-family: var(--f-sans, sans-serif);
+}
+.toc-page {
+  font-family: var(--f-mono, monospace);
+  font-size: 10.5px;
+  color: rgba(26,36,64,0.4);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.toc-foot {
+  margin-top: 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(26,36,64,0.1);
+  font-family: var(--f-mono, monospace);
+  font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(26,36,64,0.45);
+}
+.book-spread.toc-spread.single .toc-list { gap: 2px; }
 
 /* nav buttons */
 .book-nav {
@@ -360,6 +446,9 @@
     if (options.coverPage) {
       spreads.push({ type: 'cover', meta: options.coverMeta });
     }
+    if (options.tocPage && options.tocMeta) {
+      spreads.push({ type: 'toc', meta: options.tocMeta });
+    }
     if (!wide) {
       // 모바일: 한 장씩
       srcs.forEach(function (s) { spreads.push([s]); });
@@ -420,12 +509,6 @@
     spreadEl.classList.add('cover-spread');
     spreadEl.classList.toggle('single', !wide);
 
-    var toc = meta.toc || [];
-    var tocHtml = toc.map(function (t) {
-      var num = String(t.n).padStart(2, '0');
-      return '<div class="cover-toc-row"><span class="num">' + num + '</span><span class="name">' + t.name + '</span></div>';
-    }).join('');
-
     var rightInner = `
       <div>
         <div class="cover-issue-band">
@@ -442,12 +525,15 @@
 
     if (wide) {
       var leftPage = document.createElement('div');
-      leftPage.className = 'book-page left';
+      leftPage.className = 'book-page left cover-quote-page';
       leftPage.innerHTML = `
-        <div class="cover-toc-eyebrow">Table of Contents</div>
-        <div class="cover-toc-title">전체 ${toc.length}호 · 한 권의 시리즈</div>
-        <div class="cover-toc-rule"></div>
-        <div class="cover-toc">${tocHtml}</div>
+        <div class="cover-quote-eyebrow">Preface</div>
+        <blockquote class="cover-quote">
+          오래된 질문들이<br />
+          <em>AI</em> 앞에서<br />
+          다시 낯설어집니다.
+        </blockquote>
+        <div class="cover-quote-cite">— Card News Magazine</div>
       `;
       var rightPage = document.createElement('div');
       rightPage.className = 'book-page right';
@@ -457,24 +543,80 @@
     } else {
       var page = document.createElement('div');
       page.className = 'book-page right';
+      page.innerHTML = rightInner;
+      spreadEl.appendChild(page);
+    }
+  }
+
+  function renderToc(spreadEl, meta, wide, go, state) {
+    spreadEl.innerHTML = '';
+    spreadEl.classList.add('toc-spread');
+    spreadEl.classList.toggle('single', !wide);
+
+    var entries = meta.entries || [];
+    function resolveStartSpread(firstSrc) {
+      if (!firstSrc || !state) return 0;
+      return spreadIndexOfSrc(state.spreads, firstSrc);
+    }
+    function row(t) {
+      var num = String(t.n).padStart(2, '0');
+      var startSpread = resolveStartSpread(t.firstSrc);
+      return '<button type="button" class="toc-row" data-spread="' + startSpread + '">'
+        + '<span class="toc-num">' + num + '</span>'
+        + '<span class="toc-body">'
+          + '<span class="toc-name">' + t.name + '</span>'
+          + (t.subtitle ? '<span class="toc-sub">' + t.subtitle + '</span>' : '')
+        + '</span>'
+        + '<span class="toc-page">p.' + (t.page || '') + '</span>'
+        + '</button>';
+    }
+
+    function attachJump(pageEl) {
+      pageEl.querySelectorAll('.toc-row').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var idx = parseInt(btn.getAttribute('data-spread'), 10);
+          if (!isNaN(idx)) go(idx);
+        });
+      });
+    }
+
+    if (wide) {
+      var half = Math.ceil(entries.length / 2);
+      var leftEntries = entries.slice(0, half);
+      var rightEntries = entries.slice(half);
+
+      var leftPage = document.createElement('div');
+      leftPage.className = 'book-page left toc-page';
+      leftPage.innerHTML = `
+        <div class="toc-eyebrow">Table of Contents</div>
+        <h2 class="toc-title">목차 <span class="toc-title-sub">${entries.length} Issues</span></h2>
+        <div class="toc-rule"></div>
+        <div class="toc-list">${leftEntries.map(row).join('')}</div>
+      `;
+      var rightPage = document.createElement('div');
+      rightPage.className = 'book-page right toc-page';
+      rightPage.innerHTML = `
+        <div class="toc-eyebrow toc-eyebrow-right">Continued</div>
+        <div class="toc-rule"></div>
+        <div class="toc-list">${rightEntries.map(row).join('')}</div>
+        <div class="toc-foot">눌러서 해당 호로 바로 이동 →</div>
+      `;
+      spreadEl.appendChild(leftPage);
+      spreadEl.appendChild(rightPage);
+      attachJump(leftPage);
+      attachJump(rightPage);
+    } else {
+      var page = document.createElement('div');
+      page.className = 'book-page toc-page';
       page.innerHTML = `
-        <div>
-          <div class="cover-issue-band">
-            <span class="pip"></span><span>${meta.issueLabel || 'Collected Edition'}</span>
-          </div>
-          <div class="cover-masthead">${meta.masthead}</div>
-          <div class="cover-rule"></div>
-          <div class="cover-tagline">${meta.tagline || ''}</div>
-          ${meta.sub ? '<div class="cover-sub">' + meta.sub + '</div>' : ''}
-        </div>
-        <div style="margin-top:32px;">
-          <div class="cover-toc-eyebrow">Table of Contents</div>
-          <div class="cover-toc-rule"></div>
-          <div class="cover-toc">${tocHtml}</div>
-        </div>
-        ${meta.hanja ? '<div class="cover-hanja-watermark">' + meta.hanja + '</div>' : ''}
+        <div class="toc-eyebrow">Table of Contents</div>
+        <h2 class="toc-title">목차 <span class="toc-title-sub">${entries.length} Issues</span></h2>
+        <div class="toc-rule"></div>
+        <div class="toc-list">${entries.map(row).join('')}</div>
+        <div class="toc-foot">눌러서 해당 호로 바로 이동 →</div>
       `;
       spreadEl.appendChild(page);
+      attachJump(page);
     }
   }
 
@@ -507,6 +649,7 @@
       setTimeout(function () {
         var s = state.spreads[i];
         if (s && s.type === 'cover') renderCover(spreadEl, s.meta, state.wide);
+        else if (s && s.type === 'toc') renderToc(spreadEl, s.meta, state.wide, go, state);
         else renderSpread(s, spreadEl);
         spreadEl.classList.remove('flipping');
         if (prog) prog.textContent = (i + 1) + ' / ' + state.spreads.length;
@@ -660,16 +803,21 @@
           }
           var srcs = [];
           var totalCards = 0;
+          var tocEntries = [];
           data.forEach(function (s) {
+            var firstSrcIdx = srcs.length;
             s.slides.forEach(function (slide) {
               var stem = slide.replace(/\.png$/, '');
               srcs.push(s.n + '-cards-' + s.slug + '/' + stem + '.html');
               totalCards++;
             });
-          });
-          // 표지 좌측: 1호부터 순서대로 전체 목차
-          var toc = data.map(function (s) {
-            return { n: s.n, name: s.name, subtitle: s.subtitle };
+            tocEntries.push({
+              n: s.n,
+              name: s.name,
+              subtitle: s.subtitle,
+              firstSrc: srcs[firstSrcIdx],
+              page: firstSrcIdx + 1  // 표시용 페이지 번호 (카드 기준)
+            });
           });
           var coverOptions = {
             coverPage: true,
@@ -678,8 +826,11 @@
               tagline: '오래된 질문, 새로운 거울.',
               sub: data.length + '개 이슈 · ' + totalCards + '장의 카드.',
               issueLabel: 'Collected Edition',
-              toc: toc,
               hanja: '誌'
+            },
+            tocPage: true,
+            tocMeta: {
+              entries: tocEntries
             }
           };
           var wide = isWideViewport();
