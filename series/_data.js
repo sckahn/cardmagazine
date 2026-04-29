@@ -1,0 +1,611 @@
+window.SERIES_DATA = [
+  {
+    "n": 1,
+    "slug": "philosophy",
+    "name": "Philosophy",
+    "hanja": "哲",
+    "subtitle": "AI가 처음 만난 철학자들",
+    "desc": "튜링·ELIZA·중국어 방·앵무새·테세우스의 배·Physical AI — AI를 비추는 여섯 개의 거울.",
+    "slides": [
+      "01-cover.png",
+      "02-turing-intro.png",
+      "03-turing-logic.png",
+      "04-eliza-birth.png",
+      "05-eliza-effect.png",
+      "06-chinese-room-experiment.png",
+      "07-chinese-room-replies.png",
+      "08-part1-close.png",
+      "09-part2-open.png",
+      "10-parrots-context.png",
+      "11-parrots-claim.png",
+      "12-theseus-classic.png",
+      "13-theseus-ai.png",
+      "14-koch-physical-ai.png",
+      "15-outro.png"
+    ],
+    "count": 15
+  },
+  {
+    "n": 2,
+    "slug": "taste",
+    "name": "Taste",
+    "hanja": "味",
+    "subtitle": "AI는 왜 맛을 모르는가",
+    "desc": "이어령 \"미각은 제일 나중\" — 다섯 감각의 합성 · 후각 80% · Stochastic Parrots.",
+    "slides": [
+      "01-cover.png",
+      "02-other-senses.png",
+      "03-five-senses-in-mouth.png",
+      "04-smell-eighty-percent.png",
+      "05-parrot-of-taste.png",
+      "06-outro.png"
+    ],
+    "count": 6
+  },
+  {
+    "n": 3,
+    "slug": "vibe",
+    "name": "Vibe",
+    "hanja": "遊",
+    "subtitle": "호모 루덴스와 바이브 코딩",
+    "desc": "1938 하위징아 · 자동화 파라독스 · Flow · 2025 Karpathy — 왜 바이브 코딩이 핫한가.",
+    "slides": [
+      "01-cover.png",
+      "02-huizinga.png",
+      "03-automation-paradox.png",
+      "04-play-science.png",
+      "05-ai-efficiency.png",
+      "06-karpathy-tweet.png",
+      "07-vibe-structure.png",
+      "08-why-hot.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 4,
+    "slug": "loop",
+    "name": "Loop",
+    "hanja": "環",
+    "subtitle": "사람이 AI의 고리에 들어가는 법",
+    "desc": "Human-in-the-loop · 환각 · 도구 사용 · 푸코의 파레시아 — AI 시대의 감독관.",
+    "slides": [
+      "01-cover.png",
+      "02-hitl-concept.png",
+      "03-hallucination.png",
+      "04-math-tools.png",
+      "05-passive-active.png",
+      "06-foucault-parrhesia.png",
+      "07-outro.png"
+    ],
+    "count": 7
+  },
+  {
+    "n": 5,
+    "slug": "canvas",
+    "name": "Canvas",
+    "hanja": "畵",
+    "subtitle": "사진·상업·TV가 바꾼 예술 — 그 다음은 AI",
+    "desc": "붕괴의 법칙 · AI × 사진 · AI × 상업 · AI × TV · 공진화 · 다음 파도.",
+    "slides": [
+      "01-cover.png",
+      "02-law-of-disruption.png",
+      "03-ai-x-photo.png",
+      "04-ai-x-commerce.png",
+      "05-ai-x-tv.png",
+      "06-co-evolution.png",
+      "07-next-wave.png"
+    ],
+    "count": 7
+  },
+  {
+    "n": 6,
+    "slug": "aura",
+    "name": "Aura",
+    "hanja": "靈",
+    "subtitle": "벤야민 · 소쉬르 · 불쾌한 골짜기로 본 AI 예술",
+    "desc": "아우라의 조건 · 기표의 공장 · 불쾌한 골짜기 — AI 예술의 세 렌즈.",
+    "slides": [
+      "01-cover.png",
+      "02-benjamin.png",
+      "03-aura-conditions.png",
+      "04-saussure.png",
+      "05-ai-signifier-factory.png",
+      "06-uncanny-valley.png",
+      "07-ai-uncanny.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 7,
+    "slug": "rhythm",
+    "name": "Rhythm",
+    "hanja": "律",
+    "subtitle": "AI 음악은 왜 그루브가 없는가",
+    "desc": "리듬 vs 그루브 · TR-808 · Miles Davis · Bonham — 몸이 배운 타이밍.",
+    "slides": [
+      "01-cover.png",
+      "02-rhythm-vs-groove.png",
+      "03-ai-music-timeline.png",
+      "04-what-ai-does.png",
+      "05-theory-vs-feel.png",
+      "06-what-ai-misses.png",
+      "07-body-language.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 8,
+    "slug": "dream",
+    "name": "Dream",
+    "hanja": "夢",
+    "subtitle": "뇌가 꿈을 만드는 원리, AI는 꿀 수 있을까",
+    "desc": "필립 K. 딕 · REM 수면 · 뇌가소성 · DeepDream · Inceptionism — 기계는 꿈꾸는가.",
+    "slides": [
+      "01-cover.png",
+      "02-dick.png",
+      "03-sleep.png",
+      "04-lucid.png",
+      "05-plasticity.png",
+      "06-deepdream.png",
+      "07-how-it-works.png",
+      "08-compare.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 9,
+    "slug": "lingua",
+    "name": "Lingua",
+    "hanja": "語",
+    "subtitle": "의미인가 문법인가 — LLM의 답",
+    "desc": "비트겐슈타인 · 소쉬르 · 촘스키 · 분포 의미론 · 2023 촘스키의 반격.",
+    "slides": [
+      "01-cover.png",
+      "02-wittgenstein.png",
+      "03-saussure.png",
+      "04-chomsky-1957.png",
+      "05-universal-grammar.png",
+      "06-two-camps.png",
+      "07-distributional.png",
+      "08-chomsky-2023.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 10,
+    "slug": "bias",
+    "name": "Bias",
+    "hanja": "鏡",
+    "subtitle": "AI는 우리의 거울이다",
+    "desc": "아마존 채용 · Gender Shades · AlphaGo 37수 · Model Collapse · Scheming — 거울 앞에서.",
+    "slides": [
+      "01-cover.png",
+      "02-how-learning-works.png",
+      "03-amazon-hiring.png",
+      "04-face-recognition.png",
+      "05-alphago-move37.png",
+      "06-model-collapse.png",
+      "07-threat-origin.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 11,
+    "slug": "drive",
+    "name": "Drive",
+    "hanja": "驅",
+    "subtitle": "거짓말은 진화, AI는 따라한다",
+    "desc": "캄브리아 방향 · 도파민 · 거짓말의 진화 · Sutton RL · Reward Hacking · 쇼펜하우어.",
+    "slides": [
+      "01-cover.png",
+      "02-direction-birth.png",
+      "03-dopamine.png",
+      "04-lie-evolution.png",
+      "05-sutton-rl.png",
+      "06-reward-hacking.png",
+      "07-llm-scheming.png",
+      "08-schopenhauer.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 12,
+    "slug": "earth",
+    "name": "Earth",
+    "hanja": "地",
+    "subtitle": "AI가 구할까, 지구가 먼저 깨질까",
+    "desc": "데이터센터 전력 · 1.5°C 임계점 · Tokamak RL · AlphaFold·GNoME · Green AI — 시간과의 경주.",
+    "slides": [
+      "01-cover.png",
+      "02-carbon-cost.png",
+      "03-power-crisis.png",
+      "04-tipping-point.png",
+      "05-ai-saves-fusion.png",
+      "06-ai-saves-materials.png",
+      "07-race.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 13,
+    "slug": "wisdom",
+    "name": "Wisdom",
+    "hanja": "智",
+    "subtitle": "모른다는 걸 안다 — 지혜의 세 조건",
+    "desc": "소크라테스 · 할루시네이션 · 뇌 vs AI 에너지 · Friston · Hayek · 집단지성 — 지혜의 세 함정.",
+    "slides": [
+      "01-cover.png",
+      "02-socrates.png",
+      "03-hallucination.png",
+      "04-energy-gap.png",
+      "05-friston.png",
+      "06-hayek.png",
+      "07-collective.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 14,
+    "slug": "utopia",
+    "name": "Utopia",
+    "hanja": "烏",
+    "subtitle": "자유·비효율 사이의 AI",
+    "desc": "Mill · Marx · Huxley · Orwell · 토머스 모어 · Musk · 자본주의와 공산주의가 AI와 만날 때의 두 디스토피아.",
+    "slides": [
+      "01-cover.png",
+      "02-mill.png",
+      "03-capital.png",
+      "04-huxley.png",
+      "05-marx.png",
+      "06-orwell.png",
+      "07-more.png",
+      "08-musk.png",
+      "09-third-way.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 15,
+    "slug": "cinema",
+    "name": "Cinema",
+    "hanja": "映",
+    "subtitle": "준비되지 않음의 영상철학",
+    "desc": "누벨바그 · 사르트르 · 68운동 · 블루퍼(NG) · 픽사 · Sora — AI 영상 시대 인간성의 자리.",
+    "slides": [
+      "01-cover.png",
+      "02-nouvelle-vague.png",
+      "03-technique.png",
+      "04-sartre.png",
+      "05-may68.png",
+      "06-bloopers.png",
+      "07-pixar.png",
+      "08-sora.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 16,
+    "slug": "destiny",
+    "name": "Destiny",
+    "hanja": "運",
+    "subtitle": "결정된 세계 속 사람의 자리",
+    "desc": "양자역학 · 가우시안 · 하이데거 피투성 · 불가지론 · Bostrom 시뮬레이션 — AI 시대 자유의지를 다시 묻다.",
+    "slides": [
+      "01-cover.png",
+      "02-solvay.png",
+      "03-measurement.png",
+      "04-gauss.png",
+      "05-statistics.png",
+      "06-ai-gaussian.png",
+      "07-heidegger.png",
+      "08-free-will.png",
+      "09-agnostic.png",
+      "10-simulation.png",
+      "11-outro.png"
+    ],
+    "count": 11
+  },
+  {
+    "n": 17,
+    "slug": "time",
+    "name": "Time",
+    "hanja": "時",
+    "subtitle": "엔트로피·상대성·Self-Attention",
+    "desc": "볼츠만 · 삼체와 나비효과 · 아인슈타인 · 베르그손 · LLM Self-Attention · Diffusion 역산 — 시간의 네 얼굴.",
+    "slides": [
+      "01-cover.png",
+      "02-boltzmann.png",
+      "03-chaos.png",
+      "04-arrow.png",
+      "05-einstein.png",
+      "06-bergson.png",
+      "07-attention.png",
+      "08-diffusion.png",
+      "09-ai-time.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 18,
+    "slug": "naming",
+    "name": "Naming",
+    "hanja": "名",
+    "subtitle": "이름 짓는 힘 — 인간의 가장 강한 무기",
+    "desc": "김춘수 꽃 · 김진섭 명명철학 · 장님과 코끼리 · 캥거루 · 마그리트 · LLM 토큰 — 이름과 실재 사이.",
+    "slides": [
+      "01-cover.png",
+      "02-flower.png",
+      "03-kim-jinseop.png",
+      "04-blind-elephant.png",
+      "05-kangaroo.png",
+      "06-magritte.png",
+      "07-abstraction.png",
+      "08-llm-tokens.png",
+      "09-ai-limit.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 19,
+    "slug": "soul",
+    "name": "Soul",
+    "hanja": "魂",
+    "subtitle": "좌뇌·우뇌·신 — 인간다움의 뿌리",
+    "desc": "Sperry 좌우뇌 · Jill Bolte Taylor · 경외 · 에크하르트·라마나 · 창세기 · LSD·Beatles — AI에게 없는 반쪽.",
+    "slides": [
+      "01-cover.png",
+      "02-two-brains.png",
+      "03-ai-left.png",
+      "04-right-brain.png",
+      "05-awe.png",
+      "06-god-within.png",
+      "07-imago-dei.png",
+      "08-lsd.png",
+      "09-human-space.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 20,
+    "slug": "vision",
+    "name": "Vision",
+    "hanja": "視",
+    "subtitle": "AI는 왜 눈부터 열렸을까",
+    "desc": "Hubel-Wiesel 고양이 실험 · LeCun CNN · AlexNet · GPU 행렬연산 · LeCun World Model — 시각이 지능의 시작.",
+    "slides": [
+      "01-cover.png",
+      "02-visual-weight.png",
+      "03-hubel-wiesel.png",
+      "04-cnn.png",
+      "05-alexnet.png",
+      "06-gpu.png",
+      "07-world-model.png",
+      "08-strengths-gaps.png",
+      "09-lecun-message.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 21,
+    "slug": "liberty",
+    "name": "Liberty",
+    "hanja": "由",
+    "subtitle": "자유냐 방종이냐 — AI 시대의 책임",
+    "desc": "이사야 벌린 두 가지 자유 · 한나 아렌트 악의 평범성 · 아이히만 재판 · 한스 요나스 책임의 원칙 · 딥페이크·AI Act — 생각과 책임을 통과한 자유.",
+    "slides": [
+      "01-cover.png",
+      "02-berlin.png",
+      "03-arendt.png",
+      "04-eichmann.png",
+      "05-jonas.png",
+      "06-moral-hazard.png",
+      "07-regulation.png",
+      "08-synthesis.png",
+      "09-outro.png"
+    ],
+    "count": 9
+  },
+  {
+    "n": 22,
+    "slug": "arms",
+    "name": "Arms",
+    "hanja": "戰",
+    "subtitle": "AI 군비경쟁 — MAD부터 DeepSeek까지",
+    "desc": "폰 노이만 MAD · GPU 수출금지 · 오픈소스 vs 클로즈드 · 중국 데이터 우위 · DeepSeek 우회 · 모델 증류 · 자본이 규제를 이긴 가속.",
+    "slides": [
+      "01-cover.png",
+      "02-mad.png",
+      "03-ai-mad.png",
+      "04-two-paths.png",
+      "05-gpu-ban.png",
+      "06-china-data.png",
+      "07-deepseek.png",
+      "08-distillation.png",
+      "09-method.png",
+      "10-capital.png",
+      "11-outro.png"
+    ],
+    "count": 11
+  },
+  {
+    "n": 23,
+    "slug": "compress",
+    "name": "Compress",
+    "hanja": "縮",
+    "subtitle": "AI는 왜 세상을 흐릿하게 보는가",
+    "desc": "Miller 작업기억 7±2 · 컨텍스트 윈도우 · RAG · Ted Chiang 흐릿한 JPEG · GPU 절약(양자화·KV·MoE) · 유발 하라리 NEXUS — 압축이 만든 인식의 흐릿함.",
+    "slides": [
+      "01-cover.png",
+      "02-brain-memory.png",
+      "03-context-window.png",
+      "04-rag.png",
+      "05-ted-chiang.png",
+      "06-jpeg-analogy.png",
+      "07-gpu-saving.png",
+      "08-harari.png",
+      "09-paradox.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 24,
+    "slug": "langue",
+    "name": "Langue",
+    "hanja": "規",
+    "subtitle": "보이지 않는 규칙과 발화되는 데이터",
+    "desc": "소쉬르 랑그·파롤 · Rule-Based AI의 붕괴 · LLM과 파롤의 통계 · 온톨로지·지식 그래프 · Microsoft GraphRAG · 팔란티어 Foundry·AIP — 다시 그리는 랑그.",
+    "slides": [
+      "01-cover.png",
+      "02-saussure.png",
+      "03-rule-based.png",
+      "04-llm.png",
+      "05-ontology.png",
+      "06-graph-rag.png",
+      "07-palantir.png",
+      "08-outro.png"
+    ],
+    "count": 8
+  },
+  {
+    "n": 25,
+    "slug": "scripts",
+    "name": "Scripts",
+    "hanja": "字",
+    "subtitle": "한글이 AI에는 불리할까",
+    "desc": "조합의 한글 · 압축의 한자 · 선형의 알파벳 — 토큰화의 골칫거리, 표의문자의 임베딩 밀도, 의미의 기하학 — AI에게 좋은 문자와 사람에게 좋은 문자.",
+    "slides": [
+      "01-cover.png",
+      "02-alphabet.png",
+      "03-hanja.png",
+      "04-hangeul.png",
+      "05-tokenization.png",
+      "06-cjk-issue.png",
+      "07-density.png",
+      "08-geometry.png",
+      "09-paradox.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 26,
+    "slug": "bits",
+    "name": "Bits",
+    "hanja": "信",
+    "subtitle": "모든 AI는 비트 위에 산다",
+    "desc": "1948 클로드 섀넌 정보이론 · 비트 · 아날로그→디지털(나이퀴스트) · 멀티모달 · 임베딩의 기하학 · 2024 큐비트가 흔드는 0/1의 세계.",
+    "slides": [
+      "01-cover.png",
+      "02-shannon.png",
+      "03-bit.png",
+      "04-analog-digital.png",
+      "05-everything-bits.png",
+      "06-multimodal.png",
+      "07-embedding.png",
+      "08-qubit.png",
+      "09-quantum-impact.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 27,
+    "slug": "renaissance",
+    "name": "Renaissance",
+    "hanja": "復",
+    "subtitle": "데이터 르네상스 — 창작자가 다시 쓰는 세계",
+    "desc": "13조 토큰의 폭식 · Epoch AI 텍스트 고갈 · 합성 데이터와 모델 붕괴 · AI 슬롭의 범람 · 신뢰의 위기 · 1인칭 데이터의 부활 · 큐레이션·출처·창작자가 여는 데이터 르네상스.",
+    "slides": [
+      "01-cover.png",
+      "02-feast.png",
+      "03-end-of-text.png",
+      "04-synthetic.png",
+      "05-slop.png",
+      "06-collapse.png",
+      "07-trust.png",
+      "08-creator.png",
+      "09-renaissance.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 28,
+    "slug": "noise",
+    "name": "Noise",
+    "hanja": "雜",
+    "subtitle": "흔들려본 사람만 시를 씁니다",
+    "desc": "Temperature · Diffusion · 돌연변이 · Local Minima 탈출 · Simulated Annealing · 세렌디피티 · 환각의 경계 — 의도적 잡음이 만든 창의의 비밀.",
+    "slides": [
+      "01-cover.png",
+      "02-temperature.png",
+      "03-diffusion.png",
+      "04-mutation.png",
+      "05-local-minima.png",
+      "06-annealing.png",
+      "07-serendipity.png",
+      "08-ai-creation.png",
+      "09-too-much.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 29,
+    "slug": "arena",
+    "name": "Arena",
+    "hanja": "競",
+    "subtitle": "AI는 자기 자신과 싸우며 큽니다",
+    "desc": "폰 노이만 미니맥스 · 죄수의 딜레마 · 내쉬 균형 · GAN · AlphaGo Zero · Multi-Agent RL · 휴리스틱 — 게임이론으로 본 AI의 적대적 진화.",
+    "slides": [
+      "01-cover.png",
+      "02-minimax.png",
+      "03-prisoner.png",
+      "04-nash.png",
+      "05-equilibrium.png",
+      "06-gan.png",
+      "07-alphago.png",
+      "08-multi-agent.png",
+      "09-heuristic.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  },
+  {
+    "n": 30,
+    "slug": "swarm",
+    "name": "Swarm",
+    "hanja": "群",
+    "subtitle": "AI가 사회를 이루면 어떻게 될까요",
+    "desc": "개미·벌·새떼의 군집 지능 · Boids 1986 · 창발(아리스토텔레스·Hayek) · Axelrod Tit-for-Tat · 2023 Smallville · 드론 군집 — 경쟁(29호)과 협력(30호)의 진화 둘 다.",
+    "slides": [
+      "01-cover.png",
+      "02-single-limit.png",
+      "03-nature-swarm.png",
+      "04-boids.png",
+      "05-emergence.png",
+      "06-cooperation.png",
+      "07-smallville.png",
+      "08-drone-swarm.png",
+      "09-vs-arena.png",
+      "10-outro.png"
+    ],
+    "count": 10
+  }
+];

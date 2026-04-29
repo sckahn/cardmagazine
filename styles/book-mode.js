@@ -165,61 +165,153 @@
   position: relative; z-index: 0;
 }
 
-/* leather cover (first spread of full book or series cover) */
+/* magazine cover */
 .book-spread.cover-spread .book-page {
   background:
-    radial-gradient(ellipse at 30% 25%, rgba(255,228,208,0.08), transparent 60%),
-    linear-gradient(155deg, #2a1f15, #18110a 60%, #0e0905);
+    radial-gradient(ellipse at 25% 20%, rgba(255,228,208,0.10), transparent 55%),
+    linear-gradient(160deg, #1a2440, #0f1e38 55%, #050a18);
   color: #FFE4D0;
-  display: flex; align-items: center; justify-content: center;
-  flex-direction: column; padding: 6%; text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 .book-spread.cover-spread .book-page iframe { display: none; }
 .book-spread.cover-spread .book-page::before { display: none; }
 .book-spread.cover-spread .book-page::after  { display: none; }
+
+/* LEFT page — "in this issue" headlines */
 .book-spread.cover-spread .book-page.left {
-  background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.2));
-  border-right: 1px solid rgba(255,228,208,0.06);
+  background: linear-gradient(160deg, #14213a, #0a1224 60%, #04081a);
+  border-right: 1px solid rgba(255,228,208,0.07);
+  padding: 7% 8% 8%;
+  justify-content: space-between;
 }
-.book-cover-eyebrow {
+.cover-side-eyebrow {
   font-family: var(--f-mono, monospace);
   font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
   color: rgba(255,228,208,0.55);
 }
-.book-cover-title {
-  font-family: 'Noto Serif KR', 'Playfair Display', serif;
-  font-size: clamp(28px, 5vw, 56px);
-  font-weight: 900;
-  line-height: 1.18;
-  margin-top: 14px;
+.cover-side-rule {
+  width: 56px; height: 2px;
+  background: linear-gradient(90deg, #E35205, transparent);
+  margin: 14px 0 22px;
+}
+.cover-headlines {
+  display: flex; flex-direction: column; gap: 14px;
+  margin-top: 8px;
+}
+.cover-headline {
+  display: flex; gap: 14px; align-items: baseline;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(255,228,208,0.10);
+}
+.cover-headline:last-child { border-bottom: 0; }
+.cover-headline .num {
+  font-family: var(--f-mono, monospace);
+  font-size: 11px; letter-spacing: 0.18em; color: #E35205;
+  font-weight: 700; min-width: 28px;
+}
+.cover-headline .text {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(13px, 1.5vw, 16px);
+  font-weight: 600;
   color: #FFE4D0;
+  line-height: 1.45;
   letter-spacing: -0.01em;
 }
-.book-cover-title em {
-  color: #E35205;
-  font-style: normal;
-  background: linear-gradient(120deg, #ff7a3a, #E35205);
+.cover-side-foot {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-family: var(--f-mono, monospace);
+  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(255,228,208,0.38);
+  margin-top: 22px;
+}
+.cover-side-foot b { color: #FFE4D0; font-weight: 800; }
+
+/* RIGHT page — masthead + headline */
+.book-spread.cover-spread .book-page.right {
+  padding: 7% 8% 8%;
+  justify-content: space-between;
+  position: relative;
+}
+.cover-masthead {
+  font-family: 'Playfair Display', 'Noto Serif KR', serif;
+  font-weight: 900;
+  font-size: clamp(38px, 7vw, 92px);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+  color: #FFE4D0;
+}
+.cover-masthead em {
+  color: #E35205; font-style: normal;
+  background: linear-gradient(125deg, #ff8a4a, #E35205);
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.book-cover-sub {
-  font-family: var(--f-sans, sans-serif);
-  font-size: clamp(13px, 1.5vw, 16px);
-  color: rgba(255,228,208,0.7);
-  margin-top: 22px; line-height: 1.7;
-  max-width: 420px;
-}
-.book-cover-rule {
-  width: 60px; height: 2px;
-  background: linear-gradient(90deg, transparent, #E35205, transparent);
-  margin: 28px 0 0;
-}
-.book-cover-meta {
-  position: absolute; bottom: 8%; left: 50%; transform: translateX(-50%);
+.cover-issue-band {
+  display: flex; gap: 18px; align-items: center;
+  margin-top: 18px;
   font-family: var(--f-mono, monospace);
-  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
-  color: rgba(255,228,208,0.4);
+  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
+  color: rgba(255,228,208,0.65);
 }
+.cover-issue-band .pip { width: 6px; height: 6px; border-radius: 50%; background: #E35205; }
+.cover-issue-band b { color: #FFE4D0; font-weight: 800; }
+
+.cover-headline-block { margin-top: auto; padding-top: 28px; }
+.cover-overline {
+  font-family: var(--f-mono, monospace);
+  font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: #E35205; font-weight: 800;
+}
+.cover-main-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(22px, 3.2vw, 36px);
+  font-weight: 900;
+  color: #FFE4D0;
+  line-height: 1.22;
+  margin-top: 10px;
+  letter-spacing: -0.015em;
+}
+.cover-main-title em { color: #E35205; font-style: normal; }
+.cover-sub {
+  font-family: var(--f-sans, sans-serif);
+  font-size: clamp(12px, 1.4vw, 15px);
+  color: rgba(255,228,208,0.7);
+  margin-top: 14px;
+  line-height: 1.65;
+}
+.cover-hanja-watermark {
+  position: absolute; right: -2%; top: 6%;
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(160px, 28vw, 360px);
+  font-weight: 900;
+  color: rgba(227,82,5,0.06);
+  line-height: 1; pointer-events: none;
+  user-select: none;
+}
+.cover-barcode {
+  position: absolute; right: 8%; bottom: 7%;
+  display: flex; flex-direction: column; gap: 4px; align-items: flex-end;
+  font-family: var(--f-mono, monospace);
+  font-size: 10px; letter-spacing: 0.18em;
+  color: rgba(255,228,208,0.5);
+}
+.cover-barcode-bars {
+  display: flex; gap: 2px; align-items: flex-end; height: 26px;
+}
+.cover-barcode-bars span {
+  display: block; width: 2px; background: rgba(255,228,208,0.55);
+}
+
+/* single-page (mobile) cover */
+.book-spread.cover-spread.single .book-page {
+  padding: 9% 8%;
+  justify-content: space-between;
+}
+.book-spread.cover-spread.single .cover-headlines { gap: 9px; }
+.book-spread.cover-spread.single .cover-headline { padding-bottom: 8px; }
+.book-spread.cover-spread.single .cover-masthead { font-size: clamp(34px, 11vw, 64px); }
 
 /* nav buttons */
 .book-nav {
@@ -342,23 +434,85 @@
     iframe.style.transform = 'scale(' + scale + ')';
   }
 
-  function renderCover(spreadEl, meta) {
+  function renderCover(spreadEl, meta, wide) {
     spreadEl.innerHTML = '';
     spreadEl.classList.add('cover-spread');
-    spreadEl.classList.remove('single');
-    var leftPage = document.createElement('div');
-    leftPage.className = 'book-page left';
-    var rightPage = document.createElement('div');
-    rightPage.className = 'book-page right';
-    rightPage.innerHTML = `
-      <div class="book-cover-eyebrow">AI × Series · Card News Magazine</div>
-      <h1 class="book-cover-title">${meta.title}</h1>
-      <div class="book-cover-rule"></div>
-      <p class="book-cover-sub">${meta.sub}</p>
-      <div class="book-cover-meta">${meta.foot}</div>
+    spreadEl.classList.toggle('single', !wide);
+
+    var headlinesHtml = (meta.headlines || []).map(function (h, i) {
+      var num = (i + 1).toString().padStart(2, '0');
+      return '<div class="cover-headline"><div class="num">' + num + '</div><div class="text">' + h + '</div></div>';
+    }).join('');
+
+    var rightInner = `
+      <div>
+        <div class="cover-issue-band">
+          <span class="pip"></span>
+          <span>${meta.issueLabel || 'Card News Magazine'}</span>
+          <b>${meta.dateLabel || ''}</b>
+        </div>
+        <div class="cover-masthead">${meta.masthead}</div>
+        ${meta.hanja ? '<div class="cover-hanja-watermark">' + meta.hanja + '</div>' : ''}
+      </div>
+      <div class="cover-headline-block">
+        <div class="cover-overline">${meta.overline || 'COVER STORY'}</div>
+        <h1 class="cover-main-title">${meta.title}</h1>
+        ${meta.sub ? '<p class="cover-sub">' + meta.sub + '</p>' : ''}
+      </div>
+      <div class="cover-barcode">
+        <div class="cover-barcode-bars">
+          ${[2,4,2,3,5,2,3,4,2,5,3,2,4,3,2].map(function (h) { return '<span style="height:' + (h * 4) + 'px;"></span>'; }).join('')}
+        </div>
+        <div>${meta.foot || ''}</div>
+      </div>
     `;
-    spreadEl.appendChild(leftPage);
-    spreadEl.appendChild(rightPage);
+
+    if (wide) {
+      var leftPage = document.createElement('div');
+      leftPage.className = 'book-page left';
+      leftPage.innerHTML = `
+        <div>
+          <div class="cover-side-eyebrow">In This ${meta.scope || 'Issue'}</div>
+          <div class="cover-side-rule"></div>
+          <div class="cover-headlines">${headlinesHtml}</div>
+        </div>
+        <div class="cover-side-foot">
+          <div>AI × <b>Series</b></div>
+          <div>${meta.foot || ''}</div>
+        </div>
+      `;
+      var rightPage = document.createElement('div');
+      rightPage.className = 'book-page right';
+      rightPage.innerHTML = rightInner;
+      spreadEl.appendChild(leftPage);
+      spreadEl.appendChild(rightPage);
+    } else {
+      // 모바일: 한 페이지에 마스트헤드 + 헤드라인 리스트 압축
+      var page = document.createElement('div');
+      page.className = 'book-page right';
+      page.innerHTML = `
+        <div>
+          <div class="cover-issue-band">
+            <span class="pip"></span><span>${meta.issueLabel || 'Card News Magazine'}</span>
+          </div>
+          <div class="cover-masthead">${meta.masthead}</div>
+          ${meta.hanja ? '<div class="cover-hanja-watermark">' + meta.hanja + '</div>' : ''}
+          <div class="cover-overline" style="margin-top:18px;">${meta.overline || 'COVER STORY'}</div>
+          <h1 class="cover-main-title">${meta.title}</h1>
+          ${meta.sub ? '<p class="cover-sub">' + meta.sub + '</p>' : ''}
+        </div>
+        <div>
+          <div class="cover-side-eyebrow" style="font-size:10px;">In This ${meta.scope || 'Issue'}</div>
+          <div class="cover-side-rule"></div>
+          <div class="cover-headlines">${headlinesHtml}</div>
+          <div class="cover-side-foot" style="margin-top:18px;">
+            <div>AI × <b>Series</b></div>
+            <div>${meta.foot || ''}</div>
+          </div>
+        </div>
+      `;
+      spreadEl.appendChild(page);
+    }
   }
 
   function renderSpread(spread, spreadEl) {
@@ -389,7 +543,7 @@
       spreadEl.classList.add('flipping');
       setTimeout(function () {
         var s = state.spreads[i];
-        if (s && s.type === 'cover') renderCover(spreadEl, s.meta);
+        if (s && s.type === 'cover') renderCover(spreadEl, s.meta, state.wide);
         else renderSpread(s, spreadEl);
         spreadEl.classList.remove('flipping');
         if (prog) prog.textContent = (i + 1) + ' / ' + state.spreads.length;
@@ -464,14 +618,31 @@
     var subEl = document.querySelector('.mag-side .side-sub');
     var rawTitle = titleEl ? titleEl.innerHTML.trim() : 'AI × Series';
     var sub = subEl ? subEl.textContent.trim() : '';
-    var issueLabel = (document.querySelector('.mag-side .side-kicker') || {}).textContent || '';
+    var issueLabel = ((document.querySelector('.mag-side .side-kicker') || {}).textContent || '').trim();
+    // 시리즈 한자 — first card의 hanja 또는 이슈명에서 추정 (옵션)
+    var hanja = '';
+    // TOC 항목에서 헤드라인 추출 (표지 제외)
+    var headlines = Array.from(document.querySelectorAll('#toc li a')).slice(1).map(function (a) {
+      var t = a.textContent.trim().replace(/^\d+\s*/, '');
+      return t;
+    }).filter(function (t) { return t && t !== 'Outro'; }).slice(0, 7);
+    // 메인 헤드라인(부제) 분리
+    var mainTitleParts = sub.split('—');
+    var mainTitle = (mainTitleParts[0] || sub).trim();
 
     var coverOptions = {
       coverPage: true,
       coverMeta: {
-        title: rawTitle,
-        sub: sub,
-        foot: issueLabel.trim() + ' · ' + srcs.length + ' Cards'
+        masthead: rawTitle,
+        title: mainTitle,
+        sub: mainTitleParts.length > 1 ? mainTitleParts.slice(1).join('—').trim() : '',
+        issueLabel: issueLabel || 'Card News Magazine',
+        dateLabel: 'Vol. ' + (issueLabel.match(/\d+/) || ['?'])[0],
+        overline: 'COVER STORY',
+        scope: 'Issue',
+        headlines: headlines,
+        hanja: hanja,
+        foot: srcs.length + ' Cards'
       }
     };
     var wide = isWideViewport();
@@ -512,7 +683,18 @@
     btn.addEventListener('click', async function () {
       if (!state) {
         try {
-          var data = await fetch('series/_data.json', { cache: 'no-cache' }).then(function (r) { return r.json(); });
+          var data = window.SERIES_DATA;
+          if (!data) {
+            // fallback: try fetch (works on http(s):// origins)
+            try {
+              data = await fetch('series/_data.json', { cache: 'no-cache' }).then(function (r) {
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                return r.json();
+              });
+            } catch (fetchErr) {
+              throw new Error('series 데이터(window.SERIES_DATA)가 로드되지 않았습니다. series/_data.js 스크립트가 페이지에 포함되었는지 확인해 주세요.');
+            }
+          }
           var srcs = [];
           var totalCards = 0;
           data.forEach(function (s) {
@@ -522,12 +704,23 @@
               totalCards++;
             });
           });
+          // 30개 이슈 중 대표 헤드라인 8개를 골라 표지 좌측에 배치
+          var picked = data.slice(-8).map(function (s) {
+            return 'Issue ' + String(s.n).padStart(2, '0') + ' · ' + s.name + ' — ' + s.subtitle;
+          });
           var coverOptions = {
             coverPage: true,
             coverMeta: {
-              title: 'AI × <em>Series</em>',
-              sub: 'AI라는 거울 앞에 다시 묻는 ' + data.length + '개 이슈, ' + totalCards + '장의 카드를 — 한 권으로 펼쳐 봅니다.',
-              foot: data.length + ' Issues · ' + totalCards + ' Cards · One Book'
+              masthead: 'AI × <em>Series</em>',
+              title: 'AI라는 거울 앞에서<br />다시 묻는 <em>249장</em>',
+              sub: '철학 · 예술 · 언어 · 음악 · 꿈 · 뇌과학 · 진화 · 사회 — 오래된 주제들이 AI 앞에서 다시 낯설어집니다.',
+              issueLabel: 'Card News Magazine',
+              dateLabel: 'Collected Edition',
+              overline: 'COVER STORY · 한 권의 시리즈',
+              scope: 'Library',
+              headlines: picked,
+              hanja: '誌',
+              foot: data.length + ' Issues · ' + totalCards + ' Cards'
             }
           };
           var wide = isWideViewport();
@@ -542,7 +735,7 @@
           };
         } catch (e) {
           console.error('Failed to load series data', e);
-          alert('데이터를 불러오지 못했습니다.');
+          alert('데이터를 불러오지 못했습니다.\n\n' + (e && e.message ? e.message : ''));
           return;
         }
       }
