@@ -506,6 +506,7 @@
 
   function renderCover(spreadEl, meta, wide) {
     spreadEl.innerHTML = '';
+    spreadEl.classList.remove('toc-spread');
     spreadEl.classList.add('cover-spread');
     spreadEl.classList.toggle('single', !wide);
 
@@ -550,6 +551,7 @@
 
   function renderToc(spreadEl, meta, wide, go, state) {
     spreadEl.innerHTML = '';
+    spreadEl.classList.remove('cover-spread');
     spreadEl.classList.add('toc-spread');
     spreadEl.classList.toggle('single', !wide);
 
@@ -622,6 +624,7 @@
 
   function renderSpread(spread, spreadEl) {
     spreadEl.classList.remove('cover-spread');
+    spreadEl.classList.remove('toc-spread');
     spreadEl.innerHTML = '';
     spreadEl.classList.toggle('single', spread.length === 1);
     spread.forEach(function (src, i) {
