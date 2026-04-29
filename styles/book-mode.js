@@ -157,6 +157,13 @@
   pointer-events: none; z-index: 2;
 }
 
+/* iframe wrapper (sized to scaled visual dimensions for correct scroll area) */
+.book-page-inner {
+  position: relative;
+  overflow: hidden;
+  flex: 0 0 auto;
+}
+
 /* iframe inside page */
 .book-page iframe {
   width: 1080px; height: 1080px;
@@ -614,6 +621,12 @@
     var baseScale = Math.min(rect.width / 1080, rect.height / 1080);
     var scale = baseScale * zoom;
     iframe.style.transform = 'scale(' + scale + ')';
+    // 줌 시 transform이 레이아웃을 안 바꾸므로 부모 wrapper에 명시적 크기 부여
+    var wrapper = iframe.parentElement;
+    if (wrapper && wrapper.classList.contains('book-page-inner')) {
+      wrapper.style.width = (1080 * scale) + 'px';
+      wrapper.style.height = (1080 * scale) + 'px';
+    }
     page.classList.toggle('zoomed', zoom > 1.001);
   }
 
@@ -744,10 +757,13 @@
     spread.forEach(function (src, i) {
       var page = document.createElement('div');
       page.className = 'book-page ' + (spread.length === 1 ? 'single' : (i === 0 ? 'left' : 'right'));
+      var inner = document.createElement('div');
+      inner.className = 'book-page-inner';
       var iframe = document.createElement('iframe');
       iframe.src = src;
       iframe.loading = 'eager';
-      page.appendChild(iframe);
+      inner.appendChild(iframe);
+      page.appendChild(inner);
       spreadEl.appendChild(page);
       iframe.addEventListener('load', function () { fitIframe(iframe, page, zoom); });
       requestAnimationFrame(function () { fitIframe(iframe, page, zoom); });
