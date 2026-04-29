@@ -165,153 +165,134 @@
   position: relative; z-index: 0;
 }
 
-/* magazine cover */
+/* clean cover — minimal & calm */
 .book-spread.cover-spread .book-page {
-  background:
-    radial-gradient(ellipse at 25% 20%, rgba(255,228,208,0.10), transparent 55%),
-    linear-gradient(160deg, #1a2440, #0f1e38 55%, #050a18);
+  background: linear-gradient(170deg, #15213a 0%, #0c1428 100%);
   color: #FFE4D0;
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
   text-align: left;
+  position: relative;
+  overflow: hidden;
 }
 .book-spread.cover-spread .book-page iframe { display: none; }
 .book-spread.cover-spread .book-page::before { display: none; }
 .book-spread.cover-spread .book-page::after  { display: none; }
 
-/* LEFT page — "in this issue" headlines */
-.book-spread.cover-spread .book-page.left {
-  background: linear-gradient(160deg, #14213a, #0a1224 60%, #04081a);
-  border-right: 1px solid rgba(255,228,208,0.07);
-  padding: 7% 8% 8%;
-  justify-content: space-between;
-}
-.cover-side-eyebrow {
-  font-family: var(--f-mono, monospace);
-  font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase;
-  color: rgba(255,228,208,0.55);
-}
-.cover-side-rule {
-  width: 56px; height: 2px;
-  background: linear-gradient(90deg, #E35205, transparent);
-  margin: 14px 0 22px;
-}
-.cover-headlines {
-  display: flex; flex-direction: column; gap: 14px;
-  margin-top: 8px;
-}
-.cover-headline {
-  display: flex; gap: 14px; align-items: baseline;
-  padding-bottom: 12px;
-  border-bottom: 1px dashed rgba(255,228,208,0.10);
-}
-.cover-headline:last-child { border-bottom: 0; }
-.cover-headline .num {
-  font-family: var(--f-mono, monospace);
-  font-size: 11px; letter-spacing: 0.18em; color: #E35205;
-  font-weight: 700; min-width: 28px;
-}
-.cover-headline .text {
-  font-family: 'Noto Serif KR', serif;
-  font-size: clamp(13px, 1.5vw, 16px);
-  font-weight: 600;
-  color: #FFE4D0;
-  line-height: 1.45;
-  letter-spacing: -0.01em;
-}
-.cover-side-foot {
-  display: flex; justify-content: space-between; align-items: flex-end;
-  font-family: var(--f-mono, monospace);
-  font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: rgba(255,228,208,0.38);
-  margin-top: 22px;
-}
-.cover-side-foot b { color: #FFE4D0; font-weight: 800; }
-
-/* RIGHT page — masthead + headline */
+/* RIGHT page — masthead 한 면 */
 .book-spread.cover-spread .book-page.right {
-  padding: 7% 8% 8%;
+  padding: 11% 9%;
   justify-content: space-between;
-  position: relative;
-}
-.cover-masthead {
-  font-family: 'Playfair Display', 'Noto Serif KR', serif;
-  font-weight: 900;
-  font-size: clamp(38px, 7vw, 92px);
-  line-height: 0.95;
-  letter-spacing: -0.025em;
-  color: #FFE4D0;
-}
-.cover-masthead em {
-  color: #E35205; font-style: normal;
-  background: linear-gradient(125deg, #ff8a4a, #E35205);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent;
+  border-right: 1px solid rgba(255,228,208,0.05);
 }
 .cover-issue-band {
-  display: flex; gap: 18px; align-items: center;
-  margin-top: 18px;
   font-family: var(--f-mono, monospace);
-  font-size: 11px; letter-spacing: 0.28em; text-transform: uppercase;
-  color: rgba(255,228,208,0.65);
+  font-size: 10.5px; letter-spacing: 0.32em; text-transform: uppercase;
+  color: rgba(255,228,208,0.55);
+  display: flex; align-items: center; gap: 10px;
 }
-.cover-issue-band .pip { width: 6px; height: 6px; border-radius: 50%; background: #E35205; }
-.cover-issue-band b { color: #FFE4D0; font-weight: 800; }
-
-.cover-headline-block { margin-top: auto; padding-top: 28px; }
-.cover-overline {
-  font-family: var(--f-mono, monospace);
-  font-size: 10px; letter-spacing: 0.32em; text-transform: uppercase;
-  color: #E35205; font-weight: 800;
-}
-.cover-main-title {
+.cover-issue-band .pip { width: 6px; height: 6px; background: #E35205; border-radius: 50%; }
+.cover-masthead {
   font-family: 'Noto Serif KR', serif;
-  font-size: clamp(22px, 3.2vw, 36px);
   font-weight: 900;
+  font-size: clamp(56px, 8.5vw, 108px);
+  line-height: 0.96;
+  letter-spacing: -0.03em;
   color: #FFE4D0;
-  line-height: 1.22;
-  margin-top: 10px;
-  letter-spacing: -0.015em;
+  margin-top: 22px;
 }
-.cover-main-title em { color: #E35205; font-style: normal; }
+.cover-masthead em { color: #E35205; font-style: italic; font-weight: 900; }
+.cover-rule {
+  width: 64px; height: 2px;
+  background: #E35205;
+  margin: 28px 0 18px;
+}
+.cover-tagline {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(17px, 2vw, 22px);
+  font-weight: 600;
+  color: #FFE4D0;
+  line-height: 1.5;
+}
 .cover-sub {
   font-family: var(--f-sans, sans-serif);
-  font-size: clamp(12px, 1.4vw, 15px);
-  color: rgba(255,228,208,0.7);
-  margin-top: 14px;
-  line-height: 1.65;
+  font-size: clamp(12px, 1.3vw, 14px);
+  color: rgba(255,228,208,0.55);
+  margin-top: 12px;
+  letter-spacing: 0.04em;
 }
 .cover-hanja-watermark {
-  position: absolute; right: -2%; top: 6%;
+  position: absolute;
+  right: -4%; bottom: -6%;
   font-family: 'Noto Serif KR', serif;
-  font-size: clamp(160px, 28vw, 360px);
+  font-size: clamp(220px, 32vw, 420px);
   font-weight: 900;
-  color: rgba(227,82,5,0.06);
+  color: rgba(227,82,5,0.07);
   line-height: 1; pointer-events: none;
   user-select: none;
 }
-.cover-barcode {
-  position: absolute; right: 8%; bottom: 7%;
-  display: flex; flex-direction: column; gap: 4px; align-items: flex-end;
+
+/* LEFT page — TOC list (전체 30호, 1번부터) */
+.book-spread.cover-spread .book-page.left {
+  background: linear-gradient(170deg, #0e1a32 0%, #060c1e 100%);
+  padding: 9% 8% 8%;
+  justify-content: flex-start;
+}
+.cover-toc-eyebrow {
   font-family: var(--f-mono, monospace);
-  font-size: 10px; letter-spacing: 0.18em;
+  font-size: 10.5px; letter-spacing: 0.34em; text-transform: uppercase;
   color: rgba(255,228,208,0.5);
 }
-.cover-barcode-bars {
-  display: flex; gap: 2px; align-items: flex-end; height: 26px;
+.cover-toc-title {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 800;
+  margin-top: 10px;
+  color: #FFE4D0;
+  letter-spacing: -0.01em;
 }
-.cover-barcode-bars span {
-  display: block; width: 2px; background: rgba(255,228,208,0.55);
+.cover-toc-rule {
+  width: 40px; height: 2px;
+  background: #E35205;
+  margin: 14px 0 22px;
+}
+.cover-toc {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 22px;
+  row-gap: 7px;
+}
+.cover-toc-row {
+  display: flex; align-items: baseline; gap: 9px;
+  padding: 4px 0;
+  border-bottom: 1px dashed rgba(255,228,208,0.07);
+}
+.cover-toc-row .num {
+  font-family: var(--f-mono, monospace);
+  font-size: 10px; color: #E35205;
+  font-weight: 700; min-width: 22px;
+  letter-spacing: 0.06em;
+}
+.cover-toc-row .name {
+  font-family: 'Noto Serif KR', serif;
+  font-size: clamp(11.5px, 1.15vw, 13.5px);
+  font-weight: 600;
+  color: #FFE4D0;
+  letter-spacing: -0.005em;
 }
 
 /* single-page (mobile) cover */
 .book-spread.cover-spread.single .book-page {
-  padding: 9% 8%;
-  justify-content: space-between;
+  padding: 10% 8%;
+  justify-content: flex-start;
+  background: linear-gradient(170deg, #15213a 0%, #0c1428 100%);
 }
-.book-spread.cover-spread.single .cover-headlines { gap: 9px; }
-.book-spread.cover-spread.single .cover-headline { padding-bottom: 8px; }
-.book-spread.cover-spread.single .cover-masthead { font-size: clamp(34px, 11vw, 64px); }
+.book-spread.cover-spread.single .cover-masthead { font-size: clamp(44px, 13vw, 80px); }
+.book-spread.cover-spread.single .cover-toc {
+  grid-template-columns: 1fr;
+  row-gap: 4px;
+  margin-top: 10px;
+}
+.book-spread.cover-spread.single .cover-toc-row .name { font-size: 12.5px; }
 
 /* nav buttons */
 .book-nav {
@@ -439,47 +420,34 @@
     spreadEl.classList.add('cover-spread');
     spreadEl.classList.toggle('single', !wide);
 
-    var headlinesHtml = (meta.headlines || []).map(function (h, i) {
-      var num = (i + 1).toString().padStart(2, '0');
-      return '<div class="cover-headline"><div class="num">' + num + '</div><div class="text">' + h + '</div></div>';
+    var toc = meta.toc || [];
+    var tocHtml = toc.map(function (t) {
+      var num = String(t.n).padStart(2, '0');
+      return '<div class="cover-toc-row"><span class="num">' + num + '</span><span class="name">' + t.name + '</span></div>';
     }).join('');
 
     var rightInner = `
       <div>
         <div class="cover-issue-band">
           <span class="pip"></span>
-          <span>${meta.issueLabel || 'Card News Magazine'}</span>
-          <b>${meta.dateLabel || ''}</b>
+          <span>${meta.issueLabel || 'Collected Edition'}</span>
         </div>
         <div class="cover-masthead">${meta.masthead}</div>
-        ${meta.hanja ? '<div class="cover-hanja-watermark">' + meta.hanja + '</div>' : ''}
+        <div class="cover-rule"></div>
+        <div class="cover-tagline">${meta.tagline || ''}</div>
+        ${meta.sub ? '<div class="cover-sub">' + meta.sub + '</div>' : ''}
       </div>
-      <div class="cover-headline-block">
-        <div class="cover-overline">${meta.overline || 'COVER STORY'}</div>
-        <h1 class="cover-main-title">${meta.title}</h1>
-        ${meta.sub ? '<p class="cover-sub">' + meta.sub + '</p>' : ''}
-      </div>
-      <div class="cover-barcode">
-        <div class="cover-barcode-bars">
-          ${[2,4,2,3,5,2,3,4,2,5,3,2,4,3,2].map(function (h) { return '<span style="height:' + (h * 4) + 'px;"></span>'; }).join('')}
-        </div>
-        <div>${meta.foot || ''}</div>
-      </div>
+      ${meta.hanja ? '<div class="cover-hanja-watermark">' + meta.hanja + '</div>' : ''}
     `;
 
     if (wide) {
       var leftPage = document.createElement('div');
       leftPage.className = 'book-page left';
       leftPage.innerHTML = `
-        <div>
-          <div class="cover-side-eyebrow">In This ${meta.scope || 'Issue'}</div>
-          <div class="cover-side-rule"></div>
-          <div class="cover-headlines">${headlinesHtml}</div>
-        </div>
-        <div class="cover-side-foot">
-          <div>AI × <b>Series</b></div>
-          <div>${meta.foot || ''}</div>
-        </div>
+        <div class="cover-toc-eyebrow">Table of Contents</div>
+        <div class="cover-toc-title">전체 ${toc.length}호 · 한 권의 시리즈</div>
+        <div class="cover-toc-rule"></div>
+        <div class="cover-toc">${tocHtml}</div>
       `;
       var rightPage = document.createElement('div');
       rightPage.className = 'book-page right';
@@ -487,29 +455,24 @@
       spreadEl.appendChild(leftPage);
       spreadEl.appendChild(rightPage);
     } else {
-      // 모바일: 한 페이지에 마스트헤드 + 헤드라인 리스트 압축
       var page = document.createElement('div');
       page.className = 'book-page right';
       page.innerHTML = `
         <div>
           <div class="cover-issue-band">
-            <span class="pip"></span><span>${meta.issueLabel || 'Card News Magazine'}</span>
+            <span class="pip"></span><span>${meta.issueLabel || 'Collected Edition'}</span>
           </div>
           <div class="cover-masthead">${meta.masthead}</div>
-          ${meta.hanja ? '<div class="cover-hanja-watermark">' + meta.hanja + '</div>' : ''}
-          <div class="cover-overline" style="margin-top:18px;">${meta.overline || 'COVER STORY'}</div>
-          <h1 class="cover-main-title">${meta.title}</h1>
-          ${meta.sub ? '<p class="cover-sub">' + meta.sub + '</p>' : ''}
+          <div class="cover-rule"></div>
+          <div class="cover-tagline">${meta.tagline || ''}</div>
+          ${meta.sub ? '<div class="cover-sub">' + meta.sub + '</div>' : ''}
         </div>
-        <div>
-          <div class="cover-side-eyebrow" style="font-size:10px;">In This ${meta.scope || 'Issue'}</div>
-          <div class="cover-side-rule"></div>
-          <div class="cover-headlines">${headlinesHtml}</div>
-          <div class="cover-side-foot" style="margin-top:18px;">
-            <div>AI × <b>Series</b></div>
-            <div>${meta.foot || ''}</div>
-          </div>
+        <div style="margin-top:32px;">
+          <div class="cover-toc-eyebrow">Table of Contents</div>
+          <div class="cover-toc-rule"></div>
+          <div class="cover-toc">${tocHtml}</div>
         </div>
+        ${meta.hanja ? '<div class="cover-hanja-watermark">' + meta.hanja + '</div>' : ''}
       `;
       spreadEl.appendChild(page);
     }
@@ -704,23 +667,19 @@
               totalCards++;
             });
           });
-          // 30개 이슈 중 대표 헤드라인 8개를 골라 표지 좌측에 배치
-          var picked = data.slice(-8).map(function (s) {
-            return 'Issue ' + String(s.n).padStart(2, '0') + ' · ' + s.name + ' — ' + s.subtitle;
+          // 표지 좌측: 1호부터 순서대로 전체 목차
+          var toc = data.map(function (s) {
+            return { n: s.n, name: s.name, subtitle: s.subtitle };
           });
           var coverOptions = {
             coverPage: true,
             coverMeta: {
               masthead: 'AI × <em>Series</em>',
-              title: 'AI라는 거울 앞에서<br />다시 묻는 <em>249장</em>',
-              sub: '철학 · 예술 · 언어 · 음악 · 꿈 · 뇌과학 · 진화 · 사회 — 오래된 주제들이 AI 앞에서 다시 낯설어집니다.',
-              issueLabel: 'Card News Magazine',
-              dateLabel: 'Collected Edition',
-              overline: 'COVER STORY · 한 권의 시리즈',
-              scope: 'Library',
-              headlines: picked,
-              hanja: '誌',
-              foot: data.length + ' Issues · ' + totalCards + ' Cards'
+              tagline: '오래된 질문, 새로운 거울.',
+              sub: data.length + '개 이슈 · ' + totalCards + '장의 카드.',
+              issueLabel: 'Collected Edition',
+              toc: toc,
+              hanja: '誌'
             }
           };
           var wide = isWideViewport();
