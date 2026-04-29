@@ -485,6 +485,43 @@
 }
 .book-scrub.scrubbing .book-scrub-tip { opacity: 1; }
 
+/* zoom controls */
+.book-zoom {
+  display: flex; align-items: center; gap: 4px;
+  border: 1px solid rgba(255,228,208,0.18);
+  border-radius: 4px;
+  padding: 2px;
+}
+.book-zoom-btn {
+  background: transparent; border: 0;
+  color: rgba(255,228,208,0.75);
+  font: inherit;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0;
+  padding: 4px 8px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: background 0.14s, color 0.14s;
+}
+.book-zoom-btn:hover { background: rgba(255,228,208,0.12); color: #FFE4D0; }
+.book-zoom-btn:disabled { opacity: 0.3; cursor: default; }
+.book-zoom-val {
+  font-family: var(--f-mono, monospace);
+  font-size: 10px;
+  color: rgba(255,228,208,0.55);
+  min-width: 36px; text-align: center;
+  letter-spacing: 0.1em;
+}
+
+/* iframe overflow when zoomed in */
+.book-page { overflow: hidden; }
+.book-page.zoomed { overflow: auto; }
+.book-page.zoomed::-webkit-scrollbar { width: 6px; height: 6px; }
+.book-page.zoomed::-webkit-scrollbar-thumb {
+  background: rgba(255,228,208,0.25); border-radius: 3px;
+}
+
 @media (max-width: 760px) {
   .book-stage { padding: 14px; }
   .book-spread { max-height: calc(100vh - 130px); }
@@ -560,16 +597,24 @@
           <div class="book-scrub-tip" id="book-scrub-tip"></div>
         </div>
         <button type="button" class="book-jump" id="book-last">끝 ↠</button>
+        <div class="book-zoom" role="group" aria-label="글씨 크기">
+          <button type="button" class="book-zoom-btn" id="book-zoom-out" aria-label="글씨 작게">A−</button>
+          <span class="book-zoom-val" id="book-zoom-val">100%</span>
+          <button type="button" class="book-zoom-btn" id="book-zoom-in" aria-label="글씨 크게">A+</button>
+        </div>
       </div>
     `;
     document.body.appendChild(overlay);
     return overlay;
   }
 
-  function fitIframe(iframe, page) {
+  function fitIframe(iframe, page, zoom) {
+    zoom = zoom || 1;
     var rect = page.getBoundingClientRect();
-    var scale = Math.min(rect.width / 1080, rect.height / 1080);
+    var baseScale = Math.min(rect.width / 1080, rect.height / 1080);
+    var scale = baseScale * zoom;
     iframe.style.transform = 'scale(' + scale + ')';
+    page.classList.toggle('zoomed', zoom > 1.001);
   }
 
   function renderCover(spreadEl, meta, wide) {
@@ -695,6 +740,7 @@
     spreadEl.classList.remove('toc-spread');
     spreadEl.innerHTML = '';
     spreadEl.classList.toggle('single', spread.length === 1);
+    var zoom = parseFloat(spreadEl.dataset.zoom || '1') || 1;
     spread.forEach(function (src, i) {
       var page = document.createElement('div');
       page.className = 'book-page ' + (spread.length === 1 ? 'single' : (i === 0 ? 'left' : 'right'));
@@ -703,8 +749,8 @@
       iframe.loading = 'eager';
       page.appendChild(iframe);
       spreadEl.appendChild(page);
-      iframe.addEventListener('load', function () { fitIframe(iframe, page); });
-      requestAnimationFrame(function () { fitIframe(iframe, page); });
+      iframe.addEventListener('load', function () { fitIframe(iframe, page, zoom); });
+      requestAnimationFrame(function () { fitIframe(iframe, page, zoom); });
     });
   }
 
@@ -848,11 +894,39 @@
 
     window.addEventListener('resize', function () {
       rebuildIfModeChanged();
+      var z = state.zoom || 1;
       overlay.querySelectorAll('.book-page iframe').forEach(function (f) {
         var p = f.parentElement;
-        if (p) fitIframe(f, p);
+        if (p) fitIframe(f, p, z);
       });
     });
+
+    /* zoom controls */
+    var ZOOM_STEPS = [1.0, 1.15, 1.3, 1.5, 1.75, 2.0];
+    if (state.zoom == null) state.zoom = 1.0;
+    var zoomVal = overlay.querySelector('#book-zoom-val');
+    var zoomIn = overlay.querySelector('#book-zoom-in');
+    var zoomOut = overlay.querySelector('#book-zoom-out');
+    function applyZoom() {
+      spreadEl.dataset.zoom = String(state.zoom);
+      overlay.querySelectorAll('.book-page iframe').forEach(function (f) {
+        var p = f.parentElement;
+        if (p) fitIframe(f, p, state.zoom);
+      });
+      if (zoomVal) zoomVal.textContent = Math.round(state.zoom * 100) + '%';
+      if (zoomIn) zoomIn.disabled = state.zoom >= ZOOM_STEPS[ZOOM_STEPS.length - 1];
+      if (zoomOut) zoomOut.disabled = state.zoom <= ZOOM_STEPS[0];
+    }
+    function stepZoom(delta) {
+      var idx = ZOOM_STEPS.indexOf(state.zoom);
+      if (idx === -1) idx = 0;
+      idx = Math.max(0, Math.min(ZOOM_STEPS.length - 1, idx + delta));
+      state.zoom = ZOOM_STEPS[idx];
+      applyZoom();
+    }
+    if (zoomIn) zoomIn.addEventListener('click', function () { stepZoom(1); });
+    if (zoomOut) zoomOut.addEventListener('click', function () { stepZoom(-1); });
+    applyZoom();
 
     state.go = go;
   }
