@@ -422,6 +422,69 @@
 }
 .book-jump:hover { background: rgba(255,228,208,0.12); color: #FFE4D0; }
 
+/* slider scrubber over progress bar */
+.book-scrub {
+  position: relative;
+  flex: 1 1 auto; max-width: 480px;
+  display: flex; align-items: center;
+  height: 22px;
+}
+.book-scrub .book-progress-bar {
+  position: absolute; left: 0; right: 0; top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.book-slider {
+  -webkit-appearance: none; appearance: none;
+  position: relative; z-index: 1;
+  width: 100%;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+}
+.book-slider::-webkit-slider-runnable-track {
+  height: 22px; background: transparent; border: 0;
+}
+.book-slider::-moz-range-track {
+  height: 22px; background: transparent; border: 0;
+}
+.book-slider::-webkit-slider-thumb {
+  -webkit-appearance: none; appearance: none;
+  width: 14px; height: 14px;
+  background: #FFE4D0;
+  border: 2px solid #E35205;
+  border-radius: 50%;
+  margin-top: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  cursor: grab;
+  transition: transform 0.12s;
+}
+.book-slider::-webkit-slider-thumb:active { cursor: grabbing; transform: scale(1.2); }
+.book-slider::-moz-range-thumb {
+  width: 14px; height: 14px;
+  background: #FFE4D0;
+  border: 2px solid #E35205;
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+  cursor: grab;
+}
+.book-scrub-tip {
+  position: absolute;
+  bottom: 30px; left: 50%; transform: translateX(-50%);
+  background: rgba(20,28,52,0.95);
+  color: #FFE4D0;
+  padding: 4px 9px;
+  font-size: 10.5px; letter-spacing: 0.18em;
+  border-radius: 3px;
+  border: 1px solid rgba(255,228,208,0.18);
+  pointer-events: none;
+  opacity: 0; transition: opacity 0.14s;
+  white-space: nowrap;
+  font-family: var(--f-mono, monospace);
+}
+.book-scrub.scrubbing .book-scrub-tip { opacity: 1; }
+
 @media (max-width: 760px) {
   .book-stage { padding: 14px; }
   .book-spread { max-height: calc(100vh - 130px); }
@@ -489,8 +552,13 @@
         <button type="button" class="book-nav next" id="book-next" aria-label="다음 페이지">›</button>
       </div>
       <div class="book-overlay-foot">
+        <button type="button" class="book-jump" id="book-toc">≡ 목차</button>
         <button type="button" class="book-jump" id="book-first">↞ 처음</button>
-        <div class="book-progress-bar"><div class="fill" id="book-fill"></div></div>
+        <div class="book-scrub">
+          <div class="book-progress-bar"><div class="fill" id="book-fill"></div></div>
+          <input type="range" id="book-slider" class="book-slider" min="0" value="0" step="1" aria-label="페이지 슬라이더" />
+          <div class="book-scrub-tip" id="book-scrub-tip"></div>
+        </div>
         <button type="button" class="book-jump" id="book-last">끝 ↠</button>
       </div>
     `;
@@ -644,6 +712,24 @@
     var spreadEl = overlay.querySelector('#book-spread');
     var prog = overlay.querySelector('#book-progress');
     var fill = overlay.querySelector('#book-fill');
+    var slider = overlay.querySelector('#book-slider');
+    var scrubTip = overlay.querySelector('#book-scrub-tip');
+    var scrubWrap = overlay.querySelector('.book-scrub');
+    var tocBtn = overlay.querySelector('#book-toc');
+
+    function findTocIndex() {
+      for (var i = 0; i < state.spreads.length; i++) {
+        var s = state.spreads[i];
+        if (s && s.type === 'toc') return i;
+      }
+      return -1;
+    }
+
+    function syncSlider() {
+      if (!slider) return;
+      slider.max = String(state.spreads.length - 1);
+      slider.value = String(state.current);
+    }
 
     function go(i) {
       i = Math.max(0, Math.min(state.spreads.length - 1, i));
@@ -659,6 +745,9 @@
         if (fill) fill.style.width = (((i + 1) / state.spreads.length) * 100) + '%';
         overlay.querySelector('#book-prev').disabled = (i === 0);
         overlay.querySelector('#book-next').disabled = (i === state.spreads.length - 1);
+        syncSlider();
+        var tocIdx = findTocIndex();
+        if (tocBtn) tocBtn.style.display = (tocIdx === -1 || tocIdx === i) ? 'none' : '';
       }, 100);
     }
 
@@ -670,8 +759,67 @@
     overlay.querySelector('#book-next').addEventListener('click', function () { go(state.current + 1); });
     overlay.querySelector('#book-first').addEventListener('click', function () { go(0); });
     overlay.querySelector('#book-last').addEventListener('click', function () { go(state.spreads.length - 1); });
+    if (tocBtn) {
+      tocBtn.addEventListener('click', function () {
+        var idx = findTocIndex();
+        if (idx !== -1) go(idx);
+      });
+    }
+
+    /* slider scrubbing */
+    if (slider) {
+      slider.max = String(state.spreads.length - 1);
+      function updateTip(val) {
+        if (!scrubTip) return;
+        scrubTip.textContent = (parseInt(val, 10) + 1) + ' / ' + state.spreads.length;
+        var pct = state.spreads.length > 1 ? (parseInt(val, 10) / (state.spreads.length - 1)) * 100 : 0;
+        scrubTip.style.left = pct + '%';
+      }
+      var scrubStartActive = false;
+      function start() { scrubStartActive = true; if (scrubWrap) scrubWrap.classList.add('scrubbing'); updateTip(slider.value); }
+      function end() { scrubStartActive = false; if (scrubWrap) scrubWrap.classList.remove('scrubbing'); }
+      slider.addEventListener('input', function () {
+        if (!scrubStartActive) start();
+        updateTip(slider.value);
+        if (fill) fill.style.width = (((parseInt(slider.value, 10) + 1) / state.spreads.length) * 100) + '%';
+      });
+      slider.addEventListener('change', function () {
+        end();
+        go(parseInt(slider.value, 10));
+      });
+      slider.addEventListener('pointerdown', start);
+      slider.addEventListener('pointerup', end);
+      slider.addEventListener('pointercancel', end);
+      slider.addEventListener('mouseleave', function () { if (scrubStartActive) end(); });
+    }
+
+    /* touch swipe on stage */
+    var stage = overlay.querySelector('.book-stage');
+    var touchX = null, touchY = null, touchT = 0;
+    stage.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) return;
+      touchX = e.touches[0].clientX;
+      touchY = e.touches[0].clientY;
+      touchT = Date.now();
+    }, { passive: true });
+    stage.addEventListener('touchend', function (e) {
+      if (touchX == null) return;
+      var t = e.changedTouches[0];
+      var dx = t.clientX - touchX;
+      var dy = t.clientY - touchY;
+      var dt = Date.now() - touchT;
+      touchX = touchY = null;
+      if (Math.abs(dx) < 40) return;
+      if (Math.abs(dy) > Math.abs(dx)) return;  // 세로 스크롤이면 무시
+      if (dt > 800) return;
+      state._swallowClick = true;  // 직후 발생하는 click 무시
+      if (dx < 0) go(state.current + 1);
+      else go(state.current - 1);
+    }, { passive: true });
     overlay.querySelector('.book-stage').addEventListener('click', function (e) {
+      if (state._swallowClick) { state._swallowClick = false; return; }
       if (e.target.closest('.book-nav') || e.target.closest('iframe') || e.target.closest('.book-cover-title')) return;
+      if (e.target.closest('.toc-row')) return;
       var stage = overlay.querySelector('.book-stage');
       var rect = stage.getBoundingClientRect();
       if ((e.clientX - rect.left) > rect.width / 2) go(state.current + 1);
