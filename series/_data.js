@@ -384,7 +384,7 @@ window.SERIES_DATA = [
     "slug": "vision",
     "name": "Vision",
     "hanja": "視",
-    "subtitle": "AI는 왜 눈부터 열렸을까",
+    "subtitle": "고양이 한 마리가 AI의 눈을 떴습니다",
     "desc": "Hubel-Wiesel 고양이 실험 · LeCun CNN · AlexNet · GPU 행렬연산 · LeCun World Model — 시각이 지능의 시작.",
     "slides": [
       "01-cover.png",
@@ -447,7 +447,7 @@ window.SERIES_DATA = [
     "slug": "compress",
     "name": "Compress",
     "hanja": "縮",
-    "subtitle": "AI는 왜 세상을 흐릿하게 보는가",
+    "subtitle": "AI의 기억은 흐릿한 JPEG입니다",
     "desc": "Miller 작업기억 7±2 · 컨텍스트 윈도우 · RAG · Ted Chiang 흐릿한 JPEG · GPU 절약(양자화·KV·MoE) · 유발 하라리 NEXUS — 압축이 만든 인식의 흐릿함.",
     "slides": [
       "01-cover.png",

@@ -384,7 +384,7 @@
     "slug": "vision",
     "name": "Vision",
     "hanja": "視",
-    "subtitle": "AI는 왜 눈부터 열렸을까",
+    "subtitle": "고양이 한 마리가 AI의 눈을 떴습니다",
     "desc": "Hubel-Wiesel 고양이 실험 · LeCun CNN · AlexNet · GPU 행렬연산 · LeCun World Model — 시각이 지능의 시작.",
     "slides": [
       "01-cover.png",
@@ -447,7 +447,7 @@
     "slug": "compress",
     "name": "Compress",
     "hanja": "縮",
-    "subtitle": "AI는 왜 세상을 흐릿하게 보는가",
+    "subtitle": "AI의 기억은 흐릿한 JPEG입니다",
     "desc": "Miller 작업기억 7±2 · 컨텍스트 윈도우 · RAG · Ted Chiang 흐릿한 JPEG · GPU 절약(양자화·KV·MoE) · 유발 하라리 NEXUS — 압축이 만든 인식의 흐릿함.",
     "slides": [
       "01-cover.png",
@@ -490,9 +490,16 @@
     "subtitle": "한글이 AI에는 불리할까",
     "desc": "조합의 한글 · 압축의 한자 · 선형의 알파벳 — 토큰화의 골칫거리, 표의문자의 임베딩 밀도, 의미의 기하학 — AI에게 좋은 문자와 사람에게 좋은 문자.",
     "slides": [
-      "01-cover.png", "02-alphabet.png", "03-hanja.png", "04-hangeul.png",
-      "05-tokenization.png", "06-cjk-issue.png", "07-density.png",
-      "08-geometry.png", "09-paradox.png", "10-outro.png"
+      "01-cover.png",
+      "02-alphabet.png",
+      "03-hanja.png",
+      "04-hangeul.png",
+      "05-tokenization.png",
+      "06-cjk-issue.png",
+      "07-density.png",
+      "08-geometry.png",
+      "09-paradox.png",
+      "10-outro.png"
     ],
     "count": 10
   },
@@ -504,9 +511,16 @@
     "subtitle": "모든 AI는 비트 위에 산다",
     "desc": "1948 클로드 섀넌 정보이론 · 비트 · 아날로그→디지털(나이퀴스트) · 멀티모달 · 임베딩의 기하학 · 2024 큐비트가 흔드는 0/1의 세계.",
     "slides": [
-      "01-cover.png", "02-shannon.png", "03-bit.png", "04-analog-digital.png",
-      "05-everything-bits.png", "06-multimodal.png", "07-embedding.png",
-      "08-qubit.png", "09-quantum-impact.png", "10-outro.png"
+      "01-cover.png",
+      "02-shannon.png",
+      "03-bit.png",
+      "04-analog-digital.png",
+      "05-everything-bits.png",
+      "06-multimodal.png",
+      "07-embedding.png",
+      "08-qubit.png",
+      "09-quantum-impact.png",
+      "10-outro.png"
     ],
     "count": 10
   },
@@ -518,9 +532,16 @@
     "subtitle": "데이터 르네상스 — 창작자가 다시 쓰는 세계",
     "desc": "13조 토큰의 폭식 · Epoch AI 텍스트 고갈 · 합성 데이터와 모델 붕괴 · AI 슬롭의 범람 · 신뢰의 위기 · 1인칭 데이터의 부활 · 큐레이션·출처·창작자가 여는 데이터 르네상스.",
     "slides": [
-      "01-cover.png", "02-feast.png", "03-end-of-text.png", "04-synthetic.png",
-      "05-slop.png", "06-collapse.png", "07-trust.png", "08-creator.png",
-      "09-renaissance.png", "10-outro.png"
+      "01-cover.png",
+      "02-feast.png",
+      "03-end-of-text.png",
+      "04-synthetic.png",
+      "05-slop.png",
+      "06-collapse.png",
+      "07-trust.png",
+      "08-creator.png",
+      "09-renaissance.png",
+      "10-outro.png"
     ],
     "count": 10
   },
@@ -532,9 +553,16 @@
     "subtitle": "흔들려본 사람만 시를 씁니다",
     "desc": "Temperature · Diffusion · 돌연변이 · Local Minima 탈출 · Simulated Annealing · 세렌디피티 · 환각의 경계 — 의도적 잡음이 만든 창의의 비밀.",
     "slides": [
-      "01-cover.png", "02-temperature.png", "03-diffusion.png", "04-mutation.png",
-      "05-local-minima.png", "06-annealing.png", "07-serendipity.png",
-      "08-ai-creation.png", "09-too-much.png", "10-outro.png"
+      "01-cover.png",
+      "02-temperature.png",
+      "03-diffusion.png",
+      "04-mutation.png",
+      "05-local-minima.png",
+      "06-annealing.png",
+      "07-serendipity.png",
+      "08-ai-creation.png",
+      "09-too-much.png",
+      "10-outro.png"
     ],
     "count": 10
   },
@@ -546,9 +574,16 @@
     "subtitle": "AI는 자기 자신과 싸우며 큽니다",
     "desc": "폰 노이만 미니맥스 · 죄수의 딜레마 · 내쉬 균형 · GAN · AlphaGo Zero · Multi-Agent RL · 휴리스틱 — 게임이론으로 본 AI의 적대적 진화.",
     "slides": [
-      "01-cover.png", "02-minimax.png", "03-prisoner.png", "04-nash.png",
-      "05-equilibrium.png", "06-gan.png", "07-alphago.png",
-      "08-multi-agent.png", "09-heuristic.png", "10-outro.png"
+      "01-cover.png",
+      "02-minimax.png",
+      "03-prisoner.png",
+      "04-nash.png",
+      "05-equilibrium.png",
+      "06-gan.png",
+      "07-alphago.png",
+      "08-multi-agent.png",
+      "09-heuristic.png",
+      "10-outro.png"
     ],
     "count": 10
   },
@@ -560,9 +595,16 @@
     "subtitle": "AI가 사회를 이루면 어떻게 될까요",
     "desc": "개미·벌·새떼의 군집 지능 · Boids 1986 · 창발(아리스토텔레스·Hayek) · Axelrod Tit-for-Tat · 2023 Smallville · 드론 군집 — 경쟁(29호)과 협력(30호)의 진화 둘 다.",
     "slides": [
-      "01-cover.png", "02-single-limit.png", "03-nature-swarm.png", "04-boids.png",
-      "05-emergence.png", "06-cooperation.png", "07-smallville.png",
-      "08-drone-swarm.png", "09-vs-arena.png", "10-outro.png"
+      "01-cover.png",
+      "02-single-limit.png",
+      "03-nature-swarm.png",
+      "04-boids.png",
+      "05-emergence.png",
+      "06-cooperation.png",
+      "07-smallville.png",
+      "08-drone-swarm.png",
+      "09-vs-arena.png",
+      "10-outro.png"
     ],
     "count": 10
   }
