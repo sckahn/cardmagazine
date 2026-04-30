@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>05 · Data Leak</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; CONFESS &nbsp;<span style="display:inline-block; padding:2px 8px; background:var(--brand); color:white; font-size:9.5px; letter-spacing:0.2em; border-radius:2px; vertical-align:middle;">SPECIAL TOPIC</span></div>
+      <div class="chaptertag">CHAPTER 04 &nbsp;&middot;&nbsp; 데이터 업로드 안전불감증</div>
+    </div>
+    <div class="era">
+      <span class="year">2023~2025</span>
+      <span class="label"><b>DATA EXPOSURE</b><span class="sub">현장 사례 &middot; Samsung &middot; Cisco AI Privacy Report</span></span>
+    </div>
+    <h1 class="title sm">흘리는 비밀이 &mdash;<br /><em>가중치</em>에 남습니다.</h1>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:stretch;">
+      <div style="padding:16px 18px; background:linear-gradient(160deg, #0f1e38 0%, #1a3158 100%); color:white; box-shadow:0 8px 18px -12px rgba(15,30,56,0.4);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">전통 고해 &middot; CONFESSIONAL</div>
+        <div style="font-size:18px; font-weight:900; color:white; margin-top:6px; letter-spacing:-0.02em;">성당의 봉인된 좌석</div>
+        <div style="font-size:13px; color:#DDE3EE; margin-top:8px; line-height:1.6;">신부의 <b style="color:#FFE4D0;">비밀 유지 의무</b>. 듣고 잊는 구조. 말한 사람과 들은 사람만 압니다. 흔적은 영혼에만 남습니다.</div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; font-family:var(--f-mono); font-size:18px; color:var(--brand); font-weight:900;">VS</div>
+      <div style="padding:16px 18px; background:linear-gradient(160deg, #E35205 0%, #B5400B 100%); color:white; box-shadow:0 8px 18px -12px rgba(227,82,5,0.4);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">AI 고해 &middot; LLM CHAT</div>
+        <div style="font-size:18px; font-weight:900; color:white; margin-top:6px; letter-spacing:-0.02em;">TLS는 있지만 &mdash;</div>
+        <div style="font-size:13px; color:#FFE4D0; margin-top:8px; line-height:1.6;"><b style="color:white;">학습 &middot; 메모리 &middot; 로그 &middot; 타사 분석</b>. 듣고 새깁니다. 가중치&middot;로그&middot;관리자 화면에 흔적이 남습니다.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; padding:14px 16px; background:linear-gradient(160deg, var(--bg-white), rgba(255,228,208,0.4)); border-left:4px solid var(--brand); box-shadow:0 6px 14px -10px rgba(15,30,56,0.2);">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--brand); font-weight:800;">CASE STUDY &middot; 2023~2024</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:8px;">
+        <div>
+          <div style="font-size:13px; font-weight:800; color:var(--navy);">2023 &middot; Samsung</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">임직원이 사내 코드를 ChatGPT에 붙여넣어 외부 학습 가능성에 노출됐습니다. 사내 LLM 사용 금지령이 내려졌습니다.</div>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:800; color:var(--navy);">2024 &middot; Cisco AI Privacy</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">응답자 <b style="color:var(--brand);">27%</b>가 회사 데이터를 공개 LLM에 입력한 경험이 있다고 답했습니다.</div>
+        </div>
+        <div>
+          <div style="font-size:13px; font-weight:800; color:var(--navy);">의료&middot;법무 영역</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">HIPAA &middot; 변호사&middot;의뢰인 특권을 무력화할 수 있는 입력 빈도가 늘어나는 추세입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; background:linear-gradient(135deg, var(--bg-white), rgba(255,228,208,0.5)); border-left:4px solid var(--brand); padding:13px 16px;">
+      <span class="label">왜 위험한가 &middot; 그리고 왜 회색인가</span>
+      <span class="text" style="font-size:15px;">한 번 보낸 텍스트는 &mdash; 학습&middot;캐시&middot;로그&middot;관리자 화면 어디든 머물 수 있습니다. 삭제 요청을 해도 <em>가중치 안의 흔적</em>은 되돌리기 어렵습니다. 그래서 사내 보안은 <b>금지</b>가 아니라 <em>회색지대</em>를 명확히 긋는 일에서 시작합니다 (다음 장).</span>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>05</b> / 09</span>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · Grey Zone</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; CONFESS &nbsp;<span style="display:inline-block; padding:2px 8px; background:var(--brand); color:white; font-size:9.5px; letter-spacing:0.2em; border-radius:2px; vertical-align:middle;">SPECIAL TOPIC</span></div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;&middot;&nbsp; 사내 보안의 회색지대</div>
+    </div>
+    <div class="era">
+      <span class="year">GREY ZONE</span>
+      <span class="label"><b>WHERE THE LINE IS</b><span class="sub">정책으로 그어두지 않으면 흐릿한 영역</span></span>
+    </div>
+    <h1 class="title sm">어디까지가 &mdash;<br /><em>괜찮은</em> 입력입니까?</h1>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:14px 16px; background:linear-gradient(160deg, #0f1e38 0%, #1a3158 100%); color:white; box-shadow:0 8px 18px -12px rgba(15,30,56,0.4);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">DON&apos;T &middot; 보내지 않습니다</div>
+        <ul style="margin-top:8px; padding-left:18px; font-size:12.5px; line-height:1.7; color:#DDE3EE;">
+          <li>고객 PII &middot; 의료 기록 &middot; 결제 정보를 <b style="color:#FFE4D0;">원문 그대로</b> 입력</li>
+          <li>사내 소스 코드 &middot; 설계 문서 &middot; 인사 자료를 통째로 붙여넣기</li>
+          <li>API 키 &middot; 자격증명 &middot; 비공개 URL을 예시 데이터로 사용</li>
+          <li>"익명화했으니 괜찮다"고 자체 판단 &mdash; 재식별 위험 잔존</li>
+        </ul>
+      </div>
+      <div style="padding:14px 16px; background:linear-gradient(160deg, #E35205 0%, #B5400B 100%); color:white; box-shadow:0 8px 18px -12px rgba(227,82,5,0.4);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">DO &middot; 이렇게 씁니다</div>
+        <ul style="margin-top:8px; padding-left:18px; font-size:12.5px; line-height:1.7; color:#FFE4D0;">
+          <li><b style="color:white;">회사 승인된 LLM 게이트웨이</b>만 사용 &middot; 마스킹 자동화</li>
+          <li>일반화된 질문 &middot; 가상의 예시 데이터 &middot; <b style="color:white;">패턴만</b> 보내기</li>
+          <li>결과는 검증 &middot; 라이선스 &middot; 사실관계 모두 사람이 확인</li>
+          <li>사용 기록을 남겨 감사 가능하게 &middot; 부서 내 가이드라인 공유</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; padding:14px 16px; background:linear-gradient(160deg, var(--bg-white), rgba(255,228,208,0.4)); border-left:4px solid var(--brand); box-shadow:0 6px 14px -10px rgba(15,30,56,0.2);">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--brand); font-weight:800;">GREY ZONE &middot; 흔한 핑계 4가지</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:10px; margin-top:8px;">
+        <div>
+          <div style="font-size:12px; font-weight:800; color:var(--navy);">"참고용일 뿐"</div>
+          <div style="font-size:11.5px; color:var(--ink-body); margin-top:2px; line-height:1.5;">한 번이면 괜찮다는 자기위로 &mdash; 학습 흔적은 남습니다.</div>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:800; color:var(--navy);">"개인 계정으로"</div>
+          <div style="font-size:11.5px; color:var(--ink-body); margin-top:2px; line-height:1.5;">계정만 다를 뿐 회사 데이터의 운명은 같습니다.</div>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:800; color:var(--navy);">"외주 통하면"</div>
+          <div style="font-size:11.5px; color:var(--ink-body); margin-top:2px; line-height:1.5;">파트너의 LLM도 결국 외부 모델과 연결됩니다.</div>
+        </div>
+        <div>
+          <div style="font-size:12px; font-weight:800; color:var(--navy);">"엔터프라이즈 모드"</div>
+          <div style="font-size:11.5px; color:var(--ink-body); margin-top:2px; line-height:1.5;">학습 옵트아웃해도 로그&middot;캐시&middot;운영진 화면은 별도.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; background:linear-gradient(135deg, var(--bg-white), rgba(15,30,56,0.08)); border-left:4px solid var(--navy); padding:12px 16px;">
+      <span class="label">한 줄 정리</span>
+      <span class="text" style="font-size:15px;">정책이 흐리면 사람은 편한 쪽을 선택합니다. <em>회색지대를 회색 그대로 두지 마십시오</em> &mdash; 명문화된 가드레일과 게이트웨이가 신뢰의 시작입니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>06</b> / 09</span>
+    </div>
+  </div>
+</body></html>

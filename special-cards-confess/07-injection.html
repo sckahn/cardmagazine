@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Memory & Injection</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; CONFESS &nbsp;<span style="display:inline-block; padding:2px 8px; background:var(--brand); color:white; font-size:9.5px; letter-spacing:0.2em; border-radius:2px; vertical-align:middle;">SPECIAL TOPIC</span></div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;&middot;&nbsp; 메모리 &amp; 프롬프트 인젝션</div>
+    </div>
+    <div class="era">
+      <span class="year">TECHNICAL</span>
+      <span class="label"><b>TRAINING DATA EXTRACTION &middot; PROMPT INJECTION</b><span class="sub">Carlini et al. 2021~ &middot; OWASP LLM Top 10</span></span>
+    </div>
+    <h1 class="title sm">한 번 흘린 비밀은 &mdash;<br /><em>다른 화면</em>에 떠오릅니다.</h1>
+
+    <div style="margin-top:12px;">
+      <svg viewBox="0 0 900 150" style="width:100%; height:140px;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bg6" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#FFE4D0" stop-opacity="0.5"/>
+            <stop offset="100%" stop-color="#DDE3EE" stop-opacity="0.5"/>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="900" height="150" fill="url(#bg6)"/>
+        <rect x="30" y="40" width="200" height="70" fill="#0f1e38" rx="4"/>
+        <text x="130" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFE4D0" font-weight="800">USER A</text>
+        <text x="130" y="88" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#fff">"내 카드번호는..."</text>
+        <text x="130" y="102" text-anchor="middle" font-family="Noto Sans KR" font-size="10" fill="#DDE3EE">[입력]</text>
+
+        <path d="M240 75 L360 75" stroke="#0f1e38" stroke-width="2.5" marker-end="url(#arr)"/>
+
+        <rect x="370" y="30" width="200" height="90" fill="#E35205" rx="4"/>
+        <text x="470" y="56" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFE4D0" font-weight="800">MODEL WEIGHTS</text>
+        <text x="470" y="78" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#fff" font-weight="700">학습 / 메모리 / 캐시</text>
+        <text x="470" y="98" text-anchor="middle" font-family="Noto Sans KR" font-size="10" fill="#FFE4D0">정보가 가중치에 새겨짐</text>
+        <circle cx="565" cy="40" r="6" fill="#cc0000"/>
+
+        <path d="M580 75 L700 75" stroke="#cc0000" stroke-width="2.5" marker-end="url(#arrR)"/>
+
+        <rect x="710" y="40" width="160" height="70" fill="#0f1e38" rx="4"/>
+        <text x="790" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#FFE4D0" font-weight="800">USER B</text>
+        <text x="790" y="88" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#fff">"...4321-XXXX..."</text>
+        <text x="790" y="102" text-anchor="middle" font-family="Noto Sans KR" font-size="10" fill="#DDE3EE">[추출]</text>
+
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#0f1e38"/>
+          </marker>
+          <marker id="arrR" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+            <path d="M0,0 L10,5 L0,10 z" fill="#cc0000"/>
+          </marker>
+        </defs>
+        <text x="450" y="138" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10" fill="#5c6578" font-weight="700">USER A → MODEL → USER B &middot; 의도치 않은 정보 흐름</text>
+      </svg>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:13px 15px; background:linear-gradient(160deg, var(--brand-soft), var(--bg-white)); border-top:3px solid var(--brand); box-shadow:0 6px 14px -10px rgba(15,30,56,0.2);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--brand); font-weight:800;">ATTACK 01</div>
+        <div style="font-size:16px; font-weight:900; color:var(--navy); margin-top:4px;">학습 데이터 추출</div>
+        <div style="font-size:12.5px; color:var(--ink-body); margin-top:5px; line-height:1.55;"><b style="color:var(--navy);">Carlini et al. 2021</b> &middot; GPT-2에서 훈련 데이터 원문이 그대로 추출됨이 증명됐습니다.</div>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(160deg, rgba(15,30,56,0.10), var(--bg-white)); border-top:3px solid var(--navy); box-shadow:0 6px 14px -10px rgba(15,30,56,0.2);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--navy); font-weight:800;">ATTACK 02</div>
+        <div style="font-size:16px; font-weight:900; color:var(--navy); margin-top:4px;">시스템 프롬프트 누출</div>
+        <div style="font-size:12.5px; color:var(--ink-body); margin-top:5px; line-height:1.55;">우회 입력으로 <b style="color:var(--navy);">운영자가 숨긴 지침</b>이 사용자에게 노출되는 사례가 잇따릅니다.</div>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(160deg, var(--brand-soft), var(--bg-white)); border-top:3px solid var(--brand); box-shadow:0 6px 14px -10px rgba(15,30,56,0.2);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--brand); font-weight:800;">ATTACK 03</div>
+        <div style="font-size:16px; font-weight:900; color:var(--navy); margin-top:4px;">메모리 누출</div>
+        <div style="font-size:12.5px; color:var(--ink-body); margin-top:5px; line-height:1.55;">한 대화에 저장된 <b style="color:var(--navy);">개인 정보</b>가 다른 세션에서 의도치 않게 호출됩니다.</div>
+      </div>
+    </div>
+
+    <div class="insight" style="margin-top:12px; background:linear-gradient(135deg, var(--bg-white), rgba(15,30,56,0.08)); border-left:4px solid var(--navy); padding:12px 16px;">
+      <span class="label">한 줄 정리</span>
+      <span class="text" style="font-size:15px;">사용자 A가 입력한 비밀이 &mdash; 학습 또는 메모리를 거쳐 <em>사용자 B의 화면</em>에 떠오를 수 있습니다. 우연도, 공격도, 둘 다 가능합니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>07</b> / 09</span>
+    </div>
+  </div>
+</body></html>

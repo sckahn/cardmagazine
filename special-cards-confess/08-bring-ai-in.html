@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · Bring AI Inside</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; CONFESS &nbsp;<span style="display:inline-block; padding:2px 8px; background:var(--brand); color:white; font-size:9.5px; letter-spacing:0.2em; border-radius:2px; vertical-align:middle;">SPECIAL TOPIC</span></div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;&middot;&nbsp; SaaS LLM과 사내 LLM 사이</div>
+    </div>
+    <div class="era">
+      <span class="year">TO&#8209;BE</span>
+      <span class="label"><b>BRING AI INSIDE</b><span class="sub">데이터를 보내지 말고 도구를 받아오기 &middot; 사내 LLM 로드맵</span></span>
+    </div>
+    <h1 class="title sm">데이터를 보내지 말고 &mdash;<br /><em>도구</em>를 받아오십시오.</h1>
+
+    <!-- SaaS LLM vs 사내 LLM 비교 -->
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+      <div style="padding:13px 15px; background:linear-gradient(160deg, #0f1e38 0%, #1a3158 100%); color:white; box-shadow:0 8px 18px -12px rgba(15,30,56,0.4);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">SaaS LLM &middot; 외부 서비스</div>
+        <div style="font-size:15.5px; font-weight:900; color:white; margin-top:4px; letter-spacing:-0.015em;">ChatGPT &middot; Claude &middot; Gemini</div>
+        <ul style="margin-top:6px; padding-left:16px; font-size:11.5px; line-height:1.6; color:#DDE3EE;">
+          <li>가입만 하면 <b style="color:#FFE4D0;">즉시 강력</b>. 도입 비용이 낮습니다.</li>
+          <li>데이터는 ToS &middot; 옵트아웃 &middot; 벤더 정책에 의존합니다.</li>
+          <li>누출이 발생해도 <em>경계</em>는 외부에 있습니다.</li>
+        </ul>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(160deg, #E35205 0%, #B5400B 100%); color:white; box-shadow:0 8px 18px -12px rgba(227,82,5,0.4);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">사내 LLM &middot; 내부 인프라</div>
+        <div style="font-size:15.5px; font-weight:900; color:white; margin-top:4px; letter-spacing:-0.015em;">VPC &middot; On&#8209;prem &middot; On&#8209;device</div>
+        <ul style="margin-top:6px; padding-left:16px; font-size:11.5px; line-height:1.6; color:#FFE4D0;">
+          <li>초기 인프라&middot;운영 비용이 듭니다. 시간이 필요합니다.</li>
+          <li>데이터&middot;로그&middot;접근권 모두 <b style="color:white;">자사 통제</b>입니다.</li>
+          <li>책임도 자사 &mdash; 그래서 <em>경계</em>가 우리 손 안에 있습니다.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 핵심 원리 + NOW 패턴 -->
+    <div style="margin-top:12px; padding:11px 14px; background:linear-gradient(160deg, var(--bg-white), rgba(255,228,208,0.4)); border-left:4px solid var(--brand);">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--brand); font-weight:800;">PRINCIPLE &middot; 데이터 OUT &rarr; AI 도구 IN</div>
+      <div style="font-size:12.5px; color:var(--ink-body); margin-top:4px; line-height:1.55;">데이터를 보내는 대신, <b>업무 방식&middot;도메인 지식&middot;사람의 아이디어</b>로 추상화한 요청만 외부에 보냅니다. AI는 <em>도구&middot;코드&middot;설계</em>를 만들어 돌려보내고, 사내에서 검토 후 실행합니다.</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:8px; margin-top:8px;">
+        <div>
+          <div style="font-size:11.5px; font-weight:800; color:var(--navy);">사내 게이트웨이</div>
+          <div style="font-size:11px; color:var(--ink-body); margin-top:2px; line-height:1.5;">승인된 LLM만 통과 &middot; 자동 마스킹&middot;감사.</div>
+        </div>
+        <div>
+          <div style="font-size:11.5px; font-weight:800; color:var(--navy);">아이디어 &rarr; 도구</div>
+          <div style="font-size:11px; color:var(--ink-body); margin-top:2px; line-height:1.5;">패턴만 설명 &rarr; 스크립트&middot;쿼리 받아 사내 실행.</div>
+        </div>
+        <div>
+          <div style="font-size:11.5px; font-weight:800; color:var(--navy);">VPC 프라이빗</div>
+          <div style="font-size:11px; color:var(--ink-body); margin-top:2px; line-height:1.5;">Azure OpenAI &middot; Bedrock &middot; Vertex 사설망.</div>
+        </div>
+        <div>
+          <div style="font-size:11.5px; font-weight:800; color:var(--navy);">사내 RAG</div>
+          <div style="font-size:11px; color:var(--ink-body); margin-top:2px; line-height:1.5;">자체 벡터 DB &middot; 검색 결과만 답변에 인용.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TO-BE 로드맵 3단계 -->
+    <div style="margin-top:11px; padding:12px 14px; background:linear-gradient(135deg, #0f1e38 0%, #1c2e4e 100%); color:white;">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">TO&#8209;BE &middot; 사내 LLM 구축 로드맵</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-top:6px;">
+        <div>
+          <div style="font-size:11px; color:var(--brand-soft); font-weight:700;">PHASE 1 &middot; 기반</div>
+          <div style="font-size:12.5px; font-weight:800; color:white; margin-top:1px;">사설 추론 인프라</div>
+          <div style="font-size:11px; color:#DDE3EE; margin-top:2px; line-height:1.5;">사내 GPU 클러스터 또는 VPC 전용 엔드포인트.</div>
+        </div>
+        <div>
+          <div style="font-size:11px; color:var(--brand-soft); font-weight:700;">PHASE 2 &middot; 모델</div>
+          <div style="font-size:12.5px; font-weight:800; color:white; margin-top:1px;">자체 호스팅 LLM</div>
+          <div style="font-size:11px; color:#DDE3EE; margin-top:2px; line-height:1.5;">Llama&middot;Qwen&middot;Solar 같은 오픈 가중치 사내 운영.</div>
+        </div>
+        <div>
+          <div style="font-size:11px; color:var(--brand-soft); font-weight:700;">PHASE 3 &middot; 도메인</div>
+          <div style="font-size:12.5px; font-weight:800; color:white; margin-top:1px;">사내 코파일럿</div>
+          <div style="font-size:11px; color:#DDE3EE; margin-top:2px; line-height:1.5;">자사 데이터로 적합화한 작은 모델&middot;RAG가 직원 곁에 머무릅니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UNTIL THEN: 신중함 메시지 -->
+    <div class="insight" style="margin-top:11px; background:linear-gradient(135deg, var(--bg-white), rgba(255,228,208,0.5)); border-left:4px solid var(--brand); padding:10px 14px;">
+      <span class="label">UNTIL THEN &middot; 그때까지</span>
+      <span class="text" style="font-size:14px;">사내 LLM이 자리 잡을 때까지 &mdash; 새 도구를 향한 <em>신나는 마음</em>은 잠시 가라앉혀 주십시오. 외부 LLM에 회사 데이터를 보내는 대신, 우리는 <b>도구와 기능</b>을 만들어 안으로 들이는 데 집중합니다.</span>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>08</b> / 09</span>
+    </div>
+  </div>
+</body></html>

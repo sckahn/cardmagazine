@@ -687,7 +687,7 @@
       return spreadIndexOfSrc(state.spreads, firstSrc);
     }
     function row(t) {
-      var num = String(t.n).padStart(2, '0');
+      var num = t.special ? '★' : String(t.n).padStart(2, '0');
       var startSpread = resolveStartSpread(t.firstSrc);
       return '<button type="button" class="toc-row" data-spread="' + startSpread + '">'
         + '<span class="toc-num">' + num + '</span>'
@@ -1047,17 +1047,19 @@
           var tocEntries = [];
           data.forEach(function (s) {
             var firstSrcIdx = srcs.length;
+            var folder = s.folder || (s.n + '-cards-' + s.slug);
             s.slides.forEach(function (slide) {
               var stem = slide.replace(/\.png$/, '');
-              srcs.push(s.n + '-cards-' + s.slug + '/' + stem + '.html');
+              srcs.push(folder + '/' + stem + '.html');
               totalCards++;
             });
             tocEntries.push({
               n: s.n,
+              special: !!s.special,
               name: s.name,
               subtitle: s.subtitle,
               firstSrc: srcs[firstSrcIdx],
-              page: firstSrcIdx + 1  // 표시용 페이지 번호 (카드 기준)
+              page: firstSrcIdx + 1
             });
           });
           var coverOptions = {

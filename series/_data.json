@@ -23,7 +23,9 @@
       "14-koch-physical-ai.png",
       "15-outro.png"
     ],
-    "count": 15
+    "count": 15,
+    "folder": "1-cards-philosophy",
+    "outputs_folder": "1-outputs-philosophy"
   },
   {
     "n": 2,
@@ -40,7 +42,9 @@
       "05-parrot-of-taste.png",
       "06-outro.png"
     ],
-    "count": 6
+    "count": 6,
+    "folder": "2-cards-taste",
+    "outputs_folder": "2-outputs-taste"
   },
   {
     "n": 3,
@@ -60,7 +64,9 @@
       "08-why-hot.png",
       "09-outro.png"
     ],
-    "count": 9
+    "count": 9,
+    "folder": "3-cards-vibe",
+    "outputs_folder": "3-outputs-vibe"
   },
   {
     "n": 4,
@@ -78,7 +84,9 @@
       "06-foucault-parrhesia.png",
       "07-outro.png"
     ],
-    "count": 7
+    "count": 7,
+    "folder": "4-cards-loop",
+    "outputs_folder": "4-outputs-loop"
   },
   {
     "n": 5,
@@ -96,7 +104,9 @@
       "06-co-evolution.png",
       "07-next-wave.png"
     ],
-    "count": 7
+    "count": 7,
+    "folder": "5-cards-canvas",
+    "outputs_folder": "5-outputs-canvas"
   },
   {
     "n": 6,
@@ -115,7 +125,9 @@
       "07-ai-uncanny.png",
       "08-outro.png"
     ],
-    "count": 8
+    "count": 8,
+    "folder": "6-cards-aura",
+    "outputs_folder": "6-outputs-aura"
   },
   {
     "n": 7,
@@ -134,7 +146,9 @@
       "07-body-language.png",
       "08-outro.png"
     ],
-    "count": 8
+    "count": 8,
+    "folder": "7-cards-rhythm",
+    "outputs_folder": "7-outputs-rhythm"
   },
   {
     "n": 8,
@@ -154,7 +168,9 @@
       "08-compare.png",
       "09-outro.png"
     ],
-    "count": 9
+    "count": 9,
+    "folder": "8-cards-dream",
+    "outputs_folder": "8-outputs-dream"
   },
   {
     "n": 9,
@@ -174,7 +190,9 @@
       "08-chomsky-2023.png",
       "09-outro.png"
     ],
-    "count": 9
+    "count": 9,
+    "folder": "9-cards-lingua",
+    "outputs_folder": "9-outputs-lingua"
   },
   {
     "n": 10,
@@ -193,7 +211,9 @@
       "07-threat-origin.png",
       "08-outro.png"
     ],
-    "count": 8
+    "count": 8,
+    "folder": "10-cards-bias",
+    "outputs_folder": "10-outputs-bias"
   },
   {
     "n": 11,
@@ -213,7 +233,9 @@
       "08-schopenhauer.png",
       "09-outro.png"
     ],
-    "count": 9
+    "count": 9,
+    "folder": "11-cards-drive",
+    "outputs_folder": "11-outputs-drive"
   },
   {
     "n": 12,
@@ -232,7 +254,9 @@
       "07-race.png",
       "08-outro.png"
     ],
-    "count": 8
+    "count": 8,
+    "folder": "12-cards-earth",
+    "outputs_folder": "12-outputs-earth"
   },
   {
     "n": 13,
@@ -251,7 +275,9 @@
       "07-collective.png",
       "08-outro.png"
     ],
-    "count": 8
+    "count": 8,
+    "folder": "13-cards-wisdom",
+    "outputs_folder": "13-outputs-wisdom"
   },
   {
     "n": 14,
@@ -272,7 +298,9 @@
       "09-third-way.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "14-cards-utopia",
+    "outputs_folder": "14-outputs-utopia"
   },
   {
     "n": 15,
@@ -292,7 +320,9 @@
       "08-sora.png",
       "09-outro.png"
     ],
-    "count": 9
+    "count": 9,
+    "folder": "15-cards-cinema",
+    "outputs_folder": "15-outputs-cinema"
   },
   {
     "n": 16,
@@ -314,7 +344,9 @@
       "10-simulation.png",
       "11-outro.png"
     ],
-    "count": 11
+    "count": 11,
+    "folder": "16-cards-destiny",
+    "outputs_folder": "16-outputs-destiny"
   },
   {
     "n": 17,
@@ -335,7 +367,9 @@
       "09-ai-time.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "17-cards-time",
+    "outputs_folder": "17-outputs-time"
   },
   {
     "n": 18,
@@ -356,7 +390,9 @@
       "09-ai-limit.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "18-cards-naming",
+    "outputs_folder": "18-outputs-naming"
   },
   {
     "n": 19,
@@ -377,7 +413,9 @@
       "09-human-space.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "19-cards-soul",
+    "outputs_folder": "19-outputs-soul"
   },
   {
     "n": 20,
@@ -398,7 +436,9 @@
       "09-lecun-message.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "20-cards-vision",
+    "outputs_folder": "20-outputs-vision"
   },
   {
     "n": 21,
@@ -418,7 +458,9 @@
       "08-synthesis.png",
       "09-outro.png"
     ],
-    "count": 9
+    "count": 9,
+    "folder": "21-cards-liberty",
+    "outputs_folder": "21-outputs-liberty"
   },
   {
     "n": 22,
@@ -440,7 +482,9 @@
       "10-capital.png",
       "11-outro.png"
     ],
-    "count": 11
+    "count": 11,
+    "folder": "22-cards-arms",
+    "outputs_folder": "22-outputs-arms"
   },
   {
     "n": 23,
@@ -461,7 +505,9 @@
       "09-paradox.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "23-cards-compress",
+    "outputs_folder": "23-outputs-compress"
   },
   {
     "n": 24,
@@ -480,7 +526,9 @@
       "07-palantir.png",
       "08-outro.png"
     ],
-    "count": 8
+    "count": 8,
+    "folder": "24-cards-langue",
+    "outputs_folder": "24-outputs-langue"
   },
   {
     "n": 25,
@@ -501,7 +549,9 @@
       "09-paradox.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "25-cards-scripts",
+    "outputs_folder": "25-outputs-scripts"
   },
   {
     "n": 26,
@@ -522,7 +572,9 @@
       "09-quantum-impact.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "26-cards-bits",
+    "outputs_folder": "26-outputs-bits"
   },
   {
     "n": 27,
@@ -543,7 +595,9 @@
       "09-renaissance.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "27-cards-renaissance",
+    "outputs_folder": "27-outputs-renaissance"
   },
   {
     "n": 28,
@@ -564,7 +618,9 @@
       "09-too-much.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "28-cards-noise",
+    "outputs_folder": "28-outputs-noise"
   },
   {
     "n": 29,
@@ -585,7 +641,9 @@
       "09-heuristic.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "29-cards-arena",
+    "outputs_folder": "29-outputs-arena"
   },
   {
     "n": 30,
@@ -606,6 +664,54 @@
       "09-vs-arena.png",
       "10-outro.png"
     ],
-    "count": 10
+    "count": 10,
+    "folder": "30-cards-swarm",
+    "outputs_folder": "30-outputs-swarm"
+  },
+  {
+    "n": 31,
+    "slug": "craft",
+    "name": "Craft",
+    "hanja": "匠",
+    "subtitle": "디테일은 베껴지지 않습니다",
+    "desc": "Ruskin 1853 · Morris · Benjamin 1936 · Rams · Sennett 2008 — AI Slop 시대의 장인정신과 디테일.",
+    "slides": [
+      "01-cover.png",
+      "02-slop.png",
+      "03-ruskin.png",
+      "04-morris.png",
+      "05-benjamin.png",
+      "06-rams.png",
+      "07-sennett.png",
+      "08-mvp.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "31-cards-craft",
+    "outputs_folder": "31-outputs-craft"
+  },
+  {
+    "n": null,
+    "special": true,
+    "slug": "confess",
+    "folder_prefix": "special",
+    "name": "Confess",
+    "hanja": "秘",
+    "subtitle": "만능 AI에 대한 유출의 그늘",
+    "desc": "Jourard·Altman·Taylor·Foucault — 자기노출과 고해 권력. 사내 보안 회색지대와 'Bring AI Inside' 로드맵.",
+    "slides": [
+      "01-cover.png",
+      "02-jourard.png",
+      "03-altman-taylor.png",
+      "04-foucault.png",
+      "05-data-leak.png",
+      "06-grey-zone.png",
+      "07-injection.png",
+      "08-bring-ai-in.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "special-cards-confess",
+    "outputs_folder": "special-outputs-confess"
   }
 ]
