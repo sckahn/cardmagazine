@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Bottleneck</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; COMPUTE</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;&middot;&nbsp; 병목 &middot; Bottleneck</div>
+    </div>
+    <div class="era">
+      <span class="year">1967 &middot; 1984</span>
+      <span class="label"><b>AMDAHL &middot; GOLDRATT</b><span class="sub">병목이 미래를 결정</span></span>
+    </div>
+    <h1 class="title sm">가장 약한 고리가 &mdash;<br /><em>전체</em>를 결정합니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.1fr 1fr; gap:24px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 440 280" style="width:100%; max-width:440px; display:block;">
+          <defs>
+            <linearGradient id="curve95" x1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E35205"/>
+              <stop offset="100%" stop-color="#FFE4D0"/>
+            </linearGradient>
+          </defs>
+          <!-- axes -->
+          <line x1="50" y1="240" x2="420" y2="240" stroke="#0f1e38" stroke-width="2"/>
+          <line x1="50" y1="40"  x2="50"  y2="240" stroke="#0f1e38" stroke-width="2"/>
+          <text x="425" y="255" font-family="JetBrains Mono" font-size="10" fill="#0f1e38" font-weight="700">N (cores)</text>
+          <text x="55" y="32"  font-family="JetBrains Mono" font-size="10" fill="#0f1e38" font-weight="700">SPEEDUP</text>
+          <!-- 50% parallel -> max 2x -->
+          <path d="M50,240 Q120,200 200,180 T420,170" stroke="#9aa6bd" stroke-width="3" fill="none"/>
+          <text x="370" y="165" font-family="JetBrains Mono" font-size="11" fill="#5a6e92" font-weight="700">50% &rarr; 2x</text>
+          <!-- 75% parallel -> max 4x -->
+          <path d="M50,240 Q100,180 180,140 T420,120" stroke="#1a3158" stroke-width="3" fill="none"/>
+          <text x="370" y="115" font-family="JetBrains Mono" font-size="11" fill="#1a3158" font-weight="700">75% &rarr; 4x</text>
+          <!-- 95% parallel -> max 20x -->
+          <path d="M50,240 Q90,140 160,90 T420,60" stroke="url(#curve95)" stroke-width="4" fill="none"/>
+          <text x="365" y="55" font-family="JetBrains Mono" font-size="11" fill="#E35205" font-weight="800">95% &rarr; 20x</text>
+          <!-- horizontal limit lines -->
+          <line x1="50" y1="60" x2="420" y2="60" stroke="#E35205" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+          <text x="240" y="265" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#0f1e38" font-weight="700">AMDAHL'S LAW &middot; 1967</text>
+        </svg>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14.5px;"><b>Amdahl's Law</b> (1967) &mdash; 시스템에서 병렬 가능한 부분이 아무리 빨라져도, 직렬 부분이 전체 속도를 묶습니다.</p>
+        <p class="body-sm" style="font-size:14.5px; margin-top:10px;">Goldratt의 <em>Theory of Constraints</em> (1984)도 같은 통찰 &mdash; <b>가장 약한 고리</b>가 시스템의 처리량을 정합니다. AI 시대의 병목 &mdash; 메모리 대역폭(HBM), 전력 송배전, 냉각, 그리고 인력입니다.</p>
+
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.9)); border-left:3px solid var(--brand); color:#fff;">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">현재 병목 &middot; 2024~</div>
+          <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.7;">
+            1) <b style="color:#FFD7BD;">HBM 메모리</b> &middot; SK하이닉스 &middot; 삼성 &middot; 마이크론 3사 과점<br />
+            2) <b style="color:#FFD7BD;">TSMC</b> 첨단 노드 capacity<br />
+            3) 데이터센터 <b style="color:#FFD7BD;">전력 인입</b>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>07</b> / 09</span>
+    </div>
+  </div>
+</body></html>

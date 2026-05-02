@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · Starvation</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; COMPUTE</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;&middot;&nbsp; 기아 상태 &middot; Starvation</div>
+    </div>
+    <div class="era">
+      <span class="year">RESOURCE</span>
+      <span class="label"><b>STARVATION &amp; FAIRNESS</b><span class="sub">누가 먼저 먹는가</span></span>
+    </div>
+    <h1 class="title sm">어떤 스레드는 &mdash;<br /><em>영영 굶습니다</em>.</h1>
+
+    <div class="split" style="grid-template-columns:1.1fr 1fr; gap:24px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 420 320" style="width:100%; max-width:420px; display:block;">
+          <defs>
+            <linearGradient id="gpu" x1="0" x2="1">
+              <stop offset="0%" stop-color="#0f1e38"/>
+              <stop offset="100%" stop-color="#E35205"/>
+            </linearGradient>
+            <linearGradient id="big" x1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E35205"/>
+              <stop offset="100%" stop-color="#B0411E"/>
+            </linearGradient>
+          </defs>
+          <!-- GPU/H100 box -->
+          <rect x="20" y="40" width="180" height="240" fill="url(#gpu)" rx="6"/>
+          <text x="110" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="14" font-weight="800" fill="#FFE4D0">NVIDIA H100</text>
+          <text x="110" y="98" text-anchor="middle" font-family="JetBrains Mono" font-size="11" fill="#FFD7BD">/ B200 SUPPLY</text>
+          <text x="110" y="170" text-anchor="middle" font-family="Noto Sans KR" font-size="40" font-weight="900" fill="#fff">70%</text>
+          <text x="110" y="200" text-anchor="middle" font-family="Noto Sans KR" font-size="11" fill="#FFE4D0">상위 10대 기업 점유</text>
+          <!-- Queue of stakeholders -->
+          <rect x="240" y="40" width="160" height="36" fill="url(#big)" rx="4"/>
+          <text x="320" y="63" text-anchor="middle" font-family="Noto Sans KR" font-size="13" font-weight="800" fill="#fff">Big Tech &middot; 점유</text>
+          <rect x="240" y="92"  width="160" height="34" fill="#1a3158" rx="4"/>
+          <text x="320" y="114" text-anchor="middle" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#fff">정부 &middot; 줄</text>
+          <rect x="240" y="142" width="160" height="34" fill="#2a4778" rx="4"/>
+          <text x="320" y="164" text-anchor="middle" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#fff">학계 &middot; 줄</text>
+          <rect x="240" y="192" width="160" height="34" fill="#5a6e92" rx="4"/>
+          <text x="320" y="214" text-anchor="middle" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#fff">스타트업 &middot; 대기</text>
+          <rect x="240" y="242" width="160" height="34" fill="#9aa6bd" rx="4"/>
+          <text x="320" y="264" text-anchor="middle" font-family="Noto Sans KR" font-size="12" font-weight="700" fill="#fff">개인 &middot; 굶음</text>
+          <text x="320" y="296" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0f1e38" font-weight="700">STARVATION QUEUE</text>
+        </svg>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14.5px;">컴퓨터과학에서 <b>기아</b>(starvation)란 &mdash; 어떤 스레드가 양보만 하다가 영영 자원을 못 받는 상태입니다.</p>
+        <p class="body-sm" style="font-size:14.5px; margin-top:10px;">AI 컴퓨트도 같습니다. NVIDIA H100 &middot; B200은 <em>Big Tech</em>가 쓸어가고, 학계와 스타트업은 클라우드 줄을 섭니다. 자원의 불균형은 곧 발전의 불균형 &mdash; <b>누가 먼저 먹는가가 누가 발전하는가를 결정합니다</b>.</p>
+
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, var(--brand-soft), var(--bg-white)); border-left:3px solid var(--brand);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">MIT FUTURETECH 2024</div>
+          <div style="font-size:13px; color:var(--ink-body); margin-top:3px; line-height:1.6;">상위 10대 AI 컴퓨트 클러스터 보유 기업이 전체 첨단 GPU의 <b style="color:var(--navy);">70% 이상</b>을 점유합니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>06</b> / 09</span>
+    </div>
+  </div>
+</body></html>

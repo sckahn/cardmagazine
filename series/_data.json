@@ -755,5 +755,27 @@
     "count": 9,
     "folder": "34-cards-confess",
     "outputs_folder": "34-outputs-confess"
+  },
+  {
+    "n": 35,
+    "slug": "compute",
+    "name": "Compute",
+    "hanja": "算",
+    "subtitle": "AI는 무엇을 먹고 사는가",
+    "desc": "데이터센터·NPU·SoC · Dijkstra 1965 철학자의 식탁 · Starvation · Amdahl/Goldratt 병목 · Rawls 무지의 베일 · Sen 역량 접근법 — 컴퓨트 자원과 분배 정의.",
+    "slides": [
+      "01-cover.png",
+      "02-datacenter.png",
+      "03-npu.png",
+      "04-soc.png",
+      "05-dijkstra.png",
+      "06-starvation.png",
+      "07-bottleneck.png",
+      "08-rawls-sen.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "35-cards-compute",
+    "outputs_folder": "35-outputs-compute"
   }
 ]
