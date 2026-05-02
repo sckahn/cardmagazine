@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · Convergence</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; SMART</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;&middot;&nbsp; 두 길의 합류</div>
+    </div>
+    <div class="era">
+      <span class="year">CONVERGENCE</span>
+      <span class="label"><b>BOTH ARE NEEDED</b><span class="sub">Frontier 모델 2025 &middot; DeepSeek-R1 &middot; o3</span></span>
+    </div>
+    <h1 class="title sm">결국 &mdash;<br /><em>둘 다</em> 필요했습니다.</h1>
+
+    <p class="body-sm" style="font-size:14.5px; margin-top:14px;">'just scale it'은 끝나가고 있습니다. Frontier 모델은 &mdash; <b>큰 파라미터 + 영리한 라우팅(MoE) + 새로운 추론 회로(reasoning chain)</b>의 합입니다. DeepSeek-R1, o3 같은 모델은 크기가 아니라 <em>추론 단계</em>에서 새 점수를 만들었습니다.</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; margin-top:18px;">
+      <div style="padding:18px 18px; background:linear-gradient(160deg, #0f1e38 0%, #1a3158 100%); color:white; min-height:240px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">DENSE</div>
+        <div style="font-family:'Noto Serif KR', serif; font-size:20px; font-weight:700; margin-top:8px; line-height:1.4;">단일 거대 모델</div>
+        <div style="font-size:12.5px; line-height:1.6; margin-top:10px; color:#E0E8F4; flex:1;">모든 파라미터가 항상 활성 &middot; 단순 forward pass.</div>
+        <div style="margin-top:8px; font-size:11px; color:#FFE4D0; font-weight:700;">GPT-3 &middot; PaLM &middot; LLaMA</div>
+      </div>
+      <div style="padding:18px 18px; background:linear-gradient(160deg, #B08336 0%, #8a6324 100%); color:white; min-height:240px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">MIXTURE</div>
+        <div style="font-family:'Noto Serif KR', serif; font-size:20px; font-weight:700; margin-top:8px; line-height:1.4;">전문가 라우팅</div>
+        <div style="font-size:12.5px; line-height:1.6; margin-top:10px; color:#FFE4D0; flex:1;">MoE 라우팅으로 같은 비용에 더 많은 지식을 담습니다.</div>
+        <div style="margin-top:8px; font-size:11px; color:#FFE4D0; font-weight:700;">DeepSeek-V3 &middot; Mixtral</div>
+      </div>
+      <div style="padding:18px 18px; background:linear-gradient(160deg, #E35205 0%, #B5400B 100%); color:white; min-height:240px; display:flex; flex-direction:column;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">REASONING</div>
+        <div style="font-family:'Noto Serif KR', serif; font-size:20px; font-weight:700; margin-top:8px; line-height:1.4;">추론 시간 폭증</div>
+        <div style="font-size:12.5px; line-height:1.6; margin-top:10px; color:#FFE4D0; flex:1;">test-time compute &mdash; 더 오래 생각할수록 정확도가 폭증합니다.</div>
+        <div style="margin-top:8px; font-size:11px; color:#FFE4D0; font-weight:700;">o1 &middot; o3 &middot; DeepSeek-R1</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; padding:12px 14px; background:linear-gradient(135deg, var(--brand-soft), rgba(255,255,255,0.5)); border-left:3px solid var(--brand);">
+      <div style="font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">FRONTIER 2025</div>
+      <div style="font-size:12.5px; line-height:1.55; color:var(--ink-body); margin-top:3px;">최신 모델들은 셋의 합입니다 &mdash; <b>크기 + 라우팅 + 추론</b>. 어느 한 축만으로는 더 이상 점수가 나오지 않습니다.</div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"><b>06</b> / 09</span></div>
+  </div>
+</body></html>
