@@ -28,27 +28,85 @@
       </div>
 
       <div style="display:flex; align-items:center; justify-content:center;">
-        <svg viewBox="0 0 240 240" style="width:100%; max-width:240px;">
+        <svg viewBox="0 0 260 260" style="width:100%; max-width:260px;">
           <defs>
-            <radialGradient id="tbl" cx="50%" cy="50%">
+            <radialGradient id="tbl" cx="50%" cy="50%" r="50%">
               <stop offset="0%" stop-color="#FFE4D0"/>
-              <stop offset="100%" stop-color="#E35205"/>
+              <stop offset="100%" stop-color="#B5400B"/>
+            </radialGradient>
+            <radialGradient id="plate" cx="50%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#fff"/>
+              <stop offset="100%" stop-color="#E0DACE"/>
             </radialGradient>
           </defs>
-          <circle cx="120" cy="120" r="60" fill="url(#tbl)" stroke="#0f1e38" stroke-width="2"/>
-          <!-- 5 philosophers -->
-          <circle cx="120" cy="40"  r="14" fill="#0f1e38"/>
-          <circle cx="196" cy="96"  r="14" fill="#0f1e38"/>
-          <circle cx="167" cy="190" r="14" fill="#0f1e38"/>
-          <circle cx="73"  cy="190" r="14" fill="#0f1e38"/>
-          <circle cx="44"  cy="96"  r="14" fill="#0f1e38"/>
-          <!-- 5 forks (lines from table edge) -->
-          <line x1="120" y1="60" x2="160" y2="68"  stroke="#B08336" stroke-width="3"/>
-          <line x1="180" y1="100" x2="184" y2="148" stroke="#B08336" stroke-width="3"/>
-          <line x1="148" y1="174" x2="92"  y2="174" stroke="#B08336" stroke-width="3"/>
-          <line x1="56"  y1="148" x2="60"  y2="100" stroke="#B08336" stroke-width="3"/>
-          <line x1="80"  y1="68"  x2="120" y2="60"  stroke="#B08336" stroke-width="3"/>
-          <text x="120" y="124" text-anchor="middle" font-family="JetBrains Mono" font-size="12" font-weight="700" fill="#fff">DEADLOCK?</text>
+          <!-- 식탁 (둥근 나무) -->
+          <circle cx="130" cy="130" r="78" fill="url(#tbl)" stroke="#0f1e38" stroke-width="2"/>
+          <circle cx="130" cy="130" r="78" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-dasharray="2 4"/>
+
+          <!-- 5명의 철학자 (어깨+머리) — 72° 간격 -->
+          <!-- p1 top -->
+          <ellipse cx="130" cy="22" rx="22" ry="11" fill="#0f1e38"/>
+          <circle cx="130" cy="14" r="11" fill="#0f1e38"/>
+          <!-- p2 right-top -->
+          <ellipse cx="232" cy="92" rx="22" ry="11" transform="rotate(72 232 92)" fill="#0f1e38"/>
+          <circle cx="237" cy="84" r="11" fill="#0f1e38"/>
+          <!-- p3 right-bottom -->
+          <ellipse cx="194" cy="220" rx="22" ry="11" transform="rotate(144 194 220)" fill="#0f1e38"/>
+          <circle cx="200" cy="226" r="11" fill="#0f1e38"/>
+          <!-- p4 left-bottom -->
+          <ellipse cx="66" cy="220" rx="22" ry="11" transform="rotate(216 66 220)" fill="#0f1e38"/>
+          <circle cx="60" cy="226" r="11" fill="#0f1e38"/>
+          <!-- p5 left-top -->
+          <ellipse cx="28" cy="92" rx="22" ry="11" transform="rotate(288 28 92)" fill="#0f1e38"/>
+          <circle cx="23" cy="84" r="11" fill="#0f1e38"/>
+
+          <!-- 5개의 접시 (각 철학자 앞) — 더 안쪽 r=58 -->
+          <circle cx="130" cy="68" r="11" fill="url(#plate)" stroke="#0f1e38" stroke-width="0.8"/>
+          <circle cx="186" cy="106" r="11" fill="url(#plate)" stroke="#0f1e38" stroke-width="0.8"/>
+          <circle cx="164" cy="172" r="11" fill="url(#plate)" stroke="#0f1e38" stroke-width="0.8"/>
+          <circle cx="96" cy="172" r="11" fill="url(#plate)" stroke="#0f1e38" stroke-width="0.8"/>
+          <circle cx="74" cy="106" r="11" fill="url(#plate)" stroke="#0f1e38" stroke-width="0.8"/>
+
+          <!-- 5개의 포크 — 접시 사이에 (36° offset, r=64) -->
+          <!-- f1 between p1·p2 -->
+          <g transform="translate(166 76) rotate(36)">
+            <rect x="-2" y="-12" width="4" height="24" fill="#9CA0A8" rx="1"/>
+            <rect x="-5" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="-1" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="3"  y="-14" width="2" height="6" fill="#9CA0A8"/>
+          </g>
+          <!-- f2 between p2·p3 -->
+          <g transform="translate(192 152) rotate(108)">
+            <rect x="-2" y="-12" width="4" height="24" fill="#9CA0A8" rx="1"/>
+            <rect x="-5" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="-1" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="3"  y="-14" width="2" height="6" fill="#9CA0A8"/>
+          </g>
+          <!-- f3 between p3·p4 (bottom) -->
+          <g transform="translate(130 196) rotate(180)">
+            <rect x="-2" y="-12" width="4" height="24" fill="#9CA0A8" rx="1"/>
+            <rect x="-5" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="-1" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="3"  y="-14" width="2" height="6" fill="#9CA0A8"/>
+          </g>
+          <!-- f4 between p4·p5 -->
+          <g transform="translate(68 152) rotate(252)">
+            <rect x="-2" y="-12" width="4" height="24" fill="#9CA0A8" rx="1"/>
+            <rect x="-5" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="-1" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="3"  y="-14" width="2" height="6" fill="#9CA0A8"/>
+          </g>
+          <!-- f5 between p5·p1 -->
+          <g transform="translate(94 76) rotate(324)">
+            <rect x="-2" y="-12" width="4" height="24" fill="#9CA0A8" rx="1"/>
+            <rect x="-5" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="-1" y="-14" width="2" height="6" fill="#9CA0A8"/>
+            <rect x="3"  y="-14" width="2" height="6" fill="#9CA0A8"/>
+          </g>
+
+          <!-- 중앙 라벨 -->
+          <text x="130" y="126" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" letter-spacing="1.5" font-weight="800" fill="#fff" opacity="0.85">DEADLOCK</text>
+          <text x="130" y="140" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1.2" fill="#FFE4D0" opacity="0.75">5 forks · 5 philosophers</text>
         </svg>
       </div>
 
