@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · Goodhart's Law</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; ALLROUND</div>
+      <div class="chaptertag">CHAPTER 03 &nbsp;&middot;&nbsp; 모두가 100점인 답안지</div>
+    </div>
+    <div class="era">
+      <span class="year">1975</span>
+      <span class="label"><b>CHARLES GOODHART</b><span class="sub">Goodhart's Law &middot; 측정이 목표가 되면</span></span>
+    </div>
+    <h1 class="title sm">측정이 <em>목표</em>가 되면 &mdash;<br />측정은 <em>무너집니다</em>.</h1>
+
+    <div class="split" style="grid-template-columns:1.0fr 1.4fr; gap:24px; margin-top:14px;">
+      <div class="left">
+        <div style="height:300px; padding:22px 22px; background:linear-gradient(135deg, #0f1e38 0%, #1a3158 60%, #E35205 100%); color:#fff; box-shadow:0 12px 26px -14px rgba(15,30,56,0.55); display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.22em; color:#FFE4D0; font-weight:800;">CHARLES GOODHART</div>
+            <div style="font-size:16px; font-weight:800; color:#fff; margin-top:4px;">1936~ &middot; LSE</div>
+            <div style="font-size:12px; color:#FFD7BD; margin-top:2px;">영국 경제학자 &middot; Bank of England</div>
+          </div>
+          <div style="border-top:1px solid rgba(255,228,208,0.3); padding-top:14px;">
+            <div style="font-family:'Noto Serif KR', serif; font-size:18px; font-weight:700; line-height:1.45; color:#fff;">&ldquo;When a measure becomes a target,<br />it ceases to be a good measure.&rdquo;</div>
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:700; margin-top:10px;">GOODHART'S LAW &middot; 1975</div>
+          </div>
+        </div>
+        <div style="margin-top:8px; padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">GOODHART 1975</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">통화정책 실패 분석에서 출발 &middot; 교육 &middot; 경영 &middot; AI까지 같은 패턴 반복.</div>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14.5px;">1975년 영국 경제학자 Charles Goodhart는 통화정책 실패를 분석하며 한 법칙을 발견했습니다. <b>&ldquo;측정이 정책 목표가 되는 순간, 그 측정은 더 이상 좋은 측정이 아니다.&rdquo;</b></p>
+        <p class="body-sm" style="font-size:14.5px; margin-top:10px;">AI 벤치마크도 같은 운명입니다 &mdash; <em>MMLU 90% &middot; GSM8K 95% &middot; HellaSwag 95%</em>. 고전 벤치마크는 포화됐고, test-set leak 의심도 늘고 있습니다. 자가 답안지가 되는 순간, 자는 더 이상 자가 아닙니다.</p>
+
+        <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
+          <div style="padding:10px 12px; background:linear-gradient(135deg, var(--brand-soft), var(--bg-white)); border-left:3px solid var(--brand);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">MMLU</div>
+            <div style="font-size:18px; font-weight:900; color:var(--navy); margin-top:2px;">90%+</div>
+            <div style="font-size:10.5px; color:var(--ink-body); margin-top:2px;">포화 (saturated)</div>
+          </div>
+          <div style="padding:10px 12px; background:linear-gradient(135deg, var(--brand-soft), var(--bg-white)); border-left:3px solid var(--brand);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">GSM8K</div>
+            <div style="font-size:18px; font-weight:900; color:var(--navy); margin-top:2px;">95%+</div>
+            <div style="font-size:10.5px; color:var(--ink-body); margin-top:2px;">포화 (saturated)</div>
+          </div>
+          <div style="padding:10px 12px; background:linear-gradient(135deg, var(--brand-soft), var(--bg-white)); border-left:3px solid var(--brand);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">HELLASWAG</div>
+            <div style="font-size:18px; font-weight:900; color:var(--navy); margin-top:2px;">95%+</div>
+            <div style="font-size:10.5px; color:var(--ink-body); margin-top:2px;">포화 (saturated)</div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); border-left:3px solid var(--brand); color:#fff;">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">GOODHART'S LAW (1975)</div>
+          <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.6;">통화정책에서 시작해 교육 &middot; 경영 &middot; AI까지 &mdash; 같은 패턴이 반복됩니다. 시험을 잘 보기 위한 학습은 시험만 잘 봅니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>04</b> / 09</span>
+    </div>
+  </div>
+</body></html>

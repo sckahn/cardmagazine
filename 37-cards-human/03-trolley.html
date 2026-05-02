@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · Trolley Problem</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; HUMAN</div>
+      <div class="chaptertag">CHAPTER 02 &nbsp;&middot;&nbsp; 거리의 윤리</div>
+    </div>
+    <div class="era">
+      <span class="year">1967 &middot; 1976</span>
+      <span class="label"><b>PHILIPPA FOOT &middot; JUDITH THOMSON</b><span class="sub">Trolley Problem &middot; 거리의 윤리</span></span>
+    </div>
+    <h1 class="title sm">다섯을 살리려 &mdash;<br /><em>한 명</em>을 밀 수 있습니까?</h1>
+
+    <div style="margin-top:14px; padding:18px 20px; background:linear-gradient(135deg, rgba(15,30,56,0.05), rgba(255,255,255,0.6)); border-left:3px solid var(--navy);">
+      <svg viewBox="0 0 880 230" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#0f1e38" />
+          </marker>
+        </defs>
+        <!-- main track -->
+        <line x1="40" y1="120" x2="820" y2="120" stroke="#0f1e38" stroke-width="3" />
+        <line x1="40" y1="135" x2="820" y2="135" stroke="#0f1e38" stroke-width="3" />
+        <!-- ties -->
+        <g stroke="#0f1e38" stroke-width="2">
+          <line x1="80" y1="115" x2="80" y2="140" /><line x1="160" y1="115" x2="160" y2="140" /><line x1="240" y1="115" x2="240" y2="140" /><line x1="320" y1="115" x2="320" y2="140" /><line x1="540" y1="115" x2="540" y2="140" /><line x1="620" y1="115" x2="620" y2="140" /><line x1="700" y1="115" x2="700" y2="140" /><line x1="780" y1="115" x2="780" y2="140" />
+        </g>
+        <!-- branch (side track) -->
+        <path d="M380,127 Q440,127 480,80 L820,80" stroke="#E35205" stroke-width="3" fill="none" />
+        <path d="M380,128 Q440,128 480,93 L820,93" stroke="#E35205" stroke-width="3" fill="none" />
+        <!-- switch -->
+        <circle cx="380" cy="127" r="6" fill="#E35205" />
+        <text x="392" y="158" font-family="JetBrains Mono, monospace" font-size="11" fill="#E35205" font-weight="700">SWITCH</text>
+        <!-- trolley -->
+        <rect x="120" y="95" width="60" height="35" fill="#0f1e38" />
+        <rect x="128" y="100" width="14" height="14" fill="#FFE4D0" />
+        <rect x="156" y="100" width="14" height="14" fill="#FFE4D0" />
+        <circle cx="135" cy="135" r="6" fill="#0f1e38" /><circle cx="165" cy="135" r="6" fill="#0f1e38" />
+        <line x1="180" y1="115" x2="220" y2="115" stroke="#0f1e38" stroke-width="2" marker-end="url(#arr)" />
+        <!-- 5 people on main track -->
+        <g fill="#0f1e38">
+          <circle cx="690" cy="105" r="7" /><rect x="685" y="112" width="10" height="18" />
+          <circle cx="710" cy="105" r="7" /><rect x="705" y="112" width="10" height="18" />
+          <circle cx="730" cy="105" r="7" /><rect x="725" y="112" width="10" height="18" />
+          <circle cx="750" cy="105" r="7" /><rect x="745" y="112" width="10" height="18" />
+          <circle cx="770" cy="105" r="7" /><rect x="765" y="112" width="10" height="18" />
+        </g>
+        <text x="690" y="155" font-family="JetBrains Mono, monospace" font-size="12" fill="#0f1e38" font-weight="800">5 PEOPLE</text>
+        <!-- 1 person on side track -->
+        <g fill="#E35205">
+          <circle cx="730" cy="65" r="7" /><rect x="725" y="72" width="10" height="18" />
+        </g>
+        <text x="745" y="80" font-family="JetBrains Mono, monospace" font-size="12" fill="#E35205" font-weight="800">1 PERSON</text>
+        <!-- labels -->
+        <text x="40" y="195" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#0f1e38" font-weight="700">LEVER 70% &mdash; 측선으로 돌리면 1명</text>
+        <text x="450" y="195" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#E35205" font-weight="700">FOOTBRIDGE 30% &mdash; 사람을 밀어 멈춤</text>
+      </svg>
+    </div>
+
+    <p class="body-sm" style="font-size:14.5px; margin-top:14px;">1967년 Philippa Foot이 제시하고 1976년 Judith Thomson이 확장한 트롤리 딜레마는 &mdash; 같은 산수가 다른 결정을 만든다는 것을 보여줍니다. <b>레버를 당기면</b> 70%가 &ldquo;당긴다&rdquo;고 답합니다. <b>다리에서 사람을 밀면</b> 30%로 떨어집니다. <em>거리(proximity)가 윤리를 바꿉니다</em>.</p>
+
+    <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); border-left:3px solid var(--brand); color:#fff;">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">JOSHUA GREENE 2001 &middot; SCIENCE</div>
+      <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.6;">fMRI 연구에서 <b>가까운 폭력은 감정 회로(편도체 &middot; 복내측 전전두엽)를 더 강하게 활성화</b>합니다. 윤리는 이성만이 아닙니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>03</b> / 09</span>
+    </div>
+  </div>
+</body></html>

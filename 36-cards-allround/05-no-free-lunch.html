@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>05 · No Free Lunch</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; ALLROUND</div>
+      <div class="chaptertag">CHAPTER 04 &nbsp;&middot;&nbsp; No Free Lunch Theorem</div>
+    </div>
+    <div class="era">
+      <span class="year">1997</span>
+      <span class="label"><b>DAVID WOLPERT &middot; WILLIAM MACREADY</b><span class="sub">No Free Lunch Theorem</span></span>
+    </div>
+    <h1 class="title sm"><em>공짜 점심</em>은 &mdash;<br />수학적으로 없습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.1fr 1fr; gap:24px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 460 300" style="width:100%; max-width:460px; display:block;">
+          <defs>
+            <linearGradient id="algA" x1="0" x2="1">
+              <stop offset="0%" stop-color="#0f1e38"/>
+              <stop offset="100%" stop-color="#2a4778"/>
+            </linearGradient>
+            <linearGradient id="algB" x1="0" x2="1">
+              <stop offset="0%" stop-color="#E35205"/>
+              <stop offset="100%" stop-color="#FFB088"/>
+            </linearGradient>
+          </defs>
+          <!-- axes -->
+          <line x1="40" y1="40" x2="40" y2="260" stroke="#0f1e38" stroke-width="2"/>
+          <line x1="40" y1="260" x2="430" y2="260" stroke="#0f1e38" stroke-width="2"/>
+          <text x="40" y="28" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#0f1e38">PERFORMANCE</text>
+          <text x="430" y="278" text-anchor="end" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#0f1e38">PROBLEM SPACE</text>
+
+          <!-- Algorithm A curve (high then low) -->
+          <path d="M 60 90 Q 140 60, 220 110 T 410 220" stroke="url(#algA)" stroke-width="4" fill="none"/>
+          <text x="80" y="80" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#0f1e38">ALG A</text>
+
+          <!-- Algorithm B curve (low then high, mirror) -->
+          <path d="M 60 220 Q 140 240, 220 180 T 410 90" stroke="url(#algB)" stroke-width="4" fill="none"/>
+          <text x="370" y="82" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#E35205">ALG B</text>
+
+          <!-- Average line -->
+          <line x1="60" y1="155" x2="410" y2="155" stroke="#B08336" stroke-width="2" stroke-dasharray="6 4"/>
+          <text x="220" y="148" text-anchor="middle" font-family="Noto Sans KR" font-size="11" font-weight="700" fill="#B08336">평균은 같습니다</text>
+
+          <!-- Cross point label -->
+          <circle cx="225" cy="155" r="5" fill="#B08336"/>
+        </svg>
+        <div style="margin-top:8px; padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">ALL PROBLEMS AVERAGED</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">한 알고리즘이 어떤 문제에서 잘하면, 다른 문제에서는 잃습니다. 모든 문제 분포 위에서 평균은 같습니다.</div>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14.5px;">1997년 Wolpert와 Macready는 한 가지를 증명했습니다 &mdash; <b>&ldquo;모든 가능한 문제 분포에서 우월한 알고리즘은 존재하지 않습니다.&rdquo;</b></p>
+        <p class="body-sm" style="font-size:14.5px; margin-top:10px;">한 영역에서 잘하면, 다른 영역에서 잃습니다. 만능 모델은 &mdash; <em>수학적으로 불가능합니다</em>. 어느 모델이든 자신이 잘하는 분포에서만 1등이고, 그 분포 밖에서는 다른 누군가가 1등입니다.</p>
+
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, var(--brand-soft), var(--bg-white)); border-left:3px solid var(--brand);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">WOLPERT &amp; MACREADY (1997)</div>
+          <div style="font-size:13px; color:var(--ink-body); margin-top:3px; line-height:1.6;"><em>&ldquo;No Free Lunch Theorems for Optimization&rdquo;</em> &middot; IEEE Transactions on Evolutionary Computation, vol. 1, no. 1.</div>
+        </div>
+
+        <div style="margin-top:10px; padding:11px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); border-left:3px solid var(--brand); color:#fff;">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">NO FREE LUNCH</div>
+          <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.6;">한 도메인을 잘하려면 다른 도메인을 포기해야 합니다. 가정(prior) 없이는 학습도 없습니다 &mdash; 이것이 수학의 결론입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>05</b> / 09</span>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · Catastrophic Forgetting</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; ALLROUND</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;&middot;&nbsp; 특화의 대가 &middot; Catastrophic Forgetting</div>
+    </div>
+    <div class="era">
+      <span class="year">1989~2017</span>
+      <span class="label"><b>MCCLOSKEY &middot; COHEN &middot; KIRKPATRICK</b><span class="sub">신경망의 잊음</span></span>
+    </div>
+    <h1 class="title sm">한 우물을 파면 &mdash;<br /><em>다른 우물</em>을 잊습니다.</h1>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr auto 1fr; gap:14px; align-items:stretch;">
+      <div style="padding:18px 18px; background:linear-gradient(135deg, rgba(15,30,56,0.94), rgba(26,49,88,0.88)); color:#fff; box-shadow:0 10px 22px -14px rgba(15,30,56,0.5);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.22em; color:#FFE4D0; font-weight:800;">FINE-TUNE</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-top:6px;">특화 모델</div>
+        <div style="font-size:12.5px; color:#FFD7BD; margin-top:6px; line-height:1.6;">한 도메인에 fine-tune. 그 도메인은 강해지지만 다른 능력은 잃습니다.</div>
+        <div style="margin-top:14px; border-top:1px solid rgba(255,228,208,0.25); padding-top:10px; font-size:13px; color:#fff; line-height:1.85;">
+          &middot; code 능력 <b style="color:#7CFFA8;">+20%</b><br />
+          &middot; 일반 대화 <b style="color:#FFB088;">&minus;8%</b><br />
+          &middot; 다국어 <b style="color:#FFB088;">&minus;12%</b>
+        </div>
+      </div>
+
+      <div style="display:flex; align-items:center; justify-content:center;">
+        <div style="font-family:'Noto Serif KR', serif; font-size:36px; font-weight:900; color:var(--brand);">vs</div>
+      </div>
+
+      <div style="padding:18px 18px; background:linear-gradient(135deg, rgba(227,82,5,0.92), rgba(176,65,30,0.86)); color:#fff; box-shadow:0 10px 22px -14px rgba(227,82,5,0.45);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.22em; color:#FFE4D0; font-weight:800;">GENERAL</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-top:6px;">범용 모델</div>
+        <div style="font-size:12.5px; color:#FFE4D0; margin-top:6px; line-height:1.6;">모든 도메인을 평균적으로 다룹니다. 그러나 어느 한 영역에서 1위는 아닙니다.</div>
+        <div style="margin-top:14px; border-top:1px solid rgba(255,228,208,0.25); padding-top:10px; font-size:13px; color:#fff; line-height:1.85;">
+          &middot; 모든 영역 <b style="color:#fff;">평균</b><br />
+          &middot; 어느 한 영역 <b style="color:#fff;">1위 아님</b><br />
+          &middot; 안전 &middot; 다용도
+        </div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="font-size:14.5px; margin-top:16px;">1989년 McCloskey와 Cohen은 신경망이 새 작업을 배우면 &mdash; <em>이전에 배운 작업을 잊는다</em>는 것을 발견했습니다 (catastrophic forgetting). 2017년 Kirkpatrick 등의 EWC, 그리고 이후 LoRA &middot; MoE까지 &mdash; 모두 이 문제를 우회하려는 시도입니다. 그러나 trade-off는 여전히 존재합니다.</p>
+
+    <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); border-left:3px solid var(--brand); color:#fff;">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">EWC &middot; ELASTIC WEIGHT CONSOLIDATION</div>
+      <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.6;">Kirkpatrick et al. 2017 (DeepMind, PNAS) &middot; 중요한 가중치를 보호해 잊음을 줄입니다. 그러나 완전 해결은 아닙니다 &mdash; trade-off의 위치만 옮겼을 뿐입니다.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>06</b> / 09</span>
+    </div>
+  </div>
+</body></html>

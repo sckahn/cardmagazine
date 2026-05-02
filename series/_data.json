@@ -777,5 +777,49 @@
     "count": 9,
     "folder": "35-cards-compute",
     "outputs_folder": "35-outputs-compute"
+  },
+  {
+    "n": 36,
+    "slug": "allround",
+    "name": "Allround",
+    "hanja": "全",
+    "subtitle": "다 잘하는 AI는 존재할까요",
+    "desc": "오픈소스 모델 범람 · 50+ 벤치마크 포화 · Goodhart 1975 · No Free Lunch (Wolpert 1997) · Catastrophic Forgetting · Berlin 1953 여우와 고슴도치 — 만능인의 환상.",
+    "slides": [
+      "01-cover.png",
+      "02-opensource.png",
+      "03-benchmarks.png",
+      "04-goodhart.png",
+      "05-no-free-lunch.png",
+      "06-forgetting.png",
+      "07-berlin.png",
+      "08-moe.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "36-cards-allround",
+    "outputs_folder": "36-outputs-allround"
+  },
+  {
+    "n": 37,
+    "slug": "human",
+    "name": "Human",
+    "hanja": "義",
+    "subtitle": "자본인가, 사람인가",
+    "desc": "Asimov 1942 로봇 3원칙 · Trolley 딜레마 · MIT Moral Machine 2018 · Kant 정언명령 · Mill 공리주의 · Polanyi 1944 거대한 전환 · Human-in-the-loop — AI 결정의 axis.",
+    "slides": [
+      "01-cover.png",
+      "02-asimov.png",
+      "03-trolley.png",
+      "04-moral-machine.png",
+      "05-kant.png",
+      "06-mill.png",
+      "07-polanyi.png",
+      "08-hitl.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "37-cards-human",
+    "outputs_folder": "37-outputs-human"
   }
 ]
