@@ -20,7 +20,7 @@
       <div style="padding:18px 18px; background:linear-gradient(135deg, rgba(15,30,56,0.94), rgba(26,49,88,0.88)); color:#fff; box-shadow:0 10px 22px -14px rgba(15,30,56,0.5);">
         <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.22em; color:#FFE4D0; font-weight:800;">FINE-TUNE</div>
         <div style="font-size:18px; font-weight:800; color:#fff; margin-top:6px;">특화 모델</div>
-        <div style="font-size:12.5px; color:#FFD7BD; margin-top:6px; line-height:1.6;">한 도메인에 fine-tune. 그 도메인은 강해지지만 다른 능력은 잃습니다.</div>
+        <div style="font-size:12.5px; color:#FFD7BD; margin-top:6px; line-height:1.6;">한 도메인에 미세조정(fine-tune). 그 도메인은 강해지지만 다른 능력은 잃습니다.</div>
         <div style="margin-top:14px; border-top:1px solid rgba(255,228,208,0.25); padding-top:10px; font-size:13px; color:#fff; line-height:1.85;">
           &middot; code 능력 <b style="color:#7CFFA8;">+20%</b><br />
           &middot; 일반 대화 <b style="color:#FFB088;">&minus;8%</b><br />
@@ -44,11 +44,11 @@
       </div>
     </div>
 
-    <p class="body-sm" style="font-size:14.5px; margin-top:16px;">1989년 McCloskey와 Cohen은 신경망이 새 작업을 배우면 &mdash; <em>이전에 배운 작업을 잊는다</em>는 것을 발견했습니다 (catastrophic forgetting). 2017년 Kirkpatrick 등의 EWC, 그리고 이후 LoRA &middot; MoE까지 &mdash; 모두 이 문제를 우회하려는 시도입니다. 그러나 trade-off는 여전히 존재합니다.</p>
+    <p class="body-sm" style="font-size:14.5px; margin-top:16px;">1989년 McCloskey와 Cohen은 신경망이 새 작업을 배우면 &mdash; <em>이전에 배운 작업을 잊는다</em>는 것을 발견했습니다 (한 우물 파다 다른 우물 잊기 &mdash; catastrophic forgetting). 2017년 Kirkpatrick 등의 EWC(기존 학습 보호 기법), 그리고 이후 LoRA(부분만 미세조정) &middot; MoE(전문가 혼합)까지 &mdash; 모두 이 문제를 우회하려는 시도입니다. 그러나 맞바꾸기(trade-off)는 여전히 존재합니다.</p>
 
     <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); border-left:3px solid var(--brand); color:#fff;">
-      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">EWC &middot; ELASTIC WEIGHT CONSOLIDATION</div>
-      <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.6;">Kirkpatrick et al. 2017 (DeepMind, PNAS) &middot; 중요한 가중치를 보호해 잊음을 줄입니다. 그러나 완전 해결은 아닙니다 &mdash; trade-off의 위치만 옮겼을 뿐입니다.</div>
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">EWC &middot; 기존 학습 보호 기법</div>
+      <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.6;">Kirkpatrick et al. 2017 (DeepMind, PNAS) &middot; 중요한 가중치를 보호해 잊음을 줄입니다. 그러나 완전 해결은 아닙니다 &mdash; 맞바꾸기의 위치만 옮겼을 뿐입니다.</div>
     </div>
 
     <div class="foot">
