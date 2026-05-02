@@ -716,7 +716,7 @@
     "n": 33,
     "slug": "smart",
     "name": "Smart",
-    "hanja": "智",
+    "hanja": "聰",
     "subtitle": "AI는 정말 머리가 좋을까요",
     "desc": "Needle in a Haystack · NVIDIA RULER · Humanity's Last Exam 2025 · Kaplan Scaling Laws · Chinchilla · MoE & Reasoning · Flynn 반전 · Microsoft 2025 — 시험은 AI, 묻는 능력은 사람.",
     "slides": [
@@ -821,5 +821,72 @@
     "count": 9,
     "folder": "37-cards-human",
     "outputs_folder": "37-outputs-human"
+  },
+  {
+    "n": 38,
+    "slug": "press",
+    "name": "Press",
+    "hanja": "報",
+    "subtitle": "취재가 사라지면 군중이 진실이 됩니다",
+    "desc": "Pulitzer·Murrow 취재의 황금기 · Lippmann 1922 Public Opinion · Le Bon 1895 군중심리 · Habermas 공론장 · Johnson 2005 바보상자의 역습 · Chomsky 1988 Manufacturing Consent — AI 시대 취재 빈자리.",
+    "slides": [
+      "01-cover.png",
+      "02-pulitzer-murrow.png",
+      "03-lippmann.png",
+      "04-lebon.png",
+      "05-habermas.png",
+      "06-johnson.png",
+      "07-newsroom-ai.png",
+      "08-chomsky.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "38-cards-press",
+    "outputs_folder": "38-outputs-press"
+  },
+  {
+    "n": 39,
+    "slug": "dev",
+    "name": "Dev",
+    "hanja": "碼",
+    "subtitle": "왜 코딩이 먼저 무너졌는가",
+    "desc": "검증 가능성 · GitHub 1억+ repo · 오픈소스 정신(Linus·Raymond) · StackOverflow Q&A · 형식 문법 · 개발자의 자기 자동화 딜레마 · Brooks 1986 No Silver Bullet — 새 자리.",
+    "slides": [
+      "01-cover.png",
+      "02-verifiability.png",
+      "03-github.png",
+      "04-opensource.png",
+      "05-stackoverflow.png",
+      "06-grammar.png",
+      "07-dilemma.png",
+      "08-brooks.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "39-cards-dev",
+    "outputs_folder": "39-outputs-dev"
+  },
+  {
+    "n": 40,
+    "slug": "search",
+    "name": "Search",
+    "hanja": "探",
+    "subtitle": "지식은 받는 것입니까, 짓는 것입니까",
+    "desc": "Google PageRank → AI Overviews · SEO에서 AEO로 권력 이동 · Kant 1784 Sapere Aude · Popper 1934 반증가능성 · Bloom 1956 인지 분류 · Method of Loci 지식의 궁전 — 능동적 지식 구축.",
+    "slides": [
+      "01-cover.png",
+      "02-pagerank.png",
+      "03-fall.png",
+      "04-aeo.png",
+      "05-feed.png",
+      "06-kant.png",
+      "07-popper.png",
+      "08-bloom.png",
+      "09-palace.png",
+      "10-outro.png"
+    ],
+    "count": 10,
+    "folder": "40-cards-search",
+    "outputs_folder": "40-outputs-search"
   }
 ]

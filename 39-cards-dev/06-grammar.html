@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · Formal Grammar</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; DEV</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;&middot;&nbsp; 형식 문법</div>
+    </div>
+    <div class="era">
+      <span class="year">FORMAL GRAMMAR</span>
+      <span class="label"><b>BNF &middot; CFG &middot; 모호성이 없다</b><span class="sub">코드는 자연어보다 단순한 문제</span></span>
+    </div>
+    <h1 class="title sm">시 한 줄보다 &mdash;<br /><em>함수 한 개</em>가 쉽습니다.</h1>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:16px 18px; background:linear-gradient(135deg, rgba(15,30,56,0.94), rgba(26,49,88,0.88)); color:#fff; box-shadow:0 10px 22px -14px rgba(15,30,56,0.5);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">자연어 &middot; NATURAL LANGUAGE</div>
+        <div style="font-size:18px; font-weight:800; color:#fff; margin-top:5px;">&ldquo;배가 고프다&rdquo;</div>
+        <div style="font-size:13px; color:#FFD7BD; margin-top:10px; line-height:1.7;">&middot; 배(船)? 배(腹)? 배(梨)?<br />&middot; 진짜 시장한가, 비유인가?<br />&middot; 누구한테 말하는가?<br />&middot; 문맥&middot;감정&middot;관계가 다 필요</div>
+        <div style="margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,228,208,0.25); font-family:var(--f-mono); font-size:11px; color:#FFE4D0; font-weight:700; letter-spacing:0.1em;">&rarr; 모호성 &uarr; &middot; 문맥 의존 &uarr;</div>
+      </div>
+      <div style="padding:16px 18px; background:linear-gradient(135deg, rgba(227,82,5,0.92), rgba(176,65,30,0.85)); color:#fff; box-shadow:0 10px 22px -14px rgba(227,82,5,0.4);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">코드 &middot; CODE</div>
+        <div style="font-family:var(--f-mono); font-size:14.5px; font-weight:800; color:#fff; margin-top:5px; line-height:1.5;">if (x &gt; 0)<br />&nbsp;&nbsp;return x;</div>
+        <div style="font-size:13px; color:#FFE4D0; margin-top:10px; line-height:1.7;">&middot; if는 단 하나의 의미<br />&middot; &gt; 는 비교 연산자 단일<br />&middot; return은 함수 종료&middot;값반환<br />&middot; 문맥 없음</div>
+        <div style="margin-top:12px; padding-top:10px; border-top:1px solid rgba(255,228,208,0.25); font-family:var(--f-mono); font-size:11px; color:#FFE4D0; font-weight:700; letter-spacing:0.1em;">&rarr; BNF로 정의됨 &middot; 모호성 0</div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="font-size:14.5px; margin-top:14px; line-height:1.65;">코드는 <b>BNF</b>(Backus-Naur Form)와 <b>문맥자유문법</b>(CFG)으로 엄밀하게 정의됩니다. 모든 토큰의 의미가 사전에 못 박혀 있고, 같은 코드가 두 가지로 해석될 수 없습니다 &mdash; 컴파일러가 그렇게 만들어졌으니까요.</p>
+
+    <div style="margin-top:12px; padding:13px 16px; background:linear-gradient(135deg, rgba(15,30,56,0.05), rgba(255,255,255,0.6)); border-left:3px solid var(--navy);">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--navy); font-weight:800;">9호 LINGUA 콜백 &middot; 촘스키의 위계</div>
+      <div style="font-size:13px; color:var(--ink-body); margin-top:3px; line-height:1.6;">촘스키 위계에서 <b>자연어는 가장 복잡한 0형(무제한)</b>에 가깝고, <b>대부분의 코드는 2형(문맥자유)</b>으로 처리됩니다. 사람의 말이 우주라면 &mdash; <em>코드는 한 평짜리 정원</em>입니다.</div>
+    </div>
+
+    <p class="body-sm" style="font-size:13.5px; margin-top:10px; line-height:1.65; color:var(--ink-body);">AI에게 시는 어렵습니다. 코드는 그보다 <em>훨씬 쉬운 문제</em>입니다. 그래서 먼저 무너졌습니다.</p>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>06</b> / 09</span>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>02 · Verifiability</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">02</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; DEV</div>
+      <div class="chaptertag">CHAPTER 01 &nbsp;&middot;&nbsp; 검증 가능성</div>
+    </div>
+    <div class="era">
+      <span class="year">VERIFIABLE</span>
+      <span class="label"><b>FIRST REASON &middot; 정답이 자동 채점된다</b><span class="sub">컴파일 &middot; 실행 &middot; 테스트 &middot; RLVR</span></span>
+    </div>
+    <h1 class="title sm">코드는 &mdash;<br /><em>맞다/틀리다</em>가 즉시 갈립니다.</h1>
+
+    <p class="body-sm" style="margin-top:14px; font-size:15px;">시는 좋은 시인지 100명에게 물어봐도 답이 갈립니다. 그림은 더 갈립니다. 그러나 <b>코드</b>는 &mdash; 컴파일러가 한 번에 답합니다. 실행하면 결과가 나옵니다. 테스트가 통과하거나 떨어집니다. AI는 <em>틀리면 다시 시도</em>하면 됩니다. 검증되는 보상으로 학습합니다 &mdash; <b>RLVR</b>(Reinforcement Learning from Verifiable Rewards).</p>
+
+    <div style="margin-top:14px; padding:18px 22px; background:linear-gradient(135deg, rgba(15,30,56,0.05), rgba(255,255,255,0.6)); border-left:3px solid var(--navy);">
+      <svg viewBox="0 0 880 220" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
+        <defs>
+          <marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 z" fill="#E35205" />
+          </marker>
+        </defs>
+        <!-- nodes -->
+        <g font-family="JetBrains Mono, monospace" font-weight="800" font-size="13" fill="#fff">
+          <rect x="40" y="80" width="150" height="60" fill="#0f1e38" />
+          <text x="115" y="105" text-anchor="middle">AI &middot; 코드 시도</text>
+          <text x="115" y="125" text-anchor="middle" font-size="10" fill="#FFE4D0">def f(x): ...</text>
+
+          <rect x="240" y="80" width="150" height="60" fill="#0f1e38" />
+          <text x="315" y="105" text-anchor="middle">컴파일 &middot; 실행</text>
+          <text x="315" y="125" text-anchor="middle" font-size="10" fill="#FFE4D0">$ pytest</text>
+
+          <rect x="440" y="80" width="150" height="60" fill="#E35205" />
+          <text x="515" y="108" text-anchor="middle">PASS / FAIL</text>
+          <text x="515" y="128" text-anchor="middle" font-size="10" fill="#FFE4D0">자동 채점</text>
+
+          <rect x="640" y="80" width="180" height="60" fill="#0f1e38" />
+          <text x="730" y="105" text-anchor="middle">보상 &rarr; 학습</text>
+          <text x="730" y="125" text-anchor="middle" font-size="10" fill="#FFE4D0">RLVR</text>
+        </g>
+        <!-- arrows -->
+        <line x1="190" y1="110" x2="240" y2="110" stroke="#E35205" stroke-width="3" marker-end="url(#arr2)" />
+        <line x1="390" y1="110" x2="440" y2="110" stroke="#E35205" stroke-width="3" marker-end="url(#arr2)" />
+        <line x1="590" y1="110" x2="640" y2="110" stroke="#E35205" stroke-width="3" marker-end="url(#arr2)" />
+        <!-- loop back -->
+        <path d="M730,140 Q730,190 400,190 Q115,190 115,140" stroke="#E35205" stroke-width="2" fill="none" stroke-dasharray="6 4" marker-end="url(#arr2)" />
+        <text x="430" y="210" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#E35205" font-weight="700" text-anchor="middle">틀리면 다시 시도 &mdash; 무한 반복</text>
+      </svg>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+      <div style="padding:13px 16px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--navy); font-weight:800;">시 &middot; 그림 &middot; 음악</div>
+        <div style="font-size:13.5px; color:var(--ink-body); margin-top:4px; line-height:1.6;">정답이 없습니다. 100명이 100가지로 평가합니다. <b>채점이 안 되면 학습이 안 됩니다</b>.</div>
+      </div>
+      <div style="padding:13px 16px; background:linear-gradient(135deg, var(--brand-soft), var(--bg-white)); border-left:3px solid var(--brand);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--brand); font-weight:800;">CODE</div>
+        <div style="font-size:13.5px; color:var(--ink-body); margin-top:4px; line-height:1.6;">정답이 즉시 나옵니다. <em>맞다/틀리다</em>가 0.1초 만에 판가름. AI가 <b>스스로 학습</b>할 수 있는 유일한 영역.</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>02</b> / 09</span>
+    </div>
+  </div>
+</body></html>

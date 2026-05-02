@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · Brooks No Silver Bullet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; DEV</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;&middot;&nbsp; 누가 살아남는가</div>
+    </div>
+    <div class="era">
+      <span class="year">1986</span>
+      <span class="label"><b>FREDERICK P. BROOKS JR. &middot; NO SILVER BULLET</b><span class="sub">본질적 복잡도 vs 우발적 복잡도</span></span>
+    </div>
+    <h1 class="title sm">우발적 복잡도는 가도 &mdash;<br /><em>본질</em>은 남습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.0fr 1.4fr; gap:24px; margin-top:14px;">
+      <div class="left">
+        <div style="height:280px; overflow:hidden; box-shadow:0 10px 24px -14px rgba(15,30,56,0.45);">
+          <img src="../images/brooks.jpg" alt="Frederick P. Brooks Jr." style="width:100%; height:100%; object-fit:cover; object-position:center 18%;" />
+        </div>
+        <div style="margin-top:8px; padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">FREDERICK P. BROOKS JR. &middot; 1931~2022</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">IBM OS/360 총괄. <b>『The Mythical Man-Month』</b>(1975), <b>『No Silver Bullet』</b>(1986). 1999 튜링상.</div>
+        </div>
+      </div>
+      <div class="right">
+        <div style="padding:13px 16px; background:linear-gradient(135deg, rgba(227,82,5,0.92), rgba(176,65,30,0.85)); color:#fff; margin-bottom:10px;">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">BROOKS 1986</div>
+          <div style="font-size:13.5px; color:#fff; margin-top:4px; line-height:1.65;">소프트웨어의 복잡도는 둘로 나뉩니다.</div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr; gap:8px;">
+          <div style="padding:11px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">ACCIDENTAL &middot; 우발적 복잡도</div>
+            <div style="font-size:13.5px; color:var(--navy); font-weight:700; margin-top:3px; line-height:1.5;">언어 문법&middot;도구 사용&middot;타입 매칭<br /><span style="font-weight:400; color:var(--ink-body);">&rarr; <em style="color:var(--brand); font-weight:800;">자동화 가능</em> (AI가 정복 중)</span></div>
+          </div>
+          <div style="padding:11px 14px; background:linear-gradient(135deg, var(--brand-soft), var(--bg-white)); border-left:3px solid var(--brand);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">ESSENTIAL &middot; 본질적 복잡도</div>
+            <div style="font-size:13.5px; color:var(--navy); font-weight:700; margin-top:3px; line-height:1.5;">요구사항&middot;아키텍처&middot;trade-off 결정<br /><span style="font-weight:400; color:var(--ink-body);">&rarr; <em style="color:var(--brand); font-weight:800;">사람의 영역</em> (여전히 비어 있음)</span></div>
+          </div>
+        </div>
+
+        <div style="margin-top:12px; padding:11px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); color:#fff; border-left:3px solid var(--brand);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">BROOKS 1986 &middot; ORIGINAL</div>
+          <div style="font-size:12.5px; color:#fff; margin-top:3px; line-height:1.6; font-weight:600;">&ldquo;There is no single development &mdash; in either technology or management technique &mdash; which by itself promises even one order-of-magnitude improvement in productivity.&rdquo;</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="font-size:14px; margin-top:12px; line-height:1.65;">AI는 <b>우발적 복잡도</b>를 빠르게 정복하고 있습니다. 문법 외우기, 라이브러리 호출, 보일러플레이트 &mdash; 다 자동화됩니다. 그러나 <em>무엇을 만들지 정하는 일</em>은 아직 비어 있습니다. <b>요구사항을 캐는 것</b>, <b>trade-off를 받아들이는 것</b>, <b>책임지는 것</b> &mdash; 본질적 복잡도는 사람을 부릅니다.</p>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>08</b> / 09</span>
+    </div>
+  </div>
+</body></html>
