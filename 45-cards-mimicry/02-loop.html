@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>02 · 닭과 달걀의 고리</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">02</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; MIMICRY</div>
+      <div class="chaptertag">CHAPTER 01 &nbsp;&middot;&nbsp; 닭과 달걀의 고리 &middot; 인과 순환</div>
+    </div>
+    <div class="era">
+      <span class="year">∞</span>
+      <span class="label"><b>CHICKEN &middot; EGG LOOP</b><span class="sub">모방 없는 창조도, 창조 없는 모방도 한 발로 서지 못합니다</span></span>
+    </div>
+    <h1 class="title sm">닭이 먼저입니까 &mdash;<br /><em>달걀</em>이 먼저입니까?</h1>
+
+    <div class="split" style="grid-template-columns:1fr 1.3fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 360 320" style="width:100%; height:auto;">
+          <defs>
+            <linearGradient id="loopBg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#FFE4D0" />
+              <stop offset="100%" stop-color="#fff" />
+            </linearGradient>
+            <marker id="arrA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#E35205" />
+            </marker>
+            <marker id="arrB" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z" fill="#0f1e38" />
+            </marker>
+          </defs>
+          <rect x="0" y="0" width="360" height="320" fill="url(#loopBg)" />
+          <ellipse cx="100" cy="160" rx="58" ry="52" fill="#fff" stroke="#0f1e38" stroke-width="2" />
+          <text x="100" y="166" text-anchor="middle" font-family="Noto Sans KR" font-size="14" font-weight="900" fill="#0f1e38">달걀</text>
+          <text x="100" y="186" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#5c6578" letter-spacing="2">EGG &middot; 모방</text>
+          <ellipse cx="260" cy="160" rx="62" ry="56" fill="#FFE4D0" stroke="#E35205" stroke-width="2" />
+          <text x="260" y="166" text-anchor="middle" font-family="Noto Sans KR" font-size="14" font-weight="900" fill="#0f1e38">닭</text>
+          <text x="260" y="186" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#B5400B" letter-spacing="2">HEN &middot; 창조</text>
+          <path d="M150,120 Q180,70 215,118" fill="none" stroke="#E35205" stroke-width="2.5" marker-end="url(#arrA)" />
+          <path d="M210,210 Q180,260 145,212" fill="none" stroke="#0f1e38" stroke-width="2.5" marker-end="url(#arrB)" />
+          <text x="180" y="78" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="800" fill="#E35205" letter-spacing="2">낳는다</text>
+          <text x="180" y="265" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="800" fill="#0f1e38" letter-spacing="2">품는다</text>
+          <text x="180" y="305" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="3">INFINITE LOOP</text>
+        </svg>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14.5px; line-height:1.65;">닭이 없으면 달걀이 없고 &mdash; 달걀이 없으면 닭이 없습니다. 둘은 서로의 <em>원인</em>이자 <em>결과</em>입니다. 한 발로는 서지 못합니다.</p>
+
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">모방 &rarr; 창조</div>
+          <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.6;">아무것도 본 적 없는 사람은 새것을 만들 수 없습니다. <em>모방이 창조의 자궁</em>입니다.</div>
+        </div>
+
+        <div style="margin-top:10px; padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">창조 &rarr; 모방</div>
+          <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.6;">누군가 처음 그렸기에 다음 사람이 모방할 수 있습니다. <em>창조가 모방의 씨앗</em>입니다.</div>
+        </div>
+
+        <p class="body-sm" style="font-size:13px; margin-top:12px; line-height:1.6;">모방과 창조도 같은 고리입니다. <b>둘 중 무엇이 먼저</b>인지 묻는 일은 &mdash; 닭과 달걀을 두고 다투는 일과 같습니다.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>02</b> / 10</span>
+    </div>
+  </div>
+</body></html>

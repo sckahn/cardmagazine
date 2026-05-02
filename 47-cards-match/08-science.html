@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · 과학 해부</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; MATCH</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;&middot;&nbsp; 베이지안 트리</div>
+    </div>
+    <div class="era">
+      <span class="year">MINIMAX&rarr;MCTS&rarr;SELF-PLAY</span>
+      <span class="label"><b>승리의 세 도구</b><span class="sub">트리 &middot; 확률 &middot; 자기 학습</span></span>
+    </div>
+    <h1 class="title sm">모든 승리의 뒤에는 &mdash;<br /><em>확률과 트리</em>가 있습니다.</h1>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); color:#fff; border-radius:6px;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">01 &middot; MINIMAX</div>
+        <div style="font-size:14px; font-weight:800; margin-top:5px;">결정의 트리</div>
+        <div style="font-size:12px; margin-top:5px; line-height:1.55; color:#e6ecf5;">von Neumann 1928. 상대가 <em>최선</em>이라 가정하고, 내 최선을 거꾸로 짠다.</div>
+        <svg viewBox="0 0 200 80" style="margin-top:8px; width:100%;"><g stroke="#FFE4D0" stroke-width="1.4" fill="none"><line x1="100" y1="14" x2="40" y2="50"/><line x1="100" y1="14" x2="100" y2="50"/><line x1="100" y1="14" x2="160" y2="50"/><line x1="40" y1="50" x2="20" y2="74"/><line x1="40" y1="50" x2="60" y2="74"/><line x1="160" y1="50" x2="140" y2="74"/><line x1="160" y1="50" x2="180" y2="74"/></g><g fill="#FFE4D0"><circle cx="100" cy="14" r="4"/><circle cx="40" cy="50" r="3"/><circle cx="100" cy="50" r="3"/><circle cx="160" cy="50" r="3"/><circle cx="20" cy="74" r="2.5"/><circle cx="60" cy="74" r="2.5"/><circle cx="140" cy="74" r="2.5"/><circle cx="180" cy="74" r="2.5"/></g></svg>
+        <div style="font-size:11px; margin-top:5px; color:#FFE4D0; font-family:var(--f-mono); letter-spacing:0.15em;">CHESS &middot; DEEP BLUE</div>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #E35205, #B5400B); color:#fff; border-radius:6px;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">02 &middot; MCTS</div>
+        <div style="font-size:14px; font-weight:800; margin-top:5px;">표본 트리</div>
+        <div style="font-size:12px; margin-top:5px; line-height:1.55;">트리 위 <em>베이지안 표본 추출</em>. 무한한 가능성을 통계로 근사.</div>
+        <svg viewBox="0 0 200 80" style="margin-top:8px; width:100%;"><g stroke="#FFE4D0" stroke-width="1.4" fill="none" opacity="0.45"><line x1="100" y1="14" x2="40" y2="50"/><line x1="100" y1="14" x2="160" y2="50"/><line x1="40" y1="50" x2="20" y2="74"/><line x1="160" y1="50" x2="180" y2="74"/></g><g stroke="#fff" stroke-width="2" fill="none"><line x1="100" y1="14" x2="100" y2="50"/><line x1="100" y1="50" x2="80" y2="74"/><line x1="100" y1="50" x2="120" y2="74"/></g><g fill="#fff"><circle cx="100" cy="14" r="4"/><circle cx="100" cy="50" r="3.5"/><circle cx="80" cy="74" r="3"/><circle cx="120" cy="74" r="3"/></g><g fill="#FFE4D0" opacity="0.45"><circle cx="40" cy="50" r="3"/><circle cx="160" cy="50" r="3"/><circle cx="20" cy="74" r="2.5"/><circle cx="180" cy="74" r="2.5"/></g></svg>
+        <div style="font-size:11px; margin-top:5px; color:#FFE4D0; font-family:var(--f-mono); letter-spacing:0.15em;">GO &middot; ALPHAGO</div>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); color:#fff; border-radius:6px;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">03 &middot; SELF-PLAY</div>
+        <div style="font-size:14px; font-weight:800; margin-top:5px;">자기와 두기</div>
+        <div style="font-size:12px; margin-top:5px; line-height:1.55; color:#e6ecf5;">AlphaZero 2017. 자기와 두며 데이터 생성. <em>인간 데이터 0</em>.</div>
+        <svg viewBox="0 0 200 80" style="margin-top:8px; width:100%;"><g stroke="#FFE4D0" stroke-width="1.6" fill="none"><circle cx="60" cy="40" r="18"/><circle cx="140" cy="40" r="18"/><path d="M78 32 Q 100 18 122 32" marker-end="url(#a8)"/><path d="M122 50 Q 100 64 78 50" marker-end="url(#a8)"/></g><defs><marker id="a8" viewBox="0 0 6 6" refX="5" refY="3" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 L6 3 L0 6 z" fill="#FFE4D0"/></marker></defs><g fill="#FFE4D0" font-family="JetBrains Mono" font-size="10" font-weight="700" text-anchor="middle"><text x="60" y="44">A</text><text x="140" y="44">A&prime;</text></g></svg>
+        <div style="font-size:11px; margin-top:5px; color:#FFE4D0; font-family:var(--f-mono); letter-spacing:0.15em;">ALPHAZERO &middot; MUZERO</div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="font-size:13.5px; margin-top:14px; line-height:1.65;">어떻게 사람을 이겼는가. <b>세 가지 도구</b>가 핵심입니다 &mdash; <em>트리</em>로 가능성을 펼치고, <em>확률</em>로 좁히고, <em>자기 학습</em>으로 데이터를 짭니다. 60년 대결의 과학적 뼈대입니다.</p>
+
+    <div style="margin-top:10px; padding:11px 14px; background:linear-gradient(135deg, rgba(227,82,5,0.10), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">&crarr; 35호 COMPUTE 콜백</div>
+      <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.55;">Dijkstra의 자원 분배 &mdash; 무한한 가능성을 다 셀 수 없을 때, <em>어디에 계산을 더 쓸지</em>가 알고리즘의 핵심.</div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>08</b> / 10</span>
+    </div>
+  </div>
+</body></html>

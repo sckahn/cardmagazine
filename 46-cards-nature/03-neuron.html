@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · Neuron</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; NATURE</div>
+      <div class="chaptertag">CHAPTER 02 &nbsp;&middot;&nbsp; 인공신경망의 시작 &middot; 1943</div>
+    </div>
+    <div class="era">
+      <span class="year">1943</span>
+      <span class="label"><b>McCULLOCH &middot; PITTS</b><span class="sub">뉴런 한 개를 &mdash; 입력 합산 + 임계값으로 모형화</span></span>
+    </div>
+    <h1 class="title sm"><em>뉴런 한 개</em>를 &mdash;<br />수식으로 옮겼습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.1fr 1.3fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 380 320" style="width:100%; height:auto;">
+          <defs>
+            <linearGradient id="cellbg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#FFE4D0" />
+              <stop offset="100%" stop-color="#fff" />
+            </linearGradient>
+          </defs>
+          <rect x="0" y="0" width="380" height="320" fill="url(#cellbg)" />
+          <text x="190" y="22" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#0f1e38" letter-spacing="3">SINGLE NEURON &middot; INPUT &rarr; SUM &rarr; FIRE</text>
+
+          <text x="40" y="80" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="2">x1</text>
+          <text x="40" y="160" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="2">x2</text>
+          <text x="40" y="240" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="2">x3</text>
+
+          <line x1="60" y1="78" x2="170" y2="155" stroke="#0f1e38" stroke-width="2" />
+          <line x1="60" y1="158" x2="170" y2="160" stroke="#0f1e38" stroke-width="2" />
+          <line x1="60" y1="238" x2="170" y2="167" stroke="#0f1e38" stroke-width="2" />
+
+          <text x="115" y="115" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#E35205">w1</text>
+          <text x="115" y="152" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#E35205">w2</text>
+          <text x="115" y="200" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#E35205">w3</text>
+
+          <circle cx="200" cy="160" r="38" fill="#FFE4D0" stroke="#E35205" stroke-width="2.5" />
+          <text x="200" y="158" text-anchor="middle" font-family="Noto Sans KR" font-size="13" font-weight="900" fill="#0f1e38">&Sigma;</text>
+          <text x="200" y="178" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#B5400B" letter-spacing="2">합산+임계</text>
+
+          <line x1="240" y1="160" x2="320" y2="160" stroke="#0f1e38" stroke-width="2.5" />
+          <polygon points="320,155 332,160 320,165" fill="#0f1e38" />
+          <text x="280" y="150" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="800" fill="#0f1e38">FIRE</text>
+
+          <text x="345" y="164" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#E35205">y</text>
+
+          <text x="190" y="285" text-anchor="middle" font-family="Noto Sans KR" font-size="13" font-weight="800" fill="#0f1e38">합이 임계값을 넘으면 &mdash; 켜집니다.</text>
+          <text x="190" y="306" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="2">McCULLOCH-PITTS 1943</text>
+        </svg>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px; line-height:1.65;">1943년 신경생리학자 <b>Warren McCulloch</b>와 논리학자 <b>Walter Pitts</b>는 &mdash; 뇌의 뉴런 한 개를 <em>입력 합산 + 임계값</em> 단순 모형으로 옮겼습니다. 입력에 가중치를 곱하고, 모두 더하고, 한도를 넘으면 켜진다 &mdash; 그게 전부.</p>
+
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">PERCEPTRON &rarr; GPT</div>
+          <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.6;">80년 뒤 GPT의 <em>1조 매개변수</em>도 &mdash; 그 한 뉴런의 *대규모 모방*. 더 많이, 더 깊게, 더 촘촘히 쌓았을 뿐입니다.</div>
+        </div>
+
+        <div style="margin-top:10px; padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">&crarr; 20호 VISION 콜백</div>
+          <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.6;"><b>Hubel-Wiesel</b>의 고양이 시각 피질 실험(1959) &mdash; 거기서 본 <em>층위 구조</em>가 그대로 CNN의 설계도가 되었습니다.</div>
+        </div>
+
+        <p class="body-sm" style="font-size:12.5px; margin-top:10px; line-height:1.6;">사람이 만든 가장 강한 도구의 첫 단추 &mdash; 그것은 <b>뇌세포 한 개</b>를 베껴 적은 일이었습니다.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>03</b> / 9</span>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Diffusion</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; NATURE</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;&middot;&nbsp; Stable Diffusion 어원 &middot; 2015</div>
+    </div>
+    <div class="era">
+      <span class="year">2015</span>
+      <span class="label"><b>SOHL-DICKSTEIN et al. &middot; ICML</b><span class="sub">비평형 열역학에서 영감 &mdash; Stable Diffusion &middot; Midjourney &middot; Sora의 시초</span></span>
+    </div>
+    <h1 class="title sm">잉크 한 방울이 퍼지는 법칙을 &mdash;<br /><em>거꾸로</em> 돌렸습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.2fr 1.2fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 400 320" style="width:100%; height:auto;">
+          <defs>
+            <linearGradient id="diffbg" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="#FFE4D0" />
+              <stop offset="100%" stop-color="#fff" />
+            </linearGradient>
+            <radialGradient id="img4" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#E35205" />
+              <stop offset="100%" stop-color="#FFE4D0" />
+            </radialGradient>
+          </defs>
+          <rect x="0" y="0" width="400" height="320" fill="url(#diffbg)" />
+
+          <text x="200" y="22" text-anchor="middle" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#0f1e38" letter-spacing="3">FORWARD &rarr; NOISE  &middot;  REVERSE &rarr; IMAGE</text>
+
+          <!-- forward: image -> noise (top row) -->
+          <text x="40" y="60" font-family="JetBrains Mono" font-size="9" font-weight="800" fill="#5c6578" letter-spacing="2">FORWARD</text>
+          <circle cx="60" cy="100" r="22" fill="url(#img4)" />
+          <text x="105" y="105" font-family="Noto Sans KR" font-size="20" font-weight="700" fill="#0f1e38">&rarr;</text>
+          <g>
+            <circle cx="150" cy="92" r="3" fill="#E35205" /><circle cx="160" cy="108" r="3" fill="#0f1e38" /><circle cx="142" cy="112" r="3" fill="#E35205" /><circle cx="155" cy="100" r="3" fill="#0f1e38" /><circle cx="148" cy="100" r="3" fill="#E35205" /><circle cx="160" cy="95" r="3" fill="#0f1e38" />
+          </g>
+          <text x="195" y="105" font-family="Noto Sans KR" font-size="20" font-weight="700" fill="#0f1e38">&rarr;</text>
+          <g>
+            <circle cx="240" cy="85" r="2.5" fill="#5c6578" /><circle cx="252" cy="95" r="2.5" fill="#5c6578" /><circle cx="232" cy="100" r="2.5" fill="#5c6578" /><circle cx="248" cy="105" r="2.5" fill="#5c6578" /><circle cx="240" cy="115" r="2.5" fill="#5c6578" /><circle cx="260" cy="110" r="2.5" fill="#5c6578" /><circle cx="225" cy="95" r="2.5" fill="#5c6578" /><circle cx="265" cy="92" r="2.5" fill="#5c6578" />
+          </g>
+          <text x="295" y="105" font-family="Noto Sans KR" font-size="20" font-weight="700" fill="#0f1e38">&rarr;</text>
+          <rect x="320" y="80" width="50" height="44" fill="#848b9c" opacity="0.7" />
+          <text x="345" y="142" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#5c6578" letter-spacing="2">NOISE</text>
+
+          <!-- separator -->
+          <line x1="40" y1="170" x2="370" y2="170" stroke="#0f1e38" stroke-width="1" stroke-dasharray="4,4" opacity="0.4" />
+
+          <!-- reverse: noise -> image (bottom row) -->
+          <text x="40" y="200" font-family="JetBrains Mono" font-size="9" font-weight="800" fill="#E35205" letter-spacing="2">REVERSE</text>
+          <rect x="35" y="220" width="50" height="44" fill="#848b9c" opacity="0.7" />
+          <text x="105" y="247" font-family="Noto Sans KR" font-size="20" font-weight="700" fill="#E35205">&rarr;</text>
+          <g>
+            <circle cx="150" cy="232" r="2.5" fill="#5c6578" /><circle cx="160" cy="248" r="2.5" fill="#5c6578" /><circle cx="142" cy="252" r="2.5" fill="#5c6578" /><circle cx="155" cy="240" r="2.5" fill="#E35205" /><circle cx="148" cy="240" r="2.5" fill="#E35205" /><circle cx="160" cy="235" r="2.5" fill="#0f1e38" />
+          </g>
+          <text x="195" y="247" font-family="Noto Sans KR" font-size="20" font-weight="700" fill="#E35205">&rarr;</text>
+          <g>
+            <circle cx="240" cy="232" r="3" fill="#E35205" /><circle cx="252" cy="248" r="3" fill="#0f1e38" /><circle cx="232" cy="252" r="3" fill="#E35205" /><circle cx="248" cy="240" r="3" fill="#0f1e38" /><circle cx="240" cy="240" r="4" fill="#E35205" />
+          </g>
+          <text x="295" y="247" font-family="Noto Sans KR" font-size="20" font-weight="700" fill="#E35205">&rarr;</text>
+          <circle cx="345" cy="242" r="22" fill="url(#img4)" />
+          <text x="345" y="285" text-anchor="middle" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#E35205" letter-spacing="2">IMAGE</text>
+
+          <text x="200" y="310" text-anchor="middle" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#5c6578" letter-spacing="2">SOHL-DICKSTEIN 2015 &middot; ICML</text>
+        </svg>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px; line-height:1.65;">2015년 <b>Sohl-Dickstein</b>팀은 &mdash; <em>비평형 열역학(non-equilibrium thermodynamics)</em>에서 영감을 얻었습니다. 잉크 한 방울이 물 안에서 천천히 퍼지는 법칙(forward diffusion)을 <em>수학적으로 거꾸로 돌리면</em> &mdash; 노이즈 더미에서 그림이 떠오릅니다.</p>
+
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">현재 모든 이미지 AI</div>
+          <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.6;"><b>Stable Diffusion &middot; Midjourney &middot; DALL-E &middot; Sora</b> &mdash; 모두 이 원리. 매일 수억 장이 만들어지는 이미지의 뿌리는 &mdash; 잉크가 퍼지는 19세기 물리학입니다.</div>
+        </div>
+
+        <div style="margin-top:10px; padding:11px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">CITATION</div>
+          <div style="font-size:12px; color:var(--navy); margin-top:3px; line-height:1.55;">Sohl-Dickstein et al. (2015) &middot; <em>&ldquo;Deep Unsupervised Learning using Nonequilibrium Thermodynamics&rdquo;</em> &middot; ICML &middot; 디퓨전 모델의 시초.</div>
+        </div>
+
+        <p class="body-sm" style="font-size:12.5px; margin-top:10px; line-height:1.6;">자연은 항상 &mdash; <b>질서가 무너지는 방향</b>으로 움직입니다(엔트로피). AI는 그 화살을 &mdash; 잠시, 거꾸로 잡았습니다.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>07</b> / 9</span>
+    </div>
+  </div>
+</body></html>

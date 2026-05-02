@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · Deep Blue</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; MATCH</div>
+      <div class="chaptertag">CHAPTER 03 &nbsp;&middot;&nbsp; Brute Force</div>
+    </div>
+    <div class="era">
+      <span class="year">1997</span>
+      <span class="label"><b>DEEP BLUE vs KASPAROV</b><span class="sub">체스 &middot; 초당 2억 수의 탐색</span></span>
+    </div>
+    <h1 class="title sm"><em>초당 2억 수</em>로 &mdash;<br />챔피언을 이겼습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.0fr 1.4fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <div style="height:300px; padding:24px 22px; background:linear-gradient(135deg, #0f1e38, #1c2e4e 50%, #E35205 140%); color:#fff; box-shadow:0 10px 24px -14px rgba(15,30,56,0.45); display:flex; flex-direction:column; justify-content:space-between;">
+          <div>
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.22em; color:#FFE4D0; font-weight:800;">IBM DEEP BLUE &middot; 1997</div>
+            <div style="font-family:'Noto Serif KR', serif; font-size:34px; font-weight:900; color:#fff; margin-top:14px; line-height:1.1;">200,000,000<br /><span style="font-size:14px; font-weight:700; color:#FFE4D0; letter-spacing:0.18em;">moves / second</span></div>
+            <div style="font-size:12px; color:#cfd6e5; margin-top:14px; line-height:1.55;">RS/6000 SP &middot; 30 IBM nodes &middot; 480 chess chips. 초당 2억 수의 완전 탐색.</div>
+          </div>
+          <div>
+            <div style="height:1px; background:rgba(255,228,208,0.3); margin-bottom:10px;"></div>
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:700;">6국 &middot; 2승 1패 3무</div>
+          </div>
+        </div>
+        <div style="margin-top:8px; padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">GARRY KASPAROV &middot; 1963~</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">소련/러시아 체스 챔피언. 1985~2000 세계 1위.</div>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:13.5px; margin-top:0; line-height:1.65;">IBM Deep Blue &mdash; 초당 <em>2억 수</em>를 탐색하는 <b>brute force</b>(완전 탐색). 직관도 학습도 없이, 모든 가능한 수를 끝까지 계산하는 정공법. 6국 2승 1패 3무로 Garry Kasparov를 격파했습니다.</p>
+
+        <div style="margin-top:12px; padding:14px 16px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); border-left:3px solid var(--brand); color:#fff;">
+          <div style="font-family:'Noto Serif KR', serif; font-size:16px; font-weight:700; line-height:1.5; color:#fff; font-style:italic;">&ldquo;직관 없는 계산이 &mdash;<br />직관을 이긴 첫 시합.&rdquo;</div>
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:700; margin-top:8px;">NEW YORK &middot; MAY 11 1997</div>
+        </div>
+
+        <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div style="padding:10px 12px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">BRUTE FORCE</div>
+            <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.5;">가능한 모든 수를 깊이까지 계산하는 정공법.</div>
+          </div>
+          <div style="padding:10px 12px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">ADVANCED CHESS</div>
+            <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.5;">패배 후 Kasparov는 사람+AI 협업 체스를 시작했습니다.</div>
+          </div>
+        </div>
+
+        <p class="body-sm" style="font-size:13px; margin-top:10px; line-height:1.6;">Kasparov의 다음 행보가 의미심장합니다 &mdash; 이긴 도구를 적이 아니라 <em>파트너</em>로 다시 세웠습니다.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>04</b> / 10</span>
+    </div>
+  </div>
+</body></html>

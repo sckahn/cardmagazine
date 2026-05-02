@@ -976,5 +976,73 @@
     "count": 9,
     "folder": "44-cards-quantum",
     "outputs_folder": "44-outputs-quantum"
+  },
+  {
+    "n": 45,
+    "slug": "mimicry",
+    "name": "Mimicry",
+    "hanja": "模",
+    "subtitle": "사람의 창의성은 결국 모방입니까",
+    "desc": "닭과 달걀의 고리 · Plato vs Aristotle · 미러뉴런 1992 · Bandura·Tomasello · Girard 욕망 모방 · Boden 1990 창의성 3종류 · Picasso·AI 생성모델 · AI 모방=창조? — 회색지대.",
+    "slides": [
+      "01-cover.png",
+      "02-loop.png",
+      "03-plato-aristotle.png",
+      "04-mirror-neuron.png",
+      "05-bandura.png",
+      "06-girard.png",
+      "07-boden.png",
+      "08-picasso-ai.png",
+      "09-ai-creation.png",
+      "10-outro.png"
+    ],
+    "count": 10,
+    "folder": "45-cards-mimicry",
+    "outputs_folder": "45-outputs-mimicry"
+  },
+  {
+    "n": 46,
+    "slug": "nature",
+    "name": "Nature",
+    "hanja": "然",
+    "subtitle": "AI는 사실 자연의 모방입니다",
+    "desc": "45호 자매편 · 뉴런(McCulloch-Pitts 1943) · 점균과 도쿄 지하철(Tero 2010) · 동물 관절(Cheetah/Gecko/Snake/Octopus) · DNA 컴퓨팅(Adleman 1994) · 디퓨전=열역학(Sohl-Dickstein 2015) · 진화·RL·군집.",
+    "slides": [
+      "01-cover.png",
+      "02-callback.png",
+      "03-neuron.png",
+      "04-slime.png",
+      "05-animal-robot.png",
+      "06-dna.png",
+      "07-diffusion.png",
+      "08-evolution-rl-swarm.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "46-cards-nature",
+    "outputs_folder": "46-outputs-nature"
+  },
+  {
+    "n": 47,
+    "slug": "match",
+    "name": "Match",
+    "hanja": "對",
+    "subtitle": "대결의 시대 — 무엇이 남았습니까",
+    "desc": "Turing 1950 · 1994 Tinsley·Chinook 체커 · 1997 Deep Blue·Kasparov · 2011 Watson·Jeopardy · 2016 AlphaGo·이세돌 · 2017+ 포커·StarCraft·CICERO · Minimax·MCTS·Self-Play 베이지안 · Wittgenstein·Suits 게임 철학.",
+    "slides": [
+      "01-cover.png",
+      "02-turing.png",
+      "03-tinsley.png",
+      "04-deep-blue.png",
+      "05-watson.png",
+      "06-alphago.png",
+      "07-others.png",
+      "08-science.png",
+      "09-human.png",
+      "10-outro.png"
+    ],
+    "count": 10,
+    "folder": "47-cards-match",
+    "outputs_folder": "47-outputs-match"
   }
 ]
