@@ -917,7 +917,7 @@ window.SERIES_DATA = [
     "name": "Muscle",
     "hanja": "筋",
     "subtitle": "근육은 밀지 못합니다",
-    "desc": "41호 자매편 · 인공관절의 한계 · 모터 vs 근육(이두/삼두) · Snelson·Ingber 텐세그리티 · 압축 vs 장력 · McKibben 인공근육 — 진화는 공장이 아니라 생존을 위해.",
+    "desc": "41호 자매편 · 인공관절의 한계 · 모터 vs 근육(이두/삼두) · Snelson·Ingber 텐세그리티 · 압축 vs 장력 · McKibben/HASEL/나일론 코일/Nitinol/Biohybrid 인공근육 5가지 — 진화는 공장이 아니라 생존을 위해.",
     "slides": [
       "01-cover.png",
       "02-callback.png",
@@ -927,9 +927,10 @@ window.SERIES_DATA = [
       "06-tensegrity.png",
       "07-compression-vs-tension.png",
       "08-mckibben.png",
-      "09-outro.png"
+      "09-how-to-make.png",
+      "10-outro.png"
     ],
-    "count": 9,
+    "count": 10,
     "folder": "42-cards-muscle",
     "outputs_folder": "42-outputs-muscle"
   },
@@ -960,7 +961,7 @@ window.SERIES_DATA = [
     "slug": "quantum",
     "name": "Quantum",
     "hanja": "量",
-    "subtitle": "공중에 던진 동전 — 그게 양자입니다",
+    "subtitle": "보기 전까지는 없는 세계",
     "desc": "43호 자매편 · 동전(중첩) · 양말(얽힘) · 미로(Grover) · 자물쇠(Shor) · 식당 메뉴(QAOA·AI) · 냉동고(decoherence) — 일상 비유로 푸는 양자 컴퓨팅.",
     "slides": [
       "01-cover.png",
