@@ -25,7 +25,10 @@
     ],
     "count": 15,
     "folder": "1-cards-philosophy",
-    "outputs_folder": "1-outputs-philosophy"
+    "outputs_folder": "1-outputs-philosophy",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 2,
@@ -44,7 +47,10 @@
     ],
     "count": 6,
     "folder": "2-cards-taste",
-    "outputs_folder": "2-outputs-taste"
+    "outputs_folder": "2-outputs-taste",
+    "tags": [
+      "감각"
+    ]
   },
   {
     "n": 3,
@@ -66,7 +72,10 @@
     ],
     "count": 9,
     "folder": "3-cards-vibe",
-    "outputs_folder": "3-outputs-vibe"
+    "outputs_folder": "3-outputs-vibe",
+    "tags": [
+      "창작"
+    ]
   },
   {
     "n": 4,
@@ -86,7 +95,10 @@
     ],
     "count": 7,
     "folder": "4-cards-loop",
-    "outputs_folder": "4-outputs-loop"
+    "outputs_folder": "4-outputs-loop",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 5,
@@ -106,7 +118,10 @@
     ],
     "count": 7,
     "folder": "5-cards-canvas",
-    "outputs_folder": "5-outputs-canvas"
+    "outputs_folder": "5-outputs-canvas",
+    "tags": [
+      "창작"
+    ]
   },
   {
     "n": 6,
@@ -127,7 +142,10 @@
     ],
     "count": 8,
     "folder": "6-cards-aura",
-    "outputs_folder": "6-outputs-aura"
+    "outputs_folder": "6-outputs-aura",
+    "tags": [
+      "창작"
+    ]
   },
   {
     "n": 7,
@@ -148,7 +166,10 @@
     ],
     "count": 8,
     "folder": "7-cards-rhythm",
-    "outputs_folder": "7-outputs-rhythm"
+    "outputs_folder": "7-outputs-rhythm",
+    "tags": [
+      "감각"
+    ]
   },
   {
     "n": 8,
@@ -170,7 +191,11 @@
     ],
     "count": 9,
     "folder": "8-cards-dream",
-    "outputs_folder": "8-outputs-dream"
+    "outputs_folder": "8-outputs-dream",
+    "tags": [
+      "감각",
+      "마음"
+    ]
   },
   {
     "n": 9,
@@ -192,7 +217,10 @@
     ],
     "count": 9,
     "folder": "9-cards-lingua",
-    "outputs_folder": "9-outputs-lingua"
+    "outputs_folder": "9-outputs-lingua",
+    "tags": [
+      "언어"
+    ]
   },
   {
     "n": 10,
@@ -213,7 +241,11 @@
     ],
     "count": 8,
     "folder": "10-cards-bias",
-    "outputs_folder": "10-outputs-bias"
+    "outputs_folder": "10-outputs-bias",
+    "tags": [
+      "사회",
+      "마음"
+    ]
   },
   {
     "n": 11,
@@ -235,7 +267,10 @@
     ],
     "count": 9,
     "folder": "11-cards-drive",
-    "outputs_folder": "11-outputs-drive"
+    "outputs_folder": "11-outputs-drive",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 12,
@@ -256,7 +291,11 @@
     ],
     "count": 8,
     "folder": "12-cards-earth",
-    "outputs_folder": "12-outputs-earth"
+    "outputs_folder": "12-outputs-earth",
+    "tags": [
+      "기술",
+      "사회"
+    ]
   },
   {
     "n": 13,
@@ -277,7 +316,10 @@
     ],
     "count": 8,
     "folder": "13-cards-wisdom",
-    "outputs_folder": "13-outputs-wisdom"
+    "outputs_folder": "13-outputs-wisdom",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 14,
@@ -300,7 +342,10 @@
     ],
     "count": 10,
     "folder": "14-cards-utopia",
-    "outputs_folder": "14-outputs-utopia"
+    "outputs_folder": "14-outputs-utopia",
+    "tags": [
+      "사회"
+    ]
   },
   {
     "n": 15,
@@ -322,7 +367,11 @@
     ],
     "count": 9,
     "folder": "15-cards-cinema",
-    "outputs_folder": "15-outputs-cinema"
+    "outputs_folder": "15-outputs-cinema",
+    "tags": [
+      "감각",
+      "창작"
+    ]
   },
   {
     "n": 16,
@@ -346,7 +395,10 @@
     ],
     "count": 11,
     "folder": "16-cards-destiny",
-    "outputs_folder": "16-outputs-destiny"
+    "outputs_folder": "16-outputs-destiny",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 17,
@@ -369,7 +421,10 @@
     ],
     "count": 10,
     "folder": "17-cards-time",
-    "outputs_folder": "17-outputs-time"
+    "outputs_folder": "17-outputs-time",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 18,
@@ -392,7 +447,10 @@
     ],
     "count": 10,
     "folder": "18-cards-naming",
-    "outputs_folder": "18-outputs-naming"
+    "outputs_folder": "18-outputs-naming",
+    "tags": [
+      "언어"
+    ]
   },
   {
     "n": 19,
@@ -415,7 +473,10 @@
     ],
     "count": 10,
     "folder": "19-cards-soul",
-    "outputs_folder": "19-outputs-soul"
+    "outputs_folder": "19-outputs-soul",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 20,
@@ -438,7 +499,10 @@
     ],
     "count": 10,
     "folder": "20-cards-vision",
-    "outputs_folder": "20-outputs-vision"
+    "outputs_folder": "20-outputs-vision",
+    "tags": [
+      "감각"
+    ]
   },
   {
     "n": 21,
@@ -460,7 +524,10 @@
     ],
     "count": 9,
     "folder": "21-cards-liberty",
-    "outputs_folder": "21-outputs-liberty"
+    "outputs_folder": "21-outputs-liberty",
+    "tags": [
+      "사회"
+    ]
   },
   {
     "n": 22,
@@ -484,7 +551,11 @@
     ],
     "count": 11,
     "folder": "22-cards-arms",
-    "outputs_folder": "22-outputs-arms"
+    "outputs_folder": "22-outputs-arms",
+    "tags": [
+      "사회",
+      "기술"
+    ]
   },
   {
     "n": 23,
@@ -507,7 +578,11 @@
     ],
     "count": 10,
     "folder": "23-cards-compress",
-    "outputs_folder": "23-outputs-compress"
+    "outputs_folder": "23-outputs-compress",
+    "tags": [
+      "언어",
+      "기술"
+    ]
   },
   {
     "n": 24,
@@ -528,7 +603,10 @@
     ],
     "count": 8,
     "folder": "24-cards-langue",
-    "outputs_folder": "24-outputs-langue"
+    "outputs_folder": "24-outputs-langue",
+    "tags": [
+      "언어"
+    ]
   },
   {
     "n": 25,
@@ -551,7 +629,10 @@
     ],
     "count": 10,
     "folder": "25-cards-scripts",
-    "outputs_folder": "25-outputs-scripts"
+    "outputs_folder": "25-outputs-scripts",
+    "tags": [
+      "언어"
+    ]
   },
   {
     "n": 26,
@@ -574,7 +655,11 @@
     ],
     "count": 10,
     "folder": "26-cards-bits",
-    "outputs_folder": "26-outputs-bits"
+    "outputs_folder": "26-outputs-bits",
+    "tags": [
+      "기술",
+      "언어"
+    ]
   },
   {
     "n": 27,
@@ -597,7 +682,10 @@
     ],
     "count": 10,
     "folder": "27-cards-renaissance",
-    "outputs_folder": "27-outputs-renaissance"
+    "outputs_folder": "27-outputs-renaissance",
+    "tags": [
+      "창작"
+    ]
   },
   {
     "n": 28,
@@ -620,7 +708,10 @@
     ],
     "count": 10,
     "folder": "28-cards-noise",
-    "outputs_folder": "28-outputs-noise"
+    "outputs_folder": "28-outputs-noise",
+    "tags": [
+      "기술"
+    ]
   },
   {
     "n": 29,
@@ -643,7 +734,11 @@
     ],
     "count": 10,
     "folder": "29-cards-arena",
-    "outputs_folder": "29-outputs-arena"
+    "outputs_folder": "29-outputs-arena",
+    "tags": [
+      "기술",
+      "창작"
+    ]
   },
   {
     "n": 30,
@@ -666,7 +761,10 @@
     ],
     "count": 10,
     "folder": "30-cards-swarm",
-    "outputs_folder": "30-outputs-swarm"
+    "outputs_folder": "30-outputs-swarm",
+    "tags": [
+      "기술"
+    ]
   },
   {
     "n": 31,
@@ -688,7 +786,10 @@
     ],
     "count": 9,
     "folder": "31-cards-craft",
-    "outputs_folder": "31-outputs-craft"
+    "outputs_folder": "31-outputs-craft",
+    "tags": [
+      "창작"
+    ]
   },
   {
     "n": 32,
@@ -710,7 +811,10 @@
     ],
     "count": 9,
     "folder": "32-cards-wellbeing",
-    "outputs_folder": "32-outputs-wellbeing"
+    "outputs_folder": "32-outputs-wellbeing",
+    "tags": [
+      "사회"
+    ]
   },
   {
     "n": 33,
@@ -732,7 +836,11 @@
     ],
     "count": 9,
     "folder": "33-cards-smart",
-    "outputs_folder": "33-outputs-smart"
+    "outputs_folder": "33-outputs-smart",
+    "tags": [
+      "사회",
+      "기술"
+    ]
   },
   {
     "n": 34,
@@ -754,7 +862,10 @@
     ],
     "count": 9,
     "folder": "34-cards-confess",
-    "outputs_folder": "34-outputs-confess"
+    "outputs_folder": "34-outputs-confess",
+    "tags": [
+      "사회"
+    ]
   },
   {
     "n": 35,
@@ -776,7 +887,10 @@
     ],
     "count": 9,
     "folder": "35-cards-compute",
-    "outputs_folder": "35-outputs-compute"
+    "outputs_folder": "35-outputs-compute",
+    "tags": [
+      "기술"
+    ]
   },
   {
     "n": 36,
@@ -798,7 +912,10 @@
     ],
     "count": 9,
     "folder": "36-cards-allround",
-    "outputs_folder": "36-outputs-allround"
+    "outputs_folder": "36-outputs-allround",
+    "tags": [
+      "사회"
+    ]
   },
   {
     "n": 37,
@@ -820,7 +937,11 @@
     ],
     "count": 9,
     "folder": "37-cards-human",
-    "outputs_folder": "37-outputs-human"
+    "outputs_folder": "37-outputs-human",
+    "tags": [
+      "사회",
+      "마음"
+    ]
   },
   {
     "n": 38,
@@ -842,7 +963,11 @@
     ],
     "count": 9,
     "folder": "38-cards-press",
-    "outputs_folder": "38-outputs-press"
+    "outputs_folder": "38-outputs-press",
+    "tags": [
+      "사회",
+      "언어"
+    ]
   },
   {
     "n": 39,
@@ -864,7 +989,11 @@
     ],
     "count": 9,
     "folder": "39-cards-dev",
-    "outputs_folder": "39-outputs-dev"
+    "outputs_folder": "39-outputs-dev",
+    "tags": [
+      "창작",
+      "기술"
+    ]
   },
   {
     "n": 40,
@@ -887,7 +1016,10 @@
     ],
     "count": 10,
     "folder": "40-cards-search",
-    "outputs_folder": "40-outputs-search"
+    "outputs_folder": "40-outputs-search",
+    "tags": [
+      "기술"
+    ]
   },
   {
     "n": 41,
@@ -909,7 +1041,10 @@
     ],
     "count": 9,
     "folder": "41-cards-hands",
-    "outputs_folder": "41-outputs-hands"
+    "outputs_folder": "41-outputs-hands",
+    "tags": [
+      "감각"
+    ]
   },
   {
     "n": 42,
@@ -932,7 +1067,10 @@
     ],
     "count": 10,
     "folder": "42-cards-muscle",
-    "outputs_folder": "42-outputs-muscle"
+    "outputs_folder": "42-outputs-muscle",
+    "tags": [
+      "감각"
+    ]
   },
   {
     "n": 43,
@@ -954,7 +1092,10 @@
     ],
     "count": 9,
     "folder": "43-cards-chip",
-    "outputs_folder": "43-outputs-chip"
+    "outputs_folder": "43-outputs-chip",
+    "tags": [
+      "기술"
+    ]
   },
   {
     "n": 44,
@@ -976,7 +1117,10 @@
     ],
     "count": 9,
     "folder": "44-cards-quantum",
-    "outputs_folder": "44-outputs-quantum"
+    "outputs_folder": "44-outputs-quantum",
+    "tags": [
+      "기술"
+    ]
   },
   {
     "n": 45,
@@ -999,7 +1143,11 @@
     ],
     "count": 10,
     "folder": "45-cards-mimicry",
-    "outputs_folder": "45-outputs-mimicry"
+    "outputs_folder": "45-outputs-mimicry",
+    "tags": [
+      "창작",
+      "마음"
+    ]
   },
   {
     "n": 46,
@@ -1021,7 +1169,10 @@
     ],
     "count": 9,
     "folder": "46-cards-nature",
-    "outputs_folder": "46-outputs-nature"
+    "outputs_folder": "46-outputs-nature",
+    "tags": [
+      "기술"
+    ]
   },
   {
     "n": 47,
@@ -1044,13 +1195,17 @@
     ],
     "count": 10,
     "folder": "47-cards-match",
-    "outputs_folder": "47-outputs-match"
+    "outputs_folder": "47-outputs-match",
+    "tags": [
+      "사회",
+      "기술"
+    ]
   },
   {
     "n": 48,
     "slug": "babel",
     "name": "Babel",
-    "hanja": "語",
+    "hanja": "譯",
     "subtitle": "흩어진 혀, 합쳐지는 기계",
     "desc": "Adams 바벨피쉬 1979·AltaVista 1997 · Bruegel 1563 바벨탑 · Steiner·Benjamin·Borges · 교착·굴절·고립어 · Pirahã·Everett · 띄어쓰기 ambiguity · IBM 1954→Transformer 2017 · X Grok 2026 자동 번역.",
     "slides": [
@@ -1067,7 +1222,10 @@
     ],
     "count": 10,
     "folder": "48-cards-babel",
-    "outputs_folder": "48-outputs-babel"
+    "outputs_folder": "48-outputs-babel",
+    "tags": [
+      "언어"
+    ]
   },
   {
     "n": 49,
@@ -1089,7 +1247,10 @@
     ],
     "count": 9,
     "folder": "49-cards-relativity",
-    "outputs_folder": "49-outputs-relativity"
+    "outputs_folder": "49-outputs-relativity",
+    "tags": [
+      "마음"
+    ]
   },
   {
     "n": 50,
@@ -1115,7 +1276,11 @@
     ],
     "count": 13,
     "folder": "50-cards-prophecy",
-    "outputs_folder": "50-outputs-prophecy"
+    "outputs_folder": "50-outputs-prophecy",
+    "tags": [
+      "마음",
+      "기술"
+    ]
   },
   {
     "n": 51,
@@ -1141,6 +1306,9 @@
     ],
     "count": 12,
     "folder": "51-cards-welcome",
-    "outputs_folder": "51-outputs-welcome"
+    "outputs_folder": "51-outputs-welcome",
+    "tags": [
+      "마음"
+    ]
   }
 ]
