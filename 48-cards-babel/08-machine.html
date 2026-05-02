@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · Machine</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; BABEL</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;&middot;&nbsp; 통계에서 신경으로</div>
+    </div>
+    <div class="era">
+      <span class="year">1954 &rarr; 2017</span>
+      <span class="label"><b>RULES &rarr; STATS &rarr; NEURAL &rarr; ATTENTION</b><span class="sub">기계 번역의 70년</span></span>
+    </div>
+    <h1 class="title sm">규칙에서 &mdash;<br /><em>주의</em>로 옮겨갔습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.0fr 1.4fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <div style="height:160px; overflow:hidden; box-shadow:0 10px 24px -14px rgba(15,30,56,0.45);">
+          <img src="../images/ibm-701.jpg" alt="IBM 701" style="width:100%; height:100%; object-fit:cover; object-position:center 50%;" />
+        </div>
+        <div style="margin-top:8px; height:160px; overflow:hidden; box-shadow:0 10px 24px -14px rgba(15,30,56,0.45);">
+          <img src="../images/sutskever.jpg" alt="Ilya Sutskever" style="width:100%; height:100%; object-fit:cover; object-position:center 18%;" />
+        </div>
+        <div style="margin-top:8px; padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">IBM 701 (1954) &middot; SUTSKEVER (2014)</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">규칙 6개 &middot; 단어 250개로 시작한 길이 &mdash; Seq2Seq로 펼쳐졌습니다.</div>
+        </div>
+      </div>
+      <div class="right">
+        <div style="display:grid; grid-template-columns:1fr; gap:8px;">
+          <div style="padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">1954 &middot; IBM &times; GEORGETOWN</div>
+            <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.55;">러시아어 &rarr; 영어 60문장. 규칙 <em>6개</em>, 단어 <em>250개</em>. 3년 안에 풀린다고 호언했습니다.</div>
+          </div>
+          <div style="padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">1990s &middot; SMT (IBM MODELS)</div>
+            <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.55;">통계 기반. <em>대량의 평행 말뭉치</em>에서 단어 정렬과 확률을 배웠습니다.</div>
+          </div>
+          <div style="padding:10px 13px; background:linear-gradient(135deg, rgba(227,82,5,0.10), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">2014 &middot; SEQ2SEQ (SUTSKEVER ET AL.)</div>
+            <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.55;">RNN 인코더 &rarr; 디코더. <em>문장 전체</em>를 한 벡터에 담아 옮기기 시작했습니다.</div>
+          </div>
+          <div style="padding:11px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.92), rgba(26,49,88,0.88)); border-left:3px solid var(--brand); color:#fff;">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:800;">2017 &middot; TRANSFORMER &middot; VASWANI ET AL.</div>
+            <div style="font-size:13px; color:#fff; margin-top:3px; line-height:1.55; font-family:'Noto Serif KR', serif; font-style:italic;">&ldquo;Attention Is All You Need&rdquo; &mdash; 순서를 풀고, <em>주의(attention)</em>로 단어 사이를 직접 잇습니다. 오늘의 모든 번역기가 여기에서 갈라집니다.</div>
+          </div>
+        </div>
+
+        <p class="body-sm" style="font-size:12.5px; margin-top:10px; line-height:1.6;">규칙 &rarr; 통계 &rarr; 신경 &rarr; <em>주의</em>. 매 단계마다 사람의 손이 줄고 &mdash; 데이터가 더 깊게 들어왔습니다.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>08</b> / 10</span>
+    </div>
+  </div>
+</body></html>

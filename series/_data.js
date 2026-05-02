@@ -1044,5 +1044,50 @@ window.SERIES_DATA = [
     "count": 10,
     "folder": "47-cards-match",
     "outputs_folder": "47-outputs-match"
+  },
+  {
+    "n": 48,
+    "slug": "babel",
+    "name": "Babel",
+    "hanja": "語",
+    "subtitle": "흩어진 혀, 합쳐지는 기계",
+    "desc": "Adams 바벨피쉬 1979·AltaVista 1997 · Bruegel 1563 바벨탑 · Steiner·Benjamin·Borges · 교착·굴절·고립어 · Pirahã·Everett · 띄어쓰기 ambiguity · IBM 1954→Transformer 2017 · X Grok 2026 자동 번역.",
+    "slides": [
+      "01-cover.png",
+      "02-fiction.png",
+      "03-myth.png",
+      "04-humanities.png",
+      "05-typology.png",
+      "06-edge.png",
+      "07-ambiguity.png",
+      "08-machine.png",
+      "09-now.png",
+      "10-outro.png"
+    ],
+    "count": 10,
+    "folder": "48-cards-babel",
+    "outputs_folder": "48-outputs-babel"
+  },
+  {
+    "n": 49,
+    "slug": "relativity",
+    "name": "Relativity",
+    "hanja": "他",
+    "subtitle": "타자의 시간 · 타자의 자리",
+    "desc": "Copernicus 1543 · Einstein 1905 동시성 · Bergson durée·Husserl·Merleau-Ponty · Nagel 1974 박쥐·Chalmers · Levinas 1961 타자의 얼굴 · LLM 정지된 시계 · Searle 중국어 방의 변형.",
+    "slides": [
+      "01-cover.png",
+      "02-copernicus.png",
+      "03-einstein.png",
+      "04-bergson.png",
+      "05-nagel.png",
+      "06-levinas.png",
+      "07-ai-clock.png",
+      "08-searle.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "49-cards-relativity",
+    "outputs_folder": "49-outputs-relativity"
   }
 ];
