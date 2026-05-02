@@ -32,11 +32,9 @@ body { min-height: 100vh; }
 body.reader { padding-bottom: 120px; } /* space for fixed reader-bar */
 a { color: inherit; text-decoration: none; }
 em { font-style: normal; color: var(--brand); font-weight: 800; }
-/* brand-bg 박스 안 em orange-on-orange 방어 (hex + rgba) */
+/* 진한 brand-bg(hex 직접 지정) 박스 안 em orange-on-orange 방어 */
 [style*="E35205"] em,
-[style*="B5400B"] em,
-[style*="227,82,5"] em,
-[style*="181,64,11"] em {
+[style*="B5400B"] em {
   color: #FFE4D0 !important;
   font-weight: 700;
 }

@@ -276,11 +276,9 @@ h1.title .underline {
   font-style: normal;
   font-weight: 700;
 }
-/* brand-bg 박스 안에서 em이 orange-on-orange가 되는 문제 방어 (hex + rgba 모두) */
+/* 진한 brand-bg(hex 직접 지정) 박스 안 em orange-on-orange 방어 */
 [style*="E35205"] em,
-[style*="B5400B"] em,
-[style*="227,82,5"] em,
-[style*="181,64,11"] em {
+[style*="B5400B"] em {
   color: #FFE4D0 !important;
   font-style: normal;
 }
