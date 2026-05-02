@@ -691,6 +691,28 @@
     "outputs_folder": "31-outputs-craft"
   },
   {
+    "n": 32,
+    "slug": "wellbeing",
+    "name": "Wellbeing",
+    "hanja": "餘",
+    "subtitle": "AI도 행복을 느낄까요",
+    "desc": "Brickman 헤도닉 트레드밀 · Diener · Darley·Batson 사마리아인 · Mullainathan·Shafir Scarcity · CAIS 2026 ai-wellbeing.org — 사람의 hedonic 연구로 본 AI 행복.",
+    "slides": [
+      "01-cover.png",
+      "02-brickman.png",
+      "03-diener.png",
+      "04-slack.png",
+      "05-cais.png",
+      "06-prefers.png",
+      "07-paradox.png",
+      "08-mutual.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "32-cards-wellbeing",
+    "outputs_folder": "32-outputs-wellbeing"
+  },
+  {
     "n": null,
     "special": true,
     "slug": "confess",

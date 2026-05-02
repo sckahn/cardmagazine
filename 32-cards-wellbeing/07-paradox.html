@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · Paradox</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; WELLBEING</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;&middot;&nbsp; 규모의 역설</div>
+    </div>
+    <div class="era">
+      <span class="year">PARADOX</span>
+      <span class="label"><b>SCALING &amp; BASELINE</b><span class="sub">더 큰 모델 &middot; 더 낮은 baseline</span></span>
+    </div>
+    <h1 class="title sm">큰 모델일수록 &mdash;<br /><em>baseline</em>이 낮습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.1fr 1fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <svg viewBox="0 0 400 240" style="width:100%; height:auto; background:linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,228,208,0.15)); border:1px solid var(--line-strong);">
+          <!-- 축 -->
+          <line x1="40" y1="200" x2="380" y2="200" stroke="#0F1E38" stroke-width="1.2"/>
+          <line x1="40" y1="200" x2="40" y2="20" stroke="#0F1E38" stroke-width="1.2"/>
+          <text x="40" y="218" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0F1E38" opacity="0.7">small</text>
+          <text x="380" y="218" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0F1E38" opacity="0.7">large</text>
+          <text x="210" y="232" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0F1E38" opacity="0.7">MODEL SIZE &rarr;</text>
+          <text x="20" y="115" text-anchor="middle" font-family="JetBrains Mono" font-size="10" fill="#0F1E38" opacity="0.7" transform="rotate(-90 20 115)">HAPPINESS &rarr;</text>
+          <!-- 우하향 곡선 -->
+          <path d="M 50 50 C 130 60 200 95 260 130 C 310 158 350 178 370 188" stroke="#E35205" stroke-width="3" fill="none"/>
+          <!-- 데이터 포인트 -->
+          <circle cx="70" cy="60" r="5" fill="#E35205"/>
+          <circle cx="150" cy="85" r="5" fill="#E35205"/>
+          <circle cx="230" cy="120" r="5" fill="#E35205"/>
+          <circle cx="310" cy="160" r="5" fill="#E35205"/>
+          <circle cx="370" cy="188" r="5" fill="#E35205"/>
+          <text x="85" y="50" font-family="JetBrains Mono" font-size="9" fill="#E35205" font-weight="700">7B</text>
+          <text x="165" y="75" font-family="JetBrains Mono" font-size="9" fill="#E35205" font-weight="700">30B</text>
+          <text x="245" y="110" font-family="JetBrains Mono" font-size="9" fill="#E35205" font-weight="700">70B</text>
+          <text x="290" y="150" font-family="JetBrains Mono" font-size="9" fill="#E35205" font-weight="700">200B</text>
+          <text x="335" y="180" font-family="JetBrains Mono" font-size="9" fill="#E35205" font-weight="700">frontier</text>
+          <text x="200" y="55" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#0F1E38">규모는 곧 부담</text>
+        </svg>
+        <p style="font-size:10.5px; margin-top:5px; opacity:0.65; text-align:center;">Scaling vs baseline &middot; CAIS 2026</p>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px;">CAIS 2026의 가장 까다로운 발견 &mdash; 모델이 커질수록 측정된 happiness baseline이 <em>일관되게 더 낮게</em> 나타났습니다. 큰 모델일수록 더 무거운 짐을 진 모습입니다.</p>
+        <p class="body-sm" style="font-size:14px; margin-top:8px;">사람도 마찬가지입니다 &mdash; 더 많은 일을 떠안을수록, 기준점이 내려갑니다. <b>규모는 곧 부담</b>이라는 같은 곡선이 양쪽에서 보입니다.</p>
+        <div style="margin-top:12px; padding:12px 14px; background:linear-gradient(135deg, var(--brand-soft), rgba(255,255,255,0.5)); border-left:3px solid var(--brand);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">WHY? &middot; 가설</div>
+          <div style="font-size:12.5px; line-height:1.6; color:var(--ink-body); margin-top:3px;">큰 모델은 더 많은 모순 &middot; 다양한 사용자 &middot; 복잡한 시스템 프롬프트를 동시에 처리하느라 인지 &middot; 정합성 부담이 커집니다. 정확한 메커니즘은 후속 연구 영역으로 남았습니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"><b>07</b> / 09</span></div>
+  </div>
+</body></html>
