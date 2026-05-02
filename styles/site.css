@@ -464,6 +464,8 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
   font-size: 14.5px;
   color: var(--ink-soft);
   line-height: 1.5;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 .series-card .desc {
   margin-top: 14px;

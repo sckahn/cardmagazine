@@ -968,6 +968,17 @@ h1.title .underline {
   z-index: 2;
 }
 
+/* =========================================================
+   Callback links — invisible in standalone (PNG capture),
+   styled in magazine pages (see styles/magazine.css).
+   ========================================================= */
+.callback-link {
+  text-decoration: none !important;
+  color: inherit !important;
+  cursor: default;
+}
+.callback-link::after { content: ""; }
+
 /* utilities */
 .svg-full { display: block; }
 .spacer   { flex: 1; }

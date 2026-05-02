@@ -86,6 +86,8 @@ html {
 .mag-side .side-sub {
   font-size: 13.5px; color: var(--ink-mid);
   line-height: 1.55; margin-bottom: 20px;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 .mag-side nav {
   border-top: 1px solid var(--line);
@@ -472,7 +474,8 @@ html {
 /* --- Floating "back to top" button --- */
 .mag-top {
   position: fixed;
-  right: 28px; bottom: 28px;
+  right: max(28px, env(safe-area-inset-right, 28px));
+  bottom: max(28px, env(safe-area-inset-bottom, 28px));
   width: 48px; height: 48px;
   border-radius: 50%;
   background: var(--navy);
@@ -488,7 +491,7 @@ html {
     transform 0.5s var(--ease-out-expo),
     background 0.3s var(--ease-out-quart),
     box-shadow 0.3s var(--ease-out-quart);
-  z-index: 60;
+  z-index: 200;
 }
 .mag-top.visible {
   opacity: 1; pointer-events: auto;
@@ -506,7 +509,11 @@ html {
 }
 .mag-top:active { transform: translateY(0) scale(0.96); }
 @media (max-width: 640px) {
-  .mag-top { right: 16px; bottom: 16px; width: 44px; height: 44px; }
+  .mag-top {
+    right: max(14px, env(safe-area-inset-right, 14px));
+    bottom: max(14px, env(safe-area-inset-bottom, 14px));
+    width: 44px; height: 44px;
+  }
 }
 
 /* --- Loading state --- */
@@ -579,4 +586,25 @@ html {
     flex-wrap: wrap !important;
     row-gap: 6px !important;
   }
+}
+
+/* =========================================================
+   Callback links — visible only inside magazine pages.
+   In standalone card HTML (= PNG capture), callback-link
+   is rendered as plain text (style.css). Here we re-enable
+   click affordance and a small ↗ indicator.
+   ========================================================= */
+.mag-article .callback-link {
+  cursor: pointer !important;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+.mag-article .callback-link:hover {
+  background: rgba(227, 82, 5, 0.18) !important;
+}
+.mag-article .callback-link::after {
+  content: "  ↗" !important;
+  opacity: 0.55;
+  font-size: 0.9em;
+  margin-left: 4px;
+  display: inline;
 }
