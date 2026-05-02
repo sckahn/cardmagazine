@@ -888,5 +888,93 @@
     "count": 10,
     "folder": "40-cards-search",
     "outputs_folder": "40-outputs-search"
+  },
+  {
+    "n": 41,
+    "slug": "hands",
+    "name": "Hands",
+    "hanja": "手",
+    "subtitle": "화이트칼라가 먼저, 블루칼라가 살아남았습니다",
+    "desc": "Frey-Osborne 2013 틀린 예언 · Moravec 1988 역설 · 사람 손의 진화 · 보스턴 다이내믹스 Atlas · Mike Rowe 숙련직 · Polanyi 암묵지 — 추상은 쉽고 손은 어렵습니다.",
+    "slides": [
+      "01-cover.png",
+      "02-frey.png",
+      "03-reversal.png",
+      "04-moravec.png",
+      "05-evolution.png",
+      "06-atlas.png",
+      "07-rowe.png",
+      "08-polanyi.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "41-cards-hands",
+    "outputs_folder": "41-outputs-hands"
+  },
+  {
+    "n": 42,
+    "slug": "muscle",
+    "name": "Muscle",
+    "hanja": "筋",
+    "subtitle": "근육은 밀지 못합니다",
+    "desc": "41호 자매편 · 인공관절의 한계 · 모터 vs 근육(이두/삼두) · Snelson·Ingber 텐세그리티 · 압축 vs 장력 · McKibben 인공근육 — 진화는 공장이 아니라 생존을 위해.",
+    "slides": [
+      "01-cover.png",
+      "02-callback.png",
+      "03-arthroplasty.png",
+      "04-motor-vs-muscle.png",
+      "05-biceps-triceps.png",
+      "06-tensegrity.png",
+      "07-compression-vs-tension.png",
+      "08-mckibben.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "42-cards-muscle",
+    "outputs_folder": "42-outputs-muscle"
+  },
+  {
+    "n": 43,
+    "slug": "chip",
+    "name": "Chip",
+    "hanja": "微",
+    "subtitle": "황의 법칙은 AI 앞에서 깨졌습니다",
+    "desc": "Moore 1965 · 황창규 2002 · 2014 곡선이 꺾이다 · 양자 터널링 · HBM 12층 적층 · 액침 냉각 · Chiplet/Photonics/Neuromorphic — 한 트랜지스터의 시대에서 시스템의 시대로.",
+    "slides": [
+      "01-cover.png",
+      "02-moore.png",
+      "03-hwang.png",
+      "04-broken.png",
+      "05-tunneling.png",
+      "06-hbm.png",
+      "07-heat.png",
+      "08-future.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "43-cards-chip",
+    "outputs_folder": "43-outputs-chip"
+  },
+  {
+    "n": 44,
+    "slug": "quantum",
+    "name": "Quantum",
+    "hanja": "量",
+    "subtitle": "공중에 던진 동전 — 그게 양자입니다",
+    "desc": "43호 자매편 · 동전(중첩) · 양말(얽힘) · 미로(Grover) · 자물쇠(Shor) · 식당 메뉴(QAOA·AI) · 냉동고(decoherence) — 일상 비유로 푸는 양자 컴퓨팅.",
+    "slides": [
+      "01-cover.png",
+      "02-recap.png",
+      "03-coin.png",
+      "04-socks.png",
+      "05-maze.png",
+      "06-shor.png",
+      "07-menu.png",
+      "08-fridge.png",
+      "09-outro.png"
+    ],
+    "count": 9,
+    "folder": "44-cards-quantum",
+    "outputs_folder": "44-outputs-quantum"
   }
 ]

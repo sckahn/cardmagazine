@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<title>AI × Hands · Issue 41</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../styles/site.css?v=15" />
+<link rel="stylesheet" href="../styles/magazine.css?v=15" />
+<script defer src="../styles/book-mode.js?v=19"></script></head><body>
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="logo" href="../">AI × <em>Series</em></a>
+    <div class="nav-right">Issue 41 · Hands</div>
+  </div>
+</nav>
+
+<div class="mag-shell">
+  <aside class="mag-side">
+    <div class="side-kicker">Issue 41</div>
+    <h2>AI × <em>Hands</em></h2>
+    <div class="side-sub">화이트칼라가 먼저, 블루칼라가 살아남았습니다 — Frey-Osborne 2013 · Moravec 1988 · 사람 손의 진화 · Atlas · Mike Rowe · Polanyi 암묵지.</div>
+
+    <div class="progress-outer"><div class="progress-inner" id="progress"></div></div>
+
+    <nav aria-label="목차">
+      <ol id="toc">
+                <li><a href="#card-01" class="current"><span class="num">01</span>표지</a></li>
+        <li><a href="#card-02"><span class="num">02</span>Frey 2013 틀린 예언</a></li>
+        <li><a href="#card-03"><span class="num">03</span>현실 — 화이트칼라 먼저</a></li>
+        <li><a href="#card-04"><span class="num">04</span>Moravec 역설</a></li>
+        <li><a href="#card-05"><span class="num">05</span>사람 손의 진화</a></li>
+        <li><a href="#card-06"><span class="num">06</span>보스턴 다이내믹스 Atlas</a></li>
+        <li><a href="#card-07"><span class="num">07</span>Mike Rowe · Crawford</a></li>
+        <li><a href="#card-08"><span class="num">08</span>Polanyi 암묵지</a></li>
+        <li><a href="#card-09"><span class="num">09</span>Outro</a></li>
+      </ol>
+    </nav>
+
+    <div class="side-foot">Card News Magazine</div>
+  </aside>
+
+  <main class="mag-main">
+    <article class="mag-article loading" id="card-01" data-card="../41-cards-hands/01-cover.html">
+      <div class="mag-num">ISSUE 41 · <b>01</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-02" data-card="../41-cards-hands/02-frey.html">
+      <div class="mag-num">ISSUE 41 · <b>02</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-03" data-card="../41-cards-hands/03-reversal.html">
+      <div class="mag-num">ISSUE 41 · <b>03</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-04" data-card="../41-cards-hands/04-moravec.html">
+      <div class="mag-num">ISSUE 41 · <b>04</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-05" data-card="../41-cards-hands/05-evolution.html">
+      <div class="mag-num">ISSUE 41 · <b>05</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-06" data-card="../41-cards-hands/06-atlas.html">
+      <div class="mag-num">ISSUE 41 · <b>06</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-07" data-card="../41-cards-hands/07-rowe.html">
+      <div class="mag-num">ISSUE 41 · <b>07</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-08" data-card="../41-cards-hands/08-polanyi.html">
+      <div class="mag-num">ISSUE 41 · <b>08</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-09" data-card="../41-cards-hands/09-outro.html">
+      <div class="mag-num">ISSUE 41 · <b>09</b> / 9</div>
+      <div class="card-content">Loading…</div>
+    </article>
+
+    <aside class="mag-next">
+      <div>
+        <div class="next-kicker">NEXT ISSUE</div>
+        <h3 class="next-title">AI × <em>Craft</em></h3>
+        <p class="next-sub">디테일은 베껴지지 않습니다 — Ruskin·Morris·Benjamin·Rams·Sennett로 본 AI Slop 시대의 장인정신.</p>
+        <a class="next-cta" href="craft.html">Issue 31 읽기 →</a>
+      </div>
+    </aside>
+  </main>
+</div>
+
+<button class="mag-top" id="magTop" aria-label="맨 위로"><span>↑</span></button>
+
+<footer class="site-foot">
+  <span>AI × Series · Card News Magazine</span>
+  <span>Issue 41 · Hands</span>
+</footer>
+
+<script>
+(async function () {
+  const cardCssUrl = '../style.css?v=15';
+  let cardCss = '';
+  try {
+    cardCss = await fetch(cardCssUrl).then(r => r.text());
+  } catch (e) { console.error('Failed to load card CSS', e); }
+
+  function scopeCardCss(css) {
+    css = css.replace(/html\s*,\s*body\s*\{[^}]*\}/g, '');
+    css = css.replace(/(body\s*\{[^}]*?)overflow\s*:\s*hidden\s*;?/g, '$1');
+    css = css.replace(/(^|\})\s*body\s*\{/g, '$1.mag-article {');
+    css = css.replace(/body::after\s*\{/g, '.mag-article::after {');
+    css = css.replace(
+      /\*\s*,\s*\*::before\s*,\s*\*::after\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article *, .mag-article *::before, .mag-article *::after { font-style: normal !important; }'
+    );
+    css = css.replace(
+      /em\s*,\s*i\s*,\s*cite\s*,\s*address\s*,\s*dfn\s*,\s*var\s*,\s*blockquote\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article em, .mag-article i, .mag-article cite, .mag-article address, .mag-article dfn, .mag-article var, .mag-article blockquote { font-style: normal !important; }'
+    );
+    css = css.replace(/\.cover\s+\.stage/g, '.mag-article.cover-like .stage');
+    css = css.replace(/\.cover\s+\.kicker/g, '.mag-article.cover-like .kicker');
+    css = css.replace(/\.cover\s+\.hello/g, '.mag-article.cover-like .hello');
+    css = css.replace(/\.cover\s+h1\.hero/g, '.mag-article.cover-like h1.hero');
+    css = css.replace(/\.cover\s+\.lead/g, '.mag-article.cover-like .lead');
+    css = css.replace(/\.cover\s+\.timeline/g, '.mag-article.cover-like .timeline');
+    css = css.replace(/\.outro\s+\.stage/g, '.mag-article.outro-like .stage');
+    css = css.replace(/\.outro\s+\.flourish/g, '.mag-article.outro-like .flourish');
+    css = css.replace(/\.outro\s+\.ask/g, '.mag-article.outro-like .ask');
+    css = css.replace(/\.outro\s+\.closing/g, '.mag-article.outro-like .closing');
+    css = css.replace(/\.outro\s+\.tags/g, '.mag-article.outro-like .tags');
+    return css;
+  }
+
+  if (cardCss) {
+    const style = document.createElement('style');
+    style.id = 'card-css-scoped';
+    style.textContent = scopeCardCss(cardCss);
+    document.head.appendChild(style);
+  }
+
+  const articles = Array.from(document.querySelectorAll('.mag-article[data-card]'));
+
+  async function loadCard(article) {
+    const url = article.dataset.card;
+    try {
+      const html = await fetch(url).then(r => r.text());
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const body = doc.body;
+      const stage = body.querySelector('.stage');
+      if (!stage) throw new Error('No .stage in ' + url);
+      if (body.classList.contains('cover')) article.classList.add('cover-like');
+      if (body.classList.contains('outro')) article.classList.add('outro-like');
+      const slot = article.querySelector('.card-content');
+      slot.innerHTML = '';
+      slot.appendChild(document.importNode(stage, true));
+      article.classList.remove('loading');
+    } catch (e) {
+      console.error('Card load failed', url, e);
+      article.querySelector('.card-content').textContent = '카드를 불러오지 못했습니다.';
+      article.classList.remove('loading');
+    }
+  }
+
+  await Promise.all(articles.map(loadCard));
+
+  const tocLinks = Array.from(document.querySelectorAll('#toc a'));
+  const progressBar = document.getElementById('progress');
+  const tocMap = new Map();
+  tocLinks.forEach(a => tocMap.set(a.getAttribute('href').slice(1), a));
+
+  const sidebar = document.querySelector('.mag-side');
+  function scrollSidebarTo(link) {
+    if (!sidebar || !link) return;
+    const sr = sidebar.getBoundingClientRect();
+    const lr = link.getBoundingClientRect();
+    if (lr.top < sr.top + 20) sidebar.scrollTop += lr.top - sr.top - 20;
+    else if (lr.bottom > sr.bottom - 20) sidebar.scrollTop += lr.bottom - sr.bottom + 20;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        tocLinks.forEach(a => a.classList.toggle('current', a.getAttribute('href') === '#' + id));
+        scrollSidebarTo(tocMap.get(id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  articles.forEach(a => io.observe(a));
+
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        reveal.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -15% 0px', threshold: 0.05 });
+  document.querySelectorAll('.mag-article, .mag-next').forEach(el => reveal.observe(el));
+
+  let progressTimer = null;
+  function updateProgress() {
+    const doc = document.documentElement;
+    const scrolled = doc.scrollTop || document.body.scrollTop;
+    const max = doc.scrollHeight - doc.clientHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (scrolled / max) * 100)) : 0;
+    progressBar.style.width = pct + '%';
+    progressBar.classList.add('is-moving');
+    clearTimeout(progressTimer);
+    progressTimer = setTimeout(() => progressBar.classList.remove('is-moving'), 260);
+  }
+  document.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  tocLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  if (location.hash && /^#card-\d+$/.test(location.hash)) {
+    const t = document.getElementById(location.hash.slice(1));
+    if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' });
+  }
+
+  const paged = articles.concat(Array.from(document.querySelectorAll('.mag-next')));
+  const NAV_OFFSET = 68;
+  let currentIdx = 0;
+  let scrollLockUntil = 0;
+  (function initFromScroll() {
+    const y = window.scrollY + NAV_OFFSET + 2;
+    for (let i = 0; i < paged.length; i++) {
+      const top = paged[i].getBoundingClientRect().top + window.scrollY;
+      if (top <= y + 4) currentIdx = i; else break;
+    }
+  })();
+  function goToIndex(i) {
+    i = Math.max(0, Math.min(paged.length - 1, i));
+    currentIdx = i;
+    const top = paged[i].getBoundingClientRect().top + window.scrollY - NAV_OFFSET;
+    scrollLockUntil = Date.now() + 600;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+  let scrollRaf = null;
+  document.addEventListener('scroll', () => {
+    if (Date.now() < scrollLockUntil) return;
+    if (scrollRaf) return;
+    scrollRaf = requestAnimationFrame(() => {
+      scrollRaf = null;
+      const y = window.scrollY + NAV_OFFSET + 2;
+      for (let i = 0; i < paged.length; i++) {
+        const top = paged[i].getBoundingClientRect().top + window.scrollY;
+        if (top <= y + 4) currentIdx = i; else break;
+      }
+    });
+  }, { passive: true });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'PageDown') { e.preventDefault(); goToIndex(currentIdx + 1); }
+    else if (e.key === 'ArrowUp' || e.key === 'PageUp')  { e.preventDefault(); goToIndex(currentIdx - 1); }
+    else if (e.key === 'Home') { e.preventDefault(); goToIndex(0); }
+    else if (e.key === 'End')  { e.preventDefault(); goToIndex(paged.length - 1); }
+  });
+
+  const topBtn = document.getElementById('magTop');
+  if (topBtn) {
+    function syncTopBtn() { topBtn.classList.toggle('visible', window.scrollY > 500); }
+    document.addEventListener('scroll', syncTopBtn, { passive: true });
+    topBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', '#card-01');
+    });
+    syncTopBtn();
+  }
+})();
+</script>
+
+</body></html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>07 · 열 문제</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">07</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; CHIP</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;&middot;&nbsp; 발열, 도시 한 개의 전력</div>
+    </div>
+    <div class="era">
+      <span class="year">2024</span>
+      <span class="label"><b>HEAT PROBLEM</b><span class="sub">800W~1000W GPU &middot; 액침 냉각</span></span>
+    </div>
+    <h1 class="title sm">AI 칩 한 장이 &mdash;<br /><em>가전 30개</em> 분의 열입니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.0fr 1.4fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <div style="height:280px; overflow:hidden; box-shadow:0 10px 24px -14px rgba(15,30,56,0.45);">
+          <img src="../images/immersion-cooling.jpg" alt="Immersion cooling" style="width:100%; height:100%; object-fit:cover; object-position:center;" />
+        </div>
+        <div style="margin-top:8px; padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">IMMERSION COOLING</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">서버를 비전도성 액체에 통째로 담그는 방식. Asperitas&middot;Submer&middot;Iceotope.</div>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px; line-height:1.65;">NVIDIA <b>H100</b> 한 장 700W, <b>B200</b>은 1000W. 데이터센터 한 동의 전력이 도시 한 개. 공랭으로는 못 식혀 &mdash; <em>액침 냉각(immersion cooling &mdash; 칩을 비전도성 액체에 통째로 담그는 냉각)</em>, 직접 액체 냉각(D2C)이 표준이 되어 갑니다.</p>
+
+        <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+          <div style="padding:11px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">2010 GPU</div>
+            <div style="font-size:18px; font-weight:900; color:var(--navy); margin-top:3px;">200W</div>
+            <div style="font-size:11.5px; color:var(--ink-body); margin-top:2px;">공랭 가능</div>
+          </div>
+          <div style="padding:11px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">H100 (2022)</div>
+            <div style="font-size:18px; font-weight:900; color:var(--navy); margin-top:3px;">700W</div>
+            <div style="font-size:11.5px; color:var(--ink-body); margin-top:2px;">액체 냉각</div>
+          </div>
+          <div style="padding:11px 13px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">B200 (2024)</div>
+            <div style="font-size:18px; font-weight:900; color:var(--brand); margin-top:3px;">1000W</div>
+            <div style="font-size:11.5px; color:var(--ink-body); margin-top:2px;">액침이 표준화</div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px; padding:11px 13px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">D2C &middot; DIRECT-TO-CHIP</div>
+          <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.55;">차가운 액체를 칩 표면에 직접 흘리는 방식. 공랭 대비 30~40% 전력 절감.</div>
+        </div>
+
+        <p class="body-sm" style="font-size:13px; margin-top:10px; line-height:1.6;">트랜지스터를 작게 만들어도 &mdash; 전기를 안 쓰게 만들지는 못했습니다. <em>발열은 곧 한계</em>입니다.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>07</b> / 09</span>
+    </div>
+  </div>
+</body></html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>06 · HBM</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">06</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; CHIP</div>
+      <div class="chaptertag">CHAPTER 05 &nbsp;&middot;&nbsp; 위로 쌓는 길</div>
+    </div>
+    <div class="era">
+      <span class="year">2015~</span>
+      <span class="label"><b>HIGH BANDWIDTH MEMORY</b><span class="sub">SK하이닉스 &middot; 삼성 &middot; 마이크론</span></span>
+    </div>
+    <h1 class="title sm">옆으로 못 가면 &mdash;<br /><em>위로</em> 쌓습니다.</h1>
+
+    <div class="split" style="grid-template-columns:1.1fr 1.3fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <div style="padding:18px 16px; background:linear-gradient(180deg, rgba(15,30,56,0.04), rgba(255,255,255,0.6)); border:1px solid rgba(15,30,56,0.10);">
+          <svg viewBox="0 0 320 320" style="width:100%; height:auto;">
+            <text x="160" y="20" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#0f1e38" text-anchor="middle">HBM &middot; 12층 적층 + TSV</text>
+            <!-- 12 stacked dies -->
+            <g>
+              <!-- iterate -->
+            </g>
+            <g>
+              <!-- bases -->
+              <rect x="40" y="280" width="240" height="20" fill="#0f1e38"/>
+              <text x="160" y="294" font-family="JetBrains Mono" font-size="9" font-weight="700" fill="#FFE4D0" text-anchor="middle">로직 베이스 다이</text>
+            </g>
+            <!-- 12 layers -->
+            <g>
+              <rect x="50" y="260" width="220" height="16" fill="#1c2e4e" stroke="#0f1e38"/>
+              <rect x="50" y="240" width="220" height="16" fill="#243a5e" stroke="#0f1e38"/>
+              <rect x="50" y="220" width="220" height="16" fill="#2c4670" stroke="#0f1e38"/>
+              <rect x="50" y="200" width="220" height="16" fill="#345282" stroke="#0f1e38"/>
+              <rect x="50" y="180" width="220" height="16" fill="#3c5e94" stroke="#0f1e38"/>
+              <rect x="50" y="160" width="220" height="16" fill="#446aa6" stroke="#0f1e38"/>
+              <rect x="50" y="140" width="220" height="16" fill="#4c76b8" stroke="#0f1e38"/>
+              <rect x="50" y="120" width="220" height="16" fill="#5482ca" stroke="#0f1e38"/>
+              <rect x="50" y="100" width="220" height="16" fill="#5c8edc" stroke="#0f1e38"/>
+              <rect x="50" y="80" width="220" height="16" fill="#7aa4e6" stroke="#0f1e38"/>
+              <rect x="50" y="60" width="220" height="16" fill="#9ebbef" stroke="#0f1e38"/>
+              <rect x="50" y="40" width="220" height="16" fill="#c2d3f6" stroke="#0f1e38"/>
+            </g>
+            <!-- TSV vias -->
+            <g stroke="#E35205" stroke-width="2.5">
+              <line x1="90" y1="40" x2="90" y2="280"/>
+              <line x1="160" y1="40" x2="160" y2="280"/>
+              <line x1="230" y1="40" x2="230" y2="280"/>
+            </g>
+            <text x="290" y="160" font-family="JetBrains Mono" font-size="10" font-weight="800" fill="#E35205" text-anchor="end" transform="rotate(-90 290 160)">TSV (실리콘 관통전극)</text>
+          </svg>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px; line-height:1.65;"><b>High Bandwidth Memory</b>는 메모리 칩을 12층까지 적층합니다. 층 사이는 <b>TSV(Through Silicon Via &mdash; 실리콘 관통전극)</b>로 연결합니다. 1.2 TB/s 대역폭. SK하이닉스&middot;삼성&middot;마이크론 3사가 AI GPU 메모리를 점유합니다.</p>
+
+        <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); border-radius:5px; color:#fff;">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:800;">DDR5 (옆으로)</div>
+            <div style="font-size:13px; margin-top:3px; line-height:1.5;">대역폭 <b>0.05 TB/s</b><br />일반 PC&middot;서버 메모리</div>
+          </div>
+          <div style="padding:11px 13px; background:linear-gradient(135deg, #E35205, #B5400B); border-radius:5px; color:#fff;">
+            <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:#FFE4D0; font-weight:800;">HBM3E (위로)</div>
+            <div style="font-size:13px; margin-top:3px; line-height:1.5;">대역폭 <b>1.2 TB/s</b><br />24배 &mdash; AI GPU 전용</div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px; padding:11px 13px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">&crarr; 과거 복기 &middot; 35호 COMPUTE 07</div>
+          <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.55;">&lsquo;HBM 메모리 &mdash; SK하이닉스&middot;삼성&middot;마이크론 3사 과점&rsquo;. NVIDIA H100&middot;B200의 핵심 부품입니다.</div>
+        </div>
+
+        <p class="body-sm" style="font-size:13px; margin-top:10px; line-height:1.6;">미세화의 직선이 막히자 &mdash; 산업은 <em>3차원</em>으로 방향을 틀었습니다.</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>06</b> / 09</span>
+    </div>
+  </div>
+</body></html>

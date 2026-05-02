@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · 냉동고 · 한계와 숙제</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; QUANTUM</div>
+      <div class="chaptertag">CHAPTER 07 &nbsp;&middot;&nbsp; 큐비트 보호 &middot; DECOHERENCE</div>
+    </div>
+    <div class="era">
+      <span class="year">한계</span>
+      <span class="label"><b>DILUTION FRIDGE</b><span class="sub">절대영도(-273℃) &middot; 큐비트의 집</span></span>
+    </div>
+    <h1 class="title sm">회전하는 동전은 &mdash;<br /><em>건드리면 멈춥니다</em>.</h1>
+
+    <div class="split" style="grid-template-columns:1.0fr 1.4fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <div style="height:320px; overflow:hidden; box-shadow:0 10px 24px -14px rgba(15,30,56,0.45);">
+          <img src="../images/dilution-fridge.jpg" alt="Dilution refrigerator (IBM Quantum System One)" style="width:100%; height:100%; object-fit:cover; object-position:center center;" />
+        </div>
+        <div style="margin-top:8px; padding:10px 13px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+          <div style="font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">IBM QUANTUM SYSTEM ONE</div>
+          <div style="font-size:12px; color:var(--ink-body); margin-top:3px; line-height:1.55;">샹들리에처럼 매달린 구조 &mdash; 단계마다 더 차갑게, 마지막 단은 거의 절대영도.</div>
+        </div>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:13.5px; line-height:1.65;">큐비트는 너무 약합니다. 작은 진동&middot;온도&middot;전자기파에도 0.01초 만에 무너집니다(<em>decoherence &mdash; 흔들려 풀려버림</em>). 그래서 절대영도(-273℃)에 가까운 <em>냉동고</em> 안에서만 살 수 있습니다.</p>
+
+        <p class="body-sm" style="font-size:13.5px; margin-top:10px; line-height:1.65;">오류 1만 번에 1번 &mdash; 정정용 큐비트가 <b>1,000개 더</b> 필요합니다. 실제로 일을 시킬 큐비트 100개를 쓰려면, 보조 큐비트 십만 개가 필요한 셈. <b>실용 양자(Fault-Tolerant Quantum)는 2030년대 말이 현실적</b>입니다.</p>
+
+        <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div style="padding:9px 12px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:9.5px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">DECOHERENCE</div>
+            <div style="font-size:12px; color:var(--navy); margin-top:3px; line-height:1.5;">큐비트가 환경과 섞여 0.01초 만에 정보가 풀려버림.</div>
+          </div>
+          <div style="padding:9px 12px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+            <div style="font-family:var(--f-mono); font-size:9.5px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">FAULT-TOLERANT</div>
+            <div style="font-size:12px; color:var(--navy); margin-top:3px; line-height:1.5;">오류를 정정하며 안정적으로 계산하는 양자 컴퓨터.</div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px; padding:11px 14px; background:linear-gradient(135deg, rgba(227,82,5,0.12), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+          <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">GOOGLE WILLOW &middot; 2024</div>
+          <div style="font-size:12.5px; color:var(--navy); margin-top:3px; line-height:1.55;">큐비트가 늘어날수록 오류가 <em>줄어드는</em> 첫 모델 &mdash; 양자 오류 정정의 분기점입니다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"></span>
+    </div>
+  </div>
+</body></html>

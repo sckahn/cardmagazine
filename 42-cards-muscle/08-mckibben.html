@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>08 · McKibben 인공근육</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">08</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; MUSCLE</div>
+      <div class="chaptertag">CHAPTER 06 &nbsp;&middot;&nbsp; McKibben 인공근육</div>
+    </div>
+    <div class="era">
+      <span class="year">1950s</span>
+      <span class="label"><b>PNEUMATIC ARTIFICIAL MUSCLE &middot; FESTO &middot; SOFT ROBOTICS</b><span class="sub">당김을 흉내내는 시도</span></span>
+    </div>
+    <h1 class="title sm">공기로 부풀려 &mdash;<br /><em>당기는</em> 천 튜브.</h1>
+
+    <div style="display:grid; grid-template-columns:1.05fr 1fr; gap:16px; margin-top:14px; align-items:center;">
+      <svg viewBox="0 0 360 200" style="width:100%; height:auto;">
+        <defs>
+          <pattern id="braid" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+            <line x1="0" y1="0" x2="0" y2="14" stroke="#0f1e38" stroke-width="1" />
+          </pattern>
+          <pattern id="braid2" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)">
+            <line x1="0" y1="0" x2="0" y2="14" stroke="#0f1e38" stroke-width="1" />
+          </pattern>
+        </defs>
+        <text x="20" y="20" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#0f1e38" letter-spacing="2">RELAXED &middot; LONG &amp; THIN</text>
+        <rect x="40" y="50" width="280" height="22" rx="11" fill="#FFE4D0" stroke="#E35205" stroke-width="2" />
+        <rect x="40" y="50" width="280" height="22" rx="11" fill="url(#braid)" opacity="0.6" />
+        <rect x="40" y="50" width="280" height="22" rx="11" fill="url(#braid2)" opacity="0.6" />
+        <circle cx="32" cy="61" r="6" fill="#0f1e38" />
+        <circle cx="328" cy="61" r="6" fill="#0f1e38" />
+
+        <text x="20" y="105" font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#E35205" letter-spacing="2">PRESSURIZED &middot; SHORT &amp; FAT &middot; PULLS</text>
+        <ellipse cx="180" cy="155" rx="120" ry="36" fill="#FFE4D0" stroke="#E35205" stroke-width="2" />
+        <ellipse cx="180" cy="155" rx="120" ry="36" fill="url(#braid)" opacity="0.6" />
+        <ellipse cx="180" cy="155" rx="120" ry="36" fill="url(#braid2)" opacity="0.6" />
+        <circle cx="55" cy="155" r="6" fill="#0f1e38" />
+        <circle cx="305" cy="155" r="6" fill="#0f1e38" />
+        <path d="M 20 155 L 50 155" stroke="#E35205" stroke-width="2" />
+        <polygon points="50,155 42,151 42,159" fill="#E35205" />
+        <path d="M 340 155 L 310 155" stroke="#E35205" stroke-width="2" />
+        <polygon points="310,155 318,151 318,159" fill="#E35205" />
+
+        <path d="M 165 90 Q 180 75 195 90" stroke="#E35205" stroke-width="1.5" fill="none" />
+        <text x="180" y="86" font-family="JetBrains Mono" font-size="9" fill="#E35205" text-anchor="middle" font-weight="700">AIR IN</text>
+      </svg>
+      <div>
+        <p class="body-sm" style="font-size:13.5px; line-height:1.65;"><b>1950s</b> Joseph McKibben(조지프 매키번)이 발명한 공압 인공근육 &mdash; 고무 튜브를 짠 천(braid)이 감싸고, 공기를 넣으면 부풀어 짧아지면서 <em>당김</em>이 발생합니다.</p>
+        <p class="body-sm" style="font-size:13.5px; margin-top:10px; line-height:1.65;">Festo의 Fluidic Muscle, Boston Dynamics의 후속 연구, 소프트 로봇 분야가 이어받았습니다. 모터의 회전이 아닌 &mdash; <b>당김</b>을 흉내내려는 시도.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; padding:14px 16px; background:linear-gradient(135deg, rgba(227,82,5,0.10), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+      <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:var(--brand); font-weight:800;">하지만 &middot; STILL FAR BEHIND</div>
+      <div style="font-size:13px; color:var(--navy); margin-top:5px; line-height:1.65;">사람 근육은 <b>50W/kg</b>의 출력 밀도에 <em>자가 회복</em>까지 갖췄습니다. McKibben류는 압축기·밸브·튜브가 따라붙고, 마모되면 교체해야 합니다 &mdash; <b>흉내는 가까워졌지만 살은 멀다.</b></div>
+    </div>
+
+    <div style="margin-top:12px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); color:#fff; border-radius:6px;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">출력 밀도</div>
+        <div style="font-size:13px; font-weight:700; margin-top:5px; line-height:1.5;">근육 50W/kg<br />McKibben 10~30W/kg</div>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #0f1e38, #1c2e4e); color:#fff; border-radius:6px;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">회복</div>
+        <div style="font-size:13px; font-weight:700; margin-top:5px; line-height:1.5;">근육 자가 회복<br />튜브 마모 &middot; 교체</div>
+      </div>
+      <div style="padding:13px 15px; background:linear-gradient(135deg, #E35205, #B5400B); color:#fff; border-radius:6px;">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.2em; color:#FFE4D0; font-weight:800;">제어</div>
+        <div style="font-size:13px; font-weight:700; margin-top:5px; line-height:1.5;">근육 ms 점화<br />공압 지연 100ms+</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>08</b> / 09</span>
+    </div>
+  </div>
+</body></html>

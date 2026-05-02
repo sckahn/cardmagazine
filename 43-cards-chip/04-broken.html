@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · 깨진 곡선</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI &times; CHIP</div>
+      <div class="chaptertag">CHAPTER 03 &nbsp;&middot;&nbsp; 곡선이 꺾이기 시작</div>
+    </div>
+    <div class="era">
+      <span class="year">2014~</span>
+      <span class="label"><b>LAW BROKEN</b><span class="sub">물리 한계 &middot; 트랜지스터 곡선이 완만</span></span>
+    </div>
+    <h1 class="title sm">곡선이 &mdash;<br /><em>꺾이기 시작</em>했습니다.</h1>
+
+    <p class="body-sm" style="font-size:14px; margin-top:14px; line-height:1.65;">황의 법칙은 2014년 무렵 멈췄고, Moore의 2년 주기도 늘어졌습니다. AI가 요구하는 메모리&middot;연산은 폭증하는데 &mdash; <em>물리 법칙이 따라오지 못합니다.</em> GPU 가격이 매년 오르는 이유입니다.</p>
+
+    <div style="margin-top:14px; padding:18px 20px; background:linear-gradient(180deg, rgba(15,30,56,0.04), rgba(255,255,255,0.6)); border:1px solid rgba(15,30,56,0.10);">
+      <svg viewBox="0 0 880 320" style="width:100%; height:auto;">
+        <defs>
+          <linearGradient id="orange" x1="0" x2="1">
+            <stop offset="0" stop-color="#E35205"/>
+            <stop offset="1" stop-color="#B5400B"/>
+          </linearGradient>
+        </defs>
+        <!-- axes -->
+        <line x1="60" y1="280" x2="840" y2="280" stroke="#0f1e38" stroke-width="1.5"/>
+        <line x1="60" y1="40" x2="60" y2="280" stroke="#0f1e38" stroke-width="1.5"/>
+        <text x="60" y="22" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0f1e38">트랜지스터 수 (log)</text>
+        <text x="780" y="305" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0f1e38">연도</text>
+
+        <!-- Moore predicted (dashed straight) -->
+        <line x1="80" y1="260" x2="820" y2="60" stroke="#0f1e38" stroke-width="2" stroke-dasharray="6 6" opacity="0.55"/>
+        <text x="640" y="90" font-family="JetBrains Mono" font-size="11" font-weight="700" fill="#0f1e38" opacity="0.7">Moore 예측 (직선)</text>
+
+        <!-- actual curve flattening -->
+        <path d="M80,260 Q280,170 460,120 T720,95 T820,90" stroke="url(#orange)" stroke-width="3.5" fill="none"/>
+        <text x="540" y="160" font-family="JetBrains Mono" font-size="12" font-weight="800" fill="#E35205">실제 곡선 &mdash; 완만</text>
+
+        <!-- year markers -->
+        <g font-family="JetBrains Mono" font-size="10" font-weight="700" fill="#0f1e38">
+          <circle cx="80" cy="260" r="4"/>
+          <text x="80" y="298" text-anchor="middle">1971</text>
+          <circle cx="280" cy="200" r="4"/>
+          <text x="280" y="298" text-anchor="middle">1995</text>
+          <circle cx="460" cy="135" r="4"/>
+          <text x="460" y="298" text-anchor="middle">2014</text>
+          <circle cx="640" cy="105" r="5" fill="#E35205"/>
+          <text x="640" y="298" text-anchor="middle" fill="#E35205">2020</text>
+          <circle cx="780" cy="92" r="5" fill="#E35205"/>
+          <text x="780" y="298" text-anchor="middle" fill="#E35205">2024</text>
+        </g>
+
+        <!-- gap arrow -->
+        <line x1="780" y1="60" x2="780" y2="92" stroke="#E35205" stroke-width="2"/>
+        <text x="790" y="76" font-family="JetBrains Mono" font-size="11" font-weight="800" fill="#E35205">예측과 실제의 격차</text>
+      </svg>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+      <div style="padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">2014</div>
+        <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.55;">황의 법칙 &mdash; 사실상 멈춤. NAND 적층으로 전환.</div>
+      </div>
+      <div style="padding:12px 14px; background:linear-gradient(135deg, rgba(15,30,56,0.10), rgba(255,255,255,0.5)); border-left:3px solid var(--navy);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--navy); font-weight:800;">2020</div>
+        <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.55;">5nm 양산 &mdash; 미세화 한 단계마다 비용이 폭증.</div>
+      </div>
+      <div style="padding:12px 14px; background:linear-gradient(135deg, rgba(227,82,5,0.10), rgba(255,228,208,0.5)); border-left:3px solid var(--brand);">
+        <div style="font-family:var(--f-mono); font-size:10px; letter-spacing:0.18em; color:var(--brand); font-weight:800;">2024</div>
+        <div style="font-size:13px; color:var(--navy); margin-top:3px; line-height:1.55;">H100 한 장 4만 달러 &mdash; AI 수요는 폭증하는데 공급이 못 따라옵니다.</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="left"></span>
+      <span class="right"><b>04</b> / 09</span>
+    </div>
+  </div>
+</body></html>
