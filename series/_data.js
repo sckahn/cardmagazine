@@ -1089,5 +1089,57 @@ window.SERIES_DATA = [
     "count": 9,
     "folder": "49-cards-relativity",
     "outputs_folder": "49-outputs-relativity"
+  },
+  {
+    "n": 50,
+    "slug": "prophecy",
+    "name": "Prophecy",
+    "hanja": "占",
+    "subtitle": "어제의 운율, 내일의 침묵",
+    "desc": "Vico 1725 corsi e ricorsi · 트웨인의 운율 · Hegel·Marx 변증법 · Popper 역사주의의 빈곤 · Markov 1906·Monte Carlo 1946 · 델포이·노스트라다무스·주역 · Asimov 심리역사학 · Nate Silver · Tetlock 슈퍼예측가 · Taleb Black Swan · Knight·Rumsfeld·Bostrom 미경험 · GraphCast.",
+    "slides": [
+      "01-cover.png",
+      "02-cycle.png",
+      "03-dialectic.png",
+      "04-critique.png",
+      "05-stochastic.png",
+      "06-divination.png",
+      "07-foundation.png",
+      "08-statistics.png",
+      "09-superforecasters.png",
+      "10-blackswan.png",
+      "11-unknown.png",
+      "12-ai.png",
+      "13-outro.png"
+    ],
+    "count": 13,
+    "folder": "50-cards-prophecy",
+    "outputs_folder": "50-outputs-prophecy"
+  },
+  {
+    "n": 51,
+    "slug": "welcome",
+    "name": "Welcome",
+    "hanja": "迎",
+    "subtitle": "거울 앞의 사람",
+    "special": true,
+    "desc": "SPECIAL · FINALE — 50호까지의 항해 정리. 마음·감각·언어·모방·사회·기술·시간·미래의 회고. 그리고 마지막 질문 — 그래서 사람은 어떻게 AI를 맞이해야 할까요.",
+    "slides": [
+      "01-cover.png",
+      "02-voyage.png",
+      "03-recap-a.png",
+      "04-recap-b.png",
+      "05-recap-c.png",
+      "06-recap-d.png",
+      "07-recap-e.png",
+      "08-insight-mirror.png",
+      "09-insight-place.png",
+      "10-insight-keep.png",
+      "11-ask.png",
+      "12-outro.png"
+    ],
+    "count": 12,
+    "folder": "51-cards-welcome",
+    "outputs_folder": "51-outputs-welcome"
   }
 ];
