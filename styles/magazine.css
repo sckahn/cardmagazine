@@ -319,6 +319,12 @@ html {
 .mag-article .era .year {
   font-size: clamp(38px, 4vw, 54px) !important;
 }
+/* 긴 영문 기술 문자열용 (.year-long 클래스로 명시) */
+.mag-article .era .year.year-long {
+  font-size: clamp(18px, 2.2vw, 26px) !important;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
 
 /* Portraits: the card CSS gives them aspect-ratio 4/5 — keep but cap width */
 .mag-article .split {
