@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<title>AI Chronicle 04 · 퍼셉트론의 약속</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../styles/site.css?v=29" />
+<link rel="stylesheet" href="../styles/magazine.css?v=29" />
+<script defer src="../styles/book-mode.js?v=29"></script>
+<style>
+  /* 가죽 톤 override — series reader 포맷 그대로, 색만 burgundy/gold */
+  body.chr-reader {
+    --bg: #f0e3c8;
+    --bg-soft: #f7ecd0;
+    --navy: #2a0a0a;
+    --navy-deep: #5a1c1c;
+    --brand: #c8862f;
+    --brand-deep: #8a5a17;
+    --brand-soft: #f3d2a8;
+    --ink: #2a0a0a;
+    --ink-soft: #4a2a1a;
+    --ink-mid: #6e5230;
+    --line: rgba(42,10,10,0.15);
+    --line-strong: rgba(42,10,10,0.25);
+    background: var(--bg);
+    color: var(--navy);
+  }
+  body.chr-reader em { color: var(--brand-deep); font-weight: 800; }
+  body.chr-reader .brand-ko { color: var(--brand-deep); }
+  body.chr-reader .site-nav { background: rgba(240,227,200,0.88); border-bottom-color: var(--line); }
+  body.chr-reader .site-nav .logo { color: var(--navy); }
+  body.chr-reader .site-nav .logo em { color: var(--brand-deep); }
+  body.chr-reader .mag-side h2 em { color: var(--brand-deep); }
+  body.chr-reader .progress-inner { background: var(--brand); }
+  body.chr-reader #toc a.current { color: var(--brand-deep); }
+  body.chr-reader #toc a.current::before { background: var(--brand); }
+</style>
+</head><body class="chr-reader">
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="logo" href="../history.html">AI <em>Chronicle</em></a>
+    <div class="nav-right">CHRONICLE · 04</div>
+  </div>
+</nav>
+
+<div class="mag-shell">
+  <aside class="mag-side">
+    <div class="side-kicker">BOOK II · CHRONICLE</div>
+    <h2>퍼셉트론의 <span class="brand-ko">약속</span></h2>
+    <div class="side-sub">1957—1969 · 첫 환호와 첫 의심. Rosenblatt의 퍼셉트론, NYT의 환호, Mark I 하드웨어, GPS와 ELIZA — 그리고 Minsky·Papert의 책 한 권이 모든 것을 멈춥니다.</div>
+
+    <div class="progress-outer"><div class="progress-inner" id="progress"></div></div>
+
+    <nav aria-label="목차">
+      <ol id="toc">
+        <li><a href="#card-01" class="current"><span class="num">01</span>표지 · 퍼셉트론의 약속</a></li>
+        <li><a href="#card-02"><span class="num">02</span>1957 Rosenblatt</a></li>
+        <li><a href="#card-03"><span class="num">03</span>1958 NYT 환호</a></li>
+        <li><a href="#card-04"><span class="num">04</span>Mark I Perceptron</a></li>
+        <li><a href="#card-05"><span class="num">05</span>GPS · ELIZA</a></li>
+        <li><a href="#card-06"><span class="num">06</span>1969 Minsky·Papert</a></li>
+        <li><a href="#card-07"><span class="num">07</span>→ 첫 겨울로</a></li>
+      </ol>
+    </nav>
+
+    <div class="side-foot">AI Chronicle</div>
+  </aside>
+
+  <main class="mag-main">
+    <article class="mag-article loading" id="card-01" data-card="../chronicle-4-cards-perceptron/01-cover.html">
+      <div class="mag-num">CHRONICLE · <b>01</b> / 07</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-02" data-card="../chronicle-4-cards-perceptron/02-rosenblatt.html">
+      <div class="mag-num">CHRONICLE · <b>02</b> / 07</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-03" data-card="../chronicle-4-cards-perceptron/03-nyt.html">
+      <div class="mag-num">CHRONICLE · <b>03</b> / 07</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-04" data-card="../chronicle-4-cards-perceptron/04-mark1.html">
+      <div class="mag-num">CHRONICLE · <b>04</b> / 07</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-05" data-card="../chronicle-4-cards-perceptron/05-eliza-gps.html">
+      <div class="mag-num">CHRONICLE · <b>05</b> / 07</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-06" data-card="../chronicle-4-cards-perceptron/06-minsky-papert.html">
+      <div class="mag-num">CHRONICLE · <b>06</b> / 07</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-07" data-card="../chronicle-4-cards-perceptron/07-bridge.html">
+      <div class="mag-num">CHRONICLE · <b>07</b> / 07</div>
+      <div class="card-content">Loading…</div>
+    </article>
+  </main>
+</div>
+
+<script>
+(async function () {
+  // 카드 페이지의 두 CSS 모두 로드 (style + chronicle 가죽톤)
+  const cardCssUrls = ['../style.css?v=29', '../chronicle.css?v=29'];
+  let cardCss = '';
+  for (const u of cardCssUrls) {
+    try {
+      const t = await fetch(u).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); });
+      cardCss += '\n/* ' + u + ' */\n' + t;
+    } catch (e) { console.error('Failed to load', u, e); }
+  }
+
+  function scopeCardCss(css) {
+    css = css.replace(/html\s*,\s*body\s*\{[^}]*\}/g, '');
+    css = css.replace(/(body\s*\{[^}]*?)overflow\s*:\s*hidden\s*;?/g, '$1');
+    css = css.replace(/(^|\})\s*body\s*\{/g, '$1.mag-article {');
+    css = css.replace(/body::after\s*\{/g, '.mag-article::after {');
+    css = css.replace(
+      /\*\s*,\s*\*::before\s*,\s*\*::after\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article *, .mag-article *::before, .mag-article *::after { font-style: normal !important; }'
+    );
+    css = css.replace(
+      /em\s*,\s*i\s*,\s*cite\s*,\s*address\s*,\s*dfn\s*,\s*var\s*,\s*blockquote\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article em, .mag-article i, .mag-article cite, .mag-article address, .mag-article dfn, .mag-article var, .mag-article blockquote { font-style: normal !important; }'
+    );
+    css = css.replace(/\.cover\s+\.stage/g, '.mag-article.cover-like .stage');
+    css = css.replace(/\.cover\s+\.kicker/g, '.mag-article.cover-like .kicker');
+    css = css.replace(/\.cover\s+\.hello/g, '.mag-article.cover-like .hello');
+    css = css.replace(/\.cover\s+h1\.hero/g, '.mag-article.cover-like h1.hero');
+    css = css.replace(/\.cover\s+\.lead/g, '.mag-article.cover-like .lead');
+    css = css.replace(/\.cover\s+\.timeline/g, '.mag-article.cover-like .timeline');
+    css = css.replace(/\.outro\s+\.stage/g, '.mag-article.outro-like .stage');
+    css = css.replace(/\.outro\s+\.flourish/g, '.mag-article.outro-like .flourish');
+    css = css.replace(/\.outro\s+\.ask/g, '.mag-article.outro-like .ask');
+    css = css.replace(/\.outro\s+\.closing/g, '.mag-article.outro-like .closing');
+    css = css.replace(/\.outro\s+\.tags/g, '.mag-article.outro-like .tags');
+    return css;
+  }
+
+  if (cardCss) {
+    const style = document.createElement('style');
+    style.id = 'card-css-scoped';
+    style.textContent = scopeCardCss(cardCss);
+    document.head.appendChild(style);
+  }
+
+  const articles = Array.from(document.querySelectorAll('.mag-article[data-card]'));
+
+  async function loadCard(article) {
+    const url = article.dataset.card;
+    try {
+      const html = await fetch(url).then(r => r.text());
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const body = doc.body;
+      const stage = body.querySelector('.stage');
+      if (!stage) throw new Error('No .stage in ' + url);
+      if (body.classList.contains('cover')) article.classList.add('cover-like');
+      if (body.classList.contains('outro')) article.classList.add('outro-like');
+      const slot = article.querySelector('.card-content');
+      slot.innerHTML = '';
+      slot.appendChild(document.importNode(stage, true));
+      article.classList.remove('loading');
+    } catch (e) {
+      console.error('Card load failed', url, e);
+      article.querySelector('.card-content').textContent = '카드를 불러오지 못했습니다.';
+      article.classList.remove('loading');
+    }
+  }
+
+  await Promise.all(articles.map(loadCard));
+
+  const tocLinks = Array.from(document.querySelectorAll('#toc a'));
+  const progressBar = document.getElementById('progress');
+  const tocMap = new Map();
+  tocLinks.forEach(a => tocMap.set(a.getAttribute('href').slice(1), a));
+
+  const sidebar = document.querySelector('.mag-side');
+  function scrollSidebarTo(link) {
+    if (!sidebar || !link) return;
+    const sr = sidebar.getBoundingClientRect();
+    const lr = link.getBoundingClientRect();
+    if (lr.top < sr.top + 20) sidebar.scrollTop += lr.top - sr.top - 20;
+    else if (lr.bottom > sr.bottom - 20) sidebar.scrollTop += lr.bottom - sr.bottom + 20;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        tocLinks.forEach(a => a.classList.toggle('current', a.getAttribute('href') === '#' + id));
+        scrollSidebarTo(tocMap.get(id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  articles.forEach(a => io.observe(a));
+
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        reveal.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -15% 0px', threshold: 0.05 });
+  document.querySelectorAll('.mag-article').forEach(el => reveal.observe(el));
+
+  let progressTimer = null;
+  function updateProgress() {
+    const docEl = document.documentElement;
+    const scrolled = docEl.scrollTop || document.body.scrollTop;
+    const max = docEl.scrollHeight - docEl.clientHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (scrolled / max) * 100)) : 0;
+    progressBar.style.width = pct + '%';
+    progressBar.classList.add('is-moving');
+    clearTimeout(progressTimer);
+    progressTimer = setTimeout(() => progressBar.classList.remove('is-moving'), 260);
+  }
+  document.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  tocLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  if (location.hash && /^#card-\d+$/.test(location.hash)) {
+    const t = document.getElementById(location.hash.slice(1));
+    if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' });
+  }
+})();
+</script>
+
+</body></html>
