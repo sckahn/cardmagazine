@@ -1336,8 +1336,8 @@ body.portal {
   align-self: center;
 }
 
-/* 더미 책은 무채색 쪽으로 */
-.s-decor { filter: brightness(0.7) saturate(0.55); opacity: 0.85; }
+/* 더미 책은 어둡게 — 책장 안 그늘진 책들 */
+.s-decor { filter: brightness(0.42) saturate(0.4); opacity: 0.78; }
 
 /* 두드러진 책 (실제 클릭 가능) — 책장 안에서 가장 키 큰 책 */
 .s-feature {
@@ -1436,22 +1436,23 @@ body.portal {
 }
 
 /* 책장 가로 넘침 방지 */
-.bookcase-frame { overflow: hidden; }
+.bookcase, .bookcase-frame { overflow: hidden; }
 
 @media (max-width: 720px) {
-  .books { height: 340px; gap: 0; padding: 0 2px; }
+  .books { height: 340px; gap: 0; padding: 0 14px; }
   .s-feature { width: 64px; }
   .s-feature .s-title-big { font-size: 16px; }
-  /* 모바일: 더미 책등 다수 숨겨 두 권만 도드라지게 */
-  .s-decor:nth-of-type(1),
-  .s-decor:nth-of-type(2),
-  .s-decor:nth-of-type(13),
-  .s-decor:nth-of-type(14) { display: none; }
+  /* 모바일에서 일부 더미 숨김 */
+  .s-hide-sm { display: none; }
   .spine.s-decor { width: 28px; }
 }
 @media (max-width: 480px) {
-  .s-decor:nth-of-type(3),
-  .s-decor:nth-of-type(12) { display: none; }
-  .s-feature { width: 70px; }
+  /* 더 좁은 화면 — 더미 최소화 */
+  .s-hide-xs { display: none; }
+  .s-feature { width: 60px; }
   .spine.s-decor { width: 26px; }
+  .bookcase-frame { padding: 14px 18px 0; }
+  .bookcase-side { width: 10px; }
+  .books { padding: 0 10px; }
+  .bookcase-board { margin: 0 -18px; }
 }
