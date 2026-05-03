@@ -1229,8 +1229,8 @@ window.SERIES_DATA = [
   },
   {
     "n": 49,
-    "slug": "relativity",
-    "name": "Relativity",
+    "slug": "other",
+    "name": "Other",
     "hanja": "他",
     "subtitle": "타자의 시간 · 타자의 자리",
     "desc": "Copernicus 1543 · Einstein 1905 동시성 · Bergson durée·Husserl·Merleau-Ponty · Nagel 1974 박쥐·Chalmers · Levinas 1961 타자의 얼굴 · LLM 정지된 시계 · Searle 중국어 방의 변형.",
@@ -1246,8 +1246,8 @@ window.SERIES_DATA = [
       "09-outro.png"
     ],
     "count": 9,
-    "folder": "49-cards-relativity",
-    "outputs_folder": "49-outputs-relativity",
+    "folder": "49-cards-other",
+    "outputs_folder": "49-outputs-other",
     "tags": [
       "마음"
     ]
