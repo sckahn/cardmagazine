@@ -36,9 +36,16 @@
 
   /* PC에서 카드 안 인물 사진 잘림 방지 — 위쪽 더 보존 */
   body.chr-reader .mag-article img.portrait,
-  body.chr-reader .mag-article .split img,
-  body.chr-reader .mag-article .left img,
-  body.chr-reader .mag-article .right img { object-position: center 15% !important; }
+  body.chr-reader .mag-article .split .left img,
+  body.chr-reader .mag-article .split .right img {
+    height: auto !important;
+    max-width: 360px !important;
+    aspect-ratio: 4 / 5 !important;
+    object-fit: cover !important;
+    object-position: center top !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
   /* mag-next — 다음 호 카드 */
   body.chr-reader .mag-next {
     max-width: 760px; margin: 60px auto 80px; padding: 24px;
@@ -69,7 +76,7 @@
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a class="logo" href="../">AI <em>Magazine</em></a>
-    <div class="nav-right">CHRONICLE · 01</div>
+    <a class="nav-right nav-right-link" href="../history.html">AI Chronicle</a>
   </div>
 </nav>
 

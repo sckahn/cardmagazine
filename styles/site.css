@@ -1707,3 +1707,13 @@ body.portal {
   .site-nav .nav-right { font-size: 9.5px; letter-spacing: 0.16em; }
   .site-nav .logo { font-size: 18px; }
 }
+
+/* nav-right 책 본문 링크 — 우상단 클릭으로 그 책으로 */
+.site-nav .nav-right-link {
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+.site-nav .nav-right-link:hover {
+  color: var(--brand);
+}
