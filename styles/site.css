@@ -1195,3 +1195,286 @@ body.portal {
   color: #f3d2a8;
   text-align: center;
 }
+
+/* ============================================================
+   PORTAL v2 · 진짜 책장 (책등이 꽂힌 모습)
+   ============================================================ */
+.bookcase {
+  max-width: 1180px;
+  margin: clamp(20px, 3vw, 40px) auto 0;
+  padding: 0 var(--shell-pad) clamp(60px, 8vw, 100px);
+}
+
+/* 책장 외곽 프레임 — 어두운 나무 */
+.bookcase-frame {
+  position: relative;
+  background:
+    /* 안쪽 그림자 */
+    radial-gradient(ellipse 80% 60% at 50% 50%, transparent 40%, rgba(0,0,0,0.45) 100%),
+    /* 어두운 책장 안 색 */
+    linear-gradient(180deg, #2a1d12 0%, #1a120a 100%);
+  padding: 14px 28px 0;
+  border-radius: 4px;
+  box-shadow:
+    0 30px 60px -10px rgba(0,0,0,0.45),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+}
+
+/* 윗판 — 두꺼운 나무 상단 */
+.bookcase-top {
+  position: absolute;
+  top: -14px; left: 0; right: 0;
+  height: 22px;
+  background:
+    linear-gradient(180deg, #6e4a2a 0%, #5a3a20 50%, #3e2814 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,220,180,0.18),
+    0 4px 8px rgba(0,0,0,0.3);
+  border-radius: 4px 4px 2px 2px;
+}
+.bookcase-top::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.06) 0 2px, transparent 2px 60px);
+  pointer-events: none;
+}
+
+/* 좌우 측면 나무 기둥 */
+.bookcase-side {
+  position: absolute;
+  top: 14px; bottom: 0;
+  width: 14px;
+  background: linear-gradient(180deg, #5a3a20 0%, #3e2814 100%);
+  box-shadow: inset 1px 0 0 rgba(255,220,180,0.12), inset -1px 0 0 rgba(0,0,0,0.4);
+}
+.bookcase-side-l { left: 0; border-radius: 2px 0 0 2px; }
+.bookcase-side-r { right: 0; border-radius: 0 2px 2px 0; }
+
+/* 한 칸의 선반 */
+.bookcase-shelf {
+  position: relative;
+  padding: 16px 0 0;
+}
+
+/* 책들이 꽂히는 영역 — 가로 빽빽이 */
+.books {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 1px;
+  height: 420px;
+  padding: 0 4px;
+  perspective: 1200px;
+}
+
+/* 책등 공통 */
+.spine {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: var(--w, 40px);
+  height: var(--h, 90%);
+  background:
+    linear-gradient(90deg,
+      rgba(0,0,0,0.45) 0%,
+      rgba(0,0,0,0.0) 8%,
+      rgba(255,255,255,0.06) 50%,
+      rgba(0,0,0,0.0) 92%,
+      rgba(0,0,0,0.45) 100%
+    ),
+    linear-gradient(180deg, var(--c1) 0%, var(--c2) 100%);
+  border-radius: 1px 2px 1px 1px;
+  box-shadow:
+    inset 1px 0 0 rgba(255,255,255,0.06),
+    inset -1px 0 0 rgba(0,0,0,0.3),
+    0 4px 8px rgba(0,0,0,0.25);
+  cursor: default;
+  transition: transform 350ms var(--ease-out-quart);
+  flex-shrink: 0;
+}
+
+/* 천 표지 텍스처 (격자 결) */
+.spine::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(0deg, rgba(0,0,0,0.06) 0 1px, transparent 1px 3px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.025) 0 1px, transparent 1px 3px);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* 위·아래 골드 띠 (장식) */
+.spine::after {
+  content: "";
+  position: absolute;
+  left: 4px; right: 4px;
+  top: 12px; height: 1px;
+  background: rgba(200,170,120,0.35);
+  box-shadow: 0 calc(var(--h-px, 380px) - 30px) 0 rgba(200,170,120,0.35);
+  pointer-events: none;
+}
+
+/* 일반(장식용) 책등 */
+.s-decor {
+  filter: brightness(0.85) saturate(0.9);
+}
+.s-decor .s-title {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: rgba(245,225,195,0.55);
+  white-space: nowrap;
+  margin: 22px 0;
+  align-self: center;
+}
+
+/* 두드러진 책 (실제 클릭 가능) — 더 두껍고 살짝 앞으로 */
+.s-feature {
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 2;
+  transform: translateY(-4px);
+  filter: none;
+  flex-direction: column;
+  padding: 18px 0 14px;
+}
+.s-feature:hover, .s-feature:focus-visible {
+  transform: translateY(-22px);
+  box-shadow:
+    inset 1px 0 0 rgba(255,255,255,0.1),
+    inset -1px 0 0 rgba(0,0,0,0.3),
+    0 16px 24px rgba(0,0,0,0.4);
+}
+.s-feature:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
+
+/* AI × Series — 짙은 네이비 + 오렌지 액센트 */
+.s-series {
+  --c1: #1a2e54;
+  --c2: #0a172c;
+  width: 78px;
+  height: 100%;
+}
+.s-series .s-title-big {
+  color: #fff5e1;
+}
+.s-series .s-title-big em {
+  color: var(--brand);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+.s-series .s-meta { color: var(--brand); }
+.s-series .s-author { color: rgba(255,228,208,0.5); }
+.s-series .s-foot { color: rgba(255,228,208,0.55); }
+
+/* AI Chronicle — 가죽 burgundy + 골드 */
+.s-chronicle {
+  --c1: #4a1414;
+  --c2: #2a0a0a;
+  width: 76px;
+  height: 100%;
+}
+.s-chronicle .s-title-big {
+  color: #fff5e1;
+}
+.s-chronicle .s-title-big em {
+  color: #e6a86a;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+.s-chronicle .s-meta { color: #e6a86a; }
+.s-chronicle .s-author { color: rgba(243,210,168,0.5); }
+.s-chronicle .s-foot { color: rgba(243,210,168,0.55); }
+
+/* feature 책등 텍스트 — 세로쓰기 */
+.s-feature .s-author {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 auto 8px;
+  white-space: nowrap;
+}
+.s-feature .s-title-big {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.005em;
+  margin: 0 auto;
+  white-space: nowrap;
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+}
+.s-feature .s-title-big em { font-weight: 700; }
+.s-feature .s-meta {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 8px auto;
+  white-space: nowrap;
+}
+.s-feature .s-foot {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 9.5px;
+  text-align: center;
+  line-height: 1.25;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 가로 띠(책등 골드 줄 — 위/아래) */
+.s-feature::after {
+  content: "";
+  position: absolute;
+  left: 6px; right: 6px;
+  top: 10px; height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+  box-shadow: 0 calc(100% - 22px) 0 currentColor;
+}
+.s-series::after { color: var(--brand); }
+.s-chronicle::after { color: #c8862f; }
+
+/* 선반 판 — 책 아래 */
+.bookcase-board {
+  position: relative;
+  height: 18px;
+  background:
+    linear-gradient(180deg, #8a5a30 0%, #6e4520 50%, #4a2e15 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,220,180,0.18),
+    0 4px 8px rgba(0,0,0,0.35);
+  border-radius: 0 0 2px 2px;
+  margin: 0 -28px;
+}
+.bookcase-board::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.08) 0 2px, transparent 2px 50px);
+  pointer-events: none;
+}
+
+@media (max-width: 720px) {
+  .books { height: 320px; gap: 0; padding: 0 2px; }
+  .s-feature .s-title-big { font-size: 17px; }
+  .s-series, .s-chronicle { width: 60px; }
+  /* 모바일에선 데코 책등 일부 숨김 */
+  .s-decor:nth-child(n+5):nth-child(-n+6) { display: none; }
+}

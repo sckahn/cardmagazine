@@ -2,8 +2,8 @@
 <html lang="ko"><head><meta charset="UTF-8" />
 <title>AI × Series · Portal</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="AI × Series 카드뉴스 매거진의 입구. 한 권의 책을 펼쳐 51개의 이슈로 들어갑니다." />
-<link rel="stylesheet" href="styles/site.css?v=26" />
+<meta name="description" content="AI × Series 카드뉴스 매거진의 입구. 책장에서 한 권을 꺼내 펼치세요." />
+<link rel="stylesheet" href="styles/site.css?v=27" />
 </head><body class="portal">
 
 <nav class="site-nav">
@@ -15,65 +15,57 @@
 
 <section class="portal-hero">
   <div class="portal-eyebrow">The Library · 서가</div>
-  <h1>한 권을 <span class="brand-ko">펼치면</span><br/>오십한 개의 <span class="brand-ko">질문</span>이 있다.</h1>
-  <p class="portal-lead">AI라는 거울 앞에 다시 선 오래된 질문들 — 한 권의 매거진으로 묶었습니다.</p>
+  <h1>책장에서 한 권을<br/><span class="brand-ko">꺼내</span> 보세요.</h1>
+  <p class="portal-lead">두 권의 책이 꽂혀 있습니다. 책등을 누르면 그 책이 열립니다.</p>
 </section>
 
-<section class="shelf-stage" aria-label="AI × Series 서가">
-  <div class="shelf">
-    <a class="book book-series" href="library.html" aria-label="AI × Series 매거진 펼치기">
-      <div class="book-cover">
-        <div class="cover-frame">
-          <div class="cover-eyebrow">CARD NEWS · MAGAZINE</div>
-          <div class="cover-title">
-            <span class="cover-ai">AI</span>
-            <span class="cover-x">×</span>
-            <span class="cover-series">Series</span>
-          </div>
-          <div class="cover-rule" aria-hidden="true"></div>
-          <div class="cover-sub">AI에 비춰본 우리의 질문들</div>
-          <div class="cover-meta">
-            <span><b>51</b> Issues</span>
-            <span class="dot" aria-hidden="true">·</span>
-            <span>완결</span>
-          </div>
-          <div class="cover-author">written by <b>이석찬</b></div>
-          <div class="cover-cue">▸ 펼쳐 읽기</div>
-        </div>
-        <div class="book-pages" aria-hidden="true"></div>
-        <div class="book-spine" aria-hidden="true">
-          <span class="spine-text">AI × Series · 51 Issues · 이석찬</span>
-        </div>
-      </div>
-    </a>
+<section class="bookcase" aria-label="책장">
+  <div class="bookcase-frame">
+    <div class="bookcase-top"></div>
+    <div class="bookcase-side bookcase-side-l"></div>
+    <div class="bookcase-side bookcase-side-r"></div>
+    <div class="bookcase-shelf">
+      <div class="books">
+        <!-- decorative spines (left filler) -->
+        <span class="spine s-decor" style="--c1:#2c3e50; --c2:#1a2533; --w:34px; --h:88%;"><span class="s-title">Notes</span></span>
+        <span class="spine s-decor" style="--c1:#5a4634; --c2:#3a2d20; --w:42px; --h:92%;"><span class="s-title">Old Almanac</span></span>
+        <span class="spine s-decor" style="--c1:#3a5a3a; --c2:#1f3a23; --w:38px; --h:84%;"><span class="s-title">Field Notes</span></span>
+        <span class="spine s-decor" style="--c1:#7a3030; --c2:#4a1818; --w:46px; --h:96%;"><span class="s-title">Letters &middot; III</span></span>
+        <span class="spine s-decor" style="--c1:#4a3a52; --c2:#2c2230; --w:32px; --h:80%;"><span class="s-title">Margins</span></span>
+        <span class="spine s-decor" style="--c1:#6b5b3a; --c2:#4a3f24; --w:40px; --h:90%;"><span class="s-title">Loose Sheets</span></span>
 
-    <a class="book book-history" href="history.html" aria-label="AI Chronicle 펼치기">
-      <div class="book-cover">
-        <div class="cover-frame">
-          <div class="cover-eyebrow">VOL. I · 1950—TODAY</div>
-          <div class="cover-title cover-title--chronicle">
-            <span class="chronicle-ai">AI</span>
-            <span class="chronicle-word">Chronicle</span>
-          </div>
-          <div class="cover-rule" aria-hidden="true"></div>
-          <div class="cover-sub">기계가 ‘생각’이라는 단어를 만난 75년</div>
-          <div class="cover-meta">
-            <span><b>1950</b> → <b>오늘</b></span>
-            <span class="dot" aria-hidden="true">·</span>
-            <span>Vol. I</span>
-          </div>
-          <div class="cover-author">written by <b>이석찬</b></div>
-          <div class="cover-cue">▸ 펼쳐 읽기</div>
-        </div>
-        <div class="book-pages" aria-hidden="true"></div>
-        <div class="book-spine" aria-hidden="true">
-          <span class="spine-text">AI Chronicle · Vol. I · 이석찬</span>
-        </div>
+        <!-- AI × Series — feature 1 -->
+        <a class="spine s-feature s-series" href="library.html?v=27" aria-label="AI × Series 펼치기">
+          <span class="s-author">이석찬</span>
+          <span class="s-title-big">AI &times; <em>Series</em></span>
+          <span class="s-meta">51 ISSUES &middot; VOL. I</span>
+          <span class="s-foot">Card News<br/>Magazine</span>
+        </a>
+
+        <!-- decorative middle -->
+        <span class="spine s-decor" style="--c1:#2a3a52; --c2:#15243a; --w:36px; --h:86%;"><span class="s-title">Errata</span></span>
+        <span class="spine s-decor" style="--c1:#5a3a2a; --c2:#3a2418; --w:44px; --h:94%;"><span class="s-title">Folio &middot; 1969</span></span>
+        <span class="spine s-decor" style="--c1:#3a4a3a; --c2:#1f2a1f; --w:30px; --h:78%;"><span class="s-title">Index</span></span>
+
+        <!-- AI Chronicle — feature 2 -->
+        <a class="spine s-feature s-chronicle" href="history.html?v=27" aria-label="AI Chronicle 펼치기">
+          <span class="s-author">이석찬</span>
+          <span class="s-title-big">AI <em>Chronicle</em></span>
+          <span class="s-meta">VOL. I &middot; 1739&mdash;</span>
+          <span class="s-foot">A History<br/>of A.I.</span>
+        </a>
+
+        <!-- decorative spines (right filler) -->
+        <span class="spine s-decor" style="--c1:#52403a; --c2:#2e2018; --w:38px; --h:88%;"><span class="s-title">Codex</span></span>
+        <span class="spine s-decor" style="--c1:#3a3a52; --c2:#22223a; --w:32px; --h:82%;"><span class="s-title">Drafts</span></span>
+        <span class="spine s-decor" style="--c1:#5a4a2a; --c2:#3a3018; --w:46px; --h:96%;"><span class="s-title">Atlas</span></span>
+        <span class="spine s-decor" style="--c1:#3a5252; --c2:#1f3030; --w:34px; --h:84%;"><span class="s-title">Marginalia</span></span>
+        <span class="spine s-decor" style="--c1:#6a3a4a; --c2:#3a1f2a; --w:40px; --h:90%;"><span class="s-title">Annals</span></span>
+        <span class="spine s-decor" style="--c1:#4a4a4a; --c2:#2a2a2a; --w:30px; --h:78%;"><span class="s-title">Misc.</span></span>
       </div>
-    </a>
+      <div class="bookcase-board"></div>
+    </div>
   </div>
-  <div class="shelf-board" aria-hidden="true"></div>
-  <div class="shelf-shadow" aria-hidden="true"></div>
 </section>
 
 <footer class="site-foot">
