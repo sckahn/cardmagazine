@@ -1700,3 +1700,10 @@ body.portal {
   .bl-info h3 { font-size: 26px; }
   .bl-desc { font-size: 13.5px; }
 }
+
+/* nav-right 모바일 안전 처리 — 좁은 화면에서 글자 줄여 nowrap 유지하되 폭 초과 방지 */
+@media (max-width: 540px) {
+  .site-nav-inner { gap: 8px; }
+  .site-nav .nav-right { font-size: 9.5px; letter-spacing: 0.16em; }
+  .site-nav .logo { font-size: 18px; }
+}
