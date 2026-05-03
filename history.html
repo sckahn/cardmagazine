@@ -1,119 +1,187 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8" />
-<title>AI Chronicle</title>
+<title>AI Chronicle · Magazine</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta name="description" content="AI Chronicle — 1950 다트머스 이전부터 오늘까지, 기계가 ‘생각’이라는 단어를 만난 75년의 연대기." />
-<link rel="stylesheet" href="styles/site.css?v=26" />
+<meta name="description" content="기계가 ‘생각’이라는 단어를 만난 75년의 시간순 매거진 — 1739 톱니바퀴부터 오늘까지." />
+<link rel="stylesheet" href="styles/site.css?v=29" />
 <style>
+  /* Chronicle 가죽 톤 override — series.html 포맷에 색만 입힘 */
   body.chronicle {
-    background:
-      radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(200,134,47,0.12), transparent 60%),
-      linear-gradient(180deg, #f0e3c8 0%, #e3d3ad 60%, #c8b487 100%);
-    color: #2a0a0a;
+    --bg: #f0e3c8;
+    --bg-soft: #f7ecd0;
+    --navy: #2a0a0a;
+    --navy-deep: #5a1c1c;
+    --brand: #c8862f;
+    --brand-deep: #8a5a17;
+    --brand-soft: #f3d2a8;
+    --ink: #2a0a0a;
+    --ink-soft: #4a2a1a;
+    --ink-mid: #6e5230;
+    --line: rgba(42,10,10,0.15);
+    --line-strong: rgba(42,10,10,0.25);
+    background: var(--bg);
+    color: var(--navy);
   }
-  .chr-hero { max-width: var(--shell-max); margin: 0 auto; padding: clamp(56px, 8vw, 96px) var(--shell-pad) clamp(28px, 3vw, 40px); text-align: center; }
-  .chr-eyebrow { display:inline-flex; align-items:center; gap:14px; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.32em; color:#8a5a17; font-weight:700; text-transform:uppercase; }
-  .chr-eyebrow::before, .chr-eyebrow::after { content:""; width:28px; height:2px; background:#c8862f; }
-  .chr-hero h1 { margin-top:22px; font-size:clamp(48px,7.4vw,92px); font-weight:900; line-height:0.98; letter-spacing:-0.04em; color:#2a0a0a; text-wrap:balance; }
-  .chr-hero h1 em { font-family:'Playfair Display', serif; font-style:italic; font-weight:700; color:#8a5a17; }
-  .chr-hero .lead { margin: clamp(18px, 2vw, 26px) auto 0; max-width:580px; font-size:clamp(15px,1.2vw,17px); line-height:1.65; color:#4a2a1a; }
-  .chr-hero .meta { margin-top:26px; font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.28em; color:#8a5a17; text-transform:uppercase; font-weight:700; }
-  .chr-hero .meta b { color:#2a0a0a; font-size:13px; font-family:'Pretendard Variable',sans-serif; text-transform:none; letter-spacing:-0.01em; }
-
-  .chr-toc { max-width: 1180px; margin: 0 auto; padding: 0 var(--shell-pad) clamp(80px, 10vw, 140px); }
-  .chr-toc-head { display:grid; grid-template-columns:auto 1fr auto; gap:24px; align-items:end; margin-bottom: 28px; }
-  .chr-toc-head h2 { font-size:clamp(28px,3vw,36px); font-weight:900; letter-spacing:-0.028em; color:#2a0a0a; }
-  .chr-toc-head h2 em { font-family:'Playfair Display', serif; font-style:italic; color:#8a5a17; }
-  .chr-toc-head .rule { height:1px; background:rgba(42,10,10,0.18); margin-bottom:10px; }
-  .chr-toc-head .count { font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.26em; color:#6e5230; text-transform:uppercase; font-weight:700; padding-bottom:2px; }
-  .chr-toc-head .count b { color:#c8862f; font-weight:800; }
-
-  .chr-issue { display:grid; grid-template-columns: 200px 1fr; gap: 28px; padding: 28px 0; border-top: 1px solid rgba(42,10,10,0.15); transition: background 0.2s; }
-  .chr-issue:hover { background: rgba(200,134,47,0.06); }
-  .chr-issue:last-child { border-bottom: 1px solid rgba(42,10,10,0.15); }
-  .chr-num { font-family: 'Playfair Display', serif; font-style:italic; font-weight:700; font-size: 56px; color: #8a5a17; line-height:1; letter-spacing:-0.02em; }
-  .chr-num small { display:block; font-size:11px; letter-spacing:0.22em; color:#6e5230; font-style:normal; font-family:'JetBrains Mono', monospace; font-weight:800; margin-top:6px; }
-  .chr-body h3 { font-family:'Playfair Display', serif; font-weight:800; font-size: clamp(28px, 3vw, 38px); letter-spacing:-0.02em; color:#2a0a0a; margin-bottom:6px; }
-  .chr-body h3 em { font-style:italic; color:#8a5a17; }
-  .chr-sub { font-size: 15px; color:#4a2a1a; margin-bottom:14px; line-height:1.5; }
-  .chr-strip { display:grid; grid-template-columns: repeat(9, 1fr); gap: 6px; margin-top: 14px; }
-  .chr-strip img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:3px; box-shadow: 0 2px 6px rgba(42,10,10,0.18); transition: transform 0.2s; }
-  .chr-issue:hover .chr-strip img { transform: scale(1.04); }
-  .chr-cue { margin-top: 14px; display:inline-flex; align-items:center; gap:8px; font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:15px; color:#8a5a17; }
-  .chr-cue::after { content:"›"; font-size:22px; transition: transform 0.2s; }
-  .chr-issue:hover .chr-cue::after { transform: translateX(4px); }
-
-  .chr-back { max-width:1180px; margin:0 auto 60px; padding:0 var(--shell-pad); }
-  .chr-back a { font-family:'Playfair Display', serif; font-style:italic; font-weight:700; color:#8a5a17; font-size:14px; }
-
-  @media (max-width: 720px) {
-    .chr-issue { grid-template-columns: 1fr; gap:14px; padding: 22px 0; }
-    .chr-num { font-size:40px; }
-    .chr-strip { grid-template-columns: repeat(5, 1fr); }
-    .chr-strip img:nth-child(n+6) { display:none; }
-  }
+  body.chronicle em { color: var(--brand-deep); font-weight: 800; }
+  body.chronicle .brand-ko { color: var(--brand-deep); }
+  body.chronicle .site-nav { background: rgba(240,227,200,0.88); border-bottom-color: var(--line); }
+  body.chronicle .site-nav .logo { color: var(--navy); }
+  body.chronicle .site-nav .logo em { color: var(--brand-deep); }
+  body.chronicle .hero-home h1 { color: var(--navy); }
+  body.chronicle .hero-home .lead em { background: linear-gradient(transparent 70%, var(--brand-soft) 70%); }
+  body.chronicle .section-title h2 { color: var(--navy); }
+  body.chronicle .section-title h2 em { color: var(--brand-deep); }
+  body.chronicle .seg-btn.active { background: var(--navy-deep); color: #fff5e1; }
+  body.chronicle .chip.active { background: var(--brand); border-color: var(--brand); color: #fff5e1; }
+  body.chronicle .series-card { background: rgba(255,255,255,0.55); border-color: var(--line); }
+  body.chronicle .series-card:hover { border-color: var(--line-strong); }
+  body.chronicle .series-card .tag { color: var(--brand-deep); }
+  body.chronicle .series-card h3 em { color: var(--brand-deep); }
+  body.chronicle .series-card .cue { color: var(--brand-deep); }
+  body.chronicle .series-card .thumb .hanja { color: rgba(200,134,47,0.7); }
+  body.chronicle .series-card.coming { opacity: 0.45; cursor: default; pointer-events: none; }
+  body.chronicle .site-foot { color: var(--ink-mid); border-top-color: var(--line); }
 </style>
 </head><body class="chronicle">
 
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a class="logo" href="./">AI × <em>Series</em></a>
-    <div class="nav-right">AI Chronicle</div>
+    <div class="nav-right">Book II · Magazine</div>
   </div>
 </nav>
 
-<section class="chr-hero">
-  <div class="chr-eyebrow">A History of A.I.</div>
-  <h1>AI<br/><em>Chronicle</em>.</h1>
-  <p class="lead">기계가 ‘<b>생각</b>’이라는 단어를 만난 75년의 연대기. 다트머스 이전 톱니바퀴의 시대부터, 트랜지스터 너머의 오늘까지 — 한 권의 책으로 묶습니다.</p>
-  <div class="meta">1739 → ONGOING</div>
+<section class="hero-home">
+  <div>
+    <div class="eyebrow">Book II · AI Chronicle</div>
+    <h1>기계가 ‘<span class="brand-ko">생각</span>’을<br />만난 <span class="brand-ko">75년</span>.</h1>
+    <p class="lead">1739 톱니바퀴부터 오늘까지 — Vaucanson의 오리, Kempelen의 체스기계, Babbage·Lovelace, Turing의 종이테이프, 다트머스의 여름. 시간순으로 이어 읽는 AI의 연대기.</p>
+    <p class="byline"><span>Written by</span> <b>이석찬</b></p>
+  </div>
 </section>
 
-<div class="chr-toc">
-  <div class="chr-toc-head">
-    <h2>책의 <em>차례</em></h2>
-    <div class="rule"></div>
-    <div class="count">CHRONICLE · 진행 중</div>
-  </div>
+<div class="section-title">
+  <h2>모든 <span class="brand-ko">호</span></h2>
+  <div class="rule" aria-hidden="true"></div>
+  <div class="count"><b id="issue-count">1</b> · 진행 중</div>
+</div>
 
-  <a class="chr-issue" href="chronicle/cogwheel.html">
-    <div class="chr-num">01<small>1739—1936</small></div>
-    <div class="chr-body">
-      <h3>톱니바퀴의 <em>꿈</em></h3>
-      <div class="chr-sub">AI 이전, 사람이 만든 첫 ‘생각하는’ 기계들 — Vaucanson · Kempelen · Jacquard · Babbage · Lovelace · Boole · Frege · Ford</div>
-      <div class="chr-strip">
-        <img src="chronicle-1-outputs-cogwheel/01-cover.png" alt="Cover" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/02-vaucanson.png" alt="1739" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/03-turk.png" alt="1770" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/04-jacquard.png" alt="1804" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/05-babbage.png" alt="1822" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/06-ada.png" alt="1843" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/07-logic.png" alt="1854" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/08-line.png" alt="1913" loading="lazy" />
-        <img src="chronicle-1-outputs-cogwheel/09-bridge.png" alt="Bridge" loading="lazy" />
+<div class="index-controls">
+  <div class="control-row">
+    <div class="control-group">
+      <span class="control-label">View</span>
+      <div class="seg" role="tablist" aria-label="보기 모드">
+        <button type="button" class="seg-btn active" data-view="grid" aria-label="그리드 보기">▦ Grid</button>
+        <button type="button" class="seg-btn" data-view="list" aria-label="리스트 보기">☰ List</button>
+        <button type="button" class="seg-btn" data-view="single" aria-label="1열 크게">▯ 1-Col</button>
       </div>
-      <div class="chr-cue">펼쳐 읽기</div>
     </div>
-  </a>
-
-  <!-- 다음 호 placeholder -->
-  <div class="chr-issue" style="opacity:0.45; cursor:default;">
-    <div class="chr-num" style="color:#6e5230;">02<small>1936—1956</small></div>
-    <div class="chr-body">
-      <h3 style="color:#6e5230;">종이테이프 위의 <em>기계</em></h3>
-      <div class="chr-sub" style="color:#6e5230;">Turing의 추상 기계, McCulloch-Pitts 뉴런, Shannon 정보이론 — 다트머스 직전.</div>
-      <div class="chr-cue" style="color:#6e5230;">곧 공개</div>
+    <div class="control-group">
+      <span class="control-label">Sort</span>
+      <div class="seg" role="tablist" aria-label="정렬">
+        <button type="button" class="seg-btn" data-sort="desc" aria-label="최신순">↓ 최신</button>
+        <button type="button" class="seg-btn active" data-sort="asc" aria-label="오래된 순">↑ 오래된</button>
+      </div>
+    </div>
+  </div>
+  <div class="control-row tags-row">
+    <span class="control-label">Era</span>
+    <div class="tag-chips" id="tag-chips">
+      <button type="button" class="chip active" data-tag="all">전체</button>
+      <button type="button" class="chip" data-tag="prologue">전사 · ~1936</button>
+      <button type="button" class="chip" data-tag="foundation">토대 · 1936—1956</button>
+      <button type="button" class="chip" data-tag="winter">겨울 · 1958—1993</button>
+      <button type="button" class="chip" data-tag="revival">부활 · 2006—오늘</button>
     </div>
   </div>
 </div>
 
-<div class="chr-back">
-  <a href="./">▸ 서가로 돌아가기</a>
+<div class="series-grid view-grid" id="series-grid">
+
+  <a class="series-card" href="chronicle/cogwheel.html?v=29" data-slug="cogwheel" data-issue="1" data-tags="prologue">
+    <div class="thumb">
+      <img src="chronicle-1-outputs-cogwheel/01-cover.png?v=29" alt="톱니바퀴의 꿈 cover" loading="lazy" />
+      <div class="hanja">機</div>
+    </div>
+    <div class="body">
+      <div class="tag">ISSUE 01</div>
+      <h3>톱니바퀴의 <em>꿈</em></h3>
+      <div class="subt">1739—1936 · 사람이 만든 첫 ‘생각하는’ 기계들</div>
+      <div class="desc">Vaucanson의 오리 · Kempelen의 체스기계 · Jacquard 펀치카드 · Babbage·Lovelace · Boole·Frege · Ford 라인 — 종이테이프 직전까지 200년.</div>
+      <div class="cue">Read Issue</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" href="#" data-slug="tape" data-issue="2" data-tags="foundation" aria-disabled="true">
+    <div class="thumb" style="background:linear-gradient(135deg, #5a1c1c, #2a0808); display:flex; align-items:center; justify-content:center;">
+      <div class="hanja" style="position:static; color:#e6a86a; opacity:0.65;">紙</div>
+    </div>
+    <div class="body">
+      <div class="tag">ISSUE 02 · COMING</div>
+      <h3>종이테이프 위의 <em>기계</em></h3>
+      <div class="subt">1936—1956 · 다트머스 직전</div>
+      <div class="desc">Turing의 추상기계 · McCulloch–Pitts 뉴런 · Shannon 정보이론 · Wiener 사이버네틱스 · Imitation Game — 다트머스로 모이는 실들.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
 </div>
 
 <footer class="site-foot">
   <span><i>AI Chronicle</i> · A History of A.I.</span>
   <span>Mirae Asset inspired · Pretendard typeface</span>
 </footer>
+
+<script>
+(function () {
+  const grid = document.getElementById('series-grid');
+  const cards = Array.from(grid.querySelectorAll('.series-card'));
+  const viewButtons = document.querySelectorAll('[data-view]');
+  const sortButtons = document.querySelectorAll('[data-sort]');
+  const chipButtons = document.querySelectorAll('.chip');
+  const countLabel = document.getElementById('issue-count');
+
+  let state = {
+    view: localStorage.getItem('chr.view') || 'grid',
+    sort: localStorage.getItem('chr.sort') || 'asc',
+    tag:  localStorage.getItem('chr.tag')  || 'all',
+  };
+
+  function visibleCards() {
+    return cards.filter(c => !c.classList.contains('hidden-by-filter'));
+  }
+  function applyFilter() {
+    const tag = state.tag;
+    cards.forEach(c => {
+      const tags = (c.dataset.tags || '').split(',').filter(Boolean);
+      const match = tag === 'all' || tags.includes(tag);
+      c.classList.toggle('hidden-by-filter', !match);
+    });
+    countLabel.textContent = visibleCards().filter(c => !c.classList.contains('coming')).length;
+    chipButtons.forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+  }
+  function applySort() {
+    const dir = state.sort === 'asc' ? 1 : -1;
+    cards.sort((a, b) => (parseInt(a.dataset.issue) - parseInt(b.dataset.issue)) * dir)
+         .forEach(c => grid.appendChild(c));
+    sortButtons.forEach(b => b.classList.toggle('active', b.dataset.sort === state.sort));
+  }
+  function applyView() {
+    grid.classList.remove('view-grid', 'view-list', 'view-single');
+    grid.classList.add('view-' + state.view);
+    viewButtons.forEach(b => b.classList.toggle('active', b.dataset.view === state.view));
+  }
+  viewButtons.forEach(b => b.addEventListener('click', () => {
+    state.view = b.dataset.view; localStorage.setItem('chr.view', state.view); applyView();
+  }));
+  sortButtons.forEach(b => b.addEventListener('click', () => {
+    state.sort = b.dataset.sort; localStorage.setItem('chr.sort', state.sort); applySort();
+  }));
+  chipButtons.forEach(b => b.addEventListener('click', () => {
+    state.tag = b.dataset.tag; localStorage.setItem('chr.tag', state.tag); applyFilter();
+  }));
+  applySort(); applyFilter(); applyView();
+})();
+</script>
 
 </body></html>
