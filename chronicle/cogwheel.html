@@ -1,70 +1,111 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8" />
-<title>Chronicle 01 · 톱니바퀴의 꿈</title>
+<title>AI Chronicle 01 · 톱니바퀴의 꿈</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="../styles/site.css?v=26" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../styles/site.css?v=29" />
+<link rel="stylesheet" href="../styles/magazine.css?v=29" />
+<script defer src="../styles/book-mode.js?v=29"></script>
 <style>
-  body.chr-issue-page {
-    background: linear-gradient(180deg, #f0e3c8 0%, #e3d3ad 100%);
-    color: #2a0a0a;
-    min-height: 100vh;
+  /* 가죽 톤 override — series reader 포맷 그대로, 색만 burgundy/gold */
+  body.chr-reader {
+    --bg: #f0e3c8;
+    --bg-soft: #f7ecd0;
+    --navy: #2a0a0a;
+    --navy-deep: #5a1c1c;
+    --brand: #c8862f;
+    --brand-deep: #8a5a17;
+    --brand-soft: #f3d2a8;
+    --ink: #2a0a0a;
+    --ink-soft: #4a2a1a;
+    --ink-mid: #6e5230;
+    --line: rgba(42,10,10,0.15);
+    --line-strong: rgba(42,10,10,0.25);
+    background: var(--bg);
+    color: var(--navy);
   }
-  .issue-head { max-width: 1180px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) var(--shell-pad) clamp(28px, 3vw, 40px); display:grid; grid-template-columns:1fr auto; gap:24px; align-items:end; }
-  .issue-head .meta { font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.28em; color:#8a5a17; font-weight:800; text-transform:uppercase; }
-  .issue-head h1 { font-size: clamp(48px, 7vw, 88px); font-weight:900; letter-spacing:-0.038em; line-height:0.98; color:#2a0a0a; margin-top: 14px; }
-  .issue-head h1 em { font-family:'Playfair Display', serif; font-style:italic; color:#8a5a17; }
-  .issue-head .sub { margin-top: 14px; font-size: clamp(15px, 1.2vw, 17px); color:#4a2a1a; max-width: 640px; line-height:1.6; }
-  .issue-head .range { font-family:'Playfair Display', serif; font-style:italic; font-size: clamp(20px, 2.4vw, 28px); color:#8a5a17; font-weight:700; white-space:nowrap; padding-bottom:10px; }
-
-  .grid { max-width: 1180px; margin: 0 auto; padding: 0 var(--shell-pad) clamp(80px,10vw,120px); display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .grid figure { margin:0; background:#fff; padding:8px; box-shadow: 0 6px 18px rgba(42,10,10,0.18); border-radius: 4px; transition: transform 0.2s; }
-  .grid figure:hover { transform: translateY(-4px); }
-  .grid img { width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius:2px; }
-  .grid figcaption { font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.2em; color:#6e5230; font-weight:700; margin-top:8px; text-transform:uppercase; }
-
-  .nav-back { max-width:1180px; margin:0 auto 60px; padding: 0 var(--shell-pad); display:flex; gap:18px; }
-  .nav-back a { font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:14px; color:#8a5a17; }
-
-  @media (max-width:720px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  body.chr-reader em { color: var(--brand-deep); font-weight: 800; }
+  body.chr-reader .brand-ko { color: var(--brand-deep); }
+  body.chr-reader .site-nav { background: rgba(240,227,200,0.88); border-bottom-color: var(--line); }
+  body.chr-reader .site-nav .logo { color: var(--navy); }
+  body.chr-reader .site-nav .logo em { color: var(--brand-deep); }
+  body.chr-reader .mag-side h2 em { color: var(--brand-deep); }
+  body.chr-reader .progress-inner { background: var(--brand); }
+  body.chr-reader #toc a.current { color: var(--brand-deep); }
+  body.chr-reader #toc a.current::before { background: var(--brand); }
 </style>
-</head><body class="chr-issue-page">
+</head><body class="chr-reader">
 
 <nav class="site-nav">
   <div class="site-nav-inner">
     <a class="logo" href="../">AI × <em>Series</em></a>
-    <div class="nav-right">AI Chronicle · 01</div>
+    <div class="nav-right">CHRONICLE · 01 · 톱니바퀴의 꿈</div>
   </div>
 </nav>
 
-<section class="issue-head">
-  <div>
-    <div class="meta">AI CHRONICLE · 01 · PROLOGUE</div>
-    <h1>톱니바퀴의 <em>꿈</em>.</h1>
-    <p class="sub">AI 이전, 사람이 만든 첫 ‘생각하는’ 기계들. 황동 오리부터 컨베이어 벨트까지 — 200년의 톱니바퀴가 한 명의 청년이 그릴 종이테이프를 향해 걸어갑니다.</p>
-  </div>
-  <div class="range">1739 — 1936</div>
-</section>
+<div class="mag-shell">
+  <aside class="mag-side">
+    <div class="side-kicker">BOOK II · CHRONICLE</div>
+    <h2>톱니바퀴의 <span class="brand-ko">꿈</span></h2>
+    <div class="side-sub">1739—1936 · AI 이전, 사람이 만든 첫 ‘생각하는’ 기계들. Vaucanson의 오리부터 Ford의 컨베이어까지 — 종이테이프 직전 200년의 톱니바퀴.</div>
 
-<div class="grid">
-  <figure><img src="../chronicle-1-outputs-cogwheel/01-cover.png" alt="Cover" loading="lazy" /><figcaption>01 · Cover</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/02-vaucanson.png" alt="Vaucanson 1739" loading="lazy" /><figcaption>02 · 1739 Vaucanson</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/03-turk.png" alt="Mechanical Turk 1770" loading="lazy" /><figcaption>03 · 1770 The Turk</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/04-jacquard.png" alt="Jacquard 1804" loading="lazy" /><figcaption>04 · 1804 Jacquard</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/05-babbage.png" alt="Babbage 1822" loading="lazy" /><figcaption>05 · 1822 Babbage</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/06-ada.png" alt="Ada Lovelace 1843" loading="lazy" /><figcaption>06 · 1843 Lovelace</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/07-logic.png" alt="Boole / Frege" loading="lazy" /><figcaption>07 · Boole · Frege</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/08-line.png" alt="Ford Line 1913" loading="lazy" /><figcaption>08 · 1913 Ford</figcaption></figure>
-  <figure><img src="../chronicle-1-outputs-cogwheel/09-bridge.png" alt="Bridge to 1936" loading="lazy" /><figcaption>09 · Bridge → 1936</figcaption></figure>
+    <div class="progress-outer"><div class="progress-inner" id="progress"></div></div>
+
+    <nav aria-label="목차">
+      <ol id="toc">
+        <li><a href="#card-01" class="current"><span class="num">01</span>표지 · 톱니바퀴의 꿈</a></li>
+        <li><a href="#card-02"><span class="num">02</span>1739 Vaucanson의 오리</a></li>
+        <li><a href="#card-03"><span class="num">03</span>1770 Mechanical Turk</a></li>
+        <li><a href="#card-04"><span class="num">04</span>1804 Jacquard 직조기</a></li>
+        <li><a href="#card-05"><span class="num">05</span>1822 Babbage</a></li>
+        <li><a href="#card-06"><span class="num">06</span>1843 Ada Lovelace</a></li>
+        <li><a href="#card-07"><span class="num">07</span>Boole · Frege</a></li>
+        <li><a href="#card-08"><span class="num">08</span>1913 Ford 라인</a></li>
+        <li><a href="#card-09"><span class="num">09</span>→ 1936으로</a></li>
+      </ol>
+    </nav>
+
+    <div class="side-foot">AI Chronicle</div>
+  </aside>
+
+  <main class="mag-main">
+    <article class="mag-article loading" id="card-01" data-card="../chronicle-1-cards-cogwheel/01-cover.html">
+      <div class="mag-num">CHRONICLE · <b>01</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-02" data-card="../chronicle-1-cards-cogwheel/02-vaucanson.html">
+      <div class="mag-num">CHRONICLE · <b>02</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-03" data-card="../chronicle-1-cards-cogwheel/03-turk.html">
+      <div class="mag-num">CHRONICLE · <b>03</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-04" data-card="../chronicle-1-cards-cogwheel/04-jacquard.html">
+      <div class="mag-num">CHRONICLE · <b>04</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-05" data-card="../chronicle-1-cards-cogwheel/05-babbage.html">
+      <div class="mag-num">CHRONICLE · <b>05</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-06" data-card="../chronicle-1-cards-cogwheel/06-ada.html">
+      <div class="mag-num">CHRONICLE · <b>06</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-07" data-card="../chronicle-1-cards-cogwheel/07-logic.html">
+      <div class="mag-num">CHRONICLE · <b>07</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-08" data-card="../chronicle-1-cards-cogwheel/08-line.html">
+      <div class="mag-num">CHRONICLE · <b>08</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+    <article class="mag-article loading" id="card-09" data-card="../chronicle-1-cards-cogwheel/09-bridge.html">
+      <div class="mag-num">CHRONICLE · <b>09</b> / 09</div>
+      <div class="card-content">Loading…</div>
+    </article>
+  </main>
 </div>
-
-<div class="nav-back">
-  <a href="../history.html">▸ 차례로 돌아가기</a>
-  <a href="../">▸ 서가</a>
-</div>
-
-<footer class="site-foot">
-  <span><i>AI Chronicle</i> · 01 · 톱니바퀴의 꿈</span>
-  <span>Mirae Asset inspired · Pretendard typeface</span>
-</footer>
 
 </body></html>
