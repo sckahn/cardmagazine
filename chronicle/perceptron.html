@@ -48,11 +48,14 @@
   }
   /* mag-next — 다음 호 카드 */
   body.chr-reader .mag-next {
-    max-width: 760px; margin: 60px auto 80px; padding: 24px;
-    background: rgba(255,255,255,0.5); border: 1px solid var(--line);
-    border-radius: 6px; display: grid; grid-template-columns: 180px 1fr; gap: 24px;
-    align-items: center;
+    opacity: 1 !important; transform: none !important;
+    max-width: 760px; margin: 60px auto 80px; padding: 24px !important;
+    background: rgba(255,255,255,0.5) !important; border: 1px solid var(--line);
+    border-radius: 6px; display: grid !important; grid-template-columns: 180px 1fr; gap: 24px;
+    align-items: center; color: var(--navy) !important;
+    flex-direction: row !important; text-align: left !important;
   }
+  body.chr-reader .mag-next::after { display: none !important; }
   body.chr-reader .mag-next.in-view { opacity: 1; transform: none; }
   body.chr-reader .mag-next .next-cover { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; box-shadow: 0 8px 20px rgba(42,10,10,0.2); }
   body.chr-reader .mag-next .next-kicker { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.26em; color: var(--brand-deep); font-weight: 800; text-transform: uppercase; }
