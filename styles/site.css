@@ -1335,121 +1335,83 @@ body.portal {
   align-self: center;
 }
 
-/* 두드러진 책 (실제 클릭 가능) — 더 두껍고 살짝 앞으로 */
+/* 더미 책은 무채색 쪽으로 */
+.s-decor { filter: brightness(0.7) saturate(0.55); opacity: 0.85; }
+
+/* 두드러진 책 (실제 클릭 가능) */
 .s-feature {
   cursor: pointer;
   text-decoration: none;
   z-index: 2;
-  transform: translateY(-4px);
   filter: none;
   flex-direction: column;
-  padding: 18px 0 14px;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 14px 0;
+  width: clamp(72px, 9vw, 96px);
+  height: 100%;
+  transform: translateY(-12px);
+  box-shadow:
+    inset 1px 0 0 rgba(255,255,255,0.12),
+    inset -1px 0 0 rgba(0,0,0,0.35),
+    0 8px 14px rgba(0,0,0,0.4);
 }
 .s-feature:hover, .s-feature:focus-visible {
-  transform: translateY(-22px);
+  transform: translateY(-26px);
   box-shadow:
-    inset 1px 0 0 rgba(255,255,255,0.1),
-    inset -1px 0 0 rgba(0,0,0,0.3),
-    0 16px 24px rgba(0,0,0,0.4);
+    inset 1px 0 0 rgba(255,255,255,0.18),
+    inset -1px 0 0 rgba(0,0,0,0.35),
+    0 18px 28px rgba(0,0,0,0.5);
 }
-.s-feature:focus-visible { outline: 2px solid var(--brand); outline-offset: 4px; }
+.s-feature:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 
-/* AI × Series — 짙은 네이비 + 오렌지 액센트 */
+/* AI × Series — 진한 잉크 네이비 + 강한 오렌지 액센트 */
 .s-series {
-  --c1: #1a2e54;
-  --c2: #0a172c;
-  width: 78px;
-  height: 100%;
+  --c1: #16284a;
+  --c2: #07101f;
 }
-.s-series .s-title-big {
-  color: #fff5e1;
-}
-.s-series .s-title-big em {
-  color: var(--brand);
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-}
-.s-series .s-meta { color: var(--brand); }
-.s-series .s-author { color: rgba(255,228,208,0.5); }
-.s-series .s-foot { color: rgba(255,228,208,0.55); }
+.s-series .s-title-big { color: #fff5e1; }
+.s-series .s-cap { background: linear-gradient(180deg, #E35205, #B5400B); }
 
-/* AI Chronicle — 가죽 burgundy + 골드 */
+/* AI Chronicle — 깊은 burgundy + 골드 */
 .s-chronicle {
-  --c1: #4a1414;
-  --c2: #2a0a0a;
-  width: 76px;
-  height: 100%;
+  --c1: #5a1c1c;
+  --c2: #2a0808;
 }
-.s-chronicle .s-title-big {
-  color: #fff5e1;
-}
-.s-chronicle .s-title-big em {
-  color: #e6a86a;
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-}
-.s-chronicle .s-meta { color: #e6a86a; }
-.s-chronicle .s-author { color: rgba(243,210,168,0.5); }
-.s-chronicle .s-foot { color: rgba(243,210,168,0.55); }
+.s-chronicle .s-title-big { color: #fff5e1; }
+.s-chronicle .s-cap { background: linear-gradient(180deg, #e6a86a, #8a5a17); }
 
-/* feature 책등 텍스트 — 세로쓰기 */
-.s-feature .s-author {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9.5px;
-  letter-spacing: 0.22em;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin: 0 auto 8px;
-  white-space: nowrap;
+/* feature 책등 — 위·아래 색띠(엔드밴드) */
+.s-feature .s-cap {
+  display: block;
+  height: 22px;
+  margin: 0 5px;
+  border-radius: 1px;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.2),
+    inset 0 -1px 0 rgba(0,0,0,0.3);
+  flex-shrink: 0;
 }
+
+/* feature 책등 — 세로 큰 제목 한 줄 */
 .s-feature .s-title-big {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   font-family: 'Playfair Display', serif;
   font-weight: 800;
-  font-size: 22px;
-  letter-spacing: -0.005em;
-  margin: 0 auto;
+  font-style: italic;
+  font-size: clamp(18px, 2vw, 22px);
+  letter-spacing: 0.01em;
   white-space: nowrap;
   flex: 1;
   display: flex; align-items: center; justify-content: center;
-}
-.s-feature .s-title-big em { font-weight: 700; }
-.s-feature .s-meta {
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  font-weight: 800;
-  text-transform: uppercase;
   margin: 8px auto;
-  white-space: nowrap;
-}
-.s-feature .s-foot {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 9.5px;
-  text-align: center;
-  line-height: 1.25;
-  margin: 0 auto;
-  width: 100%;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.4);
 }
 
-/* 가로 띠(책등 골드 줄 — 위/아래) */
-.s-feature::after {
-  content: "";
-  position: absolute;
-  left: 6px; right: 6px;
-  top: 10px; height: 1px;
-  background: currentColor;
-  opacity: 0.4;
-  box-shadow: 0 calc(100% - 22px) 0 currentColor;
-}
-.s-series::after { color: var(--brand); }
-.s-chronicle::after { color: #c8862f; }
+/* 더미 책의 ::after 띠 비활성 (feature와 헷갈림 방지) */
+.s-decor::after { display: none; }
+.s-feature::after { display: none; }
 
 /* 선반 판 — 책 아래 */
 .bookcase-board {
@@ -1471,10 +1433,23 @@ body.portal {
   pointer-events: none;
 }
 
+/* 책장 가로 넘침 방지 */
+.bookcase-frame { overflow: hidden; }
+
 @media (max-width: 720px) {
-  .books { height: 320px; gap: 0; padding: 0 2px; }
-  .s-feature .s-title-big { font-size: 17px; }
-  .s-series, .s-chronicle { width: 60px; }
-  /* 모바일에선 데코 책등 일부 숨김 */
-  .s-decor:nth-child(n+5):nth-child(-n+6) { display: none; }
+  .books { height: 340px; gap: 0; padding: 0 2px; }
+  .s-feature { width: 64px; }
+  .s-feature .s-title-big { font-size: 16px; }
+  /* 모바일: 더미 책등 다수 숨겨 두 권만 도드라지게 */
+  .s-decor:nth-of-type(1),
+  .s-decor:nth-of-type(2),
+  .s-decor:nth-of-type(13),
+  .s-decor:nth-of-type(14) { display: none; }
+  .spine.s-decor { width: 28px; }
+}
+@media (max-width: 480px) {
+  .s-decor:nth-of-type(3),
+  .s-decor:nth-of-type(12) { display: none; }
+  .s-feature { width: 70px; }
+  .spine.s-decor { width: 26px; }
 }
