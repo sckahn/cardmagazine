@@ -33,12 +33,42 @@
   body.chr-reader .progress-inner { background: var(--brand); }
   body.chr-reader #toc a.current { color: var(--brand-deep); }
   body.chr-reader #toc a.current::before { background: var(--brand); }
+
+  /* PC에서 카드 안 인물 사진 잘림 방지 — 위쪽 더 보존 */
+  body.chr-reader .mag-article img.portrait,
+  body.chr-reader .mag-article .split img,
+  body.chr-reader .mag-article .left img,
+  body.chr-reader .mag-article .right img { object-position: center 15% !important; }
+  /* mag-next — 다음 호 카드 */
+  body.chr-reader .mag-next {
+    max-width: 760px; margin: 60px auto 80px; padding: 24px;
+    background: rgba(255,255,255,0.5); border: 1px solid var(--line);
+    border-radius: 6px; display: grid; grid-template-columns: 180px 1fr; gap: 24px;
+    align-items: center; opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  body.chr-reader .mag-next.in-view { opacity: 1; transform: none; }
+  body.chr-reader .mag-next .next-cover { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; box-shadow: 0 8px 20px rgba(42,10,10,0.2); }
+  body.chr-reader .mag-next .next-kicker { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.26em; color: var(--brand-deep); font-weight: 800; text-transform: uppercase; }
+  body.chr-reader .mag-next .next-title { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 28px; letter-spacing: -0.02em; color: var(--navy); margin-top: 6px; line-height: 1.05; }
+  body.chr-reader .mag-next .next-title em { font-style: italic; color: var(--brand-deep); }
+  body.chr-reader .mag-next .next-sub { font-size: 14px; color: var(--ink-soft); line-height: 1.6; margin-top: 8px; }
+  body.chr-reader .mag-next .next-cta { display: inline-block; margin-top: 14px; padding: 10px 18px; background: var(--navy); color: #fff5e1; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase; border-radius: 3px; transition: background 0.18s; }
+  body.chr-reader .mag-next .next-cta:hover { background: var(--brand-deep); }
+  body.chr-reader .mag-next.coming .next-cta { background: rgba(42,10,10,0.18); color: var(--ink-mid); cursor: default; pointer-events: none; }
+  body.chr-reader .mag-next.coming .next-cover-placeholder { width:100%; aspect-ratio:1; background:linear-gradient(135deg, #5a1c1c, #2a0808); border-radius:4px; display:flex; align-items:center; justify-content:center; box-shadow: 0 8px 20px rgba(42,10,10,0.2); }
+  body.chr-reader .mag-next.coming .next-cover-placeholder span { font-family:'Noto Serif KR', serif; font-size:60px; color:#e6a86a; opacity:0.55; }
+  @media (max-width: 720px) {
+    body.chr-reader .mag-next { grid-template-columns: 1fr; padding: 18px; }
+    body.chr-reader .mag-next .next-cover, body.chr-reader .mag-next .next-cover-placeholder { width: 60%; margin: 0 auto; }
+  }
+
 </style>
 </head><body class="chr-reader">
 
 <nav class="site-nav">
   <div class="site-nav-inner">
-    <a class="logo" href="../history.html">AI <em>Magazine</em></a>
+    <a class="logo" href="../">AI <em>Magazine</em></a>
     <div class="nav-right">CHRONICLE · 02</div>
   </div>
 </nav>
@@ -105,6 +135,16 @@
       <div class="mag-num">CHRONICLE · <b>09</b> / 09</div>
       <div class="card-content">Loading…</div>
     </article>
+
+    <aside class="mag-next">
+      <img class="next-cover" src="../chronicle-3-outputs-dartmouth/01-cover.png" alt="다음 호 cover" loading="lazy" />
+      <div>
+        <div class="next-kicker">NEXT · ISSUE 03</div>
+        <h3 class="next-title">다트머스의 <em>여름</em></h3>
+        <p class="next-sub">1956 · ‘Artificial Intelligence’가 처음 적힌 두 달. McCarthy의 제안서와 Logic Theorist 시연.</p>
+        <a class="next-cta" href="dartmouth.html">다음 이슈 보기 →</a>
+      </div>
+    </aside>
   </main>
 </div>
 
