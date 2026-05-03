@@ -1,0 +1,71 @@
+/* AI Chronicle — 가죽·버건디 톤 override
+   style.css 다음에 로드해 색상만 덮어씀. 레이아웃/폰트는 시리즈와 동일. */
+
+:root {
+  --bg: #f0e3c8;          /* 옅은 양피지 베이지 */
+  --bg-soft: #f7ecd0;
+  --navy: #2a0a0a;        /* 깊은 burgundy (시리즈의 navy 자리) */
+  --navy-deep: #5a1c1c;
+  --brand: #c8862f;       /* 황동/골드 (시리즈의 orange 자리) */
+  --brand-deep: #8a5a17;
+  --brand-soft: #f3d2a8;
+  --ink: #2a0a0a;
+  --ink-soft: #4a2a1a;
+  --ink-mid: #6e5230;
+  --line: rgba(42,10,10,0.15);
+  --line-strong: rgba(42,10,10,0.25);
+}
+
+body { background: var(--bg); color: var(--navy); }
+
+/* topbar — gold rule */
+.topbar { background: linear-gradient(90deg, #c8862f 0%, #8a5a17 50%, #c8862f 100%) !important; }
+
+/* brandmark + tri */
+.brandmark { color: var(--ink-soft) !important; }
+.brandmark .tri { background: var(--brand) !important; }
+
+/* ghost-num 한자 — 골드 톤 */
+.ghost-num { color: rgba(200,134,47,0.13) !important; }
+
+/* h1.title em — 골드 강조 */
+.title em, h1 em { color: var(--brand-deep) !important; }
+.brand-ko { color: var(--brand-deep) !important; }
+
+/* 인용문 좌측 바 */
+.quote { border-left-color: var(--brand) !important; }
+
+/* nlist 번호 상단 바 */
+.nlist .num::before { background: var(--brand) !important; }
+.nlist .num { color: var(--brand-deep) !important; }
+
+/* insight (주황 좌측 바) */
+.insight { border-left-color: var(--brand) !important; background: rgba(200,134,47,0.08) !important; }
+
+/* 코너 장식 삼각형 */
+.corner-tri { border-top-color: var(--brand) !important; }
+.corner-tri-sm { border-bottom-color: var(--brand) !important; }
+
+/* foot 라인 */
+.foot { border-top-color: var(--line) !important; }
+
+/* gradient 박스 (시리즈에서 navy/orange 쓰던 자리를 burgundy/gold로) */
+.chronicle-grad-dark {
+  background: linear-gradient(135deg, #2a0a0a 0%, #5a1c1c 100%);
+  color: #f3d2a8;
+}
+.chronicle-grad-dark b, .chronicle-grad-dark strong { color: #f3d2a8; }
+.chronicle-grad-gold {
+  background: linear-gradient(135deg, #c8862f 0%, #8a5a17 100%);
+  color: #fff5e1;
+}
+
+/* cover/outro 변형 */
+body.cover .hero em, body.outro .ask em { color: var(--brand-deep) !important; }
+.kicker { color: var(--brand-deep) !important; }
+.timeline b { color: var(--brand-deep) !important; }
+.timeline .bar { background: var(--brand) !important; }
+.flourish { color: var(--brand-deep) !important; }
+
+/* tags */
+.tags span { background: rgba(200,134,47,0.10) !important; color: var(--ink-soft) !important; border-color: rgba(200,134,47,0.25) !important; }

@@ -29,14 +29,13 @@ def find_cards_dir(name: str) -> Path | None:
 
 
 def output_dir_for(cards_dir: Path) -> Path:
-    """Map <N>-cards-<name> -> <N>-outputs-<name>."""
+    """Map <prefix>-cards-<name> -> <prefix>-outputs-<name>.
+    Supports: cards-X, N-cards-X, chronicle-N-cards-X."""
     stem = cards_dir.name
     if stem.startswith("cards-"):
         return ROOT / stem.replace("cards-", "outputs-", 1)
-    # <N>-cards-<name>
-    parts = stem.split("-", 2)
-    if len(parts) == 3 and parts[1] == "cards":
-        return ROOT / f"{parts[0]}-outputs-{parts[2]}"
+    if "-cards-" in stem:
+        return ROOT / stem.replace("-cards-", "-outputs-", 1)
     raise ValueError(f"Unrecognized cards dir: {cards_dir}")
 
 

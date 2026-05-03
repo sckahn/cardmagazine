@@ -849,3 +849,349 @@ em { font-style: normal; color: var(--brand); font-weight: 800; }
     flex-direction: column; gap: 10px; align-items: flex-start;
   }
 }
+
+/* ============================================================
+   PORTAL · 서가 한 권
+   ============================================================ */
+body.portal {
+  background:
+    radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(227,82,5,0.08), transparent 60%),
+    linear-gradient(180deg, #f6f0e3 0%, #ece2cc 60%, #d8c8a6 100%);
+  min-height: 100vh;
+  display: flex; flex-direction: column;
+}
+
+.portal-hero {
+  max-width: var(--shell-max); margin: 0 auto;
+  padding: clamp(56px, 8vw, 96px) var(--shell-pad) clamp(24px, 3vw, 36px);
+  text-align: center;
+}
+.portal-eyebrow {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px; letter-spacing: 0.32em;
+  color: var(--brand); font-weight: 700; text-transform: uppercase;
+}
+.portal-eyebrow::before, .portal-eyebrow::after {
+  content: ""; width: 28px; height: 2px; background: var(--brand);
+}
+.portal-hero h1 {
+  margin-top: 22px;
+  font-size: clamp(40px, 6.4vw, 76px);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: var(--navy);
+  text-wrap: balance;
+}
+.portal-hero h1 em {
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+}
+.portal-lead {
+  margin: clamp(18px, 2vw, 26px) auto 0;
+  max-width: 580px;
+  font-size: clamp(15px, 1.2vw, 17px);
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+
+/* ===== 서가 무대 ===== */
+.shelf-stage {
+  position: relative;
+  max-width: 880px;
+  margin: clamp(32px, 5vw, 64px) auto 0;
+  padding: 0 var(--shell-pad) clamp(80px, 10vw, 140px);
+  flex: 1;
+  display: flex; flex-direction: column; align-items: center;
+  perspective: 1600px;
+}
+
+.shelf {
+  position: relative;
+  display: flex; align-items: flex-end; justify-content: center;
+  gap: clamp(28px, 5vw, 72px);
+  min-height: 440px;
+  padding: 0 40px;
+  z-index: 2;
+  flex-wrap: wrap;
+}
+
+/* 책 (정면 표지) */
+.book {
+  position: relative;
+  display: block;
+  width: clamp(240px, 28vw, 320px);
+  height: clamp(340px, 40vw, 460px);
+  transform-style: preserve-3d;
+  transform: rotateY(-14deg) rotateX(2deg);
+  transition: transform 700ms var(--ease-out-quart),
+              filter 500ms var(--ease-out-quart);
+  cursor: pointer;
+  filter: drop-shadow(0 30px 40px rgba(15,30,56,0.25));
+}
+.book:hover, .book:focus-visible {
+  transform: rotateY(-6deg) rotateX(0deg) translateY(-12px);
+  filter: drop-shadow(0 50px 60px rgba(15,30,56,0.35));
+}
+.book:focus-visible { outline: 3px solid var(--brand); outline-offset: 12px; border-radius: 4px; }
+
+/* 책 표지 정면 */
+.book-cover {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.08), transparent 60%),
+    linear-gradient(135deg, #16284a 0%, #0f1e38 55%, #0a172c 100%);
+  border-radius: 3px 6px 6px 3px;
+  box-shadow:
+    inset 2px 0 0 rgba(255,255,255,0.06),
+    inset -1px 0 0 rgba(0,0,0,0.3),
+    inset 0 -2px 0 rgba(0,0,0,0.4);
+  overflow: hidden;
+}
+/* 직물 텍스처 */
+.book-cover::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.018) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.05) 0 2px, transparent 2px 4px);
+  pointer-events: none;
+}
+
+.cover-frame {
+  position: absolute; inset: 28px 26px 26px 32px;
+  border: 1px solid rgba(255,228,208,0.28);
+  border-radius: 2px;
+  padding: 26px 22px 22px;
+  display: flex; flex-direction: column;
+  color: #f7eddc;
+}
+.cover-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px; letter-spacing: 0.28em;
+  color: var(--brand);
+  font-weight: 700;
+}
+.cover-title {
+  margin-top: 22px;
+  display: flex; flex-direction: column; gap: 2px;
+  line-height: 0.95;
+}
+.cover-ai {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: clamp(56px, 8vw, 88px);
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+.cover-x {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(28px, 4vw, 40px);
+  color: var(--brand);
+  margin: 4px 0;
+}
+.cover-series {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(40px, 6vw, 64px);
+  color: #ffe4d0;
+  letter-spacing: -0.02em;
+}
+.cover-rule {
+  margin-top: 18px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--brand) 0%, var(--brand) 36%, rgba(255,228,208,0.2) 36%);
+}
+.cover-sub {
+  margin-top: 14px;
+  font-size: clamp(13px, 1.05vw, 15px);
+  line-height: 1.5;
+  color: #d9c8a8;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.cover-meta {
+  margin-top: auto;
+  padding-top: 18px;
+  display: flex; align-items: center; gap: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px; letter-spacing: 0.2em;
+  color: #ffe4d0;
+  text-transform: uppercase;
+}
+.cover-meta b { color: var(--brand); font-weight: 800; font-size: 13px; }
+.cover-meta .dot { color: rgba(255,228,208,0.45); }
+.cover-author {
+  margin-top: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px; letter-spacing: 0.18em;
+  color: rgba(255,228,208,0.55);
+  text-transform: uppercase;
+}
+.cover-author b { color: #f7eddc; font-weight: 700; }
+.cover-cue {
+  margin-top: 14px;
+  font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+  font-size: 14px; color: var(--brand);
+  opacity: 0.9;
+  transition: transform 400ms var(--ease-out-quart), opacity 400ms;
+}
+.book:hover .cover-cue { transform: translateX(6px); opacity: 1; }
+
+/* 책 종이단면 (오른쪽) */
+.book-pages {
+  position: absolute;
+  top: 4px; bottom: 4px; right: -10px;
+  width: 12px;
+  background:
+    repeating-linear-gradient(90deg, #f3e9d0 0 1px, #e8dcbe 1px 2px, #faf2dc 2px 3px);
+  transform: translateZ(-8px);
+  border-radius: 1px 2px 2px 1px;
+  box-shadow: inset -1px 0 0 rgba(0,0,0,0.18);
+}
+
+/* 책등 (왼쪽 살짝 보이게) */
+.book-spine {
+  position: absolute;
+  top: 0; bottom: 0; left: -1px;
+  width: 26px;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.0) 60%),
+    linear-gradient(180deg, #0c1a32, #0a172c);
+  transform-origin: right center;
+  transform: rotateY(60deg) translateX(-13px);
+  border-radius: 2px 0 0 2px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.spine-text {
+  writing-mode: vertical-rl;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: rgba(255,228,208,0.5);
+  white-space: nowrap;
+}
+
+/* 선반 판 */
+.shelf-board {
+  position: relative;
+  width: min(100%, 760px);
+  height: 22px;
+  background:
+    linear-gradient(180deg, #b8956a 0%, #8a6a45 50%, #5e4527 100%);
+  box-shadow:
+    0 2px 0 rgba(0,0,0,0.25),
+    0 14px 24px -8px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.18);
+  border-radius: 2px;
+  margin-top: -8px;
+  z-index: 1;
+}
+.shelf-board::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.06) 0 2px, transparent 2px 38px),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.04) 0 1px, transparent 1px 4px);
+  pointer-events: none;
+}
+.shelf-shadow {
+  width: min(100%, 600px);
+  height: 60px;
+  margin-top: 6px;
+  background: radial-gradient(ellipse at center top, rgba(0,0,0,0.28), transparent 70%);
+  filter: blur(2px);
+}
+
+@media (max-width: 720px) {
+  .book { transform: rotateY(-8deg); }
+  .book:hover, .book:focus-visible { transform: rotateY(-2deg) translateY(-8px); }
+  .cover-frame { inset: 20px 18px 18px 22px; padding: 20px 16px 16px; }
+  .shelf-board { height: 16px; }
+  .portal-hero h1 { font-size: clamp(32px, 9vw, 48px); }
+}
+
+/* 두 번째 책 — AI × History (가죽/버건디 톤) */
+.book-history .book-cover {
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,0.06), transparent 60%),
+    linear-gradient(135deg, #5a1c1c 0%, #3d1010 55%, #2a0a0a 100%);
+}
+.book-history .book-cover::before {
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,220,180,0.025) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.06) 0 2px, transparent 2px 4px);
+}
+.book-history .cover-frame {
+  border-color: rgba(243,210,168,0.32);
+  color: #f3d2a8;
+}
+.book-history .cover-eyebrow { color: #e6a86a; }
+.book-history .cover-ai { color: #fff5e1; }
+.book-history .cover-x { color: #e6a86a; }
+.book-history .cover-series { color: #f3d2a8; }
+.book-history .cover-rule {
+  background: linear-gradient(90deg, #c8862f 0%, #c8862f 36%, rgba(243,210,168,0.2) 36%);
+}
+.book-history .cover-sub { color: #d8b888; }
+.book-history .cover-meta b { color: #e6a86a; }
+.book-history .cover-meta { color: #f3d2a8; }
+.book-history .cover-meta .dot { color: rgba(243,210,168,0.45); }
+.book-history .cover-author { color: rgba(243,210,168,0.55); }
+.book-history .cover-author b { color: #f3d2a8; }
+.book-history .cover-cue { color: #e6a86a; }
+.book-history .book-spine {
+  background:
+    linear-gradient(90deg, rgba(0,0,0,0.5), rgba(0,0,0,0.0) 60%),
+    linear-gradient(180deg, #4a1414, #2a0a0a);
+}
+.book-history .spine-text { color: rgba(243,210,168,0.55); }
+
+/* 두 권 나란할 때 살짝 기울기 변화로 입체감 */
+.book-series { transform: rotateY(-12deg) rotateX(2deg); }
+.book-history { transform: rotateY(12deg) rotateX(2deg); }
+.book-series:hover, .book-series:focus-visible { transform: rotateY(-4deg) translateY(-12px); }
+.book-history:hover, .book-history:focus-visible { transform: rotateY(4deg) translateY(-12px); }
+/* History는 책등이 오른쪽으로 보이게 */
+.book-history .book-spine {
+  left: auto; right: -1px;
+  transform-origin: left center;
+  transform: rotateY(-60deg) translateX(13px);
+  border-radius: 0 2px 2px 0;
+}
+.book-history .book-pages {
+  right: auto; left: -10px;
+  background:
+    repeating-linear-gradient(90deg, #faf2dc 0 1px, #e8dcbe 1px 2px, #f3e9d0 2px 3px);
+  box-shadow: inset 1px 0 0 rgba(0,0,0,0.18);
+}
+
+/* AI Chronicle — 단행본 두 줄 타이틀 */
+.cover-title--chronicle {
+  margin-top: 24px;
+  display: flex; flex-direction: column; align-items: center;
+  line-height: 0.95;
+  gap: 4px;
+}
+.cover-title--chronicle .chronicle-ai {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: clamp(58px, 8vw, 86px);
+  letter-spacing: -0.02em;
+  color: #fff5e1;
+  text-align: center;
+}
+.cover-title--chronicle .chronicle-word {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(42px, 5.4vw, 58px);
+  letter-spacing: 0.005em;
+  color: #f3d2a8;
+  text-align: center;
+}

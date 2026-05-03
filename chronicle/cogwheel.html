@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<title>Chronicle 01 · 톱니바퀴의 꿈</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="../styles/site.css" />
+<style>
+  body.chr-issue-page {
+    background: linear-gradient(180deg, #f0e3c8 0%, #e3d3ad 100%);
+    color: #2a0a0a;
+    min-height: 100vh;
+  }
+  .issue-head { max-width: 1180px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) var(--shell-pad) clamp(28px, 3vw, 40px); display:grid; grid-template-columns:1fr auto; gap:24px; align-items:end; }
+  .issue-head .meta { font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.28em; color:#8a5a17; font-weight:800; text-transform:uppercase; }
+  .issue-head h1 { font-size: clamp(48px, 7vw, 88px); font-weight:900; letter-spacing:-0.038em; line-height:0.98; color:#2a0a0a; margin-top: 14px; }
+  .issue-head h1 em { font-family:'Playfair Display', serif; font-style:italic; color:#8a5a17; }
+  .issue-head .sub { margin-top: 14px; font-size: clamp(15px, 1.2vw, 17px); color:#4a2a1a; max-width: 640px; line-height:1.6; }
+  .issue-head .range { font-family:'Playfair Display', serif; font-style:italic; font-size: clamp(20px, 2.4vw, 28px); color:#8a5a17; font-weight:700; white-space:nowrap; padding-bottom:10px; }
+
+  .grid { max-width: 1180px; margin: 0 auto; padding: 0 var(--shell-pad) clamp(80px,10vw,120px); display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .grid figure { margin:0; background:#fff; padding:8px; box-shadow: 0 6px 18px rgba(42,10,10,0.18); border-radius: 4px; transition: transform 0.2s; }
+  .grid figure:hover { transform: translateY(-4px); }
+  .grid img { width:100%; aspect-ratio:1; object-fit:cover; display:block; border-radius:2px; }
+  .grid figcaption { font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.2em; color:#6e5230; font-weight:700; margin-top:8px; text-transform:uppercase; }
+
+  .nav-back { max-width:1180px; margin:0 auto 60px; padding: 0 var(--shell-pad); display:flex; gap:18px; }
+  .nav-back a { font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:14px; color:#8a5a17; }
+
+  @media (max-width:720px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head><body class="chr-issue-page">
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="logo" href="../">AI × <em>Series</em></a>
+    <div class="nav-right">AI Chronicle · 01</div>
+  </div>
+</nav>
+
+<section class="issue-head">
+  <div>
+    <div class="meta">AI CHRONICLE · 01 · PROLOGUE</div>
+    <h1>톱니바퀴의 <em>꿈</em>.</h1>
+    <p class="sub">AI 이전, 사람이 만든 첫 ‘생각하는’ 기계들. 황동 오리부터 컨베이어 벨트까지 — 200년의 톱니바퀴가 한 명의 청년이 그릴 종이테이프를 향해 걸어갑니다.</p>
+  </div>
+  <div class="range">1739 — 1936</div>
+</section>
+
+<div class="grid">
+  <figure><img src="../chronicle-1-outputs-cogwheel/01-cover.png" alt="Cover" loading="lazy" /><figcaption>01 · Cover</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/02-vaucanson.png" alt="Vaucanson 1739" loading="lazy" /><figcaption>02 · 1739 Vaucanson</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/03-turk.png" alt="Mechanical Turk 1770" loading="lazy" /><figcaption>03 · 1770 The Turk</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/04-jacquard.png" alt="Jacquard 1804" loading="lazy" /><figcaption>04 · 1804 Jacquard</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/05-babbage.png" alt="Babbage 1822" loading="lazy" /><figcaption>05 · 1822 Babbage</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/06-ada.png" alt="Ada Lovelace 1843" loading="lazy" /><figcaption>06 · 1843 Lovelace</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/07-logic.png" alt="Boole / Frege" loading="lazy" /><figcaption>07 · Boole · Frege</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/08-line.png" alt="Ford Line 1913" loading="lazy" /><figcaption>08 · 1913 Ford</figcaption></figure>
+  <figure><img src="../chronicle-1-outputs-cogwheel/09-bridge.png" alt="Bridge to 1936" loading="lazy" /><figcaption>09 · Bridge → 1936</figcaption></figure>
+</div>
+
+<div class="nav-back">
+  <a href="../history.html">▸ 차례로 돌아가기</a>
+  <a href="../">▸ 서가</a>
+</div>
+
+<footer class="site-foot">
+  <span><i>AI Chronicle</i> · 01 · 톱니바퀴의 꿈</span>
+  <span>Mirae Asset inspired · Pretendard typeface</span>
+</footer>
+
+</body></html>

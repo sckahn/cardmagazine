@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<title>AI Chronicle · Vol. I</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="AI Chronicle — 1950 다트머스 이전부터 오늘까지, 기계가 ‘생각’이라는 단어를 만난 75년의 연대기." />
+<link rel="stylesheet" href="styles/site.css" />
+<style>
+  body.chronicle {
+    background:
+      radial-gradient(ellipse 1200px 600px at 50% -10%, rgba(200,134,47,0.12), transparent 60%),
+      linear-gradient(180deg, #f0e3c8 0%, #e3d3ad 60%, #c8b487 100%);
+    color: #2a0a0a;
+  }
+  .chr-hero { max-width: var(--shell-max); margin: 0 auto; padding: clamp(56px, 8vw, 96px) var(--shell-pad) clamp(28px, 3vw, 40px); text-align: center; }
+  .chr-eyebrow { display:inline-flex; align-items:center; gap:14px; font-family:'JetBrains Mono', monospace; font-size:11.5px; letter-spacing:0.32em; color:#8a5a17; font-weight:700; text-transform:uppercase; }
+  .chr-eyebrow::before, .chr-eyebrow::after { content:""; width:28px; height:2px; background:#c8862f; }
+  .chr-hero h1 { margin-top:22px; font-size:clamp(48px,7.4vw,92px); font-weight:900; line-height:0.98; letter-spacing:-0.04em; color:#2a0a0a; text-wrap:balance; }
+  .chr-hero h1 em { font-family:'Playfair Display', serif; font-style:italic; font-weight:700; color:#8a5a17; }
+  .chr-hero .lead { margin: clamp(18px, 2vw, 26px) auto 0; max-width:580px; font-size:clamp(15px,1.2vw,17px); line-height:1.65; color:#4a2a1a; }
+  .chr-hero .meta { margin-top:26px; font-family:'JetBrains Mono', monospace; font-size:10.5px; letter-spacing:0.28em; color:#8a5a17; text-transform:uppercase; font-weight:700; }
+  .chr-hero .meta b { color:#2a0a0a; font-size:13px; font-family:'Pretendard Variable',sans-serif; text-transform:none; letter-spacing:-0.01em; }
+
+  .chr-toc { max-width: 1180px; margin: 0 auto; padding: 0 var(--shell-pad) clamp(80px, 10vw, 140px); }
+  .chr-toc-head { display:grid; grid-template-columns:auto 1fr auto; gap:24px; align-items:end; margin-bottom: 28px; }
+  .chr-toc-head h2 { font-size:clamp(28px,3vw,36px); font-weight:900; letter-spacing:-0.028em; color:#2a0a0a; }
+  .chr-toc-head h2 em { font-family:'Playfair Display', serif; font-style:italic; color:#8a5a17; }
+  .chr-toc-head .rule { height:1px; background:rgba(42,10,10,0.18); margin-bottom:10px; }
+  .chr-toc-head .count { font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.26em; color:#6e5230; text-transform:uppercase; font-weight:700; padding-bottom:2px; }
+  .chr-toc-head .count b { color:#c8862f; font-weight:800; }
+
+  .chr-issue { display:grid; grid-template-columns: 200px 1fr; gap: 28px; padding: 28px 0; border-top: 1px solid rgba(42,10,10,0.15); transition: background 0.2s; }
+  .chr-issue:hover { background: rgba(200,134,47,0.06); }
+  .chr-issue:last-child { border-bottom: 1px solid rgba(42,10,10,0.15); }
+  .chr-num { font-family: 'Playfair Display', serif; font-style:italic; font-weight:700; font-size: 56px; color: #8a5a17; line-height:1; letter-spacing:-0.02em; }
+  .chr-num small { display:block; font-size:11px; letter-spacing:0.22em; color:#6e5230; font-style:normal; font-family:'JetBrains Mono', monospace; font-weight:800; margin-top:6px; }
+  .chr-body h3 { font-family:'Playfair Display', serif; font-weight:800; font-size: clamp(28px, 3vw, 38px); letter-spacing:-0.02em; color:#2a0a0a; margin-bottom:6px; }
+  .chr-body h3 em { font-style:italic; color:#8a5a17; }
+  .chr-sub { font-size: 15px; color:#4a2a1a; margin-bottom:14px; line-height:1.5; }
+  .chr-strip { display:grid; grid-template-columns: repeat(9, 1fr); gap: 6px; margin-top: 14px; }
+  .chr-strip img { width:100%; aspect-ratio:1; object-fit:cover; border-radius:3px; box-shadow: 0 2px 6px rgba(42,10,10,0.18); transition: transform 0.2s; }
+  .chr-issue:hover .chr-strip img { transform: scale(1.04); }
+  .chr-cue { margin-top: 14px; display:inline-flex; align-items:center; gap:8px; font-family:'Playfair Display', serif; font-style:italic; font-weight:700; font-size:15px; color:#8a5a17; }
+  .chr-cue::after { content:"›"; font-size:22px; transition: transform 0.2s; }
+  .chr-issue:hover .chr-cue::after { transform: translateX(4px); }
+
+  .chr-back { max-width:1180px; margin:0 auto 60px; padding:0 var(--shell-pad); }
+  .chr-back a { font-family:'Playfair Display', serif; font-style:italic; font-weight:700; color:#8a5a17; font-size:14px; }
+
+  @media (max-width: 720px) {
+    .chr-issue { grid-template-columns: 1fr; gap:14px; padding: 22px 0; }
+    .chr-num { font-size:40px; }
+    .chr-strip { grid-template-columns: repeat(5, 1fr); }
+    .chr-strip img:nth-child(n+6) { display:none; }
+  }
+</style>
+</head><body class="chronicle">
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="logo" href="./">AI × <em>Series</em></a>
+    <div class="nav-right">AI Chronicle · Vol. I</div>
+  </div>
+</nav>
+
+<section class="chr-hero">
+  <div class="chr-eyebrow">A History of A.I. · Vol. I</div>
+  <h1>AI<br/><em>Chronicle</em>.</h1>
+  <p class="lead">기계가 ‘<b>생각</b>’이라는 단어를 만난 75년의 연대기. 다트머스 이전 톱니바퀴의 시대부터, 트랜지스터 너머의 오늘까지 — 한 권의 책으로 묶습니다.</p>
+  <div class="meta"><b>Vol. I</b> &nbsp;·&nbsp; 1739 → ONGOING</div>
+</section>
+
+<div class="chr-toc">
+  <div class="chr-toc-head">
+    <h2>책의 <em>차례</em></h2>
+    <div class="rule"></div>
+    <div class="count"><b id="chr-count">1</b> Issue · 진행 중</div>
+  </div>
+
+  <a class="chr-issue" href="chronicle/cogwheel.html">
+    <div class="chr-num">01<small>1739—1936</small></div>
+    <div class="chr-body">
+      <h3>톱니바퀴의 <em>꿈</em></h3>
+      <div class="chr-sub">AI 이전, 사람이 만든 첫 ‘생각하는’ 기계들 — Vaucanson · Kempelen · Jacquard · Babbage · Lovelace · Boole · Frege · Ford</div>
+      <div class="chr-strip">
+        <img src="chronicle-1-outputs-cogwheel/01-cover.png" alt="Cover" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/02-vaucanson.png" alt="1739" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/03-turk.png" alt="1770" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/04-jacquard.png" alt="1804" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/05-babbage.png" alt="1822" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/06-ada.png" alt="1843" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/07-logic.png" alt="1854" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/08-line.png" alt="1913" loading="lazy" />
+        <img src="chronicle-1-outputs-cogwheel/09-bridge.png" alt="Bridge" loading="lazy" />
+      </div>
+      <div class="chr-cue">펼쳐 읽기</div>
+    </div>
+  </a>
+
+  <!-- 다음 호 placeholder -->
+  <div class="chr-issue" style="opacity:0.45; cursor:default;">
+    <div class="chr-num" style="color:#6e5230;">02<small>1936—1956</small></div>
+    <div class="chr-body">
+      <h3 style="color:#6e5230;">종이테이프 위의 <em>기계</em></h3>
+      <div class="chr-sub" style="color:#6e5230;">Turing의 추상 기계, McCulloch-Pitts 뉴런, Shannon 정보이론 — 다트머스 직전.</div>
+      <div class="chr-cue" style="color:#6e5230;">곧 공개</div>
+    </div>
+  </div>
+</div>
+
+<div class="chr-back">
+  <a href="./">▸ 서가로 돌아가기</a>
+</div>
+
+<footer class="site-foot">
+  <span><i>AI Chronicle</i> · Vol. I · A History of A.I.</span>
+  <span>Mirae Asset inspired · Pretendard typeface</span>
+</footer>
+
+</body></html>
