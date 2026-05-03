@@ -1456,3 +1456,247 @@ body.portal {
   .books { padding: 0 10px; }
   .bookcase-board { margin: 0 -18px; }
 }
+
+/* ============================================================
+   PORTAL · 책 리스트 (책장 아래) — 표지 + 내용 설명
+   ============================================================ */
+.book-list {
+  max-width: 1180px;
+  margin: clamp(40px, 6vw, 80px) auto 0;
+  padding: 0 var(--shell-pad) clamp(60px, 8vw, 100px);
+}
+.bl-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  align-items: end;
+  margin-bottom: 28px;
+}
+.bl-head h2 {
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 900;
+  letter-spacing: -0.025em;
+  color: var(--navy);
+  line-height: 1;
+}
+.bl-head h2 em {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--brand);
+}
+.bl-rule { height: 1px; background: var(--line); margin-bottom: 8px; }
+
+.bl-items {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.bl-item {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 24px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.bl-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 30, 56, 0.1);
+  border-color: var(--line-strong);
+}
+
+/* 책 표지 미니어처 */
+.bl-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  border-radius: 3px 6px 6px 3px;
+  padding: 22px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow:
+    inset 2px 0 0 rgba(255,255,255,0.08),
+    inset -1px 0 0 rgba(0,0,0,0.25),
+    0 8px 16px rgba(0,0,0,0.18);
+}
+.bl-cover::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, rgba(255,255,255,0.02) 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(-45deg, rgba(0,0,0,0.05) 0 2px, transparent 2px 4px);
+  pointer-events: none;
+}
+
+/* AI × Series 표지 — 네이비 + 오렌지 */
+.bl-cover-series {
+  background: linear-gradient(135deg, #16284a 0%, #0a172c 100%);
+  color: #f7eddc;
+}
+.bl-cover-series .bl-cover-eyebrow { color: var(--brand); }
+.bl-cover-series .bl-cover-ai { color: #fff; }
+.bl-cover-series .bl-cover-x { color: var(--brand); }
+.bl-cover-series .bl-cover-name { color: #ffe4d0; }
+.bl-cover-series .bl-cover-rule { background: linear-gradient(90deg, var(--brand) 0 40%, rgba(255,228,208,0.2) 40%); }
+.bl-cover-series .bl-cover-foot { color: #ffe4d0; }
+.bl-cover-series .bl-cover-foot b { color: var(--brand); }
+
+/* AI Chronicle 표지 — burgundy + 골드 */
+.bl-cover-chronicle {
+  background: linear-gradient(135deg, #5a1c1c 0%, #2a0808 100%);
+  color: #f3d2a8;
+}
+.bl-cover-chronicle .bl-cover-eyebrow { color: #e6a86a; }
+.bl-cover-chronicle .bl-cover-ai { color: #fff5e1; }
+.bl-cover-chronicle .bl-cover-name-chr { color: #f3d2a8; }
+.bl-cover-chronicle .bl-cover-rule { background: linear-gradient(90deg, #c8862f 0 40%, rgba(243,210,168,0.2) 40%); }
+.bl-cover-chronicle .bl-cover-foot { color: #f3d2a8; }
+.bl-cover-chronicle .bl-cover-foot b { color: #e6a86a; }
+
+.bl-cover-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.22em;
+  font-weight: 700;
+  position: relative;
+}
+.bl-cover-stack {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.95;
+  position: relative;
+}
+.bl-cover-ai {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: clamp(28px, 4vw, 38px);
+  letter-spacing: -0.02em;
+}
+.bl-cover-x {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 18px;
+  margin: 2px 0;
+}
+.bl-cover-name {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(22px, 3vw, 30px);
+  letter-spacing: -0.01em;
+}
+.bl-cover-name-chr {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(20px, 2.4vw, 24px);
+  letter-spacing: -0.005em;
+  margin-top: 4px;
+}
+.bl-cover-rule {
+  margin-top: 12px;
+  height: 1px;
+  position: relative;
+}
+.bl-cover-foot {
+  margin-top: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/* 우측 텍스트 */
+.bl-info {
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+}
+.bl-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  letter-spacing: 0.26em;
+  font-weight: 800;
+  color: var(--brand);
+  text-transform: uppercase;
+}
+.bl-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: clamp(28px, 3vw, 36px);
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-top: 6px;
+  line-height: 1.05;
+}
+.bl-info h3 em {
+  font-style: italic;
+  color: var(--brand);
+}
+.bl-desc {
+  margin-top: 12px;
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: var(--ink-soft);
+}
+.bl-desc em {
+  font-family: 'Pretendard Variable', sans-serif;
+  font-style: normal;
+  background: linear-gradient(transparent 70%, var(--brand-soft) 70%);
+  padding: 0 2px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.bl-meta {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--ink-mid);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.bl-meta b {
+  color: var(--brand);
+  font-weight: 800;
+}
+.bl-cue {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--brand);
+  text-transform: none;
+  letter-spacing: -0.005em;
+  transition: transform 0.2s;
+}
+.bl-item:hover .bl-cue { transform: translateX(4px); }
+
+@media (max-width: 720px) {
+  .bl-item {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 18px;
+  }
+  .bl-cover {
+    width: 56%;
+    aspect-ratio: 5 / 7;
+    margin: 0;
+  }
+  .bl-info h3 { font-size: 26px; }
+  .bl-desc { font-size: 13.5px; }
+}
