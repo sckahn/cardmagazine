@@ -38,7 +38,7 @@
 
 <nav class="site-nav">
   <div class="site-nav-inner">
-    <a class="logo" href="../">AI × <em>Series</em></a>
+    <a class="logo" href="../history.html">AI <em>Chronicle</em></a>
     <div class="nav-right">CHRONICLE · 01 · 톱니바퀴의 꿈</div>
   </div>
 </nav>
@@ -107,5 +107,142 @@
     </article>
   </main>
 </div>
+
+<script>
+(async function () {
+  // 카드 페이지의 두 CSS 모두 로드 (style + chronicle 가죽톤)
+  const cardCssUrls = ['../style.css?v=29', '../chronicle.css?v=29'];
+  let cardCss = '';
+  for (const u of cardCssUrls) {
+    try {
+      const t = await fetch(u).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); });
+      cardCss += '\n/* ' + u + ' */\n' + t;
+    } catch (e) { console.error('Failed to load', u, e); }
+  }
+
+  function scopeCardCss(css) {
+    css = css.replace(/html\s*,\s*body\s*\{[^}]*\}/g, '');
+    css = css.replace(/(body\s*\{[^}]*?)overflow\s*:\s*hidden\s*;?/g, '$1');
+    css = css.replace(/(^|\})\s*body\s*\{/g, '$1.mag-article {');
+    css = css.replace(/body::after\s*\{/g, '.mag-article::after {');
+    css = css.replace(
+      /\*\s*,\s*\*::before\s*,\s*\*::after\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article *, .mag-article *::before, .mag-article *::after { font-style: normal !important; }'
+    );
+    css = css.replace(
+      /em\s*,\s*i\s*,\s*cite\s*,\s*address\s*,\s*dfn\s*,\s*var\s*,\s*blockquote\s*\{\s*font-style:\s*normal\s*!important;\s*\}/g,
+      '.mag-article em, .mag-article i, .mag-article cite, .mag-article address, .mag-article dfn, .mag-article var, .mag-article blockquote { font-style: normal !important; }'
+    );
+    css = css.replace(/\.cover\s+\.stage/g, '.mag-article.cover-like .stage');
+    css = css.replace(/\.cover\s+\.kicker/g, '.mag-article.cover-like .kicker');
+    css = css.replace(/\.cover\s+\.hello/g, '.mag-article.cover-like .hello');
+    css = css.replace(/\.cover\s+h1\.hero/g, '.mag-article.cover-like h1.hero');
+    css = css.replace(/\.cover\s+\.lead/g, '.mag-article.cover-like .lead');
+    css = css.replace(/\.cover\s+\.timeline/g, '.mag-article.cover-like .timeline');
+    css = css.replace(/\.outro\s+\.stage/g, '.mag-article.outro-like .stage');
+    css = css.replace(/\.outro\s+\.flourish/g, '.mag-article.outro-like .flourish');
+    css = css.replace(/\.outro\s+\.ask/g, '.mag-article.outro-like .ask');
+    css = css.replace(/\.outro\s+\.closing/g, '.mag-article.outro-like .closing');
+    css = css.replace(/\.outro\s+\.tags/g, '.mag-article.outro-like .tags');
+    return css;
+  }
+
+  if (cardCss) {
+    const style = document.createElement('style');
+    style.id = 'card-css-scoped';
+    style.textContent = scopeCardCss(cardCss);
+    document.head.appendChild(style);
+  }
+
+  const articles = Array.from(document.querySelectorAll('.mag-article[data-card]'));
+
+  async function loadCard(article) {
+    const url = article.dataset.card;
+    try {
+      const html = await fetch(url).then(r => r.text());
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      const body = doc.body;
+      const stage = body.querySelector('.stage');
+      if (!stage) throw new Error('No .stage in ' + url);
+      if (body.classList.contains('cover')) article.classList.add('cover-like');
+      if (body.classList.contains('outro')) article.classList.add('outro-like');
+      const slot = article.querySelector('.card-content');
+      slot.innerHTML = '';
+      slot.appendChild(document.importNode(stage, true));
+      article.classList.remove('loading');
+    } catch (e) {
+      console.error('Card load failed', url, e);
+      article.querySelector('.card-content').textContent = '카드를 불러오지 못했습니다.';
+      article.classList.remove('loading');
+    }
+  }
+
+  await Promise.all(articles.map(loadCard));
+
+  const tocLinks = Array.from(document.querySelectorAll('#toc a'));
+  const progressBar = document.getElementById('progress');
+  const tocMap = new Map();
+  tocLinks.forEach(a => tocMap.set(a.getAttribute('href').slice(1), a));
+
+  const sidebar = document.querySelector('.mag-side');
+  function scrollSidebarTo(link) {
+    if (!sidebar || !link) return;
+    const sr = sidebar.getBoundingClientRect();
+    const lr = link.getBoundingClientRect();
+    if (lr.top < sr.top + 20) sidebar.scrollTop += lr.top - sr.top - 20;
+    else if (lr.bottom > sr.bottom - 20) sidebar.scrollTop += lr.bottom - sr.bottom + 20;
+  }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        tocLinks.forEach(a => a.classList.toggle('current', a.getAttribute('href') === '#' + id));
+        scrollSidebarTo(tocMap.get(id));
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+  articles.forEach(a => io.observe(a));
+
+  const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in-view');
+        reveal.unobserve(e.target);
+      }
+    });
+  }, { rootMargin: '0px 0px -15% 0px', threshold: 0.05 });
+  document.querySelectorAll('.mag-article').forEach(el => reveal.observe(el));
+
+  let progressTimer = null;
+  function updateProgress() {
+    const docEl = document.documentElement;
+    const scrolled = docEl.scrollTop || document.body.scrollTop;
+    const max = docEl.scrollHeight - docEl.clientHeight;
+    const pct = max > 0 ? Math.min(100, Math.max(0, (scrolled / max) * 100)) : 0;
+    progressBar.style.width = pct + '%';
+    progressBar.classList.add('is-moving');
+    clearTimeout(progressTimer);
+    progressTimer = setTimeout(() => progressBar.classList.remove('is-moving'), 260);
+  }
+  document.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  tocLinks.forEach(a => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  if (location.hash && /^#card-\d+$/.test(location.hash)) {
+    const t = document.getElementById(location.hash.slice(1));
+    if (t) t.scrollIntoView({ behavior: 'auto', block: 'start' });
+  }
+})();
+</script>
 
 </body></html>
