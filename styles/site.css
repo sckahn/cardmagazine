@@ -1254,18 +1254,19 @@ body.portal {
 /* 한 칸의 선반 */
 .bookcase-shelf {
   position: relative;
-  padding: 16px 0 0;
+  padding: 24px 0 0;
 }
 
-/* 책들이 꽂히는 영역 — 가로 빽빽이 */
+/* 책들이 꽂히는 영역 — 가로 빽빽이, 좌우 측면 기둥 침범 방지 */
 .books {
   display: flex;
   align-items: flex-end;
   justify-content: center;
   gap: 1px;
   height: 420px;
-  padding: 0 4px;
+  padding: 0 14px;
   perspective: 1200px;
+  overflow: hidden;
 }
 
 /* 책등 공통 */
@@ -1338,7 +1339,7 @@ body.portal {
 /* 더미 책은 무채색 쪽으로 */
 .s-decor { filter: brightness(0.7) saturate(0.55); opacity: 0.85; }
 
-/* 두드러진 책 (실제 클릭 가능) */
+/* 두드러진 책 (실제 클릭 가능) — 책장 안에서 가장 키 큰 책 */
 .s-feature {
   cursor: pointer;
   text-decoration: none;
@@ -1349,19 +1350,20 @@ body.portal {
   justify-content: space-between;
   padding: 14px 0;
   width: clamp(72px, 9vw, 96px);
-  height: 100%;
-  transform: translateY(-12px);
+  height: 100%; /* 책장 안 최대 높이 — 더미는 78~96%라 자연스레 가장 큼 */
+  transform: none;
   box-shadow:
-    inset 1px 0 0 rgba(255,255,255,0.12),
+    inset 1px 0 0 rgba(255,255,255,0.14),
     inset -1px 0 0 rgba(0,0,0,0.35),
-    0 8px 14px rgba(0,0,0,0.4);
+    0 6px 12px rgba(0,0,0,0.35);
+  transition: transform 280ms var(--ease-out-quart), box-shadow 280ms var(--ease-out-quart);
 }
 .s-feature:hover, .s-feature:focus-visible {
-  transform: translateY(-26px);
+  transform: translateY(-6px);
   box-shadow:
-    inset 1px 0 0 rgba(255,255,255,0.18),
+    inset 1px 0 0 rgba(255,255,255,0.2),
     inset -1px 0 0 rgba(0,0,0,0.35),
-    0 18px 28px rgba(0,0,0,0.5);
+    0 14px 22px rgba(0,0,0,0.5);
 }
 .s-feature:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 
