@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · McCulloch–Pitts 1943</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../chronicle.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI CHRONICLE &middot; 02</div>
+      <div class="chaptertag">SCENE 2 &nbsp;&middot;&nbsp; 1943, 시카고</div>
+    </div>
+    <div class="era">
+      <span class="year">1943</span>
+      <span class="label"><b>McCulloch &amp; Pitts</b><span class="sub">뉴런이 ‘논리식’이 됩니다</span></span>
+    </div>
+    <h1 class="title sm">한 신경세포는<br />하나의 <em>스위치</em>입니다.</h1>
+
+    <div class="split" style="grid-template-columns:1fr 1.1fr; gap:20px; margin-top:14px;">
+      <div class="left">
+        <p class="body-sm" style="font-size:14px; line-height:1.65;">신경학자 <b>Warren McCulloch</b>와 17살에 가출해 시카고대 도서관에 살던 천재 <b>Walter Pitts</b>. 두 사람이 한 논문을 씁니다 — 「A Logical Calculus of Ideas Immanent in Nervous Activity」.</p>
+        <p class="body-sm" style="font-size:14px; line-height:1.65; margin-top:8px;">주장은 단순합니다. <em>뉴런 하나는</em> 입력의 합이 임계값을 넘으면 1, 아니면 0을 내는 <em>이진 스위치</em>다 — 그러므로 뉴런들의 그물은 어떤 <b>논리식</b>이든 흉내낼 수 있다.</p>
+        <div style="margin-top:10px; padding:9px 12px; background:rgba(200,134,47,0.10); border-left:3px solid var(--brand);">
+          <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">의미 · LATER</div>
+          <div style="font-size:12px; line-height:1.5; color:var(--ink-soft);">생물학적 뇌 ↔ Boole의 논리 ↔ Turing의 기계 — 세 줄기가 처음으로 같은 식 안에서 만났습니다.</div>
+        </div>
+      </div>
+      <div class="right">
+        <!-- McCulloch–Pitts 뉴런 SVG -->
+        <svg viewBox="0 0 300 280" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="arr2" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0,0 L8,4 L0,8 Z" fill="#5a1c1c"/>
+            </marker>
+          </defs>
+          <!-- 입력 3개 -->
+          <g font-family="JetBrains Mono, monospace" font-size="13" fill="#2a0a0a">
+            <text x="20" y="60">x₁</text>
+            <text x="20" y="140">x₂</text>
+            <text x="20" y="220">x₃</text>
+          </g>
+          <!-- 화살표 입력 → 합산 노드 -->
+          <line x1="45" y1="55" x2="135" y2="135" stroke="#5a1c1c" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <line x1="45" y1="135" x2="135" y2="140" stroke="#5a1c1c" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <line x1="45" y1="215" x2="135" y2="145" stroke="#5a1c1c" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <!-- 가중치 라벨 -->
+          <g font-family="JetBrains Mono, monospace" font-size="10" fill="#8a5a17">
+            <text x="78" y="92">w₁</text>
+            <text x="78" y="132">w₂</text>
+            <text x="78" y="178">w₃</text>
+          </g>
+          <!-- 뉴런 (소마) -->
+          <circle cx="160" cy="140" r="34" fill="#f3d2a8" stroke="#5a1c1c" stroke-width="2"/>
+          <text x="160" y="135" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="14" fill="#2a0a0a">Σ</text>
+          <text x="160" y="155" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#8a5a17">≥ θ ?</text>
+          <!-- 출력 -->
+          <line x1="194" y1="140" x2="270" y2="140" stroke="#5a1c1c" stroke-width="1.5" marker-end="url(#arr2)"/>
+          <text x="225" y="130" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8a5a17">y ∈ {0,1}</text>
+          <!-- 캡션 -->
+          <text x="150" y="265" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6e5230" letter-spacing="2">McCULLOCH–PITTS NEURON · 1943</text>
+        </svg>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--brand);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">SCENE</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">17살 노숙 천재 Pitts와 신경학자 McCulloch — <b>나이 차 25살</b>의 공저.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--ink-mid);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--ink-mid); font-weight:700;">DETAIL</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">뉴런 = <b>{0,1} 스위치</b>. 한 뉴런이 곧 한 명제(proposition).</div>
+      </div>
+      <div style="padding:11px 13px; background:linear-gradient(135deg, #2a0a0a, #5a1c1c); color:#f3d2a8;">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:#e6a86a; font-weight:700;">ECHO</div>
+        <div style="font-size:12px; line-height:1.5;">15년 뒤 <b style="color:#fff5e1;">Rosenblatt 퍼셉트론</b>이 이 뉴런을 <em style="color:#e6a86a;">학습</em>시킵니다.</div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"></span></div>
+  </div>
+</body></html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>04 · von Neumann 1945</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../chronicle.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI CHRONICLE &middot; 02</div>
+      <div class="chaptertag">SCENE 3 &nbsp;&middot;&nbsp; 1945, 프린스턴</div>
+    </div>
+    <div class="era">
+      <span class="year">1945</span>
+      <span class="label"><b>John von Neumann</b><span class="sub">EDVAC 보고서 — 데이터와 명령이 같은 메모리에</span></span>
+    </div>
+    <h1 class="title sm">프로그램은 <em>데이터</em>가 됩니다.</h1>
+
+    <div class="split" style="grid-template-columns:0.85fr 1.4fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <img src="../images/vonneumann.jpg" class="portrait" style="width:100%; height:280px; object-fit:cover; object-position:center top; filter:sepia(0.18);" alt="John von Neumann" />
+        <p style="font-size:10px; margin-top:4px; opacity:0.6; text-align:center;">John von Neumann (1903—1957) · LANL</p>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:14px; line-height:1.65;">1945, 프린스턴. 헝가리 출신 수학자 폰 노이만이 펜실베이니아 무어 스쿨의 ENIAC 후속기 설계 회의록을 정리해 한 편의 보고서를 씁니다 — 「<b>First Draft of a Report on the EDVAC</b>」.</p>
+        <p class="body-sm" style="font-size:14px; line-height:1.65; margin-top:8px;">핵심은 한 줄입니다 — <em>명령(program)도 데이터처럼 같은 메모리에 둔다</em>. 그러면 기계는 자기 자신의 명령을 읽고, 다시 쓰고, 흐름을 바꿀 수 있습니다.</p>
+        <div class="quote" style="margin-top:12px; font-size:16px; line-height:1.5; padding:10px 16px;">
+          “기계는 결국 — <b>저장된 프로그램</b>입니다.”
+          <div style="font-size:11px; margin-top:5px; opacity:0.6; font-style:normal;">— 오늘날 모든 컴퓨터가 따르는 ‘<b>von Neumann 구조</b>’</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="body-sm" style="font-size:14px; line-height:1.6; margin-top:12px; color:var(--ink-soft);">
+      Babbage가 100년 전에 <em>설계만</em> 한 것을, 폰 노이만은 <em>현실의 도면</em>으로 옮겼습니다. 종이 위의 튜링 기계가 진공관 위에 내려앉는 다리.
+    </p>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--brand);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">SCENE</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">맨해튼 프로젝트 폭탄 시뮬레이션 — <b>그 계산을 위해</b> 컴퓨터가 필요했습니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--ink-mid);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--ink-mid); font-weight:700;">DETAIL</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">CPU · 메모리 · I/O 분리. 그리고 <b>하나의 버스</b> — 오늘 모든 칩의 골격.</div>
+      </div>
+      <div style="padding:11px 13px; background:linear-gradient(135deg, #2a0a0a, #5a1c1c); color:#f3d2a8;">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:#e6a86a; font-weight:700;">ECHO</div>
+        <div style="font-size:12px; line-height:1.5;">2024 LLM의 <b style="color:#fff5e1;">컨텍스트 윈도우</b>도 결국 같은 메모리 — 명령과 데이터가 한 곳에 있는 그 자리.</div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"></span></div>
+  </div>
+</body></html>
