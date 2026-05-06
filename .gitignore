@@ -13,3 +13,4 @@ __pycache__/
 
 # incomplete / work-in-progress test assets
 images/test-*
+output-pdf/
