@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>02 · MYCIN · DENDRAL</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../chronicle.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">02</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI CHRONICLE &middot; 06</div>
+      <div class="chaptertag">SCENE 1 &nbsp;&middot;&nbsp; 좁고 깊은 첫 성공</div>
+    </div>
+    <div class="era">
+      <span class="year">1965 · 1972</span>
+      <span class="label"><b>DENDRAL · MYCIN</b><span class="sub">Stanford에서 자란 두 ‘전문가 흉내 기계’</span></span>
+    </div>
+    <h1 class="title sm">사람 <em>한 명</em>의 전문성을<br />규칙으로 옮겨 봅니다.</h1>
+
+    <p class="body-sm" style="font-size:14px; line-height:1.65; margin-top:14px;">
+      1960년대 후반, Stanford의 Edward Feigenbaum은 한 가지 발상을 합니다 — <em>일반적인 지능</em>은 너무 어려우니, 우선 <b>한 분야의 전문가</b>를 통째로 컴퓨터에 옮겨보자는 것이었습니다. 그는 이 접근에 ‘<b>지식공학(Knowledge Engineering)</b>’이라는 이름을 붙입니다.
+    </p>
+
+    <div class="split" style="grid-template-columns:1fr 1fr; gap:18px; margin-top:14px;">
+      <div class="left">
+        <div style="padding:14px 16px; background:rgba(255,255,255,0.55); border-top:3px solid var(--brand); border-radius:4px;">
+          <div style="font-size:10.5px; letter-spacing:0.16em; color:var(--brand-deep); font-weight:800;">1965 · DENDRAL</div>
+          <div style="font-size:14px; font-weight:700; color:var(--navy); margin-top:4px;">분자 구조 분석 AI</div>
+          <p style="font-size:12.5px; line-height:1.55; margin-top:6px; color:var(--ink-soft);">노벨상 수상자 <b>Joshua Lederberg</b>가 자문. 질량 분석기 데이터로 화학 분자의 구조를 추정 — 첫 본격 ‘<em>전문가 시스템</em>’입니다. 약 100명의 화학자 지식이 규칙으로 정리됐습니다.</p>
+        </div>
+      </div>
+      <div class="right">
+        <div style="padding:14px 16px; background:rgba(255,255,255,0.55); border-top:3px solid var(--ink-mid); border-radius:4px;">
+          <div style="font-size:10.5px; letter-spacing:0.16em; color:var(--ink-mid); font-weight:800;">1972 · MYCIN</div>
+          <div style="font-size:14px; font-weight:700; color:var(--navy); margin-top:4px;">감염병 진단·처방 AI</div>
+          <p style="font-size:12.5px; line-height:1.55; margin-top:6px; color:var(--ink-soft);"><b>Edward Shortliffe</b>의 박사 논문. 환자 증상을 입력하면 항생제를 추천. 1979년 평가에서 <b>전문 의사보다 정확도가 높았습니다</b>(69% vs 평균 65%) — 그러나 진료실엔 도입되지 못했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote" style="margin-top:14px; font-size:15.5px; line-height:1.55; padding:12px 18px;">
+      “지능의 힘은 추론에 있는 것이 아니라 — <b>지식</b>에 있습니다. 좋은 시스템은 좋은 추론기가 아니라, 좋은 <em>지식</em>을 가진 시스템입니다.”
+      <div style="font-size:11px; margin-top:6px; opacity:0.6; font-style:normal;">— Edward Feigenbaum, ‘Knowledge Engineering Principle’, 1977</div>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--brand);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">SCENE</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">MYCIN 규칙 약 <b>600개</b>. 각 규칙은 ‘만약 ~이면, ~의 가능성이 ~%’ 형식으로 적혔습니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--ink-mid);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--ink-mid); font-weight:700;">DETAIL</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">MYCIN이 진료실에 못 들어간 이유는 정확도가 아니라 — <b>법적 책임</b>이었습니다. 오진 시 누가 책임지나.</div>
+      </div>
+      <div style="padding:11px 13px; background:linear-gradient(135deg, #2a0a0a, #5a1c1c); color:#f3d2a8;">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:#e6a86a; font-weight:700;">ECHO</div>
+        <div style="font-size:12px; line-height:1.5;">2024년 의료 AI도 <b style="color:#fff5e1;">정확도 ↔ 책임</b>의 같은 벽 앞에 서 있습니다 — 50년째.</div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"></span></div>
+  </div>
+</body></html>
