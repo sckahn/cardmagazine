@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>한 줄 요약</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-style:normal !important;}
+  html,body{width:1080px;height:1080px;overflow:hidden;}
+  body{font-family:'Pretendard Variable', sans-serif;background:#F5FAFD;color:#0F2742;letter-spacing:-0.022em;word-break:keep-all;-webkit-font-smoothing:antialiased;}
+  .stage{width:1080px;height:1080px;padding:80px 90px;display:flex;flex-direction:column;}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:40px;}
+  .crumb{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5A7693;}
+  .crumb .num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#2E86C1;color:#FFFFFF;border-radius:6px;font-family:'JetBrains Mono', monospace;font-size:12px;font-weight:700;}
+  .label{font-size:12px;font-weight:600;color:#2E86C1;letter-spacing:0.12em;text-transform:uppercase;}
+
+  .title{font-size:54px;font-weight:800;line-height:1.18;letter-spacing:-0.03em;color:#0F2742;margin-bottom:36px;}
+  .title em{font-style:normal !important;color:#E54B4B;font-weight:800;}
+
+  .answer-card{background:#FFFFFF;border-radius:18px;padding:36px 40px;box-shadow:0 4px 24px rgba(15,76,129,0.06);border:1px solid #E1ECF5;margin-bottom:18px;display:flex;gap:22px;align-items:flex-start;}
+  .answer-card.no{border-left:6px solid #E54B4B;}
+  .answer-card .icon{flex-shrink:0;width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:800;}
+  .answer-card.no .icon{background:rgba(229,75,75,0.12);color:#E54B4B;}
+  .answer-card.no2 .icon{background:rgba(229,75,75,0.12);color:#E54B4B;}
+  .answer-card .body h3{font-size:22px;font-weight:800;color:#0F2742;margin-bottom:6px;letter-spacing:-0.02em;}
+  .answer-card .body p{font-size:15.5px;line-height:1.65;color:#3C5878;}
+  .answer-card .body p b{color:#0F4C81;font-weight:700;}
+
+  .basis{margin-top:20px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;}
+  .basis-item{background:#FFFFFF;border:1px solid #DCE9F4;border-radius:12px;padding:18px 20px;}
+  .basis-item .tag{font-size:11px;font-weight:700;color:#2E86C1;letter-spacing:0.1em;margin-bottom:8px;}
+  .basis-item .h{font-size:15.5px;font-weight:800;color:#0F2742;line-height:1.35;margin-bottom:6px;}
+  .basis-item .d{font-size:12.5px;line-height:1.55;color:#5A7693;}
+
+  .foot{margin-top:auto;padding-top:24px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #DCE9F4;}
+  .foot .l{font-size:13px;color:#5A7693;font-weight:500;}
+  .foot .r{font-family:'JetBrains Mono', monospace;font-size:13px;font-weight:600;color:#5A7693;}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="top">
+      <div class="crumb"><span class="num">02</span> 한 줄 요약</div>
+      <div class="label">TL;DR</div>
+    </div>
+
+    <h1 class="title">바쁘니까 결론부터 —<br/><em>안 됩니다</em>. 그리고 이유도 단순합니다.</h1>
+
+    <div class="answer-card no">
+      <div class="icon">!</div>
+      <div class="body">
+        <h3>사내 문서를 외부 AI(Claude · Gemini · ChatGPT 등)에 보내는 건 위반입니다</h3>
+        <p>전자금융거래법 감독규정의 <b>망분리</b>는 "회사 업무처리는 내부망에서만"을 요구합니다. 외부 AI는 외부망에 있으므로, 문서를 던지는 순간 외부 전송이 일어납니다.</p>
+      </div>
+    </div>
+
+    <div class="answer-card no no2">
+      <div class="icon">×</div>
+      <div class="body">
+        <h3>"개인정보 다 지웠는데요?" — 그래도 예외 아닙니다</h3>
+        <p>망분리는 <b>개인정보 보호법이 아니라 망분리 의무 규정</b>입니다. 개인정보를 제거해도 사내자료라는 사실은 변하지 않으니 제재 대상이 될 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="basis">
+      <div class="basis-item">
+        <div class="tag">근거 ①</div>
+        <div class="h">전자금융거래법</div>
+        <div class="d">금융회사의 정보처리시스템 안전 의무 규정</div>
+      </div>
+      <div class="basis-item">
+        <div class="tag">근거 ②</div>
+        <div class="h">전자금융감독규정</div>
+        <div class="d">망분리·내부통제·보안 표준의 구체 가이드</div>
+      </div>
+      <div class="basis-item">
+        <div class="tag">근거 ③</div>
+        <div class="h">감독당국 제재 가능</div>
+        <div class="d">위반 시 과태료·기관 제재·임직원 신분 조치</div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="l">금융망분리 가이드 · 한 줄 요약</div>
+      <div class="r">02 / 08</div>
+    </div>
+  </div>
+</body></html>

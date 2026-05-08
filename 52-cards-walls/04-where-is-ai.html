@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>외부 AI는 어디 있나요?</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-style:normal !important;}
+  html,body{width:1080px;height:1080px;overflow:hidden;}
+  body{font-family:'Pretendard Variable', sans-serif;background:#F5FAFD;color:#0F2742;letter-spacing:-0.022em;word-break:keep-all;-webkit-font-smoothing:antialiased;}
+  .stage{width:1080px;height:1080px;padding:80px 90px;display:flex;flex-direction:column;}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:30px;}
+  .crumb{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5A7693;}
+  .crumb .num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#2E86C1;color:#FFFFFF;border-radius:6px;font-family:'JetBrains Mono', monospace;font-size:12px;font-weight:700;}
+  .label{font-size:12px;font-weight:600;color:#2E86C1;letter-spacing:0.12em;text-transform:uppercase;}
+
+  .title{font-size:50px;font-weight:800;line-height:1.18;letter-spacing:-0.028em;margin-bottom:8px;}
+  .title em{font-style:normal !important;color:#E54B4B;}
+  .lead{font-size:16.5px;line-height:1.65;color:#3C5878;margin-bottom:24px;max-width:860px;}
+  .lead b{color:#0F4C81;font-weight:700;}
+
+  .scene{background:#FFFFFF;border:1px solid #E1ECF5;border-radius:18px;padding:28px;box-shadow:0 4px 24px rgba(15,76,129,0.05);margin-bottom:18px;}
+  .scene-title{font-size:13px;font-weight:700;color:#2E86C1;letter-spacing:0.1em;margin-bottom:14px;}
+  .flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:14px;align-items:center;}
+  .node{padding:18px 16px;border-radius:12px;text-align:center;min-height:140px;display:flex;flex-direction:column;justify-content:center;gap:6px;}
+  .node.you{background:#E8F5EE;border:2px solid #10B981;}
+  .node.gate{background:#FFF8E8;border:2px solid #F59E0B;}
+  .node.ai{background:#FFE8E8;border:2px solid #E54B4B;}
+  .node .ic{font-size:38px;line-height:1;}
+  .node .h{font-size:15px;font-weight:800;color:#0F2742;}
+  .node .d{font-size:11.5px;color:#3C5878;line-height:1.45;}
+  .arrow{font-size:28px;color:#5A7693;font-weight:300;}
+  .arrow .lbl{display:block;font-size:10px;font-weight:700;color:#E54B4B;letter-spacing:0.1em;margin-top:4px;}
+
+  .insight{background:linear-gradient(135deg, #FFE8E8, #FFEFEF);border-left:5px solid #E54B4B;border-radius:10px;padding:18px 22px;margin-bottom:14px;}
+  .insight .hh{font-size:12px;font-weight:800;color:#E54B4B;letter-spacing:0.12em;margin-bottom:6px;}
+  .insight p{font-size:15.5px;line-height:1.6;color:#0F2742;}
+  .insight p b{color:#E54B4B;font-weight:700;}
+
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .pair-card{background:#FFFFFF;border:1px solid #DCE9F4;border-radius:12px;padding:18px 20px;}
+  .pair-card .h{display:flex;align-items:center;gap:8px;font-size:14.5px;font-weight:800;color:#0F2742;margin-bottom:6px;}
+  .pair-card .h .ic{font-size:18px;}
+  .pair-card.no .h{color:#E54B4B;}
+  .pair-card.ok .h{color:#10B981;}
+  .pair-card p{font-size:13px;line-height:1.55;color:#3C5878;}
+
+  .foot{margin-top:auto;padding-top:18px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #DCE9F4;}
+  .foot .l{font-size:13px;color:#5A7693;font-weight:500;}
+  .foot .r{font-family:'JetBrains Mono', monospace;font-size:13px;font-weight:600;color:#5A7693;}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="top">
+      <div class="crumb"><span class="num">04</span> 그래서 외부 AI는 어디 있나요?</div>
+      <div class="label">WHY IT MATTERS</div>
+    </div>
+
+    <h1 class="title">외부 AI는 — <em>외부망</em>에 살고 있습니다.</h1>
+    <p class="lead">
+      Claude·Gemini·ChatGPT 같은 <b>외부 AI 서비스는 모두 해외 클라우드 서버</b>에서 돌아갑니다. 회사 노트북에서 채팅창에 글을 적는 순간, 그 내용은 <b>인터넷을 타고 외부망 너머</b>로 흘러갑니다.
+    </p>
+
+    <div class="scene">
+      <div class="scene-title">사내 문서를 외부 AI에 붙여넣을 때 일어나는 일</div>
+      <div class="flow">
+        <div class="node you">
+          <div class="ic">🧑‍💼</div>
+          <div class="h">나 · 사내자료</div>
+          <div class="d">계약서·회의록·코드</div>
+        </div>
+        <div class="arrow">→<span class="lbl">외부 전송</span></div>
+        <div class="node gate">
+          <div class="ic">🛡️</div>
+          <div class="h">방화벽 통과</div>
+          <div class="d">인터넷으로 빠져나감</div>
+        </div>
+        <div class="arrow">→<span class="lbl">학습/저장</span></div>
+        <div class="node ai">
+          <div class="ic">🤖</div>
+          <div class="h">외부 AI 서버</div>
+          <div class="d">해외 클라우드<br/>로그·학습 데이터</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="hh">CORE POINT</div>
+      <p>붙여넣기 한 번이 곧 <b>"사내자료의 외부 전송"</b>입니다. 화면에선 채팅 한 줄이지만, 법규 관점에선 회사 데이터가 외부망으로 빠져나간 사건입니다.</p>
+    </div>
+
+    <div class="pair">
+      <div class="pair-card no">
+        <div class="h"><span class="ic">✕</span> 한 번 떠나면 — 못 돌아옵니다</div>
+        <p>외부 AI 서버에 들어간 텍스트는 <b>로그·캐시·학습 데이터</b>로 남을 수 있어요. "다시 빼주세요"가 통하지 않는 영역입니다.</p>
+      </div>
+      <div class="pair-card no">
+        <div class="h"><span class="ic">✕</span> 무료·유료 가리지 않습니다</div>
+        <p>"엔터프라이즈 플랜이라 안전하다"는 말도 — 망분리 관점에선 <b>외부망으로 나간 사실 자체</b>가 이미 위반 요건입니다.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;">
+      <div style="background:#FFFFFF;border:1px solid #DCE9F4;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:800;color:#E54B4B;letter-spacing:0.1em;margin-bottom:6px;">예시 ①</div>
+        <div style="font-size:13px;font-weight:700;color:#0F2742;line-height:1.4;">계약서 요약 부탁</div>
+        <div style="font-size:11.5px;color:#5A7693;line-height:1.5;margin-top:4px;">→ 사내자료 외부 전송</div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE9F4;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:800;color:#E54B4B;letter-spacing:0.1em;margin-bottom:6px;">예시 ②</div>
+        <div style="font-size:13px;font-weight:700;color:#0F2742;line-height:1.4;">코드 디버깅 의뢰</div>
+        <div style="font-size:11.5px;color:#5A7693;line-height:1.5;margin-top:4px;">→ 시스템 노하우 노출</div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE9F4;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:800;color:#E54B4B;letter-spacing:0.1em;margin-bottom:6px;">예시 ③</div>
+        <div style="font-size:13px;font-weight:700;color:#0F2742;line-height:1.4;">이메일 영문 번역</div>
+        <div style="font-size:11.5px;color:#5A7693;line-height:1.5;margin-top:4px;">→ 거래·고객정보 노출</div>
+      </div>
+      <div style="background:#FFFFFF;border:1px solid #DCE9F4;border-radius:10px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:800;color:#E54B4B;letter-spacing:0.1em;margin-bottom:6px;">예시 ④</div>
+        <div style="font-size:13px;font-weight:700;color:#0F2742;line-height:1.4;">PPT 표 정리 요청</div>
+        <div style="font-size:11.5px;color:#5A7693;line-height:1.5;margin-top:4px;">→ 사내 수치·전략 유출</div>
+      </div>
+    </div>
+
+    <div style="margin-top:14px;background:linear-gradient(135deg,#0F4C81,#1A6BAA);color:#FFFFFF;border-radius:12px;padding:16px 22px;display:flex;align-items:center;gap:14px;">
+      <div style="flex-shrink:0;width:36px;height:36px;border-radius:9px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:800;">!</div>
+      <div style="font-size:14px;line-height:1.55;">기억할 한 줄 — <b style="color:#7DB7E8;">"외부 AI 채팅창 = 외부망"</b>. 사내자료가 그 창에 닿는 순간 망분리 위반 요건이 시작됩니다.</div>
+    </div>
+
+    <div class="foot">
+      <div class="l">금융망분리 가이드 · 외부 AI의 위치</div>
+      <div class="r">04 / 08</div>
+    </div>
+  </div>
+</body></html>

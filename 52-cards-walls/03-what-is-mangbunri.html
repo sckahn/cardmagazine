@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>망분리란?</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-style:normal !important;}
+  html,body{width:1080px;height:1080px;overflow:hidden;}
+  body{font-family:'Pretendard Variable', sans-serif;background:#F5FAFD;color:#0F2742;letter-spacing:-0.022em;word-break:keep-all;-webkit-font-smoothing:antialiased;}
+  .stage{width:1080px;height:1080px;padding:80px 90px;display:flex;flex-direction:column;}
+  .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:32px;}
+  .crumb{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#5A7693;}
+  .crumb .num{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#2E86C1;color:#FFFFFF;border-radius:6px;font-family:'JetBrains Mono', monospace;font-size:12px;font-weight:700;}
+  .label{font-size:12px;font-weight:600;color:#2E86C1;letter-spacing:0.12em;text-transform:uppercase;}
+
+  .title{font-size:46px;font-weight:800;line-height:1.2;letter-spacing:-0.028em;margin-bottom:8px;}
+  .lead{font-size:16.5px;line-height:1.65;color:#3C5878;margin-bottom:30px;max-width:880px;}
+  .lead b{color:#0F4C81;font-weight:700;}
+
+  .diagram{background:#FFFFFF;border-radius:20px;padding:36px 32px;border:1px solid #E1ECF5;box-shadow:0 4px 24px rgba(15,76,129,0.05);display:grid;grid-template-columns:1fr auto 1fr;gap:22px;align-items:stretch;}
+  .zone{border-radius:14px;padding:24px 22px;display:flex;flex-direction:column;gap:12px;}
+  .zone.outer{background:linear-gradient(135deg, #FFE8E8, #FFD4D4);border:2px dashed #E54B4B;}
+  .zone.inner{background:linear-gradient(135deg, #E8F5EE, #D4ECDF);border:2px solid #10B981;}
+  .zone .head{display:flex;align-items:center;gap:10px;}
+  .zone .h-tag{font-family:'JetBrains Mono', monospace;font-size:11px;font-weight:700;letter-spacing:0.12em;padding:4px 9px;border-radius:5px;}
+  .zone.outer .h-tag{background:#E54B4B;color:#FFFFFF;}
+  .zone.inner .h-tag{background:#10B981;color:#FFFFFF;}
+  .zone h3{font-size:22px;font-weight:800;color:#0F2742;letter-spacing:-0.02em;}
+  .zone p{font-size:13.5px;line-height:1.6;color:#3C5878;}
+  .zone .items{margin-top:6px;display:flex;flex-direction:column;gap:6px;}
+  .zone .item{display:flex;align-items:center;gap:8px;font-size:13px;color:#3C5878;background:rgba(255,255,255,0.7);padding:7px 11px;border-radius:6px;}
+  .zone .item .ic{font-size:14px;}
+
+  .wall{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;}
+  .wall-bar{width:14px;height:200px;background:repeating-linear-gradient(0deg,#0F4C81 0 12px,#1A6BAA 12px 24px);border-radius:7px;box-shadow:0 4px 12px rgba(15,76,129,0.2);}
+  .wall-l{font-size:11px;font-weight:800;color:#0F4C81;letter-spacing:0.18em;writing-mode:vertical-rl;transform:rotate(180deg);position:absolute;}
+  .wall-tag{font-size:11px;font-weight:800;color:#0F4C81;letter-spacing:0.16em;}
+
+  .takeaway{margin-top:22px;background:#0F4C81;color:#FFFFFF;border-radius:14px;padding:22px 28px;display:flex;align-items:center;gap:18px;}
+  .takeaway .icon{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;}
+  .takeaway .t{font-size:15.5px;line-height:1.6;}
+  .takeaway .t b{color:#7DB7E8;font-weight:700;}
+
+  .foot{margin-top:auto;padding-top:20px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #DCE9F4;}
+  .foot .l{font-size:13px;color:#5A7693;font-weight:500;}
+  .foot .r{font-family:'JetBrains Mono', monospace;font-size:13px;font-weight:600;color:#5A7693;}
+</style>
+</head>
+<body>
+  <div class="stage">
+    <div class="top">
+      <div class="crumb"><span class="num">03</span> 망분리란 무엇인가</div>
+      <div class="label">CONCEPT</div>
+    </div>
+
+    <h1 class="title">회사를 <span style="color:#2E86C1;">두 개의 방</span>으로 나눠둔 것이라고<br/>생각하시면 편합니다.</h1>
+    <p class="lead">
+      한 방은 인터넷이 들락거리는 <b>외부망</b>(메일·웹서핑·외부 서비스), 다른 방은 사내자료가 사는 <b>내부망</b>(고객정보·시스템·문서). 두 방 사이엔 <b>벽(망분리)</b>이 있습니다.
+    </p>
+
+    <div class="diagram">
+      <div class="zone outer">
+        <div class="head"><span class="h-tag">EXTERNAL</span></div>
+        <h3>외부망</h3>
+        <p>인터넷에 열려 있는 영역. 메일·웹서핑·외부 클라우드·<b>외부 AI 서비스</b>가 모두 여기 있습니다.</p>
+        <div class="items">
+          <div class="item"><span class="ic">🌐</span> 인터넷 검색</div>
+          <div class="item"><span class="ic">📧</span> 외부 메일</div>
+          <div class="item"><span class="ic">🤖</span> 외부 AI · Claude · Gemini · ChatGPT 등</div>
+        </div>
+      </div>
+
+      <div class="wall">
+        <div class="wall-tag">방화벽</div>
+        <div class="wall-bar"></div>
+        <div class="wall-tag">FIREWALL</div>
+      </div>
+
+      <div class="zone inner">
+        <div class="head"><span class="h-tag">INTERNAL</span></div>
+        <h3>내부망</h3>
+        <p>사내자료가 사는 안전한 영역. 업무 시스템·문서·고객정보는 <b>이 안에서만</b> 처리해야 합니다.</p>
+        <div class="items">
+          <div class="item"><span class="ic">📂</span> 사내 문서·계약서</div>
+          <div class="item"><span class="ic">👥</span> 고객정보·거래내역</div>
+          <div class="item"><span class="ic">🏦</span> 사내 업무 시스템</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="takeaway">
+      <div class="icon">i</div>
+      <div class="t">전자금융거래법 감독규정은 — <b>"업무처리는 내부망에서만 안전하게 하라"</b> 고 정해뒀습니다. 그래서 사내자료를 외부망으로 내보내는 모든 행위가 검토 대상이 됩니다.</div>
+    </div>
+
+    <div class="foot">
+      <div class="l">금융망분리 가이드 · 망분리란?</div>
+      <div class="r">03 / 08</div>
+    </div>
+  </div>
+</body></html>

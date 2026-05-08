@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>마무리 — 벽은 가두지 않습니다</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css" />
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;font-style:normal !important;}
+  html,body{width:1080px;height:1080px;overflow:hidden;}
+  body{font-family:'Pretendard Variable', sans-serif;background:linear-gradient(170deg, #0F4C81 0%, #1A6BAA 60%, #2E86C1 100%);color:#FFFFFF;letter-spacing:-0.022em;word-break:keep-all;-webkit-font-smoothing:antialiased;position:relative;overflow:hidden;}
+  .grain{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);background-size:5px 5px;pointer-events:none;}
+  .glow{position:absolute;width:380px;height:380px;border-radius:50%;filter:blur(80px);opacity:0.4;}
+  .g1{top:-120px;right:-100px;background:#7DB7E8;}
+  .g2{bottom:-150px;left:-100px;background:#10B981;}
+
+  .stage{position:relative;width:1080px;height:1080px;padding:90px;display:flex;flex-direction:column;justify-content:space-between;}
+
+  .top{display:flex;align-items:center;justify-content:space-between;}
+  .badge{display:inline-flex;align-items:center;gap:10px;padding:9px 16px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:999px;font-size:13px;font-weight:600;color:#FFFFFF;backdrop-filter:blur(8px);}
+  .dot{width:8px;height:8px;border-radius:50%;background:#7DB7E8;box-shadow:0 0 0 4px rgba(125,183,232,0.25);}
+  .meta{font-size:12px;font-weight:500;color:#9DB8D6;letter-spacing:0.06em;}
+
+  .center{}
+  .flourish{font-size:18px;font-weight:600;color:#7DB7E8;letter-spacing:0.04em;margin-bottom:18px;}
+  .ask{font-size:74px;font-weight:800;line-height:1.1;letter-spacing:-0.032em;margin-bottom:32px;}
+  .ask em{font-style:normal !important;color:#7DB7E8;font-weight:800;position:relative;display:inline-block;}
+  .ask em::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:14px;background:rgba(125,183,232,0.2);z-index:-1;}
+
+  .closing{font-size:19px;line-height:1.7;color:#D9E8F4;max-width:860px;margin-bottom:14px;}
+  .closing b{color:#FFFFFF;font-weight:700;}
+  .closing.last{font-size:22px;color:#FFFFFF;font-weight:600;border-left:4px solid #7DB7E8;padding-left:18px;margin-top:18px;}
+  .closing.last em{font-style:normal !important;color:#7DB7E8;}
+
+  .bottom{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;max-width:760px;}
+  .tag{padding:7px 13px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:7px;font-size:12.5px;font-weight:500;color:#D9E8F4;}
+  .pageno{font-family:'JetBrains Mono', monospace;font-size:13px;font-weight:600;color:#9DB8D6;letter-spacing:0.05em;text-align:right;}
+  .pageno b{color:#FFFFFF;font-weight:800;}
+  .sig{font-size:11px;color:#7DB7E8;letter-spacing:0.12em;margin-top:6px;}
+</style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="glow g1"></div>
+  <div class="glow g2"></div>
+
+  <div class="stage">
+    <div class="top">
+      <div class="badge"><span class="dot"></span> 금융망분리 가이드 · 마무리</div>
+      <div class="meta">EPILOGUE · 2026</div>
+    </div>
+
+    <div class="center">
+      <div class="flourish">그래서 결국 —</div>
+      <h1 class="ask">
+        <em>벽</em>은 우리를<br/>
+        가두지 않습니다.<br/>
+        — 지킵니다.
+      </h1>
+      <p class="closing">
+        외부 AI는 분명 편리합니다. 그러나 금융권에서 다루는 자료는 — 누군가의 <b>예금·신용·생애 정보</b>입니다. 한 번의 붙여넣기가 그 신뢰를 무너뜨릴 수 있습니다.
+      </p>
+      <p class="closing">
+        망분리는 일하지 말라는 규정이 아니라, <b>일하다 사고 나지 않도록</b> 미리 그어둔 안전선입니다. 외부 AI(Claude·Gemini·ChatGPT 등)는 사내자료가 닿지 않는 영역에서만 — 그 선만 지키면 충분히 도구로 활용할 수 있습니다.
+      </p>
+      <p class="closing last">
+        오늘 한 가지만 — <em>"이 자료, 외부로 나가도 되나?"</em><br/>업무 시작 전 5초만 떠올려 주세요.
+      </p>
+    </div>
+
+    <div class="bottom">
+      <div class="tags">
+        <span class="tag">#망분리</span>
+        <span class="tag">#전자금융거래법</span>
+        <span class="tag">#전자금융감독규정</span>
+        <span class="tag">#외부AI</span>
+        <span class="tag">#사내자료보호</span>
+        <span class="tag">#금융보안</span>
+        <span class="tag">#안전한업무습관</span>
+      </div>
+      <div>
+        <div class="pageno"><b>08</b> / 08</div>
+        <div class="sig">END · THANK YOU</div>
+      </div>
+    </div>
+  </div>
+</body></html>
