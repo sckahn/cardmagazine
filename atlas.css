@@ -3,11 +3,11 @@
 
 /* 폰 자동 다크모드 강제 무력화 */
 :root { color-scheme: light only !important; }
-html, body { color-scheme: light only !important; background-color: #eef3f6 !important; }
+html, body { color-scheme: light only !important; background-color: #d8e3e0 !important; }
 
 :root {
-  --bg: #eef3f6;            /* 페일 청록 — 박물관 도감 종이 */
-  --bg-soft: #f6f9fb;
+  --bg: #d8e3e0;            /* 옅은 청록 종이 — 도감의 베이스 */
+  --bg-soft: #e6ede9;
   --navy: #0e2a4a;          /* 미드나잇 — 텍스트·박스 베이스 */
   --navy-deep: #082042;
   --brand: #3ba8c9;         /* 시안 — 액센트 (Book I 오렌지 자리) */

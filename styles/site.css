@@ -1388,11 +1388,11 @@ body.portal {
 .s-chronicle .s-cap { background: linear-gradient(180deg, #e6a86a, #8a5a17); }
 
 .s-frontier {
-  --c1: #0e2a4a;
-  --c2: #082042;
+  --c1: #2a7a96;
+  --c2: #16435a;
 }
-.s-frontier .s-title-big { color: #cfe7ef; }
-.s-frontier .s-cap { background: linear-gradient(180deg, #3ba8c9, #1d7a99); }
+.s-frontier .s-title-big { color: #ecfaff; }
+.s-frontier .s-cap { background: linear-gradient(180deg, #c8a04a, #8a6d2e); }
 
 /* feature 책등 — 위·아래 색띠(엔드밴드) */
 .s-feature .s-cap {
