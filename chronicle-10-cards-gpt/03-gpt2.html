@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>03 · GPT-2 2019</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../chronicle.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">03</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI CHRONICLE &middot; 10</div>
+      <div class="chaptertag">SCENE 2 &nbsp;&middot;&nbsp; 2019.2, OpenAI 블로그</div>
+    </div>
+    <div class="era">
+      <span class="year">2019.2</span>
+      <span class="label"><b>GPT-2</b><span class="sub">15억 파라미터 · “너무 위험해 풀모델은 공개 안 합니다”</span></span>
+    </div>
+    <h1 class="title sm">한 회사가 — 자기 모델을<br /><em>위험</em>하다며 가립니다.</h1>
+
+    <p class="body-sm" style="font-size:14px; line-height:1.65; margin-top:14px;">
+      2019년 2월, OpenAI가 <b>GPT-2</b>를 공개합니다. 파라미터 수는 BERT의 약 4배 — <b>1.5B(15억)</b>. 그런데 발표 방식이 매우 이상했습니다. OpenAI는 <em>“이 모델은 너무 강력해서, 풀모델 공개를 보류하겠다”</em>고 말합니다. 학계는 그날 술렁였습니다 — 한 회사가 자기 연구를 ‘위험하다’며 감추는 것은 — 그동안의 오픈사이언스 문화에서 본 적 없는 일이었습니다.
+    </p>
+
+    <div style="margin-top:14px; padding:18px 22px; background:linear-gradient(135deg, #2a0a0a 0%, #5a1c1c 100%); color:#f3d2a8; border-radius:6px;">
+      <div style="font-size:10.5px; letter-spacing:0.22em; color:#e6a86a; font-weight:800;">GPT-2 · 데모 인용</div>
+      <div style="margin-top:10px; font-family:'Playfair Display', serif; font-style:italic; font-size:17px; line-height:1.55; color:#fff5e1;">
+        “안데스 산맥의 외딴 계곡에서, 과학자들이 — <b style="color:#e6a86a;">완벽한 영어를 구사하는 유니콘 떼</b>를 발견했다. 더욱 놀라운 점은, 이 유니콘들에게 뿔이 네 개 있었다는 사실이다…”
+      </div>
+      <div style="font-size:11px; margin-top:8px; opacity:0.7;">— GPT-2가 사람의 한 줄 도입에 이어 쓴 가짜 기사. 자연스럽게 다음 문단까지 만들어냅니다.</div>
+    </div>
+
+    <div class="split" style="grid-template-columns:1fr 1fr; gap:18px; margin-top:14px;">
+      <div class="left">
+        <p class="body-sm" style="font-size:13.5px; line-height:1.6;">학습 데이터는 Reddit에서 ‘좋아요 3개 이상’ 받은 글이 향한 외부 링크들 — 약 <b>40GB</b>의 사람 글입니다. 이 단순한 데이터 위에서 GPT-2는 — 한 번도 가르친 적 없는 일들을 <em>그냥 해냈습니다</em>. 번역, 요약, 질의응답까지.</p>
+      </div>
+      <div class="right">
+        <p class="body-sm" style="font-size:13.5px; line-height:1.6;">OpenAI는 6개월 동안 — 124M, 355M, 774M 모델을 단계적으로 풀고, 결국 8월에 1.5B 풀모델을 공개합니다. 그동안 <b>가짜뉴스 생성 위험</b>에 대한 논쟁이 벌어졌고 — 이는 ‘AI 안전’ 담론이 처음으로 대중에게 도달한 사건이 됩니다.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--brand);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">SCENE</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">파라미터 <b>1.5B</b>. BERT-Large가 340M이었으니 — 한 해 만에 약 <b>4배</b>로 뛰었습니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--ink-mid);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--ink-mid); font-weight:700;">DETAIL</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">설계자 <b>Alec Radford</b> — GPT-1·2·3·4의 핵심 저자로 이름을 올립니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:linear-gradient(135deg, #2a0a0a, #5a1c1c); color:#f3d2a8;">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:#e6a86a; font-weight:700;">ECHO</div>
+        <div style="font-size:12px; line-height:1.5;">이 ‘<b style="color:#fff5e1;">단계적 공개</b>’ 방식이 — 이후 모든 대형 모델 출시의 표준이 됩니다.</div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"></span></div>
+  </div>
+</body></html>

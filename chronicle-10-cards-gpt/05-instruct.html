@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" /><title>05 · InstructGPT / RLHF</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../chronicle.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px;">05</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri"></span> AI CHRONICLE &middot; 10</div>
+      <div class="chaptertag">SCENE 4 &nbsp;&middot;&nbsp; 2022.1, OpenAI</div>
+    </div>
+    <div class="era">
+      <span class="year">2022.1</span>
+      <span class="label"><b>InstructGPT · RLHF</b><span class="sub">Long Ouyang 외 · 사람의 피드백으로 모델을 다듬다</span></span>
+    </div>
+    <h1 class="title sm">사람이 점수를 매기면 — 모델이<br /><em>그 방향</em>으로 자랍니다.</h1>
+
+    <div class="split" style="grid-template-columns:1fr 1.05fr; gap:22px; margin-top:14px;">
+      <div class="left">
+        <p class="body-sm" style="font-size:14px; line-height:1.65;">GPT-3는 똑똑했지만 — 거칠었습니다. 질문에 동문서답을 하거나, 거짓을 자신 있게 말하거나, 위험한 답을 그대로 내놨습니다. 2022년 1월, OpenAI의 <b>Long Ouyang</b> 등이 한 논문을 냅니다 — 「Training language models to follow instructions with human feedback」.</p>
+        <p class="body-sm" style="font-size:14px; line-height:1.65; margin-top:8px;">방법은 간단했습니다. <b>사람이 답을 평가하게 하고, 그 평점으로 모델을 다듬는 것</b>. 이름은 <em>RLHF</em> — Reinforcement Learning from Human Feedback. 그 결과 InstructGPT는 — 13배 작은 모델인데도 GPT-3보다 사람이 더 선호한다고 나왔습니다.</p>
+        <div style="margin-top:10px; padding:9px 12px; background:rgba(200,134,47,0.10); border-left:3px solid var(--brand);">
+          <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">전사 · Paul Christiano</div>
+          <div style="font-size:12px; line-height:1.5; color:var(--ink-soft);">RLHF의 원형은 2017년 Christiano가 — 게임 환경에서 ‘사람이 더 마음에 드는 행동’을 모델에게 가르치는 실험에서 나왔습니다. 그 아이디어가 — 5년 뒤 언어 모델로 옮겨옵니다.</div>
+        </div>
+      </div>
+      <div class="right">
+        <svg viewBox="0 0 280 320" style="width:100%; height:auto;" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <marker id="ar3" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#5a1c1c"/>
+            </marker>
+          </defs>
+          <g font-family="JetBrains Mono, monospace" font-size="11" font-weight="700">
+            <rect x="20" y="20" width="240" height="60" rx="4" fill="#5a1c1c"/>
+            <text x="140" y="42" text-anchor="middle" fill="#e6a86a" font-size="10" letter-spacing="1.5">STEP 1 · SFT</text>
+            <text x="140" y="60" text-anchor="middle" fill="#fff5e1">사람이 쓴 좋은 답으로</text>
+            <text x="140" y="73" text-anchor="middle" fill="#fff5e1">먼저 한 번 미세조정</text>
+
+            <rect x="20" y="110" width="240" height="60" rx="4" fill="#7a2a2a"/>
+            <text x="140" y="132" text-anchor="middle" fill="#e6a86a" font-size="10" letter-spacing="1.5">STEP 2 · REWARD MODEL</text>
+            <text x="140" y="150" text-anchor="middle" fill="#fff5e1">여러 답에 사람이 점수를</text>
+            <text x="140" y="163" text-anchor="middle" fill="#fff5e1">매기고 — 그것을 학습</text>
+
+            <rect x="20" y="200" width="240" height="60" rx="4" fill="#c8862f"/>
+            <text x="140" y="222" text-anchor="middle" fill="#2a0a0a" font-size="10" letter-spacing="1.5">STEP 3 · PPO</text>
+            <text x="140" y="240" text-anchor="middle" fill="#2a0a0a">보상모델의 점수를 따라</text>
+            <text x="140" y="253" text-anchor="middle" fill="#2a0a0a">모델을 강화학습으로 다듬기</text>
+          </g>
+          <path d="M 140,80 L 140,108" stroke="#5a1c1c" stroke-width="2" marker-end="url(#ar3)"/>
+          <path d="M 140,170 L 140,198" stroke="#5a1c1c" stroke-width="2" marker-end="url(#ar3)"/>
+          <text x="140" y="290" text-anchor="middle" font-family="Playfair Display, serif" font-style="italic" font-size="13" fill="#5a1c1c" font-weight="700">RLHF · 사람의 피드백을 따라서</text>
+          <text x="140" y="308" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9" fill="#6e5230" letter-spacing="1.5">INSTRUCTGPT · 2022</text>
+        </svg>
+      </div>
+    </div>
+
+    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--brand);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">SCENE</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">평가단은 약 <b>40명의 라벨러</b>. 이들의 ‘마음에 드는 답’이 — 모델의 인격을 빚었습니다.</div>
+      </div>
+      <div style="padding:11px 13px; background:rgba(255,255,255,0.55); border-top:2px solid var(--ink-mid);">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--ink-mid); font-weight:700;">DETAIL</div>
+        <div style="font-size:12px; line-height:1.5; color:var(--ink);">1.3B InstructGPT가 — <b>175B GPT-3</b>를 사람 선호도에서 이깁니다. 크기보다 <em>방향</em>이라는 첫 증거.</div>
+      </div>
+      <div style="padding:11px 13px; background:linear-gradient(135deg, #2a0a0a, #5a1c1c); color:#f3d2a8;">
+        <div style="font-size:9.5px; letter-spacing:1.5px; color:#e6a86a; font-weight:700;">ECHO</div>
+        <div style="font-size:12px; line-height:1.5;">10개월 뒤, 같은 기법 위에서 — <b style="color:#fff5e1;">ChatGPT</b>가 세상에 나옵니다.</div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"></span></div>
+  </div>
+</body></html>
