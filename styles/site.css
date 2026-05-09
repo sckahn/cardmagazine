@@ -1387,6 +1387,13 @@ body.portal {
 .s-chronicle .s-title-big { color: #fff5e1; }
 .s-chronicle .s-cap { background: linear-gradient(180deg, #e6a86a, #8a5a17); }
 
+.s-frontier {
+  --c1: #0e2a4a;
+  --c2: #082042;
+}
+.s-frontier .s-title-big { color: #cfe7ef; }
+.s-frontier .s-cap { background: linear-gradient(180deg, #3ba8c9, #1d7a99); }
+
 /* feature 책등 — 위·아래 색띠(엔드밴드) */
 .s-feature .s-cap {
   display: block;
@@ -1562,6 +1569,19 @@ body.portal {
 .bl-cover-chronicle .bl-cover-rule { background: linear-gradient(90deg, #c8862f 0 40%, rgba(243,210,168,0.2) 40%); }
 .bl-cover-chronicle .bl-cover-foot { color: #f3d2a8; }
 .bl-cover-chronicle .bl-cover-foot b { color: #e6a86a; }
+
+/* AI × Frontier 표지 — 미드나잇 + 시안/황동 */
+.bl-cover-frontier {
+  background: linear-gradient(135deg, #0e2a4a 0%, #082042 100%);
+  color: #cfe7ef;
+}
+.bl-cover-frontier .bl-cover-eyebrow { color: #3ba8c9; }
+.bl-cover-frontier .bl-cover-ai { color: #fff; }
+.bl-cover-frontier .bl-cover-x { color: #3ba8c9; }
+.bl-cover-frontier .bl-cover-name { color: #cfe7ef; }
+.bl-cover-frontier .bl-cover-rule { background: linear-gradient(90deg, #c8a04a 0 40%, rgba(207,231,239,0.2) 40%); }
+.bl-cover-frontier .bl-cover-foot { color: #cfe7ef; }
+.bl-cover-frontier .bl-cover-foot b { color: #3ba8c9; }
 
 .bl-cover-eyebrow {
   font-family: 'JetBrains Mono', monospace;
