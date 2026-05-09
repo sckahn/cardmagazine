@@ -246,7 +246,7 @@
       }
     });
   }, { rootMargin: '0px 0px -15% 0px', threshold: 0.05 });
-  document.querySelectorAll('.mag-article').forEach(el => reveal.observe(el));
+  document.querySelectorAll('.mag-article, .mag-next').forEach(el => reveal.observe(el));
 
   let progressTimer = null;
   function updateProgress() {
