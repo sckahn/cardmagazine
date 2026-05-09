@@ -6,6 +6,10 @@
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 
+/* 브라우저 자동 다크모드 강제 무력화 (Samsung Internet · Chrome Android · iOS Safari) */
+:root { color-scheme: light only; }
+html, body { color-scheme: light only; background-color: #f4efe4; }
+
 :root {
   /* surfaces */
   --bg:        #f4efe4;

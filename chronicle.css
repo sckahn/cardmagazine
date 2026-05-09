@@ -1,6 +1,10 @@
 /* AI Chronicle — 가죽·버건디 톤 override
    style.css 다음에 로드해 색상만 덮어씀. 레이아웃/폰트는 시리즈와 동일. */
 
+/* 폰 자동 다크모드 강제 무력화 (Chronicle 가죽 톤 고정) */
+:root { color-scheme: light only !important; }
+html, body { color-scheme: light only !important; background-color: #f0e3c8 !important; }
+
 :root {
   --bg: #f0e3c8;          /* 옅은 양피지 베이지 */
   --bg-soft: #f7ecd0;
