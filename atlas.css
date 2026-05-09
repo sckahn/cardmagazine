@@ -1,0 +1,29 @@
+/* AI × Frontier (Book III) — 박물관 청록 톤 override
+   style.css 다음에 로드해 색상만 덮어씀. 레이아웃/폰트는 시리즈와 동일. */
+
+/* 폰 자동 다크모드 강제 무력화 */
+:root { color-scheme: light only !important; }
+html, body { color-scheme: light only !important; background-color: #eef3f6 !important; }
+
+:root {
+  --bg: #eef3f6;            /* 페일 청록 — 박물관 도감 종이 */
+  --bg-soft: #f6f9fb;
+  --navy: #0e2a4a;          /* 미드나잇 — 텍스트·박스 베이스 */
+  --navy-deep: #082042;
+  --brand: #3ba8c9;         /* 시안 — 액센트 (Book I 오렌지 자리) */
+  --brand-deep: #1d7a99;
+  --brand-soft: #cfe7ef;
+  --accent-gold: #c8a04a;   /* 황동 — 보조 액센트, 도감의 라벨 */
+  --accent-gold-soft: #e8d4a0;
+  --ink: #0e2a4a;
+  --ink-soft: #2a4a6e;
+  --ink-mid: #5a7898;
+  --line: rgba(14,42,74,0.12);
+  --line-strong: rgba(14,42,74,0.22);
+  background: var(--bg);
+  color: var(--navy);
+}
+
+body { background: var(--bg); color: var(--navy); }
+em { color: var(--brand-deep); font-weight: 800; }
+.brand-ko { color: var(--brand-deep); }

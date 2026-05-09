@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<meta name="color-scheme" content="light only" />
+<title>AI × Frontier · Magazine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="AI가 사람의 자리에 들어선 의외의 풍경 — 12호의 박물지." />
+<link rel="stylesheet" href="styles/site.css?v=30" />
+<style>
+  /* AI × Frontier — 박물관 청록 톤 override */
+  body.frontier {
+    --bg: #eef3f6;
+    --bg-soft: #f6f9fb;
+    --navy: #0e2a4a;
+    --navy-deep: #082042;
+    --brand: #3ba8c9;
+    --brand-deep: #1d7a99;
+    --brand-soft: #cfe7ef;
+    --accent-gold: #c8a04a;
+    --ink: #0e2a4a;
+    --ink-soft: #2a4a6e;
+    --ink-mid: #5a7898;
+    --line: rgba(14,42,74,0.12);
+    --line-strong: rgba(14,42,74,0.22);
+    background: var(--bg);
+    color: var(--navy);
+  }
+  body.frontier em { color: var(--brand-deep); font-weight: 800; }
+  body.frontier .brand-ko { color: var(--brand-deep); }
+  body.frontier .site-nav { background: rgba(238,243,246,0.88); border-bottom-color: var(--line); }
+  body.frontier .site-nav .logo { color: var(--navy); }
+  body.frontier .site-nav .logo em { color: var(--brand-deep); }
+  body.frontier .hero-home h1 { color: var(--navy); }
+  body.frontier .hero-home .lead em { background: linear-gradient(transparent 70%, var(--brand-soft) 70%); }
+  body.frontier .section-title h2 { color: var(--navy); }
+  body.frontier .section-title h2 em { color: var(--brand-deep); }
+  body.frontier .seg-btn.active { background: var(--navy-deep); color: #fff; }
+  body.frontier .chip.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+  body.frontier .series-card { background: #fff; border-color: var(--line); }
+  body.frontier .series-card:hover { border-color: var(--line-strong); }
+  body.frontier .series-card .tag { color: var(--brand-deep); }
+  body.frontier .series-card h3 em { color: var(--brand-deep); }
+  body.frontier .series-card .cue { color: var(--brand-deep); }
+  body.frontier .series-card .thumb .hanja { color: rgba(59,168,201,0.7); }
+  body.frontier .series-card.coming { opacity: 0.45; cursor: default; pointer-events: none; }
+  body.frontier .site-foot { color: var(--ink-mid); border-top-color: var(--line); }
+</style>
+</head><body class="frontier">
+
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a class="logo" href="./">AI <em>Magazine</em></a>
+    <div class="nav-right">Book III · Magazine</div>
+  </div>
+</nav>
+
+<section class="hero-home">
+  <div>
+    <div class="eyebrow">Book III · AI × Frontier</div>
+    <h1>AI가 들어선<br /><span class="brand-ko">의외의 자리</span>들.</h1>
+    <p class="lead">알파고 37수, 50년 묵은 단백질 문제, MoMA에 걸린 데이터 회화, 60년 만의 새 항생제 — 사람이 가진 *AI에 대한 편견*을 깬 12개의 풍경을 모은 *도감*. 모든 발견 뒤엔 늘 *한 사람의 질문*이 있었습니다.</p>
+    <p class="byline"><span>Written by</span> <b>이석찬</b></p>
+  </div>
+</section>
+
+<div class="section-title">
+  <h2>모든 <span class="brand-ko">이슈</span></h2>
+  <div class="rule" aria-hidden="true"></div>
+  <div class="count"><b id="issue-count">1</b> · 진행 중</div>
+</div>
+
+<div class="index-controls">
+  <div class="control-row">
+    <div class="control-group">
+      <span class="control-label">View</span>
+      <div class="seg" role="tablist" aria-label="보기 모드">
+        <button type="button" class="seg-btn active" data-view="grid" aria-label="그리드 보기">▦ Grid</button>
+        <button type="button" class="seg-btn" data-view="list" aria-label="리스트 보기">☰ List</button>
+        <button type="button" class="seg-btn" data-view="single" aria-label="1열 크게">▯ 1-Col</button>
+      </div>
+    </div>
+    <div class="control-group">
+      <span class="control-label">Sort</span>
+      <div class="seg" role="tablist" aria-label="정렬">
+        <button type="button" class="seg-btn" data-sort="desc" aria-label="최신순">↓ 최신</button>
+        <button type="button" class="seg-btn active" data-sort="asc" aria-label="오래된 순">↑ 순서</button>
+      </div>
+    </div>
+  </div>
+  <div class="control-row tags-row">
+    <span class="control-label">Field</span>
+    <div class="tag-chips" id="tag-chips">
+      <button type="button" class="chip active" data-tag="all">전체</button>
+      <button type="button" class="chip" data-tag="creative">창의·예술</button>
+      <button type="button" class="chip" data-tag="science">과학·의료</button>
+      <button type="button" class="chip" data-tag="society">사회·노동</button>
+      <button type="button" class="chip" data-tag="surprise">의외</button>
+    </div>
+  </div>
+</div>
+
+<div class="series-grid view-grid" id="series-grid">
+
+  <a class="series-card" href="atlas/creativity.html?v=1" data-slug="creativity" data-issue="1" data-tags="creative">
+    <div class="thumb">
+      <img src="atlas-1-outputs-creativity/01-cover.png?v=1" alt="창의는 사람만의 것이었나 cover" loading="lazy" />
+      <div class="hanja">創</div>
+    </div>
+    <div class="body">
+      <div class="tag">ISSUE 01</div>
+      <h3>창의는 사람만의 <span class="brand-ko">것이었나</span></h3>
+      <div class="subt">2016—2022 · 알파고 37수 · AlphaFold · AlphaTensor · Anadol</div>
+      <div class="desc">바둑·단백질·수학·미술 — AI가 *처음 가 본* 네 자리. 그 뒤에는 늘 *한 사람의 질문*이 있었습니다.</div>
+      <div class="cue">Read Issue</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="science" data-issue="2" data-tags="science">
+    <div class="thumb">
+      <div class="hanja">驗</div>
+    </div>
+    <div class="body">
+      <div class="tag">ISSUE 02</div>
+      <h3>실험실의 <span class="brand-ko">AI</span></h3>
+      <div class="subt">Halicin 항생제 · 핵융합 플라즈마 · GNoME 신소재</div>
+      <div class="desc">60년 만의 새 항생제, 60년 묵은 핵융합 — *AI가 들어간 실험실*의 풍경.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="medicine" data-issue="3" data-tags="science">
+    <div class="thumb"><div class="hanja">醫</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 03</div>
+      <h3>의사의 <span class="brand-ko">눈</span> 옆에서</h3>
+      <div class="subt">OCT 안과 진단 · da Vinci · 항암 후보 · 응급 트리아지</div>
+      <div class="desc">진단·수술·약물 — AI가 의사 옆에서 보는 풍경.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="mind" data-issue="4" data-tags="society">
+    <div class="thumb"><div class="hanja">心</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 04</div>
+      <h3>마음을 <span class="brand-ko">읽는</span> 챗봇</h3>
+      <div class="subt">Woebot · Replika · Hume AI · 자살 위험 감지</div>
+      <div class="desc">감정은 못 읽는다는 편견을 깬 네 풍경.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="nature" data-issue="5" data-tags="science">
+    <div class="thumb"><div class="hanja">野</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 05</div>
+      <h3>자연·환경의 <span class="brand-ko">눈</span></h3>
+      <div class="subt">코끼리 밀렵 감지 · GraphCast 기상 · 산호초 · 고래 음성</div>
+      <div class="desc">현장은 사람 눈으로? — 야생을 지키는 AI의 자리.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="sense" data-issue="6" data-tags="surprise">
+    <div class="thumb"><div class="hanja">嗅</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 06</div>
+      <h3>미각과 <span class="brand-ko">후각</span>의 자리</h3>
+      <div class="subt">Penfolds 와인 · IBM Philyra 향수 · 정밀 제초</div>
+      <div class="desc">손맛·코끝의 영역 — AI가 어디까지 들어왔나.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="law" data-issue="7" data-tags="society">
+    <div class="thumb"><div class="hanja">法</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 07</div>
+      <h3>법과 금융의 <span class="brand-ko">판단</span></h3>
+      <div class="subt">Harvey AI · JPMorgan COIN · 판례 추론</div>
+      <div class="desc">전문 판단은 사람만? — 사무실의 새 동료.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="arts" data-issue="8" data-tags="creative">
+    <div class="thumb"><div class="hanja">藝</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 08</div>
+      <h3>예술과 <span class="brand-ko">후반작업</span></h3>
+      <div class="subt">디에이징 · AI 작곡 그래미 · AI 만화 베스트셀러</div>
+      <div class="desc">스타·작가·작곡가 — AI가 옆에서 거든 풍경.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="labor" data-issue="9" data-tags="society">
+    <div class="thumb"><div class="hanja">勞</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 09</div>
+      <h3>노동의 <span class="brand-ko">변화</span></h3>
+      <div class="subt">GitHub Copilot · 콜센터 LLM · Figma AI · 통역</div>
+      <div class="desc">내 직업은 안 바뀐다? — 이미 변한 자리들.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="cosmos" data-issue="10" data-tags="science">
+    <div class="thumb"><div class="hanja">宇</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 10</div>
+      <h3>우주와 <span class="brand-ko">기상</span></h3>
+      <div class="subt">GraphCast · 외계행성 · 천체 분류</div>
+      <div class="desc">날씨와 별 — AI가 본 가장 큰 자리.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="surprise" data-issue="11" data-tags="surprise">
+    <div class="thumb"><div class="hanja">驚</div></div>
+    <div class="body">
+      <div class="tag">ISSUE 11</div>
+      <h3>예상 못 한 <span class="brand-ko">곳</span>의 AI</h3>
+      <div class="subt">올림픽 채점 · 조선소 용접 · 종교 챗봇 · 양봉</div>
+      <div class="desc">‘여기에도?’라는 말이 절로 나오는 자리들.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+  <a class="series-card coming" data-slug="human-place" data-issue="12" data-tags="all">
+    <div class="thumb"><div class="hanja">人</div></div>
+    <div class="body">
+      <div class="tag">SPECIAL TOPIC</div>
+      <h3>사람의 <span class="brand-ko">자리</span></h3>
+      <div class="subt">12호 회고 · 사람이 *남긴* 영역</div>
+      <div class="desc">12개 풍경을 다시 펼쳐 보고, 사람의 자리를 다시 그립니다.</div>
+      <div class="cue">곧 공개</div>
+    </div>
+  </a>
+
+</div>
+
+<footer class="site-foot">
+  <span><i>AI × Frontier</i> · The Atlas of A.I.</span>
+  <span>Mirae Asset inspired · Pretendard typeface</span>
+</footer>
+
+<script>
+(function () {
+  const grid = document.getElementById('series-grid');
+  const cards = Array.from(grid.querySelectorAll('.series-card'));
+  const viewButtons = document.querySelectorAll('[data-view]');
+  const sortButtons = document.querySelectorAll('[data-sort]');
+  const chipButtons = document.querySelectorAll('.chip');
+  const countLabel = document.getElementById('issue-count');
+
+  let state = {
+    view: localStorage.getItem('atl.view') || 'grid',
+    sort: localStorage.getItem('atl.sort') || 'asc',
+    tag:  localStorage.getItem('atl.tag')  || 'all',
+  };
+
+  function visibleCards() {
+    return cards.filter(c => !c.classList.contains('hidden-by-filter'));
+  }
+  function applyFilter() {
+    const tag = state.tag;
+    cards.forEach(c => {
+      const tags = (c.dataset.tags || '').split(',').filter(Boolean);
+      const match = tag === 'all' || tags.includes(tag);
+      c.classList.toggle('hidden-by-filter', !match);
+    });
+    countLabel.textContent = visibleCards().filter(c => !c.classList.contains('coming')).length;
+    chipButtons.forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
+  }
+  function applySort() {
+    const dir = state.sort === 'asc' ? 1 : -1;
+    cards.sort((a, b) => (parseFloat(a.dataset.issue) - parseFloat(b.dataset.issue)) * dir)
+         .forEach(c => grid.appendChild(c));
+    sortButtons.forEach(b => b.classList.toggle('active', b.dataset.sort === state.sort));
+  }
+  function applyView() {
+    grid.classList.remove('view-grid', 'view-list', 'view-single');
+    grid.classList.add('view-' + state.view);
+    viewButtons.forEach(b => b.classList.toggle('active', b.dataset.view === state.view));
+  }
+  viewButtons.forEach(b => b.addEventListener('click', () => {
+    state.view = b.dataset.view; localStorage.setItem('atl.view', state.view); applyView();
+  }));
+  sortButtons.forEach(b => b.addEventListener('click', () => {
+    state.sort = b.dataset.sort; localStorage.setItem('atl.sort', state.sort); applySort();
+  }));
+  chipButtons.forEach(b => b.addEventListener('click', () => {
+    state.tag = b.dataset.tag; localStorage.setItem('atl.tag', state.tag); applyFilter();
+  }));
+  applySort(); applyFilter(); applyView();
+})();
+</script>
+
+</body></html>
