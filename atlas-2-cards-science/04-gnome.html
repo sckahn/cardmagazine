@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8" />
+<meta name="color-scheme" content="light only" />
+<title>04 · GNoME — 220만 신소재를 한 번에</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
+<link rel="stylesheet" href="../style.css" />
+<link rel="stylesheet" href="../atlas.css" /></head>
+<body>
+  <div class="topbar"></div>
+  <div class="ghost-num" style="right:-40px; top:80px; color:rgba(58,122,146,0.18);">04</div>
+  <div class="stage">
+    <div class="header">
+      <div class="brandmark"><span class="tri" style="background:var(--brand) !important;"></span> AI &times; FRONTIER &middot; 02</div>
+      <div class="chaptertag">SCENE 3 &nbsp;&middot;&nbsp; 2023.11.29, Nature 표지 · DeepMind</div>
+    </div>
+    <div class="era">
+      <span class="year">2023</span>
+      <span class="label"><b>GNoME</b><span class="sub">Graph Networks for Materials Exploration — 800년치 발견을 1년에</span></span>
+    </div>
+    <h1 class="title sm">220만 개의 새 소재 —<br /><em>한 모델</em>이 한꺼번에.</h1>
+
+    <p class="body-sm" style="font-size:13px; line-height:1.55; margin-top:10px;">
+      혹시 — 더 좋은 <em>배터리</em>, 더 빠른 <em>반도체</em>, 더 가벼운 <em>태양전지</em>가 안 나오는 이유가 뭔지 짐작이 가시나요? 사실 — <em>원자 배열의 종류가 너무 많기 때문</em>입니다. 한 가지 새 소재(결정 구조)를 찾으려면 — <em>실험실에서 합성</em>하고 <em>측정</em>해야 하는데, 이게 한 후보당 몇 달이 걸리지요. 그래서 <em>인류가 지난 200년간 합성한 안정 소재는 약 4만 8천 개</em>. 그게 끝이었습니다.
+    </p>
+
+    <div class="split" style="grid-template-columns:1fr 1.05fr; gap:16px; margin-top:10px;">
+      <div class="left">
+        <p class="body-sm" style="font-size:13px; line-height:1.55;">2023년 11월 — DeepMind가 <em>Nature</em>에 한 논문을 냅니다. 이름은 <b>GNoME</b>(<em>그래프 신경망 기반 소재 탐색기</em>). 한 문장으로 정리하면 — <em>“이 두 원자가 저 자리에 들어가면, 안정한 결정이 될까?”</em>를 <em>AI가 미리 답해 주는</em> 시스템입니다.</p>
+        <p class="body-sm" style="font-size:13px; line-height:1.55; margin-top:6px;">결과는 충격이었습니다. <em>220만 개의 새 결정 구조</em>를 찾았고, 그 중 <b>38만 개</b>가 <em>안정한</em> 후보로 분류됐지요. 인류 200년 발견의 <em>약 8배</em>가 — <em>몇 달 만에</em> 쌓인 셈입니다. 더 놀라운 건 — <em>어느 누구도 시도해 본 적 없는 새 화학 조합</em>이 <em>수십만 개</em> 들어 있었다는 것.</p>
+      </div>
+      <div class="right">
+        <div style="padding:13px 15px; background:linear-gradient(135deg, var(--navy), var(--navy-deep)); color:var(--brand-soft); border-radius:6px;">
+          <div style="font-size:9.5px; letter-spacing:0.2em; color:var(--accent-gold-soft); font-weight:800;">알려진 안정 소재 — 누적</div>
+          <div style="margin-top:8px;">
+            <div style="font-family:'Playfair Display', serif; font-size:14px; color:#fff; opacity:0.85;">200년 (사람)</div>
+            <div style="font-family:'JetBrains Mono', monospace; font-size:24px; font-weight:900; color:#fff;">48,000</div>
+          </div>
+          <div style="margin-top:8px; padding-top:8px; border-top:1px dashed rgba(232,212,160,0.3);">
+            <div style="font-family:'Playfair Display', serif; font-size:14px; color:var(--accent-gold-soft); font-style:italic;">2023 GNoME · 한 해</div>
+            <div style="font-family:'JetBrains Mono', monospace; font-size:30px; font-weight:900; color:var(--accent-gold-soft);">381,000</div>
+          </div>
+          <div style="margin-top:6px; font-size:10.5px; opacity:0.85;">→ <em style="color:#fff;">8배</em> 늘어남 (안정 후보 기준)</div>
+          <div style="margin-top:6px; padding-top:6px; border-top:1px dashed rgba(232,212,160,0.3); font-size:10.5px; opacity:0.85;">전체 후보(불안정 포함) <em style="color:#fff;">220만 개</em></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:9px; padding:10px 13px; background:rgba(255,255,255,0.7); border-left:3px solid var(--accent-gold); border-radius:3px;">
+      <div style="font-size:9px; letter-spacing:0.18em; color:var(--accent-gold); font-weight:700;">실험실의 응답 — UC 버클리 자율 합성</div>
+      <div style="font-size:11.5px; line-height:1.55; color:var(--ink); margin-top:3px;">
+        UC 버클리 로런스 국립연구소는 — GNoME가 추천한 후보 중 <b>58개를 <em>17일 만에</em> 합성</b>했습니다. 사람 손이 거의 안 닿는 <em>자율 실험실</em> <em>A-Lab</em>이 — 24시간 돌아가며 합성·측정한 거지요. <em>예측 → 합성 → 검증</em>의 한 사이클이 <em>몇 달 → 며칠</em>로 줄었습니다.
+      </div>
+    </div>
+
+    <div style="margin-top:9px; display:grid; grid-template-columns:repeat(3, 1fr); gap:8px;">
+      <div style="padding:9px 11px; background:rgba(255,255,255,0.7); border-top:2px solid var(--brand);">
+        <div style="font-size:9px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">SCENE</div>
+        <div style="font-size:11px; line-height:1.45; margin-top:2px; color:var(--ink);">DeepMind는 <em>전체 38만 개 데이터</em>를 무료로 공개. 학교·기업이 자유롭게 쓸 수 있게.</div>
+      </div>
+      <div style="padding:9px 11px; background:rgba(255,255,255,0.7); border-top:2px solid var(--accent-gold);">
+        <div style="font-size:9px; letter-spacing:1.5px; color:var(--accent-gold); font-weight:700;">DETAIL</div>
+        <div style="font-size:11px; line-height:1.45; margin-top:2px; color:var(--ink);">후보 안에 <em>52종의 새 산화물·황화물</em>이 있어 — <em>고체 배터리</em> 핵심 재료 후보로 즉시 테스트 중.</div>
+      </div>
+      <div style="padding:9px 11px; background:linear-gradient(135deg, var(--navy), var(--navy-deep)); color:var(--brand-soft);">
+        <div style="font-size:9px; letter-spacing:1.5px; color:var(--accent-gold-soft); font-weight:700;">ECHO</div>
+        <div style="font-size:11px; line-height:1.45; margin-top:2px;">전기차·반도체·태양전지의 <em>다음 세대 소재</em>가 — <b style="color:#fff;">AI 카탈로그</b>에서 나오는 시대로.</div>
+      </div>
+    </div>
+
+    <div class="foot"><span class="left"></span><span class="right"></span></div>
+  </div>
+</body></html>
