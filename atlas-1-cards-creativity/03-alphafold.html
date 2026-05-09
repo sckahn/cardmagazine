@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8" />
 <meta name="color-scheme" content="light only" />
-<title>03 · AlphaFold — 50년 미해결 문제의 답</title>
+<title>03 · AlphaFold — 50년 미해결 단백질 문제의 답</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" />
 <link rel="stylesheet" href="../style.css" />
 <link rel="stylesheet" href="../atlas.css" /></head>
@@ -11,47 +11,53 @@
   <div class="stage">
     <div class="header">
       <div class="brandmark"><span class="tri" style="background:var(--brand) !important;"></span> AI &times; FRONTIER &middot; 01</div>
-      <div class="chaptertag">SCENE 2 &nbsp;&middot;&nbsp; 2020, CASP14 학회</div>
+      <div class="chaptertag">SCENE 2 &nbsp;&middot;&nbsp; 2020.11 CASP14 학회 · 2024.10 노벨 화학상</div>
     </div>
     <div class="era">
       <span class="year">2020</span>
-      <span class="label"><b>AlphaFold 2</b><span class="sub">50년 미해결 <em>단백질 접힘</em> 문제</span></span>
+      <span class="label"><b>AlphaFold 2</b><span class="sub">단백질 한 개 푸는 시간 — 2년에서 몇 분으로</span></span>
     </div>
-    <h1 class="title sm">생물학자들이 <em>50년</em><br />풀지 못한 문제.</h1>
+    <h1 class="title sm">생물학자들이 50년<br /><em>풀지 못한</em> 문제.</h1>
 
-    <p class="body-sm" style="font-size:14px; line-height:1.65; margin-top:14px;">
-      혹시 — <em>‘단백질 접힘 문제(Protein Folding Problem)’</em>라는 말, 들어보신 적 있으세요? 1972년 노벨상 강연에서 <em>Christian Anfinsen</em>이 던진 질문입니다 — <em>“DNA에 적힌 글자 순서만 알면, 그 단백질이 어떻게 생겼는지 알 수 있을까요?”</em> 이 질문은 <em>50년 동안</em> 풀리지 않았습니다.
+    <p class="body-sm" style="font-size:13.5px; line-height:1.6; margin-top:12px;">
+      혹시 — <em>‘단백질’</em>이라는 말, 헬스장에서나 들어보셨나요? 사실 단백질은 우리 몸의 <em>모든 부품</em>입니다. 머리카락도, 손톱도, 면역세포도 — 모두 단백질로 만들어진 작은 <em>기계</em>들이지요. 그런데 이 기계가 일을 하려면 — <em>모양</em>이 정확해야 합니다. 모양이 한 군데만 어긋나도 — 알츠하이머나 암 같은 큰 병이 됩니다. 그 모양을 알아내는 일이 — <em>50년간 풀리지 않던 숙제</em>였습니다.
     </p>
 
-    <div style="margin-top:14px; padding:18px 22px; background:linear-gradient(135deg, var(--navy), var(--navy-deep)); color:var(--brand-soft); border-radius:6px;">
-      <div style="font-size:10.5px; letter-spacing:0.22em; color:var(--accent-gold-soft); font-weight:800;">CASP14 &middot; 2020 결과</div>
-      <div style="margin-top:10px; display:grid; grid-template-columns:1fr 1fr; gap:18px; font-size:13.5px; line-height:1.55;">
-        <div>
-          <div style="font-family:'Playfair Display', serif; font-style:italic; font-size:30px; color:#fff; line-height:1;">92.4 / 100</div>
-          <div style="font-size:11.5px; opacity:0.85; margin-top:4px;">AlphaFold 2 점수 — 사람의 <em>실험 측정</em>과 거의 구별 불가능</div>
+    <div class="split" style="grid-template-columns:1fr 1.05fr; gap:18px; margin-top:12px;">
+      <div class="left">
+        <p class="body-sm" style="font-size:13.5px; line-height:1.6;">시작은 1972년. 미국 생화학자 <b>크리스천 안핀선</b>이 노벨상 강연에서 한 줄 적습니다 — <em>“DNA에 적힌 글자 순서만 알면, 단백질 모양도 알 수 있을까요?”</em> 답을 얻기까지 — 사람은 한 단백질을 풀려고 <em>2년</em>씩 매달렸지요. 한 학자가 평생 푸는 단백질이 <b>수십 개</b>였습니다. 그런데 알려진 단백질은 — <em>2억 개</em>가 넘었습니다.</p>
+        <p class="body-sm" style="font-size:13.5px; line-height:1.6; margin-top:7px;">2020년 가을, 캐나다에서 열린 <b>CASP14</b> 대회. 2년마다 열리는 <em>단백질 모양 맞추기 시합</em>입니다. 100점 만점에 90점이면 — 사람이 <em>실험으로 잰 것</em>과 같다고 봅니다. 그동안 우승팀들이 받던 점수는 — <b>60점쯤</b>이었지요.</p>
+      </div>
+      <div class="right">
+        <div style="padding:14px 16px; background:linear-gradient(135deg, var(--navy), var(--navy-deep)); color:var(--brand-soft); border-radius:6px;">
+          <div style="font-size:10px; letter-spacing:0.2em; color:var(--accent-gold-soft); font-weight:800;">CASP14 · 2020 우승 점수</div>
+          <div style="margin-top:10px; font-family:'Playfair Display', serif; font-style:italic; font-size:38px; color:#fff; line-height:1;">92.4</div>
+          <div style="font-size:10.5px; opacity:0.85; margin-top:3px;">100점 만점 — 사람의 실험 측정과 거의 동일</div>
+          <div style="margin-top:10px; padding-top:10px; border-top:1px dashed rgba(232,212,160,0.3);">
+            <div style="font-size:11px; line-height:1.5;">대회 위원장 <b style="color:#fff;">존 모울트</b> 교수가 그날 한마디로 정리합니다 — <em style="color:var(--accent-gold-soft);">“이 문제는 풀렸습니다.”</em></div>
+          </div>
+          <div style="margin-top:8px; font-size:10.5px; opacity:0.85;">한 단백질 푸는 시간 — <em style="color:#fff;">2년</em> → <b style="color:#fff;">몇 분</b></div>
         </div>
-        <div style="border-left:1px solid rgba(232,212,160,0.3); padding-left:18px;">
-          <div style="font-size:12px;">CASP는 1994년부터 2년마다 열린 <em>단백질 예측 대회</em>입니다. 90점이 넘으면 — <em>실험과 같다</em>고 부릅니다. 2018년 AlphaFold 1이 약 60점, 직전 우승팀들도 60점 언저리였지요.</div>
-        </div>
+        <p style="font-size:10px; margin-top:4px; opacity:0.6; text-align:center;">한 학자가 평생 풀던 분량을 — 한 모델이 며칠 만에</p>
       </div>
     </div>
 
-    <p class="body-sm" style="font-size:14px; line-height:1.65; margin-top:12px;">
-      대회 위원장 <b>John Moult</b>가 한마디로 정리했습니다 — <em>“이 문제는 해결되었습니다(In some sense, the problem is solved).”</em> 50년 만에 답이 나온 셈이지요. 그리고 DeepMind는 — <em>예측한 단백질 구조 2억 개</em>를 <em>온라인에 무료로</em> 풀어둡니다. 한 학자가 평생 풀던 구조 <em>수십 개</em>가 — 한 사이트에 <em>2억 개</em>가 됩니다.
+    <p class="body-sm" style="font-size:13.5px; line-height:1.6; margin-top:10px;">
+      그리고 — DeepMind는 <em>AI가 풀어낸 단백질 모양 2억 개</em>를 <em>온라인에 무료로</em> 풀어 둡니다. 누구나 들어가서 볼 수 있지요. 이 데이터는 — 2024년 <em>말라리아 백신 후보</em>, <em>항생제 후보</em>, <em>암 신약 연구</em>의 출발점이 됐습니다. 그리고 2024년 10월, 알파폴드 책임자 <b>존 점퍼</b>(미국, 39세)와 <b>데미스 허사비스</b>가 — <em>노벨 화학상</em>을 함께 받습니다. AI가 만든 <em>과학상</em>이 처음 나온 순간이었지요.
     </p>
 
-    <div style="margin-top:14px; display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
-      <div style="padding:11px 13px; background:rgba(255,255,255,0.7); border-top:2px solid var(--brand);">
+    <div style="margin-top:12px; display:grid; grid-template-columns:repeat(3, 1fr); gap:9px;">
+      <div style="padding:10px 12px; background:rgba(255,255,255,0.7); border-top:2px solid var(--brand);">
         <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--brand-deep); font-weight:700;">SCENE</div>
-        <div style="font-size:12px; line-height:1.5; margin-top:4px; color:var(--ink);">CASP14 결과 발표가 끝나고, 한 노교수가 — <em>조용히 눈물을 훔쳤다</em>고 전해집니다.</div>
+        <div style="font-size:11.5px; line-height:1.5; margin-top:3px; color:var(--ink);">CASP14 결과 발표 자리에서 — <em>한 노교수가 조용히 눈물을 훔쳤다</em>고 학회 참가자들이 전했습니다.</div>
       </div>
-      <div style="padding:11px 13px; background:rgba(255,255,255,0.7); border-top:2px solid var(--accent-gold);">
+      <div style="padding:10px 12px; background:rgba(255,255,255,0.7); border-top:2px solid var(--accent-gold);">
         <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--accent-gold); font-weight:700;">DETAIL</div>
-        <div style="font-size:12px; line-height:1.5; margin-top:4px; color:var(--ink);">2024년 노벨 화학상 — <b>John Jumper</b>·<b>Demis Hassabis</b> 공동 수상. AI가 만든 <em>과학상</em>의 첫 사례.</div>
+        <div style="font-size:11.5px; line-height:1.5; margin-top:3px; color:var(--ink);">2024년 <em>AlphaFold 3</em> 등장 — 단백질끼리 <em>붙는 자리</em>까지 예측. 신약 개발의 핵심 단계가 AI 안에서 풀립니다.</div>
       </div>
-      <div style="padding:11px 13px; background:linear-gradient(135deg, var(--navy), var(--navy-deep)); color:var(--brand-soft);">
+      <div style="padding:10px 12px; background:linear-gradient(135deg, var(--navy), var(--navy-deep)); color:var(--brand-soft);">
         <div style="font-size:9.5px; letter-spacing:1.5px; color:var(--accent-gold-soft); font-weight:700;">ECHO</div>
-        <div style="font-size:12px; line-height:1.5; margin-top:4px;">2억 개의 <em>공개 데이터베이스</em>는 — 오늘 <em>말라리아·암</em> 신약 연구의 출발점이 됐습니다.</div>
+        <div style="font-size:11.5px; line-height:1.5; margin-top:3px;"><b style="color:#fff;">2억 개 무료 공개</b> — 전 세계 <em>200만 명</em> 연구자가 한 해에 다운받았습니다. 한 학자의 평생 작업이 — 모두의 출발선이 됐지요.</div>
       </div>
     </div>
 
