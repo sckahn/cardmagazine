@@ -42,6 +42,39 @@
   body.chronicle .series-card .thumb .hanja { color: rgba(200,134,47,0.7); }
   body.chronicle .series-card.coming { opacity: 0.45; cursor: default; pointer-events: none; }
   body.chronicle .site-foot { color: var(--ink-mid); border-top-color: var(--line); }
+
+  /* PART divider — 두 부의 책 구조를 시각적으로 분리 */
+  body.chronicle .part-divider {
+    grid-column: 1 / -1;
+    margin: 28px 0 6px;
+    padding: 22px 24px;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line);
+    background: linear-gradient(180deg, rgba(255,245,225,0.55), rgba(243,210,168,0.18));
+  }
+  body.chronicle .part-divider-inner { max-width: 720px; }
+  body.chronicle .part-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 0.3em;
+    color: var(--brand-deep); font-weight: 800;
+    text-transform: uppercase;
+  }
+  body.chronicle .part-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 28px; font-weight: 900;
+    color: var(--navy);
+    margin-top: 8px; line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+  body.chronicle .part-title em { color: var(--brand-deep); font-style: normal; }
+  body.chronicle .part-lead {
+    font-size: 14.5px; line-height: 1.7;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+  body.chronicle .part-divider.hidden-by-filter { display: none; }
+  body.chronicle .view-list .part-divider,
+  body.chronicle .view-single .part-divider { margin: 24px 0 4px; }
 </style>
 </head><body class="chronicle">
 
@@ -92,12 +125,21 @@
       <button type="button" class="chip" data-tag="prologue">전사 · ~1936</button>
       <button type="button" class="chip" data-tag="foundation">토대 · 1936—1956</button>
       <button type="button" class="chip" data-tag="winter">겨울 · 1958—1993</button>
-      <button type="button" class="chip" data-tag="revival">부활 · 2006—오늘</button>
+      <button type="button" class="chip" data-tag="revival">부활 · 2006—2023</button>
+      <button type="button" class="chip" data-tag="applied">그 이후 · 2015→오늘</button>
     </div>
   </div>
 </div>
 
 <div class="series-grid view-grid" id="series-grid">
+
+  <div class="part-divider" id="part-1-divider" data-issue="0.5">
+    <div class="part-divider-inner">
+      <div class="part-eyebrow">PART I · 한 줄기 흐름</div>
+      <h3 class="part-title">톱니바퀴에서 <em>ChatGPT</em>까지</h3>
+      <p class="part-lead">1739년의 황동 오리에서 2022년 ChatGPT의 밤까지 — 사람이 ‘생각하는 기계’를 만들어 온 한 줄기 시간순 이야기. 11개 호.</p>
+    </div>
+  </div>
 
   <a class="series-card" href="chronicle/cogwheel.html?v=29" data-slug="cogwheel" data-issue="1" data-tags="prologue">
     <div class="thumb">
@@ -253,7 +295,15 @@
     </div>
   </a>
 
-  <a class="series-card" href="chronicle/capital.html?v=30" data-slug="capital" data-issue="12" data-tags="revival">
+  <div class="part-divider" id="part-2-divider" data-issue="11.5">
+    <div class="part-divider-inner">
+      <div class="part-eyebrow">PART II · 그 이후</div>
+      <h3 class="part-title"><em>자본</em>·<em>경쟁</em>·<em>몸</em>·<em>에이전트</em></h3>
+      <p class="part-lead">한 줄기 시간이 끝난 자리에서 — 회사, 자본, 국가, 그리고 몸. ChatGPT 이후의 풍경을 4개 테마로 다시 봅니다. 시간이 살짝 거꾸로 흐르는 부분이 있습니다.</p>
+    </div>
+  </div>
+
+  <a class="series-card" href="chronicle/capital.html?v=30" data-slug="capital" data-issue="12" data-tags="applied">
     <div class="thumb">
       <img src="chronicle-12-outputs-capital/01-cover.png?v=30" alt="자본의 전환 cover" loading="lazy" />
       <div class="hanja">資</div>
@@ -267,7 +317,7 @@
     </div>
   </a>
 
-  <a class="series-card" href="chronicle/race.html?v=30" data-slug="race" data-issue="13" data-tags="revival">
+  <a class="series-card" href="chronicle/race.html?v=30" data-slug="race" data-issue="13" data-tags="applied">
     <div class="thumb">
       <img src="chronicle-13-outputs-race/01-cover.png?v=30" alt="AGI 군비경쟁 cover" loading="lazy" />
       <div class="hanja">競</div>
@@ -281,7 +331,7 @@
     </div>
   </a>
 
-  <a class="series-card" href="chronicle/physical.html?v=30" data-slug="physical" data-issue="14" data-tags="revival">
+  <a class="series-card" href="chronicle/physical.html?v=30" data-slug="physical" data-issue="14" data-tags="applied">
     <div class="thumb">
       <img src="chronicle-14-outputs-physical/01-cover.png?v=30" alt="피지컬 AI cover" loading="lazy" />
       <div class="hanja">體</div>
@@ -295,7 +345,7 @@
     </div>
   </a>
 
-  <a class="series-card" href="chronicle/today.html?v=30" data-slug="today" data-issue="15" data-tags="revival">
+  <a class="series-card" href="chronicle/today.html?v=30" data-slug="today" data-issue="15" data-tags="applied">
     <div class="thumb">
       <img src="chronicle-15-outputs-today/01-cover.png?v=30" alt="에이전트와 오늘 cover" loading="lazy" />
       <div class="hanja">今</div>
@@ -319,7 +369,7 @@
 <script>
 (function () {
   const grid = document.getElementById('series-grid');
-  const cards = Array.from(grid.querySelectorAll('.series-card'));
+  const cards = Array.from(grid.querySelectorAll('.series-card, .part-divider'));
   const viewButtons = document.querySelectorAll('[data-view]');
   const sortButtons = document.querySelectorAll('[data-sort]');
   const chipButtons = document.querySelectorAll('.chip');
@@ -337,16 +387,25 @@
   function applyFilter() {
     const tag = state.tag;
     cards.forEach(c => {
+      if (c.classList.contains('part-divider')) {
+        // PART 2 divider는 'all' 또는 'applied'일 때만 노출
+        const isPart2 = c.id === 'part-2-divider';
+        const match = tag === 'all' || (isPart2 && tag === 'applied');
+        c.classList.toggle('hidden-by-filter', !match);
+        return;
+      }
       const tags = (c.dataset.tags || '').split(',').filter(Boolean);
       const match = tag === 'all' || tags.includes(tag);
       c.classList.toggle('hidden-by-filter', !match);
     });
-    countLabel.textContent = visibleCards().filter(c => !c.classList.contains('coming')).length;
+    const part1 = document.getElementById('part-1-divider');
+    if (part1) part1.classList.toggle('hidden-by-filter', tag !== 'all');
+    countLabel.textContent = cards.filter(c => c.classList.contains('series-card') && !c.classList.contains('hidden-by-filter') && !c.classList.contains('coming')).length;
     chipButtons.forEach(b => b.classList.toggle('active', b.dataset.tag === tag));
   }
   function applySort() {
     const dir = state.sort === 'asc' ? 1 : -1;
-    cards.sort((a, b) => (parseInt(a.dataset.issue) - parseInt(b.dataset.issue)) * dir)
+    cards.sort((a, b) => (parseFloat(a.dataset.issue) - parseFloat(b.dataset.issue)) * dir)
          .forEach(c => grid.appendChild(c));
     sortButtons.forEach(b => b.classList.toggle('active', b.dataset.sort === state.sort));
   }
