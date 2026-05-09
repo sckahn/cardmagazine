@@ -1391,7 +1391,7 @@ body.portal {
   --c1: #0e2a4a;
   --c2: #082042;
 }
-.s-frontier .s-title-big { color: #cfe7ef; }
+.s-frontier .s-title-big { color: #c4d8df; }
 .s-frontier .s-cap { background: linear-gradient(180deg, #c8a04a, #8a6d2e); }
 
 /* feature 책등 — 위·아래 색띠(엔드밴드) */
@@ -1573,15 +1573,15 @@ body.portal {
 /* AI × Frontier 표지 — 미드나잇 + 시안/황동 */
 .bl-cover-frontier {
   background: linear-gradient(135deg, #0e2a4a 0%, #082042 100%);
-  color: #cfe7ef;
+  color: #c4d8df;
 }
-.bl-cover-frontier .bl-cover-eyebrow { color: #3ba8c9; }
+.bl-cover-frontier .bl-cover-eyebrow { color: #3a7a92; }
 .bl-cover-frontier .bl-cover-ai { color: #fff; }
-.bl-cover-frontier .bl-cover-x { color: #3ba8c9; }
-.bl-cover-frontier .bl-cover-name { color: #cfe7ef; }
-.bl-cover-frontier .bl-cover-rule { background: linear-gradient(90deg, #c8a04a 0 40%, rgba(207,231,239,0.2) 40%); }
-.bl-cover-frontier .bl-cover-foot { color: #cfe7ef; }
-.bl-cover-frontier .bl-cover-foot b { color: #3ba8c9; }
+.bl-cover-frontier .bl-cover-x { color: #3a7a92; }
+.bl-cover-frontier .bl-cover-name { color: #c4d8df; }
+.bl-cover-frontier .bl-cover-rule { background: linear-gradient(90deg, #c8a04a 0 40%, rgba(196,216,223,0.2) 40%); }
+.bl-cover-frontier .bl-cover-foot { color: #c4d8df; }
+.bl-cover-frontier .bl-cover-foot b { color: #3a7a92; }
 
 .bl-cover-eyebrow {
   font-family: 'JetBrains Mono', monospace;
