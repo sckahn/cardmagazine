@@ -10,9 +10,9 @@ html, body { color-scheme: light only !important; background-color: #d8e3e0 !imp
   --bg-soft: #e6ede9;
   --navy: #0e2a4a;          /* 미드나잇 — 텍스트·박스 베이스 */
   --navy-deep: #082042;
-  --brand: #3a7a92;         /* 시안 — 액센트 (Book I 오렌지 자리) */
-  --brand-deep: #1f5a72;
-  --brand-soft: #c4d8df;
+  --brand: #5a7c5e;         /* 시안 — 액센트 (Book I 오렌지 자리) */
+  --brand-deep: #3d5a40;
+  --brand-soft: #c8d6c2;
   --accent-gold: #c8a04a;   /* 황동 — 보조 액센트, 도감의 라벨 */
   --accent-gold-soft: #e8d4a0;
   --ink: #0e2a4a;
