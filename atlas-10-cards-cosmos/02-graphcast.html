@@ -20,13 +20,13 @@
     <h1 class="title sm"><em>100년 기상학</em>이<br />&mdash; <em>한 모델</em>에 압축됐지요.</h1>
 
     <p class="body-sm" style="font-size:13px; line-height:1.55; margin-top:10px;">
-      혹시 &mdash; <em>‘유럽기상센터’</em>라고 들어보셨어요? 정식 이름은 <b>ECMWF</b>(유럽중기예보센터). <em>전 세계 기상 예보의 표준</em>입니다. 한국 기상청도, 미국 NOAA도 &mdash; 이 데이터를 받아 자기 나라 예보를 만들지요. 그런데 ECMWF의 슈퍼컴은 <em>Cray</em> &mdash; 한 번 돌리는 데 <em>수 시간</em>이 걸리고, <em>100명의 기상학자</em>가 <em>수십억 방정식</em>을 손봅니다. 2023년 11월 &mdash; <em>‘Science’</em>가 표지로 한 모델을 올립니다.
+      혹시 &mdash; <em>‘유럽기상센터’</em>라고 들어보셨어요? 정식 이름은 <b>ECMWF</b>(유럽중기예보센터), <em>전 세계 기상 예보의 표준</em>입니다. 한국 기상청도, 미국 NOAA도 이 데이터를 받아 자기 나라 예보를 만듭니다. 그런데 ECMWF의 슈퍼컴 <em>Cray</em>는 한 번 돌리는 데 <em>수 시간</em>이 걸리고, <em>100명의 기상학자</em>가 <em>수십억 방정식</em>을 손봅니다. 2023년 11월, <em>‘Science’</em>가 표지로 한 모델을 올립니다.
     </p>
 
     <div class="split" style="grid-template-columns:1.05fr 1fr; gap:16px; margin-top:10px;">
       <div class="left">
-        <p class="body-sm" style="font-size:13px; line-height:1.55;"><b>레미 람</b>(Google DeepMind 연구원, 본업이 머신러닝 엔지니어)이 이끈 팀이 <b>GraphCast</b>를 공개합니다. <em>그래프 신경망</em>(Graph Neural Network) 한 덩어리 &mdash; 지구 표면을 <em>100만 개 노드</em>로 잘게 쪼개고, 노드끼리의 관계로 바람·온도·습도를 예측하지요. <em>0.25도 해상도</em>(약 25km), <em>10일치 예보</em>를 한 번에. ECMWF 데이터 <em>39년치</em>를 학습 재료로 썼습니다.</p>
-        <p class="body-sm" style="font-size:13px; line-height:1.55; margin-top:6px;">결과 &mdash; <em>1,380개 변수 중 90% 이상</em>에서 ECMWF를 능가. 사람 슈퍼컴이 <em>수 시간</em> 걸린 일이 &mdash; <em>1분</em>이 됩니다. 더 놀라운 건 <em>허리케인 진로</em>: 진로 예측 정확도가 평균 <em>+20%</em>. 람은 한 문장으로 정리했지요 &mdash; <em>“100년 기상학이 &mdash; 한 모델에 압축됐지요.”</em> 1년 뒤 ECMWF가 자체 AI 모델 <b>AIFS</b>를 출시 &mdash; <em>패러다임 전환</em>이 굳어집니다.</p>
+        <p class="body-sm" style="font-size:13px; line-height:1.55;"><b>레미 람</b>(Google DeepMind 연구원, 본업은 머신러닝 엔지니어)이 이끈 팀이 <b>GraphCast</b>를 공개합니다. <em>그래프 신경망</em>(Graph Neural Network) 한 덩어리로 지구 표면을 <em>100만 개 노드</em>로 잘게 쪼개고, 노드끼리의 관계로 바람·온도·습도를 예측합니다. <em>0.25도 해상도</em>(약 25km), <em>10일치 예보</em>를 한 번에. ECMWF 데이터 <em>39년치</em>를 학습 재료로 썼습니다.</p>
+        <p class="body-sm" style="font-size:13px; line-height:1.55; margin-top:6px;">결과는 <em>1,380개 변수 중 90% 이상</em>에서 ECMWF를 능가. 사람 슈퍼컴이 <em>수 시간</em> 걸린 일이 <em>1분</em>이 됩니다. 더 놀라운 건 <em>허리케인 진로</em>로, 예측 정확도가 평균 <em>+20%</em>. 람은 한 문장으로 정리했습니다 &mdash; <em>“100년 기상학이 한 모델에 압축됐지요.”</em> 1년 뒤 ECMWF가 자체 AI 모델 <b>AIFS</b>를 출시하며 <em>패러다임 전환</em>이 굳어집니다.</p>
       </div>
       <div class="right">
         <div style="padding:13px 15px; background:linear-gradient(135deg, var(--navy), var(--navy-deep)); color:var(--brand-soft); border-radius:6px;">
@@ -54,7 +54,7 @@
     <div style="margin-top:9px; padding:10px 13px; background:rgba(255,255,255,0.7); border-left:3px solid var(--accent-gold); border-radius:3px;">
       <div style="font-size:9px; letter-spacing:0.18em; color:var(--accent-gold); font-weight:700;">왜 그래프 신경망이었나</div>
       <div style="font-size:11.5px; line-height:1.55; color:var(--ink); margin-top:3px;">
-        기존 수치예보는 <em>나비에-스토크스 방정식</em>을 슈퍼컴이 <em>한 칸씩</em> 풀어 나갑니다 &mdash; <em>물리학 그대로</em>지요. GraphCast는 <em>방정식을 푸는 게 아니라</em>, 39년치 관측 데이터에서 <em>‘지구는 이렇게 움직였다’</em>는 패턴을 통째로 학습합니다. 노드끼리의 관계망(그래프) 안에서 &mdash; 바람이 어떻게 이웃 노드로 옮겨가는지를 한 번에 풀지요. <em>물리 시뮬레이션</em>이 <em>학습된 직관</em>으로 옮겨간 자리.
+        기존 수치예보는 <em>나비에-스토크스 방정식</em>을 슈퍼컴이 <em>한 칸씩</em> 풀어 나갑니다(<em>물리학 그대로</em>). GraphCast는 방정식을 푸는 대신, 39년치 관측 데이터에서 <em>‘지구는 이렇게 움직였다’</em>는 패턴을 통째로 학습합니다. 노드끼리의 관계망(그래프) 안에서, 바람이 어떻게 이웃 노드로 옮겨가는지를 한 번에 풉니다. <em>물리 시뮬레이션</em>이 <em>학습된 직관</em>으로 옮겨간 자리.
       </div>
     </div>
 

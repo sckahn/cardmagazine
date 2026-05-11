@@ -10,25 +10,25 @@
 <style>
   /* 박물관 청록 톤 override — Book III · AI × Frontier */
   body.atlas-reader {
-    --bg: #d8e3e0;
-    --bg-soft: #e6ede9;
-    --navy: #0e2a4a;
-    --navy-deep: #082042;
-    --brand: #5a7c5e;
-    --brand-deep: #3d5a40;
-    --brand-soft: #c8d6c2;
-    --accent-gold: #c8a04a;
-    --ink: #0e2a4a;
-    --ink-soft: #2a4a6e;
-    --ink-mid: #5a7898;
-    --line: rgba(14,42,74,0.12);
-    --line-strong: rgba(14,42,74,0.22);
+    --bg: #dde0db;
+    --bg-soft: #e6e8e3;
+    --navy: #2d3540;
+    --navy-deep: #1f2932;
+    --brand: #7a8a7a;
+    --brand-deep: #51604f;
+    --brand-soft: #c8d0c5;
+    --accent-gold: #a39561;
+    --ink: #2d3540;
+    --ink-soft: #4a5560;
+    --ink-mid: #6a727a;
+    --line: rgba(45,53,64,0.12);
+    --line-strong: rgba(45,53,64,0.22);
     background: var(--bg);
     color: var(--navy);
   }
   body.atlas-reader em { color: var(--brand-deep); font-weight: 800; }
   body.atlas-reader .brand-ko { color: var(--brand-deep); }
-  body.atlas-reader .site-nav { background: rgba(216,227,224,0.88); border-bottom-color: var(--line); }
+  body.atlas-reader .site-nav { background: rgba(221,224,219,0.9); border-bottom-color: var(--line); }
   body.atlas-reader .site-nav .logo { color: var(--navy); }
   body.atlas-reader .site-nav .logo em { color: var(--brand-deep); }
   body.atlas-reader .mag-side h2 em { color: var(--brand-deep); }
@@ -51,23 +51,23 @@
   /* mag-next — Book I 동일 디자인, 박물관 청록 톤 그라디언트 */
   body.atlas-reader .mag-next {
     background:
-      radial-gradient(circle at 20% 0%, rgba(90,124,94,0.25), transparent 55%),
-      linear-gradient(135deg, #0e2a4a, #082042) !important;
-    color: #c8d6c2 !important;
+      radial-gradient(circle at 20% 0%, rgba(122,138,122,0.25), transparent 55%),
+      linear-gradient(135deg, #2d3540, #1f2932) !important;
+    color: #c8d0c5 !important;
   }
   body.atlas-reader .mag-next::after {
-    background: radial-gradient(circle, rgba(90,124,94,0.32), transparent 70%) !important;
+    background: radial-gradient(circle, rgba(122,138,122,0.32), transparent 70%) !important;
   }
-  body.atlas-reader .mag-next .next-cover { border-color: var(--brand) !important; box-shadow: 0 30px 50px -30px rgba(90,124,94,0.55) !important; }
+  body.atlas-reader .mag-next .next-cover { border-color: var(--brand) !important; box-shadow: 0 30px 50px -30px rgba(122,138,122,0.45) !important; }
   body.atlas-reader .mag-next .next-kicker { color: var(--brand-soft) !important; }
   body.atlas-reader .mag-next .next-title { color: #fff !important; }
   body.atlas-reader .mag-next .next-title em { color: var(--brand-soft) !important; }
-  body.atlas-reader .mag-next .next-sub { color: rgba(200,214,194,0.88) !important; }
-  body.atlas-reader .mag-next .next-cta { background: var(--brand) !important; border-color: var(--brand) !important; color: #0e2a4a !important; }
+  body.atlas-reader .mag-next .next-sub { color: rgba(200,208,197,0.88) !important; }
+  body.atlas-reader .mag-next .next-cta { background: var(--brand) !important; border-color: var(--brand) !important; color: #2d3540 !important; }
   body.atlas-reader .mag-next .next-cta:hover { color: var(--brand-soft) !important; }
   body.atlas-reader .mag-next.coming { opacity: 0.7; }
-  body.atlas-reader .mag-next.coming .next-cta { background: rgba(200,214,194,0.18) !important; border-color: rgba(200,214,194,0.3) !important; color: var(--brand-soft) !important; cursor: default; pointer-events: none; }
-  body.atlas-reader .mag-next.coming .next-cover-placeholder { width:180px; aspect-ratio:1; background:rgba(255,255,255,0.08); border:2px solid var(--brand); border-radius:0; display:flex; align-items:center; justify-content:center; box-shadow: 0 30px 50px -30px rgba(90,124,94,0.55); }
+  body.atlas-reader .mag-next.coming .next-cta { background: rgba(200,208,197,0.18) !important; border-color: rgba(200,208,197,0.3) !important; color: var(--brand-soft) !important; cursor: default; pointer-events: none; }
+  body.atlas-reader .mag-next.coming .next-cover-placeholder { width:180px; aspect-ratio:1; background:rgba(255,255,255,0.08); border:2px solid var(--brand); border-radius:0; display:flex; align-items:center; justify-content:center; box-shadow: 0 30px 50px -30px rgba(122,138,122,0.45); }
   body.atlas-reader .mag-next.coming .next-cover-placeholder span { font-family:'Noto Serif KR', serif; font-size:60px; color:var(--brand-soft); opacity:0.7; }
 </style>
 </head><body class="atlas-reader">
