@@ -135,7 +135,7 @@ python3 fix_face_crop.py
 - **Book II** · 시간축 톤 — 클래식 신문 그레이스케일 + 시대별 era 칩
 - **Book III** · 박물관 청록 톤 — `#7a8a7a` 세이지 그린 / `#0e2a4a` 미드나잇 / `#c8a04a` 황동
 
-전반적으로 Mirae Asset inspired 절제된 신뢰감 — 과장 없는 정보 밀도와 sans/serif 대비.
+전반적으로 절제된 신뢰감 — 과장 없는 정보 밀도와 sans/serif 대비.
 
 ## 출처
 
