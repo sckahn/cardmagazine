@@ -2,13 +2,12 @@
 """Card news PNG capture via Playwright.
 
 Folder convention: <N>-cards-<name>/*.html -> <N>-outputs-<name>/*.png
-N = series index (1 philosophy, 2 taste, 3 vibe, 4 loop, 5 canvas, 6 aura,
-7 rhythm, 8 dream, ...).
+N = issue index (1 vinyl, 2 jazz, 3 sampling, 4 kpop, ...).
 
 Usage:
-  python3 capture.py <name>              # e.g. dream  -> captures 8-cards-dream/*
-  python3 capture.py <name> <slide>      # single slide (e.g. dream 02-dick)
-  python3 capture.py --all               # capture every numbered series
+  python3 capture.py <name>              # e.g. vinyl -> captures 1-cards-vinyl/*
+  python3 capture.py <name> <slide>      # single slide (e.g. vinyl 02-goldmark)
+  python3 capture.py --all               # capture every numbered issue
 """
 import sys
 from pathlib import Path
@@ -42,7 +41,12 @@ def output_dir_for(cards_dir: Path) -> Path:
 def capture(htmls: list[Path], out_dir: Path) -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        import os, shutil
+        exe = os.environ.get("CHROMIUM_PATH") or shutil.which("chromium") or "/opt/pw-browsers/chromium"
+        launch_kw = {"headless": True}
+        if os.path.exists(exe):
+            launch_kw["executable_path"] = exe
+        browser = p.chromium.launch(**launch_kw)
         ctx = browser.new_context(viewport=VIEWPORT, device_scale_factor=DEVICE_SCALE)
         page = ctx.new_page()
         for html in htmls:

@@ -1,21 +1,21 @@
 /* =========================================================
-   AI × 철학 · 카드뉴스
-   Mirae Asset tone · Pretendard-centric type system
-   Viewport: 1080 × 1080
+   GROOVE · 음악 카드뉴스 매거진
+   Music-press tone (crimson × vinyl black × cream)
+   Pretendard-centric type system · Viewport: 1080 × 1080
    ========================================================= */
 
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css');
 
 /* 브라우저 자동 다크모드 강제 무력화 (Samsung Internet · Chrome Android · iOS Safari) */
 :root { color-scheme: light only; }
-html, body { color-scheme: light only; background-color: #f4efe4; }
+html, body { color-scheme: light only; background-color: #f6f1e6; }
 
 :root {
   /* surfaces */
-  --bg:        #f4efe4;
-  --bg-soft:   #faf6ec;
+  --bg:        #f6f1e6;
+  --bg-soft:   #fbf7ee;
   --bg-white:  #ffffff;
-  --bg-dark:   #0f1e38;
+  --bg-dark:   #141419;
 
   /* ink */
   --ink:        #0f172a;
@@ -26,21 +26,21 @@ html, body { color-scheme: light only; background-color: #f4efe4; }
   --ink-dim:    #b8b2a3;
 
   /* brand */
-  --brand:      #E35205;
-  --brand-deep: #B5400B;
-  --brand-soft: #FFE4D0;
-  --brand-glow: rgba(227, 82, 5, 0.18);
+  --brand:      #C8102E;
+  --brand-deep: #8E0E22;
+  --brand-soft: #F6D7D0;
+  --brand-glow: rgba(200, 16, 46, 0.18);
 
-  --navy:       #0f1e38;
-  --navy-mid:   #1c2e4e;
-  --navy-soft:  #DDE3EE;
+  --navy:       #141419;
+  --navy-mid:   #262630;
+  --navy-soft:  #E6E2D9;
   --gold:       #B08336;
 
   /* lines */
   --line:        rgba(15, 23, 42, 0.08);
   --line-mid:    rgba(15, 23, 42, 0.15);
   --line-strong: rgba(15, 23, 42, 0.25);
-  --line-brand:  rgba(227, 82, 5, 0.30);
+  --line-brand:  rgba(200, 16, 46, 0.30);
 
   /* per-card accent (override inline) */
   --accent:      var(--brand);
@@ -97,7 +97,7 @@ body {
 body::after {
   content: "";
   position: absolute; inset: 0;
-  background-image: radial-gradient(rgba(15,30,56,0.018) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(20, 20, 25,0.018) 1px, transparent 1px);
   background-size: 4px 4px;
   pointer-events: none;
   z-index: 0;
@@ -280,10 +280,10 @@ h1.title .underline {
   font-style: normal;
   font-weight: 700;
 }
-/* 진한 brand-bg(hex 직접 지정) 박스 안 em orange-on-orange 방어 */
-[style*="E35205"] em,
-[style*="B5400B"] em {
-  color: #FFE4D0 !important;
+/* 진한 brand-bg(hex 직접 지정) 박스 안 em red-on-red 방어 */
+[style*="C8102E"] em,
+[style*="8E0E22"] em {
+  color: #F6D7D0 !important;
   font-style: normal;
 }
 
@@ -369,7 +369,7 @@ h1.title .underline {
   background: var(--bg-white);
   border: 1px solid var(--line);
   border-left: 4px solid var(--brand);
-  box-shadow: 0 10px 24px -18px rgba(15, 30, 56, 0.25);
+  box-shadow: 0 10px 24px -18px rgba(20, 20, 25, 0.25);
   font-size: 18px;
   color: var(--navy);
   position: relative;
@@ -501,7 +501,7 @@ h1.title .underline {
   font-size: 14.5px;
   line-height: 1.92;
   position: relative;
-  box-shadow: 0 20px 36px -24px rgba(15, 30, 56, 0.5);
+  box-shadow: 0 20px 36px -24px rgba(20, 20, 25, 0.5);
   font-weight: 500;
 }
 .terminal::before {
@@ -552,7 +552,7 @@ h1.title .underline {
   border: 1px solid var(--line);
   color: var(--ink-body);
   position: relative;
-  box-shadow: 0 2px 12px -8px rgba(15, 30, 56, 0.2);
+  box-shadow: 0 2px 12px -8px rgba(20, 20, 25, 0.2);
   line-height: 1.5;
 }
 .map .box .tag {
@@ -605,7 +605,7 @@ h1.title .underline {
   font-weight: 600;
   font-size: 78px;
   line-height: 1;
-  box-shadow: 0 16px 32px -16px rgba(15, 30, 56, 0.5);
+  box-shadow: 0 16px 32px -16px rgba(20, 20, 25, 0.5);
   position: relative;
   padding-bottom: 6px;
 }
@@ -614,7 +614,7 @@ h1.title .underline {
   position: absolute;
   inset: 6px;
   border-radius: 50%;
-  border: 1px solid rgba(227, 82, 5, 0.4);
+  border: 1px solid rgba(200, 16, 46, 0.4);
 }
 .phi-block .phi-text {
   font-family: var(--f-sans);
@@ -657,7 +657,7 @@ h1.title .underline {
   overflow: hidden;
   border: 1px solid var(--line-strong);
   background: var(--navy);
-  box-shadow: 0 22px 46px -30px rgba(15, 30, 56, 0.6);
+  box-shadow: 0 22px 46px -30px rgba(20, 20, 25, 0.6);
 }
 .portrait img {
   width: 100%; height: 100%;
@@ -670,9 +670,9 @@ h1.title .underline {
   content: "";
   position: absolute; inset: 0;
   background: linear-gradient(180deg,
-    rgba(227, 82, 5, 0.08) 0%,
+    rgba(200, 16, 46, 0.08) 0%,
     transparent 35%,
-    rgba(15, 30, 56, 0.45) 100%);
+    rgba(20, 20, 25, 0.45) 100%);
   pointer-events: none;
 }
 .portrait .corner {
@@ -740,7 +740,7 @@ h1.title .underline {
   border-top: 3px solid var(--brand);
   padding: 20px 18px;
   position: relative;
-  box-shadow: 0 8px 22px -18px rgba(15, 30, 56, 0.3);
+  box-shadow: 0 8px 22px -18px rgba(20, 20, 25, 0.3);
 }
 .recap-card .rnum {
   font-family: var(--f-sans);
@@ -1002,4 +1002,137 @@ h1.title .underline {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   margin-top: 12px;
+}
+
+/* =========================================================
+   GROOVE — music-specific components
+   ========================================================= */
+
+/* Tracklist block — back-cover liner-note look */
+.tracklist {
+  margin-top: 14px;
+  padding: 24px 28px 22px;
+  background: var(--navy);
+  color: #f2ede0;
+  font-family: var(--f-mono);
+  font-size: 14.5px;
+  line-height: 1.9;
+  position: relative;
+  box-shadow: 0 20px 36px -24px rgba(20, 20, 25, 0.55);
+  font-weight: 500;
+}
+.tracklist .tl-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+  color: rgba(255,255,255,0.42); font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+.tracklist .tl-head b { color: var(--brand); letter-spacing: 0.3em; }
+.tracklist .track {
+  display: flex; align-items: baseline; gap: 12px;
+  padding: 2px 0;
+}
+.tracklist .track .no {
+  flex: 0 0 26px;
+  color: var(--brand); font-weight: 700; font-size: 12px;
+  letter-spacing: 0.08em;
+}
+.tracklist .track .name { color: #f2ede0; }
+.tracklist .track .name em { color: var(--brand); font-weight: 700; }
+.tracklist .track .dots {
+  flex: 1; margin: 0 4px;
+  border-bottom: 1px dotted rgba(255,255,255,0.28);
+  transform: translateY(-4px);
+}
+.tracklist .track .len {
+  color: rgba(255,255,255,0.5); font-size: 12px;
+  font-feature-settings: "tnum";
+}
+.tracklist .track.hi .name { color: var(--brand); font-weight: 700; }
+
+/* Vinyl disc — decorative grooved record (corner ornament) */
+.vinyl-disc {
+  position: absolute;
+  width: 340px; height: 340px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center,
+      var(--brand) 0 17%,            /* label */
+      #17171d 17.5% 100%);
+  box-shadow:
+    inset 0 0 0 2px rgba(255,255,255,0.05),
+    0 24px 48px -24px rgba(20,20,25,0.6);
+  z-index: 1;
+  pointer-events: none;
+}
+.vinyl-disc::before {
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: repeating-radial-gradient(circle at center,
+    transparent 0 7px,
+    rgba(255,255,255,0.045) 7px 8px);
+  -webkit-mask: radial-gradient(circle at center, transparent 0 18%, #000 19%);
+          mask: radial-gradient(circle at center, transparent 0 18%, #000 19%);
+}
+.vinyl-disc::after {
+  content: "";
+  position: absolute; left: 50%; top: 50%;
+  width: 10px; height: 10px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--bg);
+}
+.vinyl-disc.ghost { opacity: 0.10; }
+
+/* Waveform bars — decorative equalizer strip */
+.waveform {
+  display: flex; align-items: flex-end; gap: 5px;
+  height: 46px;
+  margin-top: 24px;
+}
+.waveform i {
+  flex: 1;
+  background: var(--brand);
+  opacity: 0.85;
+  min-height: 6px;
+}
+.waveform i:nth-child(4n+1) { height: 40%; opacity: 0.35; }
+.waveform i:nth-child(4n+2) { height: 85%; }
+.waveform i:nth-child(4n+3) { height: 60%; opacity: 0.6; }
+.waveform i:nth-child(4n)   { height: 100%; }
+
+/* BPM / stat chip row */
+.stat-row {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.stat-chip {
+  padding: 16px 18px;
+  background: var(--bg-white);
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brand);
+  box-shadow: 0 8px 22px -18px rgba(20, 20, 25, 0.3);
+}
+.stat-chip .sc-num {
+  font-family: var(--f-sans);
+  font-weight: 900; font-size: 34px;
+  color: var(--brand); line-height: 1;
+  letter-spacing: -0.04em;
+  font-feature-settings: "tnum";
+}
+.stat-chip .sc-num small { font-size: 16px; font-weight: 800; letter-spacing: 0; }
+.stat-chip .sc-label {
+  font-family: var(--f-mono);
+  font-size: 10px; letter-spacing: 0.18em;
+  color: var(--ink-mid); text-transform: uppercase;
+  font-weight: 700; margin-top: 8px;
+}
+.stat-chip .sc-desc {
+  font-size: 12.5px; color: var(--ink-body);
+  line-height: 1.5; margin-top: 5px;
 }
