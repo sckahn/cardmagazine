@@ -88,6 +88,7 @@ AI를 철학·예술·언어·역사·산업과 엮어 풀어쓴 카드뉴스 �
 ```
 {N}-cards-{slug}/            # Book I 카드 HTML 소스 (1080×1080)
 {N}-outputs-{slug}/          # Book I 캡처 PNG
+full/                        # 호별 통짜 이미지 (가로 1080, 카드 세로 연결)
 chronicle-{N}-cards-{slug}/  # Book II 카드 HTML
 chronicle-{N}-outputs-{slug}/# Book II 캡처 PNG
 atlas-{N}-cards-{slug}/      # Book III 카드 HTML
@@ -124,6 +125,10 @@ python3 capture.py dream 02-dick
 
 # 인물 사진 얼굴 중앙 자동 정렬
 python3 fix_face_crop.py
+
+# 호별 통짜 이미지 생성 (가로 1080 한 장, ImageMagick 필요)
+python3 stitch.py            # 전체
+python3 stitch.py dream      # 특정 호만
 ```
 
 ## 디자인 시스템
