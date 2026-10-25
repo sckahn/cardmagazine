@@ -131,11 +131,21 @@ python3 fix_face_crop.py
 세 권 모두 동일한 카드 그리드(1080×1080)와 타이포그래피를 공유하되, 색조로 구분돼요.
 
 - **공통 폰트** · Pretendard 가변 + Playfair Display(serif accent) + JetBrains Mono
-- **Book I** · 미디어 브랜드 톤 — `#E35205` 주황 / `#0f1e38` 네이비 / `#f4efe4` 베이지
-- **Book II** · 시간축 톤 — 클래식 신문 그레이스케일 + 시대별 era 칩
-- **Book III** · 박물관 청록 톤 — `#7a8a7a` 세이지 그린 / `#0e2a4a` 미드나잇 / `#c8a04a` 황동
+- **Book I** · 미디어 브랜드 톤: `#E35205` 주황 / `#0f1e38` 네이비 / `#f4efe4` 베이지
+- **Book II** · 시간축 톤: 클래식 신문 그레이스케일 + 시대별 era 칩
+- **Book III** · 박물관 청록 톤: `#7a8a7a` 세이지 그린 / `#0e2a4a` 미드나잇 / `#c8a04a` 황동
 
-전반적으로 Mirae Asset inspired 절제된 신뢰감 — 과장 없는 정보 밀도와 sans/serif 대비.
+전반적으로 절제된 신뢰감. 과장 없는 정보 밀도와 sans/serif 대비.
+
+## 스타일 가이드
+
+이 저장소는 세 가이드를 `.claude/skills/`에 내장해 글과 디자인의 기준으로 삼아요.
+
+- [stop-slop-ko](https://github.com/leeandev/stop-slop-ko) (MIT): 한국어 카피에서 AI 티를 걷어내는 기준. 산문 속 부연 em-dash(`—`), 공백 가운뎃점(` · `) 나열, 장식 `★`, 번역투, 조사 앞 공백을 쓰지 않아요. 숫자·인용·기술용어는 그대로 보존해요. 검증은 `python3 .claude/skills/stop-slop-ko/scripts/slop_scan.py <파일>`.
+- [ai-design-skills](https://github.com/elayadesign/ai-design-skills) (MIT): landing-page-design, design-to-motion 스킬. 모션은 기본 easing 대신 커스텀 cubic-bezier, 스크롤 리빌은 `IntersectionObserver`(스크롤 리스너 금지), 모든 인터랙션 요소에 hover/active/focus 상태, 제목에 `text-wrap: balance`.
+- [im-not-ai](https://github.com/epoko77-ai/im-not-ai) (MIT): humanize-korean 스킬(+humanize·humanize-scan·humanize-redo, 전용 에이전트는 `.claude/agents/`). 10대 카테고리 85개 AI 티 패턴 분류표로 한글 문장을 점검해요. 번역투(이중피동, "~에 있어서"), AI 관용구("결론적으로", "시사하는 바가 크다"), 기계적 대구, 연결어미 뒤 쉼표 남발을 쓰지 않고, 윤문할 때도 내용·수치·인용은 한 글자도 바꾸지 않아요. 새 글은 `/humanize-korean`으로 점검할 수 있어요.
+
+이 프로젝트의 예외: 카드·문서 제목의 `제목 — 부제` 구분, 칩·푸터·메타 행의 ` · ` 구분자, SVG 별점(`★★★★`)은 디자인 관례라 유지해요. 폰트는 한글 지원 때문에 Pretendard를 그대로 써요.
 
 ## 출처
 
