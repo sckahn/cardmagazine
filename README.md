@@ -139,10 +139,11 @@ python3 fix_face_crop.py
 
 ## 스타일 가이드
 
-이 저장소는 두 가이드를 `.claude/skills/`에 내장해 글과 디자인의 기준으로 삼아요.
+이 저장소는 세 가이드를 `.claude/skills/`에 내장해 글과 디자인의 기준으로 삼아요.
 
 - [stop-slop-ko](https://github.com/leeandev/stop-slop-ko) (MIT): 한국어 카피에서 AI 티를 걷어내는 기준. 산문 속 부연 em-dash(`—`), 공백 가운뎃점(` · `) 나열, 장식 `★`, 번역투, 조사 앞 공백을 쓰지 않아요. 숫자·인용·기술용어는 그대로 보존해요. 검증은 `python3 .claude/skills/stop-slop-ko/scripts/slop_scan.py <파일>`.
 - [ai-design-skills](https://github.com/elayadesign/ai-design-skills) (MIT): landing-page-design, design-to-motion 스킬. 모션은 기본 easing 대신 커스텀 cubic-bezier, 스크롤 리빌은 `IntersectionObserver`(스크롤 리스너 금지), 모든 인터랙션 요소에 hover/active/focus 상태, 제목에 `text-wrap: balance`.
+- [im-not-ai](https://github.com/epoko77-ai/im-not-ai) (MIT): humanize-korean 스킬(+humanize·humanize-scan·humanize-redo, 전용 에이전트는 `.claude/agents/`). 10대 카테고리 85개 AI 티 패턴 분류표로 한글 문장을 점검해요. 번역투(이중피동, "~에 있어서"), AI 관용구("결론적으로", "시사하는 바가 크다"), 기계적 대구, 연결어미 뒤 쉼표 남발을 쓰지 않고, 윤문할 때도 내용·수치·인용은 한 글자도 바꾸지 않아요. 새 글은 `/humanize-korean`으로 점검할 수 있어요.
 
 이 프로젝트의 예외: 카드·문서 제목의 `제목 — 부제` 구분, 칩·푸터·메타 행의 ` · ` 구분자, SVG 별점(`★★★★`)은 디자인 관례라 유지해요. 폰트는 한글 지원 때문에 Pretendard를 그대로 써요.
 
