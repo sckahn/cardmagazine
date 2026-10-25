@@ -19,7 +19,7 @@
   <aside class="mag-side">
     <div class="side-kicker">Issue 01</div>
     <h2>AI × <em>Philosophy</em></h2>
-    <div class="side-sub">AI가 처음 만난 철학자들 — 여섯 개의 사고실험으로 AI를 되묻다.</div>
+    <div class="side-sub">AI가 처음 만난 철학자들. 여섯 개의 사고실험으로 AI를 되묻다.</div>
 
     <div class="progress-outer"><div class="progress-inner" id="progress"></div></div>
 
@@ -113,7 +113,7 @@
       <div>
         <div class="next-kicker">NEXT · ISSUE 02</div>
         <h3 class="next-title">AI × <em>Taste</em></h3>
-        <p class="next-sub">AI는 왜 맛을 모르는가 — 이어령 &quot;미각은 제일 나중&quot; · 다섯 감각의 합성 · 후각 80%.</p>
+        <p class="next-sub">AI는 왜 맛을 모르는가. 이어령 &quot;미각은 제일 나중&quot;, 다섯 감각의 합성, 후각 80%.</p>
         <a class="next-cta" href="taste.html">다음 이슈 보기 →</a>
       </div>
     </aside>
@@ -139,7 +139,7 @@
   function scopeCardCss(css) {
     // Remove the 1080×1080 lockdown on html/body
     css = css.replace(/html\s*,\s*body\s*\{[^}]*\}/g, '');
-    // Strip overflow:hidden from body rule — it would become .mag-article
+    // Strip overflow:hidden from body rule. it would become .mag-article
     // and trap touch-scroll on mobile. We'll drop overflow from body block.
     css = css.replace(/(body\s*\{[^}]*?)overflow\s*:\s*hidden\s*;?/g, '$1');
     // Scope body-level rules to .mag-article (so card background/typography
@@ -214,7 +214,7 @@
     }
   }
 
-  // Load all in parallel — they're just HTML fragments, fast
+  // Load all in parallel. they're just HTML fragments, fast
   await Promise.all(articles.map(loadCard));
 
   // --- 3) Scroll spy: highlight current TOC entry + progress bar ---
@@ -227,7 +227,7 @@
   function scrollSidebarTo(link) {
     // Keep the highlighted TOC link visible inside the sidebar without
     // touching window scroll. Native scrollIntoView would scroll every
-    // scrollable ancestor, including document — pulling the whole page
+    // scrollable ancestor, including document. pulling the whole page
     // back to the top.
     if (!sidebar || !link) return;
     const sr = sidebar.getBoundingClientRect();
@@ -249,7 +249,7 @@
   }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
   articles.forEach(a => io.observe(a));
 
-  // Reveal observer — adds .in-view once when each article (or mag-next)
+  // Reveal observer. adds .in-view once when each article (or mag-next)
   // crosses into the lower 85% of the viewport. One-shot for smoothness.
   const reveal = new IntersectionObserver((entries) => {
     entries.forEach(e => {
